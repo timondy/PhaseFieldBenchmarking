@@ -1,0 +1,282 @@
+<html>
+<head><title>
+HDF5/H5A API Specification
+</title>
+
+<!-- #BeginLibraryItem "/ed_libs/styles_RM.lbi" -->
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<link href="ed_styles/RMelect.css" rel="stylesheet" type="text/css">
+<!-- #EndLibraryItem --></head>
+
+<body bgcolor="#FFFFFF">
+<!-- HEADER RIGHT " " -->
+
+
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><center>
+<h1>H5A: Attribute Interface</h1>
+</center>
+
+<h2>Attribute API Functions</h2>
+
+These functions create and manipulate attributes 
+and information about attributes.
+
+<p>
+<strong>The C Interfaces:</strong>
+
+<table border=0>
+<tr><td valign=top>
+<ul>
+    <li><a href="#Annot-Create">H5Acreate</a>
+    <li><a href="#Annot-Write">H5Awrite</a>
+    <li><a href="#Annot-Read">H5Aread</a>
+    <li><a href="#Annot-Close">H5Aclose</a>
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+    <li><a href="#Annot-GetName">H5Aget_name</a>
+    <li><a href="#Annot-OpenName">H5Aopen_name</a>
+    <li><a href="#Annot-OpenIdx">H5Aopen_idx</a>
+    <li><a href="#Annot-GetSpace">H5Aget_space</a>
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+    <li><a href="#Annot-GetType">H5Aget_type</a>
+    <li><a href="#Annot-NumAttrs">H5Aget_num_attrs</a>
+    <li><a href="#Annot-Iterate">H5Aiterate</a>
+    <li><a href="#Annot-Delete">H5Adelete</a>
+</ul>
+</td></tr>
+</table>
+<br>
+
+<i>Alphabetical Listing</i>
+
+<table border="0">
+  <tr>
+    <td valign="top">
+	<ul>
+      <li><a href="#Annot-Close">H5Aclose</a>
+      <li><a href="#Annot-Create">H5Acreate</a>
+      <li><a href="#Annot-Delete">H5Adelete</a>
+      <li><a href="#Annot-GetName">H5Aget_name</a>
+	</ul>      
+    </td>
+    
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    
+    <td valign="top">
+	<ul>
+      <li><a href="#Annot-NumAttrs">H5Aget_num_attrs</a>
+      <li><a href="#Annot-GetSpace">H5Aget_space</a>
+      <li><a href="#Annot-GetType">H5Aget_type</a>
+      <li><a href="#Annot-Iterate">H5Aiterate</a>
+    </ul>
+	</td>
+    
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    
+    <td valign="top">
+	<ul>
+      <li><a href="#Annot-OpenIdx">H5Aopen_idx</a>
+      <li><a href="#Annot-OpenName">H5Aopen_name</a>
+      <li><a href="#Annot-Read">H5Aread</a>
+      <li><a href="#Annot-Write">H5Awrite</a>
+	</ul>
+    </td>
+  </tr>
+</table>
+
+<br>
+<strong>The FORTRAN90 Interfaces:</strong>
+<br>
+In general, each FORTRAN90 subroutine performs exactly the same task 
+as the corresponding C function.  
+<br>
+
+<table border=0>
+<tr><td valign=top>
+<ul>
+    <li><a href="#Annot-Create">h5acreate_f</a>
+    <li><a href="#Annot-Write">h5awrite_f</a>
+    <li><a href="#Annot-Read">h5aread_f</a>
+    <li><a href="#Annot-Close">h5aclose_f</a>
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+    <li><a href="#Annot-GetName">h5aget_name_f</a>
+    <li><a href="#Annot-OpenName">h5aopen_name_f</a>
+    <li><a href="#Annot-OpenIdx">h5aopen_idx_f</a>
+    <li><a href="#Annot-GetSpace">h5aget_space_f</a>
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+    <li><a href="#Annot-GetType">h5aget_type_f</a>
+    <li><a href="#Annot-NumAttrs">h5aget_num_attrs_f</a>
+ <!--<li><a href="#Annot-Iterate">h5aiterate_f</a>-->
+    <li><a href="#Annot-Delete">h5adelete_f</a>
+</ul>
+</td></tr>
+</table>
+
+
+<p>
+The Attribute interface, H5A, is primarily designed to easily allow 
+small datasets to be attached to primary datasets as metadata information. 
+Additional goals for the H5A interface include keeping storage requirement 
+for each attribute to a minimum and easily sharing attributes among 
+datasets. 
+<p>
+Because attributes are intended to be small objects, large datasets 
+intended as additional information for a primary dataset should be 
+stored as supplemental datasets in a group with the primary dataset. 
+Attributes can then be attached to the group containing everything 
+to indicate a particular type of dataset with supplemental datasets 
+is located in the group. How small is "small" is not defined by the 
+library and is up to the user's interpretation. 
+<p>
+See <a href="Attributes.html"><cite>Attributes</cite></a> in the
+<a href="H5.user.html"><cite>HDF5 User's Guide</cite></a> for further information.
+
+<!-- NEW PAGE -->
+<!-- HEADER RIGHT " " -->
+
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+<!--       Include special topic files                       -->
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+
+
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+<!--       Include function files                            -->
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+
+<?php include("H5A/H5Aclose.htm"); ?>
+<?php include("H5A/H5Acreate.htm"); ?>
+<?php include("H5A/H5Adelete.htm"); ?>
+<?php include("H5A/H5Aget_name.htm"); ?>
+<?php include("H5A/H5Aget_num_attrs.htm"); ?>
+<?php include("H5A/H5Aget_space.htm"); ?>
+<?php include("H5A/H5Aget_type.htm"); ?>
+<?php include("H5A/H5Aiterate.htm"); ?>
+<?php include("H5A/H5Aopen_idx.htm"); ?>
+<?php include("H5A/H5Aopen_name.htm"); ?>
+<?php include("H5A/H5Aread.htm"); ?>
+<?php include("H5A/H5Awrite.htm"); ?>
+
+
+<!-- HEADER RIGHT " " -->
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/ed_libs/Footer.lbi" -->
+
+<address>
+The HDF Group Help Desk: <img src="Graphics/help.png" align=top height=16>
+<br>
+Describes HDF5 Release 1.6.10, November 2009 
+</address>
+
+
+<!-- #EndLibraryItem --><SCRIPT LANGUAGE="JAVASCRIPT">
+<!--
+document.writeln("Last modified: 25 April 2009");
+-->
+</SCRIPT>
+ 
+</body>
+</html>
+

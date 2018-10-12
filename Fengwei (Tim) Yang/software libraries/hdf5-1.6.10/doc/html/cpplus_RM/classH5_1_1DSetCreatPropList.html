@@ -1,0 +1,1630 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="header_files/filelist.xml">
+<link rel=Edit-Time-Data href="header_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Main Page</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Randy Ribler</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Randy Ribler</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>16</o:TotalTime>
+  <o:Created>2004-07-23T05:34:00Z</o:Created>
+  <o:LastSaved>2004-07-23T06:03:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>5</o:Words>
+  <o:Characters>32</o:Characters>
+  <o:Company>LC</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>36</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=RM_stylesheet.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-believe-normal-left:yes;}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#252E78;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#3D2185;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+address
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.formuladsp, li.formuladsp, div.formuladsp
+	{mso-style-name:formuladsp;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdtable, li.mdtable, div.mdtable
+	{mso-style-name:mdtable;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#F4F4FB;
+	border:none;
+	mso-border-alt:solid #868686 .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdrow, li.mdrow, div.mdrow
+	{mso-style-name:mdrow;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdescleft, li.mdescleft, div.mdescleft
+	{mso-style-name:mdescleft;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.mdescright, li.mdescright, div.mdescright
+	{mso-style-name:mdescright;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.memitemleft, li.memitemleft, div.memitemleft
+	{mso-style-name:memitemleft;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.memitemright, li.memitemright, div.memitemright
+	{mso-style-name:memitemright;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.search, li.search, div.search
+	{mso-style-name:search;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><![if mso 9]>
+<style>
+p.MsoNormal
+	{margin-left:15.0pt;}
+</style>
+<![endif]><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098">
+  <o:colormru v:ext="edit" colors="#060"/>
+  <o:colormenu v:ext="edit" strokecolor="#060"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link="#252E78" vlink="#3D2185" style='tab-interval:
+.5in;margin-left:15.0pt;margin-right:15.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:15.0pt;margin-bottom:
+0in;margin-left:15.0pt;margin-bottom:.0001pt'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:30pt;margin-top:9pt;width:72.75pt;height:57.75pt;
+ z-index:1'>
+ <v:imagedata src="header_files/image001.jpg" o:title="NCSAlogo"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:40px;margin-top:12px;width:97px;
+height:77px'><img width=97 height=77 src="header_files/image002.jpg" v:shapes="_x0000_s1026"></span><![endif]><span
+style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><span
+style='font-size:22.0pt'><o:p></o:p></span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:103.45pt;border-collapse:collapse;border:none;mso-border-bottom-alt:
+ solid #006600 2.25pt;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes;height:29.25pt'>
+  <td width=443 valign=top style='width:332.6pt;border:none;border-bottom:solid #006600 2.25pt;
+  padding:0in 5.4pt 0in 5.4pt;height:29.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-size:22.0pt'>HDF5 C++ API Reference Manual</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
+<!-- Generated by Doxygen 1.4.7 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
+    <li><a href="files.html"><span>Files</span></a></li>
+    <li><a href="examples.html"><span>Examples</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+  </ul></div>
+<div class="nav">
+<a class="el" href="namespaceH5.html">H5</a>::<a class="el" href="classH5_1_1DSetCreatPropList.html">DSetCreatPropList</a></div>
+<h1>H5::DSetCreatPropList Class Reference</h1><!-- doxytag: class="H5::DSetCreatPropList" --><!-- doxytag: inherits="H5::PropList" --><code>#include &lt;<a class="el" href="H5DcreatProp_8h-source.html">H5DcreatProp.h</a>&gt;</code>
+<p>
+<p>Inheritance diagram for H5::DSetCreatPropList:
+<p><center><img src="classH5_1_1DSetCreatPropList.png" usemap="#H5::DSetCreatPropList_map" border="0" alt=""></center>
+<map name="H5::DSetCreatPropList_map">
+<area href="classH5_1_1PropList.html" alt="H5::PropList" shape="rect" coords="0,56,138,80">
+<area href="classH5_1_1IdComponent.html" alt="H5::IdComponent" shape="rect" coords="0,0,138,24">
+</map>
+<a href="classH5_1_1DSetCreatPropList-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#d71b4159f7c0e28762c17eee56f1cc95">DSetCreatPropList</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor: creates a stub dataset creation property list.  <a href="#d71b4159f7c0e28762c17eee56f1cc95"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#9e21d1d344edc30a1d235c23e8d396cb">allFiltersAvail</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Queries whether all the filters set in this property list are available currently.  <a href="#9e21d1d344edc30a1d235c23e8d396cb"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5D_alloc_time_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#0eaa8188a825690f19629474ea7fb47c">getAllocTime</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get space allocation time for this property.  <a href="#0eaa8188a825690f19629474ea7fb47c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#d5c9fdebc25399c887905b889bc3943c">setAllocTime</a> (H5D_alloc_time_t alloc_time) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets space allocation time for dataset during creation.  <a href="#d5c9fdebc25399c887905b889bc3943c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#0f49ded7da24f6e4bcebe91b898a79ee">getChunk</a> (int max_ndims, hsize_t *dim) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the size of the chunks used to store a chunked layout dataset.  <a href="#0f49ded7da24f6e4bcebe91b898a79ee"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#598a2c1646304253c34582f57ba75a51">setChunk</a> (int ndims, const hsize_t *dim) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the size of the chunks used to store a chunked layout dataset.  <a href="#598a2c1646304253c34582f57ba75a51"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#99df36252ac8038b0fd99c88fd774484">getExternal</a> (unsigned idx, size_t name_size, char *name, off_t &amp;offset, hsize_t &amp;size) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns information about an external file.  <a href="#99df36252ac8038b0fd99c88fd774484"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#13a69c973f8ae979bf43fc32dc39742c">getExternalCount</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of external files for a dataset.  <a href="#13a69c973f8ae979bf43fc32dc39742c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5D_fill_time_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#3071952958c77e166f84757c23d5474a">getFillTime</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets fill value writing time.  <a href="#3071952958c77e166f84757c23d5474a"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#2519510dc6dc3e0995d9122e11ee42b0">setFillTime</a> (H5D_fill_time_t fill_time) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets fill value writing time for dataset.  <a href="#2519510dc6dc3e0995d9122e11ee42b0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#7e4e6b791494bc0e5528c196796d1d59">getFillValue</a> (const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;fvalue_type, void *value) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves a dataset fill value.  <a href="#7e4e6b791494bc0e5528c196796d1d59"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#06475f58202e5e96ca50e977174bb4ca">setFillValue</a> (const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;fvalue_type, const void *value) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets a dataset fill value.  <a href="#06475f58202e5e96ca50e977174bb4ca"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5Z_filter_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#31ec730b9b80fc098a8173be4614d45e">getFilter</a> (int filter_number, unsigned int &amp;flags, size_t &amp;cd_nelmts, unsigned int *cd_values, size_t namelen, char name[]) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns information about a filter in a pipeline.  <a href="#31ec730b9b80fc098a8173be4614d45e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#ee2e87ebbb37b14d86b9fcd9201a15ca">getFilterById</a> (H5Z_filter_t filter_id, unsigned int &amp;flags, size_t &amp;cd_nelmts, unsigned int *cd_values, size_t namelen, char name[]) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns information about a filter in a pipeline given the filter id.  <a href="#ee2e87ebbb37b14d86b9fcd9201a15ca"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5D_layout_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#a30807289b1c1542d82ab03dca9349b5">getLayout</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the layout type of this property list.  <a href="#a30807289b1c1542d82ab03dca9349b5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#d97022d38d10054bf0ba49802cb55ff1">setLayout</a> (H5D_layout_t layout) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the type of storage used store the raw data for a dataset.  <a href="#d97022d38d10054bf0ba49802cb55ff1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#a1f0e40be41e13817118015da6071d8b">getNfilters</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of filters in the pipeline.  <a href="#a1f0e40be41e13817118015da6071d8b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5D_fill_value_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#5771a33a33a5af23f0e8bf91b3b709f9">isFillValueDefined</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if fill value has been defined for this property.  <a href="#5771a33a33a5af23f0e8bf91b3b709f9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#9556e4fd428d1244a028965fd06cd651">modifyFilter</a> (H5Z_filter_t filter_id, unsigned int flags, size_t cd_nelmts, const unsigned int cd_values[]) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Modifies the specified filter.  <a href="#9556e4fd428d1244a028965fd06cd651"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#d3120c2ae8440ea07ed9a7a5c41354b8">removeFilter</a> (H5Z_filter_t filter_id) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Removes one or more filters.  <a href="#d3120c2ae8440ea07ed9a7a5c41354b8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#fce63c8d8c410e4a52b25b469fea1859">setDeflate</a> (int level) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets compression method and compression level.  <a href="#fce63c8d8c410e4a52b25b469fea1859"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#871b80f431f04dfc6ebd9743410ddbcc">setExternal</a> (const char *name, off_t offset, hsize_t size) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds an external file to the list of external files.  <a href="#871b80f431f04dfc6ebd9743410ddbcc"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#b9384e57b7831b777b3637d6cdd3f2ed">setFilter</a> (H5Z_filter_t filter, unsigned int flags=0, size_t cd_nelmts=0, const unsigned int cd_values[]=NULL) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds a filter to the filter pipeline.  <a href="#b9384e57b7831b777b3637d6cdd3f2ed"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#f67e6dea846869a8f86236fa01991eba">setFletcher32</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets Fletcher32 checksum of EDC for this property list.  <a href="#f67e6dea846869a8f86236fa01991eba"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#1b2d23d434c4147b9c05e732414c4047">setShuffle</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets method of the shuffle filter.  <a href="#1b2d23d434c4147b9c05e732414c4047"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#47f413e460f54c5f8bee4f3f5e0db9e4">setSzip</a> (unsigned int options_mask, unsigned int pixels_per_block) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets up for the use of the SZIP compression filter.  <a href="#47f413e460f54c5f8bee4f3f5e0db9e4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#4e373ddd5932a8a040889e0bd528221e">fromClass</a> () const </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#56589016937912cf3ae2726e984c151f">DSetCreatPropList</a> (const <a class="el" href="classH5_1_1DSetCreatPropList.html">DSetCreatPropList</a> &amp;orig)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1DSetCreatPropList.html">DSetCreatPropList</a> object.  <a href="#56589016937912cf3ae2726e984c151f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#424f8842860c7956ac4399664b224aba">DSetCreatPropList</a> (const hid_t plist_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a <a class="el" href="classH5_1_1DSetCreatPropList.html">DSetCreatPropList</a> object using the id of an existing dataset creation property list.  <a href="#424f8842860c7956ac4399664b224aba"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#b474f49b91ca1b710769aa063560ac81">~DSetCreatPropList</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Noop destructor.  <a href="#b474f49b91ca1b710769aa063560ac81"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Static Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static const <a class="el" href="classH5_1_1DSetCreatPropList.html">DSetCreatPropList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetCreatPropList.html#20cbed4bc7563f3084af99b77e8cacc5">DEFAULT</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constant for dataset creation default property.  <a href="#20cbed4bc7563f3084af99b77e8cacc5"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Detailed Description</h2>
+<dl compact><dt><b>Examples: </b></dt><dd>
+
+<p>
+<a class="el" href="chunks_8cpp-example.html#_a7">chunks.cpp</a>, <a class="el" href="extend__ds_8cpp-example.html#_a49">extend_ds.cpp</a>, and <a class="el" href="h5group_8cpp-example.html#_a69">h5group.cpp</a>.</dl>
+<p>
+<hr><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" name="d71b4159f7c0e28762c17eee56f1cc95"></a><!-- doxytag: member="H5::DSetCreatPropList::DSetCreatPropList" ref="d71b4159f7c0e28762c17eee56f1cc95" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DSetCreatPropList::DSetCreatPropList           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Default constructor: creates a stub dataset creation property list. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="56589016937912cf3ae2726e984c151f"></a><!-- doxytag: member="H5::DSetCreatPropList::DSetCreatPropList" ref="56589016937912cf3ae2726e984c151f" args="(const DSetCreatPropList &amp;orig)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DSetCreatPropList::DSetCreatPropList           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DSetCreatPropList.html">DSetCreatPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>orig</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1DSetCreatPropList.html">DSetCreatPropList</a> object. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="424f8842860c7956ac4399664b224aba"></a><!-- doxytag: member="H5::DSetCreatPropList::DSetCreatPropList" ref="424f8842860c7956ac4399664b224aba" args="(const hid_t plist_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DSetCreatPropList::DSetCreatPropList           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>plist_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates a <a class="el" href="classH5_1_1DSetCreatPropList.html">DSetCreatPropList</a> object using the id of an existing dataset creation property list. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="b474f49b91ca1b710769aa063560ac81"></a><!-- doxytag: member="H5::DSetCreatPropList::~DSetCreatPropList" ref="b474f49b91ca1b710769aa063560ac81" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DSetCreatPropList::~DSetCreatPropList           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Noop destructor. 
+<p>
+
+</div>
+</div><p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="9e21d1d344edc30a1d235c23e8d396cb"></a><!-- doxytag: member="H5::DSetCreatPropList::allFiltersAvail" ref="9e21d1d344edc30a1d235c23e8d396cb" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool H5::DSetCreatPropList::allFiltersAvail           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Queries whether all the filters set in this property list are available currently. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>true if all filters available, and false if one or more filters not currently available </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="0eaa8188a825690f19629474ea7fb47c"></a><!-- doxytag: member="H5::DSetCreatPropList::getAllocTime" ref="0eaa8188a825690f19629474ea7fb47c" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5D_alloc_time_t H5::DSetCreatPropList::getAllocTime           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Get space allocation time for this property. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Space allocation time. </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The values of space allocation time can be one of the followings: <ul>
+<li><code>H5D_ALLOC_TIME_DEFAULT</code> </li>
+<li><code>H5D_ALLOC_TIME_EARLY</code> </li>
+<li><code>H5D_ALLOC_TIME_LATE</code> </li>
+<li><code>H5D_ALLOC_TIME_INCR</code> </li>
+</ul>
+</dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d5c9fdebc25399c887905b889bc3943c"></a><!-- doxytag: member="H5::DSetCreatPropList::setAllocTime" ref="d5c9fdebc25399c887905b889bc3943c" args="(H5D_alloc_time_t alloc_time) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::setAllocTime           </td>
+          <td>(</td>
+          <td class="paramtype">H5D_alloc_time_t&nbsp;</td>
+          <td class="paramname"> <em>alloc_time</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets space allocation time for dataset during creation. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>alloc_time</em>&nbsp;</td><td>- IN: Allocation time </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>Valid values for space allocation time include: <ul>
+<li><code>H5D_ALLOC_TIME_DEFAULT</code> </li>
+<li><code>H5D_ALLOC_TIME_EARLY</code> </li>
+<li><code>H5D_ALLOC_TIME_LATE</code> </li>
+<li><code>H5D_ALLOC_TIME_INCR</code> </li>
+</ul>
+</dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="0f49ded7da24f6e4bcebe91b898a79ee"></a><!-- doxytag: member="H5::DSetCreatPropList::getChunk" ref="0f49ded7da24f6e4bcebe91b898a79ee" args="(int max_ndims, hsize_t *dim) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int H5::DSetCreatPropList::getChunk           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>max_ndims</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">hsize_t *&nbsp;</td>
+          <td class="paramname"> <em>dim</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Retrieves the size of the chunks used to store a chunked layout dataset. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>max_ndims</em>&nbsp;</td><td>- IN: Size of <em>dim</em> array </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dim</em>&nbsp;</td><td>- OUT: Array to store the chunk dimensions </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="chunks_8cpp-example.html#a10">chunks.cpp</a>.</dl>
+</div>
+</div><p>
+<a class="anchor" name="598a2c1646304253c34582f57ba75a51"></a><!-- doxytag: member="H5::DSetCreatPropList::setChunk" ref="598a2c1646304253c34582f57ba75a51" args="(int ndims, const hsize_t *dim) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::setChunk           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>ndims</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const hsize_t *&nbsp;</td>
+          <td class="paramname"> <em>dim</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the size of the chunks used to store a chunked layout dataset. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ndims</em>&nbsp;</td><td>- IN: Number of dimensions of each chunk </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dim</em>&nbsp;</td><td>- IN: Array containing the size of each chunk </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The <em>ndims</em> parameter currently must have the same value as the rank of the dataset. The values of the <em>dim</em> array define the size of the chunks to store the dataset's raw data. As a side-effect, the layout of the dataset will be changed to <code>H5D_CHUNKED</code>, if it is not so already. </dd></dl>
+<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="extend__ds_8cpp-example.html#a50">extend_ds.cpp</a>, and <a class="el" href="h5group_8cpp-example.html#a70">h5group.cpp</a>.</dl>
+</div>
+</div><p>
+<a class="anchor" name="99df36252ac8038b0fd99c88fd774484"></a><!-- doxytag: member="H5::DSetCreatPropList::getExternal" ref="99df36252ac8038b0fd99c88fd774484" args="(unsigned idx, size_t name_size, char *name, off_t &amp;offset, hsize_t &amp;size) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::getExternal           </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&nbsp;</td>
+          <td class="paramname"> <em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>name_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">off_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">hsize_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>size</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns information about an external file. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>idx</em>&nbsp;</td><td>- IN: Index of the external file, ranges [0-(N-1)] and returned by <a class="el" href="classH5_1_1DSetCreatPropList.html#13a69c973f8ae979bf43fc32dc39742c">getExternalCount()</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name_size</em>&nbsp;</td><td>- IN: Maximum length of <em>name</em> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the external file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>offset</em>&nbsp;</td><td>- IN: Location to return an offset value </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>- OUT: Location to return the size of the external file data </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The parameter <em>idx</em> ranges [0..N-1] where N is returned by <a class="el" href="classH5_1_1DSetCreatPropList.html#13a69c973f8ae979bf43fc32dc39742c">getExternalCount()</a>. At most <em>name_size</em> characters are copied into the name array. If the external file name is longer than name_size with the null terminator, the return value is not null terminated (similar to strncpy()). If <em>name_size</em> is zero or <em>name</em> is a null pointer, the external file name will not be returned. If <em>offset</em> or <em>size</em> are null pointers then the corresponding information will not be returned. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="13a69c973f8ae979bf43fc32dc39742c"></a><!-- doxytag: member="H5::DSetCreatPropList::getExternalCount" ref="13a69c973f8ae979bf43fc32dc39742c" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int H5::DSetCreatPropList::getExternalCount           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the number of external files for a dataset. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Number of external files </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="3071952958c77e166f84757c23d5474a"></a><!-- doxytag: member="H5::DSetCreatPropList::getFillTime" ref="3071952958c77e166f84757c23d5474a" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5D_fill_time_t H5::DSetCreatPropList::getFillTime           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Gets fill value writing time. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Fill value writing time </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>Valid values for fill value writing time include <ul>
+<li><code>H5D_FILL_TIME_NEVER</code> </li>
+<li><code>H5D_FILL_TIME_ALLOC</code>. </li>
+</ul>
+</dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="2519510dc6dc3e0995d9122e11ee42b0"></a><!-- doxytag: member="H5::DSetCreatPropList::setFillTime" ref="2519510dc6dc3e0995d9122e11ee42b0" args="(H5D_fill_time_t fill_time) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::setFillTime           </td>
+          <td>(</td>
+          <td class="paramtype">H5D_fill_time_t&nbsp;</td>
+          <td class="paramname"> <em>fill_time</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets fill value writing time for dataset. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Fill value writing time </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>Valid values for fill value writing time include <ul>
+<li><code>H5D_FILL_TIME_NEVER</code> </li>
+<li><code>H5D_FILL_TIME_ALLOC</code>. </li>
+</ul>
+</dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="7e4e6b791494bc0e5528c196796d1d59"></a><!-- doxytag: member="H5::DSetCreatPropList::getFillValue" ref="7e4e6b791494bc0e5528c196796d1d59" args="(const DataType &amp;fvalue_type, void *value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::getFillValue           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>fvalue_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Retrieves a dataset fill value. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fvalue_type</em>&nbsp;</td><td>- IN: Data type for the value passed via <em>value</em> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>- OUT: Pointer to buffer to hold the retrieved fill value </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The fill value is returned through <em>value</em> pointer and the memory is allocated by the caller. The fill value will be converted from its current data type to the specified by <em>fvalue_type</em>. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="06475f58202e5e96ca50e977174bb4ca"></a><!-- doxytag: member="H5::DSetCreatPropList::setFillValue" ref="06475f58202e5e96ca50e977174bb4ca" args="(const DataType &amp;fvalue_type, const void *value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::setFillValue           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>fvalue_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets a dataset fill value. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fvalue_type</em>&nbsp;</td><td>- IN: Data type for the value passed via <em>value</em> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>- IN: Pointer to buffer containing the fill value </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The datatype may differ from that of the dataset, but it must be one that the HDF5 library is able to convert <em>value</em> to the dataset datatype when the dataset is created. The default fill value is 0 (zero,) which is interpreted according to the actual dataset datatype. </dd></dl>
+<dl compact><dt><b></b></dt><dd>For information on setting fill value, please refer to the C layer Reference Manual at: <a href="../RM_H5P.html#Property-SetFillValue">../RM_H5P.html::Property-SetFillValue</a> </dd></dl>
+<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="extend__ds_8cpp-example.html#a51">extend_ds.cpp</a>.</dl>
+</div>
+</div><p>
+<a class="anchor" name="31ec730b9b80fc098a8173be4614d45e"></a><!-- doxytag: member="H5::DSetCreatPropList::getFilter" ref="31ec730b9b80fc098a8173be4614d45e" args="(int filter_number, unsigned int &amp;flags, size_t &amp;cd_nelmts, unsigned int *cd_values, size_t namelen, char name[]) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5Z_filter_t H5::DSetCreatPropList::getFilter           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>filter_number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>cd_nelmts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>cd_values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>namelen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>name</em>[]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns information about a filter in a pipeline. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>filter_number</em>&nbsp;</td><td>- IN: Filter to get, range [0..N-1], where N is returned by H5Pget_nfilters() </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>- OUT: General properties of the filter </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cd_nelmts</em>&nbsp;</td><td>- IN/OUT: Number of elements in <em>cd_values</em> /Number of values defined by the filter </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cd_values</em>&nbsp;</td><td>- OUT: Array to hold the data; allocated by the user </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>namelen</em>&nbsp;</td><td>- OUT: Length of <em>name</em> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- OUT: Name of the filter </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Filter id </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>Failure occurs when <em>filter_number</em> is out of range. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="ee2e87ebbb37b14d86b9fcd9201a15ca"></a><!-- doxytag: member="H5::DSetCreatPropList::getFilterById" ref="ee2e87ebbb37b14d86b9fcd9201a15ca" args="(H5Z_filter_t filter_id, unsigned int &amp;flags, size_t &amp;cd_nelmts, unsigned int *cd_values, size_t namelen, char name[]) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::getFilterById           </td>
+          <td>(</td>
+          <td class="paramtype">H5Z_filter_t&nbsp;</td>
+          <td class="paramname"> <em>filter_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>cd_nelmts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>cd_values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>namelen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>name</em>[]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns information about a filter in a pipeline given the filter id. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>filter_id</em>&nbsp;</td><td>- IN: Filter to get </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>- OUT: General properties of the filter </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cd_nelmts</em>&nbsp;</td><td>- IN/OUT: Number of elements in <em>cd_values</em> /Number of values defined by the filter </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cd_values</em>&nbsp;</td><td>- OUT: Array to hold the data; allocated by the user </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>namelen</em>&nbsp;</td><td>- IN: Length of <em>name</em> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- OUT: Name of the filter </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="a30807289b1c1542d82ab03dca9349b5"></a><!-- doxytag: member="H5::DSetCreatPropList::getLayout" ref="a30807289b1c1542d82ab03dca9349b5" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5D_layout_t H5::DSetCreatPropList::getLayout           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Retrieves the layout type of this property list. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Layout type, which can be: <ul>
+<li><code>H5D_COMPACT</code> - raw data is stored in the object header in the file. </li>
+<li><code>H5D_CONTIGUOUS</code> - raw data is stored separately from the object header in one contiguous chunk in the file. </li>
+<li><code>H5D_CHUNKED</code> - raw data is stored separately from the object header in chunks in separate locations in the file. </li>
+</ul>
+</dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd></dd></dl>
+<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="chunks_8cpp-example.html#a9">chunks.cpp</a>.</dl>
+</div>
+</div><p>
+<a class="anchor" name="d97022d38d10054bf0ba49802cb55ff1"></a><!-- doxytag: member="H5::DSetCreatPropList::setLayout" ref="d97022d38d10054bf0ba49802cb55ff1" args="(H5D_layout_t layout) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::setLayout           </td>
+          <td>(</td>
+          <td class="paramtype">H5D_layout_t&nbsp;</td>
+          <td class="paramname"> <em>layout</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the type of storage used store the raw data for a dataset. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>layout</em>&nbsp;</td><td>- IN: Type of storage layout for raw data </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For information on setting layout type, please refer to <a href="../RM_H5P.html#Property-SetLayout">../RM_H5P.html::Property-SetLayout</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="a1f0e40be41e13817118015da6071d8b"></a><!-- doxytag: member="H5::DSetCreatPropList::getNfilters" ref="a1f0e40be41e13817118015da6071d8b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int H5::DSetCreatPropList::getNfilters           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the number of filters in the pipeline. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Number of filters </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="5771a33a33a5af23f0e8bf91b3b709f9"></a><!-- doxytag: member="H5::DSetCreatPropList::isFillValueDefined" ref="5771a33a33a5af23f0e8bf91b3b709f9" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5D_fill_value_t H5::DSetCreatPropList::isFillValueDefined           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Check if fill value has been defined for this property. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd><ul>
+<li><code>H5D_FILL_VALUE_UNDEFINED</code> =0, </li>
+<li><code>H5D_FILL_VALUE_DEFAULT</code> =1, </li>
+<li><code>H5D_FILL_VALUE_USER_DEFINED</code> =2 </li>
+</ul>
+</dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="9556e4fd428d1244a028965fd06cd651"></a><!-- doxytag: member="H5::DSetCreatPropList::modifyFilter" ref="9556e4fd428d1244a028965fd06cd651" args="(H5Z_filter_t filter_id, unsigned int flags, size_t cd_nelmts, const unsigned int cd_values[]) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::modifyFilter           </td>
+          <td>(</td>
+          <td class="paramtype">H5Z_filter_t&nbsp;</td>
+          <td class="paramname"> <em>filter_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>cd_nelmts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&nbsp;</td>
+          <td class="paramname"> <em>cd_values</em>[]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Modifies the specified filter. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>filter_id</em>&nbsp;</td><td>- IN: Filter to get </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>- OUT: General properties of the filter </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cd_nelmts</em>&nbsp;</td><td>- IN: Number of elements in <em>cd_values</em> <br>
+ OUT: Number of values defined by the filter </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cd_values</em>&nbsp;</td><td>- OUT: Array to hold the data; allocated by the user </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The <em>flags</em> argument is a bit vector of the field: <code>H5Z_FLAG_OPTIONAL(0x0001)</code> </dd></dl>
+<dl compact><dt><b></b></dt><dd>If this bit is set then the filter is optional. If the filter fails during a <a class="el" href="classH5_1_1DataSet.html#3ce98e7a626fd32a23d1bcc41537326f">DataSet::write()</a> operation then the filter is just excluded from the pipeline for the chunk for which it failed; the filter will not participate in the pipeline during a <a class="el" href="classH5_1_1DataSet.html#2f0278a519122419ae9981666277c9bb">DataSet::read()</a> of the chunk. If this bit is clear and the filter fails then the entire I/O operation fails. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d3120c2ae8440ea07ed9a7a5c41354b8"></a><!-- doxytag: member="H5::DSetCreatPropList::removeFilter" ref="d3120c2ae8440ea07ed9a7a5c41354b8" args="(H5Z_filter_t filter_id) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::removeFilter           </td>
+          <td>(</td>
+          <td class="paramtype">H5Z_filter_t&nbsp;</td>
+          <td class="paramname"> <em>filter_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Removes one or more filters. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>filter_id</em>&nbsp;</td><td>- IN: Filter to remove </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>Deletes a filter from the dataset creation property list; deletes all filters if <em>filter_id</em> is <code>H5Z_FILTER_NONE</code>. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fce63c8d8c410e4a52b25b469fea1859"></a><!-- doxytag: member="H5::DSetCreatPropList::setDeflate" ref="fce63c8d8c410e4a52b25b469fea1859" args="(int level) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::setDeflate           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>level</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets compression method and compression level. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>level</em>&nbsp;</td><td>- IN: Compression level, should [0..9], inclusive </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The function sets the compression method for this property list to <code>H5D_COMPRESS_DEFLATE</code> and the compression level to <em>level</em>. Lower compression levels are faster but result in less compression. </dd></dl>
+<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="h5group_8cpp-example.html#a71">h5group.cpp</a>.</dl>
+</div>
+</div><p>
+<a class="anchor" name="871b80f431f04dfc6ebd9743410ddbcc"></a><!-- doxytag: member="H5::DSetCreatPropList::setExternal" ref="871b80f431f04dfc6ebd9743410ddbcc" args="(const char *name, off_t offset, hsize_t size) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::setExternal           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">off_t&nbsp;</td>
+          <td class="paramname"> <em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">hsize_t&nbsp;</td>
+          <td class="paramname"> <em>size</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Adds an external file to the list of external files. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the external file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>offset</em>&nbsp;</td><td>- IN: Location where the data starts in the file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>- IN: Number of bytes reserved in the file for the data </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>If a dataset is splitted across multiple files then the files should be defined in order. The total size of the dataset is the sum of the <em>size</em> arguments for all the external files. If the total size is larger than the size of a dataset then the dataset can be extended (provided the data space also allows the extending). </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="b9384e57b7831b777b3637d6cdd3f2ed"></a><!-- doxytag: member="H5::DSetCreatPropList::setFilter" ref="b9384e57b7831b777b3637d6cdd3f2ed" args="(H5Z_filter_t filter, unsigned int flags=0, size_t cd_nelmts=0, const unsigned int cd_values[]=NULL) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::setFilter           </td>
+          <td>(</td>
+          <td class="paramtype">H5Z_filter_t&nbsp;</td>
+          <td class="paramname"> <em>filter_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>flags</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>cd_nelmts</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&nbsp;</td>
+          <td class="paramname"> <em>cd_values</em>[] = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Adds a filter to the filter pipeline. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>filter_id</em>&nbsp;</td><td>- IN: Filter to add </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>- IN: Specifies general properties of the filter </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cd_nelmts</em>&nbsp;</td><td>- IN: Number of elements in cd_values </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cd_values</em>&nbsp;</td><td>- IN: Auxiliary data for the filter </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The <em>flags</em> argument is a bit vector of the field: <code>H5Z_FLAG_OPTIONAL(0x0001)</code> </dd></dl>
+<dl compact><dt><b></b></dt><dd>If this bit is set then the filter is optional. If the filter fails during a <code><a class="el" href="classH5_1_1DataSet.html#3ce98e7a626fd32a23d1bcc41537326f">DataSet::write()</a></code> operation then the filter is just excluded from the pipeline for the chunk for which it failed; the filter will not participate in the pipeline during a <code><a class="el" href="classH5_1_1DataSet.html#2f0278a519122419ae9981666277c9bb">DataSet::read()</a></code> of the chunk. If this bit is clear and the filter fails then the entire I/O operation fails. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="f67e6dea846869a8f86236fa01991eba"></a><!-- doxytag: member="H5::DSetCreatPropList::setFletcher32" ref="f67e6dea846869a8f86236fa01991eba" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::setFletcher32           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets Fletcher32 checksum of EDC for this property list. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="1b2d23d434c4147b9c05e732414c4047"></a><!-- doxytag: member="H5::DSetCreatPropList::setShuffle" ref="1b2d23d434c4147b9c05e732414c4047" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::setShuffle           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets method of the shuffle filter. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>Please refer to the Reference Manual of <code>H5Pset_shuffle</code> for details. <a href="../RM_H5P.html#Property-SetShuffle">../RM_H5P.html::Property-SetShuffle</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="47f413e460f54c5f8bee4f3f5e0db9e4"></a><!-- doxytag: member="H5::DSetCreatPropList::setSzip" ref="47f413e460f54c5f8bee4f3f5e0db9e4" args="(unsigned int options_mask, unsigned int pixels_per_block) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetCreatPropList::setSzip           </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>options_mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>pixels_per_block</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets up for the use of the SZIP compression filter. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>options_mask</em>&nbsp;</td><td>- IN: A bit-mask conveying the desired SZIP options. Valid values are H5_SZIP_EC_OPTION_MASK and H5_SZIP_NN_OPTION_MASK. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pixels_per_block</em>&nbsp;</td><td>- IN: Number of pixels or data elements in each data block. </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The associate C function sets an SZIP compression filter, H5Z_FILTER_SZIP, for a dataset. For more information about SZIP and usage, please refer to the C layer Reference Manual at: <a href="../RM_H5P.html#Property-SetSzip">../RM_H5P.html::Property-SetSzip</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="4e373ddd5932a8a040889e0bd528221e"></a><!-- doxytag: member="H5::DSetCreatPropList::fromClass" ref="4e373ddd5932a8a040889e0bd528221e" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual H5std_string H5::DSetCreatPropList::fromClass           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+Reimplemented from <a class="el" href="classH5_1_1PropList.html#b0648018d799b4abb1af7cf96ab6e728">H5::PropList</a>.
+</div>
+</div><p>
+<hr><h2>Member Data Documentation</h2>
+<a class="anchor" name="20cbed4bc7563f3084af99b77e8cacc5"></a><!-- doxytag: member="H5::DSetCreatPropList::DEFAULT" ref="20cbed4bc7563f3084af99b77e8cacc5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classH5_1_1DSetCreatPropList.html">DSetCreatPropList</a> <a class="el" href="classH5_1_1DSetCreatPropList.html#20cbed4bc7563f3084af99b77e8cacc5">H5::DSetCreatPropList::DEFAULT</a><code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Constant for dataset creation default property. 
+<p>
+
+<p>
+Reimplemented from <a class="el" href="classH5_1_1PropList.html#0f2f757ca782a743006c5756191c404b">H5::PropList</a>.
+</div>
+</div><p>
+<hr size="1"><address style="align: right;"><small>Generated on Wed Nov 4 14:13:07 2009 by&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
+</body>
+</html>

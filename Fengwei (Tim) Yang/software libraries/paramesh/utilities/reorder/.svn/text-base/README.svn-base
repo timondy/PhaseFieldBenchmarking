@@ -1,0 +1,46 @@
+SUMMMARY
+
+This directory contains scripts which edit the PARAMESH source code
+and reorder the indeces of the arrays used by PARAMESH.  This script
+was written to give users the opportunity to get better performance on
+different processor architectures.  The script was written by
+Ganapathy Murali Krishnan while he was working for the FLASH center at
+the University of Chicago.  Kevin Olson made it work with the entire
+PARAMESH package by altering some of the PARAMESH source code.
+
+
+WHAT THIS SCRIPT DOES
+
+Normally the array 'unk' in PARAMESH is allocated:
+
+unk(nvar,il_bnd,ju_bnd,ku_bnd,maxblocks)
+
+When you run the reorder script the ordering will become
+
+unk(il_bnd,ju_bnd,ku_bnd,nvar,maxblocks)
+
+Also, the reordering is done for ALL the different arrays you might
+want to access such as:
+
+facevarx, facevary, facevarz, unk_e_x, unk_e_y, unk_e_z, and unk_n.
+
+Running the script a second time produces an ordering:
+
+unk(ju_bnd,ku_bnd,nvar,iu_bnd,maxblocks)
+
+The script can be run multiple times to produce different orderings.
+
+
+USAGE
+
+To run the script type:
+
+./reorder 
+
+from inside this directory.  It will produce a lot of output.  Ignore it.
+
+NOTE1: You should clean and recompile PARAMESH after using the script.
+
+NOTE2: You will need to modify any code you have written which
+accesses the PARAMESH arrays mentioned above and take into account the
+new ordering of the array indeces.

@@ -1,0 +1,917 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="header_files/filelist.xml">
+<link rel=Edit-Time-Data href="header_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Main Page</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Randy Ribler</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Randy Ribler</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>16</o:TotalTime>
+  <o:Created>2004-07-23T05:34:00Z</o:Created>
+  <o:LastSaved>2004-07-23T06:03:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>5</o:Words>
+  <o:Characters>32</o:Characters>
+  <o:Company>LC</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>36</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=RM_stylesheet.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-believe-normal-left:yes;}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#252E78;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#3D2185;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+address
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.formuladsp, li.formuladsp, div.formuladsp
+	{mso-style-name:formuladsp;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdtable, li.mdtable, div.mdtable
+	{mso-style-name:mdtable;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#F4F4FB;
+	border:none;
+	mso-border-alt:solid #868686 .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdrow, li.mdrow, div.mdrow
+	{mso-style-name:mdrow;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdescleft, li.mdescleft, div.mdescleft
+	{mso-style-name:mdescleft;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.mdescright, li.mdescright, div.mdescright
+	{mso-style-name:mdescright;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.memitemleft, li.memitemleft, div.memitemleft
+	{mso-style-name:memitemleft;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.memitemright, li.memitemright, div.memitemright
+	{mso-style-name:memitemright;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.search, li.search, div.search
+	{mso-style-name:search;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><![if mso 9]>
+<style>
+p.MsoNormal
+	{margin-left:15.0pt;}
+</style>
+<![endif]><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098">
+  <o:colormru v:ext="edit" colors="#060"/>
+  <o:colormenu v:ext="edit" strokecolor="#060"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link="#252E78" vlink="#3D2185" style='tab-interval:
+.5in;margin-left:15.0pt;margin-right:15.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:15.0pt;margin-bottom:
+0in;margin-left:15.0pt;margin-bottom:.0001pt'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:30pt;margin-top:9pt;width:72.75pt;height:57.75pt;
+ z-index:1'>
+ <v:imagedata src="header_files/image001.jpg" o:title="NCSAlogo"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:40px;margin-top:12px;width:97px;
+height:77px'><img width=97 height=77 src="header_files/image002.jpg" v:shapes="_x0000_s1026"></span><![endif]><span
+style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><span
+style='font-size:22.0pt'><o:p></o:p></span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:103.45pt;border-collapse:collapse;border:none;mso-border-bottom-alt:
+ solid #006600 2.25pt;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes;height:29.25pt'>
+  <td width=443 valign=top style='width:332.6pt;border:none;border-bottom:solid #006600 2.25pt;
+  padding:0in 5.4pt 0in 5.4pt;height:29.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-size:22.0pt'>HDF5 C++ API Reference Manual</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
+<!-- Generated by Doxygen 1.4.7 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
+    <li><a href="files.html"><span>Files</span></a></li>
+    <li><a href="examples.html"><span>Examples</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+  </ul></div>
+<div class="nav">
+<a class="el" href="namespaceH5.html">H5</a>::<a class="el" href="classH5_1_1Exception.html">Exception</a></div>
+<h1>H5::Exception Class Reference</h1><!-- doxytag: class="H5::Exception" --><code>#include &lt;<a class="el" href="H5Exception_8h-source.html">H5Exception.h</a>&gt;</code>
+<p>
+<p>Inheritance diagram for H5::Exception:
+<p><center><img src="classH5_1_1Exception.png" usemap="#H5::Exception_map" border="0" alt=""></center>
+<map name="H5::Exception_map">
+<area href="classH5_1_1AttributeIException.html" alt="H5::AttributeIException" shape="rect" coords="172,56,334,80">
+<area href="classH5_1_1DataSetIException.html" alt="H5::DataSetIException" shape="rect" coords="172,112,334,136">
+<area href="classH5_1_1DataSpaceIException.html" alt="H5::DataSpaceIException" shape="rect" coords="172,168,334,192">
+<area href="classH5_1_1DataTypeIException.html" alt="H5::DataTypeIException" shape="rect" coords="172,224,334,248">
+<area href="classH5_1_1FileIException.html" alt="H5::FileIException" shape="rect" coords="172,280,334,304">
+<area href="classH5_1_1GroupIException.html" alt="H5::GroupIException" shape="rect" coords="172,336,334,360">
+<area href="classH5_1_1IdComponentException.html" alt="H5::IdComponentException" shape="rect" coords="172,392,334,416">
+<area href="classH5_1_1LibraryIException.html" alt="H5::LibraryIException" shape="rect" coords="172,448,334,472">
+<area href="classH5_1_1PropListIException.html" alt="H5::PropListIException" shape="rect" coords="172,504,334,528">
+<area href="classH5_1_1ReferenceException.html" alt="H5::ReferenceException" shape="rect" coords="172,560,334,584">
+</map>
+<a href="classH5_1_1Exception-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#0f4ddd03c9177ca8c318f17e588cd713">Exception</a> (const H5std_string &amp;func_name, const H5std_string &amp;message=<a class="el" href="classH5_1_1Exception.html#d206da67711dfab1745311b47b6782ac">DEFAULT_MSG</a>)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates an exception with the name of the function, in which the failure occurs, and an optional detailed message.  <a href="#0f4ddd03c9177ca8c318f17e588cd713"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#9a19651746abc155e883326ffecce518">getMajorString</a> (H5E_major_t major_num) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns a text string that describes the error specified by a major error number.  <a href="#9a19651746abc155e883326ffecce518"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#7a60a92465e639a6a94a6ca275f7b8df">getMinorString</a> (H5E_minor_t minor_num) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns a text string that describes the error specified by a minor error number.  <a href="#7a60a92465e639a6a94a6ca275f7b8df"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#edc9690b2b1a12e0fab36962d4479508">getDetailMsg</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the detailed message set at the time the exception is thrown.  <a href="#edc9690b2b1a12e0fab36962d4479508"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#1a60af9bf6c9bb1c9d42d1807529f187">getCDetailMsg</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the detailed message set at the time the exception is thrown.  <a href="#1a60af9bf6c9bb1c9d42d1807529f187"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#244fb8b04b39d92bca9fae548b00d730">getFuncName</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the name of the function, where the exception is thrown.  <a href="#244fb8b04b39d92bca9fae548b00d730"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#c492fb892d39a60dd4fb2b7ae015300f">getCFuncName</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the name of the function, where the exception is thrown.  <a href="#c492fb892d39a60dd4fb2b7ae015300f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#d5bf0f93b4156d6366110dd5e08342a2">printError</a> (FILE *stream=NULL) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Prints the error stack in a default manner.  <a href="#d5bf0f93b4156d6366110dd5e08342a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#9c0bba82658e1022a9c784c9364bd068">Exception</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor.  <a href="#9c0bba82658e1022a9c784c9364bd068"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#bc3b9e76dbfbdc6fc7939c67d3cfe72b">Exception</a> (const <a class="el" href="classH5_1_1Exception.html">Exception</a> &amp;orig)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1Exception.html">Exception</a> object.  <a href="#bc3b9e76dbfbdc6fc7939c67d3cfe72b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#c6f37cdf186b4c23fadfcd5998c2ddbb">~Exception</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Noop destructor.  <a href="#c6f37cdf186b4c23fadfcd5998c2ddbb"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#9bde5cb8db83ef55b98e7f38e7c3c088">setAutoPrint</a> (H5E_auto_t &amp;func, void *client_data)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turns on the automatic error printing.  <a href="#9bde5cb8db83ef55b98e7f38e7c3c088"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#d49f16300979996c094c2e4f57868414">dontPrint</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turns off the automatic error printing from the C library.  <a href="#d49f16300979996c094c2e4f57868414"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#2583765313dc30e131a55945d33b8069">getAutoPrint</a> (H5E_auto_t &amp;func, void **client_data)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the current settings for the automatic error stack traversal function and its data.  <a href="#2583765313dc30e131a55945d33b8069"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#58bb19c2776bd3fbdbe081b63ae97486">clearErrorStack</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Clears the error stack for the current thread.  <a href="#58bb19c2776bd3fbdbe081b63ae97486"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#fa439026d6003378ac011902b6911618">walkErrorStack</a> (H5E_direction_t direction, H5E_walk_t func, void *client_data)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Walks the error stack for the current thread, calling the specified function.  <a href="#fa439026d6003378ac011902b6911618"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static const H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1Exception.html#d206da67711dfab1745311b47b6782ac">DEFAULT_MSG</a></td></tr>
+
+</table>
+<hr><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" name="0f4ddd03c9177ca8c318f17e588cd713"></a><!-- doxytag: member="H5::Exception::Exception" ref="0f4ddd03c9177ca8c318f17e588cd713" args="(const H5std_string &amp;func_name, const H5std_string &amp;message=DEFAULT_MSG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::Exception::Exception           </td>
+          <td>(</td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>func_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>message</em> = <code><a class="el" href="classH5_1_1Exception.html#d206da67711dfab1745311b47b6782ac">DEFAULT_MSG</a></code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates an exception with the name of the function, in which the failure occurs, and an optional detailed message. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>func_name</em>&nbsp;</td><td>- IN: Name of the function where failure occurs </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>message</em>&nbsp;</td><td>- IN: Message on the failure </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="9c0bba82658e1022a9c784c9364bd068"></a><!-- doxytag: member="H5::Exception::Exception" ref="9c0bba82658e1022a9c784c9364bd068" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::Exception::Exception           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Default constructor. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="bc3b9e76dbfbdc6fc7939c67d3cfe72b"></a><!-- doxytag: member="H5::Exception::Exception" ref="bc3b9e76dbfbdc6fc7939c67d3cfe72b" args="(const Exception &amp;orig)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::Exception::Exception           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1Exception.html">Exception</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>orig</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1Exception.html">Exception</a> object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>orig</em>&nbsp;</td><td>- IN: <a class="el" href="classH5_1_1Exception.html">Exception</a> instance to copy </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="c6f37cdf186b4c23fadfcd5998c2ddbb"></a><!-- doxytag: member="H5::Exception::~Exception" ref="c6f37cdf186b4c23fadfcd5998c2ddbb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::Exception::~Exception           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Noop destructor. 
+<p>
+
+</div>
+</div><p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="9a19651746abc155e883326ffecce518"></a><!-- doxytag: member="H5::Exception::getMajorString" ref="9a19651746abc155e883326ffecce518" args="(H5E_major_t major_num) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5std_string H5::Exception::getMajorString           </td>
+          <td>(</td>
+          <td class="paramtype">H5E_major_t&nbsp;</td>
+          <td class="paramname"> <em>err_major</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns a text string that describes the error specified by a major error number. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>err_major</em>&nbsp;</td><td>- IN: Major error number </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Major error string </dd></dl>
+<dl compact><dt><b>Description</b></dt><dd>In the failure case, the string "Invalid major error number" will be returned. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="7a60a92465e639a6a94a6ca275f7b8df"></a><!-- doxytag: member="H5::Exception::getMinorString" ref="7a60a92465e639a6a94a6ca275f7b8df" args="(H5E_minor_t minor_num) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5std_string H5::Exception::getMinorString           </td>
+          <td>(</td>
+          <td class="paramtype">H5E_minor_t&nbsp;</td>
+          <td class="paramname"> <em>err_minor</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns a text string that describes the error specified by a minor error number. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>err_minor</em>&nbsp;</td><td>- IN: Minor error number </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Minor error string </dd></dl>
+<dl compact><dt><b>Description</b></dt><dd>In the failure case, the string "Invalid minor error number" will be returned. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="edc9690b2b1a12e0fab36962d4479508"></a><!-- doxytag: member="H5::Exception::getDetailMsg" ref="edc9690b2b1a12e0fab36962d4479508" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5std_string H5::Exception::getDetailMsg           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the detailed message set at the time the exception is thrown. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Text message - <code>H5std_string</code> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="1a60af9bf6c9bb1c9d42d1807529f187"></a><!-- doxytag: member="H5::Exception::getCDetailMsg" ref="1a60af9bf6c9bb1c9d42d1807529f187" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * H5::Exception::getCDetailMsg           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the detailed message set at the time the exception is thrown. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Text message - <code>char</code> pointer </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="244fb8b04b39d92bca9fae548b00d730"></a><!-- doxytag: member="H5::Exception::getFuncName" ref="244fb8b04b39d92bca9fae548b00d730" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5std_string H5::Exception::getFuncName           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the name of the function, where the exception is thrown. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Text message - <code>H5std_string</code> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="c492fb892d39a60dd4fb2b7ae015300f"></a><!-- doxytag: member="H5::Exception::getCFuncName" ref="c492fb892d39a60dd4fb2b7ae015300f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * H5::Exception::getCFuncName           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the name of the function, where the exception is thrown. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Text message - <code>char</code> pointer </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="9bde5cb8db83ef55b98e7f38e7c3c088"></a><!-- doxytag: member="H5::Exception::setAutoPrint" ref="9bde5cb8db83ef55b98e7f38e7c3c088" args="(H5E_auto_t &amp;func, void *client_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::Exception::setAutoPrint           </td>
+          <td>(</td>
+          <td class="paramtype">H5E_auto_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>client_data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Turns on the automatic error printing. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>func</em>&nbsp;</td><td>- IN: Function to be called upon an error condition </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>client_data</em>&nbsp;</td><td>- IN: Data passed to the error function </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>When the library is first initialized the auto printing function, <em>func</em>, is set to the C API <code>H5Eprint</code> and <em>client_data</em> is the standard error stream pointer, <code>stderr</code>. Automatic stack traversal is always in the <code>H5E_WALK_DOWNWARD</code> direction. </dd></dl>
+<dl compact><dt><b></b></dt><dd>Users are encouraged to write their own more specific error handlers </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d49f16300979996c094c2e4f57868414"></a><!-- doxytag: member="H5::Exception::dontPrint" ref="d49f16300979996c094c2e4f57868414" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::Exception::dontPrint           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Turns off the automatic error printing from the C library. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="2583765313dc30e131a55945d33b8069"></a><!-- doxytag: member="H5::Exception::getAutoPrint" ref="2583765313dc30e131a55945d33b8069" args="(H5E_auto_t &amp;func, void **client_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::Exception::getAutoPrint           </td>
+          <td>(</td>
+          <td class="paramtype">H5E_auto_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&nbsp;</td>
+          <td class="paramname"> <em>client_data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Retrieves the current settings for the automatic error stack traversal function and its data. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>func</em>&nbsp;</td><td>- OUT: Current setting for the function to be called upon an error condition </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>client_data</em>&nbsp;</td><td>- OUT: Current setting for the data passed to the error function </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="58bb19c2776bd3fbdbe081b63ae97486"></a><!-- doxytag: member="H5::Exception::clearErrorStack" ref="58bb19c2776bd3fbdbe081b63ae97486" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::Exception::clearErrorStack           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Clears the error stack for the current thread. 
+<p>
+<dl compact><dt><b>Description</b></dt><dd>The stack is also cleared whenever a C API function is called, with certain exceptions (for instance, <code>H5Eprint</code>). </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fa439026d6003378ac011902b6911618"></a><!-- doxytag: member="H5::Exception::walkErrorStack" ref="fa439026d6003378ac011902b6911618" args="(H5E_direction_t direction, H5E_walk_t func, void *client_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::Exception::walkErrorStack           </td>
+          <td>(</td>
+          <td class="paramtype">H5E_direction_t&nbsp;</td>
+          <td class="paramname"> <em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5E_walk_t&nbsp;</td>
+          <td class="paramname"> <em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>client_data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Walks the error stack for the current thread, calling the specified function. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>direction</em>&nbsp;</td><td>- IN: Direction in which the error stack is to be walked </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>func</em>&nbsp;</td><td>- IN: Function to be called for each error encountered </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>client_data</em>&nbsp;</td><td>- IN: Data passed to the error function </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>Valid values for <em>direction</em> include: <ul>
+<li><code>H5E_WALK_UPWARD</code> - begin with the most specific error and end at the API </li>
+<li><code>H5E_WALK_DOWNWARD</code> - begin at the API and end at the inner-most function where the error was first detected </li>
+</ul>
+</dd></dl>
+<dl compact><dt><b></b></dt><dd>The function specified by <em>func</em> will be called for each error in the error stack. The <code>H5E_walk_t</code> prototype is as follows: <div class="fragment"><pre class="fragment">    <span class="keyword">typedef</span> herr_t (*H5E_walk_t)(<span class="keywordtype">int</span> n, H5E_error_t *err_desc, <span class="keywordtype">void</span> *client_data)
+        <span class="keywordtype">int</span> n - Indexed position of the error in the stack; it begins at zero
+                regardless of stack traversal direction
+        H5E_error_t *err_desc - Pointer to a data structure describing the
+                error.  This structure is listed below.
+        <span class="keywordtype">void</span> *client_data - Pointer to client data in the format expected by
+                the user-defined function.
+</pre></div> </dd></dl>
+<dl compact><dt><b></b></dt><dd>Data structure to describe the error: <div class="fragment"><pre class="fragment">    <span class="keyword">typedef</span> <span class="keyword">struct </span>H5E_error_t {
+        hid_t       cls_id;         <span class="comment">//class ID</span>
+        hid_t       maj_num;        <span class="comment">//major error ID</span>
+        hid_t       min_num;        <span class="comment">//minor error number</span>
+        <span class="keyword">const</span> <span class="keywordtype">char</span>  *func_name;     <span class="comment">//function in which error occurred</span>
+        <span class="keyword">const</span> <span class="keywordtype">char</span>  *file_name;     <span class="comment">//file in which error occurred</span>
+        <span class="keywordtype">unsigned</span>    line;           <span class="comment">//line in file where error occurs</span>
+        <span class="keyword">const</span> <span class="keywordtype">char</span>  *desc;          <span class="comment">//optional supplied description</span>
+    } H5E_error_t;
+</pre></div> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d5bf0f93b4156d6366110dd5e08342a2"></a><!-- doxytag: member="H5::Exception::printError" ref="d5bf0f93b4156d6366110dd5e08342a2" args="(FILE *stream=NULL) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::Exception::printError           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>stream</em> = <code>NULL</code>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Prints the error stack in a default manner. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>stream</em>&nbsp;</td><td>- IN: File pointer </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="chunks_8cpp-example.html#a14">chunks.cpp</a>, <a class="el" href="compound_8cpp-example.html#a30">compound.cpp</a>, <a class="el" href="create_8cpp-example.html#a42">create.cpp</a>, <a class="el" href="extend__ds_8cpp-example.html#a60">extend_ds.cpp</a>, <a class="el" href="h5group_8cpp-example.html#a81">h5group.cpp</a>, <a class="el" href="readdata_8cpp-example.html#a101">readdata.cpp</a>, and <a class="el" href="writedata_8cpp-example.html#a114">writedata.cpp</a>.</dl>
+</div>
+</div><p>
+<hr><h2>Member Data Documentation</h2>
+<a class="anchor" name="d206da67711dfab1745311b47b6782ac"></a><!-- doxytag: member="H5::Exception::DEFAULT_MSG" ref="d206da67711dfab1745311b47b6782ac" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const H5std_string <a class="el" href="classH5_1_1Exception.html#d206da67711dfab1745311b47b6782ac">H5::Exception::DEFAULT_MSG</a><code> [static, protected]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<hr size="1"><address style="align: right;"><small>Generated on Wed Nov 4 14:13:07 2009 by&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
+</body>
+</html>

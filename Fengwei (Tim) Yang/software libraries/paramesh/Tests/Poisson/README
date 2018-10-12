@@ -1,0 +1,11 @@
+./Poisson sub-directory
+-----------------------
+
+
+
+
+This sub-directory contains code for a 3D Poisson equation
+solver. This is not recommended for use by users. It was developed
+only for the purpose of testing PARAMESH.
+
+

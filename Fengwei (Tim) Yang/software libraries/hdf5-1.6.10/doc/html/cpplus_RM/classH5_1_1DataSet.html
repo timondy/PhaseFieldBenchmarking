@@ -1,0 +1,1662 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="header_files/filelist.xml">
+<link rel=Edit-Time-Data href="header_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Main Page</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Randy Ribler</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Randy Ribler</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>16</o:TotalTime>
+  <o:Created>2004-07-23T05:34:00Z</o:Created>
+  <o:LastSaved>2004-07-23T06:03:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>5</o:Words>
+  <o:Characters>32</o:Characters>
+  <o:Company>LC</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>36</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=RM_stylesheet.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-believe-normal-left:yes;}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#252E78;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#3D2185;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+address
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.formuladsp, li.formuladsp, div.formuladsp
+	{mso-style-name:formuladsp;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdtable, li.mdtable, div.mdtable
+	{mso-style-name:mdtable;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#F4F4FB;
+	border:none;
+	mso-border-alt:solid #868686 .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdrow, li.mdrow, div.mdrow
+	{mso-style-name:mdrow;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdescleft, li.mdescleft, div.mdescleft
+	{mso-style-name:mdescleft;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.mdescright, li.mdescright, div.mdescright
+	{mso-style-name:mdescright;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.memitemleft, li.memitemleft, div.memitemleft
+	{mso-style-name:memitemleft;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.memitemright, li.memitemright, div.memitemright
+	{mso-style-name:memitemright;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.search, li.search, div.search
+	{mso-style-name:search;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><![if mso 9]>
+<style>
+p.MsoNormal
+	{margin-left:15.0pt;}
+</style>
+<![endif]><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098">
+  <o:colormru v:ext="edit" colors="#060"/>
+  <o:colormenu v:ext="edit" strokecolor="#060"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link="#252E78" vlink="#3D2185" style='tab-interval:
+.5in;margin-left:15.0pt;margin-right:15.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:15.0pt;margin-bottom:
+0in;margin-left:15.0pt;margin-bottom:.0001pt'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:30pt;margin-top:9pt;width:72.75pt;height:57.75pt;
+ z-index:1'>
+ <v:imagedata src="header_files/image001.jpg" o:title="NCSAlogo"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:40px;margin-top:12px;width:97px;
+height:77px'><img width=97 height=77 src="header_files/image002.jpg" v:shapes="_x0000_s1026"></span><![endif]><span
+style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><span
+style='font-size:22.0pt'><o:p></o:p></span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:103.45pt;border-collapse:collapse;border:none;mso-border-bottom-alt:
+ solid #006600 2.25pt;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes;height:29.25pt'>
+  <td width=443 valign=top style='width:332.6pt;border:none;border-bottom:solid #006600 2.25pt;
+  padding:0in 5.4pt 0in 5.4pt;height:29.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-size:22.0pt'>HDF5 C++ API Reference Manual</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
+<!-- Generated by Doxygen 1.4.7 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
+    <li><a href="files.html"><span>Files</span></a></li>
+    <li><a href="examples.html"><span>Examples</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+  </ul></div>
+<div class="nav">
+<a class="el" href="namespaceH5.html">H5</a>::<a class="el" href="classH5_1_1DataSet.html">DataSet</a></div>
+<h1>H5::DataSet Class Reference</h1><!-- doxytag: class="H5::DataSet" --><!-- doxytag: inherits="H5::H5Object,H5::AbstractDs" --><code>#include &lt;<a class="el" href="H5DataSet_8h-source.html">H5DataSet.h</a>&gt;</code>
+<p>
+<p>Inheritance diagram for H5::DataSet:
+<p><center><img src="classH5_1_1DataSet.png" usemap="#H5::DataSet_map" border="0" alt=""></center>
+<map name="H5::DataSet_map">
+<area href="classH5_1_1H5Object.html" alt="H5::H5Object" shape="rect" coords="0,56,107,80">
+<area href="classH5_1_1AbstractDs.html" alt="H5::AbstractDs" shape="rect" coords="117,56,224,80">
+<area href="classH5_1_1IdComponent.html" alt="H5::IdComponent" shape="rect" coords="0,0,107,24">
+</map>
+<a href="classH5_1_1DataSet-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#58b4e38cbb5cec13e21653882ba14cac">close</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Closes this dataset.  <a href="#58b4e38cbb5cec13e21653882ba14cac"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#dc3d4552c2486453b51b9c6cdbf02efd">extend</a> (const hsize_t *size) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Extends a dataset with unlimited dimension.  <a href="#dc3d4552c2486453b51b9c6cdbf02efd"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#e288741d10a98352a00e27339809ad68">fillMemBuf</a> (const void *fill, <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;fill_type, void *buf, <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;buf_type, <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;space)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fills a selection in memory with a value.  <a href="#e288741d10a98352a00e27339809ad68"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#77e16498f6aaf54afcb7d97ea26b9a0b">fillMemBuf</a> (void *buf, <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;buf_type, <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;space)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function in that it only takes the the last three arguments.  <a href="#77e16498f6aaf54afcb7d97ea26b9a0b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classH5_1_1DSetCreatPropList.html">DSetCreatPropList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#c567680b5bb3ad0a72ece90ea540f1f0">getCreatePlist</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the dataset creation property list.  <a href="#c567680b5bb3ad0a72ece90ea540f1f0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">haddr_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#4bb5bbc0977ccee6b0ce14d2acf48193">getOffset</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the address of this dataset in the file.  <a href="#4bb5bbc0977ccee6b0ce14d2acf48193"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#1f727ed91722af4630ba20b2d8b5b12d">getSpace</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets a copy of the dataspace of this dataset.  <a href="#1f727ed91722af4630ba20b2d8b5b12d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#69ce56bd2958d86c74cc1b923dfc23a9">getSpaceStatus</a> (H5D_space_status_t &amp;status) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Determines whether space has been allocated for a dataset.  <a href="#69ce56bd2958d86c74cc1b923dfc23a9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual hsize_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#594d12bbf45a2f2824935d31f612e726">getStorageSize</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the amount of storage required for a dataset.  <a href="#594d12bbf45a2f2824935d31f612e726"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#e74661cf21960e8579fa8c5c6a6cfd10">getInMemDataSize</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the size in memory of the dataset's data.  <a href="#e74661cf21960e8579fa8c5c6a6cfd10"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">hsize_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#5a840c880da67f8f569a5b1deca9421e">getVlenBufSize</a> (<a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;type, <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;space) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of bytes required to store VL data.  <a href="#5a840c880da67f8f569a5b1deca9421e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#2f0278a519122419ae9981666277c9bb">read</a> (void *buf, const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;mem_type, const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;mem_space=<a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a>, const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;file_space=<a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a>, const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;xfer_plist=<a class="el" href="classH5_1_1DSetMemXferPropList.html#47bb48aeb00da456b7c9f1d86fdc2acf">DSetMemXferPropList::DEFAULT</a>) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reads raw data from the specified dataset.  <a href="#2f0278a519122419ae9981666277c9bb"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#507862244d09bd87f66c9e91cb09e104">read</a> (H5std_string &amp;buf, const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;mem_type, const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;mem_space=<a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a>, const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;file_space=<a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a>, const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;xfer_plist=<a class="el" href="classH5_1_1DSetMemXferPropList.html#47bb48aeb00da456b7c9f1d86fdc2acf">DSetMemXferPropList::DEFAULT</a>) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It takes a reference to a <code>H5std_string</code> for the buffer.  <a href="#507862244d09bd87f66c9e91cb09e104"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#3ce98e7a626fd32a23d1bcc41537326f">write</a> (const void *buf, const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;mem_type, const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;mem_space=<a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a>, const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;file_space=<a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a>, const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;xfer_plist=<a class="el" href="classH5_1_1DSetMemXferPropList.html#47bb48aeb00da456b7c9f1d86fdc2acf">DSetMemXferPropList::DEFAULT</a>) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Writes raw data from an application buffer to a dataset.  <a href="#3ce98e7a626fd32a23d1bcc41537326f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#2eb77380665b6b26c19ff02f3e22b68c">write</a> (const H5std_string &amp;buf, const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;mem_type, const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;mem_space=<a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a>, const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;file_space=<a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a>, const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;xfer_plist=<a class="el" href="classH5_1_1DSetMemXferPropList.html#47bb48aeb00da456b7c9f1d86fdc2acf">DSetMemXferPropList::DEFAULT</a>) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It takes a reference to a <code>H5std_string</code> for the buffer.  <a href="#2eb77380665b6b26c19ff02f3e22b68c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#23b1e511f401e1dca147d224a6240d96">iterateElems</a> (void *buf, const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;type, const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;space, H5D_operator_t op, void *op_data=NULL)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Iterates over all selected elements in a dataspace.  <a href="#23b1e511f401e1dca147d224a6240d96"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5G_obj_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#fea82d1258be3c0e4f4696f2f84d6dca">getObjType</a> (void *ref, H5R_type_t ref_type=H5R_OBJECT) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function was misnamed and will be deprecated in favor of <a class="el" href="classH5_1_1H5Object.html#ac98e28372c66885c099415f08be681f">H5Object::getRefObjType</a>; please use getRefObjType instead.  <a href="#fea82d1258be3c0e4f4696f2f84d6dca"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#0bd38e8f4c3313a58f0512132fccbba5">getRegion</a> (void *ref, H5R_type_t ref_type=H5R_DATASET_REGION) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves a dataspace with the region pointed to selected.  <a href="#0bd38e8f4c3313a58f0512132fccbba5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#f789313a3635e675f76dccb10b39e141">fromClass</a> () const </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#deddf95fb06f31a64c2368ef1407af64">DataSet</a> (<a class="el" href="classH5_1_1H5Object.html">H5Object</a> &amp;obj, void *ref, H5R_type_t ref_type=H5R_OBJECT)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Given a reference, ref, to an hdf5 dataset, creates a <a class="el" href="classH5_1_1DataSet.html">DataSet</a> object.  <a href="#deddf95fb06f31a64c2368ef1407af64"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#73de6d25309c08094e6f6222fbc08ecb">DataSet</a> (<a class="el" href="classH5_1_1H5File.html">H5File</a> &amp;h5file, void *ref, H5R_type_t ref_type=H5R_OBJECT)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Given a reference, ref, to an hdf5 dataset, creates a <a class="el" href="classH5_1_1DataSet.html">DataSet</a> object.  <a href="#73de6d25309c08094e6f6222fbc08ecb"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#8359d3f914de4201b6da0324c629d819">DataSet</a> (<a class="el" href="classH5_1_1Attribute.html">Attribute</a> &amp;attr, void *ref, H5R_type_t ref_type=H5R_OBJECT)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Given a reference, ref, to an hdf5 dataset, creates a <a class="el" href="classH5_1_1DataSet.html">DataSet</a> object.  <a href="#8359d3f914de4201b6da0324c629d819"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#6eb455b3f30e9f9bdb40f8ab012729ed">DataSet</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor: creates a stub <a class="el" href="classH5_1_1DataSet.html">DataSet</a>.  <a href="#6eb455b3f30e9f9bdb40f8ab012729ed"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#224114f6fd3fdb01300ffcfd5e5192d5">DataSet</a> (const <a class="el" href="classH5_1_1DataSet.html">DataSet</a> &amp;original)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1DataSet.html">DataSet</a> object.  <a href="#224114f6fd3fdb01300ffcfd5e5192d5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#283d6e80f93309c1ee09a4c6a8dd574c">DataSet</a> (const hid_t existing_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates an <a class="el" href="classH5_1_1DataSet.html">DataSet</a> object using the id of an existing dataset.  <a href="#283d6e80f93309c1ee09a4c6a8dd574c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual hid_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#a0b5b0136755eecf6ec4aa498d1da3ec">getId</a> () const </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#4d11013deef811f218e1107fd2b70f67">~DataSet</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Properly terminates access to this dataset.  <a href="#4d11013deef811f218e1107fd2b70f67"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#4e76899f034982233893d98a994e1020">vlenReclaim</a> (const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;type, const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;space, const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;xfer_plist, void *buf)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reclaims VL datatype memory buffers.  <a href="#4e76899f034982233893d98a994e1020"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#779813e233e3651f71996fa2ae6bcda5">vlenReclaim</a> (void *buf, const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;type, const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;space=<a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a>, const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;xfer_plist=<a class="el" href="classH5_1_1DSetMemXferPropList.html#47bb48aeb00da456b7c9f1d86fdc2acf">DSetMemXferPropList::DEFAULT</a>)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reclaims VL datatype memory buffers.  <a href="#779813e233e3651f71996fa2ae6bcda5"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataSet.html#b395dab52b95d5034be339b6fdbbbcc8">p_setId</a> (const hid_t new_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the identifier of this object to a new value.  <a href="#b395dab52b95d5034be339b6fdbbbcc8"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Detailed Description</h2>
+<dl compact><dt><b>Examples: </b></dt><dd>
+
+<p>
+<a class="el" href="chunks_8cpp-example.html#_a2">chunks.cpp</a>, <a class="el" href="compound_8cpp-example.html#_a22">compound.cpp</a>, <a class="el" href="create_8cpp-example.html#_a38">create.cpp</a>, <a class="el" href="extend__ds_8cpp-example.html#_a52">extend_ds.cpp</a>, <a class="el" href="h5group_8cpp-example.html#_a72">h5group.cpp</a>, <a class="el" href="readdata_8cpp-example.html#_a87">readdata.cpp</a>, and <a class="el" href="writedata_8cpp-example.html#_a108">writedata.cpp</a>.</dl>
+<p>
+<hr><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" name="deddf95fb06f31a64c2368ef1407af64"></a><!-- doxytag: member="H5::DataSet::DataSet" ref="deddf95fb06f31a64c2368ef1407af64" args="(H5Object &amp;obj, void *ref, H5R_type_t ref_type=H5R_OBJECT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataSet::DataSet           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1H5Object.html">H5Object</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_OBJECT</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Given a reference, ref, to an hdf5 dataset, creates a <a class="el" href="classH5_1_1DataSet.html">DataSet</a> object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>- IN: Dataset reference object is in or location of object that the dataset is located within. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference pointer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref_type</em>&nbsp;</td><td>- IN: Reference type - default to H5R_OBJECT </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd><code>obj</code> can be <a class="el" href="classH5_1_1DataSet.html">DataSet</a>, <a class="el" href="classH5_1_1Group.html">Group</a>, <a class="el" href="classH5_1_1H5File.html">H5File</a>, or named <a class="el" href="classH5_1_1DataType.html">DataType</a>, that is a datatype that has been named by <a class="el" href="classH5_1_1DataType.html#72afe46473ed216cfb84942e6ea9a6a8">DataType::commit</a>. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="73de6d25309c08094e6f6222fbc08ecb"></a><!-- doxytag: member="H5::DataSet::DataSet" ref="73de6d25309c08094e6f6222fbc08ecb" args="(H5File &amp;h5file, void *ref, H5R_type_t ref_type=H5R_OBJECT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataSet::DataSet           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1H5File.html">H5File</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>h5file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_OBJECT</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Given a reference, ref, to an hdf5 dataset, creates a <a class="el" href="classH5_1_1DataSet.html">DataSet</a> object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>h5file</em>&nbsp;</td><td>- IN: Location referenced object is in </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference pointer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref_type</em>&nbsp;</td><td>- IN: Reference type - default to H5R_OBJECT </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="8359d3f914de4201b6da0324c629d819"></a><!-- doxytag: member="H5::DataSet::DataSet" ref="8359d3f914de4201b6da0324c629d819" args="(Attribute &amp;attr, void *ref, H5R_type_t ref_type=H5R_OBJECT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataSet::DataSet           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1Attribute.html">Attribute</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_OBJECT</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Given a reference, ref, to an hdf5 dataset, creates a <a class="el" href="classH5_1_1DataSet.html">DataSet</a> object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>attr</em>&nbsp;</td><td>- IN: Specifying location where the referenced object is in </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference pointer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref_type</em>&nbsp;</td><td>- IN: Reference type - default to H5R_OBJECT </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1ReferenceException.html">H5::ReferenceException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="6eb455b3f30e9f9bdb40f8ab012729ed"></a><!-- doxytag: member="H5::DataSet::DataSet" ref="6eb455b3f30e9f9bdb40f8ab012729ed" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataSet::DataSet           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Default constructor: creates a stub <a class="el" href="classH5_1_1DataSet.html">DataSet</a>. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="224114f6fd3fdb01300ffcfd5e5192d5"></a><!-- doxytag: member="H5::DataSet::DataSet" ref="224114f6fd3fdb01300ffcfd5e5192d5" args="(const DataSet &amp;original)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataSet::DataSet           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSet.html">DataSet</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>original</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1DataSet.html">DataSet</a> object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>original</em>&nbsp;</td><td>- IN: <a class="el" href="classH5_1_1DataSet.html">DataSet</a> instance to copy </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="283d6e80f93309c1ee09a4c6a8dd574c"></a><!-- doxytag: member="H5::DataSet::DataSet" ref="283d6e80f93309c1ee09a4c6a8dd574c" args="(const hid_t existing_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataSet::DataSet           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>existing_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates an <a class="el" href="classH5_1_1DataSet.html">DataSet</a> object using the id of an existing dataset. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>existing_id</em>&nbsp;</td><td>- IN: Id of an existing dataset </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="4d11013deef811f218e1107fd2b70f67"></a><!-- doxytag: member="H5::DataSet::~DataSet" ref="4d11013deef811f218e1107fd2b70f67" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataSet::~DataSet           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Properly terminates access to this dataset. 
+<p>
+
+</div>
+</div><p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="58b4e38cbb5cec13e21653882ba14cac"></a><!-- doxytag: member="H5::DataSet::close" ref="58b4e38cbb5cec13e21653882ba14cac" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataSet::close           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Closes this dataset. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="dc3d4552c2486453b51b9c6cdbf02efd"></a><!-- doxytag: member="H5::DataSet::extend" ref="dc3d4552c2486453b51b9c6cdbf02efd" args="(const hsize_t *size) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataSet::extend           </td>
+          <td>(</td>
+          <td class="paramtype">const hsize_t *&nbsp;</td>
+          <td class="paramname"> <em>size</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Extends a dataset with unlimited dimension. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>- IN: Array containing the new magnitude of each dimension </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For more information, please see the Description section in C layer Reference Manual at: </dd></dl>
+<dl compact><dt><b></b></dt><dd><a href="../RM_H5D.html#Dataset-Extend">../RM_H5D.html::Dataset-Extend</a> </dd></dl>
+<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="extend__ds_8cpp-example.html#a54">extend_ds.cpp</a>.</dl>
+</div>
+</div><p>
+<a class="anchor" name="e288741d10a98352a00e27339809ad68"></a><!-- doxytag: member="H5::DataSet::fillMemBuf" ref="e288741d10a98352a00e27339809ad68" args="(const void *fill, DataType &amp;fill_type, void *buf, DataType &amp;buf_type, DataSpace &amp;space)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataSet::fillMemBuf           </td>
+          <td>(</td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>fill</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>fill_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>buf_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>space</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Fills a selection in memory with a value. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fill</em>&nbsp;</td><td>- IN: Pointer to fill value to use - default NULL </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>fill_type</em>&nbsp;</td><td>- IN: Datatype of the fill value </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>- IN/OUT: Memory buffer to fill selection within </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buf_type</em>&nbsp;</td><td>- IN: Datatype of the elements in buffer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>space</em>&nbsp;</td><td>- IN: Dataspace describing memory buffer &amp; containing selection to use </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="77e16498f6aaf54afcb7d97ea26b9a0b"></a><!-- doxytag: member="H5::DataSet::fillMemBuf" ref="77e16498f6aaf54afcb7d97ea26b9a0b" args="(void *buf, DataType &amp;buf_type, DataSpace &amp;space)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataSet::fillMemBuf           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>buf_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>space</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It differs from the above function in that it only takes the the last three arguments. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>- IN/OUT: Memory buffer to fill selection within </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buf_type</em>&nbsp;</td><td>- IN: Datatype of the elements in buffer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>space</em>&nbsp;</td><td>- IN: Dataspace describing memory buffer &amp; containing selection to use </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="c567680b5bb3ad0a72ece90ea540f1f0"></a><!-- doxytag: member="H5::DataSet::getCreatePlist" ref="c567680b5bb3ad0a72ece90ea540f1f0" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classH5_1_1DSetCreatPropList.html">DSetCreatPropList</a> H5::DataSet::getCreatePlist           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Gets the dataset creation property list. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd><a class="el" href="classH5_1_1DSetCreatPropList.html">DSetCreatPropList</a> instance </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="chunks_8cpp-example.html#a8">chunks.cpp</a>.</dl>
+</div>
+</div><p>
+<a class="anchor" name="4bb5bbc0977ccee6b0ce14d2acf48193"></a><!-- doxytag: member="H5::DataSet::getOffset" ref="4bb5bbc0977ccee6b0ce14d2acf48193" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">haddr_t H5::DataSet::getOffset           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the address of this dataset in the file. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Address of dataset </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="1f727ed91722af4630ba20b2d8b5b12d"></a><!-- doxytag: member="H5::DataSet::getSpace" ref="1f727ed91722af4630ba20b2d8b5b12d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> H5::DataSet::getSpace           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Gets a copy of the dataspace of this dataset. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> instance </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+<p>
+Implements <a class="el" href="classH5_1_1AbstractDs.html#3afefb3c3be0ec2efcf880361695706e">H5::AbstractDs</a>.<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="chunks_8cpp-example.html#a4">chunks.cpp</a>, <a class="el" href="extend__ds_8cpp-example.html#a55">extend_ds.cpp</a>, and <a class="el" href="readdata_8cpp-example.html#a95">readdata.cpp</a>.</dl>
+</div>
+</div><p>
+<a class="anchor" name="69ce56bd2958d86c74cc1b923dfc23a9"></a><!-- doxytag: member="H5::DataSet::getSpaceStatus" ref="69ce56bd2958d86c74cc1b923dfc23a9" args="(H5D_space_status_t &amp;status) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataSet::getSpaceStatus           </td>
+          <td>(</td>
+          <td class="paramtype">H5D_space_status_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>status</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Determines whether space has been allocated for a dataset. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>status</em>&nbsp;</td><td>- OUT: Space allocation status </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="594d12bbf45a2f2824935d31f612e726"></a><!-- doxytag: member="H5::DataSet::getStorageSize" ref="594d12bbf45a2f2824935d31f612e726" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hsize_t H5::DataSet::getStorageSize           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the amount of storage required for a dataset. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Size of the storage or 0, for no data </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+<p>
+Implements <a class="el" href="classH5_1_1AbstractDs.html#e90e2e730c114423a00a2643206abc44">H5::AbstractDs</a>.
+</div>
+</div><p>
+<a class="anchor" name="e74661cf21960e8579fa8c5c6a6cfd10"></a><!-- doxytag: member="H5::DataSet::getInMemDataSize" ref="e74661cf21960e8579fa8c5c6a6cfd10" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t H5::DataSet::getInMemDataSize           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Gets the size in memory of the dataset's data. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Size of data (in memory) </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+<p>
+Implements <a class="el" href="classH5_1_1AbstractDs.html#bf03ce9861ccb7cb1b59eb3e54db253e">H5::AbstractDs</a>.
+</div>
+</div><p>
+<a class="anchor" name="5a840c880da67f8f569a5b1deca9421e"></a><!-- doxytag: member="H5::DataSet::getVlenBufSize" ref="5a840c880da67f8f569a5b1deca9421e" args="(DataType &amp;type, DataSpace &amp;space) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hsize_t H5::DataSet::getVlenBufSize           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>space</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the number of bytes required to store VL data. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Amount of storage </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="4e76899f034982233893d98a994e1020"></a><!-- doxytag: member="H5::DataSet::vlenReclaim" ref="4e76899f034982233893d98a994e1020" args="(const DataType &amp;type, const DataSpace &amp;space, const DSetMemXferPropList &amp;xfer_plist, void *buf)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataSet::vlenReclaim           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>space</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>xfer_plist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>buf</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Reclaims VL datatype memory buffers. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>- IN: Datatype, which is the datatype stored in the buffer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>space</em>&nbsp;</td><td>- IN: Selection for the memory buffer to free the VL datatypes within </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>xfer_plist</em>&nbsp;</td><td>- IN: Property list used to create the buffer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>- IN: Pointer to the buffer to be reclaimed </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="779813e233e3651f71996fa2ae6bcda5"></a><!-- doxytag: member="H5::DataSet::vlenReclaim" ref="779813e233e3651f71996fa2ae6bcda5" args="(void *buf, const DataType &amp;type, const DataSpace &amp;space=DataSpace::ALL, const DSetMemXferPropList &amp;xfer_plist=DSetMemXferPropList::DEFAULT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataSet::vlenReclaim           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>space</em> = <code><a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>xfer_plist</em> = <code><a class="el" href="classH5_1_1DSetMemXferPropList.html#47bb48aeb00da456b7c9f1d86fdc2acf">DSetMemXferPropList::DEFAULT</a></code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Reclaims VL datatype memory buffers. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>- IN: Datatype, which is the datatype stored in the buffer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>space</em>&nbsp;</td><td>- IN: Selection for the memory buffer to free the VL datatypes within </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>xfer_plist</em>&nbsp;</td><td>- IN: Property list used to create the buffer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>- IN: Pointer to the buffer to be reclaimed </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="2f0278a519122419ae9981666277c9bb"></a><!-- doxytag: member="H5::DataSet::read" ref="2f0278a519122419ae9981666277c9bb" args="(void *buf, const DataType &amp;mem_type, const DataSpace &amp;mem_space=DataSpace::ALL, const DataSpace &amp;file_space=DataSpace::ALL, const DSetMemXferPropList &amp;xfer_plist=DSetMemXferPropList::DEFAULT) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataSet::read           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>mem_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>mem_space</em> = <code><a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>file_space</em> = <code><a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>xfer_plist</em> = <code><a class="el" href="classH5_1_1DSetMemXferPropList.html#47bb48aeb00da456b7c9f1d86fdc2acf">DSetMemXferPropList::DEFAULT</a></code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Reads raw data from the specified dataset. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>- IN: Buffer for read data </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mem_type</em>&nbsp;</td><td>- IN: Memory datatype </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mem_space</em>&nbsp;</td><td>- IN: Memory dataspace </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>file_space</em>&nbsp;</td><td>- IN: Dataset's dataspace in the file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>xfer_plist</em>&nbsp;</td><td>- IN: Transfer property list for this I/O operation </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>This function reads raw data from this dataset into the buffer <em>buf</em>, converting from file datatype and dataspace to memory datatype <em>mem_type</em> and dataspace <em>mem_space</em>. </dd></dl>
+<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="chunks_8cpp-example.html#a11">chunks.cpp</a>, <a class="el" href="compound_8cpp-example.html#a28">compound.cpp</a>, <a class="el" href="extend__ds_8cpp-example.html#a58">extend_ds.cpp</a>, <a class="el" href="readdata_8cpp-example.html#a99">readdata.cpp</a>, and <a class="el" href="writedata_8cpp-example.html#a112">writedata.cpp</a>.</dl>
+</div>
+</div><p>
+<a class="anchor" name="507862244d09bd87f66c9e91cb09e104"></a><!-- doxytag: member="H5::DataSet::read" ref="507862244d09bd87f66c9e91cb09e104" args="(H5std_string &amp;buf, const DataType &amp;mem_type, const DataSpace &amp;mem_space=DataSpace::ALL, const DataSpace &amp;file_space=DataSpace::ALL, const DSetMemXferPropList &amp;xfer_plist=DSetMemXferPropList::DEFAULT) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataSet::read           </td>
+          <td>(</td>
+          <td class="paramtype">H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>strg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>mem_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>mem_space</em> = <code><a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>file_space</em> = <code><a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>xfer_plist</em> = <code><a class="el" href="classH5_1_1DSetMemXferPropList.html#47bb48aeb00da456b7c9f1d86fdc2acf">DSetMemXferPropList::DEFAULT</a></code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It takes a reference to a <code>H5std_string</code> for the buffer. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>- IN: Buffer for read data </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mem_type</em>&nbsp;</td><td>- IN: Memory datatype </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mem_space</em>&nbsp;</td><td>- IN: Memory dataspace </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>file_space</em>&nbsp;</td><td>- IN: Dataset's dataspace in the file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>xfer_plist</em>&nbsp;</td><td>- IN: Transfer property list for this I/O operation </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="3ce98e7a626fd32a23d1bcc41537326f"></a><!-- doxytag: member="H5::DataSet::write" ref="3ce98e7a626fd32a23d1bcc41537326f" args="(const void *buf, const DataType &amp;mem_type, const DataSpace &amp;mem_space=DataSpace::ALL, const DataSpace &amp;file_space=DataSpace::ALL, const DSetMemXferPropList &amp;xfer_plist=DSetMemXferPropList::DEFAULT) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataSet::write           </td>
+          <td>(</td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>mem_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>mem_space</em> = <code><a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>file_space</em> = <code><a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>xfer_plist</em> = <code><a class="el" href="classH5_1_1DSetMemXferPropList.html#47bb48aeb00da456b7c9f1d86fdc2acf">DSetMemXferPropList::DEFAULT</a></code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Writes raw data from an application buffer to a dataset. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>- IN: Buffer containing data to be written </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mem_type</em>&nbsp;</td><td>- IN: Memory datatype </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mem_space</em>&nbsp;</td><td>- IN: Memory dataspace </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>file_space</em>&nbsp;</td><td>- IN: Dataset's dataspace in the file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>xfer_plist</em>&nbsp;</td><td>- IN: Transfer property list for this I/O operation </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>This function writes raw data from an application buffer <em>buf</em> to a dataset, converting from memory datatype <em>mem_type</em> and dataspace <em>mem_space</em> to file datatype and dataspace. </dd></dl>
+<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="compound_8cpp-example.html#a24">compound.cpp</a>, <a class="el" href="create_8cpp-example.html#a40">create.cpp</a>, <a class="el" href="extend__ds_8cpp-example.html#a57">extend_ds.cpp</a>, and <a class="el" href="writedata_8cpp-example.html#a110">writedata.cpp</a>.</dl>
+</div>
+</div><p>
+<a class="anchor" name="2eb77380665b6b26c19ff02f3e22b68c"></a><!-- doxytag: member="H5::DataSet::write" ref="2eb77380665b6b26c19ff02f3e22b68c" args="(const H5std_string &amp;buf, const DataType &amp;mem_type, const DataSpace &amp;mem_space=DataSpace::ALL, const DataSpace &amp;file_space=DataSpace::ALL, const DSetMemXferPropList &amp;xfer_plist=DSetMemXferPropList::DEFAULT) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataSet::write           </td>
+          <td>(</td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>mem_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>mem_space</em> = <code><a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>file_space</em> = <code><a class="el" href="classH5_1_1DataSpace.html#f19fb72eae0855e07830c6d9a6f4748d">DataSpace::ALL</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>xfer_plist</em> = <code><a class="el" href="classH5_1_1DSetMemXferPropList.html#47bb48aeb00da456b7c9f1d86fdc2acf">DSetMemXferPropList::DEFAULT</a></code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It takes a reference to a <code>H5std_string</code> for the buffer. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="23b1e511f401e1dca147d224a6240d96"></a><!-- doxytag: member="H5::DataSet::iterateElems" ref="23b1e511f401e1dca147d224a6240d96" args="(void *buf, const DataType &amp;type, const DataSpace &amp;space, H5D_operator_t op, void *op_data=NULL)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int H5::DataSet::iterateElems           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>space</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5D_operator_t&nbsp;</td>
+          <td class="paramname"> <em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>op_data</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Iterates over all selected elements in a dataspace. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>- IN/OUT: Pointer to the buffer in memory containing the elements to iterate over </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>- IN: Datatype for the elements stored in <em>buf</em> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>space</em>&nbsp;</td><td>- IN: Dataspace for <em>buf</em>. Also contains the selection to iterate over. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>op</em>&nbsp;</td><td>- IN: Function pointer to the routine to be called for each element in <em>buf</em> iterated over </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>op_data</em>&nbsp;</td><td>- IN/OUT: Pointer to any user-defined data associated with the operation </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Note:</b></dt><dd>This function may not work correctly yet - it's still under development. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fea82d1258be3c0e4f4696f2f84d6dca"></a><!-- doxytag: member="H5::DataSet::getObjType" ref="fea82d1258be3c0e4f4696f2f84d6dca" args="(void *ref, H5R_type_t ref_type=H5R_OBJECT) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5G_obj_t H5::DataSet::getObjType           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_OBJECT</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This function was misnamed and will be deprecated in favor of <a class="el" href="classH5_1_1H5Object.html#ac98e28372c66885c099415f08be681f">H5Object::getRefObjType</a>; please use getRefObjType instead. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="0bd38e8f4c3313a58f0512132fccbba5"></a><!-- doxytag: member="H5::DataSet::getRegion" ref="0bd38e8f4c3313a58f0512132fccbba5" args="(void *ref, H5R_type_t ref_type=H5R_DATASET_REGION) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> H5::DataSet::getRegion           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_DATASET_REGION</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Retrieves a dataspace with the region pointed to selected. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ref_type</em>&nbsp;</td><td>- IN: Type of reference to get region of - default to H5R_DATASET_REGION </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference to get region of </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> instance </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="f789313a3635e675f76dccb10b39e141"></a><!-- doxytag: member="H5::DataSet::fromClass" ref="f789313a3635e675f76dccb10b39e141" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual H5std_string H5::DataSet::fromClass           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+Implements <a class="el" href="classH5_1_1AbstractDs.html#13c2b6930fd81d9e019acc0ce21c7e55">H5::AbstractDs</a>.
+</div>
+</div><p>
+<a class="anchor" name="a0b5b0136755eecf6ec4aa498d1da3ec"></a><!-- doxytag: member="H5::DataSet::getId" ref="a0b5b0136755eecf6ec4aa498d1da3ec" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hid_t H5::DataSet::getId           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+Implements <a class="el" href="classH5_1_1IdComponent.html#4b5dc282b178ac71704772ae575351cc">H5::IdComponent</a>.
+</div>
+</div><p>
+<a class="anchor" name="b395dab52b95d5034be339b6fdbbbcc8"></a><!-- doxytag: member="H5::DataSet::p_setId" ref="b395dab52b95d5034be339b6fdbbbcc8" args="(const hid_t new_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataSet::p_setId           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>new_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the identifier of this object to a new value. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataSetIException.html">H5::DataSetIException</a></em>&nbsp;</td><td>when the attempt to close the currently open dataset fails </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<hr size="1"><address style="align: right;"><small>Generated on Wed Nov 4 14:13:07 2009 by&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
+</body>
+</html>

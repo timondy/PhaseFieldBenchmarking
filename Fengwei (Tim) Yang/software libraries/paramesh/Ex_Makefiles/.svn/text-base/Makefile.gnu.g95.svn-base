@@ -1,0 +1,97 @@
+#--------------------------------------------------------------------------
+#
+# This Gmake file will compile the PARAMESH library and create a
+# set of library files to which you can link. To use it, make sure
+# it is in the PARAMESH root directory.  
+# It works by running gmake on the Makefile.gnu files which appear
+# in the headers, source and mpi_source sub-directories.
+# To simply create these PARAMESH library files, type
+#     gmake -f Makefile.gnu
+# when in the PARAMESH root directory. The library files will
+# then be found in a newly created sub-directory called libs.
+#
+# If you type 
+#     gmake -f Makefile.gnu Tests
+# it will also compile and link the test programs in the Tests
+# sub-directory. There is a file called Makefile.gnu inside Tests
+# which is used.
+# 
+# To compile and link application files in a sub-directory called
+# User_applic you could type
+#     gmake -f Makefile.gnu User_applic
+# provided you copy Makefile.gnu from Tests to User_applic, and modify
+# it appropriately.
+#
+#
+# Written : Ernest Mamikonyan        April 2002.
+#
+#--------------------------------------------------------------------------
+
+
+# Define the fortran compiler
+export FC = mpif90
+export CC = mpicc
+
+#-----------------------------------------------
+
+# Compiler flags for the gnu Fortran 90/95 compiler (g95)
+
+export FFLAGS = -O -r8 -i4 -I../headers 
+
+# Compiler flags for the gnu C compiler (gcc)
+
+export CFLAGS = -O -I../headers -I/home/olson/SW/HDF5/hdf5-1.6.5/include
+
+#-----------------------------------------------
+
+# some compilers can generate make rules to stdout from the source files
+# if you have such a compiler, provide the flags, otherwise comment it out
+#export MY_CPP := gcc -E -MM -MG  # for the GNU C Preprocessor
+
+# ADDITIONAL LIBRARIES (HDF5)
+
+export ADD_LIB = -L/usr/lib -lc -lm -lz /home/olson/SW/HDF5/hdf5-1.6.5/lib/libhdf5.a
+
+#--------------------------------------------------------------------------
+
+.PHONY: all
+all: libs headers mpi_source source
+
+.PHONY: headers
+headers:
+	$(MAKE) -C $@ -f Makefile.gnu
+	cp -f headers/libmodules.a libs
+
+.PHONY: mpi_source
+mpi_source: headers
+	$(MAKE) -C $@ -f Makefile.gnu
+	cp -f mpi_source/libmpi_paramesh.a libs
+
+.PHONY: source
+source: headers
+	$(MAKE) -C $@ -f Makefile.gnu
+	cp -f source/libparamesh.a libs
+
+.PHONY: clean
+clean:
+	$(RM) -r *~ libs
+	for dir in headers {mpi_,}source Tests User_applic; do \
+	  $(MAKE) -C $$dir -f Makefile.gnu clean; \
+	done
+
+.PHONY: Tests
+Tests: all
+	$(MAKE) -C $@ -f Makefile.gnu
+
+libs:
+	mkdir $@
+
+# An example target to match an application directory name other than Tests
+# in which the users application files are located.
+User_applic:	all
+	$(MAKE) -C $@ -f Makefile.gnu
+
+# An example target to match an application directory name other than Tests
+# in which the users application files are located.
+your_tutorial:	all
+	$(MAKE) -C $@ -f Makefile.gnu

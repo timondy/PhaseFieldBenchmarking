@@ -1,0 +1,42 @@
+export DOC = campfire
+all:	test doc
+
+test:
+	@if [ -z "$(DOC)" ] ; then echo "Usage: make DOC=name"; false ; else echo "DOC=$(DOC)" ;fi
+
+.PHONY: ls doc
+doc:	$(DOC).pdf
+
+#$(DOC).pdf:	$(DOC).ps
+$(DOC).pdf:	$(DOC).dvi
+	dvipdf $^
+#	dvips -R0 -q -f $^ | gs -sPAPERSIZE=a4 -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite \
+#		-sOutputFile=/tmp/$@ -c .setpdfwrite -
+#	ps2pdf -sPAPERSIZE=a4 /tmp/$^ /tmp/$@
+
+#$(DOC).ps:	$(DOC).dvi
+#	dvips -R0 -t a4 -o /tmp/$@ $^
+
+$(DOC).dvi:	$(DOC).tex
+	latex $^
+	latex $^
+
+clean:
+	@rm -f *.aux *.log *.out *.toc *.dvi
+
+#clean:
+#	rm -rf *.aux *.log *.toc
+
+
+
+
+default:
+	for FNAME in $(FILELIST); do \
+		echo latex $(FNAME); \
+		latex $$FNAME; \
+		echo latex $(FNAME); \
+		latex $$FNAME; \
+		echo dvipdf $(FNAME).dvi; \
+		dvipdf $(FNAME).dvi ; \
+	done
+

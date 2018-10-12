@@ -1,0 +1,248 @@
+<html>
+<head>
+<title>
+HDF5/H5Z API Specification
+</title>
+
+<!-- #BeginLibraryItem "/ed_libs/styles_RM.lbi" -->
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<link href="ed_styles/RMelect.css" rel="stylesheet" type="text/css">
+<!-- #EndLibraryItem --></head>
+
+<body bgcolor="#FFFFFF">
+<!-- HEADER RIGHT " " -->
+
+
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><center>
+<h1>H5Z: Filter and Compression Interface</h1>
+</center>
+
+<h2>Filter and Compression API Functions</h2>
+
+These functions enable the user to configure new filters
+for the local environment.
+
+<table border=0 width=80%>
+<tr><td valign=top width="30%">
+<ul>
+    <li><a href="#Compression-FilterAvail">H5Zfilter_avail</a><br>
+    <li><a href="#Compression-GetFilterInfo">H5Zget_filter_info</a>
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top width="30%">
+<ul>
+    <li><a href="#Compression-Register">H5Zregister</a>
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top width="30%">
+<ul>
+    <li><a href="#Compression-Unregister">H5Zunregister</a>
+</ul>
+</td></tr>
+</table>
+
+<br>
+<strong>The FORTRAN90 Interfaces:</strong>
+<br>
+In general, each FORTRAN90 subroutine performs exactly the same task 
+as the corresponding C function.  
+<br>
+
+<table border=0 width=80%>
+<tr><td valign=top width="30%">
+    <ul>
+    <li><a href="#Compression-FilterAvail">h5zfilter_avail_f</a>
+    </ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top width="30%">
+    <ul>
+<!--<li><a href="#Compression-Register">h5zregister_f</a><br>    -->
+    <li><a href="#Compression-GetFilterInfo">h5zget_filter_info_f</a>
+    </ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top width="30%">
+    <ul>
+    <li><a href="#Compression-Unregister">h5zunregister_f</a>
+    </ul>
+</td></tr>
+</table>
+
+<p>
+HDF5 supports a filter pipeline that provides the capability for standard 
+and customized raw data processing during I/O operations.  
+HDF5 is distributed with a small set of standard filters such as 
+compression (gzip, SZIP, and a shuffling algorithm) and 
+error checking (Fletcher32 checksum).
+For further flexibility, the library allows a 
+user application to extend the pipeline through the 
+creation and registration of customized filters.
+<p>
+The flexibility of the filter pipeline implementation enables the 
+definition of additional filters by a user application.
+A filter
+  <ul>
+    <li>is associated with a dataset when the dataset is created,
+    <li>can be used only with chunked data
+        <br>(i.e., datasets stored in the <code>H5D_CHUNKED</code> 
+        storage layout), and
+    <li>is applied independently to each chunk of the dataset.
+  </ul>
+<p>
+The HDF5 library does not support filters for contiguous datasets 
+because of the difficulty of implementing random access for partial I/O. 
+Compact dataset filters are not supported because it would not produce 
+significant results.
+<p>
+Filter identifiers for the filters distributed with the HDF5 Library
+are as follows:
+<table align=center border=0>
+  <tr valign=top align=left>
+  <td>
+    <code>H5Z_FILTER_DEFLATE</code></td><td>The gzip compression,
+          or deflation, filter
+  </td></tr><tr><td>
+    <code>H5Z_FILTER_SZIP</code></td><td>The SZIP compression filter
+  </td></tr><tr><td>
+    <code>H5Z_FILTER_SHUFFLE</code></td><td>The shuffle algorithm filter
+  </td></tr><tr><td>
+    <code>H5Z_FILTER_FLETCHER32&nbsp;&nbsp;</code></td><td>The Fletcher32 checksum,
+          or error checking, filter
+  </td></tr>
+</table>
+Custom filters that have been registered with the library will have
+additional unique identifiers.
+<p>
+See <a href="Datasets.html"><cite>The Dataset Interface (H5D)</cite></a> 
+in the <cite>HDF5 User's Guide</cite> for further information regarding 
+data compression.
+
+<!-- NEW PAGE -->
+<!-- HEADER RIGHT " " -->
+
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+<!--       Include special topic files                       -->
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+
+
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+<!--       Include function files                            -->
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+
+<?php include("H5Z/H5Zfilter_avail.htm"); ?>
+<?php include("H5Z/H5Zget_filter_info.htm"); ?>
+<?php include("H5Z/H5Zregister.htm"); ?>
+<?php include("H5Z/H5Zunregister.htm"); ?>
+
+
+<!-- HEADER RIGHT " " -->
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/ed_libs/Footer.lbi" -->
+
+<address>
+The HDF Group Help Desk: <img src="Graphics/help.png" align=top height=16>
+<br>
+Describes HDF5 Release 1.6.10, November 2009 
+</address>
+
+
+<!-- #EndLibraryItem --><SCRIPT LANGUAGE="JAVASCRIPT">
+<!--
+document.writeln("Last modified: 25 April 2009");
+-->
+</SCRIPT>
+ 
+</body>
+</html>
+

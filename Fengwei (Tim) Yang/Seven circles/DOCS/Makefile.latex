@@ -1,0 +1,13 @@
+DOCSDIRS = Readme
+#PF
+
+default:
+	for dir in $(DOCSDIRS); do \
+		$(MAKE) -C $(CURDIR)/$$dir -f Makefile.latex; \
+	done
+
+clean:
+	for dir in $(DOCSDIRS); do \
+		$(MAKE) -C $(CURDIR)/$$dir -f Makefile.latex clean; \
+	done
+

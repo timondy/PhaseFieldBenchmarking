@@ -1,0 +1,18 @@
+This directory contains files necessary to perform the prolongation operation
+using a 'MUSCL' interpolation scheme.  A complementary restriction
+operation is not provided.
+
+To use these routines, copy 
+
+amr_1blk_cc_prol_user.F
+amr_1blk_cc_prol_work_user.F
+amr_1blk_fc_prol_user.F
+
+into the paramesh/source directory and copy 
+
+paramesh_interfaces.F
+
+into the paramesh/headers directory.  Then, recompile paramesh.
+
+Also, you must set interp_mask_unk, interp_mask_work, or interp_mask_facex,y,z
+to be equal to 20 in your application.

@@ -1,0 +1,1213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="header_files/filelist.xml">
+<link rel=Edit-Time-Data href="header_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Main Page</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Randy Ribler</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Randy Ribler</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>16</o:TotalTime>
+  <o:Created>2004-07-23T05:34:00Z</o:Created>
+  <o:LastSaved>2004-07-23T06:03:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>5</o:Words>
+  <o:Characters>32</o:Characters>
+  <o:Company>LC</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>36</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=RM_stylesheet.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-believe-normal-left:yes;}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#252E78;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#3D2185;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+address
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.formuladsp, li.formuladsp, div.formuladsp
+	{mso-style-name:formuladsp;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdtable, li.mdtable, div.mdtable
+	{mso-style-name:mdtable;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#F4F4FB;
+	border:none;
+	mso-border-alt:solid #868686 .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdrow, li.mdrow, div.mdrow
+	{mso-style-name:mdrow;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdescleft, li.mdescleft, div.mdescleft
+	{mso-style-name:mdescleft;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.mdescright, li.mdescright, div.mdescright
+	{mso-style-name:mdescright;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.memitemleft, li.memitemleft, div.memitemleft
+	{mso-style-name:memitemleft;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.memitemright, li.memitemright, div.memitemright
+	{mso-style-name:memitemright;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.search, li.search, div.search
+	{mso-style-name:search;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><![if mso 9]>
+<style>
+p.MsoNormal
+	{margin-left:15.0pt;}
+</style>
+<![endif]><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098">
+  <o:colormru v:ext="edit" colors="#060"/>
+  <o:colormenu v:ext="edit" strokecolor="#060"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link="#252E78" vlink="#3D2185" style='tab-interval:
+.5in;margin-left:15.0pt;margin-right:15.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:15.0pt;margin-bottom:
+0in;margin-left:15.0pt;margin-bottom:.0001pt'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:30pt;margin-top:9pt;width:72.75pt;height:57.75pt;
+ z-index:1'>
+ <v:imagedata src="header_files/image001.jpg" o:title="NCSAlogo"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:40px;margin-top:12px;width:97px;
+height:77px'><img width=97 height=77 src="header_files/image002.jpg" v:shapes="_x0000_s1026"></span><![endif]><span
+style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><span
+style='font-size:22.0pt'><o:p></o:p></span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:103.45pt;border-collapse:collapse;border:none;mso-border-bottom-alt:
+ solid #006600 2.25pt;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes;height:29.25pt'>
+  <td width=443 valign=top style='width:332.6pt;border:none;border-bottom:solid #006600 2.25pt;
+  padding:0in 5.4pt 0in 5.4pt;height:29.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-size:22.0pt'>HDF5 C++ API Reference Manual</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
+<!-- Generated by Doxygen 1.4.7 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
+    <li><a href="files.html"><span>Files</span></a></li>
+    <li><a href="examples.html"><span>Examples</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+  </ul></div>
+<div class="nav">
+<a class="el" href="namespaceH5.html">H5</a>::<a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a></div>
+<h1>H5::DSetMemXferPropList Class Reference</h1><!-- doxytag: class="H5::DSetMemXferPropList" --><!-- doxytag: inherits="H5::PropList" --><code>#include &lt;<a class="el" href="H5DxferProp_8h-source.html">H5DxferProp.h</a>&gt;</code>
+<p>
+<p>Inheritance diagram for H5::DSetMemXferPropList:
+<p><center><img src="classH5_1_1DSetMemXferPropList.png" usemap="#H5::DSetMemXferPropList_map" border="0" alt=""></center>
+<map name="H5::DSetMemXferPropList_map">
+<area href="classH5_1_1PropList.html" alt="H5::PropList" shape="rect" coords="0,56,159,80">
+<area href="classH5_1_1IdComponent.html" alt="H5::IdComponent" shape="rect" coords="0,0,159,24">
+</map>
+<a href="classH5_1_1DSetMemXferPropList-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#9b147b6ee4d01e36e065b4f5d1d77cdd">DSetMemXferPropList</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor: creates a stub dataset memory and transfer property list object.  <a href="#9b147b6ee4d01e36e065b4f5d1d77cdd"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#bccc892efc65f78effb23c76d88bf1e3">setBuffer</a> (size_t size, void *tconv, void *bkg) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets type conversion and background buffers.  <a href="#bccc892efc65f78effb23c76d88bf1e3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#084e2cd51b7c134f7d9b86f3d282b76b">getBuffer</a> (void **tconv, void **bkg) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reads buffer settings.  <a href="#084e2cd51b7c134f7d9b86f3d282b76b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#567526f0909fdaa2a5a408adc7c41134">setBtreeRatios</a> (double left, double middle, double right) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets B-tree split ratios for a dataset transfer property list.  <a href="#567526f0909fdaa2a5a408adc7c41134"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#2c7adc7e57cd38d4920ec2ad5f2e2e4c">getBtreeRatios</a> (double &amp;left, double &amp;middle, double &amp;right) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets B-tree split ratios for a dataset transfer property list.  <a href="#2c7adc7e57cd38d4920ec2ad5f2e2e4c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#8feb6a0855c73bdbebfd599fa32229c3">setPreserve</a> (bool status) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the dataset transfer property list status to true or false.  <a href="#8feb6a0855c73bdbebfd599fa32229c3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#8e7a0a38ae3d66ee7028c07279b506e5">getPreserve</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Checks status of the dataset transfer property list.  <a href="#8e7a0a38ae3d66ee7028c07279b506e5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#34e391ad09559342b546336097df4413">setVlenMemManager</a> (H5MM_allocate_t alloc, void *alloc_info, H5MM_free_t free, void *free_info) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the memory manager for variable-length datatype allocation.  <a href="#34e391ad09559342b546336097df4413"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#7a4f6ad493a0b0ccac9287782ce04808">setVlenMemManager</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the memory manager for variable-length datatype allocation - system <code>malloc</code> and <code>free</code> will be used.  <a href="#7a4f6ad493a0b0ccac9287782ce04808"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#416647e206f25d58d7b6377aa6b25603">getVlenMemManager</a> (H5MM_allocate_t &amp;alloc, void **alloc_info, H5MM_free_t &amp;free, void **free_info) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the memory manager for variable-length datatype allocation.  <a href="#416647e206f25d58d7b6377aa6b25603"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#5679a0746fa82c4cce8bf07260dfdb01">setMulti</a> (const hid_t *memb_dxpl)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the data transfer property list for the multi-file driver.  <a href="#5679a0746fa82c4cce8bf07260dfdb01"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#62a530bfe18ecaf97e185302f9dc73c1">getMulti</a> (hid_t *memb_dxpl)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns multi-file data transfer property list information.  <a href="#62a530bfe18ecaf97e185302f9dc73c1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#f5b9317c4cadba448bd32214ce2d7b04">setSmallDataBlockSize</a> (hsize_t size)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the size of a contiguous block reserved for small data.  <a href="#f5b9317c4cadba448bd32214ce2d7b04"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">hsize_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#79b2f715b39a58540bef00b10e2a043f">getSmallDataBlockSize</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the current small data block size setting.  <a href="#79b2f715b39a58540bef00b10e2a043f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#4f57272b452034a8b897ac22cb2515c2">setHyperVectorSize</a> (size_t vector_size)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets number of I/O vectors to be read/written in hyperslab I/O.  <a href="#4f57272b452034a8b897ac22cb2515c2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#a096b6cf7b84cdad31d62975037f89a2">getHyperVectorSize</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of I/O vectors to be read/written in hyperslab I/O.  <a href="#a096b6cf7b84cdad31d62975037f89a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#d12c5586af22bf9dbc7d8e83b8784053">setEDCCheck</a> (H5Z_EDC_t check)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enables or disables error-detecting for a dataset reading process.  <a href="#d12c5586af22bf9dbc7d8e83b8784053"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5Z_EDC_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#762a9b553f12c9943b0c901ee50a91bb">getEDCCheck</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Determines whether error-detection is enabled for dataset reads.  <a href="#762a9b553f12c9943b0c901ee50a91bb"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#bf020492021bc0d8dfdc22878030dc4d">fromClass</a> () const </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#437776bf9e34fe035f980ab776fda887">DSetMemXferPropList</a> (const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;orig)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> object.  <a href="#437776bf9e34fe035f980ab776fda887"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#333f85dc819a03eef6f89a872c1ec14c">DSetMemXferPropList</a> (const hid_t plist_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> object using the id of an existing <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a>.  <a href="#333f85dc819a03eef6f89a872c1ec14c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#cc45211a2fd9aba27ff1763e01f76de5">~DSetMemXferPropList</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Noop destructor.  <a href="#cc45211a2fd9aba27ff1763e01f76de5"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Static Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DSetMemXferPropList.html#47bb48aeb00da456b7c9f1d86fdc2acf">DEFAULT</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constant for default dataset memory and transfer property list.  <a href="#47bb48aeb00da456b7c9f1d86fdc2acf"></a><br></td></tr>
+</table>
+<hr><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" name="9b147b6ee4d01e36e065b4f5d1d77cdd"></a><!-- doxytag: member="H5::DSetMemXferPropList::DSetMemXferPropList" ref="9b147b6ee4d01e36e065b4f5d1d77cdd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DSetMemXferPropList::DSetMemXferPropList           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Default constructor: creates a stub dataset memory and transfer property list object. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="437776bf9e34fe035f980ab776fda887"></a><!-- doxytag: member="H5::DSetMemXferPropList::DSetMemXferPropList" ref="437776bf9e34fe035f980ab776fda887" args="(const DSetMemXferPropList &amp;orig)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DSetMemXferPropList::DSetMemXferPropList           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>original</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>original</em>&nbsp;</td><td>- IN: Original dataset memory and transfer property list object to copy </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="333f85dc819a03eef6f89a872c1ec14c"></a><!-- doxytag: member="H5::DSetMemXferPropList::DSetMemXferPropList" ref="333f85dc819a03eef6f89a872c1ec14c" args="(const hid_t plist_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DSetMemXferPropList::DSetMemXferPropList           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>plist_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates a <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> object using the id of an existing <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a>. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>plist_id</em>&nbsp;</td><td>- IN: Id of an existing dataset memory and transfer property list </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="cc45211a2fd9aba27ff1763e01f76de5"></a><!-- doxytag: member="H5::DSetMemXferPropList::~DSetMemXferPropList" ref="cc45211a2fd9aba27ff1763e01f76de5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DSetMemXferPropList::~DSetMemXferPropList           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Noop destructor. 
+<p>
+
+</div>
+</div><p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="bccc892efc65f78effb23c76d88bf1e3"></a><!-- doxytag: member="H5::DSetMemXferPropList::setBuffer" ref="bccc892efc65f78effb23c76d88bf1e3" args="(size_t size, void *tconv, void *bkg) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetMemXferPropList::setBuffer           </td>
+          <td>(</td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>tconv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>bkg</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets type conversion and background buffers. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>- IN: Size, in bytes, of the type conversion and background buffers </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tconv</em>&nbsp;</td><td>- IN: Pointer to application-allocated type conversion buffer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>bkg</em>&nbsp;</td><td>- IN: Pointer to application-allocated background buffer </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="084e2cd51b7c134f7d9b86f3d282b76b"></a><!-- doxytag: member="H5::DSetMemXferPropList::getBuffer" ref="084e2cd51b7c134f7d9b86f3d282b76b" args="(void **tconv, void **bkg) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t H5::DSetMemXferPropList::getBuffer           </td>
+          <td>(</td>
+          <td class="paramtype">void **&nbsp;</td>
+          <td class="paramname"> <em>tconv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&nbsp;</td>
+          <td class="paramname"> <em>bkg</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Reads buffer settings. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tconv</em>&nbsp;</td><td>- IN: Pointer to application-allocated type conversion buffer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>bkg</em>&nbsp;</td><td>- IN: Pointer to application-allocated background buffer </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Buffer size, in bytes </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="567526f0909fdaa2a5a408adc7c41134"></a><!-- doxytag: member="H5::DSetMemXferPropList::setBtreeRatios" ref="567526f0909fdaa2a5a408adc7c41134" args="(double left, double middle, double right) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetMemXferPropList::setBtreeRatios           </td>
+          <td>(</td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>right</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets B-tree split ratios for a dataset transfer property list. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>left</em>&nbsp;</td><td>- IN: B-tree split ratio for left-most nodes </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>middle</em>&nbsp;</td><td>- IN: B-tree split ratio for right-most nodes and lone nodes </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>right</em>&nbsp;</td><td>- IN: B-tree split ratio for all other nodes </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="2c7adc7e57cd38d4920ec2ad5f2e2e4c"></a><!-- doxytag: member="H5::DSetMemXferPropList::getBtreeRatios" ref="2c7adc7e57cd38d4920ec2ad5f2e2e4c" args="(double &amp;left, double &amp;middle, double &amp;right) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetMemXferPropList::getBtreeRatios           </td>
+          <td>(</td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>right</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Gets B-tree split ratios for a dataset transfer property list. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>left</em>&nbsp;</td><td>- OUT: B-tree split ratio for left-most nodes </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>middle</em>&nbsp;</td><td>- OUT: B-tree split ratio for right-most nodes and lone nodes </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>right</em>&nbsp;</td><td>- OUT: B-tree split ratio for all other nodes </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="8feb6a0855c73bdbebfd599fa32229c3"></a><!-- doxytag: member="H5::DSetMemXferPropList::setPreserve" ref="8feb6a0855c73bdbebfd599fa32229c3" args="(bool status) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetMemXferPropList::setPreserve           </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>status</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the dataset transfer property list status to true or false. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>status</em>&nbsp;</td><td>- IN: Status to set, true or false </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="8e7a0a38ae3d66ee7028c07279b506e5"></a><!-- doxytag: member="H5::DSetMemXferPropList::getPreserve" ref="8e7a0a38ae3d66ee7028c07279b506e5" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool H5::DSetMemXferPropList::getPreserve           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Checks status of the dataset transfer property list. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Status of the dataset transfer property list </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="34e391ad09559342b546336097df4413"></a><!-- doxytag: member="H5::DSetMemXferPropList::setVlenMemManager" ref="34e391ad09559342b546336097df4413" args="(H5MM_allocate_t alloc, void *alloc_info, H5MM_free_t free, void *free_info) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetMemXferPropList::setVlenMemManager           </td>
+          <td>(</td>
+          <td class="paramtype">H5MM_allocate_t&nbsp;</td>
+          <td class="paramname"> <em>alloc_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>alloc_info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5MM_free_t&nbsp;</td>
+          <td class="paramname"> <em>free_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>free_info</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the memory manager for variable-length datatype allocation. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>alloc_func</em>&nbsp;</td><td>- IN: User's allocate routine </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>alloc_info</em>&nbsp;</td><td>- IN: User's allocation parameters </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>free_func</em>&nbsp;</td><td>- IN: User's free routine </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>free_info</em>&nbsp;</td><td>- IN: User's free parameters </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="7a4f6ad493a0b0ccac9287782ce04808"></a><!-- doxytag: member="H5::DSetMemXferPropList::setVlenMemManager" ref="7a4f6ad493a0b0ccac9287782ce04808" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetMemXferPropList::setVlenMemManager           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the memory manager for variable-length datatype allocation - system <code>malloc</code> and <code>free</code> will be used. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="416647e206f25d58d7b6377aa6b25603"></a><!-- doxytag: member="H5::DSetMemXferPropList::getVlenMemManager" ref="416647e206f25d58d7b6377aa6b25603" args="(H5MM_allocate_t &amp;alloc, void **alloc_info, H5MM_free_t &amp;free, void **free_info) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetMemXferPropList::getVlenMemManager           </td>
+          <td>(</td>
+          <td class="paramtype">H5MM_allocate_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>alloc_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&nbsp;</td>
+          <td class="paramname"> <em>alloc_info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5MM_free_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>free_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&nbsp;</td>
+          <td class="paramname"> <em>free_info</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Gets the memory manager for variable-length datatype allocation. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>alloc_func</em>&nbsp;</td><td>- OUT: User's allocate routine </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>alloc_info</em>&nbsp;</td><td>- OUT: User's allocation parameters </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>free_func</em>&nbsp;</td><td>- OUT: User's free routine </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>free_info</em>&nbsp;</td><td>- OUT: User's free parameters </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="5679a0746fa82c4cce8bf07260dfdb01"></a><!-- doxytag: member="H5::DSetMemXferPropList::setMulti" ref="5679a0746fa82c4cce8bf07260dfdb01" args="(const hid_t *memb_dxpl)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetMemXferPropList::setMulti           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t *&nbsp;</td>
+          <td class="paramname"> <em>memb_dxpl</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the data transfer property list for the multi-file driver. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>memb_dxpl</em>&nbsp;</td><td>- OUT: Array of data access property lists </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>This function can only be used after the member map has been set with FileAccPropList::setMulti (not done - BMR.) </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="62a530bfe18ecaf97e185302f9dc73c1"></a><!-- doxytag: member="H5::DSetMemXferPropList::getMulti" ref="62a530bfe18ecaf97e185302f9dc73c1" args="(hid_t *memb_dxpl)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetMemXferPropList::getMulti           </td>
+          <td>(</td>
+          <td class="paramtype">hid_t *&nbsp;</td>
+          <td class="paramname"> <em>memb_dxpl</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns multi-file data transfer property list information. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>memb_dxpl</em>&nbsp;</td><td>- OUT: Array of data access property lists </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="f5b9317c4cadba448bd32214ce2d7b04"></a><!-- doxytag: member="H5::DSetMemXferPropList::setSmallDataBlockSize" ref="f5b9317c4cadba448bd32214ce2d7b04" args="(hsize_t size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetMemXferPropList::setSmallDataBlockSize           </td>
+          <td>(</td>
+          <td class="paramtype">hsize_t&nbsp;</td>
+          <td class="paramname"> <em>size</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the size of a contiguous block reserved for small data. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>- IN: Maximum size, in bytes, of the small data block. </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For detail, please refer to the C layer Reference Manual at: <a href="../RM_H5P.html#Property-SetSmallData">../RM_H5P.html::Property-SetSmallData</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="79b2f715b39a58540bef00b10e2a043f"></a><!-- doxytag: member="H5::DSetMemXferPropList::getSmallDataBlockSize" ref="79b2f715b39a58540bef00b10e2a043f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hsize_t H5::DSetMemXferPropList::getSmallDataBlockSize           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the current small data block size setting. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Size of the small data block, in bytes </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="4f57272b452034a8b897ac22cb2515c2"></a><!-- doxytag: member="H5::DSetMemXferPropList::setHyperVectorSize" ref="4f57272b452034a8b897ac22cb2515c2" args="(size_t vector_size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetMemXferPropList::setHyperVectorSize           </td>
+          <td>(</td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>vector_size</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets number of I/O vectors to be read/written in hyperslab I/O. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For information, please refer to the C layer Reference Manual at: <a href="../RM_H5P.html#Property-SetHyperVectorSize">../RM_H5P.html::Property-SetHyperVectorSize</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="a096b6cf7b84cdad31d62975037f89a2"></a><!-- doxytag: member="H5::DSetMemXferPropList::getHyperVectorSize" ref="a096b6cf7b84cdad31d62975037f89a2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t H5::DSetMemXferPropList::getHyperVectorSize           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the number of I/O vectors to be read/written in hyperslab I/O. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Number of I/O vectors </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d12c5586af22bf9dbc7d8e83b8784053"></a><!-- doxytag: member="H5::DSetMemXferPropList::setEDCCheck" ref="d12c5586af22bf9dbc7d8e83b8784053" args="(H5Z_EDC_t check)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DSetMemXferPropList::setEDCCheck           </td>
+          <td>(</td>
+          <td class="paramtype">H5Z_EDC_t&nbsp;</td>
+          <td class="paramname"> <em>check</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Enables or disables error-detecting for a dataset reading process. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>check</em>&nbsp;</td><td>- IN: Specifies whether error detection is enabled or disabled </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The error detection algorithm used is the algorithm previously specified in the corresponding dataset creation property list. This function does not affect the use of error detection in the writing process. </dd></dl>
+<dl compact><dt><b></b></dt><dd>Valid values are as follows: <ul>
+<li><code>H5Z_ENABLE_EDC</code> (default) </li>
+<li><code>H5Z_DISABLE_EDC</code> </li>
+</ul>
+</dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="762a9b553f12c9943b0c901ee50a91bb"></a><!-- doxytag: member="H5::DSetMemXferPropList::getEDCCheck" ref="762a9b553f12c9943b0c901ee50a91bb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5Z_EDC_t H5::DSetMemXferPropList::getEDCCheck           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Determines whether error-detection is enabled for dataset reads. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd><code>H5Z_ENABLE_EDC</code> or <code>H5Z_DISABLE_EDC</code> </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="bf020492021bc0d8dfdc22878030dc4d"></a><!-- doxytag: member="H5::DSetMemXferPropList::fromClass" ref="bf020492021bc0d8dfdc22878030dc4d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual H5std_string H5::DSetMemXferPropList::fromClass           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+Reimplemented from <a class="el" href="classH5_1_1PropList.html#b0648018d799b4abb1af7cf96ab6e728">H5::PropList</a>.
+</div>
+</div><p>
+<hr><h2>Member Data Documentation</h2>
+<a class="anchor" name="47bb48aeb00da456b7c9f1d86fdc2acf"></a><!-- doxytag: member="H5::DSetMemXferPropList::DEFAULT" ref="47bb48aeb00da456b7c9f1d86fdc2acf" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classH5_1_1DSetMemXferPropList.html">DSetMemXferPropList</a> <a class="el" href="classH5_1_1DSetMemXferPropList.html#47bb48aeb00da456b7c9f1d86fdc2acf">H5::DSetMemXferPropList::DEFAULT</a><code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Constant for default dataset memory and transfer property list. 
+<p>
+
+<p>
+Reimplemented from <a class="el" href="classH5_1_1PropList.html#0f2f757ca782a743006c5756191c404b">H5::PropList</a>.
+</div>
+</div><p>
+<hr size="1"><address style="align: right;"><small>Generated on Wed Nov 4 14:13:07 2009 by&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
+</body>
+</html>

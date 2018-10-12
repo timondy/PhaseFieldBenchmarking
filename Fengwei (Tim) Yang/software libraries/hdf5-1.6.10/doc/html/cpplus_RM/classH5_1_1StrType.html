@@ -1,0 +1,802 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="header_files/filelist.xml">
+<link rel=Edit-Time-Data href="header_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Main Page</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Randy Ribler</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Randy Ribler</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>16</o:TotalTime>
+  <o:Created>2004-07-23T05:34:00Z</o:Created>
+  <o:LastSaved>2004-07-23T06:03:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>5</o:Words>
+  <o:Characters>32</o:Characters>
+  <o:Company>LC</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>36</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=RM_stylesheet.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-believe-normal-left:yes;}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#252E78;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#3D2185;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+address
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.formuladsp, li.formuladsp, div.formuladsp
+	{mso-style-name:formuladsp;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdtable, li.mdtable, div.mdtable
+	{mso-style-name:mdtable;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#F4F4FB;
+	border:none;
+	mso-border-alt:solid #868686 .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdrow, li.mdrow, div.mdrow
+	{mso-style-name:mdrow;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdescleft, li.mdescleft, div.mdescleft
+	{mso-style-name:mdescleft;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.mdescright, li.mdescright, div.mdescright
+	{mso-style-name:mdescright;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.memitemleft, li.memitemleft, div.memitemleft
+	{mso-style-name:memitemleft;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.memitemright, li.memitemright, div.memitemright
+	{mso-style-name:memitemright;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.search, li.search, div.search
+	{mso-style-name:search;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><![if mso 9]>
+<style>
+p.MsoNormal
+	{margin-left:15.0pt;}
+</style>
+<![endif]><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098">
+  <o:colormru v:ext="edit" colors="#060"/>
+  <o:colormenu v:ext="edit" strokecolor="#060"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link="#252E78" vlink="#3D2185" style='tab-interval:
+.5in;margin-left:15.0pt;margin-right:15.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:15.0pt;margin-bottom:
+0in;margin-left:15.0pt;margin-bottom:.0001pt'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:30pt;margin-top:9pt;width:72.75pt;height:57.75pt;
+ z-index:1'>
+ <v:imagedata src="header_files/image001.jpg" o:title="NCSAlogo"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:40px;margin-top:12px;width:97px;
+height:77px'><img width=97 height=77 src="header_files/image002.jpg" v:shapes="_x0000_s1026"></span><![endif]><span
+style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><span
+style='font-size:22.0pt'><o:p></o:p></span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:103.45pt;border-collapse:collapse;border:none;mso-border-bottom-alt:
+ solid #006600 2.25pt;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes;height:29.25pt'>
+  <td width=443 valign=top style='width:332.6pt;border:none;border-bottom:solid #006600 2.25pt;
+  padding:0in 5.4pt 0in 5.4pt;height:29.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-size:22.0pt'>HDF5 C++ API Reference Manual</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
+<!-- Generated by Doxygen 1.4.7 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
+    <li><a href="files.html"><span>Files</span></a></li>
+    <li><a href="examples.html"><span>Examples</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+  </ul></div>
+<div class="nav">
+<a class="el" href="namespaceH5.html">H5</a>::<a class="el" href="classH5_1_1StrType.html">StrType</a></div>
+<h1>H5::StrType Class Reference</h1><!-- doxytag: class="H5::StrType" --><!-- doxytag: inherits="H5::AtomType" --><code>#include &lt;<a class="el" href="H5StrType_8h-source.html">H5StrType.h</a>&gt;</code>
+<p>
+<p>Inheritance diagram for H5::StrType:
+<p><center><img src="classH5_1_1StrType.png" usemap="#H5::StrType_map" border="0" alt=""></center>
+<map name="H5::StrType_map">
+<area href="classH5_1_1AtomType.html" alt="H5::AtomType" shape="rect" coords="0,168,107,192">
+<area href="classH5_1_1DataType.html" alt="H5::DataType" shape="rect" coords="0,112,107,136">
+<area href="classH5_1_1H5Object.html" alt="H5::H5Object" shape="rect" coords="0,56,107,80">
+<area href="classH5_1_1IdComponent.html" alt="H5::IdComponent" shape="rect" coords="0,0,107,24">
+</map>
+<a href="classH5_1_1StrType-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#d548b5d6a518c67428f6bf86bdd0c4d8">StrType</a> (const <a class="el" href="classH5_1_1PredType.html">PredType</a> &amp;pred_type)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a string datatype using a predefined type.  <a href="#d548b5d6a518c67428f6bf86bdd0c4d8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#502e6a4895bf51314204179e3f093a7f">StrType</a> (const <a class="el" href="classH5_1_1PredType.html">PredType</a> &amp;pred_type, const size_t &amp;size)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a string datatype with a specified length.  <a href="#502e6a4895bf51314204179e3f093a7f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#46d838751b37805908051d8cd7ea07d5">StrType</a> (const int dummy, const size_t &amp;size)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a string datatype with a specified length.  <a href="#46d838751b37805908051d8cd7ea07d5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#a4075d261048fb635b2e710a2f398d5e">StrType</a> (const <a class="el" href="classH5_1_1DataSet.html">DataSet</a> &amp;dataset)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the string datatype of the specified dataset.  <a href="#a4075d261048fb635b2e710a2f398d5e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5T_cset_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#52bd7fb6969799950789a62caddf4aea">getCset</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the character set type of this string datatype.  <a href="#52bd7fb6969799950789a62caddf4aea"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#234e8a21709cf9e7c9eefd42dfde91a8">setCset</a> (H5T_cset_t cset) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets character set to be used.  <a href="#234e8a21709cf9e7c9eefd42dfde91a8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5T_str_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#31da4cdf6af9fd1cdc2da102b3761c33">getStrpad</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the storage mechanism for of this string datatype.  <a href="#31da4cdf6af9fd1cdc2da102b3761c33"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#ed4500d2855585b622be2622e7be87c9">setStrpad</a> (H5T_str_t strpad) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Defines the storage mechanism for this string datatype.  <a href="#ed4500d2855585b622be2622e7be87c9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#77703b41dc7addef65b1aba56cf89203">fromClass</a> () const </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#7578f8f52795062e6ea5e67bf4fe9ea4">StrType</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor: Creates a stub string datatype.  <a href="#7578f8f52795062e6ea5e67bf4fe9ea4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#a3311a639210adc42df22c341a639440">StrType</a> (const hid_t existing_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates an <a class="el" href="classH5_1_1StrType.html">StrType</a> object using the id of an existing datatype.  <a href="#a3311a639210adc42df22c341a639440"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#8253ae1e61897694436d8fdd2efea985">StrType</a> (const <a class="el" href="classH5_1_1StrType.html">StrType</a> &amp;original)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1StrType.html">StrType</a> object.  <a href="#8253ae1e61897694436d8fdd2efea985"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1StrType.html#561a91b375e8514e43cc753aa6dba203">~StrType</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Properly terminates access to this string datatype.  <a href="#561a91b375e8514e43cc753aa6dba203"></a><br></td></tr>
+</table>
+<hr><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" name="d548b5d6a518c67428f6bf86bdd0c4d8"></a><!-- doxytag: member="H5::StrType::StrType" ref="d548b5d6a518c67428f6bf86bdd0c4d8" args="(const PredType &amp;pred_type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::StrType::StrType           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1PredType.html">PredType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>pred_type</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates a string datatype using a predefined type. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pred_type</em>&nbsp;</td><td>- IN: Predefined datatype </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="502e6a4895bf51314204179e3f093a7f"></a><!-- doxytag: member="H5::StrType::StrType" ref="502e6a4895bf51314204179e3f093a7f" args="(const PredType &amp;pred_type, const size_t &amp;size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::StrType::StrType           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1PredType.html">PredType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>pred_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>size</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates a string datatype with a specified length. 
+<p>
+<dl compact><dt><b>Note:</b></dt><dd>The use of this constructor can be shortened by using its overloaded below as StrType(0, size). </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="46d838751b37805908051d8cd7ea07d5"></a><!-- doxytag: member="H5::StrType::StrType" ref="46d838751b37805908051d8cd7ea07d5" args="(const int dummy, const size_t &amp;size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::StrType::StrType           </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>dummy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>size</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates a string datatype with a specified length. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>dummy</em>&nbsp;</td><td>- IN: To simplify calling the previous constructor and avoid prototype clash with another constructor </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>- IN: Length of the new string type </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The 1st argument is just a dummy to simplify calling the previous constructor, such as: <a class="el" href="classH5_1_1StrType.html">StrType</a> atype(0, size) instead of <a class="el" href="classH5_1_1StrType.html">StrType</a> atype(PredType::C_S1, size) </dd></dl>
+<dl compact><dt><b>Note:</b></dt><dd>This constructor may replace the previous one in the future. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="a4075d261048fb635b2e710a2f398d5e"></a><!-- doxytag: member="H5::StrType::StrType" ref="a4075d261048fb635b2e710a2f398d5e" args="(const DataSet &amp;dataset)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::StrType::StrType           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSet.html">DataSet</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>dataset</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Gets the string datatype of the specified dataset. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>dataset</em>&nbsp;</td><td>- IN: Dataset that this string datatype associates with </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="7578f8f52795062e6ea5e67bf4fe9ea4"></a><!-- doxytag: member="H5::StrType::StrType" ref="7578f8f52795062e6ea5e67bf4fe9ea4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::StrType::StrType           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Default constructor: Creates a stub string datatype. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="a3311a639210adc42df22c341a639440"></a><!-- doxytag: member="H5::StrType::StrType" ref="a3311a639210adc42df22c341a639440" args="(const hid_t existing_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::StrType::StrType           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>existing_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates an <a class="el" href="classH5_1_1StrType.html">StrType</a> object using the id of an existing datatype. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>existing_id</em>&nbsp;</td><td>- IN: Id of an existing datatype </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="8253ae1e61897694436d8fdd2efea985"></a><!-- doxytag: member="H5::StrType::StrType" ref="8253ae1e61897694436d8fdd2efea985" args="(const StrType &amp;original)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::StrType::StrType           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1StrType.html">StrType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>original</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1StrType.html">StrType</a> object. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="561a91b375e8514e43cc753aa6dba203"></a><!-- doxytag: member="H5::StrType::~StrType" ref="561a91b375e8514e43cc753aa6dba203" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::StrType::~StrType           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Properly terminates access to this string datatype. 
+<p>
+
+</div>
+</div><p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="52bd7fb6969799950789a62caddf4aea"></a><!-- doxytag: member="H5::StrType::getCset" ref="52bd7fb6969799950789a62caddf4aea" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5T_cset_t H5::StrType::getCset           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Retrieves the character set type of this string datatype. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Character set type, which can be: <ul>
+<li><code>H5T_CSET_ASCII</code> (0) - Character set is US ASCII. </li>
+</ul>
+</dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="234e8a21709cf9e7c9eefd42dfde91a8"></a><!-- doxytag: member="H5::StrType::setCset" ref="234e8a21709cf9e7c9eefd42dfde91a8" args="(H5T_cset_t cset) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::StrType::setCset           </td>
+          <td>(</td>
+          <td class="paramtype">H5T_cset_t&nbsp;</td>
+          <td class="paramname"> <em>cset</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets character set to be used. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cset</em>&nbsp;</td><td>- IN: character set type, which can be: <ul>
+<li><code>H5T_CSET_ASCII</code> (0) - Character set is US ASCII. </li>
+</ul>
+</td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="31da4cdf6af9fd1cdc2da102b3761c33"></a><!-- doxytag: member="H5::StrType::getStrpad" ref="31da4cdf6af9fd1cdc2da102b3761c33" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5T_str_t H5::StrType::getStrpad           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Retrieves the storage mechanism for of this string datatype. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>String storage mechanism, which can be: <ul>
+<li><code>H5T_STR_NULLTERM</code> (0) - Null terminate (as C does) </li>
+<li><code>H5T_STR_NULLPAD</code> (0) - Pad with zeros </li>
+<li><code>H5T_STR_SPACEPAD</code> (0) - pad with spaces (as FORTRAN does) </li>
+</ul>
+</dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="ed4500d2855585b622be2622e7be87c9"></a><!-- doxytag: member="H5::StrType::setStrpad" ref="ed4500d2855585b622be2622e7be87c9" args="(H5T_str_t strpad) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::StrType::setStrpad           </td>
+          <td>(</td>
+          <td class="paramtype">H5T_str_t&nbsp;</td>
+          <td class="paramname"> <em>strpad</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Defines the storage mechanism for this string datatype. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>strpad</em>&nbsp;</td><td>- IN: String padding type </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For detail, please refer to the C layer Reference Manual at: <a href="../RM_H5T.html#Datatype-SetStrpad">../RM_H5T.html::Datatype-SetStrpad</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="77703b41dc7addef65b1aba56cf89203"></a><!-- doxytag: member="H5::StrType::fromClass" ref="77703b41dc7addef65b1aba56cf89203" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual H5std_string H5::StrType::fromClass           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+Reimplemented from <a class="el" href="classH5_1_1AtomType.html#80818b48fcfae291550bc8cad6b05d1c">H5::AtomType</a>.
+</div>
+</div><p>
+<hr size="1"><address style="align: right;"><small>Generated on Wed Nov 4 14:13:07 2009 by&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
+</body>
+</html>

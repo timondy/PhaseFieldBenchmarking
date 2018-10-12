@@ -1,0 +1,187 @@
+#--------------------------------------------------------------------------
+#
+# This Gmake file will compile the PARAMESH library and create a
+# set of library files to which you can link. To use it, make sure
+# it is in the PARAMESH root directory.
+# It works by running gmake on the Makefile.gnu files which appear
+# in the headers, source and mpi_source sub-directories.
+# To simply create these PARAMESH library files, type
+#     gmake -f Makefile.gnu
+# when in the PARAMESH root directory. The library files will
+# then be found in a newly created sub-directory called libs.
+#
+# If you type
+#     gmake -f Makefile.gnu Tests
+# it will also compile and link the test programs in the Tests
+# sub-directory. There is a file called Makefile.gnu inside Tests
+# which is used.
+#
+# To compile and link application files in a sub-directory called
+# User_applic you could type
+#     gmake -f Makefile.gnu User_applic
+# provided you copy Makefile.gnu from Tests to User_applic, and modify
+# it appropriately.
+#
+#
+# Written : Ernest Mamikonyan        April 2002.
+#
+#--------------------------------------------------------------------------
+export cur-dir := $(shell pwd)
+
+# Set the location of the paramesh top directory
+export paramesh_dir = $(cur-dir)
+#export hdf5_dir=/usr/not-backed-up/jrg/local/hdf5-1.6.8/hdf5
+#export hdf5_dir=/usr/
+
+#export hdf5_dir=$(HOME)/hdf5
+#export hdf5_dir=$(HOME)/SYSHDF5
+#export hdf5_dir=$(HOME)/PHASEFIELD/hdf5-1.6.10
+#export hdf5_dir=$(HOME)/PhaseField/hdf5
+#export hdf5_dir=$(HOME)/PHASEFIELD/hdf5
+export hdf5_dir=$(HDF5_DIR)
+
+# Define the fortran compiler
+
+# CEG works on feng-gps2
+#export FC = mpif90 -f90=gfortran44
+#export CC = mpicc 
+
+# CEG Intel for feng-gps2
+#export FC = /usr/bin/mpif90 
+#export CC = /usr/bin/mpicc 
+
+#CEG For Everest and cslin
+export FC = mpif90 
+export CC = mpicc
+
+#Intel on cslin
+export MPICH_F90=ifort
+export MPICH_CC=icc
+
+#-----------------------------------------------
+
+# Set the desired compilation flags
+# SGIs
+#export FFLAGS = -cpp -O3 -r8 -I$(paramesh_dir)/headers 
+
+# NAG95 linux - you must use -float-store. 
+#export FFLAGS = -O2 -r8 -dusty -w -I$(paramesh_dir)/headers
+#export FFLAGS = -O2 -r8 -I$(paramesh_dir)/headers
+#export FFLAGS = -g -C -r8 -I$(paramesh_dir)/headers
+#export FFLAGS = -O2 -float-store -nan -r8  -I$(paramesh_dir)/headers
+#export FFLAGS = -O4 -r8 -I$(paramesh_dir)/headers
+#export FFLAGS = -O4 -float-store -r8 -I$(paramesh_dir)/headers
+#export FFLAGS = -O4 -float-store -r8 -C=all -gline -I$(paramesh_dir)/headers
+#export FFLAGS = -O4 -I$(paramesh_dir)/headers
+#export FFLAGS = -O0 -fdefault-real-8 -fdefault-double-8 -Wall -I$(paramesh_dir)/headers
+#export CFLAGS = -O4 -g -Wall -I$(paramesh_dir)/headers
+
+# CEG debug works on feng-gps2
+#export FFLAGS = -g -fdefault-real-8 -fdefault-double-8 -Wall -I$(paramesh_dir)/headers -I$(hdf5_dir)/include
+#export CFLAGS = -Wl,-lm -O0 -g -Wall -I$(paramesh_dir)/headers -I$(hdf5_dir)/include
+# CEG optimised for feng-gps2
+#export FFLAGS = -O3 -fdefault-real-8 -fdefault-double-8 -Wall -I$(paramesh_dir)/headers -I$(hdf5_dir)/include
+#export CFLAGS = -Wl,-lm -O3 -Wall -I$(paramesh_dir)/headers -I$(hdf5_dir)/include
+#export ADD_LIB += $(HOME)/PhaseField/hdf5/libs/libhdf5.a
+
+export ADD_LIB += -L$(hdf5_dir)/lib/
+
+export FFLAGS +=-Wno-unused-variable 
+
+#export ADD_LIB = -L/home/macneice/Autopack/1.3.2/lib -lautopack-myrinet-O
+
+
+# CEG debug Intel for feng-gps2
+#export FFLAGS = -O0 -g -r8 -I$(paramesh_dir)/headers
+#export CFLAGS = -O0 -g -Wall -I$(paramesh_dir)/headers -I$(hdf5_dir)/include
+# CEG optimised Intel for feng-gps2
+#export FFLAGS = -O3 -r8 -I$(paramesh_dir)/headers
+#export CFLAGS = -O3 -Wall -I$(paramesh_dir)/headers -I$(hdf5_dir)/include
+
+
+# ifort intel 8.0
+#export FFLAGS = -g -check all -r8 -I$(paramesh_dir)/headers
+#export FFLAGS = -O4 -r8 -I$(paramesh_dir)/headers
+
+# CEG TRying for Everest
+#export FFLAGS = -g -check all -r8 -I$(paramesh_dir)/headers
+#export FFLAGS = -O3 -r8 -I$(paramesh_dir)/headers
+
+# CEG Arc1 debug
+#export FFLAGS = -g -check all -r8 -I$(paramesh_dir)/headers
+#export CFLAGS = -g -Wall -I$(paramesh_dir)/headers -I$(hdf5_dir)/include
+
+# CEG Arc1 optimised
+###export FFLAGS = -O3 -r8 -I$(paramesh_dir)/headers
+export FFLAGS = -O3 -fdefault-real-8 -I$(paramesh_dir)/headers
+export CFLAGS = -O3 -I$(paramesh_dir)/headers -I$(hdf5_dir)/include
+
+#export CFLAGS += -g -pg
+#export FFLAGS += -g -pg
+#for mpi 1.0.7
+#export CFLAGS += -g -mpe=mpilog -DDOUBLE_UNDERSCORE
+#export FFLAGS += -g -mpe=mpilog -assume 2underscores
+#for 1.2.1
+#export CFLAGS += -g -mpe=mpilog 
+#export FFLAGS += -g -mpe=mpilog
+
+###export FFLAGS += -fpe1
+
+export RM += -r
+
+#--------------------------------------------------------------------------
+
+.PHONY: default
+default: all
+
+
+debug: export FFLAGS += -g -check all -r8 -I$(paramesh_dir)/headers
+debug: export CFLAGS += -g -Wall -I$(paramesh_dir)/headers -I$(hdf5_dir)/include
+debug: default
+
+
+OMP: export FFLAGS += -openmp
+OMP: default
+
+
+.PHONY: all
+ifdef SHMEM
+all: libs headers source
+else
+all: libs headers mpi_source source
+endif
+
+.PHONY: headers
+headers:
+	$(MAKE) -C $(paramesh_dir)/$@ -f Makefile.gnu
+#       cp -f $(paramesh_dir)/headers/libmodules.a $(paramesh_dir)/libs
+
+.PHONY: mpi_source
+mpi_source: headers
+	$(MAKE) -C $(paramesh_dir)/$@ -f Makefile.gnu
+#       cp -f $(paramesh_dir)/mpi_source/libmpi_paramesh.a $(paramesh_dir)/libs
+
+.PHONY: source
+source: headers
+	$(MAKE) -C $(paramesh_dir)/$@ -f Makefile.gnu
+#       cp -f $(paramesh_dir)/source/libparamesh.a $(paramesh_dir)/libs
+
+.PHONY: clean
+clean:
+	$(RM) -r *~ libs/
+	for dir in headers mpi_source source Tests ; do \
+	$(MAKE) -C $(paramesh_dir)/$$dir -f Makefile.gnu clean; \
+	done
+
+.PHONY: Tests
+Tests: all
+	$(MAKE) -C $(paramesh_dir)/$@ -f Makefile.gnu
+
+# An example target to match an application directory name other than Tests
+# in which the users application files are located.
+.PHONY: User_applic
+User_applic: all
+	$(MAKE) -C $(paramesh_dir)/$@ -f Makefile.gnu
+
+libs:
+	mkdir $@

@@ -1,0 +1,14 @@
+
+!
+! Modification history:
+!     Michael L. Rilee, November 2002, *dbz*
+!        Initial support for divergenceless prolongation
+!     Michael L. Rilee, December 2002, *clean_divb*
+!        Support for projecting field onto divergenceless field
+!
+
+#ifdef CURVILINEAR
+ CLEAN_DIVB-COMPILE-ERROR: 
+ -DIFFERENCE OPERATORS IN CLEAN_DIVB MUST BE ADAPTED TO CURVILINEAR CASE
+ -MLR 2002-1202
+#endif

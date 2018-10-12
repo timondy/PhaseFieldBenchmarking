@@ -1,0 +1,32 @@
+This is an example programme for the "P03 2DCH", aka. seven circles, benchmark problem.
+
+The configuration file is "Makefile". 
+The executable is "pfbm.intel".
+
+We advice the user who is not familiar with our programme to read following documents/papers in great detail,
+
+1. (current directory)/DOCS/Readme/campfile.pdf
+2. Yang et al., 2017, "An optimally efficient technique for the solution of systems of nonlinear parabolic partial differential equations", Advances in Engineering Software, 103, pp. 65-84.
+ 
+Depending software libraries:
+Intel Fortran complier
+Intel C++ Complier
+hdf5 1.6.10 (our supplied version)
+paramesh (our supplied version)
+OpenMP for parallelism
+libtool-2.2.6b
+make-3.81
+
+All above libraries are required to be complied on your local platform.
+
+Problem specific setting are stored in files under "\PFBM-SRC".
+Program (e.g. multigrid dependent parameters) are stored in files under "\MG-SRC".
+
+
+Fengwei (Tim) Yang
+12/10/2018
+ 
+Domain size    3.20000000000000     
+Finest dx     3.125000000000000E-003
+Block size            32
+total_vars             3

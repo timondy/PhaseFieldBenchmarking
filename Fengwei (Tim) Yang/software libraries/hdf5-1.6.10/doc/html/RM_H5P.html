@@ -1,0 +1,1112 @@
+<html>
+<head><title>
+HDF5/H5P API Specification
+</title>
+
+</html><!-- #BeginLibraryItem "/ed_libs/styles_RM.lbi" -->
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<link href="ed_styles/RMelect.css" rel="stylesheet" type="text/css">
+<!-- #EndLibraryItem --><html></head>
+
+<body bgcolor="#FFFFFF">
+<!-- HEADER RIGHT " " -->
+
+
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><center>
+<h1>H5P: Property List Interface</h1>
+</center>
+<h2>Property List API Functions</h2>
+
+These functions manipulate property list objects to allow objects 
+which require many different parameters to be easily manipulated.
+
+
+<p>
+<strong>The C Interfaces:</strong>
+
+<!-- FOR USE WITH PRINT VERSION ----------------------------------------
+<table border="0" width="95%">
+<tr>
+<td valign="top" width="31%">
+
+  <i>General Functions</i>
+  <ul>
+    <li><a href="#Property-Create">H5Pcreate</a>
+    <li><a href="#Property-GetClass">H5Pget_class</a>
+    <li><a href="#Property-Copy">H5Pcopy</a>
+    <li><a href="#Property-Close">H5Pclose</a>
+  </ul>
+	
+  <i>Generic Properties</i> 
+  <ul>
+    <li><a href="#Property-CreateClass">H5Pcreate_class</a> 
+    <li><a href="#Property-Register">H5Pregister</a> 
+    <li><a href="#Property-Insert">H5Pinsert</a> 
+    <li><a href="#Property-Set">H5Pset</a> 
+    <li><a href="#Property-Exist">H5Pexist</a> 
+    <li><a href="#Property-GetSize">H5Pget_size</a> 
+    <li><a href="#Property-GetNProps">H5Pget_nprops</a> 
+    <li><a href="#Property-GetClassName">H5Pget_class_name</a> 
+    <li><a href="#Property-GetClassParent">H5Pget_class_parent</a> 
+    <li><a href="#Property-IsAClass">H5Pisa_class</a> 
+    <li><a href="#Property-Get">H5Pget</a> 
+    <li><a href="#Property-Equal">H5Pequal</a> 
+    <li><a href="#Property-Iterate">H5Piterate</a> 
+    <li><a href="#Property-CopyProp">H5Pcopy_prop</a> 
+    <li><a href="#Property-Remove">H5Premove</a> 
+    <li><a href="#Property-Unregister">H5Punregister</a> 
+    <li><a href="#Property-CloseClass">H5Pclose_class</a> 
+  </ul>
+</td>
+<td valign="top" width="3%">&nbsp;</td>
+<td valign="top" width="32%">
+  <i>File Access Properties</i>
+  <ul>
+    <li><a href="#Property-SetFcloseDegree">H5Pset_fclose_degree</a>
+    <li><a href="#Property-GetFcloseDegree">H5Pget_fclose_degree</a>
+    <li><a href="#Property-SetFaplCore">H5Pset_fapl_core</a>
+    <li><a href="#Property-GetFaplCore">H5Pget_fapl_core</a>
+    <li><a href="#Property-SetFaplFamily">H5Pset_fapl_family</a>
+    <li><a href="#Property-GetFaplFamily">H5Pget_fapl_family</a>
+    <li><a href="#Property-SetFamilyOffset">H5Pset_family_offset</a>
+    <li><a href="#Property-GetFamilyOffset">H5Pget_family_offset</a>    
+    <li><a href="#Property-SetFaplLog">H5Pset_fapl_log</a>
+    <li><a href="#Property-SetFaplMpio">H5Pset_fapl_mpio</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-GetFaplMpio">H5Pget_fapl_mpio</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-SetFaplMpiPosix">H5Pset_fapl_mpiposix</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-GetFaplMpiPosix">H5Pget_fapl_mpiposix</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-SetFaplMulti">H5Pset_fapl_multi</a>
+    <li><a href="#Property-GetFaplMulti">H5Pget_fapl_multi</a>
+    <li><a href="#Property-SetMultiType">H5Pset_multi_type</a>
+    <li><a href="#Property-GetMultiType">H5Pget_multi_type</a>
+    <li><a href="#Property-SetFaplSplit">H5Pset_fapl_split</a>
+    <li><a href="#Property-SetFaplSec2">H5Pset_fapl_sec2</a>
+    <li><a href="#Property-SetFaplStdio">H5Pset_fapl_stdio</a>
+<!-- FOR USE WITH PRINT VERSION ---------------------------------------->
+<!--<li><a href="#Property-SetFaplStream">H5Pset_fapl_stream</a>      -->
+<!--<li><a href="#Property-GetFaplStream">H5Pget_fapl_stream</a>      -->
+<!--<li><a href="#Property-SetDriver">H5Pset_driver</a>               -->
+<!-- FOR USE WITH PRINT VERSION ----------------------------------------
+    <li><a href="#Property-GetDriver">H5Pget_driver</a>
+<!-- FOR USE WITH PRINT VERSION ---------------------------------------->
+<!--<li><a href="#Property-GetDriverInfo">H5Pget_driver_info</a>      -->
+<!-- FOR USE WITH PRINT VERSION ----------------------------------------
+    <li><a href="#Property-SetMetaBlockSize">H5Pset_meta_block_size</a>
+    <li><a href="#Property-GetMetaBlockSize">H5Pget_meta_block_size</a>
+    <li><a href="#Property-SetSieveBufSize">H5Pset_sieve_buf_size</a>
+    <li><a href="#Property-GetSieveBufSize">H5Pget_sieve_buf_size</a>
+    <li><a href="#Property-SetAlignment">H5Pset_alignment</a>
+    <li><a href="#Property-GetAlignment">H5Pget_alignment</a>
+    <li><a href="#Property-SetCache">H5Pset_cache</a>
+    <li><a href="#Property-GetCache">H5Pget_cache</a>
+    <li><a href="#Property-SetGCReferences">H5Pset_gc_references</a>
+    <li><a href="#Property-GetGCReferences">H5Pget_gc_references</a>
+    <li><a href="#Property-SetSmallData">H5Pset_small_data_block_size</a>
+    <li><a href="#Property-GetSmallData">H5Pget_small_data_block_size</a>
+<!-- FOR USE WITH PRINT VERSION ---------------------------------------->
+    <!--
+    <li><a href="#Property-xxx">xxx</a>
+    <li><a href="#Property-xxx">xxx</a>&nbsp;&nbsp;&nbsp;||
+    -->
+<!-- FOR USE WITH PRINT VERSION ----------------------------------------
+  </ul>
+</td>
+<td valign="top" width="3%">&nbsp;</td>
+<td valign="top" width="31%">
+  <i>File Creation Properties</i>
+  <ul>
+    <li><a href="#Property-GetVersion">H5Pget_version</a>
+    <li><a href="#Property-SetUserblock">H5Pset_userblock</a>
+    <li><a href="#Property-GetUserblock">H5Pget_userblock</a>
+    <li><a href="#Property-SetSizes">H5Pset_sizes</a>
+    <li><a href="#Property-GetSizes">H5Pget_sizes</a>
+    <li><a href="#Property-SetSymK">H5Pset_sym_k</a>
+    <li><a href="#Property-GetSymK">H5Pget_sym_k</a>
+    <li><a href="#Property-SetIstoreK">H5Pset_istore_k</a>
+    <li><a href="#Property-GetIstoreK">H5Pget_istore_k</a>
+  </ul>
+	<br><br><br><br><br><br>
+&nbsp;&nbsp;&nbsp;|| <i>Indicates functions<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;available only in the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parallel HDF5 library.</i>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+&nbsp;&nbsp;&nbsp;<i>(Function listing<br>
+&nbsp;&nbsp;&nbsp;continues on next page.)</i></pre>
+</td>
+</tr>
+</table>
+<!-- FOR USE WITH PRINT VERSION ---------------------------------------->
+
+<!-- NEW PAGE -->
+
+<!-- FOR USE WITH PRINT VERSION ----------------------------------------
+<table border="0" width="95%">
+<tr>
+<td valign="top" width="31%">
+  <i>Dataset Creation Properties</i>
+  <ul>
+    <li><a href="#Property-SetLayout">H5Pset_layout</a>
+    <li><a href="#Property-GetLayout">H5Pget_layout</a>
+    <li><a href="#Property-SetChunk">H5Pset_chunk</a>
+    <li><a href="#Property-GetChunk">H5Pget_chunk</a>
+    <li><a href="#Property-SetDeflate">H5Pset_deflate</a>
+<!-- FOR USE WITH PRINT VERSION ---------------------------------------->
+<!--
+    <li><a href="#Property-GetDeflate">H5Pget_deflate</a>
+    <li><a href="#Property-SetCompression">H5Pset_compression</a>
+    <li><a href="#Property-GetCompression">H5Pget_compression</a>
+-->
+<!-- FOR USE WITH PRINT VERSION ----------------------------------------
+    <li><a href="#Property-SetFillValue">H5Pset_fill_value</a>
+    <li><a href="#Property-GetFillValue">H5Pget_fill_value</a>
+    <li><a href="#Property-FillValueDefined">H5Pfill_value_defined</a>
+    <li><a href="#Property-SetFillTime">H5Pset_fill_time</a>
+    <li><a href="#Property-GetFillTime">H5Pget_fill_time</a>
+    <li><a href="#Property-SetAllocTime">H5Pset_alloc_time</a>
+    <li><a href="#Property-GetAllocTime">H5Pget_alloc_time</a>
+    <li><a href="#Property-SetFilter">H5Pset_filter</a>
+    <li><a href="#Property-AllFiltersAvail">H5Pall_filters_avail</a>
+    <li><a href="#Property-GetNFilters">H5Pget_nfilters</a>
+    <li><a href="#Property-GetFilter">H5Pget_filter</a>
+    <li><a href="#Property-GetFilterById">H5Pget_filter_by_id</a>
+    <li><a href="#Property-ModifyFilter">H5Pmodify_filter</a>
+    <li><a href="#Property-RemoveFilter">H5Premove_filter</a>
+    <li><a href="#Property-SetFletcher32">H5Pset_fletcher32</a>
+    <li><a href="#Property-SetShuffle">H5Pset_shuffle</a>
+    <li><a href="#Property-SetSzip">H5Pset_szip</a>
+    <li><a href="#Property-SetExternal">H5Pset_external</a>
+    <li><a href="#Property-GetExternalCount">H5Pget_external_count</a>
+    <li><a href="#Property-GetExternal">H5Pget_external</a>
+  </ul>
+</td>
+<td valign="top" width="3%">&nbsp;</td>
+<td valign="top" width="32%">
+  <i>Dataset Access, Memory, and <br> Transfer Properties</i>
+  <ul>
+    <li><a href="#Property-SetBuffer">H5Pset_buffer</a>
+    <li><a href="#Property-GetBuffer">H5Pget_buffer</a>
+    <li><a href="#Property-SetPreserve">H5Pset_preserve</a>
+    <li><a href="#Property-GetPreserve">H5Pget_preserve</a>
+    <li><a href="#Property-SetEdcCheck">H5Pset_edc_check</a>
+    <li><a href="#Property-GetEdcCheck">H5Pget_edc_check</a>
+    <li><a href="#Property-SetFilterCallback">H5Pset_filter_callback</a>
+    <li><a href="#Property-SetHyperCache">H5Pset_hyper_cache</a>&nbsp;*
+    <li><a href="#Property-GetHyperCache">H5Pget_hyper_cache</a>&nbsp;*
+    <li><a href="#Property-SetHyperVectorSize">H5Pset_hyper_vector_size</a>
+    <li><a href="#Property-GetHyperVectorSize">H5Pget_hyper_vector_size</a>
+    <li><a href="#Property-SetBTreeRatios">H5Pset_btree_ratios</a>
+    <li><a href="#Property-GetBTreeRatios">H5Pget_btree_ratios</a>
+    <li><a href="#Property-SetVLMemManager">H5Pset_vlen_mem_manager</a>
+    <li><a href="#Property-GetVLMemManager">H5Pget_vlen_mem_manager</a>
+    <li><a href="#Property-SetDxplMpio">H5Pset_dxpl_mpio</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-GetDxplMpio">H5Pget_dxpl_mpio</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-SetDxplMulti">H5Pset_dxpl_multi</a>
+    <li><a href="#Property-GetDxplMulti">H5Pget_dxpl_multi</a>
+  </ul>
+</td>
+<td valign="top" width="3%">&nbsp;</td>
+<td valign="top" width="31%">
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|| <i>Indicates functions<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;available only in the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parallel HDF5 library.</i>
+</td>
+</tr>
+</table>
+<!-- FOR USE WITH PRINT VERSION ---------------------------------------->
+
+<br><br>
+
+<!-- FOR USE WITH ELECTRONIC VERSION ----------------------------------->
+<table border=0>
+<tr><td valign=top>
+
+    <i>General Property List <br> Operations</i>
+    <ul>
+    <li><a href="#Property-Create">H5Pcreate</a>
+    <li><a href="#Property-GetClass">H5Pget_class</a>
+    <li><a href="#Property-Copy">H5Pcopy</a>
+    <li><a href="#Property-Close">H5Pclose</a>
+    </ul>
+
+    <p><i>Generic Properties</i> 
+    <ul>
+    <li><a href="#Property-CreateClass">H5Pcreate_class</a> 
+    <li><a href="#Property-Register">H5Pregister</a> 
+    <li><a href="#Property-Insert">H5Pinsert</a> 
+    <li><a href="#Property-Set">H5Pset</a> 
+    <li><a href="#Property-Exist">H5Pexist</a> 
+    <li><a href="#Property-GetSize">H5Pget_size</a> 
+    <li><a href="#Property-GetNProps">H5Pget_nprops</a> 
+    <li><a href="#Property-GetClassName">H5Pget_class_name</a> 
+    <li><a href="#Property-GetClassParent">H5Pget_class_parent</a> 
+    <li><a href="#Property-IsAClass">H5Pisa_class</a> 
+    <li><a href="#Property-Get">H5Pget</a> 
+    <li><a href="#Property-Equal">H5Pequal</a> 
+    <li><a href="#Property-Iterate">H5Piterate</a> 
+    <li><a href="#Property-CopyProp">H5Pcopy_prop</a> 
+    <li><a href="#Property-Remove">H5Premove</a> 
+    <li><a href="#Property-Unregister">H5Punregister</a> 
+    <li><a href="#Property-CloseClass">H5Pclose_class</a> 
+    </ul>
+
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;
+  <i>Indicates functions <br> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  available only in <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  the parallel HDF5<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  library.</i>
+
+
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+
+    <p><i>File Creation Properties</i>
+    <ul>
+    <li><a href="#Property-GetVersion">H5Pget_version</a>
+    <li><a href="#Property-SetUserblock">H5Pset_userblock</a>
+    <li><a href="#Property-GetUserblock">H5Pget_userblock</a>
+    <li><a href="#Property-SetSizes">H5Pset_sizes</a>
+    <li><a href="#Property-GetSizes">H5Pget_sizes</a>
+    <li><a href="#Property-SetSymK">H5Pset_sym_k</a>
+    <li><a href="#Property-GetSymK">H5Pget_sym_k</a>
+    <li><a href="#Property-SetIstoreK">H5Pset_istore_k</a>
+    <li><a href="#Property-GetIstoreK">H5Pget_istore_k</a>
+    </ul>
+
+    <p></p><i>File Access Properties</i>
+    <ul>
+    <li><a href="#Property-SetFcloseDegree">H5Pset_fclose_degree</a>
+    <li><a href="#Property-GetFcloseDegree">H5Pget_fclose_degree</a>
+    <li><a href="#Property-SetFaplCore">H5Pset_fapl_core</a>
+    <li><a href="#Property-GetFaplCore">H5Pget_fapl_core</a>
+    <li><a href="#Property-SetFaplFamily">H5Pset_fapl_family</a>
+    <li><a href="#Property-GetFaplFamily">H5Pget_fapl_family</a>
+    <li><a href="#Property-SetFamilyOffset">H5Pset_family_offset</a>
+    <li><a href="#Property-GetFamilyOffset">H5Pget_family_offset</a>    
+    <li><a href="#Property-SetFaplLog">H5Pset_fapl_log</a>
+    <li><a href="#Property-SetFaplMpio">H5Pset_fapl_mpio</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-GetFaplMpio">H5Pget_fapl_mpio</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-SetFaplMpiPosix">H5Pset_fapl_mpiposix</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-GetFaplMpiPosix">H5Pget_fapl_mpiposix</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-SetFaplMulti">H5Pset_fapl_multi</a>
+    <li><a href="#Property-GetFaplMulti">H5Pget_fapl_multi</a>
+    <li><a href="#Property-SetMultiType">H5Pset_multi_type</a>
+    <li><a href="#Property-GetMultiType">H5Pget_multi_type</a>
+    <li><a href="#Property-SetFaplSplit">H5Pset_fapl_split</a>
+    <li><a href="#Property-SetFaplSec2">H5Pset_fapl_sec2</a>
+    <li><a href="#Property-SetFaplStdio">H5Pset_fapl_stdio</a>
+<!-- FOR USE WITH ELECTRONIC VERSION ----------------------------------->
+<!--<li><a href="#Property-SetFaplStream">H5Pset_fapl_stream</a>      -->
+<!--<li><a href="#Property-GetFaplStream">H5Pget_fapl_stream</a>      -->
+<!--<li><a href="#Property-SetDriver">H5Pset_driver</a>               -->
+<!-- FOR USE WITH ELECTRONIC VERSION ----------------------------------->
+    <li><a href="#Property-GetDriver">H5Pget_driver</a>
+<!-- FOR USE WITH ELECTRONIC VERSION ----------------------------------->
+<!--<li><a href="#Property-GetDriverInfo">H5Pget_driver_info</a>      -->
+<!-- FOR USE WITH ELECTRONIC VERSION ----------------------------------->
+    <li><a href="#Property-SetMetaBlockSize">H5Pset_meta_block_size</a>
+    <li><a href="#Property-GetMetaBlockSize">H5Pget_meta_block_size</a>
+    <li><a href="#Property-SetSieveBufSize">H5Pset_sieve_buf_size</a>
+    <li><a href="#Property-GetSieveBufSize">H5Pget_sieve_buf_size</a>
+    <li><a href="#Property-SetAlignment">H5Pset_alignment</a>
+    <li><a href="#Property-GetAlignment">H5Pget_alignment</a>
+    <li><a href="#Property-SetCache">H5Pset_cache</a>
+    <li><a href="#Property-GetCache">H5Pget_cache</a>
+    <li><a href="#Property-SetGCReferences">H5Pset_gc_references</a>
+    <li><a href="#Property-GetGCReferences">H5Pget_gc_references</a>
+    <li><a href="#Property-SetSmallData">H5Pset_small_data_block_size</a>
+    <li><a href="#Property-GetSmallData">H5Pget_small_data_block_size</a>
+<!-- FOR USE WITH ELECTRONIC VERSION ----------------------------------->
+    <!--
+    <li><a href="#Property-xxx">xxx</a>
+    <li><a href="#Property-xxx">xxx</a>&nbsp;&nbsp;&nbsp;||
+    -->
+<!-- FOR USE WITH ELECTRONIC VERSION ----------------------------------->
+    </ul>
+
+
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+
+    <i>Dataset Creation Properties</i>
+    <ul>
+    <li><a href="#Property-SetLayout">H5Pset_layout</a>
+    <li><a href="#Property-GetLayout">H5Pget_layout</a>
+    <li><a href="#Property-SetChunk">H5Pset_chunk</a>
+    <li><a href="#Property-GetChunk">H5Pget_chunk</a>
+    <li><a href="#Property-SetDeflate">H5Pset_deflate</a>
+<!-- FOR USE WITH ELECTRONIC VERSION ----------------------------------->
+<!--
+    <li><a href="#Property-GetDeflate">H5Pget_deflate</a>
+    <li><a href="#Property-SetCompression">H5Pset_compression</a>
+    <li><a href="#Property-GetCompression">H5Pget_compression</a>
+-->
+<!-- FOR USE WITH ELECTRONIC VERSION ----------------------------------->
+    <li><a href="#Property-SetFillValue">H5Pset_fill_value</a>
+    <li><a href="#Property-GetFillValue">H5Pget_fill_value</a>
+    <li><a href="#Property-FillValueDefined">H5Pfill_value_defined</a>
+    <li><a href="#Property-SetFillTime">H5Pset_fill_time</a>
+    <li><a href="#Property-GetFillTime">H5Pget_fill_time</a>
+    <li><a href="#Property-SetAllocTime">H5Pset_alloc_time</a>
+    <li><a href="#Property-GetAllocTime">H5Pget_alloc_time</a>
+    <li><a href="#Property-SetFilter">H5Pset_filter</a>
+    <li><a href="#Property-AllFiltersAvail">H5Pall_filters_avail</a>
+    <li><a href="#Property-GetNFilters">H5Pget_nfilters</a>
+    <li><a href="#Property-GetFilter">H5Pget_filter</a>
+    <li><a href="#Property-GetFilterById">H5Pget_filter_by_id</a>
+    <li><a href="#Property-ModifyFilter">H5Pmodify_filter</a>
+    <li><a href="#Property-RemoveFilter">H5Premove_filter</a>
+    <li><a href="#Property-SetFletcher32">H5Pset_fletcher32</a>
+    <li><a href="#Property-SetShuffle">H5Pset_shuffle</a>
+    <li><a href="#Property-SetSzip">H5Pset_szip</a>
+    <li><a href="#Property-SetExternal">H5Pset_external</a>
+    <li><a href="#Property-GetExternalCount">H5Pget_external_count</a>
+    <li><a href="#Property-GetExternal">H5Pget_external</a>
+    </ul>
+
+    <p><i>Dataset Access, Memory, and <br> Transfer Properties</i>
+    <ul>
+    <li><a href="#Property-SetBuffer">H5Pset_buffer</a>
+    <li><a href="#Property-GetBuffer">H5Pget_buffer</a>
+    <li><a href="#Property-SetPreserve">H5Pset_preserve</a>
+    <li><a href="#Property-GetPreserve">H5Pget_preserve</a>
+    <li><a href="#Property-SetEdcCheck">H5Pset_edc_check</a>
+    <li><a href="#Property-GetEdcCheck">H5Pget_edc_check</a>
+    <li><a href="#Property-SetFilterCallback">H5Pset_filter_callback</a>
+    <li><a href="#Property-SetHyperCache">H5Pset_hyper_cache</a> *
+    <li><a href="#Property-GetHyperCache">H5Pget_hyper_cache</a> *
+    <li><a href="#Property-SetHyperVectorSize">H5Pset_hyper_vector_size</a>
+    <li><a href="#Property-GetHyperVectorSize">H5Pget_hyper_vector_size</a>
+    <li><a href="#Property-SetBTreeRatios">H5Pset_btree_ratios</a>
+    <li><a href="#Property-GetBTreeRatios">H5Pget_btree_ratios</a>
+    <li><a href="#Property-SetVLMemManager">H5Pset_vlen_mem_manager</a>
+    <li><a href="#Property-GetVLMemManager">H5Pget_vlen_mem_manager</a>
+    <li><a href="#Property-SetDxplMpio">H5Pset_dxpl_mpio</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-GetDxplMpio">H5Pget_dxpl_mpio</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-SetDxplMulti">H5Pset_dxpl_multi</a>
+    <li><a href="#Property-GetDxplMulti">H5Pget_dxpl_multi</a>
+    </ul>
+
+</td></tr>
+
+<!-- FOR USE WITH ELECTRONIC VERSION ----------------------------------->
+<!--
+<tr><td colspan=5 align=right>
+<br>
+||&nbsp;&nbsp;&nbsp;<i>Available only in the parallel HDF5 library.</i>
+</td></tr>
+-->
+<!-- FOR USE WITH ELECTRONIC VERSION ----------------------------------->
+</table>
+<!-- FOR USE WITH ELECTRONIC VERSION ----------------------------------->
+
+<br>
+
+* Functions labeled with an asterisk (*) are provided only for 
+backwards compatibility with HDF5 Releases 1.4.<i>x</i>.  
+See further notes in the description of each function.
+<p>
+
+<!-- NEW PAGE -->
+<i>Alphabetical Listing</i>
+<table border="0">
+  <tr>
+    <td valign="top">
+	<ul>
+      <li><a href="#Property-AllFiltersAvail">H5Pall_filters_avail</a>
+      <li><a href="#Property-Close">H5Pclose</a>
+      <li><a href="#Property-CloseClass">H5Pclose_class</a>
+      <li><a href="#Property-Copy">H5Pcopy</a>
+      <li><a href="#Property-CopyProp">H5Pcopy_prop</a>
+      <li><a href="#Property-Create">H5Pcreate</a>
+      <li><a href="#Property-CreateClass">H5Pcreate_class</a>
+      <li><a href="#Property-Equal">H5Pequal</a>
+      <li><a href="#Property-Exist">H5Pexist</a>
+      <li><a href="#Property-FillValueDefined">H5Pfill_value_defined</a>
+      <li><a href="#Property-Get">H5Pget</a>
+      <li><a href="#Property-GetAlignment">H5Pget_alignment</a>
+      <li><a href="#Property-GetAllocTime">H5Pget_alloc_time</a>
+      <li><a href="#Property-GetBTreeRatios">H5Pget_btree_ratios</a>
+      <li><a href="#Property-GetBuffer">H5Pget_buffer</a>
+      <li><a href="#Property-GetCache">H5Pget_cache</a>
+      <li><a href="#Property-GetChunk">H5Pget_chunk</a>
+      <li><a href="#Property-GetClass">H5Pget_class</a>
+      <li><a href="#Property-GetClassName">H5Pget_class_name</a>
+      <li><a href="#Property-GetClassParent">H5Pget_class_parent</a>
+      <li><a href="#Property-GetDriver">H5Pget_driver</a>
+  <!--<li><a href="#Property-GetDriverInfo">H5Pget_driver_info</a>       -->
+      <li><a href="#Property-GetDxplMpio">H5Pget_dxpl_mpio</a>&nbsp;&nbsp;&nbsp;||
+      <li><a href="#Property-GetDxplMulti">H5Pget_dxpl_multi</a>
+      <li><a href="#Property-GetEdcCheck">H5Pget_edc_check</a>
+      <li><a href="#Property-GetExternal">H5Pget_external</a>
+      <li><a href="#Property-GetExternalCount">H5Pget_external_count</a>
+      <li><a href="#Property-GetFamilyOffset">H5Pget_family_offset</a>
+      <li><a href="#Property-GetFaplCore">H5Pget_fapl_core</a>
+      <li><a href="#Property-GetFaplFamily">H5Pget_fapl_family</a>
+      <li><a href="#Property-GetFaplMpio">H5Pget_fapl_mpio</a>&nbsp;&nbsp;&nbsp;||
+      <li><a href="#Property-GetFaplMpiPosix">H5Pget_fapl_mpiposix</a>&nbsp;&nbsp;&nbsp;||
+      <li><a href="#Property-GetFaplMulti">H5Pget_fapl_multi</a>
+<!--  <li><a href="#Property-GetFaplStream">H5Pget_fapl_stream</a>       -->
+      <li><a href="#Property-GetFcloseDegree">H5Pget_fclose_degree</a>
+      <li><a href="#Property-GetFillTime">H5Pget_fill_time</a>
+	</ul>
+    </td>
+    
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    
+    <td valign="top">
+	<ul>      
+      <li><a href="#Property-GetFillValue">H5Pget_fill_value</a>
+      <li><a href="#Property-GetFilter">H5Pget_filter</a>
+      <li><a href="#Property-GetFilterById">H5Pget_filter_by_id</a>
+      <li><a href="#Property-GetGCReferences">H5Pget_gc_references</a>
+      <li><a href="#Property-GetHyperCache">H5Pget_hyper_cache</a> *
+      <li><a href="#Property-GetHyperVectorSize">H5Pget_hyper_vector_size</a>
+      <li><a href="#Property-GetIstoreK">H5Pget_istore_k</a>
+      <li><a href="#Property-GetLayout">H5Pget_layout</a>
+      <li><a href="#Property-GetMetaBlockSize">H5Pget_meta_block_size</a>
+      <li><a href="#Property-GetMultiType">H5Pget_multi_type</a>
+      <li><a href="#Property-GetNFilters">H5Pget_nfilters</a>
+      <li><a href="#Property-GetNProps">H5Pget_nprops</a>
+      <li><a href="#Property-GetPreserve">H5Pget_preserve</a>
+      <li><a href="#Property-GetSieveBufSize">H5Pget_sieve_buf_size</a>
+      <li><a href="#Property-GetSize">H5Pget_size</a>
+      <li><a href="#Property-GetSizes">H5Pget_sizes</a>
+      <li><a href="#Property-GetSmallData">H5Pget_small_data_block_size</a>
+      <li><a href="#Property-GetSymK">H5Pget_sym_k</a>
+      <li><a href="#Property-GetUserblock">H5Pget_userblock</a>
+      <li><a href="#Property-GetVersion">H5Pget_version</a>
+      <li><a href="#Property-GetVLMemManager">H5Pget_vlen_mem_manager</a>
+      <li><a href="#Property-Insert">H5Pinsert</a>
+      <li><a href="#Property-IsAClass">H5Pisa_class</a>
+      <li><a href="#Property-Iterate">H5Piterate</a>
+      <li><a href="#Property-ModifyFilter">H5Pmodify_filter</a>
+      <li><a href="#Property-Register">H5Pregister</a>
+      <li><a href="#Property-Remove">H5Premove</a>
+      <li><a href="#Property-RemoveFilter">H5Premove_filter</a>
+      <li><a href="#Property-Set">H5Pset</a>
+      <li><a href="#Property-SetAlignment">H5Pset_alignment</a>
+      <li><a href="#Property-SetAllocTime">H5Pset_alloc_time</a>
+      <li><a href="#Property-SetBTreeRatios">H5Pset_btree_ratios</a>
+      <li><a href="#Property-SetBuffer">H5Pset_buffer</a>
+      <li><a href="#Property-SetCache">H5Pset_cache</a>
+      <li><a href="#Property-SetChunk">H5Pset_chunk</a>
+      <li><a href="#Property-SetDeflate">H5Pset_deflate</a>
+<!--  <li><a href="#Property-SetDriver">H5Pset_driver</a>                 -->
+      <li><a href="#Property-SetDxplMpio">H5Pset_dxpl_mpio</a>&nbsp;&nbsp;&nbsp;||
+      <li><a href="#Property-SetDxplMulti">H5Pset_dxpl_multi</a>
+      <li><a href="#Property-SetEdcCheck">H5Pset_edc_check</a>
+      <li><a href="#Property-SetExternal">H5Pset_external</a>
+	</ul>
+    </td>
+    
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    
+    <td valign="top">
+	<ul>
+      <li><a href="#Property-SetFamilyOffset">H5Pset_family_offset</a>
+      <li><a href="#Property-SetFaplCore">H5Pset_fapl_core</a>
+      <li><a href="#Property-SetFaplFamily">H5Pset_fapl_family</a>
+      <li><a href="#Property-SetFaplLog">H5Pset_fapl_log</a>
+      <li><a href="#Property-SetFaplMpio">H5Pset_fapl_mpio</a>&nbsp;&nbsp;&nbsp;||
+      <li><a href="#Property-SetFaplMpiPosix">H5Pset_fapl_mpiposix</a>&nbsp;&nbsp;&nbsp;||
+      <li><a href="#Property-SetFaplMulti">H5Pset_fapl_multi</a>
+      <li><a href="#Property-SetFaplSec2">H5Pset_fapl_sec2</a>
+      <li><a href="#Property-SetFaplSplit">H5Pset_fapl_split</a>
+      <li><a href="#Property-SetFaplStdio">H5Pset_fapl_stdio</a>
+<!--  <li><a href="#Property-SetFaplStream">H5Pset_fapl_stream</a>       -->
+      <li><a href="#Property-SetFcloseDegree">H5Pset_fclose_degree</a>
+      <li><a href="#Property-SetFillTime">H5Pset_fill_time</a>
+      <li><a href="#Property-SetFillValue">H5Pset_fill_value</a>
+      <li><a href="#Property-SetFilter">H5Pset_filter</a>
+      <li><a href="#Property-SetFilterCallback">H5Pset_filter_callback</a>
+      <li><a href="#Property-SetFletcher32">H5Pset_fletcher32</a>
+      <li><a href="#Property-SetGCReferences">H5Pset_gc_references</a>
+      <li><a href="#Property-SetHyperCache">H5Pset_hyper_cache</a> *
+      <li><a href="#Property-SetHyperVectorSize">H5Pset_hyper_vector_size</a>
+      <li><a href="#Property-SetIstoreK">H5Pset_istore_k</a>
+      <li><a href="#Property-SetLayout">H5Pset_layout</a>
+      <li><a href="#Property-SetMetaBlockSize">H5Pset_meta_block_size</a>
+      <li><a href="#Property-SetMultiType">H5Pset_multi_type</a>
+      <li><a href="#Property-SetPreserve">H5Pset_preserve</a>
+      <li><a href="#Property-SetShuffle">H5Pset_shuffle</a>
+      <li><a href="#Property-SetSieveBufSize">H5Pset_sieve_buf_size</a>
+      <li><a href="#Property-SetSizes">H5Pset_sizes</a>
+      <li><a href="#Property-SetSmallData">H5Pset_small_data_block_size</a>
+      <li><a href="#Property-SetSymK">H5Pset_sym_k</a>
+      <li><a href="#Property-SetSzip">H5Pset_szip</a>
+      <li><a href="#Property-SetUserblock">H5Pset_userblock</a>
+      <li><a href="#Property-SetVLMemManager">H5Pset_vlen_mem_manager</a>
+      <li><a href="#Property-Unregister">H5Punregister</a>
+	</ul>
+      <br><br>
+      ||&nbsp;&nbsp;<i>Available only in the parallel HDF5 library.</i>
+    </td>
+  </tr>
+</table>
+
+<!-- NEW PAGE -->
+<br>
+<strong>The FORTRAN90 Interfaces:</strong>
+
+<br>
+In general, each FORTRAN90 subroutine performs exactly the same task 
+as the corresponding C function.  
+<br>
+
+<table border=0>
+<tr><td valign=top>
+
+    <i>General Property List Operations</i>
+    <ul>
+    <li><a href="#Property-Create">h5pcreate_f</a>
+    <li><a href="#Property-GetClass">h5pget_class_f</a>
+    <li><a href="#Property-Copy">h5pcopy_f</a>
+    <li><a href="#Property-Close">h5pclose_f</a>
+    </ul>
+
+
+    <p><i>Generic Properties</i> 
+    <ul>
+    <li><a href="#Property-CreateClass">h5pcreate_class_f</a>
+    <li><a href="#Property-Register">h5pregister_f</a>
+    <li><a href="#Property-Insert">h5pinsert_f</a>
+    <li><a href="#Property-Set">h5pset_f</a>
+    <li><a href="#Property-Exist">h5pexist_f</a>
+    <li><a href="#Property-GetSize">h5pget_size_f</a>
+    <li><a href="#Property-GetNProps">h5pget_nprops_f</a>
+    <li><a href="#Property-GetClassName">h5pget_class_name_f</a>
+    <li><a href="#Property-GetClassParent">h5pget_class_parent_f</a>
+    <li><a href="#Property-IsAClass">h5pisa_class_f</a>
+    <li><a href="#Property-Get">h5pget_f</a>
+    <li><a href="#Property-Equal">h5pequal_f</a>
+<!--<li><a href="#Property-Iterate">h5piterate_f</a>           -->
+    <li><a href="#Property-CopyProp">h5pcopy_prop_f</a>
+    <li><a href="#Property-Remove">h5premove_f</a>
+    <li><a href="#Property-Unregister">h5punregister_f</a>
+    <li><a href="#Property-CloseList">h5pclose_list_f</a>
+    <li><a href="#Property-CloseClass">h5pclose_class_f</a>
+    </ul>
+
+    <p><i>File Creation Properties</i>
+    <ul>
+    <li><a href="#Property-GetVersion">h5pget_version_f</a>
+    <li><a href="#Property-SetUserblock">h5pset_userblock_f</a>
+    <li><a href="#Property-GetUserblock">h5pget_userblock_f</a>
+    <li><a href="#Property-SetSizes">h5pset_sizes_f</a>
+    <li><a href="#Property-GetSizes">h5pget_sizes_f</a>
+    <li><a href="#Property-SetSymK">h5pset_sym_k_f</a>
+    <li><a href="#Property-GetSymK">h5pget_sym_k_f</a>
+    <li><a href="#Property-SetIstoreK">h5pset_istore_k_f</a>
+    <li><a href="#Property-GetIstoreK">h5pget_istore_k_f</a>
+    </ul>
+
+<!--<p><i>Variable-length Datatype Properties</i>                         -->
+<!--<ul>                                                                  -->
+<!--<li><a href="#Property-SetVLMemManager">h5pset_vlen_mem_manager_f</a> -->
+<!--<li><a href="#Property-GetVLMemManager">h5pget_vlen_mem_manager_f</a> -->
+<!--</ul>                                                                 -->
+
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+
+
+    <i>File Close Properties</i>
+    <ul>
+    <li><a href="#Property-SetFcloseDegree">h5pset_fclose_degree_f</a>
+    <li><a href="#Property-GetFcloseDegree">h5pget_fclose_degree_f</a>
+    </ul>
+
+    <p><i>Dataset Creation Properties</i>
+    <ul>
+    <li><a href="#Property-SetLayout">h5pset_layout_f</a>
+    <li><a href="#Property-GetLayout">h5pget_layout_f</a>
+    <li><a href="#Property-SetChunk">h5pset_chunk_f</a>
+    <li><a href="#Property-GetChunk">h5pget_chunk_f</a>
+    <li><a href="#Property-SetDeflate">h5pset_deflate_f</a>
+<!--<li><a href="#Property-GetDeflate">h5pget_deflate_f</a>               -->
+<!--<li><a href="#Property-SetCompression">h5pset_compression_f</a>       -->
+<!--<li><a href="#Property-GetCompression">h5pget_compression_f</a>       -->
+    <li><a href="#Property-SetFillValue">h5pset_fill_value_f</a>
+    <li><a href="#Property-GetFillValue">h5pget_fill_value_f</a>
+    <li><a href="#Property-FillValueDefined">h5pfill_value_defined_f</a>
+    <li><a href="#Property-SetFillTime">h5pset_fill_time_f</a>
+    <li><a href="#Property-GetFillTime">h5pget_fill_time_f</a>
+    <li><a href="#Property-SetAllocTime">h5pset_alloc_time_f</a>
+    <li><a href="#Property-GetAllocTime">h5pget_alloc_time_f</a>
+    <li><a href="#Property-SetFilter">h5pset_filter_f</a>
+<!--<li><a href="#Property-AllFiltersAvail">h5pall_filters_avail_f</a>    -->
+    <li><a href="#Property-GetNFilters">h5pget_nfilters_f</a>  
+    <li><a href="#Property-GetFilter">h5pget_filter_f</a>
+    <li><a href="#Property-GetFilterById">h5pget_filter_by_id_f</a> 
+    <li><a href="#Property-ModifyFilter">h5pmodify_filter_f</a>  
+    <li><a href="#Property-RemoveFilter">h5premove_filter_f</a>
+    <li><a href="#Property-SetFletcher32">h5pset_fletcher32_f</a>
+    <li><a href="#Property-SetShuffle">h5pset_shuffle_f</a>
+    <li><a href="#Property-SetSzip">h5pset_szip_f</a>  
+    <li><a href="#Property-SetExternal">h5pset_external_f</a>
+    <li><a href="#Property-GetExternalCount">h5pget_external_count_f</a>
+    <li><a href="#Property-GetExternal">h5pget_external_f</a>
+    </ul>
+
+<!--
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+-->
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>
+||&nbsp;&nbsp;<i>Available only in the parallel HDF5 library.</i>
+
+
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+
+
+    <i>File Access Properties</i>
+    <ul>
+<!--<li><a href="#Property-SetDriver">h5pset_driver_f</a>                 -->
+    <li><a href="#Property-GetDriver">h5pget_driver_f</a>
+<!--<li><a href="#Property-GetDriverInfo">h5pget_driver_info_f</a>        -->
+    <li><a href="#Property-SetMetaBlockSize">h5pset_meta_block_size_f</a>
+    <li><a href="#Property-GetMetaBlockSize">h5pget_meta_block_size_f</a>
+    <li><a href="#Property-SetSieveBufSize">h5pset_sieve_buf_size_f</a>
+    <li><a href="#Property-GetSieveBufSize">h5Pget_sieve_buf_size_f</a>
+    <li><a href="#Property-SetStdio">h5pset_stdio_f</a> 
+    <li><a href="#Property-GetStdio">h5pget_stdio_f</a>  
+    <li><a href="#Property-SetSec2">h5pset_sec2_f</a>   
+<!--<li><a href="#Property-GetSec2">h5pget_sec2_f</a>                     -->
+    <li><a href="#Property-SetAlignment">h5pset_alignment_f</a>
+    <li><a href="#Property-GetAlignment">h5pget_alignment_f</a>
+<!--<li><a href="#Property-SetCore">h5pset_core_f</a>                     -->
+<!--<li><a href="#Property-GetCore">h5pget_core_f</a>                     -->
+    <li><a href="#Property-SetFaplMpio">h5pset_fapl_mpio_f</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-GetFaplMpio">h5pget_fapl_mpio_f</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-SetFaplMpiPosix">h5pset_fapl_mpiposix_f</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-GetFaplMpiPosix">h5pget_fapl_mpiposix_f</a>&nbsp;&nbsp;&nbsp;||
+    <li><a href="#Property-SetFamily">h5pset_family_f</a>  
+    <li><a href="#Property-GetFamily">h5pget_family_f</a> 
+<!--<li><a href="#Property-SetFamilyOffset">h5pset_family_offset_f</a>    -->
+<!--<li><a href="#Property-GetFamilyOffset">h5pget_family_offset_f</a>    -->
+    <li><a href="#Property-SetFaplMulti">h5pset_fapl_multi_f</a>
+    <li><a href="#Property-GetFaplMulti">h5pget_fapl_multi_f</a> 
+<!--<li><a href="#Property-SetMultiType">h5pset_multi_type_f</a>          -->
+<!--<li><a href="#Property-GetMultiType">h5pget_multi_type_f</a>          -->
+    <li><a href="#Property-SetCache">h5pset_cache_f</a>
+    <li><a href="#Property-GetCache">h5pget_cache_f</a>
+    <li><a href="#Property-SetSplit">h5pset_split_f</a>
+    <li><a href="#Property-GetSplit">h5pget_split_f</a>
+    <li><a href="#Property-SetGCReferences">h5pset_gc_references_f</a>
+    <li><a href="#Property-GetGCReferences">h5pget_gc_references_f</a>
+    </ul>
+
+
+    <p><i>Dataset Access, Memory, and Transfer Properties</i>
+    <ul>
+    <li><a href="#Property-SetBuffer">h5pset_buffer_f</a>
+    <li><a href="#Property-GetBuffer">h5pget_buffer_f</a>
+    <li><a href="#Property-SetPreserve">h5pset_preserve_f</a>  
+    <li><a href="#Property-GetPreserve">h5pget_preserve_f</a> 
+    <li><a href="#Property-SetEdcCheck">h5pset_edc_check_f</a>
+    <li><a href="#Property-GetEdcCheck">h5pget_edc_check_f</a>
+    <li><a href="#Property-SetHyperCache">h5pset_hyper_cache_f</a>
+    <li><a href="#Property-GetHyperCache">h5pget_hyper_cache_f</a>
+    <li><a href="#Property-SetHyperVectorSize">h5pset_hyper_vector_size_f</a>
+    <li><a href="#Property-GetHyperVectorSize">h5pget_hyper_vector_size_f</a>
+    <li><a href="#Property-SetBTreeRatios">h5pset_btree_ratios_f</a>
+    <li><a href="#Property-GetBTreeRatios">h5pget_btree_ratios_f</a>
+    <li><a href="#Property-SetDxplMpio">h5pset_dxpl_mpio_f</a>&nbsp;&nbsp;&nbsp;|| 
+    <li><a href="#Property-GetDxplMpio">h5pget_dxpl_mpio_f</a>&nbsp;&nbsp;&nbsp;|| 
+<!--<li><a href="#Property-SetDxplMulti">h5pset_dxpl_multi_f</a>          -->
+<!--<li><a href="#Property-GetDxplMulti">h5pget_dxpl_multi_f</a>          -->
+<!--<li><a href="#Property-SetMultiType">h5pset_multi_type_f</a>          -->
+<!--<li><a href="#Property-GetMultiType">h5pget_multi_type_f</a>          -->
+        <br>&nbsp;
+    <li><a href="#Property-SetSmallData">h5pset_small_data_block_size_f</a>
+    <li><a href="#Property-GetSmallData">h5pget_small_data_block_size_f</a>
+    </ul>
+
+</td></tr>
+</table>
+
+
+<!-- NEW PAGE -->
+<p>
+<a name="Property-FilterBehavior">
+<strong>Filter Behavior in HDF5:</strong></a>
+<br>
+    Filters can be inserted into the HDF5 pipeline to perform functions 
+    such as compression and conversion.  As such, they are a very flexible 
+    aspect of HDF5; for example, a user-defined filter could provide
+    encryption for an HDF5 dataset.
+    <p>
+    A filter can be declared as either <i>required</i> or <i>optional</i>. 
+    Required is the default status; optional status must be explicitly declared.
+    <p>
+    A required filter that fails or is not defined causes an entire 
+    output operation to fail; if it was applied when the data was written, 
+    such a filter will cause an input operation to fail.
+    <p>
+    The following table summarizes required filter behavior.
+    <div align=center>
+    <table border=0 width=80% cellspacing=5>
+      <tr align=left valign=top > 
+        <td width=20%>&nbsp;</td>
+        <td width=25%><b>Required <small>FILTER_X</small><br>not available</b>
+        <td width=25%><b><small>FILTER_X</small> available</b>
+      </tr><tr align=left valign=top>
+        <td><b><code>H5Pset_&lt;<i>FILTER_X</i>&gt;</code>&nbsp;&nbsp;&nbsp;</b></td>
+        <td>Will fail.<font size=1><br>&nbsp;</font></td>
+        <td>Will succeed.</td>
+      </tr><tr align=left valign=top>
+        <td><b><code>H5Dwrite</code><br>with <small>FILTER_X</small> 
+            set</b></td>
+        <td>Will fail.</td>
+        <td>Will succeed; <small>FILTER_X</small> will 
+            be applied to the data.</td>
+      </tr><tr align=left valign=top>
+        <td><b><code>H5Dread</code><br>with <small>FILTER_X</small> set</b></td>
+        <td>Will fail.</td>
+        <td>Will succeed.</td>
+      </tr>
+    </table>
+    </div>
+    <p>
+    An optional filter can be set for an HDF5 dataset 
+    even when the filter is not available.  
+    Such a filter can then be applied to the dataset when it becomes 
+    available on the original system or when the file containing 
+    the dataset is processed on a system on which it is available.
+    <p>
+    A filter can be declared as optional through the use of 
+    the <code>H5Z_FLAG_OPTIONAL</code> flag
+    with <a href="#Property-SetFilter"><code>H5Pset_filter</code></a>.
+    <p>
+    Consider a situation where one is creating files that will normally 
+    be used only on systems where the optional (and fictional) filter 
+    <small>FILTER_Z</small> is routinely available.
+    One can create those files on system A, which lacks 
+    <small>FILTER_Z</small>, create chunked datasets in the files with 
+    <small>FILTER_Z</small> defined in the 
+    dataset creation property list, and even write data to those datasets.
+    The dataset object header will indicate that <small>FILTER_Z</small> has
+    been associated with this dataset.
+    But since system A does not have <small>FILTER_Z</small>, 
+    dataset chunks will be written without it being applied.
+    <p>
+    HDF5 has a mechanism for determining whether chunks are actually 
+    written with the filters specified in the object header, so while the 
+    filter remains unavailable, system A will be able to read the data.
+    Once the file is moved to system B, where <small>FILTER_Z</small> 
+    <i>is</i> available, HDF5 will apply <small>FILTER_Z</small> 
+    to any data rewritten or new data written in these datasets. 
+    Dataset chunks that have been written on system B will then be 
+    unreadable on system A; chunks that have not been re-written since 
+    being written on system A will remain readable on system A.
+    All chunks will be readable on system B.
+    <p>
+    The following table summarizes optional filter behavior.
+    <div align=center>
+    <table border=0 width=80% cellspacing=5>
+      <tr align=left valign=top > 
+        <td width=20%>&nbsp;</td>
+        <td width=25%><b><Optional <small>FILTER_Z</small><br>not available</b>
+        <td width=25%><b><small>FILTER_Z</small> available<br>with 
+            encode and decode</b>
+        <td width=25%><b><small>FILTER_Z</small> available<br>decode only</b>
+      </tr><tr align=left valign=top>
+        <td><b><code>H5Pset_&lt;<i>FILTER_Z</i>&gt;</code>&nbsp;&nbsp;&nbsp;</b></td>
+        <td>Will succeed.<font size=1><br>&nbsp;</font></td>
+        <td>Will succeed.</td>
+        <td>Will succeed.</td>
+      </tr><tr align=left valign=top>
+        <td><b><code>H5Dwrite</code><br>with <small>FILTER_Z</small> 
+            set</b></td>
+        <td>Will succeed;<br><small>FILTER_Z</small> will <i>not</i>
+            be applied to the data.</td>
+        <td>Will succeed;<br><small>FILTER_Z</small> will 
+            be applied to the data.</td>
+        <td>Will succeed;<br><small>FILTER_Z</small> will <i>not</i>
+            be applied to the data.</td>
+      </tr><tr align=left valign=top>
+        <td><b><code>H5Dread</code><br>with <small>FILTER_Z</small> set</b></td>
+        <td>Will succeed if <small>FILTER_Z</small> has not actually been 
+            applied to data.</td>
+        <td>Will succeed.</td>
+        <td>Will succeed.</td>
+<!--
+      </tr><tr align=right valign=top>
+        <td colspan=4><font size=-1>
+            All of the above are <i>expected behaviors</i>;
+            for example, HDF5 does not<br>indicate an error if an application
+            declares SZIP to be an optional filter<br>and calls 
+            <code>H5Pset_szip</code> on a system on which SZIP 
+            is not installed.
+-->
+      </tr>
+    </table>
+    </div>
+    <p>
+    The above principles apply generally in the use of 
+    HDF5 optional filters insofar as HDF5 does as much as possible
+    to complete an operation when an optional filter is unavailable.
+    (The SZIP filter is an exception to this rule; see 
+    <a href="#Property-SetSzip"><code>H5Pset_szip</code></a> for details.)
+    <p>
+    <b>Notes:</b>
+    <br>
+    Filters can be applied only to chunked datasets; 
+    they cannot be used with other dataset storage methods, 
+    such as contiguous, compact, or external datasets. 
+    <p>
+    Dataset elements of variable-length and dataset region reference datatypes
+    are stored in separate structures in the file called heaps.
+    Filters cannot currently be applied to these heaps. 
+    <br>&nbsp;
+
+
+<?php include("H5P/H5Pall_filters_avail.htm"); ?>
+<?php include("H5P/H5Pclose.htm"); ?>
+<?php include("H5P/H5Pclose_class.htm"); ?>
+<?php include("H5P/H5Pcopy.htm"); ?>
+<?php include("H5P/H5Pcopy_prop.htm"); ?>
+<?php include("H5P/H5Pcreate.htm"); ?>
+<?php include("H5P/H5Pcreate_class.htm"); ?>
+<?php include("H5P/H5Premove_filter.htm"); ?>
+<?php include("H5P/H5Pequal.htm"); ?>
+<?php include("H5P/H5Pexist.htm"); ?>
+<?php include("H5P/H5Pfill_value_defined.htm"); ?>
+<?php include("H5P/H5Pget.htm"); ?>
+<?php include("H5P/H5Pget_alignment.htm"); ?>
+<?php include("H5P/H5Pget_alloc_time.htm"); ?>
+<?php include("H5P/H5Pget_btree_ratios.htm"); ?>
+<?php include("H5P/H5Pget_buffer.htm"); ?>
+<?php include("H5P/H5Pget_cache.htm"); ?>
+<?php include("H5P/H5Pget_chunk.htm"); ?>
+<?php include("H5P/H5Pget_class.htm"); ?>
+<?php include("H5P/H5Pget_class_name.htm"); ?>
+<?php include("H5P/H5Pget_class_parent.htm"); ?>
+<!-- unused file: H5P/H5Pget_compression.htm -->
+<!-- unsued file: H5P/H5Pget_deflate.htm -->
+<?php include("H5P/H5Pget_driver.htm"); ?>
+<!-- unusued file: H5P/H5Pget_driver_info.htm -->
+<?php include("H5P/H5Pget_dxpl_mpio.htm"); ?>
+<?php include("H5P/H5Pget_dxpl_multi.htm"); ?>
+<?php include("H5P/H5Pget_edc_check.htm"); ?>
+<?php include("H5P/H5Pget_external.htm"); ?>
+<?php include("H5P/H5Pget_external_count.htm"); ?>
+<?php include("H5P/H5Pget_family_offset.htm"); ?>
+<?php include("H5P/H5Pget_fapl_core.htm"); ?>
+<?php include("H5P/H5Pget_fapl_family.htm"); ?>
+<?php include("H5P/H5Pget_fapl_mpio.htm"); ?>
+<?php include("H5P/H5Pget_fapl_mpiposix.htm"); ?>
+<?php include("H5P/H5Pget_fapl_multi.htm"); ?>
+<?php include("H5P/H5Pget_fapl_stream.htm"); ?>
+<?php include("H5P/H5Pget_fclose_degree.htm"); ?>
+<?php include("H5P/H5Pget_fill_time.htm"); ?>
+<?php include("H5P/H5Pget_fill_value.htm"); ?>
+<?php include("H5P/H5Pget_filter.htm"); ?>
+<?php include("H5P/H5Pget_filter_by_id.htm"); ?>
+<?php include("H5P/H5Pget_gc_references.htm"); ?>
+<?php include("H5P/H5Pget_hyper_cache.htm"); ?>
+<?php include("H5P/H5Pget_hyper_vector_size.htm"); ?>
+<?php include("H5P/H5Pget_istore_k.htm"); ?>
+<?php include("H5P/H5Pget_layout.htm"); ?>
+<?php include("H5P/H5Pget_meta_block_size.htm"); ?>
+<?php include("H5P/H5Pget_multi_type.htm"); ?>
+<?php include("H5P/H5Pget_nfilters.htm"); ?>
+<?php include("H5P/H5Pget_nprops.htm"); ?>
+<?php include("H5P/H5Pget_preserve.htm"); ?>
+<?php include("H5P/H5Pget_sieve_buf_size.htm"); ?>
+<?php include("H5P/H5Pget_size.htm"); ?>
+<?php include("H5P/H5Pget_sizes.htm"); ?>
+<?php include("H5P/H5Pget_small_data_block_size.htm"); ?>
+<?php include("H5P/H5Pget_sym_k.htm"); ?>
+<?php include("H5P/H5Pget_userblock.htm"); ?>
+<?php include("H5P/H5Pget_version.htm"); ?>
+<?php include("H5P/H5Pget_vlen_mem_manager.htm"); ?>
+<?php include("H5P/H5Pinsert.htm"); ?>
+<?php include("H5P/H5Pisa_class.htm"); ?>
+<?php include("H5P/H5Piterate.htm"); ?>
+<?php include("H5P/H5Pmodify_filter.htm"); ?>
+<?php include("H5P/H5Pregister.htm"); ?>
+<?php include("H5P/H5Premove.htm"); ?>
+<?php include("H5P/H5Pset.htm"); ?>
+<?php include("H5P/H5Pset_alignment.htm"); ?>
+<?php include("H5P/H5Pset_alloc_time.htm"); ?>
+<?php include("H5P/H5Pset_btree_ratios.htm"); ?>
+<?php include("H5P/H5Pset_buffer.htm"); ?>
+<?php include("H5P/H5Pset_cache.htm"); ?>
+<?php include("H5P/H5Pset_chunk.htm"); ?>
+<!-- unused file: H5P/H5Pset_compression.htm -->
+<?php include("H5P/H5Pset_deflate.htm"); ?>
+<!-- unused file: H5P/H5Pset_driver.htm -->
+<?php include("H5P/H5Pset_dxpl_mpio.htm"); ?>
+<?php include("H5P/H5Pset_dxpl_multi.htm"); ?>
+<?php include("H5P/H5Pset_edc_check.htm"); ?>
+<?php include("H5P/H5Pset_external.htm"); ?>
+<?php include("H5P/H5Pset_family_offset.htm"); ?>
+<?php include("H5P/H5Pset_fapl_core.htm"); ?>
+<?php include("H5P/H5Pset_fapl_family.htm"); ?>
+<?php include("H5P/H5Pset_fapl_log.htm"); ?>
+<?php include("H5P/H5Pset_fapl_mpio.htm"); ?>
+<?php include("H5P/H5Pset_fapl_mpiposix.htm"); ?>
+<?php include("H5P/H5Pset_fapl_multi.htm"); ?>
+<?php include("H5P/H5Pset_fapl_sec2.htm"); ?>
+<?php include("H5P/H5Pset_fapl_split.htm"); ?>
+<?php include("H5P/H5Pset_fapl_stdio.htm"); ?>
+<?php include("H5P/H5Pset_fapl_stream.htm"); ?>
+<?php include("H5P/H5Pset_fclose_degree.htm"); ?>
+<?php include("H5P/H5Pset_fill_time.htm"); ?>
+<?php include("H5P/H5Pset_fill_value.htm"); ?>
+<?php include("H5P/H5Pset_filter.htm"); ?>
+<?php include("H5P/H5Pset_filter_callback.htm"); ?>
+<?php include("H5P/H5Pset_fletcher32.htm"); ?>
+<?php include("H5P/H5Pset_gc_references.htm"); ?>
+<?php include("H5P/H5Pset_hyper_cache.htm"); ?>
+<?php include("H5P/H5Pset_hyper_vector_size.htm"); ?>
+<?php include("H5P/H5Pset_istore_k.htm"); ?>
+<?php include("H5P/H5Pset_layout.htm"); ?>
+<?php include("H5P/H5Pset_meta_block_size.htm"); ?>
+<?php include("H5P/H5Pset_multi_type.htm"); ?>
+<?php include("H5P/H5Pset_preserve.htm"); ?>
+<?php include("H5P/H5Pset_shuffle.htm"); ?>
+<?php include("H5P/H5Pset_sieve_buf_size.htm"); ?>
+<?php include("H5P/H5Pset_sizes.htm"); ?>
+<?php include("H5P/H5Pset_small_data_block_size.htm"); ?>
+<?php include("H5P/H5Pset_sym_k.htm"); ?>
+<?php include("H5P/H5Pset_szip.htm"); ?>
+<?php include("H5P/H5Pset_userblock.htm"); ?>
+<?php include("H5P/H5Pset_vlen_mem_manager.htm"); ?>
+<?php include("H5P/H5Punregister.htm"); ?>
+
+
+<!-- HEADER RIGHT " " -->
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/ed_libs/Footer.lbi" -->
+
+<address>
+The HDF Group Help Desk: <img src="Graphics/help.png" align=top height=16>
+<br>
+Describes HDF5 Release 1.6.10, November 2009 
+</address>
+
+
+<!-- #EndLibraryItem --><SCRIPT LANGUAGE="JAVASCRIPT">
+<!--
+document.writeln("Last modified: 13 October 2009");
+-->
+</SCRIPT>
+ 
+
+</body>
+</html>
+
+

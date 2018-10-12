@@ -1,0 +1,26 @@
+#! /bin/csh -f
+@ nerror = 0
+run_an_mpi_test 1 4  test_guardcell_1blk
+@ nerror += $status
+run_an_mpi_test 1 4 test_prolong_1blk
+@ nerror += $status
+run_an_mpi_test 1 4 test_c_to_f_1blk
+@ nerror += $status
+run_an_mpi_test 1 4 test_prolong_multilevel_1blk
+@ nerror += $status
+run_an_mpi_test 1 4 test_flux_conserve_1blk
+@ nerror += $status
+run_an_mpi_test 1 4 test_edges_1blk
+@ nerror += $status
+run_an_mpi_test 1 4 test_multi_level_1
+@ nerror += $status
+run_an_mpi_test 1 4 test_1blk_guardcell_icoord
+@ nerror += $status
+run_an_mpi_test 1 4 test_restrict_1blk
+@ nerror += $status
+run_an_mpi_test 1 4 test_checkpoint
+@ nerror += $status
+run_an_mpi_test 1 1 test_bcset_example
+@ nerror += $status
+
+exit $nerror

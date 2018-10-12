@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 25
+/svn/Campfire/!svn/ver/75
+END
+CASE.inp
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/Campfire/!svn/ver/75/CASE.inp
+END
+make_para_mg_PGI
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/Campfire/!svn/ver/72/make_para_mg_PGI
+END
+make_para_mg_ArcIntel
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/Campfire/!svn/ver/75/make_para_mg_ArcIntel
+END
+amr_runtime_parameters
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/Campfire/!svn/ver/75/amr_runtime_parameters
+END
+flist.sh
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/Campfire/!svn/ver/39/flist.sh
+END
+make_para_mg_ArcIntel_debug
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/Campfire/!svn/ver/7/make_para_mg_ArcIntel_debug
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/Campfire/!svn/ver/1/Makefile
+END

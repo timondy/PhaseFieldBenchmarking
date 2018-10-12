@@ -1,0 +1,99 @@
+!----------------------------------------------------------------------
+! PARAMESH - an adaptive mesh library.
+! Copyright (C) 2003
+!
+! Use of the PARAMESH software is governed by the terms of the
+! usage agreement which can be found in the file
+! 'PARAMESH_USERS_AGREEMENT' in the main paramesh directory.
+!----------------------------------------------------------------------
+
+The tests programs in this directory can be used to verify
+that the package has been installed correctly. To run the
+default tests do the following:
+
+
+From the top level README:
+
+     make check
+
+     You should see the following three lines as the result of 'make check'
+     ==================
+     All 10 tests passed
+     ==================
+
+
+
+
+Note
+----
+Generally speaking these tests build upon each other, with each
+successive test repeating and extending the tests of the previous
+test. The sequence, from simplest to most comprehensive is
+10. guardcell_1blk
+20. prolong_1blk
+30. c_to_f_1blk
+31. test_1blk_guardcell_icoord
+32. prolong_multilevel_1blk
+33. checkpoint
+35. restrict_1blk
+40. flux_conserve_1blk
+50. edges_1blk
+60. multi_level_1
+60. multi_level_2
+60. multi_level_3
+
+
+
+Brief Description of Tests
+---------------------------
+
+10. guardcell_1blk
+Tests basic guardcell filling with no refinement discontinuities.
+
+20. prolong_1blk
+Refines grid from previous test by 1 or 2 levels and prolongs solution onto
+new grid.
+
+30. c_to_f_1blk
+Introduces refinement discontinuities and tests guardcell filling.
+
+31. test_1blk_guardcell_icoord
+Tests guardcell filling in individual coord directions
+
+32. prolong_multilevel_1blk
+Tests case in which neighboring blocks at different refinement levels
+are refined at the same time.
+
+33. checkpoint
+Writes and then reads back a checkpoint file and compares restart setup
+with original data
+
+35. restrict_1blk
+Tests restriction operation.
+
+40. flux_conserve_1blk
+Tests amr_flux_conserve
+
+50. edges_1blk
+Tests amr_edge_average
+
+60. multi_level_X
+Tests different grids with multiple root blocks. All these tests should
+be run for N_DIM == 3 only.
+   X = 1 tests a 12x1x1 grid between -6 < x < +6, with centre refined twice
+   X = 2 tests a 1x8x8 grid. 
+   X = 3 tests a 192x1x1 gridi. maxblocks should be 120. This is designed
+         to test the routine mpi_amr_reorder_grid.
+
+
+
+Additional Tests
+----------------
+
+Edit ../source/amr_prolong.F and ../mpi_source/mpi_amr_prolong.F and
+define MULTIBLOCK_TEST_2D. Then configure with N_DIM == 2.
+Run only the test_prolong_multilevel_1blk test. This will check to
+make sure that the FORCE_CONSISTENCY_AT_SRL_INTERFACES and
+the amr_prolong_fc_divbconsist patch are working together properly.
+
+

@@ -1,0 +1,1887 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="header_files/filelist.xml">
+<link rel=Edit-Time-Data href="header_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Main Page</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Randy Ribler</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Randy Ribler</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>16</o:TotalTime>
+  <o:Created>2004-07-23T05:34:00Z</o:Created>
+  <o:LastSaved>2004-07-23T06:03:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>5</o:Words>
+  <o:Characters>32</o:Characters>
+  <o:Company>LC</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>36</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=RM_stylesheet.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-believe-normal-left:yes;}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#252E78;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#3D2185;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+address
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.formuladsp, li.formuladsp, div.formuladsp
+	{mso-style-name:formuladsp;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdtable, li.mdtable, div.mdtable
+	{mso-style-name:mdtable;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#F4F4FB;
+	border:none;
+	mso-border-alt:solid #868686 .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdrow, li.mdrow, div.mdrow
+	{mso-style-name:mdrow;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdescleft, li.mdescleft, div.mdescleft
+	{mso-style-name:mdescleft;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.mdescright, li.mdescright, div.mdescright
+	{mso-style-name:mdescright;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.memitemleft, li.memitemleft, div.memitemleft
+	{mso-style-name:memitemleft;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.memitemright, li.memitemright, div.memitemright
+	{mso-style-name:memitemright;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.search, li.search, div.search
+	{mso-style-name:search;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><![if mso 9]>
+<style>
+p.MsoNormal
+	{margin-left:15.0pt;}
+</style>
+<![endif]><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098">
+  <o:colormru v:ext="edit" colors="#060"/>
+  <o:colormenu v:ext="edit" strokecolor="#060"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link="#252E78" vlink="#3D2185" style='tab-interval:
+.5in;margin-left:15.0pt;margin-right:15.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:15.0pt;margin-bottom:
+0in;margin-left:15.0pt;margin-bottom:.0001pt'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:30pt;margin-top:9pt;width:72.75pt;height:57.75pt;
+ z-index:1'>
+ <v:imagedata src="header_files/image001.jpg" o:title="NCSAlogo"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:40px;margin-top:12px;width:97px;
+height:77px'><img width=97 height=77 src="header_files/image002.jpg" v:shapes="_x0000_s1026"></span><![endif]><span
+style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><span
+style='font-size:22.0pt'><o:p></o:p></span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:103.45pt;border-collapse:collapse;border:none;mso-border-bottom-alt:
+ solid #006600 2.25pt;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes;height:29.25pt'>
+  <td width=443 valign=top style='width:332.6pt;border:none;border-bottom:solid #006600 2.25pt;
+  padding:0in 5.4pt 0in 5.4pt;height:29.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-size:22.0pt'>HDF5 C++ API Reference Manual</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
+<!-- Generated by Doxygen 1.4.7 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
+    <li><a href="files.html"><span>Files</span></a></li>
+    <li><a href="examples.html"><span>Examples</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+  </ul></div>
+<div class="nav">
+<a class="el" href="namespaceH5.html">H5</a>::<a class="el" href="classH5_1_1DataType.html">DataType</a></div>
+<h1>H5::DataType Class Reference</h1><!-- doxytag: class="H5::DataType" --><!-- doxytag: inherits="H5::H5Object" --><code>#include &lt;<a class="el" href="H5DataType_8h-source.html">H5DataType.h</a>&gt;</code>
+<p>
+<p>Inheritance diagram for H5::DataType:
+<p><center><img src="classH5_1_1DataType.png" usemap="#H5::DataType_map" border="0" alt=""></center>
+<map name="H5::DataType_map">
+<area href="classH5_1_1H5Object.html" alt="H5::H5Object" shape="rect" coords="292,56,399,80">
+<area href="classH5_1_1IdComponent.html" alt="H5::IdComponent" shape="rect" coords="292,0,399,24">
+<area href="classH5_1_1ArrayType.html" alt="H5::ArrayType" shape="rect" coords="0,168,107,192">
+<area href="classH5_1_1AtomType.html" alt="H5::AtomType" shape="rect" coords="175,168,282,192">
+<area href="classH5_1_1CompType.html" alt="H5::CompType" shape="rect" coords="292,168,399,192">
+<area href="classH5_1_1EnumType.html" alt="H5::EnumType" shape="rect" coords="409,168,516,192">
+<area href="classH5_1_1VarLenType.html" alt="H5::VarLenType" shape="rect" coords="526,168,633,192">
+<area href="classH5_1_1FloatType.html" alt="H5::FloatType" shape="rect" coords="0,224,107,248">
+<area href="classH5_1_1IntType.html" alt="H5::IntType" shape="rect" coords="117,224,224,248">
+<area href="classH5_1_1PredType.html" alt="H5::PredType" shape="rect" coords="234,224,341,248">
+<area href="classH5_1_1StrType.html" alt="H5::StrType" shape="rect" coords="351,224,458,248">
+</map>
+<a href="classH5_1_1DataType-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#37dd5ff8f95b4016136b90c58c770f09">DataType</a> (const H5T_class_t type_class, size_t size)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a object given its class and size.  <a href="#37dd5ff8f95b4016136b90c58c770f09"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#4e72f20ab686efffeedd72d8afa99519">DataType</a> (const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;original)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1DataType.html">DataType</a> object.  <a href="#4e72f20ab686efffeedd72d8afa99519"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#b4e515878076debbf43b82edb7484baf">DataType</a> (<a class="el" href="classH5_1_1H5Object.html">H5Object</a> &amp;obj, void *ref, H5R_type_t ref_type=H5R_OBJECT)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Given a reference, ref, to an hdf5 group, creates a <a class="el" href="classH5_1_1DataType.html">DataType</a> object.  <a href="#b4e515878076debbf43b82edb7484baf"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#a84e590b6e5a82ad4d319746cc5fd04d">DataType</a> (<a class="el" href="classH5_1_1H5File.html">H5File</a> &amp;h5file, void *ref, H5R_type_t ref_type=H5R_OBJECT)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Given a reference, ref, to an hdf5 group, creates a <a class="el" href="classH5_1_1DataType.html">DataType</a> object.  <a href="#a84e590b6e5a82ad4d319746cc5fd04d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#28583e0388ca583b02f2d2a8806bfc76">DataType</a> (<a class="el" href="classH5_1_1Attribute.html">Attribute</a> &amp;attr, void *ref, H5R_type_t ref_type=H5R_OBJECT)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Given a reference, ref, to an hdf5 group, creates a <a class="el" href="classH5_1_1DataType.html">DataType</a> object.  <a href="#28583e0388ca583b02f2d2a8806bfc76"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#f807fa62a2beb9f9de9b80c3b18edbfa">close</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Closes the datatype if it is not a predefined type.  <a href="#f807fa62a2beb9f9de9b80c3b18edbfa"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#d17cef439dbf1dd79458ba95612a9566">copy</a> (const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;like_type)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copies an existing datatype to this datatype object.  <a href="#d17cef439dbf1dd79458ba95612a9566"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#f8d75b01e62aa868424701add217b971">copy</a> (const <a class="el" href="classH5_1_1DataSet.html">DataSet</a> &amp;dset)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copies the datatype of the given dataset to this datatype object.  <a href="#f8d75b01e62aa868424701add217b971"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5T_class_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#2831c133562e9d5669643a2d8051dcd1">getClass</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the datatype class identifier.  <a href="#2831c133562e9d5669643a2d8051dcd1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#72afe46473ed216cfb84942e6ea9a6a8">commit</a> (<a class="el" href="classH5_1_1H5File.html">H5File</a> &amp;loc, const char *name)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Commits a transient datatype to a file, creating a new named datatype.  <a href="#72afe46473ed216cfb84942e6ea9a6a8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#50efd80df538834e7333daf487499d51">commit</a> (<a class="el" href="classH5_1_1H5File.html">H5File</a> &amp;loc, const H5std_string &amp;name)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in the type of the argument <em>name</em>.  <a href="#50efd80df538834e7333daf487499d51"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#396c6812571655cd93bfeaaf89848bf4">commit</a> (<a class="el" href="classH5_1_1H5Object.html">H5Object</a> &amp;loc, const char *name)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Commits a transient datatype to a file, creating a new named datatype.  <a href="#396c6812571655cd93bfeaaf89848bf4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#d7b8849c20bc841f2672f475faa5826e">commit</a> (<a class="el" href="classH5_1_1H5Object.html">H5Object</a> &amp;loc, const H5std_string &amp;name)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in the type of the argument <em>name</em>.  <a href="#d7b8849c20bc841f2672f475faa5826e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#0eaba78156000ecc3533986175de5847">committed</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Determines whether a datatype is a named type or a transient type.  <a href="#0eaba78156000ecc3533986175de5847"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5T_conv_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#0b927f0184a738b514f7f3cf7f4dd788">find</a> (const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;dest, H5T_cdata_t **pcdata) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finds a conversion function that can handle a conversion from this datatype to the specified datatype, <em>dest</em>.  <a href="#0b927f0184a738b514f7f3cf7f4dd788"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#2abc382547c243346b3b6691fec813f3">convert</a> (const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;dest, size_t nelmts, void *buf, void *background, const <a class="el" href="classH5_1_1PropList.html">PropList</a> &amp;plist=<a class="el" href="classH5_1_1PropList.html#0f2f757ca782a743006c5756191c404b">PropList::DEFAULT</a>) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts data from this datatype to the specified datatypes.  <a href="#2abc382547c243346b3b6691fec813f3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#3ed458f90bb2ed85e7471a24ddc6fb7d">operator=</a> (const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;rhs)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Assignment operator.  <a href="#3ed458f90bb2ed85e7471a24ddc6fb7d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#ab7955caad1bb0a009ed41f24061f3ad">operator==</a> (const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;compared_type) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compares this <a class="el" href="classH5_1_1DataType.html">DataType</a> against the given one to determines whether the two objects refer to the same actual datatype.  <a href="#ab7955caad1bb0a009ed41f24061f3ad"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#c1596fca35acce43e190a1feeffc9427">lock</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Locks a datatype, making it read-only and non-destructible.  <a href="#c1596fca35acce43e190a1feeffc9427"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5T_overflow_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#84690d99341ccd58e504133876a62682">getOverflow</a> (void) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns a pointer to the current global overflow function.  <a href="#84690d99341ccd58e504133876a62682"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#0fbf7f6ca1625eb08175d2c6fbec9c6b">setOverflow</a> (H5T_overflow_t func) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the overflow handler to a specified function.  <a href="#0fbf7f6ca1625eb08175d2c6fbec9c6b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#9161a9e4c8a50aef002995294e28e6c5">getSize</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the size of a datatype.  <a href="#9161a9e4c8a50aef002995294e28e6c5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classH5_1_1DataType.html">DataType</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#b3454be65ac1830f2b68ec745155d749">getSuper</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the base datatype from which a datatype is derived.  <a href="#b3454be65ac1830f2b68ec745155d749"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#0fe4cfc1be352f4ad3e7e346ad35baa0">registerFunc</a> (H5T_pers_t pers, const char *name, const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;dest, H5T_conv_t func) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Registers the specified conversion function.  <a href="#0fe4cfc1be352f4ad3e7e346ad35baa0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#7efdf12f98da8a20555f021c8fa363b1">registerFunc</a> (H5T_pers_t pers, const H5std_string &amp;name, const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;dest, H5T_conv_t func) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in the type of the argument <em>name</em>.  <a href="#7efdf12f98da8a20555f021c8fa363b1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#b810e782623bffeda1ff80c033785c48">unregister</a> (H5T_pers_t pers, const char *name, const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;dest, H5T_conv_t func) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Removes a conversion function from all conversion paths.  <a href="#b810e782623bffeda1ff80c033785c48"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#03ce51e32972e0c1ef5259e0314dcbb7">unregister</a> (H5T_pers_t pers, const H5std_string &amp;name, const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;dest, H5T_conv_t func) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in the type of the argument <em>name</em>.  <a href="#03ce51e32972e0c1ef5259e0314dcbb7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#d5189148a417fb67407e0fe8194e21c0">setTag</a> (const char *tag) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tags an opaque datatype.  <a href="#d5189148a417fb67407e0fe8194e21c0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#a55f95dffb611453a165d73d0021a5a1">setTag</a> (const H5std_string &amp;tag) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in the type of the argument <em>name</em>.  <a href="#a55f95dffb611453a165d73d0021a5a1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#16fff8d6ba3ba1260349b9d4b7c9d8cc">getTag</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the tag associated with an opaque datatype.  <a href="#16fff8d6ba3ba1260349b9d4b7c9d8cc"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#8221168b4e2154c05410b7c6f0f5b3ab">detectClass</a> (H5T_class_t cls) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Checks whether a datatype contains (or is) a certain type of datatype.  <a href="#8221168b4e2154c05410b7c6f0f5b3ab"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#b92bf0b5e57b2aebe157bb8291f30787">isVariableStr</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check whether this datatype is a variable-length string.  <a href="#b92bf0b5e57b2aebe157bb8291f30787"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5G_obj_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#51e03ca30470e7b7162a366caa541643">getObjType</a> (void *ref, H5R_type_t ref_type=H5R_OBJECT) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function was misnamed and will be deprecated in favor of <a class="el" href="classH5_1_1H5Object.html#ac98e28372c66885c099415f08be681f">H5Object::getRefObjType</a>; please use getRefObjType instead.  <a href="#51e03ca30470e7b7162a366caa541643"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#ca44aa2c6f55b22a73022c1632b5a680">getRegion</a> (void *ref, H5R_type_t ref_type=H5R_DATASET_REGION) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves a dataspace with the region pointed to selected.  <a href="#ca44aa2c6f55b22a73022c1632b5a680"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#32cc7cd571eec25cb31346cc3a0422d5">fromClass</a> () const </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#72b85216196ef1d980c5e43beaead07e">DataType</a> (const hid_t type_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a datatype using an existing datatype's id.  <a href="#72b85216196ef1d980c5e43beaead07e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#29b366592ce55a07762a7862cc88fe89">DataType</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor: Creates a stub datatype.  <a href="#29b366592ce55a07762a7862cc88fe89"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual hid_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#38f4c8c9dda4b35cb667949280bf5340">getId</a> () const </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#a0ff75a2a756a0124e656a8d5861b133">~DataType</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Properly terminates access to this datatype.  <a href="#a0ff75a2a756a0124e656a8d5861b133"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#213c4090dc6429671f2a4c604c2eeb4b">p_setId</a> (const hid_t new_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the identifier of this datatype to a new value.  <a href="#213c4090dc6429671f2a4c604c2eeb4b"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">hid_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1DataType.html#a3ed12331c88117e640fff76002108d3">id</a></td></tr>
+
+</table>
+<hr><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" name="37dd5ff8f95b4016136b90c58c770f09"></a><!-- doxytag: member="H5::DataType::DataType" ref="37dd5ff8f95b4016136b90c58c770f09" args="(const H5T_class_t type_class, size_t size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataType::DataType           </td>
+          <td>(</td>
+          <td class="paramtype">const H5T_class_t&nbsp;</td>
+          <td class="paramname"> <em>type_class</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>size</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates a object given its class and size. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>type_class</em>&nbsp;</td><td>- IN: Class of datatype to create </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>- IN: Number of bytes in the datatype to create </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="4e72f20ab686efffeedd72d8afa99519"></a><!-- doxytag: member="H5::DataType::DataType" ref="4e72f20ab686efffeedd72d8afa99519" args="(const DataType &amp;original)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataType::DataType           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>original</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1DataType.html">DataType</a> object. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="b4e515878076debbf43b82edb7484baf"></a><!-- doxytag: member="H5::DataType::DataType" ref="b4e515878076debbf43b82edb7484baf" args="(H5Object &amp;obj, void *ref, H5R_type_t ref_type=H5R_OBJECT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataType::DataType           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1H5Object.html">H5Object</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_OBJECT</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Given a reference, ref, to an hdf5 group, creates a <a class="el" href="classH5_1_1DataType.html">DataType</a> object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>- IN: Specifying location referenced object is in </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference pointer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref_type</em>&nbsp;</td><td>- IN: Reference type - default to H5R_OBJECT </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1ReferenceException.html">H5::ReferenceException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd><code>obj</code> can be <a class="el" href="classH5_1_1DataSet.html">DataSet</a>, <a class="el" href="classH5_1_1Group.html">Group</a>, or named <a class="el" href="classH5_1_1DataType.html">DataType</a>, that is a datatype that has been named by <a class="el" href="classH5_1_1DataType.html#72afe46473ed216cfb84942e6ea9a6a8">DataType::commit</a>. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="a84e590b6e5a82ad4d319746cc5fd04d"></a><!-- doxytag: member="H5::DataType::DataType" ref="a84e590b6e5a82ad4d319746cc5fd04d" args="(H5File &amp;h5file, void *ref, H5R_type_t ref_type=H5R_OBJECT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataType::DataType           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1H5File.html">H5File</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>h5file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_OBJECT</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Given a reference, ref, to an hdf5 group, creates a <a class="el" href="classH5_1_1DataType.html">DataType</a> object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>h5file</em>&nbsp;</td><td>- IN: Location referenced object is in </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference pointer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref_type</em>&nbsp;</td><td>- IN: Reference type - default to H5R_OBJECT </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1ReferenceException.html">H5::ReferenceException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="28583e0388ca583b02f2d2a8806bfc76"></a><!-- doxytag: member="H5::DataType::DataType" ref="28583e0388ca583b02f2d2a8806bfc76" args="(Attribute &amp;attr, void *ref, H5R_type_t ref_type=H5R_OBJECT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataType::DataType           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1Attribute.html">Attribute</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_OBJECT</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Given a reference, ref, to an hdf5 group, creates a <a class="el" href="classH5_1_1DataType.html">DataType</a> object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>attr</em>&nbsp;</td><td>- IN: Specifying location where the referenced object is in </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference pointer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref_type</em>&nbsp;</td><td>- IN: Reference type - default to H5R_OBJECT </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1ReferenceException.html">H5::ReferenceException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="72b85216196ef1d980c5e43beaead07e"></a><!-- doxytag: member="H5::DataType::DataType" ref="72b85216196ef1d980c5e43beaead07e" args="(const hid_t type_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataType::DataType           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>existing_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates a datatype using an existing datatype's id. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>existing_id</em>&nbsp;</td><td>- IN: Id of the existing datatype </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="29b366592ce55a07762a7862cc88fe89"></a><!-- doxytag: member="H5::DataType::DataType" ref="29b366592ce55a07762a7862cc88fe89" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataType::DataType           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Default constructor: Creates a stub datatype. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="a0ff75a2a756a0124e656a8d5861b133"></a><!-- doxytag: member="H5::DataType::~DataType" ref="a0ff75a2a756a0124e656a8d5861b133" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::DataType::~DataType           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Properly terminates access to this datatype. 
+<p>
+
+</div>
+</div><p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="f807fa62a2beb9f9de9b80c3b18edbfa"></a><!-- doxytag: member="H5::DataType::close" ref="f807fa62a2beb9f9de9b80c3b18edbfa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::close           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Closes the datatype if it is not a predefined type. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d17cef439dbf1dd79458ba95612a9566"></a><!-- doxytag: member="H5::DataType::copy" ref="d17cef439dbf1dd79458ba95612a9566" args="(const DataType &amp;like_type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::copy           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>like_type</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Copies an existing datatype to this datatype object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>like_type</em>&nbsp;</td><td>- IN: Datatype to be copied </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="f8d75b01e62aa868424701add217b971"></a><!-- doxytag: member="H5::DataType::copy" ref="f8d75b01e62aa868424701add217b971" args="(const DataSet &amp;dset)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::copy           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSet.html">DataSet</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>dset</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Copies the datatype of the given dataset to this datatype object. 
+<p>
+<dl compact><dt><b>Description</b></dt><dd>The resulted dataset will be transient and modifiable. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="2831c133562e9d5669643a2d8051dcd1"></a><!-- doxytag: member="H5::DataType::getClass" ref="2831c133562e9d5669643a2d8051dcd1" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5T_class_t H5::DataType::getClass           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the datatype class identifier. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Datatype class identifier </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="72afe46473ed216cfb84942e6ea9a6a8"></a><!-- doxytag: member="H5::DataType::commit" ref="72afe46473ed216cfb84942e6ea9a6a8" args="(H5File &amp;loc, const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::commit           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1H5File.html">H5File</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>loc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Commits a transient datatype to a file, creating a new named datatype. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>loc</em>&nbsp;</td><td>- IN: A file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the datatype </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="50efd80df538834e7333daf487499d51"></a><!-- doxytag: member="H5::DataType::commit" ref="50efd80df538834e7333daf487499d51" args="(H5File &amp;loc, const H5std_string &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::commit           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1H5File.html">H5File</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>loc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It differs from the above function only in the type of the argument <em>name</em>. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="396c6812571655cd93bfeaaf89848bf4"></a><!-- doxytag: member="H5::DataType::commit" ref="396c6812571655cd93bfeaaf89848bf4" args="(H5Object &amp;loc, const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::commit           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1H5Object.html">H5Object</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>loc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Commits a transient datatype to a file, creating a new named datatype. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>loc</em>&nbsp;</td><td>- IN: Either a group, dataset, named datatype, or attribute. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the datatype </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d7b8849c20bc841f2672f475faa5826e"></a><!-- doxytag: member="H5::DataType::commit" ref="d7b8849c20bc841f2672f475faa5826e" args="(H5Object &amp;loc, const H5std_string &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::commit           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1H5Object.html">H5Object</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>loc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It differs from the above function only in the type of the argument <em>name</em>. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="0eaba78156000ecc3533986175de5847"></a><!-- doxytag: member="H5::DataType::committed" ref="0eaba78156000ecc3533986175de5847" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool H5::DataType::committed           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Determines whether a datatype is a named type or a transient type. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd><code>true</code> if the datatype is a named type, and <code>false</code>, otherwise. </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="0b927f0184a738b514f7f3cf7f4dd788"></a><!-- doxytag: member="H5::DataType::find" ref="0b927f0184a738b514f7f3cf7f4dd788" args="(const DataType &amp;dest, H5T_cdata_t **pcdata) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5T_conv_t H5::DataType::find           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5T_cdata_t **&nbsp;</td>
+          <td class="paramname"> <em>pcdata</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Finds a conversion function that can handle a conversion from this datatype to the specified datatype, <em>dest</em>. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>dest</em>&nbsp;</td><td>- IN: Destination datatype </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pcdata</em>&nbsp;</td><td>- IN: Pointer to type conversion data </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Pointer to a suitable conversion function </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="2abc382547c243346b3b6691fec813f3"></a><!-- doxytag: member="H5::DataType::convert" ref="2abc382547c243346b3b6691fec813f3" args="(const DataType &amp;dest, size_t nelmts, void *buf, void *background, const PropList &amp;plist=PropList::DEFAULT) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::convert           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>nelmts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>background</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1PropList.html">PropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>plist</em> = <code><a class="el" href="classH5_1_1PropList.html#0f2f757ca782a743006c5756191c404b">PropList::DEFAULT</a></code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Converts data from this datatype to the specified datatypes. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>dest</em>&nbsp;</td><td>- IN: Destination datatype </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nelmts</em>&nbsp;</td><td>- IN: Size of array <em>buf</em> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>- IN/OUT: Array containing pre- and post-conversion values </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>background</em>&nbsp;</td><td>- IN: Optional backgroud buffer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>plist</em>&nbsp;</td><td>- IN: Dataset transfer property list </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Pointer to a suitable conversion function </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="3ed458f90bb2ed85e7471a24ddc6fb7d"></a><!-- doxytag: member="H5::DataType::operator=" ref="3ed458f90bb2ed85e7471a24ddc6fb7d" args="(const DataType &amp;rhs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classH5_1_1DataType.html">DataType</a> &amp; H5::DataType::operator=           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>rhs</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Assignment operator. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>rhs</em>&nbsp;</td><td>- IN: Reference to the existing datatype </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Reference to <a class="el" href="classH5_1_1DataType.html">DataType</a> instance </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="ab7955caad1bb0a009ed41f24061f3ad"></a><!-- doxytag: member="H5::DataType::operator==" ref="ab7955caad1bb0a009ed41f24061f3ad" args="(const DataType &amp;compared_type) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool H5::DataType::operator==           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>compared_type</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Compares this <a class="el" href="classH5_1_1DataType.html">DataType</a> against the given one to determines whether the two objects refer to the same actual datatype. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>compared_type</em>&nbsp;</td><td>- IN: Reference to the datatype to compare </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>true if the datatypes are equal, and false, otherwise. </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="c1596fca35acce43e190a1feeffc9427"></a><!-- doxytag: member="H5::DataType::lock" ref="c1596fca35acce43e190a1feeffc9427" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::lock           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Locks a datatype, making it read-only and non-destructible. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Descrition</b></dt><dd>This is normally done by the library for predefined data types so the application doesn't inadvertently change or delete a predefined type.</dd></dl>
+Once a data type is locked it can never be unlocked unless the entire library is closed. 
+</div>
+</div><p>
+<a class="anchor" name="84690d99341ccd58e504133876a62682"></a><!-- doxytag: member="H5::DataType::getOverflow" ref="84690d99341ccd58e504133876a62682" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5T_overflow_t H5::DataType::getOverflow           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns a pointer to the current global overflow function. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Pointer to an application-defined function if successful; otherwise returns NULL; this can happen if no overflow handling function is registered. </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="0fbf7f6ca1625eb08175d2c6fbec9c6b"></a><!-- doxytag: member="H5::DataType::setOverflow" ref="0fbf7f6ca1625eb08175d2c6fbec9c6b" args="(H5T_overflow_t func) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::setOverflow           </td>
+          <td>(</td>
+          <td class="paramtype">H5T_overflow_t&nbsp;</td>
+          <td class="paramname"> <em>func</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the overflow handler to a specified function. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>func</em>&nbsp;</td><td>- IN: Function to be called when overflow occurs </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Pointer to a suitable conversion function </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The function specified by <em>func</em> will be called for all data type conversions that result in an overflow. For more information, please see: <a href="../RM_H5T.html#Datatype-SetOverflow">../RM_H5T.html::Datatype-SetOverflow</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="9161a9e4c8a50aef002995294e28e6c5"></a><!-- doxytag: member="H5::DataType::getSize" ref="9161a9e4c8a50aef002995294e28e6c5" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t H5::DataType::getSize           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the size of a datatype. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Datatype size in bytes </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="readdata_8cpp-example.html#a93">readdata.cpp</a>.</dl>
+</div>
+</div><p>
+<a class="anchor" name="b3454be65ac1830f2b68ec745155d749"></a><!-- doxytag: member="H5::DataType::getSuper" ref="b3454be65ac1830f2b68ec745155d749" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classH5_1_1DataType.html">DataType</a> H5::DataType::getSuper           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the base datatype from which a datatype is derived. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd><a class="el" href="classH5_1_1DataType.html">DataType</a> object </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="0fe4cfc1be352f4ad3e7e346ad35baa0"></a><!-- doxytag: member="H5::DataType::registerFunc" ref="0fe4cfc1be352f4ad3e7e346ad35baa0" args="(H5T_pers_t pers, const char *name, const DataType &amp;dest, H5T_conv_t func) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::registerFunc           </td>
+          <td>(</td>
+          <td class="paramtype">H5T_pers_t&nbsp;</td>
+          <td class="paramname"> <em>pers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5T_conv_t&nbsp;</td>
+          <td class="paramname"> <em>func</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Registers the specified conversion function. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pers</em>&nbsp;</td><td>- IN: Conversion option <ul>
+<li><code>H5T_PERS_HARD</code> for hard conversion functions </li>
+<li><code>H5T_PERS_SOFT</code> for soft conversion functions. </li>
+</ul>
+</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name displayed in diagnostic output. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dest</em>&nbsp;</td><td>- IN: Destination datatype. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>func</em>&nbsp;</td><td>- IN: Function to convert between source and destination datatypes. </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For more information, please see: <a href="../RM_H5T.html#Datatype-Register">../RM_H5T.html::Datatype-Register</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="7efdf12f98da8a20555f021c8fa363b1"></a><!-- doxytag: member="H5::DataType::registerFunc" ref="7efdf12f98da8a20555f021c8fa363b1" args="(H5T_pers_t pers, const H5std_string &amp;name, const DataType &amp;dest, H5T_conv_t func) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::registerFunc           </td>
+          <td>(</td>
+          <td class="paramtype">H5T_pers_t&nbsp;</td>
+          <td class="paramname"> <em>pers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5T_conv_t&nbsp;</td>
+          <td class="paramname"> <em>func</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It differs from the above function only in the type of the argument <em>name</em>. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="b810e782623bffeda1ff80c033785c48"></a><!-- doxytag: member="H5::DataType::unregister" ref="b810e782623bffeda1ff80c033785c48" args="(H5T_pers_t pers, const char *name, const DataType &amp;dest, H5T_conv_t func) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::unregister           </td>
+          <td>(</td>
+          <td class="paramtype">H5T_pers_t&nbsp;</td>
+          <td class="paramname"> <em>pers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5T_conv_t&nbsp;</td>
+          <td class="paramname"> <em>func</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Removes a conversion function from all conversion paths. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pers</em>&nbsp;</td><td>- IN: Conversion option <ul>
+<li><code>H5T_PERS_HARD</code> for hard conversion functions </li>
+<li><code>H5T_PERS_SOFT</code> for soft conversion functions. </li>
+</ul>
+</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name displayed in diagnostic output. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dest</em>&nbsp;</td><td>- IN: Destination datatype. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>func</em>&nbsp;</td><td>- IN: Function to convert between source and destination datatypes. </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="03ce51e32972e0c1ef5259e0314dcbb7"></a><!-- doxytag: member="H5::DataType::unregister" ref="03ce51e32972e0c1ef5259e0314dcbb7" args="(H5T_pers_t pers, const H5std_string &amp;name, const DataType &amp;dest, H5T_conv_t func) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::unregister           </td>
+          <td>(</td>
+          <td class="paramtype">H5T_pers_t&nbsp;</td>
+          <td class="paramname"> <em>pers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataType.html">DataType</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5T_conv_t&nbsp;</td>
+          <td class="paramname"> <em>func</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It differs from the above function only in the type of the argument <em>name</em>. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="d5189148a417fb67407e0fe8194e21c0"></a><!-- doxytag: member="H5::DataType::setTag" ref="d5189148a417fb67407e0fe8194e21c0" args="(const char *tag) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::setTag           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>tag</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Tags an opaque datatype. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tag</em>&nbsp;</td><td>- IN: Descriptive ASCII string with which the opaque datatype is to be tagged. </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="a55f95dffb611453a165d73d0021a5a1"></a><!-- doxytag: member="H5::DataType::setTag" ref="a55f95dffb611453a165d73d0021a5a1" args="(const H5std_string &amp;tag) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::setTag           </td>
+          <td>(</td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>tag</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It differs from the above function only in the type of the argument <em>name</em>. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="16fff8d6ba3ba1260349b9d4b7c9d8cc"></a><!-- doxytag: member="H5::DataType::getTag" ref="16fff8d6ba3ba1260349b9d4b7c9d8cc" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5std_string H5::DataType::getTag           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Gets the tag associated with an opaque datatype. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Tag associated with the opaque datatype </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="8221168b4e2154c05410b7c6f0f5b3ab"></a><!-- doxytag: member="H5::DataType::detectClass" ref="8221168b4e2154c05410b7c6f0f5b3ab" args="(H5T_class_t cls) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool H5::DataType::detectClass           </td>
+          <td>(</td>
+          <td class="paramtype">H5T_class_t&nbsp;</td>
+          <td class="paramname"> <em>cls</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Checks whether a datatype contains (or is) a certain type of datatype. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>true if this datatype contains or is the specified type, and false, otherwise. </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="b92bf0b5e57b2aebe157bb8291f30787"></a><!-- doxytag: member="H5::DataType::isVariableStr" ref="b92bf0b5e57b2aebe157bb8291f30787" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool H5::DataType::isVariableStr           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Check whether this datatype is a variable-length string. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>true if this datatype is a variable-length string, and false, otherwise. </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="51e03ca30470e7b7162a366caa541643"></a><!-- doxytag: member="H5::DataType::getObjType" ref="51e03ca30470e7b7162a366caa541643" args="(void *ref, H5R_type_t ref_type=H5R_OBJECT) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5G_obj_t H5::DataType::getObjType           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_OBJECT</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This function was misnamed and will be deprecated in favor of <a class="el" href="classH5_1_1H5Object.html#ac98e28372c66885c099415f08be681f">H5Object::getRefObjType</a>; please use getRefObjType instead. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="ca44aa2c6f55b22a73022c1632b5a680"></a><!-- doxytag: member="H5::DataType::getRegion" ref="ca44aa2c6f55b22a73022c1632b5a680" args="(void *ref, H5R_type_t ref_type=H5R_DATASET_REGION) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> H5::DataType::getRegion           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_DATASET_REGION</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Retrieves a dataspace with the region pointed to selected. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference to get region of </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref_type</em>&nbsp;</td><td>- IN: Type of reference to get region of - default </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> instance </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="32cc7cd571eec25cb31346cc3a0422d5"></a><!-- doxytag: member="H5::DataType::fromClass" ref="32cc7cd571eec25cb31346cc3a0422d5" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual H5std_string H5::DataType::fromClass           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+Reimplemented in <a class="el" href="classH5_1_1ArrayType.html#a11bb32a07d37bb1c601c007c4e7a3ed">H5::ArrayType</a>, <a class="el" href="classH5_1_1AtomType.html#80818b48fcfae291550bc8cad6b05d1c">H5::AtomType</a>, <a class="el" href="classH5_1_1CompType.html#62a56067255bf3104729edd5db1b933c">H5::CompType</a>, <a class="el" href="classH5_1_1EnumType.html#03bd511aa2455d34bb092a183408a734">H5::EnumType</a>, <a class="el" href="classH5_1_1FloatType.html#4ea3002c4db5ff2895530d9fda8cdf2e">H5::FloatType</a>, <a class="el" href="classH5_1_1IntType.html#a3cc5f6e4480df804d34fcf0931874be">H5::IntType</a>, <a class="el" href="classH5_1_1PredType.html#a29af075cf3bb23c1d962f73c4116ba6">H5::PredType</a>, <a class="el" href="classH5_1_1StrType.html#77703b41dc7addef65b1aba56cf89203">H5::StrType</a>, and <a class="el" href="classH5_1_1VarLenType.html#e25655a87b7669f3df13c49e565be1bb">H5::VarLenType</a>.
+</div>
+</div><p>
+<a class="anchor" name="38f4c8c9dda4b35cb667949280bf5340"></a><!-- doxytag: member="H5::DataType::getId" ref="38f4c8c9dda4b35cb667949280bf5340" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hid_t H5::DataType::getId           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+Implements <a class="el" href="classH5_1_1IdComponent.html#4b5dc282b178ac71704772ae575351cc">H5::IdComponent</a>.
+</div>
+</div><p>
+<a class="anchor" name="213c4090dc6429671f2a4c604c2eeb4b"></a><!-- doxytag: member="H5::DataType::p_setId" ref="213c4090dc6429671f2a4c604c2eeb4b" args="(const hid_t new_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::DataType::p_setId           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>new_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the identifier of this datatype to a new value. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1IdComponentException.html">H5::IdComponentException</a></em>&nbsp;</td><td>when the attempt to close the currently open datatype fails </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<hr><h2>Member Data Documentation</h2>
+<a class="anchor" name="a3ed12331c88117e640fff76002108d3"></a><!-- doxytag: member="H5::DataType::id" ref="a3ed12331c88117e640fff76002108d3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hid_t <a class="el" href="classH5_1_1DataType.html#a3ed12331c88117e640fff76002108d3">H5::DataType::id</a><code> [protected]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<hr size="1"><address style="align: right;"><small>Generated on Wed Nov 4 14:13:07 2009 by&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<html>
+<head><title>
+HDF5/H5D API Specification
+</title>
+
+<!-- #BeginLibraryItem "/ed_libs/styles_RM.lbi" -->
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<link href="ed_styles/RMelect.css" rel="stylesheet" type="text/css">
+<!-- #EndLibraryItem --></head>
+
+<body bgcolor="#FFFFFF">
+<!-- HEADER RIGHT " " -->
+
+
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><center>
+<h1>H5D: Datasets Interface</h1>
+</center>
+
+<h2>Dataset Object API Functions</h2>
+
+These functions create and manipulate dataset objects, 
+and set and retrieve their constant or persistent properties.
+
+<p>
+<strong>The C Interfaces:</strong>
+
+<table border=0>
+<tr><td valign=top>
+<ul>
+    <li><a href="#Dataset-Create">H5Dcreate</a>
+    <li><a href="#Dataset-Open">H5Dopen</a>
+    <li><a href="#Dataset-Close">H5Dclose</a>
+    <li><a href="#Dataset-GetSpace">H5Dget_space</a>
+    <li><a href="#Dataset-GetSpaceStatus">H5Dget_space_status</a>
+    
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+    <li><a href="#Dataset-GetType">H5Dget_type</a>
+    <li><a href="#Dataset-GetCreatePlist">H5Dget_create_plist</a>
+    <li><a href="#Dataset-GetOffset">H5Dget_offset</a>
+    <li><a href="#Dataset-GetStorageSize">H5Dget_storage_size</a>
+    <li><a href="#Dataset-VLGetBuf">H5Dvlen_get_buf_size</a>
+    <li><a href="#Dataset-VLReclaim">H5Dvlen_reclaim</a>
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+<!--
+    <li><a href="#Dataset-Debug">H5Ddebug</a>
+       This function is in the distributed source code and is technically 
+       a public function, but it is NOT intended for public  use.  
+       It is used only by certain tools.
+       DO NOT list it in the Reference Manual.
+    -->
+    <li><a href="#Dataset-Read">H5Dread</a>
+    <li><a href="#Dataset-Write">H5Dwrite</a>
+    <li><a href="#Dataset-Iterate">H5Diterate</a>
+    <li><a href="#Dataset-Extend">H5Dextend</a>
+    <li><a href="#Dataset-Fill">H5Dfill</a>
+</ul>
+</td></tr>
+</table>
+<br>
+
+<i>Alphabetical Listing</i>
+
+<table border="0">
+  <tr>
+    <td valign="top">
+	<ul>
+      <li><a href="#Dataset-Close">H5Dclose</a>
+      <li><a href="#Dataset-Create">H5Dcreate</a>
+      <li><a href="#Dataset-Extend">H5Dextend</a>
+      <li><a href="#Dataset-Fill">H5Dfill</a>
+      <li><a href="#Dataset-GetCreatePlist">H5Dget_create_plist</a>
+	</ul>     
+    </td>
+    
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    
+    <td valign="top">
+	<ul>
+      <li><a href="#Dataset-GetOffset">H5Dget_offset</a>
+      <li><a href="#Dataset-GetSpace">H5Dget_space</a>
+      <li><a href="#Dataset-GetSpaceStatus">H5Dget_space_status</a>
+      <li><a href="#Dataset-GetStorageSize">H5Dget_storage_size</a>
+      <li><a href="#Dataset-GetType">H5Dget_type</a>
+      <li><a href="#Dataset-Iterate">H5Diterate</a>
+	</ul>
+    </td>
+    
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    
+    <td valign="top">
+	<ul>
+      <li><a href="#Dataset-Open">H5Dopen</a>
+      <li><a href="#Dataset-Read">H5Dread</a>
+      <li><a href="#Dataset-VLGetBuf">H5Dvlen_get_buf_size</a>
+      <li><a href="#Dataset-VLReclaim">H5Dvlen_reclaim</a>
+      <li><a href="#Dataset-Write">H5Dwrite</a>
+	</ul>
+    </td>
+  </tr>
+</table>
+
+<br>
+<strong>The FORTRAN90 Interfaces:</strong>
+<br>
+In general, each FORTRAN90 subroutine performs exactly the same task 
+as the corresponding C function.  
+<br>
+
+<table border=0>
+<tr><td valign=top>
+<ul>
+    <li><a href="#Dataset-Create">h5dcreate_f</a>
+    <li><a href="#Dataset-Open">h5dopen_f</a>
+    <li><a href="#Dataset-Close">h5dclose_f</a>
+    <li><a href="#Dataset-GetSpace">h5dget_space_f</a>
+    <li><a href="#Dataset-GetSpaceStatus">h5dget_space_status_f</a>
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+    <li><a href="#Dataset-GetType">h5dget_type_f</a>
+    <li><a href="#Dataset-GetCreatePlist">h5dget_create_plist_f</a>
+    <li><a href="#Dataset-GetOffset">h5dget_offset_f</a>
+    <li><a href="#Dataset-GetStorageSize">h5dget_storage_size_f</a>
+    <li><a href="#Dataset-VLGetBuf">h5dvlen_get_max_len_f</a>
+<!--<li><a href="#Dataset-VLReclaim">h5dvlen_reclaim_f</a>               -->
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+    <li><a href="#Dataset-Read">h5dread_f</a>
+    <li><a href="#Dataset-Read">h5dread_vl_f</a>
+    <li><a href="#Dataset-Write">h5dwrite_f</a>
+    <li><a href="#Dataset-Write">h5dwrite_vl_f</a>
+<!--<li><a href="#Dataset-Iterate">h5diterate_f</a>                     -->
+<!--<li><a href="#Dataset-Debug">h5ddebug_f</a>                         -->
+    <li><a href="#Dataset-Extend">h5dextend_f</a>
+    <li><a href="#Dataset-Fill">h5dfill_f</a>
+</ul>
+</td></tr>
+</table>
+
+<!-- NEW PAGE -->
+<!-- HEADER RIGHT " " -->
+
+
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+<!--       Include special topic files                       -->
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+
+
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+<!--       Include function files                            -->
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+
+<?php include("H5D/H5Dclose.htm"); ?>
+<?php include("H5D/H5Dcreate.htm"); ?>
+<?php include("H5D/H5Dextend.htm"); ?>
+<?php include("H5D/H5Dfill.htm"); ?>
+<?php include("H5D/H5Dget_create_plist.htm"); ?>
+<?php include("H5D/H5Dget_offset.htm"); ?>
+<?php include("H5D/H5Dget_space.htm"); ?>
+<?php include("H5D/H5Dget_space_status.htm"); ?>
+<?php include("H5D/H5Dget_storage_size.htm"); ?>
+<?php include("H5D/H5Dget_type.htm"); ?>
+<?php include("H5D/H5Diterate.htm"); ?>
+<?php include("H5D/H5Dopen.htm"); ?>
+<?php include("H5D/H5Dread.htm"); ?>
+<?php include("H5D/H5Dvlen_get_buf_size.htm"); ?>
+<?php include("H5D/H5Dvlen_reclaim.htm"); ?>
+<?php include("H5D/H5Dwrite.htm"); ?>
+
+
+<!-- HEADER RIGHT " " -->
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/ed_libs/Footer.lbi" -->
+
+<address>
+The HDF Group Help Desk: <img src="Graphics/help.png" align=top height=16>
+<br>
+Describes HDF5 Release 1.6.10, November 2009 
+</address>
+
+
+<!-- #EndLibraryItem --><SCRIPT LANGUAGE="JAVASCRIPT">
+<!--
+document.writeln("Last modified: 25 April 2009");
+-->
+</SCRIPT>
+ 
+</body>
+</html>
+

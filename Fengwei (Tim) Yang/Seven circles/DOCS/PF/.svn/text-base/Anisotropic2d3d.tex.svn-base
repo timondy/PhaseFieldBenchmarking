@@ -1,0 +1,158 @@
+\documentclass{article}
+%\documentclass[preprint,12pt]{elsarticle}
+%\journal{Computational Physics}
+%\documentclass{article}
+%\usepackage{graphicx}
+%\documentclass[draft,jgrga]{agutex}
+%\documentclass{jgi}
+
+\usepackage{graphpap,natbib}
+\usepackage{amssymb,epsfig,amsmath}
+\newcommand{\VB}{\begin{verbatim}}
+\newcommand{\VE}{\end{verbatim}}
+\newcommand{\cov}[1]{\stackrel{\triangle}{#1}}
+\newcommand{\con}[1]{\stackrel{\nabla}{#1}}
+\newcommand{\nab}[2]{\nabla_{\displaystyle{#1}}#2}
+\newcommand{\Lie}[2]{{\mathcal{L}}_{\displaystyle{#1}}#2}
+\newcommand{\Riem}{\mathrm{Riem}}
+\newcommand{\bs}[1]{{\boldsymbol{#1}}}
+\newcommand{\de}{\,\mathrm d}
+\newcommand{\D}[1]{\,\frac{\mathrm {D}{\,#1}}{\mathrm {D}t}}
+\newcommand{\DD}[1]{\frac{\mathrm {D}^{2}{#1}}{\mathrm {D}{t}^{2}}}
+\newcommand{\diff}[2]{\frac{\de{#1}}{\de{#2}}}
+\newcommand{\diffn}[3]{\frac{\de^{#3}{#1}}{\de{#2}^{#3}}}
+
+\newcommand{\PPar}[2]{\frac{\partial{#1}}{\partial{#2}}} 
+\newcommand{\Dar}[2]{\frac{\delta{#1}}{\delta{#2}}} 
+
+\newcommand{\Par}[2]{\displaystyle\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\Parn}[3]{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}}
+\newcommand{\ha}{\tfrac{1}{2}}
+\newcommand{\ds}{\displaystyle}
+\renewcommand{\vec}[1]{\mbox{\boldmath{$#1$}}}
+\newcommand{\tr}[1]{\mathrm{tr}(#1)}
+\newcommand{\X}[1]{{\bf X}_{#1}}
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+\renewcommand{\t}{\widetilde}
+\renewcommand{\r}[1]{(\ref{#1})}
+\renewcommand{\O}[1]{{\cal O}(#1)}
+\renewcommand{\^}{\wedge}
+\renewcommand{\b}[1]{{\bf{#1}}}
+\newcommand{\bv}[1]{\b{\bar{#1}}}
+\renewcommand{\S}{(\nabla\b u+\nabla\b u^T)}
+\newcommand{\nl}{\nonumber\\}
+\newcommand{\gdot}{\dot\gamma}
+\newcommand{\up}[1]{${}^{#1}$}
+\newcommand{\ee}{\times 10}
+%\newcommand{\X2}{{\bf X}_2}
+%\usepackage{amssymb}
+
+\setlength{\textwidth}{18cm} \setlength{\oddsidemargin}{-1cm}
+\setlength{\evensidemargin}{.5cm} \setlength{\footskip}{1cm}
+\setlength{\textheight}{25cm}\setlength{\topmargin}{-2cm}
+
+\begin{document}
+\title{Paramesh\\Anisotropic calculations 2D and 3D}
+\maketitle
+\section{Anisotropic calculations}
+Given
+\begin{align*}
+ G=\int g(\nabla\phi)\equiv\int\ha A^2|\nabla\phi|^2
+\end{align*}
+First we assume the identity
+\begin{align*}
+ -\Dar{G}{\phi}=\nabla\cdot\Par{g}{\nabla\phi}\equiv \phi_{,ij}\Par{}{\phi_i}\Par{g}{\phi_j}
+\end{align*}
+where 
+\begin{align*}
+ \phi_{,ij}\equiv\Par{{}^2\phi}{x^i\partial x^j}
+\end{align*}
+We also denote (without comma)
+\begin{align*}
+g_i\equiv\Par{g}{\phi_i},\quad g_{ij}\equiv \Par{{}^2g}{\phi_i\partial\phi_j}
+\end{align*}
+so that
+\begin{align*}
+ g_i=AA_i|\nabla\phi|^2+A^2\phi_i
+\end{align*}
+and
+\begin{align*}
+ g_{ij}=A_iA_j|\nabla\phi|^2+2A(A_i\phi_j+A_j\phi_i)+A|\nabla\phi|^2A_{ij}+A^2\phi_{ij}
+\end{align*}
+where we use the notation
+
+\subsection{2 D}
+Given 
+\begin{align*}
+ A\equiv A_0\[1+\epsilon\(\frac{\phi_{,1}^4+\phi_{,2}^4}{|\nabla\phi|^4}\)\]\equiv A_0\[1+\epsilon\(1-\frac{2\phi_{,1}^2\phi_{,2}^2}{|\nabla\phi|^4}\)\]
+\end{align*}
+we find using $X=(\phi_{,x}/|\nabla\phi|)^2,Y=(\phi_{,y}/|\nabla\phi|)^2$ and $A_i\equiv\Par{A}{\phi_{,,i}}$, that
+\begin{align*}
+ A_1=4\,{\frac {{\it A_0}\,\epsilon\,\phi_{,1}{Y} \left( {X}-{Y}
+ \right) }{ |\nabla\phi|^2}}
+\end{align*}
+\begin{align*}
+ A_2=4\,{\frac {{\it A_0}\,\epsilon\,{X}\phi_{,2} \left( {Y}-{X}
+ \right) }{ |\nabla\phi|^2}}
+\end{align*}
+\begin{align*}
+ A_{11}=-4\,{\frac {{\it A_0}\,\epsilon\,{Y} \left( 3\,{X^2}-8\,{X}{Y}+{Y^2} \right) }{ |\nabla\phi|^2}}
+\end{align*}
+\begin{align*}
+ A_{22}=-4\,{\frac {{\it A_0}\,\epsilon\,{X} \left( {X^2}-8\,{X}{Y}+3\,{Y^2} \right) }{ |\nabla\phi|^2}}
+\end{align*}
+\begin{align*}
+A_{12}= 8\,{\frac {{\it A_0}\,\epsilon\,\phi_{,1}\phi_{,2} \left( {X^2}-4\,{X}{Y}+Y^2 \right) }{|\nabla\phi|^4}}
+\end{align*}
+To avoid floating point errors define
+\begin{align*}
+ \tilde A_i=A_i|\nabla\phi|^2\text{ and } \tilde A_{ij}=A_{ij}|\nabla\phi|^2
+\end{align*}
+so that
+\begin{align*}
+ g_{ij}=\frac{1}{|\nabla\phi|^2}\[\tilde A_i\tilde A_j+2A(\tilde A_i\phi_{,j}+\tilde A_j\phi_{,i})\]+A\tilde A_{ij}+A^2\delta_{ij}
+\end{align*}
+\subsection{3D}
+\begin{align*}
+ A&\equiv A_0\[1+\epsilon\(\frac{\phi_1^4+\phi_2^4+\phi_3^4}{|\nabla\phi|^4}\)\]\nl
+ A_1&=\frac{4A_0\epsilon\phi_{,1}}{|\nabla\phi|^2}(X(Y+Z)-Y^2-Z^2)\nl
+A_{12}&=\frac{8A_0\epsilon\phi_{,1}\phi_{,2}}{|\nabla\phi|^4}(X^2+Y^2-4XY-2Z(X+Y)+3Z^2)\nl
+A_{11}&=\frac{-4A_0\epsilon}{|\nabla\phi|^2}(3X^2(Y+Z)-8X(Y^2+Z^2)-6XYZ+Y^3+Y^2Z+Z^2Y+Z^3)
+\end{align*}
+and we can find the other $A_{ij}$ by cyclic permutation.
+\subsection{Isolating the Laplacian}
+in 2D
+\begin{align*}
+ \phi_{,ij}g_{ij}&=g_{11}\phi_{,11}+g_{22}\phi_{,22}+2g_{12}\phi_{,12}\nl
+&=\ha(g_{11}+g_{22})(\phi_{,11}+\phi_{,22})+\ha(g_{11}-g_{22})(\phi_{,11}-\phi_{,22})+2g_{12}\phi_{,12}\nl
+&=\ha(g_{11}+g_{22})\nabla^2\phi+\ha(g_{11}-g_{22})(\phi_{,11}-\phi_{,22})+2g_{12}\phi_{,12}\nl
+\end{align*}
+For the purposes of the pointwise Newton-Raphson in the multigrid smoother, the functions, $g_{ij}$, are discretised without using the central node. So the only contributions to the Newton method are from the discretisation of the Laplacian. Example, the 5 point stencil has a contribution from the central node, $-4/\Delta x^2$, giving net contribution to the smoother of
+\begin{align*}
+ -\ha(g_{11}+g_{22})4/\Delta x^2
+\end{align*}
+Moreover, different stencils may be used for the Laplacian making it advantageous to isolate this term.
+ 
+The procedure above is equivalent to writing the matrix $\b g$ as
+\begin{align*}
+ \b g=\ha \tr{\b g}\b I+\tilde{\b g},
+\end{align*}
+where $\b I$ is the identity, so that
+\begin{align*}
+ \tr{\tilde{\b g}}=0
+\end{align*}
+and taking advantage of $I_{ij}\phi_{ij}=\nabla^2\phi$.
+Similarly in 3D
+\begin{align*}
+ \b g=\tfrac{1}{3} \tr{\b g}\b I+\tilde{\b g}
+\end{align*}
+guarantees $\tr{\tilde{\b g}}=0$ and thus
+\begin{align*}
+ \phi_{,ij}g_{ij}&=\tfrac{1}{3}\tr{\b g}\nabla^2\phi+\phi_{,ij}\tilde g_{ij}
+\end{align*}
+
+
+\end{document}

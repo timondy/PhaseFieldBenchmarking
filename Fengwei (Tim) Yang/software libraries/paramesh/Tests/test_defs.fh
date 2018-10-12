@@ -1,0 +1,42 @@
+
+#include "paramesh_preprocessor.fh"
+
+#define TESTALLDIR             ! select directions used to test
+!#define TESTXDIR               ! guardcell filling for unk and work.
+!#define TESTYDIR               ! TESTALLDIR selects a linear combination
+                                ! all others select individual axes
+
+
+!!!#if N_DIM == 3                  
+#ifndef TESTALLDIR
+!#define TESTZDIR               
+#endif
+!!!#endif
+
+#define FACE                    ! If testing facevar data-structure
+#define FACEX                   ! which faces to test ? Can test
+#define FACEY                   ! all 3 at the same
+                                ! time.
+!!!#if N_DIM == 3                  
+#define FACEZ                  
+!!!#endif
+
+#undef EDGES
+#undef EDGE_TEST
+!!!#if N_DIM == 3                  
+#define EDGES                   ! If testing unk_e data-structure
+#define UNKE_X                  ! which edges to test ? Can test
+#define UNKE_Y                  ! all 3 at the same
+#define UNKE_Z                  ! time.
+#define EDGE_TEST
+!!!#endif
+
+#define FLUX
+#define FLUXX
+#define FLUXY
+!!!#if N_DIM == 3                  
+#define FLUXZ
+!!!#endif
+
+
+        common/set_data/ax,ay,az

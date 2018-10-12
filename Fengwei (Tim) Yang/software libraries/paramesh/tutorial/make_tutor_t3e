@@ -1,0 +1,149 @@
+# This makefile was designed to compile a users application with
+# the amr package on the Cray T3E. The amr package is assumed to
+# be located in a sub-directory tree rooted at the sub-directory
+# specified as AMRDIR below. The amr source files are assumed to
+# be in the sub-directory AMRDIR/source and the required header
+# files in AMRDIR/headers. The users own aplication source and 
+# headers files are assumed to be in the same sub-directory as 
+# this makefile.
+
+
+# specify path to amr top directory                             USER EDIT
+AMRDIR = ???
+
+
+# sets paths to required amr subdirectories - DO NOT ALTER
+AMRSOURCEDIR = $(AMRDIR)/source
+HEADERDIR = $(AMRDIR)/headers
+
+VPATH = $(AMRSOURCEDIR):$(HEADERDIR)
+
+# define the application specific object files required         USER EDIT
+APP_OBJS= tutorial.o \
+ amr_1blk_bcset.o \
+ amr_initial_soln_npgc.o \
+ amr_test_refinement.o \
+ advance_soln.o \
+ amr_timestep.o \
+ conserve_check.o \
+ output2d_tecplot.o
+
+
+# sets the list of header files required by the amr package - DO NOT ALTER
+HEADERFILES= \
+ $(HEADERDIR)/tree.fh \
+ $(HEADERDIR)/physicaldata.fh \
+ $(HEADERDIR)/block_boundary_data.fh \
+ $(HEADERDIR)/workspace.fh \
+ $(HEADERDIR)/data_1blk.fh \
+ $(HEADERDIR)/shmem_reduce.fh \
+ $(HEADERDIR)/amr_shmem.fh \
+ $(HEADERDIR)/compiler.fh
+
+
+# sets the list of object files needed from the amr source - DO NOT ALTER
+AMR_OBJS= $(AMRSOURCEDIR)/amr_shmem_reduce.o \
+        $(AMRSOURCEDIR)/amr_initialize.o \
+        $(AMRSOURCEDIR)/amr_close.o \
+        $(AMRSOURCEDIR)/amr_bc_block.o \
+        $(AMRSOURCEDIR)/amr_morton.o \
+        $(AMRSOURCEDIR)/amr_refine_derefine.o \
+        $(AMRSOURCEDIR)/amr_refine_blocks.o \
+        $(AMRSOURCEDIR)/amr_derefine_blocks.o \
+        $(AMRSOURCEDIR)/amr_restrict.o \
+        $(AMRSOURCEDIR)/amr_restrict_bnd_data.o \
+        $(AMRSOURCEDIR)/amr_restrict_bnd_data_vdt.o \
+        $(AMRSOURCEDIR)/amr_restrict_fc_fun.o \
+        $(AMRSOURCEDIR)/amr_restrict_red.o \
+        $(AMRSOURCEDIR)/amr_restrict_unk_fun.o \
+        $(AMRSOURCEDIR)/amr_restrict_work_fun.o \
+        $(AMRSOURCEDIR)/amr_restrict_unk_fun_recip.o \
+        $(AMRSOURCEDIR)/amr_restrict_work_fun_recip.o \
+        $(AMRSOURCEDIR)/amr_prolong.o \
+        $(AMRSOURCEDIR)/amr_prolong_fc_divbconsist.o \
+        $(AMRSOURCEDIR)/amr_prolong_fun_init.o \
+        $(AMRSOURCEDIR)/amr_prolong_cc_fun_init.o \
+        $(AMRSOURCEDIR)/amr_prolong_face_fun_init.o \
+        $(AMRSOURCEDIR)/amr_redist_blk.o \
+        $(AMRSOURCEDIR)/amr_guardcell.o \
+        $(AMRSOURCEDIR)/amr_flux_conserve.o \
+        $(AMRSOURCEDIR)/amr_flux_conserve_udt.o \
+        $(AMRSOURCEDIR)/amr_flux_conserve_vdt.o \
+        $(AMRSOURCEDIR)/amr_edge_average.o \
+        $(AMRSOURCEDIR)/amr_edge_average_udt.o \
+        $(AMRSOURCEDIR)/amr_edge_average_vdt.o \
+        $(AMRSOURCEDIR)/amr_restrict_edge.o \
+        $(AMRSOURCEDIR)/amr_restrict_edge_data.o \
+        $(AMRSOURCEDIR)/amr_restrict_edge_data_vdt.o \
+        $(AMRSOURCEDIR)/amr_edge_diagonal_check.o \
+        $(AMRSOURCEDIR)/amr_bsort.o \
+        $(AMRSOURCEDIR)/test_neigh_data.o \
+        $(AMRSOURCEDIR)/gtest_neigh_data1.o \
+        $(AMRSOURCEDIR)/mesh_test.o \
+        $(AMRSOURCEDIR)/guardcell_test.o \
+        $(AMRSOURCEDIR)/amr_checkpoint.o \
+        $(AMRSOURCEDIR)/amr_surrounding_blks.o \
+        $(AMRSOURCEDIR)/quicksort_index.o \
+        $(AMRSOURCEDIR)/amr_1blk_cc_cp_remote.o \
+        $(AMRSOURCEDIR)/amr_1blk_cc_prol_gen_unk_fun.o \
+        $(AMRSOURCEDIR)/amr_1blk_cc_prol_gen_work_fun.o \
+        $(AMRSOURCEDIR)/amr_1blk_fc_cp_remote.o \
+        $(AMRSOURCEDIR)/amr_1blk_fc_prol_gen_fun.o \
+        $(AMRSOURCEDIR)/amr_1blk_guardcell.o \
+        $(AMRSOURCEDIR)/amr_1blk_guardcell_c_to_f.o \
+        $(AMRSOURCEDIR)/amr_1blk_guardcell_reset.o \
+        $(AMRSOURCEDIR)/amr_1blk_guardcell_srl.o \
+        $(AMRSOURCEDIR)/amr_1blk_restrict.o \
+        $(AMRSOURCEDIR)/amr_1blk_t_to_perm.o \
+        $(AMRSOURCEDIR)/amr_1blk_to_perm.o \
+        $(AMRSOURCEDIR)/amr_1blk_to_2copy.o \
+        $(AMRSOURCEDIR)/amr_perm_to_1blk.o \
+        $(AMRSOURCEDIR)/amr_1blk_copy_soln.o \
+        $(AMRSOURCEDIR)/amr_1blk_save_soln.o \
+        $(AMRSOURCEDIR)/amr_1blk_bc.o
+
+#        $(AMRSOURCEDIR)/amr_shmem_sgi_r8.o \
+#        $(AMRSOURCEDIR)/namr_shmem_lib_1proc.o \
+
+
+.SUFFIXES : .o .F .f
+.F.o :
+	$(CF) $(FFLAGS) -c $<
+.f.o :
+	$(CF) $(FFLAGS) -c $<
+
+
+# Tunable parameters
+#
+# CF		Name of the fortran compiling system to use
+# LDFLAGS	Flags to the loader
+# LIBS		List of libraries
+# CMD		Name of the executable
+# PROFLIB	Library needed for profiling
+#
+CF =		f90
+LDFLAGS =	
+LIBS =
+CMD =		tutor
+PROFLIB =	
+
+# To perform the default compilation, use the first line
+# To compile for apprentice use the second line
+# To compile for totalview use the third line
+#FFLAGS =	 -Xm -O 3,aggress -I $(HEADERDIR)
+#FFLAGS =	 -Xm -eA -I $(HEADERDIR)
+#FFLAGS =	 -Xm -g -eZ -I $(HEADERDIR)
+FFLAGS =	 -Xm -eZ -I $(HEADERDIR)                    #    USER EDIT
+
+# Lines from here on down should not need to be changed.  They are the
+# actual rules which make uses to build the command
+#
+shmem:		$(CMD)
+
+$(CMD):		$(APP_OBJS) amrpack
+	$(CF) $(LDFLAGS) -o $(@) $(APP_OBJS) $(AMR_OBJS) $(LIBS)
+
+amrpack : $(HEADERFILES)
+	cd $(AMRSOURCEDIR) ; make -f make_source_shmem_t3e all AMRDIRD=$(AMRDIR)
+
+$(APP_OBJS):	$(HEADERFILES)

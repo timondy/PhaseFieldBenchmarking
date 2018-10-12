@@ -1,0 +1,72 @@
+!----------------------------------------------------------------------
+! PARAMESH - an adaptive mesh library.
+! Copyright (C) 2003
+!
+! Use of the PARAMESH software is governed by the terms of the
+! usage agreement which can be found in the file
+! 'PARAMESH_USERS_AGREEMENT' in the main paramesh directory.
+!----------------------------------------------------------------------
+
+      subroutine amr_mg_restrict (nprocs, mype2, level)
+
+      use tree
+      use paramesh_interfaces, ONLY: amr_restrict
+      
+      implicit none
+      
+      integer, intent(in) :: nprocs, mype2, level
+      integer             :: lb
+  
+!               Call the PARAMESH restriction routine.
+         call amr_restrict (mype2, 2, 0, .false.)
+      
+      do lb = 1, lnblocks
+         
+         if (lrefine(lb) > level-1)  nodetype(lb) = -1
+         if (lrefine(lb) == level-1) nodetype(lb) = 1
+         if (lrefine(lb) == level-2 .and. nodetype(lb) /= 1)  & 
+     &        nodetype(lb) = 2
+      
+      end do
+
+      call amr_get_new_nodetypes (nprocs, mype2, level-1)
+
+      return
+      end subroutine amr_mg_restrict
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+      subroutine pf_mg_restrict (nprocs, mype2, level)
+
+      use tree
+      use paramesh_interfaces, ONLY: pf_restrict
+      use paramesh_dimensions
+      
+      implicit none
+      
+      integer, intent(in) :: nprocs, mype2, level
+      integer             :: lb
+      integer :: iopt=2
+      
+!               Call the PARAMESH restriction routine.
+
+!      do iopt = 2, nvar_work+1
+      do iopt = 1+wvar_rest_loop_begin, 1+wvar_rest_loop_end
+         call pf_restrict (mype2, iopt, 0, .false., level)
+      end do
+      
+      do lb = 1, lnblocks
+         
+         if (lrefine(lb) > level-1)  nodetype(lb) = -1
+         if (lrefine(lb) == level-1) nodetype(lb) = 1
+         if (lrefine(lb) == level-2 .and. nodetype(lb) /= 1)  & 
+     &        nodetype(lb) = 2
+      
+      end do
+
+      call amr_get_new_nodetypes (nprocs, mype2, level-1)
+
+      return
+      end subroutine pf_mg_restrict
+
+

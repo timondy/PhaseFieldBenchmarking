@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/paramesh/!svn/ver/1/tutorial_steps/noperm_guard
+END
+Makefile.gnu.step5
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/paramesh/!svn/ver/1/tutorial_steps/noperm_guard/Makefile.gnu.step5
+END
+tutorial_npgc.F90.step3
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/paramesh/!svn/ver/1/tutorial_steps/noperm_guard/tutorial_npgc.F90.step3
+END
+paramesh_preprocessor.fh.tutorial_noperm_guard
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/paramesh/!svn/ver/1/tutorial_steps/noperm_guard/paramesh_preprocessor.fh.tutorial_noperm_guard
+END
+advance_soln_npgc.F90.step2
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/paramesh/!svn/ver/1/tutorial_steps/noperm_guard/advance_soln_npgc.F90.step2
+END
+amr_test_refinement_npgc.F90.step4
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/paramesh/!svn/ver/1/tutorial_steps/noperm_guard/amr_test_refinement_npgc.F90.step4
+END
+tutorial_npgc_output_step6_correct
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/paramesh/!svn/ver/1/tutorial_steps/noperm_guard/tutorial_npgc_output_step6_correct
+END

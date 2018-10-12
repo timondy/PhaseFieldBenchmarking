@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/paramesh/!svn/ver/1/templates
+END
+Makefile.gnu_template
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/paramesh/!svn/ver/1/templates/Makefile.gnu_template
+END
+amr_1blk_bcset_template.F90
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/paramesh/!svn/ver/1/templates/amr_1blk_bcset_template.F90
+END
+amr_timestep_template.F90
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/paramesh/!svn/ver/1/templates/amr_timestep_template.F90
+END
+amr_main_prog_template.F90
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/paramesh/!svn/ver/1/templates/amr_main_prog_template.F90
+END
+amr_test_refinement_template.F90
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/paramesh/!svn/ver/1/templates/amr_test_refinement_template.F90
+END
+amr_1blk_bcset_examples.F90
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/paramesh/!svn/ver/1/templates/amr_1blk_bcset_examples.F90
+END
+amr_bc_block_template.F90
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/paramesh/!svn/ver/1/templates/amr_bc_block_template.F90
+END
+advance_soln_vdt.F90
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/paramesh/!svn/ver/1/templates/advance_soln_vdt.F90
+END
+amr_initial_soln_template.F90
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/paramesh/!svn/ver/1/templates/amr_initial_soln_template.F90
+END
+user_coord_transfm.F90
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/paramesh/!svn/ver/1/templates/user_coord_transfm.F90
+END
+new_amr_1blk_bcset.F90
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/paramesh/!svn/ver/1/templates/new_amr_1blk_bcset.F90
+END

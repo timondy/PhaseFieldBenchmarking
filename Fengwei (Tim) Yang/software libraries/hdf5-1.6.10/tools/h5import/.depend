@@ -1,0 +1,14 @@
+h5import.lo: h5import.c $(srcdir)./../src/hdf5.h $(srcdir)./../src/H5public.h \
+ $(srcdir)./../src/H5pubconf.h $(srcdir)./../src/H5api_adpt.h $(srcdir)./../src/H5Apublic.h \
+ $(srcdir)./../src/H5Ipublic.h $(srcdir)./../src/H5ACpublic.h $(srcdir)./../src/H5Bpublic.h \
+ $(srcdir)./../src/H5Dpublic.h $(srcdir)./../src/H5Epublic.h $(srcdir)./../src/H5Fpublic.h \
+ $(srcdir)./../src/H5FDpublic.h $(srcdir)./../src/H5Gpublic.h $(srcdir)./../src/H5Opublic.h \
+ $(srcdir)./../src/H5HGpublic.h $(srcdir)./../src/H5HLpublic.h $(srcdir)./../src/H5MMpublic.h \
+ $(srcdir)./../src/H5Ppublic.h $(srcdir)./../src/H5Zpublic.h $(srcdir)./../src/H5Rpublic.h \
+ $(srcdir)./../src/H5Spublic.h $(srcdir)./../src/H5Tpublic.h $(srcdir)./../src/H5FDcore.h \
+ $(srcdir)./../src/H5FDfamily.h $(srcdir)./../src/H5FDlog.h $(srcdir)./../src/H5FDmpi.h \
+ $(srcdir)./../src/H5FDmpio.h $(srcdir)./../src/H5FDmpiposix.h $(srcdir)./../src/H5FDmulti.h \
+ $(srcdir)./../src/H5FDsec2.h $(srcdir)./../src/H5FDstdio.h $(srcdir)./../src/H5private.h \
+ $(srcdir)./../src/H5MPprivate.h h5import.h $(srcdir)./../tools/lib/h5tools_utils.h
+h5importtest.lo: h5importtest.c $(srcdir)./../src/H5private.h $(srcdir)./../src/H5public.h \
+ $(srcdir)./../src/H5pubconf.h $(srcdir)./../src/H5api_adpt.h $(srcdir)./../src/H5MPprivate.h

@@ -1,0 +1,311 @@
+# This Gnu-makefile was designed to compile a users application with
+# the amr package. The amr package is assumed to
+# be located in a sub-directory tree rooted at the sub-directory
+# specified as AMRDIR below. The amr source files are assumed to
+# be in the sub-directory AMRDIR/source and the required header
+# files in AMRDIR/headers. The users own aplication source and 
+# headers files are assumed to be in the same sub-directory as 
+# this makefile.
+
+# Make sure that sh is the current shell 
+SHELL = /bin/sh
+export
+
+#------------
+
+# specify path to amr top directory                             USER EDIT
+AMRDIR = ..
+APPLICATION_DIR = .
+#APPLICATION_DIR = ../Tests
+
+
+#------------
+
+# define the application specific source files required         USER EDIT
+# There are 5 groups of files in this category, which 
+# need to be distinguished from each other because the
+# make file treats them differently.
+#  Group 1  :     the main routine (specify as MAIN)
+#  Group 2  :     any paramesh routines which the user constructs
+#                   from templates but which are called by other
+#                   paramesh routines. An example is amr_1blk_bcset.F
+#                   (specify as APP_AMR_SOURCES)
+#  Group 3  :     any application module files which the user 
+#                   (specify as APP_MODULE_SOURCES)
+#  Group 4  :     any application header files, ie files used in
+#                   fortran or preprocessor include statements,
+#                   excluding the paramesh header files in the
+#                   AMRDIR/headers directory.
+#                   (specify as APPHEADERS)
+#  Group 5  :     all other application source files. 
+#                   (specify as APP_SOURCE_FILES)
+
+# first specify the main program
+MAIN = $(APPLICATION_DIR)/test_$(TEST).F
+
+# application files which will be called by routines in the amr package.
+APP_AMR_SOURCES = amr_1blk_bcset.F
+
+# specify any application module files
+APP_MODULE_SOURCES = application_mod.F
+
+# specify any application header files (ie files which will appear in
+# fortran or preprocessor include statements)
+APPHEADERS = 
+
+# now list all the other application files, except those already listed 
+# above in APP_AMR_SOURCES
+APP_SOURCE_FILES = \
+ zero_guardcells.F \
+ check_data.F \
+ dummy.c
+
+
+#------------
+
+# sets paths to required amr subdirectories - DO NOT ALTER
+AMRSOURCEDIR = $(AMRDIR)/source
+HEADERDIR = $(AMRDIR)/headers
+AMR_OBJS_DIR = $(AMRDIR)/paramesh_objs
+
+VPATH = $(AMRSOURCEDIR):$(HEADERDIR):$(APPLICATION_DIR)
+
+#------------
+
+# construct the list of object files to be generated from these source files
+# of type .f, .F and .c
+APP_SOURCE_FILES1 := $(APP_SOURCE_FILES:.f=.o)
+APP_SOURCE_FILES2 := $(APP_SOURCE_FILES1:.F=.o)
+APP_OBJS := $(APP_SOURCE_FILES2:.c=.o)
+
+APP_AMR_SOURCES1 := $(APP_AMR_SOURCES:.f=.o)
+APP_AMR_SOURCES2 := $(APP_AMR_SOURCES1:.F=.o)
+APP_AMR_OBJS := $(APP_AMR_SOURCES2:.c=.o)
+
+MAIN1 := $(MAIN:.f=.o)
+MAIN2 := $(MAIN1:.F=.o)
+MAIN_OBJ := $(MAIN2:.c=.o)
+
+#------------
+
+# sets the list of pre-processor header files required by the amr package 
+# DO NOT ALTER
+PREPROCESSORFILES = $(HEADERDIR)/paramesh_preprocessor.fh
+
+
+# sets the list of header files required by the amr package - DO NOT ALTER
+HEADERFILES = \
+ $(HEADERDIR)/shmem_reduce.fh \
+ $(HEADERDIR)/amr_shmem.fh \
+ $(AMRDIR)/Tests/test_defs.fh
+
+# identifies modules required for the paramesh source files - DO NOT ALTER
+AMR_MODULE_SOURCES = \
+ $(HEADERDIR)/paramesh_dimensions.F \
+ $(HEADERDIR)/paramesh_interfaces.F \
+ $(HEADERDIR)/tree.F \
+ $(HEADERDIR)/physicaldata.F \
+ $(HEADERDIR)/workspace.F \
+ $(HEADERDIR)/prolong_arrays.F
+
+# identifies modules required for the paramesh source files - DO NOT ALTER
+AMR_MODULE_SOURCES1 = $(notdir $(AMR_MODULE_SOURCES))
+AMR_MODULE_SOURCES2 := $(AMR_MODULE_SOURCES1:.F=.o)
+AMR_MODULE_OBJS = $(addprefix $(AMR_OBJS_DIR)/, $(AMR_MODULE_SOURCES2) )
+
+# identifies modules required for the application source files - DO NOT ALTER
+APP_MODULE_OBJS := $(APP_MODULE_SOURCES:.F=.o)
+
+
+#----------------------------------------------------------------------
+
+
+# sets the list of source files needed from the amr source - DO NOT ALTER
+AMR_SOURCE_FILES1 = \
+amr_1blk_bc.F \
+amr_1blk_cc_cp_remote.F  \
+amr_1blk_cc_prol_gen_unk_fun.F  \
+amr_1blk_cc_prol_inject.F  \
+amr_1blk_cc_prol_linear.F  \
+amr_1blk_cc_prol_muscl.F  \
+amr_1blk_cc_prol_genorder.F  \
+amr_1blk_cc_prol_gen_work_fun.F \
+amr_1blk_cc_prol_work_inject.F \
+amr_1blk_cc_prol_work_linear.F \
+amr_1blk_cc_prol_work_muscl.F \
+amr_1blk_cc_prol_work_genorder.F \
+amr_1blk_copy_soln.F    \
+amr_1blk_ec_cp_remote.F \
+amr_1blk_ec_prol_gen_fun.F \
+amr_1blk_fc_cp_remote.F \
+amr_1blk_fc_prol_gen_fun.F \
+amr_1blk_fc_prol_inject.F \
+amr_1blk_fc_prol_linear.F \
+amr_1blk_fc_prol_muscl.F \
+amr_1blk_guardcell.F \
+amr_1blk_guardcell_c_to_f.F \
+amr_1blk_guardcell_reset.F \
+amr_1blk_guardcell_srl.F \
+amr_1blk_nc_cp_remote.F \
+amr_1blk_nc_prol_gen_fun.F \
+amr_1blk_restrict.F \
+amr_1blk_save_soln.F \
+amr_1blk_t_to_perm.F \
+amr_1blk_to_perm.F \
+amr_1blk_to_2copy.F \
+amr_bc_block.F \
+amr_bcset_init.F \
+amr_block_geometry.F \
+amr_bsort.F \
+amr_checkpoint.F \
+amr_close.F \
+amr_derefine_blocks.F \
+amr_edge_average.F \
+amr_edge_average_udt.F \
+amr_edge_average_vdt.F \
+amr_edge_diagonal_check.F \
+amr_flux_conserve.F \
+amr_flux_conserve_udt.F \
+amr_flux_conserve_vdt.F \
+amr_gsurrounding_blks.F \
+amr_guardcell.F \
+amr_initialize.F \
+amr_morton.F \
+amr_perm_to_1blk.F \
+amr_prolong.F \
+amr_prolong_cc_fun_init.F \
+amr_prolong_face_fun_init.F \
+amr_prolong_fc_divbconsist.F \
+amr_prolong_fun_init.F \
+amr_redist_blk.F \
+amr_refine_derefine.F \
+amr_refine_blocks.F \
+amr_reorder_grid.F \
+amr_restrict.F \
+amr_restrict_bnd_data.F \
+amr_restrict_bnd_data_vdt.F \
+amr_restrict_ec_fun.F \
+amr_restrict_edge.F \
+amr_restrict_edge_data.F \
+amr_restrict_edge_data_vdt.F \
+amr_restrict_fc_fun.F \
+amr_restrict_red.F \
+amr_restrict_unk_fun.F \
+amr_restrict_unk_fun_recip.F \
+amr_restrict_work_fun.F \
+amr_restrict_work_fun_recip.F \
+amr_set_runtime_parameters.F \
+amr_shmem_lib_1proc.F \
+amr_shmem_reduce.F \
+amr_shmem_sgi_r8.F \
+amr_surrounding_blks.F \
+amr_system_calls.F \
+gtest_neigh_data1.F \
+guardcell_test.F \
+mesh_test.F \
+quicksort_index.F \
+test_neigh_data.F 
+
+
+# object files to be produced from the AMR source files - DO NOT ALTER
+AMR_SOURCE_OBJS1 = $(notdir $(AMR_SOURCE_FILES1))
+AMR_SOURCE_OBJS2 := $(AMR_SOURCE_OBJS1:.F=.o)
+AMR_SOURCE_OBJS = $(addprefix $(AMR_OBJS_DIR)/, $(AMR_SOURCE_OBJS2) )
+
+AMR_SOURCE_FILES = $(addprefix $(AMRSOURCEDIR)/, $(AMR_SOURCE_FILES1) )
+
+
+
+#----------------------------------------------------------------------
+
+.SUFFIXES : .F .f .mod
+.F.o :
+	$(FC) $(FFLAGS) -c $<
+.f.o :
+	$(FC) $(FFLAGS) -c $<
+.mod.o :
+	$(FC) $(FFLAGS) -c $<
+
+#----------------------------------------------------------------------
+
+# Tunable parameters
+#
+# FC		Name of the fortran compiling system to use
+# LDFLAGS	Flags to the loader
+# LIBS		List of libraries
+# CMD		Name of the executable
+# PROFLIB	Library needed for profiling
+#
+FC = f90
+cc = cc
+LDFLAGS =	
+LIBS = $(APPLICATION_DIR)/application.a $(AMR_OBJS_DIR)/libamrpack.a -lsma
+CMD =		test_$(TEST)
+PROFLIB =	
+
+# To perform the default compilation, use the first line
+# To compile for apprentice use the second line
+# To compile for totalview use the third line
+#FFLAGS =	 -cpp -C -g -r8 -DREAL8 -DEBUG:verbose_runtime=on:fullwarn=on -I $(HEADERDIR) -I $(AMR_OBJS_DIR)    #    USER EDIT
+#FFLAGS =	 -cpp -r8 -DREAL8 -macro_expand -C -g -DEBUG:verbose_runtime=on:fullwarn=on -I $(HEADERDIR) -I $(AMR_OBJS_DIR)    #    USER EDIT
+FFLAGS =	 -cpp -r8 -macro_expand -O3 -I $(HEADERDIR) -I $(AMR_OBJS_DIR)    #    USER EDIT
+
+
+#----------------------------------------------------------------------
+# Lines from here on down are the
+# actual rules which make uses to build the command
+
+all:	$(CMD)
+
+# the program executable.
+$(CMD):		$(AMR_MODULE_OBJS) amrpack $(APP_MODULE_OBJS) application $(MAIN_OBJ) $(APP_AMR_OBJS)
+	$(FC) $(LDFLAGS) $(AMR_MODULE_OBJS) $(APP_MODULE_OBJS) $(MAIN_OBJ) $(APP_AMR_OBJS) $(LIBS) -o $(@)
+
+
+#------------------------------------------
+
+# the paramesh module object files.
+$(AMR_MODULE_OBJS):	$(AMR_MODULE_SOURCES) $(PREPROCESSORFILES)
+	-mkdir $(AMRDIR)/paramesh_objs
+	cd $(AMR_OBJS_DIR) ; $(FC) $(FFLAGS) $(filter-out %.fh, $^) -c
+
+#------------------------------------------
+
+# the paramesh application module object files.
+$(APP_MODULE_OBJS):	$(APP_MODULE_SOURCES) $(PREPROCESSORFILES) $(APPHEADERS)
+	$(FC) $(FFLAGS) $(filter-out %.fh, $^) -c
+
+#------------------------------------------
+
+# the paramesh source code object files.
+amrpack: 
+	cd $(AMR_OBJS_DIR) && $(MAKE) -f $(AMRSOURCEDIR)/gmake_amrsource
+
+
+#------------------------------------------
+
+# the application source code object files.
+
+application:    application.a
+
+application.a:  application.a($(APP_OBJS))
+
+# the users application object files.
+$(APP_AMR_OBJS):	$(HEADERFILES) $(PREPROCESSORFILES) $(AMR_MODULE_OBJS) $(APP_MODULE_OBJS)
+
+# the users application object files.
+$(APP_OBJS):	$(HEADERFILES) $(PREPROCESSORFILES) $(AMR_MODULE_OBJS) $(APP_MODULE_OBJS)
+
+$(MAIN_OBJ):	$(HEADERFILES) $(PREPROCESSORFILES) $(AMR_MODULE_OBJS) $(APP_MODULE_OBJS)
+
+#------------------------------------------
+
+# clean out all the object, module and executable files.
+.PHONY:	clean
+clean:
+	rm -rf $(AMR_OBJS_DIR)
+	-rm -f *.o
+	-rm -f *.mod
+	-rm -f application.a
+
+#------------------------------------------

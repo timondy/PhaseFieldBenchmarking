@@ -1,0 +1,11 @@
+This directory contains example Makefiles for different compilers used in each of these
+files are:
+
+Makefile.gnu.mac   - IBM xlf90 and Gnu C (on a Mac, G4 Power book)
+Makefile.gnu.nag   - NAG Fortran 90 and C
+Makefile.gnu.lahey - Lahey/Fujitsu Fortran 90 and C
+Makefile.gnu.intel - Intel Fortran and Gnu C
+Makefile.gnu.g95   - Gnu g95 and Gnu C 
+
+The compiler flags and other settings are those actually used on systems where PARAMESH
+is tested on a regular basis.

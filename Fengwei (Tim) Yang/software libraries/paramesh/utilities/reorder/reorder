@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+
+import sys
+import os
+
+# move old source code into old directories (if they don't already exist)
+dir_names = ["source", "mpi_source", "headers", "Tests"]
+
+for dir in dir_names:
+  try:
+	os.mkdir('../../' + dir + '_old')
+	print " "
+	print 'Making copies'
+	print " "
+	command = 'cp ../../' + dir + '/* ../../' + dir + '_old/.'
+        os.system(command)
+  except:
+	print " "
+	print "OLD directory already exists, not copying files"
+	print " "
+  filelist=os.listdir("../../" + dir + "/")
+  for filename in filelist:
+	exten = filename[len(filename)-4:len(filename)]
+	if (exten == ".F90"):
+          command = "rm ../../" + dir + "/" + filename
+          os.system(command)
+          command = "./setup_reorder --input=../../" + dir + "_old/" + filename + \
+                    " --output=../../" + dir + "/" + filename + " --auto --five=unk1 --five=tgvar[xyz] --five=t_unk --five=gt_unk --four=recv --four=unk1_fl --five=flux_[xyz] --five=tflux_[xyz] --five=ttflux_[xyz] --four=bndtemp[xyz]1 --five=gt_facevar[xyz] --four=ttunk --four=ttfacevarx --four=ttfacevary --four=ttfacevarz --five=facevar[xyz]1 --four=facevar[xyz]1_fl --four=recvf --four=sendf --four=tempf --four=recv[xyz] --four=recv[xyz]f --five=unk_e_[xyz] --five=unk_e_[xyz]1 --five=gt_unk_e_[xyz] --five=unk_n --five=unk_n1 --five=gt_unk_n --five=bedge_facex_[yz] --five=bedge_facey_[xz] --five=bedge_facez_[xy] --five=tbedge_facex_[yz] --five=tbedge_facey_[xz] --five=tbedge_facez_[xy] --four=unk_e_[xyz]1_fl --four=recvar[xyz]1e --four=recvar[xyz]2e --four=recve --four=recvn --four=recvf[xyz] --four=ttunk_e_[xyz] --four=ttunk_n --five=t_unk_e_[xyz] --five=t_unk_n --four=unk_n1_fl --four=temp --four=recvn0 --four=tempn --four=sendn --four=datain --four=dataout --four=unkt --four=facevar[xyz]t --four=unk_e_[xyz]t --four=unk_nt"
+          print command
+          os.system(command)
+
+

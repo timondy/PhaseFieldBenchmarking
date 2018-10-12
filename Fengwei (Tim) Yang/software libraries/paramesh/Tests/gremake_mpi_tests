@@ -1,0 +1,13 @@
+#! /bin/sh
+
+gmake -f gmake_mpi_tests "TEST=guardcell_1blk"
+gmake -f gmake_mpi_tests "TEST=prolong_1blk"
+gmake -f gmake_mpi_tests "TEST=c_to_f_1blk"
+gmake -f gmake_mpi_tests "TEST=prolong_multilevel_1blk"
+gmake -f gmake_mpi_tests "TEST=flux_conserve_1blk"
+gmake -f gmake_mpi_tests "TEST=edges_1blk"
+gmake -f gmake_mpi_tests "TEST=1blk_guardcell_icoord"
+gmake -f gmake_mpi_tests "TEST=restrict_1blk"
+gmake -f gmake_mpi_tests "TEST=checkpoint"
+gmake -f gmake_mpi_tests "TEST=multi_level_1"
+gmake -f gmake_mpi_tests "TEST=multi_level_2"

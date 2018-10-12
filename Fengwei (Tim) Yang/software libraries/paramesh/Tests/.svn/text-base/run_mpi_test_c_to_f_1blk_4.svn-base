@@ -1,0 +1,4 @@
+#! /bin/csh
+
+run_an_mpi_test 1 2 test_c_to_f_1blk_4
+exit $status

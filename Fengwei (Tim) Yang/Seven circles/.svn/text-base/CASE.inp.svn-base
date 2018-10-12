@@ -1,0 +1,9 @@
+&input_variables 
+max_time_iter = 101  ! Setting maximum number of timesteps
+mg_max_level = 6     ! One to set up the finest grid to be used
+verbose=1            ! One from generic_parameters
+output_rate=74
+kE = 0.15
+le=40.0
+grow=1
+/

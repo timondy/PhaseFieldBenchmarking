@@ -1,0 +1,199 @@
+## HDF5-Fortran test/Makefile(.in)
+##
+# Copyright by The HDF Group.
+# Copyright by the Board of Trustees of the University of Illinois.
+# All rights reserved.
+#
+# This file is part of HDF5.  The full HDF5 copyright notice, including
+# terms governing use, modification, and redistribution, is contained in
+# the files COPYING and Copyright.html.  COPYING can be found at the root
+# of the source code distribution tree; Copyright.html can be found at the
+# root level of an installed copy of the electronic HDF5 document set and
+# is linked from the top-level documents page.  It can also be found at
+# http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have
+# access to either file, you may request a copy from help@hdfgroup.org.
+##
+top_srcdir=@top_srcdir@/..
+top_builddir=../..
+srcdir=@srcdir@
+@COMMENCE@
+
+hdf5_builddir=$(top_builddir)/src
+
+## Replace building FC with the just installed h5fc
+FC=$(bindir)/h5fc
+FC_PP=$(bindir)/h5pfc
+
+## These are the programs that `make all' or `make tests' will build and which
+## `make check' will run. List them in the order they should be run.
+## Parallel programs are dependent on if parallel build is true.
+@BUILD_PARALLEL_CONDITIONAL_TRUE@TEST_PROGS_PARA=ph5example
+TEST_PROGS=dsetexample fileexample rwdsetexample attrexample groupexample	\
+	   grpsexample grpdsetexample hyperslab selectele grpit refobjexample	\
+	   refregexample mountexample compound
+TEST_SCRIPTS=testh5fc.sh
+
+# Some examples depend on files created by other examples.
+grpdsetexample.chkexe_: grpsexample.chkexe_
+refregexample.chkexe_: refobjexample.chkexe_
+# rwdsetexample and attrexample both modify the same file created by
+# dsetexample. Serialize them.
+rwdsetexample.chkexe_: dsetexample.chkexe_
+attrexample.chkexe_: rwdsetexample.chkexe_
+
+## These are the files that `make clean' (and derivatives) will remove from
+## this directory.
+CLEAN=*.h5
+DISTCLEAN=testh5fc.sh
+
+## List all source files here. The list of object files will be
+## created by replacing the `.f90' with a `.o'. This list is necessary
+## for building automatic dependencies.
+## Parallel programs are dependent on if parallel build is true.
+@BUILD_PARALLEL_CONDITIONAL_TRUE@TEST_SRC_PARA=ph5example.f90
+TEST_SRC=dsetexample.f90 fileexample.f90 rwdsetexample.f90 attrexample.f90	\
+	 groupexample.f90 grpsexample.f90 grpdsetexample.f90 hyperslab.f90	\
+	 selectele.f90 grpit.f90 refobjexample.f90 refregexample.f90		\
+	 mountexample.f90 compound.f90
+TEST_OBJ=$(TEST_SRC:.f90=.lo)
+
+EXAMPLE_PROGS=$(TEST_SRC) $(TEST_SRC_PARA)
+
+## How to build the programs... they all depend on the installed h5fc.
+$(TEST_PROGS):
+dsetexample: $(srcdir)/dsetexample.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+fileexample: $(srcdir)/fileexample.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+rwdsetexample: $(srcdir)/rwdsetexample.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+attrexample: $(srcdir)/attrexample.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+groupexample: $(srcdir)/groupexample.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+grpsexample: $(srcdir)/grpsexample.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+grpdsetexample: $(srcdir)/grpdsetexample.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+hyperslab: $(srcdir)/hyperslab.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+selectele: $(srcdir)/selectele.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+grpit: $(srcdir)/grpit.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+refobjexample: $(srcdir)/refobjexample.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+refregexample: $(srcdir)/refregexample.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+mountexample: $(srcdir)/mountexample.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+compound: $(srcdir)/compound.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+ph5example: $(srcdir)/ph5example.f90
+	@if test "X$(PARALLEL)" = "Xno"; then				\
+	  echo $(FC) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC) -o $@ $(srcdir)/$@.f90;					\
+	else								\
+	  echo $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	  $(FC_PP) -o $@ $(srcdir)/$@.f90;				\
+	fi
+
+@CONCLUDE@

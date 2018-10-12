@@ -1,0 +1,440 @@
+!----------------------------------------------------------------------
+! PARAMESH - an adaptive mesh library.
+! Copyright (C) 2002
+! By: Peter J. MacNeice, Drexel University.
+!     Kevin M. Olson, Univ. of MD Baltimore Campus.
+! 
+! This library is free software; you can redistribute it and/or
+! modify it under the terms of the GNU Lesser General Public
+! License as published by the Free Software Foundation; either
+! version 2.1 of the License, or (at your option) any later version.
+! 
+! This library is distributed in the hope that it will be useful,
+! but WITHOUT ANY WARRANTY; without even the implied warranty of
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+! Lesser General Public License for more details.
+! 
+! You should have received a copy of the GNU Lesser General Public
+! License along with this library; if not, write to the Free Software
+! Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307
+! USA
+!
+! Modification history:
+!     Michael L. Rilee, November 2002, *dbz*
+!        Initial support for divergenceless prolongation
+!     Michael L. Rilee, December 2002, *clean_divb*
+!        Support for projecting field onto divergenceless field
+!
+!----------------------------------------------------------------------
+!------------------------------------------------------------------------------
+! paramesh_preprocessor.fh
+!------------------------------------------------------------------------------
+
+
+!Paramesh Pre-Processor Control
+
+
+!---------------------------------------------
+! Specify information which paramesh needs to know
+! about compiler flags which you are using
+!---------------------------------------------
+
+!---------------------------------------------
+! Specify whether or not PARAMESH is to be deployed
+! as a library on your system.  Setting this flag allows
+! parameters maxblocks, nxb, nyb, nzb, and nvar to be 
+! specified at runtime.
+!---------------------------------------------
+! ---< USER EDIT >---
+!#define LIBRARY
+!---------------------------------------------
+
+
+!--------------
+! If you use -r8 then make sure REAL8 is defined.
+! Note, if your compiler allows preprocessor variables to be
+! specified on the command line then you can define REAL8 on
+! the command line instead of doing it here. 
+! eg. the sgi f90 compiler
+! FFLAGS =  ... -cpp -r8 -DREAL8 ........
+!
+
+! ---< USER EDIT >---
+#define REAL8
+
+!-------------------
+! Error checking
+!-------------------
+! Some checks have been placed inside the PARAMESH routines, to trap
+! some obvious inconsistencies. These checks are normally disabled.
+! To enable them, define this variable.
+#define AMR_ERROR_CHECKING
+
+!-------------------
+
+
+
+!-------------------
+! Algorithm Specific
+!-------------------
+
+! set pre-processor variable to control use of different timesteps on
+! different grid blocks
+! ---< USER EDIT >---
+!#define VAR_DT
+
+! Does the algorithm use predictor-corrector type timestepping?
+! ---< USER EDIT >---
+!#define PRED_CORR
+
+! Will any grid blocks represent obstacles to flow?
+! ---< USER EDIT >---
+!#define EMPTY_CELLS
+
+! Does algorithms stencil require diagonal elements?
+! If not undefine this variable. This will optimize the guardcell filling.
+! ---< USER EDIT >---
+#define DIAGONALS
+
+#ifndef LIBRARY
+! set the model dimension here. If running 2.5D also edit l2p5d below.
+! ---< USER EDIT >---
+#define N_DIM 2
+#endif
+
+
+
+
+!----------------------
+! Coordinate system
+!----------------------
+! If you want to use a curvilinear coordinate system then uncomment
+! the appropriate definitions. If you leave all these variables undefined
+! the default grid will be assumed to be cartesian.
+
+! ---< USER EDIT >---
+!#define CURVILINEAR
+
+#ifdef CURVILINEAR
+#define CARTESIAN
+!#define CYLINDRICAL
+!#define SPHERICAL
+!#define POLAR
+#endif /* CURVILINEAR */
+
+
+
+
+! Avoid storage space for guardcells by filling block guardcells on an
+! individual basis
+! ---< USER EDIT >---
+!#define NO_PERMANENT_GUARDCELLS
+
+! If you wish to advance the solution at all refinement levels then
+! uncomment the next line. Otherwise the solution will be advanced
+! on leaf nodes only. (Note, if VAR_DT is defined above then you
+! must define ADVANCE_ALL_LEVELS.)
+! ---< USER EDIT >---
+!#define ADVANCE_ALL_LEVELS
+
+#ifdef VAR_DT
+#define ADVANCE_ALL_LEVELS
+#endif
+
+
+
+
+
+!-----------------------------------------------------
+! Conservation and/or Circulation Integral Constraints
+!-----------------------------------------------------
+
+! Do you wish to guarantee conservation during the prolongation
+! operation? If so, then define CONSERVE.
+! This is discussed in the users manual.
+! ---< USER EDIT >---
+!#define CONSERVE
+
+
+! To ensure conservation it may be necessary for you to store information
+! temporarily about fluxes at block boundaries. You can choose to store 
+! this information in the form of fluxes or flux densities. 
+! If you choose to use 
+!        fluxes            -  define the variable CONSV_FLUXES here.
+!        fluxes densities  -  define the variable CONSV_FLUX_DENSITIES here.
+! You must choose one, and only one of these choices.
+! If you are using curvilinear coords you must assume CONSV_FLUXES, and
+! it will automatically be selected for you here.
+! If you do not intend calling the routine AMR_FLUX_CONSERVE, it does not
+! matter which choice you make.
+! ---< USER EDIT >---
+#undef CONSV_FLUXES
+! ---< USER EDIT >---
+#define CONSV_FLUX_DENSITIES
+
+#ifdef CURVILINEAR
+#define CONSV_FLUXES
+#undef CONSV_FLUX_DENSITIES
+#endif
+
+
+! Enforcing a divergence free behaviour.
+! If you have a field stored in the FACEVAR datastructure which 
+! is subject to a divergence free constraint, then you may need
+! to define some variables here to enable routines which support
+! this.
+
+! There are 3 ways to achieve divergence free prolongation.
+! 1. Use the standard linear interpolation for the field components
+!       and then make sure amr_prolong_fc_divbconsist is called.
+!       (define DIVERGENCE_FREE below)
+! 2. Use the divergence-free prolongation algorithm devised by
+!       Balsara.
+! 3. Use a divergence cleaning algortihm suggested by Colella.
+!       (define CLEAN_DIVB below).
+
+
+! Set the number of divergence free fields which you will need.
+#define NFIELD_DIVF 0
+ 
+
+! Enable calls to CLEAN_DIVB routines that project face-centered field
+! variables to a divergence free field.
+!
+!#define CLEAN_DIVB
+#ifdef CLEAN_DIVB
+#include "clean_divb.fh"
+#endif
+
+! This variable cause the routine amr_prolong_fc_divbconsist
+! to be called during prolongation of FACEVAR.
+
+! ---< USER EDIT >---
+!#define DIVERGENCE_FREE
+
+
+! To ensure consistency of circulation integral it may be necessary for 
+! you to store information temporarily about edge variables at block 
+! boundaries. You can choose to store 
+! this information in the form of the edge value times the edge length or
+! just as the edge values.
+! If you choose to use 
+!        value x edge length -  define the variable EDGE_VALUE_INTEG here.
+!        value               -  define the variable EDGE_VALUE here.
+! You must choose one, and only one of these choices.
+! If you are using curvilinear coords you must assume EDGE_VALUE_INTEG, and
+! it will automatically be selected for you here.
+! If you do not intend calling the routine AMR_EDGE_AVERAGE, it does not
+! matter which choice you make.
+! ---< USER EDIT >---
+#undef EDGE_VALUE_INTEG
+! ---< USER EDIT >---
+#define EDGE_VALUE
+
+#ifdef CURVILINEAR
+#define EDGE_VALUE_INTEG
+#undef EDGE_VALUE
+#endif
+
+
+
+
+
+!
+! Consistency of face-centered, edge-centered and node data across
+! block interfaces between blocks of the same refinement level.
+! If roundoff error can introduce inconsistencies in these data values,
+! which, in principle should remain identical, and these inconsistencies
+! can grow because of the nature of your algorithm, you may wish to
+! force them to be made consistent. If so, then define the following
+! pre-processor variable.
+#define FORCE_CONSISTENCY_AT_SRL_INTERFACES
+
+!
+!------------------
+! Model dimensions
+!------------------
+
+! set physical dimension of model and number of edges on each grid block
+
+#if N_DIM == 3
+#define L_2P5DIM 0
+#endif
+
+#if N_DIM == 2
+! ---< USER EDIT >---
+#define L_2P5DIM 0
+!                                         /*   1 if 2.5D    */
+!                                         /*   0 if 2D      */
+#endif 
+                                                           
+#if N_DIM == 1
+#define L_2P5DIM 0
+#endif
+
+
+!----------------------
+! Grid Block Properties
+!----------------------
+
+! set size of grid blocks
+! NX_B is the number of cells in a block along the x direction (excluding any
+! guardcells).
+! NY_B is the number of cells in a block along the x direction (excluding any
+! guardcells).
+! NZ_B is the number of cells in a block along the x direction (excluding any
+! guardcells).
+! These values will be used to define the fortran parameters (nxb,nyb,nzb).
+! The spatial relationship between grid points in parents
+! and their children is subtley different depending on whether
+! the block dimensions (ie nxb,nyb,nzb) are even or odd. This has 
+! significant consequences when defining interpolation within
+! restriction or prolongation operations.
+! ---< USER EDIT >---
+#define NX_B 4
+#if N_DIM >= 2
+! ---< USER EDIT >---
+#define NY_B 4
+#else
+#define NY_B 1
+#endif
+#if N_DIM == 3
+! ---< USER EDIT >---
+#define NZ_B 8
+#else
+#define NZ_B 1
+#endif
+
+
+#ifndef LIBRARY
+! set the maximum number of blocks per processor.
+! This value is copied to the fortran parameter maxblocks.
+! ---< USER EDIT >---
+!#define MAX_BLOCKS 100
+#define MAX_BLOCKS 4000
+#endif
+
+
+! set the number of guard cell layers at each boundary
+! This value is copied to the fortran parameter nguard.
+! ---< USER EDIT >---
+#define N_GUARD_CELLS 1
+
+
+
+! set the number of guard cell layers at each boundary for the
+! workspace array called WORK.
+! This value is copied to the fortran parameter nguard_work.
+! ---< USER EDIT >---
+#define N_GUARD_CELLS_WORK 1
+
+
+
+
+
+!----------------------
+! Solution Variables
+!----------------------
+
+! Set number of unknowns associated with each grid cell.
+! N_VAR is the value given to the fortran parameter nvar.
+! If you are using a multi-step timestep integration algorithm 
+! (eg predictor-corrector) then the recommended value for nvar is 
+!             nvarp*(nphase + 1)
+! where nvarp denotes the number of physical variables (ie. 1D hydro would
+! have nvarp=3, for mass, momentum and energy), nphase is the number of 
+! stages in an integration timestep (ie predictor-corrector would have 
+! nphase=2). Similar considerations apply for nfacevar.
+! ---< USER EDIT >---
+#define N_VAR 1
+
+! The number of solution data words needed on a cell face.
+! N_FACEVAR is the value given to the fortran parameter nfacevar.
+! ---< USER EDIT >---
+#define N_FACEVAR 0
+
+! The number of solution data words needed on cell edges.
+! N_VAR_EDGE is the value given to the fortran parameter nvaredge.
+! ---< USER EDIT >---
+#define N_VAR_EDGE 0
+
+! The number of solution data words needed at cell corners.
+! N_VAR_CORN is the value given to the fortran parameter nvarcorn.
+! ---< USER EDIT >---
+#define N_VAR_CORN 0
+
+
+
+! Define the number of variables per grid cell which the workspace array 
+! called WORK can handle.
+! ---< USER EDIT >---
+#define N_VAR_WORK 1
+
+
+!-----------------------------------------------------
+! Variables needed to enforce Conservation constraints
+!-----------------------------------------------------
+
+! The number of flux variables which must satisfy conservation laws.
+! N_FLUX_VAR is the value given to the fortran parameter nfluxvar.
+! ---< USER EDIT >---
+#define N_FLUX_VAR 1
+
+
+
+
+! The number of edge variables which will be required to satisy circulation 
+! integral constraints. 
+! N_EDGE_VAR is the value given to the fortran parameter nedgevar.
+! ---< USER EDIT >---
+#define N_EDGE_VAR 0
+
+
+
+
+! The convention for relating variables associated with cell interfaces to the
+! variables defined at cell centers is as follows:
+
+! If iface_off=0 :
+!         the array facevarx(:,i,j,k,:) for example defines data
+!         on the x(i-1/2) face of the (i,j,k)-th mesh cell.
+! If iface_off=-1 :
+!         the array facevarx(:,i,j,k,:) for example defines data
+!         on the x(i+1/2) face of the (i,j,k)-th mesh cell.
+
+! This also applies to the relationship between unk_e_? and (i,j,k),
+! and unk_n and (i,j,k).
+
+! ---< USER EDIT >---
+! Note FACE_INDEX_OFFSET = -1 will not currently work
+#define FACE_INDEX_OFFSET 0
+
+
+!-----------------------------------------------------------------
+! See paramesh/headers/tree.F, for the following
+
+! Parameters used to declare the number of block marker flags needed
+#define MFLAGS 1
+
+! Parameters used to declare the number of boundary regions where boundary
+! conditions are to be applied.  Typically: 2*ndim
+#define NBOUNDARIES 2*N_DIM
+
+
+!-----------------------------------------------------------------
+! If you want to profile performance of the MPI version define this variable
+
+#define TIMING_MPI
+! some timers have a large cost. These can be switched on using TIMING_MPIX
+#undef TIMING_MPIX
+
+!-----------------------------------------------------------------
+
+!#define SAVE_MORTS
+
+!-----------------------------------------------------------------
+! Define the directory where you want all paramesh output to go to
+
+#define OUTPUT_DIR './'
+
+!-----------------------------------------------------------------

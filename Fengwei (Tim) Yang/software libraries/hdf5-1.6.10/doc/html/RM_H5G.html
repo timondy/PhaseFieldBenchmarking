@@ -1,0 +1,292 @@
+<html>
+<head><title>
+HDF5/H5G API Specification
+</title>
+
+<!-- #BeginLibraryItem "/ed_libs/styles_RM.lbi" -->
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<link href="ed_styles/RMelect.css" rel="stylesheet" type="text/css">
+<!-- #EndLibraryItem --></head>
+
+<body bgcolor="#FFFFFF">
+<!-- HEADER RIGHT " " -->
+
+
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><center>
+<h1>H5G: Group Interface</h1>
+</center>
+
+<h2>Group Object API Functions</h2>
+
+The Group interface functions create and manipulate groups
+of objects in an HDF5 file.
+<p>
+<strong>The C Interfaces:</strong>
+
+<table border=0>
+<tr><td valign=top>
+<ul>
+    <li><a href="#Group-Create">H5Gcreate</a>
+    <li><a href="#Group-Open">H5Gopen</a>
+    <li><a href="#Group-Close">H5Gclose</a>
+    <li><a href="#Group-SetComment">H5Gset_comment</a>
+    <li><a href="#Group-GetComment">H5Gget_comment</a>
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td valign=top> 
+<ul>
+    <li><a href="#Group-Link">H5Glink</a> 
+    <li><a href="#Group-Link2">H5Glink2</a> 
+    <li><a href="#Group-Unlink">H5Gunlink</a> 
+    <li><a href="#Group-Move">H5Gmove</a>
+    <li><a href="#Group-Move2">H5Gmove2</a> 
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+    <li><a href="#Group-Iterate">H5Giterate</a> 
+    <li><a href="#Group-GetObjinfo">H5Gget_objinfo</a>
+    <li><a href="#Group-GetNumObjs">H5Gget_num_objs</a>
+    <li><a href="#Group-GetObjNameByIdx">H5Gget_objname_by_idx</a>
+    <li><a href="#Group-GetObjTypeByIdx">H5Gget_objtype_by_idx</a>
+    <li><a href="#Group-GetLinkval">H5Gget_linkval</a>
+</ul>
+</td></tr>
+</table>
+
+<i>Alphabetical Listing</i>
+
+<table border="0">
+  <tr>
+    <td valign="top">
+	<ul>
+      <li><a href="#Group-Close">H5Gclose</a>
+      <li><a href="#Group-Create">H5Gcreate</a>
+      <li><a href="#Group-GetComment">H5Gget_comment</a>
+      <li><a href="#Group-GetLinkval">H5Gget_linkval</a>
+      <li><a href="#Group-GetNumObjs">H5Gget_num_objs</a>
+      <li><a href="#Group-GetObjinfo">H5Gget_objinfo</a>
+    </ul>     
+    </td>
+    
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    
+    <td valign="top">
+	<ul>
+      <li><a href="#Group-GetObjNameByIdx">H5Gget_objname_by_idx</a>
+      <li><a href="#Group-GetObjTypeByIdx">H5Gget_objtype_by_idx</a>
+      <li><a href="#Group-Iterate">H5Giterate</a>
+      <li><a href="#Group-Link">H5Glink</a>
+      <li><a href="#Group-Link2">H5Glink2</a>
+      <li><a href="#Group-Move">H5Gmove</a>
+	</ul>
+    </td>
+    
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    
+    <td valign="top">
+	<ul>
+      <li><a href="#Group-Move2">H5Gmove2</a>
+      <li><a href="#Group-Open">H5Gopen</a>
+      <li><a href="#Group-SetComment">H5Gset_comment</a>
+      <li><a href="#Group-Unlink">H5Gunlink</a>
+	</ul>
+    </td>
+  </tr>
+</table>
+
+<br>
+<strong>The FORTRAN90 Interfaces:</strong>
+<br>
+In general, each FORTRAN90 subroutine performs exactly the same task 
+as the corresponding C function.  
+<br>
+
+<table border=0>
+<tr><td valign=top>
+<ul>
+    <li><a href="#Group-Create">h5gcreate_f</a>
+    <li><a href="#Group-Open">h5gopen_f</a>
+    <li><a href="#Group-Close">h5gclose_f</a>
+    <li><a href="#Group-SetComment">h5gset_comment_f</a>
+    <li><a href="#Group-GetComment">h5gget_comment_f</a>
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+    <li><a href="#Group-Link">h5glink_f</a>
+    <li><a href="#Group-Link2">h5glink2_f</a>
+    <li><a href="#Group-Unlink">h5gunlink_f</a>  
+    <li><a href="#Group-Move">h5gmove_f</a> 
+    <li><a href="#Group-Move2">h5gmove2_f</a> 
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+    <li><a href="#Group-Iterate">h5gget_obj_info_idx_f</a>
+    <li><a href="#Group-Iterate">h5gn_members_f</a>
+<!--<li><a href="#Group-GetObjinfo">h5gget_objinfo_f</a>          -->
+<!--<li><a href="#Group-GetNumObjs">h5gget_num_objs_f</a>         -->
+<!--<li><a href="#Group-GetObjNameByIdx">h5gget_objname_by_idx_f</a>   -->
+<!--<li><a href="#Group-GetObjTypeByIdx">h5gget_objtype_by_idx_f</a>   -->
+    <li><a href="#Group-GetLinkval">h5gget_linkval_f</a>
+</ul>
+</td></tr>
+</table>
+
+<p>
+A group associates names with objects and provides a mechanism
+for mapping a name to an object. Since all objects appear in at 
+least one group (with the possible exception of the root object) 
+and since objects can have names in more than one group, the set 
+of all objects in an HDF5 file is a directed graph.  The internal
+nodes (nodes with out-degree greater than zero) must be groups 
+while the leaf nodes (nodes with out-degree zero) are either empty 
+groups or objects of some other type.  Exactly one object in every 
+non-empty file is the root object.  The root object always has a 
+positive in-degree because it is pointed to by the file super block.
+
+<p>
+An object name consists of one or more components separated from
+one another by slashes. An absolute name begins with a slash and the
+object is located by looking for the first component in the root
+object, then looking for the second component in the first object, etc.,
+until the entire name is traversed.  A relative name does not begin 
+with a slash and the traversal begins at the location specified by the 
+create or access function.
+
+<p>
+
+<!-- NEW PAGE -->
+<!-- HEADER RIGHT " " -->
+<?php include("H5G/H5Gclose.htm"); ?>
+<?php include("H5G/H5Gcreate.htm"); ?>
+<?php include("H5G/H5Gget_comment.htm"); ?>
+<?php include("H5G/H5Gget_linkval.htm"); ?>
+<?php include("H5G/H5Gget_num_objs.htm"); ?>
+<?php include("H5G/H5Gget_objinfo.htm"); ?>
+<?php include("H5G/H5Gget_objname_by_idx.htm"); ?>
+<?php include("H5G/H5Gget_objtype_by_idx.htm"); ?>
+<?php include("H5G/H5Giterate.htm"); ?>
+<?php include("H5G/H5Glink.htm"); ?>
+<?php include("H5G/H5Glink2.htm"); ?>
+<?php include("H5G/H5Gmove.htm"); ?>
+<?php include("H5G/H5Gmove2.htm"); ?>
+<?php include("H5G/H5Gopen.htm"); ?>
+<?php include("H5G/H5Gset_comment.htm"); ?>
+<?php include("H5G/H5Gunlink.htm"); ?>
+
+
+<!-- HEADER RIGHT " " -->
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/ed_libs/Footer.lbi" -->
+
+<address>
+The HDF Group Help Desk: <img src="Graphics/help.png" align=top height=16>
+<br>
+Describes HDF5 Release 1.6.10, November 2009 
+</address>
+
+
+<!-- #EndLibraryItem --><SCRIPT LANGUAGE="JAVASCRIPT">
+<!--
+document.writeln("Last modified: 25 April 2009");
+-->
+</SCRIPT>
+ 
+</body>
+</html>
+

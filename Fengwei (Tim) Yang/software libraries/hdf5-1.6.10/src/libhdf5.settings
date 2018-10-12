@@ -1,0 +1,53 @@
+SUMMARY OF THE HDF5 CONFIGURATION
+=================================
+
+HDF5 Version:		1.6.10
+Configured on:		Sun Jan  7 03:41:33 GMT 2018
+Configured by:		fy44@cssd007632
+Configure mode:		production
+Host system:		x86_64-unknown-linux-gnu
+Byte sex:		little-endian
+Libraries:		static, shared
+Parallel support:	yes
+Installation point:	/home/f/fy/fy44/hdf5-1.6.10
+Compiler:		/usr/bin/mpicc (gcc-5.4.1)
+Compiler switches:	 -ansi -O -fomit-frame-pointer -finline-functions -UH5_DEBUG_API -DNDEBUG -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_POSIX_SOURCE -D_BSD_SOURCE 
+Extra libraries:	 -lm 
+Archiver:		ar
+Ranlib:			ranlib
+Debugged Packages:	
+API Tracing:		no
+
+Configure Summary
+Compiling Options:
+               Compilation Mode:  Production
+                     C Compiler:  mpicc
+                         CFLAGS:   -ansi -O -fomit-frame-pointer -finline-functions
+                       CPPFLAGS:  -UH5_DEBUG_API -DNDEBUG -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_POSIX_SOURCE -D_BSD_SOURCE 
+                        LDFLAGS:  
+                     Debug Mode:  None
+               Shared Libraries:  Yes
+               Static Libraries:  Yes
+  Statically Linked Executables:  No
+                        Tracing:  No
+   Optimization Instrumentation:  No
+
+Languages:
+----------
+                            C++:  No
+                        Fortran:  No
+
+Features:
+---------
+                        dmalloc:  No
+         Function Stack Tracing:  Disabled
+                           GPFS:  No
+      Strict File Format Checks:  Disabled
+        HDF5 v1.4 Compatibility:  No
+         I/O filters (external):  
+         I/O filters (internal):  shuffle,fletcher32
+ Linux Large File Support (LFS):  Enabled
+                            MPE:  No
+                  Parallel HDF5:  Yes
+                   Threadsafety:  Disabled
+             High Level library:  Enabled

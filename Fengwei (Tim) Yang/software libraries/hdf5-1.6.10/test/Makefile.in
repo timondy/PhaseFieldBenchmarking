@@ -1,0 +1,229 @@
+##
+# Copyright by The HDF Group.
+# Copyright by the Board of Trustees of the University of Illinois.
+# All rights reserved.
+#
+# This file is part of HDF5.  The full HDF5 copyright notice, including
+# terms governing use, modification, and redistribution, is contained in
+# the files COPYING and Copyright.html.  COPYING can be found at the root
+# of the source code distribution tree; Copyright.html can be found at the
+# root level of an installed copy of the electronic HDF5 document set and
+# is linked from the top-level documents page.  It can also be found at
+# http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have
+# access to either file, you may request a copy from help@hdfgroup.org.
+##
+## HDF5 Library Test Makefile(.in)
+##
+top_srcdir=@top_srcdir@
+top_builddir=..
+srcdir=@srcdir@
+@COMMENCE@
+
+## Add include directory to the C preprocessor flags and the h5test and hdf5
+## libraries to the library list.
+CPPFLAGS=-I. -I$(srcdir) -I../src -I$(top_srcdir)/src @CPPFLAGS@
+
+## These are our main targets. They should be listed in the order to be
+## executed, generally most specific tests to least specific tests.
+TEST_PROGS=testhdf5 lheap ohdr stab gheap cache hyperslab istore bittests    \
+    dtypes dsets cmpd_dset extend external links unlink big mtime fillval    \
+    mount flush1 flush2 enum set_extent     \
+    ttsafe getname file_handle     \
+    ntypes dangle reserved err_vers
+
+# Test scripts.
+TEST_SCRIPTS = testlibinfo.sh testcheck_version.sh
+
+TIMINGS=testmeta
+PROGS=$(TEST_PROGS) tcheck_version
+
+## The libh5test.a library provides common support code for the tests. We link
+## this library statically because some systems can only link executables to
+## a single shared library and libhdf5 is much bigger than libh5test.
+LIBHDF5=../src/libhdf5.la
+LIB=libh5test.la
+LIB_SRC=h5test.c testframe.c
+LIB_OBJ=$(LIB_SRC:.c=.lo)
+PUB_LIB=
+
+## Temporary files.  These files are the ones created by setting the
+## HDF5_NOCLEANUP environment variable and running `make test' without
+## specifying a file prefix or low-level driver.  Changing the file
+## prefix or low-level driver with environment variables will influence 
+## the temporary file name in ways that the makefile is not aware of.
+MOSTLYCLEAN=cmpd_dset.h5 compact_dataset.h5 dataset.h5 extend.h5 istore.h5   \
+            tfile[1-3].h5 th5s1.h5 th5s3.h5 lheap.h5 ohdr.h5 stab[1-2].h5 \
+            extern_[1-3].h5 extern_[1-4][ab].raw gheap[0-4].h5      \
+            links.h5 links[1-3].h5 big.data big[0-9][0-9][0-9][0-9][0-9].h5  \
+            sec2.h5 stdio.h5 dtypes[1-7].h5 tattr.h5 coord.h5         \
+            tselect.h5 mtime.h5 unlink.h5 fillval_[0-9].h5 fillval.raw       \
+            mount_[0-9].h5 testmeta.h5 ttime.h5 trefer[1-3].h5 tvltypes.h5   \
+            tvlstr.h5 tvlstr2.h5 flush.h5 enum1.h5 titerate.h5 ttsafe.h5     \
+            tarray1.h5 tgenprop.h5 tmisc1.h5 tmisc2a.h5 tmisc2b.h5 tmisc3.h5 \
+            tmisc4a.h5 tmisc4b.h5 tmisc5.h5 tmisc6.h5 tmisc7.h5 tmisc8.h5    \
+            tmisc9.h5 tmisc10.h5 tmisc11.h5 tmisc12.h5 tmisc13a.h5           \
+            tmisc13b.h5 tmisc14.h5 set_extent_read.h5 set_extent_create.h5   \
+            getname.h5 getname1.h5 getname2.h5 getname3.h5 sec2_file.h5      \
+            family_file000[0-3][0-9].h5 new_family_v18_000[0-3][0-9].h5      \
+            multi_file-[rs].h5 core_file new_move_[ab].h5 ntypes.h5          \
+            dangle.h5 test_filters.h5 tstint[1-2].h5 unlink_chunked.h5       \
+            err_vers.h5
+
+CLEAN=$(TIMINGS)
+DISTCLEAN=testerror.sh testlibinfo.sh testcheck_version.sh
+
+## Source and object files for programs...  The TEST_SRC list contains all the
+## source files and is used for things like dependencies, archiving, etc.  The
+## other source lists are for the individual tests, the files of which may
+## overlap with other tests.
+
+TEST_SRC=big.c bittests.c cache.c cmpd_dset.c dsets.c dtypes.c extend.c      \
+    external.c fillval.c flush1.c flush2.c gheap.c h5test.c hyperslab.c      \
+    istore.c lheap.c links.c mount.c mtime.c ohdr.c stab.c tarray.c tattr.c  \
+    tcheck_version.c tconfig.c tcoords.c testhdf5.c testmeta.c tfile.c       \
+    tgenprop.c th5s.c theap.c titerate.c tmeta.c tmisc.c trefer.c trefstr.c  \
+    tselect.c tskiplist.c ttime.c ttst.c tvltypes.c tvlstr.c                 \
+    unlink.c enum.c ttsafe.c ttsafe_dcreate.c ttsafe_error.c                 \
+    ttsafe_cancel.c ttsafe_acreate.c set_extent.c getname.c file_handle.c    \
+    ntypes.c dangle.c reserved.c err_vers.c
+
+TEST_OBJ=$(TEST_SRC:.c=.lo)
+
+VFD_LIST=sec2 stdio core split multi family
+
+## Private header files (not to be installed)...
+PRIVATE_HDR=testhdf5.h ttsafe.h
+
+## Additional targets
+.PHONY: timings _timings
+timings _timings: $(TIMINGS)
+	@for timing in $(TIMINGS) dummy; do				      \
+	   if test $$timing != dummy; then				      \
+	      echo "Running $$timing $(TEST_FLAGS)"; 			      \
+	      $(RUNTEST) ./$$timing $(TEST_FLAGS) || exit 1; 		      \
+	   fi;								      \
+	done;
+
+# The flush1 test must run before the flush2 test
+flush2.chkexe_: flush1.chkexe_
+
+## Programs have to be built before they can be tested!
+##
+check test _test: $(PROGS)
+
+## How to build the tests...  They all depend on the test and hdf5 libraries.
+$(PROGS): $(LIB) $(LIBHDF5)
+
+TESTHDF5_OBJ=testhdf5.lo tarray.lo tattr.lo tconfig.lo tfile.lo               \
+    tgenprop.lo th5s.lo tcoords.lo theap.lo titerate.lo tmeta.lo tmisc.lo     \
+    trefer.lo trefstr.lo tselect.lo tskiplist.lo ttime.lo ttst.lo             \
+    tvltypes.lo tvlstr.lo
+
+TTS_OBJ=ttsafe.lo ttsafe_dcreate.lo ttsafe_error.lo             \
+    ttsafe_cancel.lo ttsafe_acreate.lo
+
+testhdf5: $(TESTHDF5_OBJ)
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ $(TESTHDF5_OBJ) $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+lheap: lheap.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ lheap.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+cache: cache.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ cache.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+ohdr: ohdr.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ ohdr.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+stab: stab.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ stab.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+gheap: gheap.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ gheap.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+dsets: dsets.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ dsets.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+bittests: bittests.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ bittests.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+dtypes: dtypes.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ dtypes.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+hyperslab: hyperslab.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ hyperslab.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+istore: istore.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ istore.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+cmpd_dset: cmpd_dset.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ cmpd_dset.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+extend: extend.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ extend.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+external: external.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ external.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+big: big.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ big.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+links: links.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ links.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+mtime: mtime.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ mtime.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+unlink: unlink.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ unlink.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+fillval: fillval.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ fillval.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+mount: mount.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ mount.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+flush1: flush1.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ flush1.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+flush2: flush2.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ flush2.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+enum: enum.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ enum.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+tcheck_version: tcheck_version.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ tcheck_version.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+ttsafe: $(TTS_OBJ)
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ $(TTS_OBJ) $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+set_extent: set_extent.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ set_extent.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+testmeta: testmeta.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ testmeta.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+getname: getname.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ getname.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+file_handle: file_handle.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ file_handle.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+ntypes: ntypes.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ ntypes.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+dangle: dangle.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ dangle.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+reserved: reserved.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ reserved.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+err_vers: err_vers.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ err_vers.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+## Nothing is installed from test directory when 'make install' is invoked, but
+## this will force all test targets to be made, as other directories may need
+## the test library built in order to 'make install' (i.e., perform directory).
+install: all
+
+@CONCLUDE@

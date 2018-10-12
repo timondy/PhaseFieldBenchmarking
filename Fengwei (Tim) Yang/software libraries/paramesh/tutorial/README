@@ -1,0 +1,44 @@
+!----------------------------------------------------------------------
+! PARAMESH - an adaptive mesh library.
+! Copyright (C) 2003
+!
+! Use of the PARAMESH software is governed by the terms of the
+! usage agreement which can be found in the file
+! 'PARAMESH_USERS_AGREEMENT' in the main paramesh directory.
+!----------------------------------------------------------------------
+
+Instructions to set up tests with the diffusion equation and 
+induction equation.
+------------------------------------------------------------
+
+If not VAR_DT
+ 1. set NVAR = 2
+ 2. If `EDGE' test then set NFACEVAR = 2, otherwise 0
+
+If VAR_DT then
+ 1. Set NPHASE in the appropriate advance routine 
+ 2. set NVAR consistently with NPHASE
+ 3. For any `EDGE' tests set NFACEVAR non-zero and consistent with NPHASE
+    otherwise set to zero
+
+
+Define CONSERVE
+
+Set NFLUXVAR = 2
+
+If `EDGE' set NEDGEVAR=2
+
+
+make_tutor_npgc_*
+make_tutor_vdt_npgc_*
+---------------------
+  Conservation check :  variable 1 total should be 584.0
+                        variable 2 total should be 1168.0
+
+
+
+
+For all EDGE tests, check to see if the gfacevar.dbg file has been
+generated. If it has then div B is not zero everywhere.
+Also check the value of max div B.
+

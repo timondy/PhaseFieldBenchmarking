@@ -1,0 +1,1662 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="header_files/filelist.xml">
+<link rel=Edit-Time-Data href="header_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Main Page</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Randy Ribler</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Randy Ribler</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>16</o:TotalTime>
+  <o:Created>2004-07-23T05:34:00Z</o:Created>
+  <o:LastSaved>2004-07-23T06:03:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>5</o:Words>
+  <o:Characters>32</o:Characters>
+  <o:Company>LC</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>36</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=RM_stylesheet.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-believe-normal-left:yes;}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#252E78;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#3D2185;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+address
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.formuladsp, li.formuladsp, div.formuladsp
+	{mso-style-name:formuladsp;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdtable, li.mdtable, div.mdtable
+	{mso-style-name:mdtable;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#F4F4FB;
+	border:none;
+	mso-border-alt:solid #868686 .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdrow, li.mdrow, div.mdrow
+	{mso-style-name:mdrow;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdescleft, li.mdescleft, div.mdescleft
+	{mso-style-name:mdescleft;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.mdescright, li.mdescright, div.mdescright
+	{mso-style-name:mdescright;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.memitemleft, li.memitemleft, div.memitemleft
+	{mso-style-name:memitemleft;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.memitemright, li.memitemright, div.memitemright
+	{mso-style-name:memitemright;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.search, li.search, div.search
+	{mso-style-name:search;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><![if mso 9]>
+<style>
+p.MsoNormal
+	{margin-left:15.0pt;}
+</style>
+<![endif]><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098">
+  <o:colormru v:ext="edit" colors="#060"/>
+  <o:colormenu v:ext="edit" strokecolor="#060"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link="#252E78" vlink="#3D2185" style='tab-interval:
+.5in;margin-left:15.0pt;margin-right:15.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:15.0pt;margin-bottom:
+0in;margin-left:15.0pt;margin-bottom:.0001pt'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:30pt;margin-top:9pt;width:72.75pt;height:57.75pt;
+ z-index:1'>
+ <v:imagedata src="header_files/image001.jpg" o:title="NCSAlogo"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:40px;margin-top:12px;width:97px;
+height:77px'><img width=97 height=77 src="header_files/image002.jpg" v:shapes="_x0000_s1026"></span><![endif]><span
+style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><span
+style='font-size:22.0pt'><o:p></o:p></span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:103.45pt;border-collapse:collapse;border:none;mso-border-bottom-alt:
+ solid #006600 2.25pt;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes;height:29.25pt'>
+  <td width=443 valign=top style='width:332.6pt;border:none;border-bottom:solid #006600 2.25pt;
+  padding:0in 5.4pt 0in 5.4pt;height:29.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-size:22.0pt'>HDF5 C++ API Reference Manual</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
+<!-- Generated by Doxygen 1.4.7 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
+    <li><a href="files.html"><span>Files</span></a></li>
+    <li><a href="examples.html"><span>Examples</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+  </ul></div>
+<div class="nav">
+<a class="el" href="namespaceH5.html">H5</a>::<a class="el" href="classH5_1_1H5File.html">H5File</a></div>
+<h1>H5::H5File Class Reference</h1><!-- doxytag: class="H5::H5File" --><!-- doxytag: inherits="H5::IdComponent,H5::CommonFG" --><code>#include &lt;<a class="el" href="H5File_8h-source.html">H5File.h</a>&gt;</code>
+<p>
+<p>Inheritance diagram for H5::H5File:
+<p><center><img src="classH5_1_1H5File.png" usemap="#H5::H5File_map" border="0" alt=""></center>
+<map name="H5::H5File_map">
+<area href="classH5_1_1IdComponent.html" alt="H5::IdComponent" shape="rect" coords="0,0,107,24">
+<area href="classH5_1_1CommonFG.html" alt="H5::CommonFG" shape="rect" coords="117,0,224,24">
+</map>
+<a href="classH5_1_1H5File-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#f25054898de738072217e274217a278c">H5File</a> (const char *name, unsigned int flags, const <a class="el" href="classH5_1_1FileCreatPropList.html">FileCreatPropList</a> &amp;create_plist=<a class="el" href="classH5_1_1FileCreatPropList.html#82f8cb6df67bd26c655cb3f9c3b30dbc">FileCreatPropList::DEFAULT</a>, const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;access_plist=<a class="el" href="classH5_1_1FileAccPropList.html#21e14f8342d3730ce1cffb61c04310af">FileAccPropList::DEFAULT</a>)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates or opens an HDF5 file depending on the parameter flags.  <a href="#f25054898de738072217e274217a278c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#74bb8e05dde9450227bc27841277375f">H5File</a> (const H5std_string &amp;name, unsigned int flags, const <a class="el" href="classH5_1_1FileCreatPropList.html">FileCreatPropList</a> &amp;create_plist=<a class="el" href="classH5_1_1FileCreatPropList.html#82f8cb6df67bd26c655cb3f9c3b30dbc">FileCreatPropList::DEFAULT</a>, const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;access_plist=<a class="el" href="classH5_1_1FileAccPropList.html#21e14f8342d3730ce1cffb61c04310af">FileAccPropList::DEFAULT</a>)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is another overloaded constructor. It differs from the above constructor only in the type of the <em>name</em> argument.  <a href="#74bb8e05dde9450227bc27841277375f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#b20ea83ffa86b74e13168b6c2fdfd817">openFile</a> (const H5std_string &amp;name, unsigned int flags, const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;access_plist=<a class="el" href="classH5_1_1FileAccPropList.html#21e14f8342d3730ce1cffb61c04310af">FileAccPropList::DEFAULT</a>)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It takes an <code>H5std_string</code> for <em>name</em>.  <a href="#b20ea83ffa86b74e13168b6c2fdfd817"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#e20ef228e7c2db78d31180d3521319ee">openFile</a> (const char *name, unsigned int flags, const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;access_plist=<a class="el" href="classH5_1_1FileAccPropList.html#21e14f8342d3730ce1cffb61c04310af">FileAccPropList::DEFAULT</a>)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Opens an HDF5 file.  <a href="#e20ef228e7c2db78d31180d3521319ee"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#4f1cd3bce2a84c7ea43bb9e679b6babe">close</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Closes this HDF5 file.  <a href="#4f1cd3bce2a84c7ea43bb9e679b6babe"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#fc40a41d5da072d62e603e1d113150f6">flush</a> (H5F_scope_t scope) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Flushes all buffers associated with a file to disk.  <a href="#fc40a41d5da072d62e603e1d113150f6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#ed49af447bf5704fa4c186dbdfd2d11f">getAccessPlist</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the access property list of this file.  <a href="#ed49af447bf5704fa4c186dbdfd2d11f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classH5_1_1FileCreatPropList.html">FileCreatPropList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#d939a66d4863b9fc439672acba8d3b15">getCreatePlist</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the creation property list of this file.  <a href="#d939a66d4863b9fc439672acba8d3b15"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#0ec7ef34443913ba2359fecc09231d9a">getFileName</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the name of this file.  <a href="#0ec7ef34443913ba2359fecc09231d9a"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">hsize_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#b1ebf23c585ab8144aeefbcc3e8afeb9">getFileSize</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the file size of the HDF5 file.  <a href="#b1ebf23c585ab8144aeefbcc3e8afeb9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">hssize_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#fb92b6c1e1ab32993dad71d07efb1f9d">getFreeSpace</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the amount of free space in the file.  <a href="#fb92b6c1e1ab32993dad71d07efb1f9d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">ssize_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#d8a0582836ae35b9b24c6efe0595100d">getObjCount</a> (unsigned types) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of opened object IDs (files, datasets, groups and datatypes) in the same file.  <a href="#d8a0582836ae35b9b24c6efe0595100d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">ssize_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#47fe0895c12b0a82362fcdc7825339ba">getObjCount</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It takes no parameter and returns the object count of all object types.  <a href="#47fe0895c12b0a82362fcdc7825339ba"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#6bf4658fbb77703741ef4e9129ac602c">getObjIDs</a> (unsigned types, size_t max_objs, hid_t *oid_list) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves a list of opened object IDs (files, datasets, groups and datatypes) in the same file.  <a href="#6bf4658fbb77703741ef4e9129ac602c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5G_obj_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#52a16b19bf2d6c4c55a12b56020f6e43">getRefObjType</a> (void *ref, H5R_type_t ref_type=H5R_OBJECT) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the type of object that an object reference points to.  <a href="#52a16b19bf2d6c4c55a12b56020f6e43"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5G_obj_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#1ada7de80597f2d3bfbc101d3b237c6b">getObjType</a> (void *ref, H5R_type_t ref_type=H5R_OBJECT) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function was misnamed and will be deprecated in favor of <a class="el" href="classH5_1_1H5File.html#52a16b19bf2d6c4c55a12b56020f6e43">H5File::getRefObjType</a>; please use getRefObjType instead.  <a href="#1ada7de80597f2d3bfbc101d3b237c6b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#e97f3a4cfe45c28d8dd100eda0f0fb1b">getRegion</a> (void *ref, H5R_type_t ref_type=H5R_DATASET_REGION) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves a dataspace with the region pointed to selected.  <a href="#e97f3a4cfe45c28d8dd100eda0f0fb1b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#fafd315440c16e447aac4e7cfef04941">getVFDHandle</a> (<a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;fapl, void **file_handle) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the pointer to the file handle of the low-level file driver.  <a href="#fafd315440c16e447aac4e7cfef04941"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#bf72aaec783cf027e1528acf2ac7b9d7">getVFDHandle</a> (void **file_handle) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what arguments it accepts.  <a href="#bf72aaec783cf027e1528acf2ac7b9d7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#f3f5bdd07e7b26a6090ff8361df80498">reOpen</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reopens this file.  <a href="#f3f5bdd07e7b26a6090ff8361df80498"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#ddf8e9f932e7e4e53b27ab19a2dc1730">reopen</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reopens this file.  <a href="#ddf8e9f932e7e4e53b27ab19a2dc1730"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#5271728517cc838f82b0ccb0182d6756">reference</a> (void *ref, const char *name, const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;dataspace, H5R_type_t ref_type=H5R_DATASET_REGION) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a reference to an HDF5 object or a dataset region.  <a href="#5271728517cc838f82b0ccb0182d6756"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#61e7ac8a4c5b92c730eb58a64882d11d">reference</a> (void *ref, const char *name) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded function, provided for your convenience. It differs from the above function in that it only creates a reference to an HDF5 object, not to a dataset region.  <a href="#61e7ac8a4c5b92c730eb58a64882d11d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#c3f965f6abbe40e1bfbafed5c37ffa58">reference</a> (void *ref, const H5std_string &amp;name) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded function, provided for your convenience. It differs from the above function in that it takes an <code>H5std_string</code> for the object's name.  <a href="#c3f965f6abbe40e1bfbafed5c37ffa58"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#972ecba8c346ad46a35c0cdb0b8ed78f">fromClass</a> () const </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#78fad4e8b2d4f26f8cb9c672dd7efd25">throwException</a> (const H5std_string &amp;func_name, const H5std_string &amp;msg) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Throws file exception - initially implemented for <a class="el" href="classH5_1_1CommonFG.html">CommonFG</a>.  <a href="#78fad4e8b2d4f26f8cb9c672dd7efd25"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual hid_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#69114a68c97f519120753126aaffb18c">getLocId</a> () const </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#36dd29998f6e70b7cb9735a44686baad">H5File</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor: creates a stub <a class="el" href="classH5_1_1H5File.html">H5File</a> object.  <a href="#36dd29998f6e70b7cb9735a44686baad"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#912472f9bdf2bf90590a9e8ecaed3b99">H5File</a> (const <a class="el" href="classH5_1_1H5File.html">H5File</a> &amp;original)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1H5File.html">H5File</a> object.  <a href="#912472f9bdf2bf90590a9e8ecaed3b99"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual hid_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#678d947a4efe731e497d33d1c23922ff">getId</a> () const </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#f59e44dc590c9d47305d6a316837585d">~H5File</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Properly terminates access to this file.  <a href="#f59e44dc590c9d47305d6a316837585d"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#03798df740d2a1e45f608164b13864d1">isHdf5</a> (const char *name)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Determines whether a file in HDF5 format.  <a href="#03798df740d2a1e45f608164b13864d1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#5147f9124fd66da6537999734e85c6fc">isHdf5</a> (const H5std_string &amp;name)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It takes an <code>H5std_string</code> for <em>name</em>.  <a href="#5147f9124fd66da6537999734e85c6fc"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1H5File.html#1f4e9fee0f493d21f694c5daa1a4dd85">p_setId</a> (const hid_t new_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the identifier of this HDF5 file to a new value.  <a href="#1f4e9fee0f493d21f694c5daa1a4dd85"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Detailed Description</h2>
+<dl compact><dt><b>Examples: </b></dt><dd>
+
+<p>
+<a class="el" href="chunks_8cpp-example.html#_a1">chunks.cpp</a>, <a class="el" href="compound_8cpp-example.html#_a19">compound.cpp</a>, <a class="el" href="create_8cpp-example.html#_a35">create.cpp</a>, <a class="el" href="extend__ds_8cpp-example.html#_a48">extend_ds.cpp</a>, <a class="el" href="h5group_8cpp-example.html#_a65">h5group.cpp</a>, <a class="el" href="readdata_8cpp-example.html#_a86">readdata.cpp</a>, and <a class="el" href="writedata_8cpp-example.html#_a106">writedata.cpp</a>.</dl>
+<p>
+<hr><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" name="f25054898de738072217e274217a278c"></a><!-- doxytag: member="H5::H5File::H5File" ref="f25054898de738072217e274217a278c" args="(const char *name, unsigned int flags, const FileCreatPropList &amp;create_plist=FileCreatPropList::DEFAULT, const FileAccPropList &amp;access_plist=FileAccPropList::DEFAULT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::H5File::H5File           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1FileCreatPropList.html">FileCreatPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>create_plist</em> = <code><a class="el" href="classH5_1_1FileCreatPropList.html#82f8cb6df67bd26c655cb3f9c3b30dbc">FileCreatPropList::DEFAULT</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>access_plist</em> = <code><a class="el" href="classH5_1_1FileAccPropList.html#21e14f8342d3730ce1cffb61c04310af">FileAccPropList::DEFAULT</a></code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates or opens an HDF5 file depending on the parameter flags. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>- IN: File access flags </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>create_plist</em>&nbsp;</td><td>- IN: File creation property list, used when modifying default file meta-data. Default to <a class="el" href="classH5_1_1FileCreatPropList.html#82f8cb6df67bd26c655cb3f9c3b30dbc">FileCreatPropList::DEFAULT</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>access_plist</em>&nbsp;</td><td>- IN: File access property list. Default to <a class="el" href="classH5_1_1FileCreatPropList.html#82f8cb6df67bd26c655cb3f9c3b30dbc">FileCreatPropList::DEFAULT</a> </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>Valid values of <em>flags</em> include: <ul>
+<li><code>H5F_ACC_TRUNC</code> - Truncate file, if it already exists, erasing all data previously stored in the file. </li>
+<li><code>H5F_ACC_EXCL</code> - Fail if file already exists. <code>H5F_ACC_TRUNC</code> and <code>H5F_ACC_EXCL</code> are mutually exclusive </li>
+<li><code>H5F_ACC_DEBUG</code> - print debug information. This flag is used only by HDF5 library developers; it is neither tested nor supported for use in applications. </li>
+</ul>
+</dd></dl>
+<dl compact><dt><b></b></dt><dd>For info on file creation in the case of an already-open file, please refer to the <b>Special</b> <b>case</b> section in the C layer Reference Manual at: <a href="../RM_H5F.html#File-Create">../RM_H5F.html::File-Create</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="74bb8e05dde9450227bc27841277375f"></a><!-- doxytag: member="H5::H5File::H5File" ref="74bb8e05dde9450227bc27841277375f" args="(const H5std_string &amp;name, unsigned int flags, const FileCreatPropList &amp;create_plist=FileCreatPropList::DEFAULT, const FileAccPropList &amp;access_plist=FileAccPropList::DEFAULT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::H5File::H5File           </td>
+          <td>(</td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1FileCreatPropList.html">FileCreatPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>create_plist</em> = <code><a class="el" href="classH5_1_1FileCreatPropList.html#82f8cb6df67bd26c655cb3f9c3b30dbc">FileCreatPropList::DEFAULT</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>access_plist</em> = <code><a class="el" href="classH5_1_1FileAccPropList.html#21e14f8342d3730ce1cffb61c04310af">FileAccPropList::DEFAULT</a></code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is another overloaded constructor. It differs from the above constructor only in the type of the <em>name</em> argument. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the file - <code>H5std_string</code> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>- IN: File access flags </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>create_plist</em>&nbsp;</td><td>- IN: File creation property list, used when modifying default file meta-data. Default to <a class="el" href="classH5_1_1FileCreatPropList.html#82f8cb6df67bd26c655cb3f9c3b30dbc">FileCreatPropList::DEFAULT</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>access_plist</em>&nbsp;</td><td>- IN: File access property list. Default to <a class="el" href="classH5_1_1FileCreatPropList.html#82f8cb6df67bd26c655cb3f9c3b30dbc">FileCreatPropList::DEFAULT</a> </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="36dd29998f6e70b7cb9735a44686baad"></a><!-- doxytag: member="H5::H5File::H5File" ref="36dd29998f6e70b7cb9735a44686baad" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::H5File::H5File           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Default constructor: creates a stub <a class="el" href="classH5_1_1H5File.html">H5File</a> object. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="912472f9bdf2bf90590a9e8ecaed3b99"></a><!-- doxytag: member="H5::H5File::H5File" ref="912472f9bdf2bf90590a9e8ecaed3b99" args="(const H5File &amp;original)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::H5File::H5File           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1H5File.html">H5File</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>original</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1H5File.html">H5File</a> object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>original</em>&nbsp;</td><td>- IN: <a class="el" href="classH5_1_1H5File.html">H5File</a> instance to copy </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="f59e44dc590c9d47305d6a316837585d"></a><!-- doxytag: member="H5::H5File::~H5File" ref="f59e44dc590c9d47305d6a316837585d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::H5File::~H5File           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Properly terminates access to this file. 
+<p>
+
+</div>
+</div><p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="b20ea83ffa86b74e13168b6c2fdfd817"></a><!-- doxytag: member="H5::H5File::openFile" ref="b20ea83ffa86b74e13168b6c2fdfd817" args="(const H5std_string &amp;name, unsigned int flags, const FileAccPropList &amp;access_plist=FileAccPropList::DEFAULT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::openFile           </td>
+          <td>(</td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>access_plist</em> = <code><a class="el" href="classH5_1_1FileAccPropList.html#21e14f8342d3730ce1cffb61c04310af">FileAccPropList::DEFAULT</a></code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It takes an <code>H5std_string</code> for <em>name</em>. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the file - <code>H5std_string</code> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>- IN: File access flags </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>access_plist</em>&nbsp;</td><td>- IN: File access property list. Default to <a class="el" href="classH5_1_1FileAccPropList.html#21e14f8342d3730ce1cffb61c04310af">FileAccPropList::DEFAULT</a> </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="e20ef228e7c2db78d31180d3521319ee"></a><!-- doxytag: member="H5::H5File::openFile" ref="e20ef228e7c2db78d31180d3521319ee" args="(const char *name, unsigned int flags, const FileAccPropList &amp;access_plist=FileAccPropList::DEFAULT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::openFile           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>access_plist</em> = <code><a class="el" href="classH5_1_1FileAccPropList.html#21e14f8342d3730ce1cffb61c04310af">FileAccPropList::DEFAULT</a></code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Opens an HDF5 file. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>- IN: File access flags </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>access_plist</em>&nbsp;</td><td>- IN: File access property list. Default to <a class="el" href="classH5_1_1FileCreatPropList.html#82f8cb6df67bd26c655cb3f9c3b30dbc">FileCreatPropList::DEFAULT</a> </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>Valid values of <em>flags</em> include: H5F_ACC_RDWR: Open with read/write access. If the file is currently open for read-only access then it will be reopened. Absence of this flag implies read-only access.</dd></dl>
+H5F_ACC_RDONLY: Open with read only access. - default 
+</div>
+</div><p>
+<a class="anchor" name="4f1cd3bce2a84c7ea43bb9e679b6babe"></a><!-- doxytag: member="H5::H5File::close" ref="4f1cd3bce2a84c7ea43bb9e679b6babe" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::close           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Closes this HDF5 file. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fc40a41d5da072d62e603e1d113150f6"></a><!-- doxytag: member="H5::H5File::flush" ref="fc40a41d5da072d62e603e1d113150f6" args="(H5F_scope_t scope) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::flush           </td>
+          <td>(</td>
+          <td class="paramtype">H5F_scope_t&nbsp;</td>
+          <td class="paramname"> <em>scope</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Flushes all buffers associated with a file to disk. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>scope</em>&nbsp;</td><td>- IN: Specifies the scope of the flushing action, which can be either of these values: <ul>
+<li><code>H5F_SCOPE_GLOBAL</code> - Flushes the entire virtual file </li>
+<li><code>H5F_SCOPE_LOCAL</code> - Flushes only the specified file </li>
+</ul>
+</td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="ed49af447bf5704fa4c186dbdfd2d11f"></a><!-- doxytag: member="H5::H5File::getAccessPlist" ref="ed49af447bf5704fa4c186dbdfd2d11f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> H5::H5File::getAccessPlist           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the access property list of this file. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd><a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> object </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d939a66d4863b9fc439672acba8d3b15"></a><!-- doxytag: member="H5::H5File::getCreatePlist" ref="d939a66d4863b9fc439672acba8d3b15" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classH5_1_1FileCreatPropList.html">FileCreatPropList</a> H5::H5File::getCreatePlist           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the creation property list of this file. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd><a class="el" href="classH5_1_1FileCreatPropList.html">FileCreatPropList</a> object </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="0ec7ef34443913ba2359fecc09231d9a"></a><!-- doxytag: member="H5::H5File::getFileName" ref="0ec7ef34443913ba2359fecc09231d9a" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5std_string H5::H5File::getFileName           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Gets the name of this file. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>File name </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="b1ebf23c585ab8144aeefbcc3e8afeb9"></a><!-- doxytag: member="H5::H5File::getFileSize" ref="b1ebf23c585ab8144aeefbcc3e8afeb9" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hsize_t H5::H5File::getFileSize           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the file size of the HDF5 file. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>File size </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>This function is called after an existing file is opened in order to learn the true size of the underlying file. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fb92b6c1e1ab32993dad71d07efb1f9d"></a><!-- doxytag: member="H5::H5File::getFreeSpace" ref="fb92b6c1e1ab32993dad71d07efb1f9d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hssize_t H5::H5File::getFreeSpace           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the amount of free space in the file. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Amount of free space </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d8a0582836ae35b9b24c6efe0595100d"></a><!-- doxytag: member="H5::H5File::getObjCount" ref="d8a0582836ae35b9b24c6efe0595100d" args="(unsigned types) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t H5::H5File::getObjCount           </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&nbsp;</td>
+          <td class="paramname"> <em>types</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the number of opened object IDs (files, datasets, groups and datatypes) in the same file. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>types</em>&nbsp;</td><td>- Type of object to retrieve the count </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Number of opened object IDs </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The valid values for <em>types</em> include: <ul>
+<li><code>H5F_OBJ_FILE</code> - Files only </li>
+<li><code>H5F_OBJ_DATASET</code> - Datasets only </li>
+<li><code>H5F_OBJ_GROUP</code> - Groups only </li>
+<li><code>H5F_OBJ_DATATYPE</code> - Named datatypes only </li>
+<li><code>H5F_OBJ_ATTR</code> - Attributes only </li>
+<li><code>H5F_OBJ_ALL</code> - All of the above, i.e., <code>H5F_OBJ_FILE</code> | <code>H5F_OBJ_DATASET</code> | <code>H5F_OBJ_GROUP</code> | <code>H5F_OBJ_DATATYPE</code> | <code>H5F_OBJ_ATTR</code> </li>
+</ul>
+</dd></dl>
+<dl compact><dt><b></b></dt><dd>Multiple object types can be combined with the logical OR operator (|). </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="47fe0895c12b0a82362fcdc7825339ba"></a><!-- doxytag: member="H5::H5File::getObjCount" ref="47fe0895c12b0a82362fcdc7825339ba" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t H5::H5File::getObjCount           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It takes no parameter and returns the object count of all object types. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Number of opened object IDs </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="6bf4658fbb77703741ef4e9129ac602c"></a><!-- doxytag: member="H5::H5File::getObjIDs" ref="6bf4658fbb77703741ef4e9129ac602c" args="(unsigned types, size_t max_objs, hid_t *oid_list) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::getObjIDs           </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&nbsp;</td>
+          <td class="paramname"> <em>types</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>max_objs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">hid_t *&nbsp;</td>
+          <td class="paramname"> <em>oid_list</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Retrieves a list of opened object IDs (files, datasets, groups and datatypes) in the same file. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>types</em>&nbsp;</td><td>- Type of object to retrieve the count </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>max_objs</em>&nbsp;</td><td>- Maximum number of object identifiers to place into obj_id_list. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>oid_list</em>&nbsp;</td><td>- List of open object identifiers </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The valid values for <em>types</em> include: <ul>
+<li><code>H5F_OBJ_FILE</code> - Files only </li>
+<li><code>H5F_OBJ_DATASET</code> - Datasets only </li>
+<li><code>H5F_OBJ_GROUP</code> - Groups only </li>
+<li><code>H5F_OBJ_DATATYPE</code> - Named datatypes only </li>
+<li><code>H5F_OBJ_ATTR</code> - Attributes only </li>
+<li><code>H5F_OBJ_ALL</code> - All of the above, i.e., <code>H5F_OBJ_FILE</code> | <code>H5F_OBJ_DATASET</code> | <code>H5F_OBJ_GROUP</code> | <code>H5F_OBJ_DATATYPE</code> | <code>H5F_OBJ_ATTR</code> </li>
+</ul>
+</dd></dl>
+<dl compact><dt><b></b></dt><dd>Multiple object types can be combined with the logical OR operator (|). </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="52a16b19bf2d6c4c55a12b56020f6e43"></a><!-- doxytag: member="H5::H5File::getRefObjType" ref="52a16b19bf2d6c4c55a12b56020f6e43" args="(void *ref, H5R_type_t ref_type=H5R_OBJECT) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5G_obj_t H5::H5File::getRefObjType           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_OBJECT</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Retrieves the type of object that an object reference points to. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference to query </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref_type</em>&nbsp;</td><td>- IN: Type of reference, valid values are: <ul>
+<li><code>H5R_OBJECT</code>  is an object reference. </li>
+<li><code>H5R_DATASET_REGION</code>  is a dataset region reference. </li>
+</ul>
+</td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Object type, which can be one of the following: <ul>
+<li><code>H5G_LINK</code> - Object is a symbolic link. </li>
+<li><code>H5G_GROUP</code> - Object is a group. </li>
+<li><code>H5G_DATASET</code> - Object is a dataset. </li>
+<li><code>H5G_TYPE</code> - Object is a named datatype </li>
+</ul>
+</dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="1ada7de80597f2d3bfbc101d3b237c6b"></a><!-- doxytag: member="H5::H5File::getObjType" ref="1ada7de80597f2d3bfbc101d3b237c6b" args="(void *ref, H5R_type_t ref_type=H5R_OBJECT) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5G_obj_t H5::H5File::getObjType           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_OBJECT</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This function was misnamed and will be deprecated in favor of <a class="el" href="classH5_1_1H5File.html#52a16b19bf2d6c4c55a12b56020f6e43">H5File::getRefObjType</a>; please use getRefObjType instead. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="e97f3a4cfe45c28d8dd100eda0f0fb1b"></a><!-- doxytag: member="H5::H5File::getRegion" ref="e97f3a4cfe45c28d8dd100eda0f0fb1b" args="(void *ref, H5R_type_t ref_type=H5R_DATASET_REGION) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> H5::H5File::getRegion           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_DATASET_REGION</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Retrieves a dataspace with the region pointed to selected. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference to get region of </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref_type</em>&nbsp;</td><td>- IN: Type of reference to get region of - default </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd><a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> instance </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fafd315440c16e447aac4e7cfef04941"></a><!-- doxytag: member="H5::H5File::getVFDHandle" ref="fafd315440c16e447aac4e7cfef04941" args="(FileAccPropList &amp;fapl, void **file_handle) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::getVFDHandle           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>fapl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&nbsp;</td>
+          <td class="paramname"> <em>file_handle</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the pointer to the file handle of the low-level file driver. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fapl</em>&nbsp;</td><td>- File access property list </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>file_handle</em>&nbsp;</td><td>- Pointer to the file handle being used by the low-level virtual file driver </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For the <code>FAMILY</code> or <code>MULTI</code> drivers, <em>fapl</em> should be defined through the property list functions: <code><a class="el" href="classH5_1_1FileAccPropList.html#2028c6d5359ae1799236f04215bc61b4">FileAccPropList::setFamilyOffset</a></code> for the <code>FAMILY</code> driver and <code><a class="el" href="classH5_1_1FileAccPropList.html#99c3046cf1705da768ce76cf38fadb98">FileAccPropList::setMultiType</a></code> for the <code>MULTI</code> driver.</dd></dl>
+The obtained file handle is dynamic and is valid only while the file remains open; it will be invalid if the file is closed and reopened or opened during a subsequent session. 
+</div>
+</div><p>
+<a class="anchor" name="bf72aaec783cf027e1528acf2ac7b9d7"></a><!-- doxytag: member="H5::H5File::getVFDHandle" ref="bf72aaec783cf027e1528acf2ac7b9d7" args="(void **file_handle) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::getVFDHandle           </td>
+          <td>(</td>
+          <td class="paramtype">void **&nbsp;</td>
+          <td class="paramname"> <em>file_handle</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It differs from the above function only in what arguments it accepts. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file_handle</em>&nbsp;</td><td>- Pointer to the file handle being used by the low-level virtual file driver </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="03798df740d2a1e45f608164b13864d1"></a><!-- doxytag: member="H5::H5File::isHdf5" ref="03798df740d2a1e45f608164b13864d1" args="(const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool H5::H5File::isHdf5           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Determines whether a file in HDF5 format. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the file </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>true if the file is in HDF5 format, and false, otherwise </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="5147f9124fd66da6537999734e85c6fc"></a><!-- doxytag: member="H5::H5File::isHdf5" ref="5147f9124fd66da6537999734e85c6fc" args="(const H5std_string &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool H5::H5File::isHdf5           </td>
+          <td>(</td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It takes an <code>H5std_string</code> for <em>name</em>. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the file - <code>H5std_string</code> </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="f3f5bdd07e7b26a6090ff8361df80498"></a><!-- doxytag: member="H5::H5File::reOpen" ref="f3f5bdd07e7b26a6090ff8361df80498" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::reOpen           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Reopens this file. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="ddf8e9f932e7e4e53b27ab19a2dc1730"></a><!-- doxytag: member="H5::H5File::reopen" ref="ddf8e9f932e7e4e53b27ab19a2dc1730" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::reopen           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Reopens this file. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>This function will be replaced by the above function <code>reOpen</code> in future releases. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="5271728517cc838f82b0ccb0182d6756"></a><!-- doxytag: member="H5::H5File::reference" ref="5271728517cc838f82b0ccb0182d6756" args="(void *ref, const char *name, const DataSpace &amp;dataspace, H5R_type_t ref_type=H5R_DATASET_REGION) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::reference           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1DataSpace.html">DataSpace</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>dataspace</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5R_type_t&nbsp;</td>
+          <td class="paramname"> <em>ref_type</em> = <code>H5R_DATASET_REGION</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates a reference to an HDF5 object or a dataset region. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference pointer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the object to be referenced </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dataspace</em>&nbsp;</td><td>- IN: Dataspace with selection </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ref_type</em>&nbsp;</td><td>- IN: Type of reference to query, valid values are: <ul>
+<li><code>H5R_OBJECT</code>  is an object reference. </li>
+<li><code>H5R_DATASET_REGION</code>  is a dataset region reference. - this is the default </li>
+</ul>
+</td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1IdComponentException.html">H5::IdComponentException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="61e7ac8a4c5b92c730eb58a64882d11d"></a><!-- doxytag: member="H5::H5File::reference" ref="61e7ac8a4c5b92c730eb58a64882d11d" args="(void *ref, const char *name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::reference           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded function, provided for your convenience. It differs from the above function in that it only creates a reference to an HDF5 object, not to a dataset region. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference pointer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the object to be referenced - <code>char</code> pointer </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1IdComponentException.html">H5::IdComponentException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd></dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="c3f965f6abbe40e1bfbafed5c37ffa58"></a><!-- doxytag: member="H5::H5File::reference" ref="c3f965f6abbe40e1bfbafed5c37ffa58" args="(void *ref, const H5std_string &amp;name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::reference           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded function, provided for your convenience. It differs from the above function in that it takes an <code>H5std_string</code> for the object's name. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ref</em>&nbsp;</td><td>- IN: Reference pointer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>- IN: Name of the object to be referenced - <code>H5std_string</code> </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="972ecba8c346ad46a35c0cdb0b8ed78f"></a><!-- doxytag: member="H5::H5File::fromClass" ref="972ecba8c346ad46a35c0cdb0b8ed78f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual H5std_string H5::H5File::fromClass           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="78fad4e8b2d4f26f8cb9c672dd7efd25"></a><!-- doxytag: member="H5::H5File::throwException" ref="78fad4e8b2d4f26f8cb9c672dd7efd25" args="(const H5std_string &amp;func_name, const H5std_string &amp;msg) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::throwException           </td>
+          <td>(</td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>func_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>msg</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Throws file exception - initially implemented for <a class="el" href="classH5_1_1CommonFG.html">CommonFG</a>. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>func_name</em>&nbsp;</td><td>- Name of the function where failure occurs </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>msg</em>&nbsp;</td><td>- Message describing the failure </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1FileIException.html">H5::FileIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+<p>
+Implements <a class="el" href="classH5_1_1CommonFG.html#4cb5086fb31b5b5befb933a963720e81">H5::CommonFG</a>.
+</div>
+</div><p>
+<a class="anchor" name="69114a68c97f519120753126aaffb18c"></a><!-- doxytag: member="H5::H5File::getLocId" ref="69114a68c97f519120753126aaffb18c" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hid_t H5::H5File::getLocId           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="678d947a4efe731e497d33d1c23922ff"></a><!-- doxytag: member="H5::H5File::getId" ref="678d947a4efe731e497d33d1c23922ff" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hid_t H5::H5File::getId           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+Implements <a class="el" href="classH5_1_1IdComponent.html#4b5dc282b178ac71704772ae575351cc">H5::IdComponent</a>.<dl compact><dt><b>Examples: </b></dt><dd>
+<a class="el" href="h5group_8cpp-example.html#a79">h5group.cpp</a>.</dl>
+</div>
+</div><p>
+<a class="anchor" name="1f4e9fee0f493d21f694c5daa1a4dd85"></a><!-- doxytag: member="H5::H5File::p_setId" ref="1f4e9fee0f493d21f694c5daa1a4dd85" args="(const hid_t new_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::H5File::p_setId           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>new_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the identifier of this HDF5 file to a new value. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1IdComponentException.html">H5::IdComponentException</a></em>&nbsp;</td><td>when the attempt to close the HDF5 object fails </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<hr size="1"><address style="align: right;"><small>Generated on Wed Nov 4 14:13:07 2009 by&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
+</body>
+</html>

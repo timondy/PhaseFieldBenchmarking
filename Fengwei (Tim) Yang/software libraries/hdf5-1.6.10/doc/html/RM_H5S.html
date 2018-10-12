@@ -1,0 +1,341 @@
+<html>
+<head><title>
+HDF5/H5S API Specification
+</title>
+
+<!-- #BeginLibraryItem "/ed_libs/styles_RM.lbi" -->
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<link href="ed_styles/RMelect.css" rel="stylesheet" type="text/css">
+<!-- #EndLibraryItem --></head>
+
+<body bgcolor="#FFFFFF">
+<!-- HEADER RIGHT " " -->
+
+
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><center>
+<h1>H5S: Dataspace Interface</h1>
+</center>
+
+<h2>Dataspace Object API Functions</h2>
+
+These functions create and manipulate the dataspace in which to store the
+elements of a dataset.
+
+
+<p>
+<strong>The C Interfaces:</strong>
+
+<table border=0>
+<tr><td valign=top>
+    <li><a href="#Dataspace-Create">H5Screate</a>
+    <li><a href="#Dataspace-Copy">H5Scopy</a>
+    <li><a href="#Dataspace-Close">H5Sclose</a>
+    <li><a href="#Dataspace-CreateSimple">H5Screate_simple</a>
+    <li><a href="#Dataspace-IsSimple">H5Sis_simple</a>
+    <li><a href="#Dataspace-OffsetSimple">H5Soffset_simple</a>
+    <li><a href="#Dataspace-ExtentDims">H5Sget_simple_extent_dims</a>
+    <li><a href="#Dataspace-ExtentNdims">H5Sget_simple_extent_ndims</a>
+
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+    <li><a href="#Dataspace-ExtentNpoints">H5Sget_simple_extent_npoints</a>
+    <li><a href="#Dataspace-ExtentType">H5Sget_simple_extent_type</a>
+<!--		NOT YET IMPLEMENTED (R1.2 -- 9908)
+    <li><a href="#Dataspace-ExtentClass">H5Sextent_class</a>
+-->
+    <li><a href="#Dataspace-ExtentCopy">H5Sextent_copy</a>
+    <li><a href="#Dataspace-SetExtentSimple">H5Sset_extent_simple</a>
+    <li><a href="#Dataspace-SetExtentNone">H5Sset_extent_none</a>
+    <li><a href="#Dataspace-GetSelectType">H5Sget_select_type</a>
+    <li><a href="#Dataspace-SelectNpoints">H5Sget_select_npoints</a>
+    <li><a href="#Dataspace-SelectHyperNBlocks">H5Sget_select_hyper_nblocks</a>
+    <li><a href="#Dataspace-SelectHyperBlockList">H5Sget_select_hyper_blocklist</a>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+    <li><a href="#Dataspace-SelectElemNPoints">H5Sget_select_elem_npoints</a>
+    <li><a href="#Dataspace-SelectElemPointList">H5Sget_select_elem_pointlist</a>
+    <li><a href="#Dataspace-SelectBounds">H5Sget_select_bounds</a>
+    <li><a href="#Dataspace-SelectElements">H5Sselect_elements</a>
+    <li><a href="#Dataspace-SelectAll">H5Sselect_all</a>
+    <li><a href="#Dataspace-SelectNone">H5Sselect_none</a>
+    <li><a href="#Dataspace-SelectValid">H5Sselect_valid</a>
+    <li><a href="#Dataspace-SelectHyperslab">H5Sselect_hyperslab</a>
+<!--<li><a href="#Dataspace-CombineHyperslab">H5Scombine_hyperslab</a>    -->
+<!--<li><a href="#Dataspace-CombineSelect">H5Scombine_select</a>          -->
+<!--<li><a href="#Dataspace-SelectSelect">H5Sselect_select</a>            -->
+</td></tr>
+</table>
+<br>
+
+<i>Alphabetical Listing</i>
+
+<table border="0">
+  <tr>
+    <td valign="top">
+      <li><a href="#Dataspace-Close">H5Sclose</a>
+      <li><a href="#Dataspace-Copy">H5Scopy</a>
+      <li><a href="#Dataspace-Create">H5Screate</a>
+      <li><a href="#Dataspace-CreateSimple">H5Screate_simple</a>
+      <li><a href="#Dataspace-ExtentCopy">H5Sextent_copy</a>
+      <li><a href="#Dataspace-SelectBounds">H5Sget_select_bounds</a>
+      <li><a href="#Dataspace-SelectElemNPoints">H5Sget_select_elem_npoints</a>
+      <li><a href="#Dataspace-SelectElemPointList">H5Sget_select_elem_pointlist</a>
+      <li><a href="#Dataspace-SelectHyperBlockList">H5Sget_select_hyper_blocklist</a>      
+    </td>
+    
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    
+    <td valign="top">      
+      <li><a href="#Dataspace-SelectHyperNBlocks">H5Sget_select_hyper_nblocks</a>
+      <li><a href="#Dataspace-SelectNpoints">H5Sget_select_npoints</a>
+      <li><a href="#Dataspace-GetSelectType">H5Sget_select_type</a>
+      <li><a href="#Dataspace-ExtentDims">H5Sget_simple_extent_dims</a>
+      <li><a href="#Dataspace-ExtentNdims">H5Sget_simple_extent_ndims</a>
+      <li><a href="#Dataspace-ExtentNpoints">H5Sget_simple_extent_npoints</a>
+      <li><a href="#Dataspace-ExtentType">H5Sget_simple_extent_type</a>
+      <li><a href="#Dataspace-IsSimple">H5Sis_simple</a>
+      <li><a href="#Dataspace-OffsetSimple">H5Soffset_simple</a>
+    </td>
+    
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    
+    <td valign="top">
+      
+      <li><a href="#Dataspace-SelectAll">H5Sselect_all</a>
+      <li><a href="#Dataspace-SelectElements">H5Sselect_elements</a>
+      <li><a href="#Dataspace-SelectHyperslab">H5Sselect_hyperslab</a>
+      <li><a href="#Dataspace-SelectNone">H5Sselect_none</a>
+      <li><a href="#Dataspace-SelectValid">H5Sselect_valid</a>
+      <li><a href="#Dataspace-SetExtentNone">H5Sset_extent_none</a>
+      <li><a href="#Dataspace-SetExtentSimple">H5Sset_extent_simple</a>
+    </td>
+  </tr>
+</table>
+
+<br>
+<strong>The FORTRAN90 Interfaces:</strong>
+<br>
+In general, each FORTRAN90 subroutine performs exactly the same task 
+as the corresponding C function.  
+<br>
+
+<table border=0>
+<tr><td valign=top>
+    <li><a href="#Dataspace-Create">h5screate_f</a>
+    <li><a href="#Dataspace-Copy">h5scopy_f</a>
+    <li><a href="#Dataspace-Close">h5sclose_f</a>
+    <li><a href="#Dataspace-CreateSimple">h5screate_simple_f</a>
+    <li><a href="#Dataspace-IsSimple">h5sis_simple_f</a>
+    <li><a href="#Dataspace-OffsetSimple">h5soffset_simple_f</a>
+    <li><a href="#Dataspace-ExtentDims">h5sget_simple_extent_dims_f</a>
+    <li><a href="#Dataspace-ExtentNdims">h5sget_simple_extent_ndims_f</a>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+    <li><a href="#Dataspace-ExtentNpoints">h5sget_simple_extent_npoints_f</a>
+    <li><a href="#Dataspace-ExtentType">h5sget_simple_extent_type_f</a>
+<!--		NOT YET IMPLEMENTED (R1.2 -- 9908)
+    <li><a href="#Dataspace-ExtentClass">h5sextent_class_f</a>            -->
+    <li><a href="#Dataspace-ExtentCopy">h5sextent_copy_f</a>
+    <li><a href="#Dataspace-SetExtentSimple">h5sset_extent_simple_f</a>
+    <li><a href="#Dataspace-SetExtentNone">h5sset_extent_none_f</a>
+    <li><a href="#Dataspace-GetSelectType">h5sget_select_type_f</a>
+    <li><a href="#Dataspace-SelectNpoints">h5sget_select_npoints_f</a>
+    <li><a href="#Dataspace-SelectHyperNBlocks">h5sget_select_hyper_nblocks_f</a>
+    <li><a href="#Dataspace-SelectHyperBlockList">h5sget_select_hyper_blocklist_f</a>
+<!--<li><a href="#Dataspace-SelectBounds">h5sget_select_bounds_f</a>      -->
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+    <li><a href="#Dataspace-SelectElemNPoints">h5sget_select_elem_npoints_f</a>
+    <li><a href="#Dataspace-SelectElemPointList">h5sget_select_elem_pointlist_f</a>
+    <li><a href="#Dataspace-SelectElements">h5sselect_elements_f</a>
+    <li><a href="#Dataspace-SelectAll">h5sselect_all_f</a>
+    <li><a href="#Dataspace-SelectNone">h5sselect_none_f</a>
+    <li><a href="#Dataspace-SelectValid">h5sselect_valid_f</a>
+    <li><a href="#Dataspace-SelectHyperslab">h5sselect_hyperslab_f</a>
+<!--<li><a href="#Dataspace-CombineHyperslab">h5scombine_hyperslab_f</a>  -->
+<!--<li><a href="#Dataspace-CombineSelect">h5scombine_select_f</a>        -->
+<!--<li><a href="#Dataspace-SelectSelect">h5sselect_select_f</a>          -->
+</td></tr>
+</table>
+
+
+<!-- Unimplemented functions
+<p>
+The following H5S functions are included in the HDF5 specification, 
+but have not yet been implemented.  They are described in the 
+<a href="Dataspaces.html">The Dataspace Interface (H5S)</a> section
+of the <cite>HDF5 User's Guide.</cite>.
+<table border=0>
+<tr><td valign=top>
+<ul>
+    <li>H5Scommit
+    <li>H5Sis_subspace
+    <li>H5Slock
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+    <li>H5Sopen
+    <li>H5Sselect_op
+    <li>H5Sselect_order
+</ul>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<ul>
+    <li>H5Ssubspace
+    <li>H5Ssubspace_name
+    <li>H5Ssubspace_location
+</ul>
+</td></tr>
+</table>
+-->
+
+<!-- NEW PAGE -->
+<!-- HEADER RIGHT " " -->
+
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+<!--       Include special topic files                       -->
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+
+
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+<!--       Include function files                            -->
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+
+<?php include("H5S/H5Sclose.htm"); ?>
+<?php include("H5S/H5Scopy.htm"); ?>
+<?php include("H5S/H5Screate.htm"); ?>
+<?php include("H5S/H5Screate_simple.htm"); ?>
+<?php include("H5S/H5Sextent_copy.htm"); ?>
+<?php include("H5S/H5Sget_select_bounds.htm"); ?>
+<?php include("H5S/H5Sget_select_elem_npoints.htm"); ?>
+<?php include("H5S/H5Sget_select_elem_pointlist.htm"); ?>
+<?php include("H5S/H5Sget_select_hyper_blocklist.htm"); ?>
+<?php include("H5S/H5Sget_select_hyper_nblocks.htm"); ?>
+<?php include("H5S/H5Sget_select_npoints.htm"); ?>
+<?php include("H5S/H5Sget_select_type.htm"); ?>
+<?php include("H5S/H5Sget_simple_extent_dims.htm"); ?>
+<?php include("H5S/H5Sget_simple_extent_ndims.htm"); ?>
+<?php include("H5S/H5Sget_simple_extent_npoints.htm"); ?>
+<?php include("H5S/H5Sget_simple_extent_type.htm"); ?>
+<?php include("H5S/H5Sis_simple.htm"); ?>
+<?php include("H5S/H5Soffset_simple.htm"); ?>
+<?php include("H5S/H5Sselect_all.htm"); ?>
+<?php include("H5S/H5Sselect_elements.htm"); ?>
+<?php include("H5S/H5Sselect_hyperslab.htm"); ?>
+<?php include("H5S/H5Sselect_none.htm"); ?>
+<?php include("H5S/H5Sselect_valid.htm"); ?>
+<?php include("H5S/H5Sset_extent_none.htm"); ?>
+<?php include("H5S/H5Sset_extent_simple.htm"); ?>
+
+
+<!-- HEADER RIGHT " " -->
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/ed_libs/Footer.lbi" -->
+
+<address>
+The HDF Group Help Desk: <img src="Graphics/help.png" align=top height=16>
+<br>
+Describes HDF5 Release 1.6.10, November 2009 
+</address>
+
+
+<!-- #EndLibraryItem --><SCRIPT LANGUAGE="JAVASCRIPT">
+<!--
+document.writeln("Last modified: 25 April 2009");
+-->
+</SCRIPT> 
+
+</body>
+</html>
+

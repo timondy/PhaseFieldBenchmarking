@@ -1,0 +1,52 @@
+#LDFLAGS += -L$(hdf5_dir)/lib -L$(paramesh_dir)/libs -L$(phase_dir)/libs 
+LDLIBS += -lgfortran -lparamesh -lmpi_paramesh -lmodules -lhdf5 -lhdf5_hl 
+
+FFLAGS += -I$(phase_dir)/MG-SRC
+
+#FFLAGS+=-g
+
+LDFLAGS += $(ADD_LIB)
+LDFLAGS += $(LDLIBS)
+LDFLAGS += -lparamesh
+
+# List all application source files
+sources :=  \
+PFBM_modules.f90 \
+PFBM_control.f90 \
+PFBM_initial_soln.f90 \
+PFBM_output.f90 \
+PFBM_problem.f90 \
+PFBM_smooth.f90
+
+%.o:%.f90 $(phase_dir)/MG-SRC/amr_modules.f90 PFBM_modules.f90 Makefile.intel
+	$(FC) -c $(FFLAGS) $<
+%.o:%.c Makefile.gnu
+	$(CC) -c $(CFLAGS) $<
+
+objects := $(sources:.f90=.o)
+exobjects := $(csources:.c=.o)
+
+
+# Identify the main program
+mainobject := $(.f90=.o)
+exobject := $(.c=.o)
+
+# Set the executable name
+CMD := ../pfbm.intel
+
+#include generic library
+LDFLAGS += -L../MG-SRC/.libs/ -lMG 
+
+# compiles the program.
+$(CMD): $(mainobject) $(objects) $(exobjects) 
+	$(FC) $(FFLAGS) -o $@ $^ $(LDFLAGS) \
+	-Wl,-rpath,$(phase_dir)/MG-SRC/.libs \
+	-Wl,-rpath,$(paramesh_dir)/source/.libs \
+	-Wl,-rpath,$(paramesh_dir)/mpi_source/.libs  \
+	-Wl,-rpath,$(paramesh_dir)/headers/.libs  \
+	$(LDFLAGS)
+
+
+.PHONY: clean
+clean: 
+	$(RM) $(CMD) *.o *.i *.mod *~ *__genmod.f90

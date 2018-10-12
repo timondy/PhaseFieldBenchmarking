@@ -1,0 +1,45 @@
+LDFLAGS += -L../libs
+ifndef SHMEM
+LDFLAGS += -lmpi_paramesh
+endif
+
+# normal LDFLAGS
+LDFLAGS += -lparamesh -lmodules
+
+# T3E LDFLAGS
+#LDFLAGS += -lparamesh
+
+ifdef SHMEM
+# SGI LDFLAGS
+LDFLAGS += -lsma
+# Compaq LDFLAGS
+#LDFLAGS += -lshmem
+endif
+
+LDFLAGS += $(ADD_LIB)
+
+# List all application source files
+sources := 
+%.o:%.F90
+	$(FC) -c $(FFLAGS) $<
+objects := $(sources:.F90=.o)
+
+
+# Identify the main program
+main := main.F90 
+mainobject := $(main:.F90=.o)
+
+# Set the executable name
+CMD := a.out
+
+
+
+
+# compiles the program.
+$(CMD): $(mainobject) $(objects)
+	$(FC) $(FFLAGS) -o $@ $^ $(LDFLAGS)
+
+
+.PHONY: clean
+clean:
+	$(RM) $(CMD) *.o *.i *~

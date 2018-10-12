@@ -1,0 +1,68 @@
+#							-*- shell-script -*-
+#
+# Copyright by The HDF Group.
+# Copyright by the Board of Trustees of the University of Illinois.
+# All rights reserved.
+#
+# This file is part of HDF5.  The full HDF5 copyright notice, including
+# terms governing use, modification, and redistribution, is contained in
+# the files COPYING and Copyright.html.  COPYING can be found at the root
+# of the source code distribution tree; Copyright.html can be found at the
+# root level of an installed copy of the electronic HDF5 document set and
+# is linked from the top-level documents page.  It can also be found at
+# http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have
+# access to either file, you may request a copy from help@hdfgroup.org.
+
+
+# This file is part of the HDF5 build script.  It is processed shortly
+# after configure starts and defines, among other things, flags for
+# the various compile modes.
+
+# Use Intel C compiler by default (if it is available).
+# Use mpicc for parallel by default (if it is available).
+if test "X$CC" = "X"; then
+    if test "X-$enable_parallel" = "X-yes" && which mpicc > /dev/null; then
+        CC=mpicc
+        CC_BASENAME=mpicc
+    elif which icc > /dev/null; then
+        CC=icc
+        CC_BASENAME=icc
+    fi
+fi
+
+#----------------------------------------------------------------------------
+# Compiler flags. The CPPFLAGS values should not include package debug
+# flags like `-DH5G_DEBUG' since these are added with the
+# `--enable-debug' switch of configure.
+
+case $CC_BASENAME in
+    ecc|icc)
+	. $srcdir/config/intel-flags
+	;;
+
+    gcc)
+	. $srcdir/config/gnu-flags
+	;;
+
+    *)
+	CFLAGS="$CFLAGS -ansi"
+	DEBUG_CFLAGS="-g"
+	DEBUG_CPPFLAGS=
+	PROD_CFLAGS="-O"
+	PROD_CPPFLAGS=
+	PROFILE_CFLAGS="-pg"
+	PROFILE_CPPFLAGS=
+	;;
+esac
+
+# Check MPICH settings
+. $srcdir/config/mpich
+
+#Uncomment the next line if your system doesn't support MPI complex derived datatype.
+#hdf5_mpi_complex_derived_datatype_works=${hdf5_mpi_complex_derived_datatype_works='no'}
+#Comment out the following line if your system supports collective IO when some processes
+#don't have any contributions to IOs.
+hdf5_mpi_special_collective_io_works=${hdf5_mpi_special_collective_io_works='no'}
+hdf5_mpi_complex_derived_datatype_works=${hdf5_mpi_complex_derived_datatype-works='no'}
+
+

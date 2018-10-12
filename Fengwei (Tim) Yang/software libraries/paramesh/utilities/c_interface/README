@@ -1,0 +1,150 @@
+DESCRIPTION:
+
+The files in this directory provide a C interface capability to the
+PARAMESH adaptive mesh library.  This should allow you to write your
+main code in C if you wish and still get the functionality provided by
+PARAMESH.  The files in this directory will give you access to the
+data structures in PARAMESH, as well as its subroutines, from a C main
+or other function written in C.  We have attempted to make this C
+interface work in a similar fashion to the way one uses PARAMESH from
+FORTRAN (with the caveats discussed below).  You should be VERY
+familiar with the way PARAMESH is intended to work from FORTRAN before
+you attempt to use this C interface (i.e. READ THE DOCUMENTATION
+posted on the PARAMESH WEB site).
+
+INSTALLATION:
+
+To install these files type ./INSTALL from this directory.  The
+necessary files will be copied to paramesh/mpi_source,
+paramesh/headers, paramesh/source, or paramesh/Tests.  You can then
+compile as you normally would.
+
+The install script calles the INSTALL.py script so you will also need
+python on your system.  
+
+The install script tests your system using 'uname' to determine what
+kind of system you have.  It then writes a file 'underscore.h' which
+defines a C preprocessor flag which will insert (or not) underscores
+to the C functions called by the Fortran code.  The only systems we
+have tested Paramesh on which don't require underscores are IBM and
+Mac OSX running Absoft's Fortran compiler.  If your system has
+different requirements, then you will need to edit the C code yourself
+and add underscores in the proper way.
+
+COMPILATION NOTES:
+
+For the NAG compiler:
+	Add -mismatch to your list of FORTRAN compiler options
+
+For the Lahey compiler:
+	Declare the 'main' function in your C code as follows:
+
+	MAIN__(iargc, iargv) {
+	}
+	
+	not the usual 
+
+	main(iargc, iargv) {
+	}
+
+For the Intel compiler:
+	Add -nofor_main to your list of FORTRAN compiler options
+
+USAGE NOTES:
+
+1) constuct your 'main' to have the arguments iargc and iargv
+
+	main(iargc, iargv)
+	int iargc;
+	char** iargv;
+	{
+	}
+
+2) call MPI_Init as the first executable statement in your C code and the second
+   executable statement MUST be c_amr_initialize()
+
+	MPI_Init(&iargc, &iargv);
+	c_amr_initialize();
+
+3) The include files in this directory have a 1-1 correspondence with the fortran
+   modules of the same name in the 'headers' directory.  In any C functions you wish
+   to write and which need access to PARAMESH data (e.g. unk), include these files in
+   the following order:
+
+#include "paramesh_dimensions.h"
+#include "tree.h"
+#include "physicaldata.h"
+#include "workspace.h"
+#include "io.h"
+
+These includes will declare and pass to you pointers to the PARAMESH
+data.  Note that these pointers have identical names to the
+coorsponding data item in the PARAMESH FORTRAN code.  Secondly, be
+aware that all arrays need to be addressed in C order (which is
+opposite to the FORTRAN ordering).  For instance to access the value
+of the PARAMESH variable maxblocks from your C code:
+
+  int i;
+  i = *maxblocks;
+
+To access the array unk and initialize it to zero:
+
+  for (lb = 0; lb < *maxblocks; lb++) {
+    for (k = 0; k < *ku_bnd; k++) {
+      for (j = 0; j < *ju_bnd; j++) {
+        for (i = 0; i < *iu_bnd; i++) {
+          for (nnvar = 0; nnvar < *nvar; nnvar++) {
+            (*unk)[lb][k][j][i][nnvar] = 0.;
+          }
+        }
+      }
+    }
+  }
+
+4) To 'call' the PARAMESH FORTRAN routines from your C code note that 
+   the c function names are identical to the FORTRAN subroutine names
+   excect that they have a 'c_' prepended to them.
+   It would also be a good idea to add C functions prototypes to your
+   C code.  Also note that this C interface to PARAMESH does NOT support
+   optional arguments as the FORTRAN version does.  In other words, when
+   call on of the PARAMESH routines from you C code YOU MUST INCLUDE
+   ALL THE ARGUMENTS IN THE ARGUMENTS LIST TO THAT ROUTINE.  For guidance
+   on what arguments need to be included for each call to a PARAMESH 
+   routine see the 'fortran_wrappers.F' file.
+
+   NOTE: Your system may require that an underscore be added to each
+         call to a PARAMESH function (e.g. c_amr_guardcell becomes 
+         c_amr_guardcell_ )
+ 
+   As an example, to call the guardcell filling routine:
+
+   extern void c_amr_initialize(void);
+   extern void c_amr_guardcell(int*, int*, int*, int*, int*, int*);
+   extern void c_amr_close(void);
+
+   main(iargc, iargv) 
+	int iargc;
+	char** iargv;
+   {
+	MPI_Init(&iargc, &iargv);
+  	c_amr_initialize();
+
+#include "paramesh_dimensions.h"
+#include "tree.h"
+#include "physicaldata.h"
+#include "workspace.h"
+#include "io.h"
+
+	c_amr_guardcell(&mype, &iopt, &nlayers, \
+                        &nlayersx, &nlayersy, &nlayersz);
+
+	c_amr_close();
+
+   }
+
+5) For a detailed example of how to use this C interface to PARAMESH see 
+   the file test_c_interface.c in this directory.
+
+
+
+	

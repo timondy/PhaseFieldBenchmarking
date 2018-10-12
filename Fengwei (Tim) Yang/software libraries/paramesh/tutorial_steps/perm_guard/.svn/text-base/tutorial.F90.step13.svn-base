@@ -1,0 +1,205 @@
+!----------------------------------------------------------------------
+! PARAMESH - an adaptive mesh library.
+! Copyright (C) 2003
+!
+! Use of the PARAMESH software is governed by the terms of the
+! usage agreement which can be found in the file
+! 'PARAMESH_USERS_AGREEMENT' in the main paramesh directory.
+!----------------------------------------------------------------------
+
+!
+! This is a template main program for the multidimensional PARAMESH amr 
+! package. It is suitable for use when permanent guardcell storage is 
+! to be used for every grid block.
+!
+
+
+!----------------------------------------------------------------
+!
+!
+! BLOCK 1
+
+
+
+#include "paramesh_preprocessor.fh"
+
+! include file to define physical qualities of the model and mesh
+        use paramesh_dimensions
+        use physicaldata
+
+! include file defining the tree
+        use tree
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! NOTE: IT IS EXTREMELY IMPORTANT TO EXPOSE ALL THE INTERFACES OF
+! PARAMESH SUBROUTINES USED.
+! PARAMESH3.0 WILL NOT WORK CORRECTLY WITHOUT DOING THIS.
+! mpi-support, subroutine interfaces used by PARAMESH can be found in
+! paramesh_mpi_interfaces, but none are needed for this example.
+
+! identify interface blocks for routines called in this program
+        use paramesh_interfaces, only : comm_start, &
+     &                                  amr_initialize, &
+     &                                  amr_refine_derefine, &
+     &                                  amr_guardcell, &
+     &                                  amr_prolong, &
+     &                                  amr_restrict, &
+     &                                  amr_test_refinement, &
+     &                                  amr_close, &
+     &                                  amr_checkpoint_wr
+
+
+        Include 'mpif.h'
+
+! local amr variables
+        integer           :: nprocs, mype, ierr
+
+!---------------------------------------------------------------
+!
+! BLOCK 2
+
+
+! make initialization call for amr package
+
+        call amr_initialize
+
+        Call MPI_COMM_RANK(MPI_COMM_WORLD, mype, ierr)
+        Call MPI_COMM_SIZE(MPI_COMM_WORLD, nprocs, ierr)
+
+        if(mype.eq.0) write(*,*) 'Running on ',nprocs,' processors'
+
+
+!---------------------------------------------------------------
+!
+! BLOCK 3
+
+
+! set a limit on the refinement level
+        lrefine_min = 1
+        lrefine_max = 3
+
+
+! set up initial grid state.
+
+! set up a single block covering the whole square domain
+        lnblocks = 0
+        if(mype.eq.0.) then
+                lnblocks = 1
+                coord(:,1) = 0.
+		bnd_box(1,:,1) = -4.
+		bnd_box(2,:,1) = 4.
+                bsize(:,1) = bnd_box(2,:,1) - bnd_box(1,:,1)
+                nodetype(1) = 1
+                lrefine(1) = 1
+
+                neigh(1,:,1) = 1                  ! initial block is its own
+                neigh(2,:,1) = 0                  ! neighbor ie periodic bc's
+
+                refine(1)=.true.
+        endif
+
+
+! Now cycle over blocks, refining all existing leaf blocks.
+
+        do loop_count=1,2
+
+                refine(1:lnblocks) = .true.
+
+! refine grid and apply morton reordering to grid blocks if necessary
+                call amr_refine_derefine
+
+        enddo
+
+
+
+! Output details of the current grid
+	if(mype.eq.0) write(*,*) 'pe / blk / blk-coords / blk-sizes'
+        do l=1,lnblocks
+        write(*,100) mype,l,(coord(i,l),i=1,ndim),(bsize(j,l),j=1,ndim)
+        enddo
+100     format(i2,1x,i2,4(2x,f19.16))
+
+!---------------------------------------------------------------
+!
+! BLOCK 4
+
+! Establish solution on the initial grid.
+	call amr_initial_soln
+
+!---------------------------------------------------------------
+!
+! BLOCK 5
+
+
+! exchange guardcell information
+        iopt = 1
+        nlayers = nguard
+        call amr_guardcell(mype,iopt,nlayers)
+
+
+        do lb=1,lnblocks
+          if(coord(1,lb).eq.1.0.and.coord(2,lb).eq.1.0) then
+            do j=1,nyb+2*nguard
+            write(*,50) j,(unk(1,i,j,1,lb),i=1,nxb+2*nguard)
+50          format(1x,i3,6(2x,f11.8))
+            enddo
+          endif
+        enddo
+
+#ifdef NOTNOW
+
+!----------------------------------------------------------
+!
+! BLOCK 6
+
+        minstp = 1
+        maxstp = 20
+
+! loop over time steps.
+
+        do istep = minstp, maxstp
+
+! advance the solution using a User provided routine
+        call advance_soln(mype,time,dt)
+
+        if (.not.advance_all_levels) then
+! A valid solution will be required on the parents of leaf blocks
+! when refinement testing is done. See the comment before the call
+! to amr_test_refinement.
+        iempty = 0 
+        iopt = 1
+        call amr_restrict(mype,iopt,iempty)
+        endif
+!
+! test to see if additional refinement or derefinement is necessary
+! note - if the solution is only being advanced on leaf nodes then
+! a call to amr_restrict must come before this call to ensure that
+! the refinement test can be done on parents of leafs also. This avoids
+! a potential refinement/derefinement flip-flop happenning on successive
+! timesteps.
+
+        call amr_test_refinement(mype,lrefine_min,lrefine_max)
+
+! refine grid and apply morton reordering to grid blocks if necessary
+        call amr_refine_derefine
+
+! prolong solution to any new leaf blocks if necessary
+        call amr_prolong(mype,iopt,nlayers)
+
+! exchange guardcell information
+        call amr_guardcell(mype,iopt,nlayers)
+
+
+        end do
+
+! END OF BLOCK 6
+!---------------------------------------------------------------
+#endif /* NOTNOW */
+ 
+        call amr_checkpoint_wr(13,.false.)
+
+        call amr_close
+
+        stop
+        end

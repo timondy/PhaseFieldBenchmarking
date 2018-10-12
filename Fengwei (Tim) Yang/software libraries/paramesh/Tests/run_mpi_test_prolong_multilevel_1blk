@@ -1,0 +1,4 @@
+#! /bin/csh
+
+run_an_mpi_test 1 2 test_prolong_multilevel_1blk
+exit $status

@@ -1,0 +1,138 @@
+t_mpi.lo: t_mpi.c testphdf5.h $(srcdir)./test/h5test.h $(srcdir)./src/hdf5.h \
+ $(srcdir)./src/H5public.h $(srcdir)./src/H5pubconf.h /usr/include/mpich/mpi.h \
+ /usr/include/mpich/mpio.h /usr/include/mpich/mpi.h $(srcdir)./src/H5api_adpt.h \
+ $(srcdir)./src/H5Apublic.h $(srcdir)./src/H5Ipublic.h $(srcdir)./src/H5ACpublic.h \
+ $(srcdir)./src/H5Bpublic.h $(srcdir)./src/H5Dpublic.h $(srcdir)./src/H5Epublic.h \
+ $(srcdir)./src/H5Fpublic.h $(srcdir)./src/H5FDpublic.h $(srcdir)./src/H5Gpublic.h \
+ $(srcdir)./src/H5Opublic.h $(srcdir)./src/H5HGpublic.h $(srcdir)./src/H5HLpublic.h \
+ $(srcdir)./src/H5MMpublic.h $(srcdir)./src/H5Ppublic.h $(srcdir)./src/H5Zpublic.h \
+ $(srcdir)./src/H5Rpublic.h $(srcdir)./src/H5Spublic.h $(srcdir)./src/H5Tpublic.h \
+ $(srcdir)./src/H5FDcore.h $(srcdir)./src/H5FDfamily.h $(srcdir)./src/H5FDlog.h $(srcdir)./src/H5FDmpi.h \
+ $(srcdir)./src/H5FDmpio.h $(srcdir)./src/H5FDmpiposix.h $(srcdir)./src/H5FDmulti.h \
+ $(srcdir)./src/H5FDsec2.h $(srcdir)./src/H5FDstdio.h $(srcdir)./src/H5private.h \
+ $(srcdir)./src/H5MPprivate.h $(srcdir)./src/H5TSprivate.h
+testphdf5.lo: testphdf5.c testphdf5.h $(srcdir)./test/h5test.h $(srcdir)./src/hdf5.h \
+ $(srcdir)./src/H5public.h $(srcdir)./src/H5pubconf.h /usr/include/mpich/mpi.h \
+ /usr/include/mpich/mpio.h /usr/include/mpich/mpi.h $(srcdir)./src/H5api_adpt.h \
+ $(srcdir)./src/H5Apublic.h $(srcdir)./src/H5Ipublic.h $(srcdir)./src/H5ACpublic.h \
+ $(srcdir)./src/H5Bpublic.h $(srcdir)./src/H5Dpublic.h $(srcdir)./src/H5Epublic.h \
+ $(srcdir)./src/H5Fpublic.h $(srcdir)./src/H5FDpublic.h $(srcdir)./src/H5Gpublic.h \
+ $(srcdir)./src/H5Opublic.h $(srcdir)./src/H5HGpublic.h $(srcdir)./src/H5HLpublic.h \
+ $(srcdir)./src/H5MMpublic.h $(srcdir)./src/H5Ppublic.h $(srcdir)./src/H5Zpublic.h \
+ $(srcdir)./src/H5Rpublic.h $(srcdir)./src/H5Spublic.h $(srcdir)./src/H5Tpublic.h \
+ $(srcdir)./src/H5FDcore.h $(srcdir)./src/H5FDfamily.h $(srcdir)./src/H5FDlog.h $(srcdir)./src/H5FDmpi.h \
+ $(srcdir)./src/H5FDmpio.h $(srcdir)./src/H5FDmpiposix.h $(srcdir)./src/H5FDmulti.h \
+ $(srcdir)./src/H5FDsec2.h $(srcdir)./src/H5FDstdio.h $(srcdir)./src/H5private.h \
+ $(srcdir)./src/H5MPprivate.h $(srcdir)./src/H5TSprivate.h
+t_dset.lo: t_dset.c testphdf5.h $(srcdir)./test/h5test.h $(srcdir)./src/hdf5.h \
+ $(srcdir)./src/H5public.h $(srcdir)./src/H5pubconf.h /usr/include/mpich/mpi.h \
+ /usr/include/mpich/mpio.h /usr/include/mpich/mpi.h $(srcdir)./src/H5api_adpt.h \
+ $(srcdir)./src/H5Apublic.h $(srcdir)./src/H5Ipublic.h $(srcdir)./src/H5ACpublic.h \
+ $(srcdir)./src/H5Bpublic.h $(srcdir)./src/H5Dpublic.h $(srcdir)./src/H5Epublic.h \
+ $(srcdir)./src/H5Fpublic.h $(srcdir)./src/H5FDpublic.h $(srcdir)./src/H5Gpublic.h \
+ $(srcdir)./src/H5Opublic.h $(srcdir)./src/H5HGpublic.h $(srcdir)./src/H5HLpublic.h \
+ $(srcdir)./src/H5MMpublic.h $(srcdir)./src/H5Ppublic.h $(srcdir)./src/H5Zpublic.h \
+ $(srcdir)./src/H5Rpublic.h $(srcdir)./src/H5Spublic.h $(srcdir)./src/H5Tpublic.h \
+ $(srcdir)./src/H5FDcore.h $(srcdir)./src/H5FDfamily.h $(srcdir)./src/H5FDlog.h $(srcdir)./src/H5FDmpi.h \
+ $(srcdir)./src/H5FDmpio.h $(srcdir)./src/H5FDmpiposix.h $(srcdir)./src/H5FDmulti.h \
+ $(srcdir)./src/H5FDsec2.h $(srcdir)./src/H5FDstdio.h $(srcdir)./src/H5private.h \
+ $(srcdir)./src/H5MPprivate.h $(srcdir)./src/H5TSprivate.h
+t_file.lo: t_file.c testphdf5.h $(srcdir)./test/h5test.h $(srcdir)./src/hdf5.h \
+ $(srcdir)./src/H5public.h $(srcdir)./src/H5pubconf.h /usr/include/mpich/mpi.h \
+ /usr/include/mpich/mpio.h /usr/include/mpich/mpi.h $(srcdir)./src/H5api_adpt.h \
+ $(srcdir)./src/H5Apublic.h $(srcdir)./src/H5Ipublic.h $(srcdir)./src/H5ACpublic.h \
+ $(srcdir)./src/H5Bpublic.h $(srcdir)./src/H5Dpublic.h $(srcdir)./src/H5Epublic.h \
+ $(srcdir)./src/H5Fpublic.h $(srcdir)./src/H5FDpublic.h $(srcdir)./src/H5Gpublic.h \
+ $(srcdir)./src/H5Opublic.h $(srcdir)./src/H5HGpublic.h $(srcdir)./src/H5HLpublic.h \
+ $(srcdir)./src/H5MMpublic.h $(srcdir)./src/H5Ppublic.h $(srcdir)./src/H5Zpublic.h \
+ $(srcdir)./src/H5Rpublic.h $(srcdir)./src/H5Spublic.h $(srcdir)./src/H5Tpublic.h \
+ $(srcdir)./src/H5FDcore.h $(srcdir)./src/H5FDfamily.h $(srcdir)./src/H5FDlog.h $(srcdir)./src/H5FDmpi.h \
+ $(srcdir)./src/H5FDmpio.h $(srcdir)./src/H5FDmpiposix.h $(srcdir)./src/H5FDmulti.h \
+ $(srcdir)./src/H5FDsec2.h $(srcdir)./src/H5FDstdio.h $(srcdir)./src/H5private.h \
+ $(srcdir)./src/H5MPprivate.h $(srcdir)./src/H5TSprivate.h
+t_mdset.lo: t_mdset.c testphdf5.h $(srcdir)./test/h5test.h $(srcdir)./src/hdf5.h \
+ $(srcdir)./src/H5public.h $(srcdir)./src/H5pubconf.h /usr/include/mpich/mpi.h \
+ /usr/include/mpich/mpio.h /usr/include/mpich/mpi.h $(srcdir)./src/H5api_adpt.h \
+ $(srcdir)./src/H5Apublic.h $(srcdir)./src/H5Ipublic.h $(srcdir)./src/H5ACpublic.h \
+ $(srcdir)./src/H5Bpublic.h $(srcdir)./src/H5Dpublic.h $(srcdir)./src/H5Epublic.h \
+ $(srcdir)./src/H5Fpublic.h $(srcdir)./src/H5FDpublic.h $(srcdir)./src/H5Gpublic.h \
+ $(srcdir)./src/H5Opublic.h $(srcdir)./src/H5HGpublic.h $(srcdir)./src/H5HLpublic.h \
+ $(srcdir)./src/H5MMpublic.h $(srcdir)./src/H5Ppublic.h $(srcdir)./src/H5Zpublic.h \
+ $(srcdir)./src/H5Rpublic.h $(srcdir)./src/H5Spublic.h $(srcdir)./src/H5Tpublic.h \
+ $(srcdir)./src/H5FDcore.h $(srcdir)./src/H5FDfamily.h $(srcdir)./src/H5FDlog.h $(srcdir)./src/H5FDmpi.h \
+ $(srcdir)./src/H5FDmpio.h $(srcdir)./src/H5FDmpiposix.h $(srcdir)./src/H5FDmulti.h \
+ $(srcdir)./src/H5FDsec2.h $(srcdir)./src/H5FDstdio.h $(srcdir)./src/H5private.h \
+ $(srcdir)./src/H5MPprivate.h $(srcdir)./src/H5TSprivate.h
+t_ph5basic.lo: t_ph5basic.c testphdf5.h $(srcdir)./test/h5test.h $(srcdir)./src/hdf5.h \
+ $(srcdir)./src/H5public.h $(srcdir)./src/H5pubconf.h /usr/include/mpich/mpi.h \
+ /usr/include/mpich/mpio.h /usr/include/mpich/mpi.h $(srcdir)./src/H5api_adpt.h \
+ $(srcdir)./src/H5Apublic.h $(srcdir)./src/H5Ipublic.h $(srcdir)./src/H5ACpublic.h \
+ $(srcdir)./src/H5Bpublic.h $(srcdir)./src/H5Dpublic.h $(srcdir)./src/H5Epublic.h \
+ $(srcdir)./src/H5Fpublic.h $(srcdir)./src/H5FDpublic.h $(srcdir)./src/H5Gpublic.h \
+ $(srcdir)./src/H5Opublic.h $(srcdir)./src/H5HGpublic.h $(srcdir)./src/H5HLpublic.h \
+ $(srcdir)./src/H5MMpublic.h $(srcdir)./src/H5Ppublic.h $(srcdir)./src/H5Zpublic.h \
+ $(srcdir)./src/H5Rpublic.h $(srcdir)./src/H5Spublic.h $(srcdir)./src/H5Tpublic.h \
+ $(srcdir)./src/H5FDcore.h $(srcdir)./src/H5FDfamily.h $(srcdir)./src/H5FDlog.h $(srcdir)./src/H5FDmpi.h \
+ $(srcdir)./src/H5FDmpio.h $(srcdir)./src/H5FDmpiposix.h $(srcdir)./src/H5FDmulti.h \
+ $(srcdir)./src/H5FDsec2.h $(srcdir)./src/H5FDstdio.h $(srcdir)./src/H5private.h \
+ $(srcdir)./src/H5MPprivate.h $(srcdir)./src/H5TSprivate.h
+t_coll_chunk.lo: t_coll_chunk.c testphdf5.h $(srcdir)./test/h5test.h $(srcdir)./src/hdf5.h \
+ $(srcdir)./src/H5public.h $(srcdir)./src/H5pubconf.h /usr/include/mpich/mpi.h \
+ /usr/include/mpich/mpio.h /usr/include/mpich/mpi.h $(srcdir)./src/H5api_adpt.h \
+ $(srcdir)./src/H5Apublic.h $(srcdir)./src/H5Ipublic.h $(srcdir)./src/H5ACpublic.h \
+ $(srcdir)./src/H5Bpublic.h $(srcdir)./src/H5Dpublic.h $(srcdir)./src/H5Epublic.h \
+ $(srcdir)./src/H5Fpublic.h $(srcdir)./src/H5FDpublic.h $(srcdir)./src/H5Gpublic.h \
+ $(srcdir)./src/H5Opublic.h $(srcdir)./src/H5HGpublic.h $(srcdir)./src/H5HLpublic.h \
+ $(srcdir)./src/H5MMpublic.h $(srcdir)./src/H5Ppublic.h $(srcdir)./src/H5Zpublic.h \
+ $(srcdir)./src/H5Rpublic.h $(srcdir)./src/H5Spublic.h $(srcdir)./src/H5Tpublic.h \
+ $(srcdir)./src/H5FDcore.h $(srcdir)./src/H5FDfamily.h $(srcdir)./src/H5FDlog.h $(srcdir)./src/H5FDmpi.h \
+ $(srcdir)./src/H5FDmpio.h $(srcdir)./src/H5FDmpiposix.h $(srcdir)./src/H5FDmulti.h \
+ $(srcdir)./src/H5FDsec2.h $(srcdir)./src/H5FDstdio.h $(srcdir)./src/H5private.h \
+ $(srcdir)./src/H5MPprivate.h $(srcdir)./src/H5TSprivate.h $(srcdir)./src/H5Dprivate.h \
+ $(srcdir)./src/H5FDprivate.h $(srcdir)./src/H5Oprivate.h $(srcdir)./src/H5Tprivate.h \
+ $(srcdir)./src/H5private.h $(srcdir)./src/H5Gprivate.h $(srcdir)./src/H5Bprivate.h \
+ $(srcdir)./src/H5ACprivate.h $(srcdir)./src/H5Fprivate.h $(srcdir)./src/H5Cprivate.h \
+ $(srcdir)./src/H5Cpublic.h $(srcdir)./src/H5FLprivate.h $(srcdir)./src/H5RCprivate.h \
+ $(srcdir)./src/H5RSprivate.h $(srcdir)./src/H5Rprivate.h $(srcdir)./src/H5Zprivate.h \
+ $(srcdir)./src/H5Sprivate.h $(srcdir)./src/H5Pprivate.h
+t_span_tree.lo: t_span_tree.c $(srcdir)./src/hdf5.h $(srcdir)./src/H5public.h \
+ $(srcdir)./src/H5pubconf.h /usr/include/mpich/mpi.h /usr/include/mpich/mpio.h \
+ /usr/include/mpich/mpi.h $(srcdir)./src/H5api_adpt.h $(srcdir)./src/H5Apublic.h \
+ $(srcdir)./src/H5Ipublic.h $(srcdir)./src/H5ACpublic.h $(srcdir)./src/H5Bpublic.h \
+ $(srcdir)./src/H5Dpublic.h $(srcdir)./src/H5Epublic.h $(srcdir)./src/H5Fpublic.h \
+ $(srcdir)./src/H5FDpublic.h $(srcdir)./src/H5Gpublic.h $(srcdir)./src/H5Opublic.h \
+ $(srcdir)./src/H5HGpublic.h $(srcdir)./src/H5HLpublic.h $(srcdir)./src/H5MMpublic.h \
+ $(srcdir)./src/H5Ppublic.h $(srcdir)./src/H5Zpublic.h $(srcdir)./src/H5Rpublic.h \
+ $(srcdir)./src/H5Spublic.h $(srcdir)./src/H5Tpublic.h $(srcdir)./src/H5FDcore.h \
+ $(srcdir)./src/H5FDfamily.h $(srcdir)./src/H5FDlog.h $(srcdir)./src/H5FDmpi.h $(srcdir)./src/H5FDmpio.h \
+ $(srcdir)./src/H5FDmpiposix.h $(srcdir)./src/H5FDmulti.h $(srcdir)./src/H5FDsec2.h \
+ $(srcdir)./src/H5FDstdio.h $(srcdir)./src/H5private.h $(srcdir)./src/H5MPprivate.h \
+ $(srcdir)./src/H5TSprivate.h testphdf5.h $(srcdir)./test/h5test.h
+t_chunk_alloc.lo: t_chunk_alloc.c testphdf5.h $(srcdir)./test/h5test.h \
+ $(srcdir)./src/hdf5.h $(srcdir)./src/H5public.h $(srcdir)./src/H5pubconf.h \
+ /usr/include/mpich/mpi.h /usr/include/mpich/mpio.h \
+ /usr/include/mpich/mpi.h $(srcdir)./src/H5api_adpt.h $(srcdir)./src/H5Apublic.h \
+ $(srcdir)./src/H5Ipublic.h $(srcdir)./src/H5ACpublic.h $(srcdir)./src/H5Bpublic.h \
+ $(srcdir)./src/H5Dpublic.h $(srcdir)./src/H5Epublic.h $(srcdir)./src/H5Fpublic.h \
+ $(srcdir)./src/H5FDpublic.h $(srcdir)./src/H5Gpublic.h $(srcdir)./src/H5Opublic.h \
+ $(srcdir)./src/H5HGpublic.h $(srcdir)./src/H5HLpublic.h $(srcdir)./src/H5MMpublic.h \
+ $(srcdir)./src/H5Ppublic.h $(srcdir)./src/H5Zpublic.h $(srcdir)./src/H5Rpublic.h \
+ $(srcdir)./src/H5Spublic.h $(srcdir)./src/H5Tpublic.h $(srcdir)./src/H5FDcore.h \
+ $(srcdir)./src/H5FDfamily.h $(srcdir)./src/H5FDlog.h $(srcdir)./src/H5FDmpi.h $(srcdir)./src/H5FDmpio.h \
+ $(srcdir)./src/H5FDmpiposix.h $(srcdir)./src/H5FDmulti.h $(srcdir)./src/H5FDsec2.h \
+ $(srcdir)./src/H5FDstdio.h $(srcdir)./src/H5private.h $(srcdir)./src/H5MPprivate.h \
+ $(srcdir)./src/H5TSprivate.h
+t_filter_read.lo: t_filter_read.c testphdf5.h $(srcdir)./test/h5test.h \
+ $(srcdir)./src/hdf5.h $(srcdir)./src/H5public.h $(srcdir)./src/H5pubconf.h \
+ /usr/include/mpich/mpi.h /usr/include/mpich/mpio.h \
+ /usr/include/mpich/mpi.h $(srcdir)./src/H5api_adpt.h $(srcdir)./src/H5Apublic.h \
+ $(srcdir)./src/H5Ipublic.h $(srcdir)./src/H5ACpublic.h $(srcdir)./src/H5Bpublic.h \
+ $(srcdir)./src/H5Dpublic.h $(srcdir)./src/H5Epublic.h $(srcdir)./src/H5Fpublic.h \
+ $(srcdir)./src/H5FDpublic.h $(srcdir)./src/H5Gpublic.h $(srcdir)./src/H5Opublic.h \
+ $(srcdir)./src/H5HGpublic.h $(srcdir)./src/H5HLpublic.h $(srcdir)./src/H5MMpublic.h \
+ $(srcdir)./src/H5Ppublic.h $(srcdir)./src/H5Zpublic.h $(srcdir)./src/H5Rpublic.h \
+ $(srcdir)./src/H5Spublic.h $(srcdir)./src/H5Tpublic.h $(srcdir)./src/H5FDcore.h \
+ $(srcdir)./src/H5FDfamily.h $(srcdir)./src/H5FDlog.h $(srcdir)./src/H5FDmpi.h $(srcdir)./src/H5FDmpio.h \
+ $(srcdir)./src/H5FDmpiposix.h $(srcdir)./src/H5FDmulti.h $(srcdir)./src/H5FDsec2.h \
+ $(srcdir)./src/H5FDstdio.h $(srcdir)./src/H5private.h $(srcdir)./src/H5MPprivate.h \
+ $(srcdir)./src/H5TSprivate.h

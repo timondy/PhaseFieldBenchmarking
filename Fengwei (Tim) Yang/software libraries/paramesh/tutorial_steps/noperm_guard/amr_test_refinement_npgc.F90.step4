@@ -1,0 +1,198 @@
+!----------------------------------------------------------------------
+! PARAMESH - an adaptive mesh library.
+! Copyright (C) 2003
+!
+! Use of the PARAMESH software is governed by the terms of the
+! usage agreement which can be found in the file
+! 'PARAMESH_USERS_AGREEMENT' in the main paramesh directory.
+!----------------------------------------------------------------------
+
+#include "paramesh_preprocessor.fh"
+
+
+      subroutine amr_test_refinement(mype,llrefine_min,llrefine_max)
+
+
+
+!--------------------------------------------------------------------------
+! 
+! This is a template to assist in constructing the routine AMR_TEST_REFINEMENT
+! for use in your application. In this illustration we use the workspace
+! array WORK to store the data which is used in computing the error measure
+! at each grid point. This gives us the freedom to extend the testing
+! beyond the normal bounds of individual blocks, since WORK is declared
+! with NGUARD_WORK guard cells at each boundary, which can be set to a
+! larger number than NGUARD.
+
+! Arguments:
+!   mype           integer      local processor number
+!   llrefine_min   integer      minimum refinement level to be permitted
+!   llrefine_max   integer      maximum refinement level to be permitted
+
+!--------------------------------------------------------------------------
+
+
+      use paramesh_dimensions
+      use physicaldata
+      use tree
+      use workspace
+
+      use paramesh_interfaces, only : amr_restrict, &
+     &                                amr_1blk_guardcell
+      use paramesh_mpi_interfaces, only : mpi_amr_comm_setup
+
+      integer, intent(in)    ::  mype,llrefine_min,llrefine_max
+
+      logical :: lcc,lfc,lec,lnc,l_srl_only,ldiag
+      integer :: pe
+      real :: error(ilw1:iuw1,jlw1:juw1,klw1:kuw1)
+      integer :: ndel
+      integer :: tag_offset
+      logical :: lguard, lprolong, lflux, ledge, lrestrict, lfulltree
+
+      include 'mpif.h'
+
+      if (.not.advance_all_levels) then
+        iopt = 1
+        iempty = 0
+        call amr_restrict(mype,iopt,iempty)
+      end if
+
+
+      ndel = (nguard_work - nguard)*npgs
+
+!-----------------------------------------------------------
+!
+! Re-initialize the refinement and derefinement flag arrays
+      refine(:)   = .false.
+      derefine(:) = .false.
+
+
+
+!
+! Set up the workspace array WORK to store the variable we wish to examine 
+! in order to test the refinement level.
+
+
+! Set up the workspace array to store the current solution.
+      if(lnblocks.gt.0) then
+      do lb=1,lnblocks
+      if(nodetype(lb).eq.1.or.nodetype(lb).eq.2) then
+            do k=kl_bnd+ndel*k3d,ku_bnd+ndel*k3d
+            do j=jl_bnd+ndel*k2d,ju_bnd+ndel*k2d
+            do i=il_bnd+ndel,iu_bnd+ndel
+              work(i,j,k,lb,1) =  &
+     &                 unk(1,i-ndel,j-ndel*k2d,k-ndel*k3d,lb)
+            end do
+            end do
+            end do
+      endif
+      end do
+      endif
+
+      Call MPI_BARRIER(MPI_COMM_WORLD, ierr)
+!
+! Fill the guard cell layers of the workspace array.
+      iopt=2
+      nlayers=1
+!     call amr_guardcell(mype,iopt,nlayers)
+
+
+!
+! Error limits which control the refinement and derefinement requests below.
+      ctore = .35
+      ctode = .05
+
+        lcc = .true.
+        lfc = .false.
+        lec = .false.
+        lnc = .false.
+        tag_offset = 100
+        lguard    = .true.
+        lprolong  = .false.
+        lflux     = .false.
+        ledge     = .false.
+        lrestrict = .false.
+        lfulltree = .false.
+        call MPI_COMM_SIZE(MPI_COMM_WORLD,nprocs,ierr)
+        call mpi_amr_comm_setup(mype,nprocs, &
+     &                        lguard,lprolong,lflux,ledge, &
+     &                        lrestrict,lfulltree, &
+     &                        iopt,lcc,lfc,lec,lnc,tag_offset)
+
+!
+! Loop over all leaf blocks and all parents of leaf blocks
+      if(lnblocks.gt.0) then
+      do lb=1,lnblocks
+      if(nodetype(lb).eq.1.or.nodetype(lb).eq.2) then
+
+
+          iopt = 2
+          pe = mype                 ! pe on which block to be treated is stored
+          lcc = .true.              ! fill cell centered guardcell data
+          lfc = .false.             ! do not fill cell-face-centered data
+          lec = .false.             ! do not fill cell-edge-centered data
+          lnc = .false.             ! do not fill cell-corner data
+          l_srl_only = .false.      ! do not limit to same refinement level
+                                    !   neighbors
+          icoord = 0                ! apply to all block faces
+          ldiag = .true.            ! include diagonal cells at edges and corners
+
+          call amr_1blk_guardcell(mype,iopt,nlayers,lb,pe, &
+     &                            lcc,lfc,lec,lnc, &
+     &                            l_srl_only,icoord,ldiag)
+!
+! User provided routine which returns an array error, which has some error
+! measure computed for each grid cell of the current grid block, based on 
+! some computation on the input array WORK(:,:,:,lb,1).
+!       call error_measure( error, work(1,1,1,lb,1) )
+
+       error(:,:,:) = 0.
+       do k=klw1,kuw1
+       do j=jlw1+1,juw1-1
+       do i=ilw1+1,iuw1-1
+
+         error1 = abs(work1(i+1,j,k,1)-work1(i,j,k,1))
+         error2 = abs(work1(i-1,j,k,1)-work1(i,j,k,1))
+         error3 = abs(work1(i,j+k2d,k,1)-work1(i,j,k,1))
+         error4 = abs(work1(i,j-k2d,k,1)-work1(i,j,k,1))
+         error5 = abs(work1(i,j,k+k3d,1)-work1(i,j,k,1))
+         error6 = abs(work1(i,j,k-k3d,1)-work1(i,j,k,1))
+         error_num = max( error1,error2,error3,error4, &
+     &                                  error5,error6 )
+         error_den = max( work1(i,j,k,1)  ,work1(i+1,j,k,1), &
+     &                    work1(i-1,j,k,1),work1(i,j+k2d,k,1), &
+     &                    work1(i,j-k2d,k,1),work1(i,j,k+k3d,1), &
+     &                    work1(i,j,k-k3d,1), &
+     &                    1.0e-6 )
+
+         error(i,j,k) = error_num/error_den
+       enddo
+       enddo
+       enddo  
+       error_max = maxval( error )
+
+
+! Does the error measure on this block anywhere exceed the limit which 
+! should trigger refinement?
+
+      if( lrefine(lb).lt.llrefine_max ) then
+        if ( error_max .ge. ctore) refine(lb) = .true.
+      endif
+
+
+! Can we derefine this block?
+
+      if( lrefine(lb).gt.llrefine_min .and. (.not.refine(lb)) ) then
+        if ( error_max .lt. ctode) derefine(lb) = .true.
+      endif
+
+      endif
+      end do                                   ! end of loop over blocks
+      endif
+
+
+!-----------------------------------------------------------
+
+      return
+      end subroutine amr_test_refinement

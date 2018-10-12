@@ -1,0 +1,1696 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="header_files/filelist.xml">
+<link rel=Edit-Time-Data href="header_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Main Page</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Randy Ribler</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Randy Ribler</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>16</o:TotalTime>
+  <o:Created>2004-07-23T05:34:00Z</o:Created>
+  <o:LastSaved>2004-07-23T06:03:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>5</o:Words>
+  <o:Characters>32</o:Characters>
+  <o:Company>LC</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>36</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=RM_stylesheet.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-believe-normal-left:yes;}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#252E78;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#3D2185;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+address
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.formuladsp, li.formuladsp, div.formuladsp
+	{mso-style-name:formuladsp;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdtable, li.mdtable, div.mdtable
+	{mso-style-name:mdtable;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#F4F4FB;
+	border:none;
+	mso-border-alt:solid #868686 .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdrow, li.mdrow, div.mdrow
+	{mso-style-name:mdrow;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdescleft, li.mdescleft, div.mdescleft
+	{mso-style-name:mdescleft;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.mdescright, li.mdescright, div.mdescright
+	{mso-style-name:mdescright;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.memitemleft, li.memitemleft, div.memitemleft
+	{mso-style-name:memitemleft;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.memitemright, li.memitemright, div.memitemright
+	{mso-style-name:memitemright;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.search, li.search, div.search
+	{mso-style-name:search;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><![if mso 9]>
+<style>
+p.MsoNormal
+	{margin-left:15.0pt;}
+</style>
+<![endif]><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098">
+  <o:colormru v:ext="edit" colors="#060"/>
+  <o:colormenu v:ext="edit" strokecolor="#060"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link="#252E78" vlink="#3D2185" style='tab-interval:
+.5in;margin-left:15.0pt;margin-right:15.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:15.0pt;margin-bottom:
+0in;margin-left:15.0pt;margin-bottom:.0001pt'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:30pt;margin-top:9pt;width:72.75pt;height:57.75pt;
+ z-index:1'>
+ <v:imagedata src="header_files/image001.jpg" o:title="NCSAlogo"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:40px;margin-top:12px;width:97px;
+height:77px'><img width=97 height=77 src="header_files/image002.jpg" v:shapes="_x0000_s1026"></span><![endif]><span
+style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><span
+style='font-size:22.0pt'><o:p></o:p></span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:103.45pt;border-collapse:collapse;border:none;mso-border-bottom-alt:
+ solid #006600 2.25pt;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes;height:29.25pt'>
+  <td width=443 valign=top style='width:332.6pt;border:none;border-bottom:solid #006600 2.25pt;
+  padding:0in 5.4pt 0in 5.4pt;height:29.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-size:22.0pt'>HDF5 C++ API Reference Manual</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
+<!-- Generated by Doxygen 1.4.7 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
+    <li><a href="files.html"><span>Files</span></a></li>
+    <li><a href="examples.html"><span>Examples</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+  </ul></div>
+<div class="nav">
+<a class="el" href="namespaceH5.html">H5</a>::<a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a></div>
+<h1>H5::FileAccPropList Class Reference</h1><!-- doxytag: class="H5::FileAccPropList" --><!-- doxytag: inherits="H5::PropList" --><code>#include &lt;<a class="el" href="H5FaccProp_8h-source.html">H5FaccProp.h</a>&gt;</code>
+<p>
+<p>Inheritance diagram for H5::FileAccPropList:
+<p><center><img src="classH5_1_1FileAccPropList.png" usemap="#H5::FileAccPropList_map" border="0" alt=""></center>
+<map name="H5::FileAccPropList_map">
+<area href="classH5_1_1PropList.html" alt="H5::PropList" shape="rect" coords="0,56,124,80">
+<area href="classH5_1_1IdComponent.html" alt="H5::IdComponent" shape="rect" coords="0,0,124,24">
+</map>
+<a href="classH5_1_1FileAccPropList-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#8c340b43c86a5f4575bc941314ca6f97">FileAccPropList</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a file access property list.  <a href="#8c340b43c86a5f4575bc941314ca6f97"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#e77f7d8b8981523700bd9deaeeb3fbde">setStdio</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Modifies this property list to use the <code>H5FD_STDIO</code> driver.  <a href="#e77f7d8b8981523700bd9deaeeb3fbde"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#eb490a5264b8f7f7d5e8863f68596151">setDriver</a> (hid_t new_driver_id, const void *new_driver_info) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set file driver for this property list.  <a href="#eb490a5264b8f7f7d5e8863f68596151"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">hid_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#80f2688cf4282edc87c37af7940344d6">getDriver</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the ID of the low-level file driver.  <a href="#80f2688cf4282edc87c37af7940344d6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#2028c6d5359ae1799236f04215bc61b4">setFamilyOffset</a> (hsize_t offset) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets offset for family driver.  <a href="#2028c6d5359ae1799236f04215bc61b4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">hsize_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#8927f46045c7234c94075805ba138cda">getFamilyOffset</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get offset for family driver.  <a href="#8927f46045c7234c94075805ba138cda"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#342f72069ed2a7bb2a04acc77b62c75e">setSec2</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Modifies this file access property list to use the sec2 driver.  <a href="#342f72069ed2a7bb2a04acc77b62c75e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#34684e3bb86890096bbca03f8e1b55dc">setCore</a> (size_t increment, hbool_t backing_store) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Modifies this file access property list to use the <code>H5FD_CORE</code> driver.  <a href="#34684e3bb86890096bbca03f8e1b55dc"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#cfbcba8ba46466761d76e358944582a0">getCore</a> (size_t &amp;increment, hbool_t &amp;backing_store) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Queries core file driver properties.  <a href="#cfbcba8ba46466761d76e358944582a0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#d944dbb1bdf95750572740534d9f5a7e">setFamily</a> (hsize_t memb_size, const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;memb_plist) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets this file access property list to use the family driver.  <a href="#d944dbb1bdf95750572740534d9f5a7e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#b3f2da9dad0e39fc30b7555d5e87a617">getFamily</a> (hsize_t &amp;memb_size, <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;memb_plist) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns information about the family file access property list.  <a href="#b3f2da9dad0e39fc30b7555d5e87a617"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#e057cc02560b08d24e15d4513551df6c">getFamily</a> (hsize_t &amp;memb_size) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what arguments it accepts and its return value.  <a href="#e057cc02560b08d24e15d4513551df6c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#9079b48737298d270a334706407bf258">setSplit</a> (<a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;meta_plist, <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;raw_plist, const char *meta_ext=&quot;.meta&quot;, const char *raw_ext=&quot;.raw&quot;) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Emulates the old split file driver, which stored meta data in one file and raw data in another file.  <a href="#9079b48737298d270a334706407bf258"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#9626f495c3612e329897867d6eb4ddab">setSplit</a> (<a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;meta_plist, <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;raw_plist, const H5std_string &amp;meta_ext, const H5std_string &amp;raw_ext) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what arguments it accepts.  <a href="#9626f495c3612e329897867d6eb4ddab"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#d76465bb4df64e4051d939593c0e5553">setSieveBufSize</a> (size_t bufsize) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the maximum size of the data sieve buffer.  <a href="#d76465bb4df64e4051d939593c0e5553"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#7be46fdcca65754876f3efb94fb00c65">getSieveBufSize</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the current settings for the data sieve buffer size property from this property list.  <a href="#7be46fdcca65754876f3efb94fb00c65"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#3e63625f2073e8ab0e96bf4e135009ac">setMetaBlockSize</a> (hsize_t &amp;block_size) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the minimum size of metadata block allocations.  <a href="#3e63625f2073e8ab0e96bf4e135009ac"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">hsize_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#6333572eb8241c5fd8a67cb812f29a1c">getMetaBlockSize</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the current metadata block size setting.  <a href="#6333572eb8241c5fd8a67cb812f29a1c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#cfad3584bed0f7ebbacd4b5898c36630">setLog</a> (const char *logfile, unsigned flags, size_t buf_size) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Modifies this file access property list to use the logging driver.  <a href="#cfad3584bed0f7ebbacd4b5898c36630"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#7980312dd893716c8b3bbf7e6789ed4e">setLog</a> (const H5std_string &amp;logfile, unsigned flags, size_t buf_size) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what arguments it accepts.  <a href="#7980312dd893716c8b3bbf7e6789ed4e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#1fe8e7bdc633533736d7bb368846f04e">setAlignment</a> (hsize_t threshold=1, hsize_t alignment=1) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the alignment properties of this property list.  <a href="#1fe8e7bdc633533736d7bb368846f04e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#dac8eadff412e19669a4cf7ed4272e72">getAlignment</a> (hsize_t &amp;threshold, hsize_t &amp;alignment) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the current settings for alignment properties from this property list.  <a href="#dac8eadff412e19669a4cf7ed4272e72"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#99c3046cf1705da768ce76cf38fadb98">setMultiType</a> (H5FD_mem_t dtype) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets data type for <code>MULTI</code> driver.  <a href="#99c3046cf1705da768ce76cf38fadb98"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5FD_mem_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#f1919e0d35478b099228ecf2aae5a16a">getMultiType</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the data type property for <code>MULTI</code> driver.  <a href="#f1919e0d35478b099228ecf2aae5a16a"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#0a8c753e6d36ea936a0095b9d935d35b">setCache</a> (int mdc_nelmts, size_t rdcc_nelmts, size_t rdcc_nbytes, double rdcc_w0) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the meta data cache and raw data chunk cache parameters. Sets the meta data cache and raw data chunk cache parameters.  <a href="#0a8c753e6d36ea936a0095b9d935d35b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#a5239afede85e9453f401344f9243b3f">getCache</a> (int &amp;mdc_nelmts, size_t &amp;rdcc_nelmts, size_t &amp;rdcc_nbytes, double &amp;rdcc_w0) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Queries the meta data cache and raw data chunk cache parameters.  <a href="#a5239afede85e9453f401344f9243b3f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#f947a5c21b90b9a032b3623f5f1fbeb4">setFcloseDegree</a> (H5F_close_degree_t degree)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the degree for the file close behavior.  <a href="#f947a5c21b90b9a032b3623f5f1fbeb4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">H5F_close_degree_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#c3cd65c0c95b46c900f5e1b5a31f4098">getFcloseDegree</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the degree for the file close behavior.  <a href="#c3cd65c0c95b46c900f5e1b5a31f4098"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#fa842ede9134a8a04b57207c99297b75">setGcReferences</a> (unsigned gc_ref=0) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets garbage collecting references flag.  <a href="#fa842ede9134a8a04b57207c99297b75"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">unsigned&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#771788e5374f3f10006cfa888b0daa6d">getGcReferences</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the garbage collecting references setting.  <a href="#771788e5374f3f10006cfa888b0daa6d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual H5std_string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#4ecd3bc5b4a190624e745e45c8a137cb">fromClass</a> () const </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#cc36fcd3f6528a94c5521048b1350716">FileAccPropList</a> (const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;original)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy Constructor: makes a copy of the original <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> object.  <a href="#cc36fcd3f6528a94c5521048b1350716"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#bc2e5471cd17a7ff0b81d2cab58aead8">FileAccPropList</a> (const hid_t plist_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a file access property list using the id of an existing one.  <a href="#bc2e5471cd17a7ff0b81d2cab58aead8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#fc1cda225038deee124d112167ad0f39">~FileAccPropList</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Noop destructor.  <a href="#fc1cda225038deee124d112167ad0f39"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Static Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1FileAccPropList.html#21e14f8342d3730ce1cffb61c04310af">DEFAULT</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constant for default property.  <a href="#21e14f8342d3730ce1cffb61c04310af"></a><br></td></tr>
+</table>
+<hr><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" name="8c340b43c86a5f4575bc941314ca6f97"></a><!-- doxytag: member="H5::FileAccPropList::FileAccPropList" ref="8c340b43c86a5f4575bc941314ca6f97" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::FileAccPropList::FileAccPropList           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates a file access property list. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="cc36fcd3f6528a94c5521048b1350716"></a><!-- doxytag: member="H5::FileAccPropList::FileAccPropList" ref="cc36fcd3f6528a94c5521048b1350716" args="(const FileAccPropList &amp;original)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::FileAccPropList::FileAccPropList           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>original</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Copy Constructor: makes a copy of the original <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> object. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="bc2e5471cd17a7ff0b81d2cab58aead8"></a><!-- doxytag: member="H5::FileAccPropList::FileAccPropList" ref="bc2e5471cd17a7ff0b81d2cab58aead8" args="(const hid_t plist_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::FileAccPropList::FileAccPropList           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>plist_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates a file access property list using the id of an existing one. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="fc1cda225038deee124d112167ad0f39"></a><!-- doxytag: member="H5::FileAccPropList::~FileAccPropList" ref="fc1cda225038deee124d112167ad0f39" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::FileAccPropList::~FileAccPropList           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Noop destructor. 
+<p>
+
+</div>
+</div><p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="e77f7d8b8981523700bd9deaeeb3fbde"></a><!-- doxytag: member="H5::FileAccPropList::setStdio" ref="e77f7d8b8981523700bd9deaeeb3fbde" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setStdio           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Modifies this property list to use the <code>H5FD_STDIO</code> driver. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="eb490a5264b8f7f7d5e8863f68596151"></a><!-- doxytag: member="H5::FileAccPropList::setDriver" ref="eb490a5264b8f7f7d5e8863f68596151" args="(hid_t new_driver_id, const void *new_driver_info) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setDriver           </td>
+          <td>(</td>
+          <td class="paramtype">hid_t&nbsp;</td>
+          <td class="paramname"> <em>new_driver_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>new_driver_info</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Set file driver for this property list. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>new_driver_id</em>&nbsp;</td><td>- IN: File driver </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>new_driver_info</em>&nbsp;</td><td>- IN: Struct containing the driver-specific properites </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For a list of valid driver identifiers, please see the C layer Reference Manual at: <a href="../RM_H5P.html#Property-GetDriver">../RM_H5P.html::Property-GetDriver</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="80f2688cf4282edc87c37af7940344d6"></a><!-- doxytag: member="H5::FileAccPropList::getDriver" ref="80f2688cf4282edc87c37af7940344d6" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hid_t H5::FileAccPropList::getDriver           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Return the ID of the low-level file driver. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>A low-level driver ID which is the same ID used when the driver was set for the property list. The driver ID is only valid as long as the file driver remains registered. Valid driver identifiers can be found at: <a href="../RM_H5P.html#Property-GetDriver">../RM_H5P.html::Property-GetDriver</a> </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="2028c6d5359ae1799236f04215bc61b4"></a><!-- doxytag: member="H5::FileAccPropList::setFamilyOffset" ref="2028c6d5359ae1799236f04215bc61b4" args="(hsize_t offset) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setFamilyOffset           </td>
+          <td>(</td>
+          <td class="paramtype">hsize_t&nbsp;</td>
+          <td class="paramname"> <em>offset</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets offset for family driver. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>offset</em>&nbsp;</td><td>- IN: offset value </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="8927f46045c7234c94075805ba138cda"></a><!-- doxytag: member="H5::FileAccPropList::getFamilyOffset" ref="8927f46045c7234c94075805ba138cda" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hsize_t H5::FileAccPropList::getFamilyOffset           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Get offset for family driver. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Offset for family driver </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="342f72069ed2a7bb2a04acc77b62c75e"></a><!-- doxytag: member="H5::FileAccPropList::setSec2" ref="342f72069ed2a7bb2a04acc77b62c75e" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setSec2           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Modifies this file access property list to use the sec2 driver. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="34684e3bb86890096bbca03f8e1b55dc"></a><!-- doxytag: member="H5::FileAccPropList::setCore" ref="34684e3bb86890096bbca03f8e1b55dc" args="(size_t increment, hbool_t backing_store) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setCore           </td>
+          <td>(</td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>increment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">hbool_t&nbsp;</td>
+          <td class="paramname"> <em>backing_store</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Modifies this file access property list to use the <code>H5FD_CORE</code> driver. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>increment</em>&nbsp;</td><td>- IN: Specifies how much memory to increase each time more memory is needed, in bytes </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>backing_store</em>&nbsp;</td><td>- IN: Indicating whether to write the file contents to disk when the file is closed </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For more details on the use of <code>H5FD_CORE</code> driver, please refer to <a href="../RM_H5P.html#Property-SetFaplCore">../RM_H5P.html::Property-SetFaplCore</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="cfbcba8ba46466761d76e358944582a0"></a><!-- doxytag: member="H5::FileAccPropList::getCore" ref="cfbcba8ba46466761d76e358944582a0" args="(size_t &amp;increment, hbool_t &amp;backing_store) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::getCore           </td>
+          <td>(</td>
+          <td class="paramtype">size_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>increment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">hbool_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>backing_store</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Queries core file driver properties. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>increment</em>&nbsp;</td><td>- OUT: Size of memory increment, in bytes </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>backing_store</em>&nbsp;</td><td>- OUT: Indicating whether to write the file contents to disk when the file is closed </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d944dbb1bdf95750572740534d9f5a7e"></a><!-- doxytag: member="H5::FileAccPropList::setFamily" ref="d944dbb1bdf95750572740534d9f5a7e" args="(hsize_t memb_size, const FileAccPropList &amp;memb_plist) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setFamily           </td>
+          <td>(</td>
+          <td class="paramtype">hsize_t&nbsp;</td>
+          <td class="paramname"> <em>memb_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>memb_plist</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets this file access property list to use the family driver. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>memb_size</em>&nbsp;</td><td>- IN: Size in bytes of each file member </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>memb_plist</em>&nbsp;</td><td>- IN: File access property list to be used for each family member </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>Note that <em>memb_size</em> is used only when creating a new file. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="b3f2da9dad0e39fc30b7555d5e87a617"></a><!-- doxytag: member="H5::FileAccPropList::getFamily" ref="b3f2da9dad0e39fc30b7555d5e87a617" args="(hsize_t &amp;memb_size, FileAccPropList &amp;memb_plist) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::getFamily           </td>
+          <td>(</td>
+          <td class="paramtype">hsize_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>memb_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>memb_plist</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns information about the family file access property list. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>memb_size</em>&nbsp;</td><td>- OUT: Size in bytes of each file member </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>memb_plist</em>&nbsp;</td><td>- OUT: Retrieved file access property list for each file member </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="e057cc02560b08d24e15d4513551df6c"></a><!-- doxytag: member="H5::FileAccPropList::getFamily" ref="e057cc02560b08d24e15d4513551df6c" args="(hsize_t &amp;memb_size) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> H5::FileAccPropList::getFamily           </td>
+          <td>(</td>
+          <td class="paramtype">hsize_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>memb_size</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It differs from the above function only in what arguments it accepts and its return value. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>memb_size</em>&nbsp;</td><td>- OUT: Size in bytes of each file member </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>The file access property list for each file member </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="9079b48737298d270a334706407bf258"></a><!-- doxytag: member="H5::FileAccPropList::setSplit" ref="9079b48737298d270a334706407bf258" args="(FileAccPropList &amp;meta_plist, FileAccPropList &amp;raw_plist, const char *meta_ext=&quot;.meta&quot;, const char *raw_ext=&quot;.raw&quot;) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setSplit           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>meta_plist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>raw_plist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>meta_ext</em> = <code>&quot;.meta&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>raw_ext</em> = <code>&quot;.raw&quot;</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Emulates the old split file driver, which stored meta data in one file and raw data in another file. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>meta_plist</em>&nbsp;</td><td>- IN: File access plist for the metadata file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>raw_plist</em>&nbsp;</td><td>- IN: File access plist for the raw data file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>meta_ext</em>&nbsp;</td><td>- IN: Metadata filename extension as <code>char*</code> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>raw_ext</em>&nbsp;</td><td>- IN: Raw data filename extension as <code>char*</code> </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>Temporary - For information, please refer to: <a href="../RM_H5P.html#Property-SetFaplSplit">../RM_H5P.html::Property-SetFaplSplit</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="9626f495c3612e329897867d6eb4ddab"></a><!-- doxytag: member="H5::FileAccPropList::setSplit" ref="9626f495c3612e329897867d6eb4ddab" args="(FileAccPropList &amp;meta_plist, FileAccPropList &amp;raw_plist, const H5std_string &amp;meta_ext, const H5std_string &amp;raw_ext) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setSplit           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>meta_plist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>raw_plist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>meta_ext</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>raw_ext</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It differs from the above function only in what arguments it accepts. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>meta_plist</em>&nbsp;</td><td>- IN: File access plist for the metadata file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>raw_plist</em>&nbsp;</td><td>- IN: File access plist for the raw data file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>meta_ext</em>&nbsp;</td><td>- IN: Metadata filename extension as <code>string</code> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>raw_ext</em>&nbsp;</td><td>- IN: Raw data filename extension as <code>string</code> </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d76465bb4df64e4051d939593c0e5553"></a><!-- doxytag: member="H5::FileAccPropList::setSieveBufSize" ref="d76465bb4df64e4051d939593c0e5553" args="(size_t bufsize) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setSieveBufSize           </td>
+          <td>(</td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>bufsize</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the maximum size of the data sieve buffer. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>bufsize</em>&nbsp;</td><td>- IN: Maximum size, in bytes, of data sieve buffer </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For detail on data sieving, please refer to <a href="../RM_H5P.html#Property-SetSieveBufSize">../RM_H5P.html::Property-SetFaplStream../RM_H5P.html::Property-SetFaplStream</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="7be46fdcca65754876f3efb94fb00c65"></a><!-- doxytag: member="H5::FileAccPropList::getSieveBufSize" ref="7be46fdcca65754876f3efb94fb00c65" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t H5::FileAccPropList::getSieveBufSize           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the current settings for the data sieve buffer size property from this property list. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Data sieve buffer size, in bytes </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="3e63625f2073e8ab0e96bf4e135009ac"></a><!-- doxytag: member="H5::FileAccPropList::setMetaBlockSize" ref="3e63625f2073e8ab0e96bf4e135009ac" args="(hsize_t &amp;block_size) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setMetaBlockSize           </td>
+          <td>(</td>
+          <td class="paramtype">hsize_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>block_size</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the minimum size of metadata block allocations. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>block_size</em>&nbsp;</td><td>- IN: Minimum size, in bytes, of metadata block allocations </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For more detail, please see the C layer Reference Manual at: <a href="../RM_H5P.html#Property-SetMetaBlockSize">../RM_H5P.html::Property-SetMetaBlockSize</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="6333572eb8241c5fd8a67cb812f29a1c"></a><!-- doxytag: member="H5::FileAccPropList::getMetaBlockSize" ref="6333572eb8241c5fd8a67cb812f29a1c" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hsize_t H5::FileAccPropList::getMetaBlockSize           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the current metadata block size setting. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Metadata block size </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="cfad3584bed0f7ebbacd4b5898c36630"></a><!-- doxytag: member="H5::FileAccPropList::setLog" ref="cfad3584bed0f7ebbacd4b5898c36630" args="(const char *logfile, unsigned flags, size_t buf_size) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setLog           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>logfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>buf_size</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Modifies this file access property list to use the logging driver. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>logfile</em>&nbsp;</td><td>- IN: Name of the log file </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>- IN: Flags specifying the types of logging activity </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buf_size</em>&nbsp;</td><td>- IN: Size of the logging buffer </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For detail on <em>flags</em>, please refer to <a href="../RM_H5P.html#Property-SetFaplStream">../RM_H5P.html::Property-SetFaplStream</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="7980312dd893716c8b3bbf7e6789ed4e"></a><!-- doxytag: member="H5::FileAccPropList::setLog" ref="7980312dd893716c8b3bbf7e6789ed4e" args="(const H5std_string &amp;logfile, unsigned flags, size_t buf_size) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setLog           </td>
+          <td>(</td>
+          <td class="paramtype">const H5std_string &amp;&nbsp;</td>
+          <td class="paramname"> <em>logfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>buf_size</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This is an overloaded member function, provided for convenience. It differs from the above function only in what arguments it accepts. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>logfile</em>&nbsp;</td><td>- IN: Name of the log file - string </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>- IN: Flags specifying the types of logging activity </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buf_size</em>&nbsp;</td><td>- IN: Size of the logging buffer </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="1fe8e7bdc633533736d7bb368846f04e"></a><!-- doxytag: member="H5::FileAccPropList::setAlignment" ref="1fe8e7bdc633533736d7bb368846f04e" args="(hsize_t threshold=1, hsize_t alignment=1) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setAlignment           </td>
+          <td>(</td>
+          <td class="paramtype">hsize_t&nbsp;</td>
+          <td class="paramname"> <em>threshold</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">hsize_t&nbsp;</td>
+          <td class="paramname"> <em>alignment</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the alignment properties of this property list. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>- IN: Threshold value for file object size </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>alignment</em>&nbsp;</td><td>- IN: Alignment value </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The parameter <em>threshold</em> must have a non-negative value. Note that setting the threshold value to 0 (zero) has the effect of a special case, forcing everything to be aligned. The parameter <em>alignment</em> must have a positive value.</dd></dl>
+For detail on <em>setting</em> alignment, please refer to <a href="../RM_H5P.html#Property-SetAlignment">../RM_H5P.html::Property-SetAlignment</a> 
+</div>
+</div><p>
+<a class="anchor" name="dac8eadff412e19669a4cf7ed4272e72"></a><!-- doxytag: member="H5::FileAccPropList::getAlignment" ref="dac8eadff412e19669a4cf7ed4272e72" args="(hsize_t &amp;threshold, hsize_t &amp;alignment) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::getAlignment           </td>
+          <td>(</td>
+          <td class="paramtype">hsize_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">hsize_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>alignment</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the current settings for alignment properties from this property list. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>- OUT: Retrieved threshold value for file object size </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>alignment</em>&nbsp;</td><td>- OUT: Retrieved alignment value </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="99c3046cf1705da768ce76cf38fadb98"></a><!-- doxytag: member="H5::FileAccPropList::setMultiType" ref="99c3046cf1705da768ce76cf38fadb98" args="(H5FD_mem_t dtype) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setMultiType           </td>
+          <td>(</td>
+          <td class="paramtype">H5FD_mem_t&nbsp;</td>
+          <td class="paramname"> <em>dtype</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets data type for <code>MULTI</code> driver. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>dtype</em>&nbsp;</td><td>- IN: Type of data </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>More details and valid values for <em>dtype</em> can be found at: <a href="../RM_H5P.html#Property-SetMultiType">../RM_H5P.html::Property-SetMultiType</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="f1919e0d35478b099228ecf2aae5a16a"></a><!-- doxytag: member="H5::FileAccPropList::getMultiType" ref="f1919e0d35478b099228ecf2aae5a16a" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5FD_mem_t H5::FileAccPropList::getMultiType           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the data type property for <code>MULTI</code> driver. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>The data type property </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>More details and possible returned values can be found at: <a href="../RM_H5P.html#Property-GetMultiType">../RM_H5P.html::Property-GetMultiType</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="0a8c753e6d36ea936a0095b9d935d35b"></a><!-- doxytag: member="H5::FileAccPropList::setCache" ref="0a8c753e6d36ea936a0095b9d935d35b" args="(int mdc_nelmts, size_t rdcc_nelmts, size_t rdcc_nbytes, double rdcc_w0) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setCache           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>mdc_nelmts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>rdcc_nelmts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>rdcc_nbytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>rdcc_w0</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the meta data cache and raw data chunk cache parameters. Sets the meta data cache and raw data chunk cache parameters. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mdc_nelmts</em>&nbsp;</td><td>- IN: Number of elements in the meta data cache </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rdcc_nelmts</em>&nbsp;</td><td>- IN: Number of elements in the raw data chunk cache </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rdcc_nbytes</em>&nbsp;</td><td>- IN: Total size of the raw data chunk cache, in bytes </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rdcc_w0</em>&nbsp;</td><td>- IN: Preemption policy </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>The argument <em>rdcc_w0</em> should hold a value between 0 and 1 inclusive. This value indicates how much chunks that have been fully read are favored for preemption. A value of zero means fully read chunks are treated no differently than other chunks (the preemption is strictly LRU) while a value of one means fully read chunks are always preempted before other chunks. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="a5239afede85e9453f401344f9243b3f"></a><!-- doxytag: member="H5::FileAccPropList::getCache" ref="a5239afede85e9453f401344f9243b3f" args="(int &amp;mdc_nelmts, size_t &amp;rdcc_nelmts, size_t &amp;rdcc_nbytes, double &amp;rdcc_w0) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::getCache           </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>mdc_nelmts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>rdcc_nelmts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&nbsp;</td>
+          <td class="paramname"> <em>rdcc_nbytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>rdcc_w0</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Queries the meta data cache and raw data chunk cache parameters. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mdc_nelmts</em>&nbsp;</td><td>- OUT: Number of elements in the meta data cache </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rdcc_nelmts</em>&nbsp;</td><td>- OUT: Number of elements in the raw data chunk cache </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rdcc_nbytes</em>&nbsp;</td><td>- OUT: Total size of the raw data chunk cache, in bytes </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rdcc_w0</em>&nbsp;</td><td>- OUT: Preemption policy </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="f947a5c21b90b9a032b3623f5f1fbeb4"></a><!-- doxytag: member="H5::FileAccPropList::setFcloseDegree" ref="f947a5c21b90b9a032b3623f5f1fbeb4" args="(H5F_close_degree_t degree)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setFcloseDegree           </td>
+          <td>(</td>
+          <td class="paramtype">H5F_close_degree_t&nbsp;</td>
+          <td class="paramname"> <em>degree</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the degree for the file close behavior. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>degree</em>&nbsp;</td><td>- IN: </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="c3cd65c0c95b46c900f5e1b5a31f4098"></a><!-- doxytag: member="H5::FileAccPropList::getFcloseDegree" ref="c3cd65c0c95b46c900f5e1b5a31f4098" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5F_close_degree_t H5::FileAccPropList::getFcloseDegree           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the degree for the file close behavior. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>The degree for the file close behavior </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fa842ede9134a8a04b57207c99297b75"></a><!-- doxytag: member="H5::FileAccPropList::setGcReferences" ref="fa842ede9134a8a04b57207c99297b75" args="(unsigned gc_ref=0) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::FileAccPropList::setGcReferences           </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&nbsp;</td>
+          <td class="paramname"> <em>gc_ref</em> = <code>0</code>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets garbage collecting references flag. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>gc_ref</em>&nbsp;</td><td>- IN: Flag setting reference garbage collection to on (1) or off (0). </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Description</b></dt><dd>For detail on <em>fapl</em>, please refer to <a href="../RM_H5P.html#Property-SetFaplStream">../RM_H5P.html::Property-SetFaplStream</a> </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="771788e5374f3f10006cfa888b0daa6d"></a><!-- doxytag: member="H5::FileAccPropList::getGcReferences" ref="771788e5374f3f10006cfa888b0daa6d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned H5::FileAccPropList::getGcReferences           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the garbage collecting references setting. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Garbage collecting references setting, 0 (off) or 1 (on) </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1PropListIException.html">H5::PropListIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="4ecd3bc5b4a190624e745e45c8a137cb"></a><!-- doxytag: member="H5::FileAccPropList::fromClass" ref="4ecd3bc5b4a190624e745e45c8a137cb" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual H5std_string H5::FileAccPropList::fromClass           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+Reimplemented from <a class="el" href="classH5_1_1PropList.html#b0648018d799b4abb1af7cf96ab6e728">H5::PropList</a>.
+</div>
+</div><p>
+<hr><h2>Member Data Documentation</h2>
+<a class="anchor" name="21e14f8342d3730ce1cffb61c04310af"></a><!-- doxytag: member="H5::FileAccPropList::DEFAULT" ref="21e14f8342d3730ce1cffb61c04310af" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classH5_1_1FileAccPropList.html">FileAccPropList</a> <a class="el" href="classH5_1_1FileAccPropList.html#21e14f8342d3730ce1cffb61c04310af">H5::FileAccPropList::DEFAULT</a><code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Constant for default property. 
+<p>
+
+<p>
+Reimplemented from <a class="el" href="classH5_1_1PropList.html#0f2f757ca782a743006c5756191c404b">H5::PropList</a>.
+</div>
+</div><p>
+<hr size="1"><address style="align: right;"><small>Generated on Wed Nov 4 14:13:07 2009 by&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
+</body>
+</html>

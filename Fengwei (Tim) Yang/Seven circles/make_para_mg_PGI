@@ -1,0 +1,100 @@
+#--------------------------------------------------------------------------
+#
+# This is an updated version of the main Makefile for the Phasefield 
+# solvers using Paramesh, developed at the University of Leeds.
+#
+# Assumed environment variables that the user must have set:
+#        HDF5_DIR     : The directory where a v1.6 HDF5 is installed
+#        PARAMESH_DIR : The directory where paramesh is installed
+# 
+# Rewritten : Chris Goodyer        March 2012.
+#             added debug option   May 2012
+#--------------------------------------------------------------------------
+export cur-dir := $(shell pwd)
+
+# Set the location of the paramesh top directory
+export paramesh_dir = $(PARAMESH_DIR)
+export phase_dir = $(cur-dir)
+export hdf5_dir=$(HDF5_DIR)
+
+# Define the fortran compiler
+export MPICH_F90 = ftn
+export MPICH_CC = cc
+
+export FC=ftn
+export CC=cc
+#-----------------------------------------------
+
+# Set the desired compilation flags
+
+# Hector - PGI
+export FFLAGS = -O3 -Mr8 -I$(paramesh_dir)/headers -DSAVE_MORTS
+
+
+export FFLAGS = -Mr8 -I$(paramesh_dir)/headers
+
+
+export CFLAGS = -O3 -I$(paramesh_dir)/headers -I$(hdf5_dir)/include
+export ADD_LIB = -L$(hdf5_dir)/lib -L$(paramesh_dir)/libs -L$(phase_dir)/libs -lhdf5 -lhdf5_hl -lz
+
+#export FFLAGS +=  -fast -Mipa=fast -Mpfi -Mpfo -Minline -Munroll -Mvect 
+#export FFLAGS +=  -fast -Mipa=fast -Minline -Munroll -Mvect 
+export FFLAGS +=  -Minform=warn 
+
+.PHONY:	default
+default:	MG-SRC PF-SRC 
+#multi
+
+.PHONY: debug
+debug: export FFLAGS += -g 
+#-warn all -warn nounused
+debug: export CFLAGS += -g -w3
+debug: default 
+
+.PHONY: OMP
+OMP:	export FFLAGS += -mp
+OMP:	default
+
+FULLDIRS = MG-SRC PF-SRC 
+#MultiPhase-SRC
+#--------------------------------------------------------------------------
+
+.PHONY: all
+all: src 
+
+.PHONY: clean
+clean:
+	$(RM) -r *~ libs/libmodules.a 
+	for dir in $(FULLDIRS); do \
+	  $(MAKE) -C $(phase_dir)/$$dir -f Makefile.PGI clean; \
+	done
+
+# An example target to match an application directory name other than Tests
+# in which the users application files are located.
+.PHONY: src
+src: 
+	$(MAKE) -C $(phase_dir)/$@ -f Makefile.PGI
+
+# Compile the generic components in the MG-SRC directory into the appropriate library
+.PHONY: MG-SRC
+MG-SRC: 
+	$(MAKE) -C $(phase_dir)/$@ -f Makefile.PGI
+
+# Compile the phase field code
+.PHONY: PF-SRC
+PF-SRC: 
+	$(MAKE) -C $(phase_dir)/$@ -f Makefile.PGI
+
+	
+.PHONY: multi
+multi: 
+	$(MAKE) -C $(phase_dir)/MultiPhase-SRC -f Makefile.PGI
+
+.PHONY: DOCS
+DOCS:
+	$(MAKE) -C $(phase_dir)/$@ -f Makefile.latex
+
+.PHONY: DOCSclean
+DOCSclean:
+	$(MAKE) -C $(phase_dir)/DOCS -f Makefile.latex clean
+

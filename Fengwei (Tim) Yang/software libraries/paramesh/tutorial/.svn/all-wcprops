@@ -1,0 +1,341 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/paramesh/!svn/ver/1/tutorial
+END
+gmake_shmem_test_bc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/paramesh/!svn/ver/1/tutorial/gmake_shmem_test_bc
+END
+amr_initial_soln.F90
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/paramesh/!svn/ver/1/tutorial/amr_initial_soln.F90
+END
+make_tutor_edges_vdt_npgc_t3e
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_edges_vdt_npgc_t3e
+END
+test_bc.F90
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/paramesh/!svn/ver/1/tutorial/test_bc.F90
+END
+gmake_shmem_tutor_npgc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/paramesh/!svn/ver/1/tutorial/gmake_shmem_tutor_npgc
+END
+amr_bc_block.f
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/paramesh/!svn/ver/1/tutorial/amr_bc_block.f
+END
+make_tutor_npgc_sgi
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_npgc_sgi
+END
+output2d_tecplot_npgc.F90
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/paramesh/!svn/ver/1/tutorial/output2d_tecplot_npgc.F90
+END
+make_tutor_t3e
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_t3e
+END
+amr_timestep.F90
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/paramesh/!svn/ver/1/tutorial/amr_timestep.F90
+END
+gmake_shmem_tutor_vdt
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/paramesh/!svn/ver/1/tutorial/gmake_shmem_tutor_vdt
+END
+gmake_shmem_tutor_edges_npgc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/paramesh/!svn/ver/1/tutorial/gmake_shmem_tutor_edges_npgc
+END
+advance_soln.F90
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/paramesh/!svn/ver/1/tutorial/advance_soln.F90
+END
+make_tutor_vdt_sgi
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_vdt_sgi
+END
+make_tutor_edges_npgc_sgi
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_edges_npgc_sgi
+END
+make_tutor_npgc_t3e
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_npgc_t3e
+END
+amr_initial_soln_vdt.F90
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/paramesh/!svn/ver/1/tutorial/amr_initial_soln_vdt.F90
+END
+advance_soln_npgc.F90
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/paramesh/!svn/ver/1/tutorial/advance_soln_npgc.F90
+END
+tutorial.F90
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/paramesh/!svn/ver/1/tutorial/tutorial.F90
+END
+make_tutor_vdt_t3e
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_vdt_t3e
+END
+make_tutor_edges_npgc_t3e
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_edges_npgc_t3e
+END
+amr_1blk_bcset.F90
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/paramesh/!svn/ver/1/tutorial/amr_1blk_bcset.F90
+END
+advance_soln_vdt.F90
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/paramesh/!svn/ver/1/tutorial/advance_soln_vdt.F90
+END
+advance_soln_edges_npgc.F90
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/paramesh/!svn/ver/1/tutorial/advance_soln_edges_npgc.F90
+END
+make_test_bc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/paramesh/!svn/ver/1/tutorial/make_test_bc
+END
+output2d_bc_test_tecplot.F90
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/paramesh/!svn/ver/1/tutorial/output2d_bc_test_tecplot.F90
+END
+conserve_check_1blk.F90
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/paramesh/!svn/ver/1/tutorial/conserve_check_1blk.F90
+END
+amr_test_refinement.F90
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/paramesh/!svn/ver/1/tutorial/amr_test_refinement.F90
+END
+amr_initial_soln_edges.F90
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/paramesh/!svn/ver/1/tutorial/amr_initial_soln_edges.F90
+END
+amr_initial_soln_npgc.F90
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/paramesh/!svn/ver/1/tutorial/amr_initial_soln_npgc.F90
+END
+amr_bc_block_old.F90
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/paramesh/!svn/ver/1/tutorial/amr_bc_block_old.F90
+END
+header_file_settings_tutorial
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/paramesh/!svn/ver/1/tutorial/header_file_settings_tutorial
+END
+amr_timestep_npgc.F90
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/paramesh/!svn/ver/1/tutorial/amr_timestep_npgc.F90
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/paramesh/!svn/ver/1/tutorial/README
+END
+gmake_shmem_tutor_vdt_npgc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/paramesh/!svn/ver/1/tutorial/gmake_shmem_tutor_vdt_npgc
+END
+gmake_shmem_tutor_vdt_edges
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/paramesh/!svn/ver/1/tutorial/gmake_shmem_tutor_vdt_edges
+END
+amr_test_refinement_npgc.F90
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/paramesh/!svn/ver/1/tutorial/amr_test_refinement_npgc.F90
+END
+advance_soln_edges.F90
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/paramesh/!svn/ver/1/tutorial/advance_soln_edges.F90
+END
+make_tutor_vdt_edges_sgi
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_vdt_edges_sgi
+END
+make_tutor_vdt_npgc_sgi
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_vdt_npgc_sgi
+END
+header_file_settings_tutorial_npgc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/paramesh/!svn/ver/1/tutorial/header_file_settings_tutorial_npgc
+END
+amr_initial_soln_edges_vdt.F90
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/paramesh/!svn/ver/1/tutorial/amr_initial_soln_edges_vdt.F90
+END
+gmake_shmem_tutor_edges_vdt_npgc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/paramesh/!svn/ver/1/tutorial/gmake_shmem_tutor_edges_vdt_npgc
+END
+make_tutor_edges_vdt_npgc_sgi
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_edges_vdt_npgc_sgi
+END
+tutorial_npgc.F90
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/paramesh/!svn/ver/1/tutorial/tutorial_npgc.F90
+END
+make_tutor_vdt_edges_t3e
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_vdt_edges_t3e
+END
+make_tutor_vdt_npgc_t3e
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_vdt_npgc_t3e
+END
+tecplot.001
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/paramesh/!svn/ver/1/tutorial/tecplot.001
+END
+gmake_shmem_tutor
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/paramesh/!svn/ver/1/tutorial/gmake_shmem_tutor
+END
+tecplot.002
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/paramesh/!svn/ver/1/tutorial/tecplot.002
+END
+tecplot.003
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/paramesh/!svn/ver/1/tutorial/tecplot.003
+END
+make_tutor_sgi
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/paramesh/!svn/ver/1/tutorial/make_tutor_sgi
+END
+tecplot.004
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/paramesh/!svn/ver/1/tutorial/tecplot.004
+END
+advance_soln_edges_vdt.F90
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/paramesh/!svn/ver/1/tutorial/advance_soln_edges_vdt.F90
+END
+output2d_tecplot.F90
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/paramesh/!svn/ver/1/tutorial/output2d_tecplot.F90
+END
+conserve_check.F90
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/paramesh/!svn/ver/1/tutorial/conserve_check.F90
+END

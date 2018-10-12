@@ -1,0 +1,86 @@
+##
+# Copyright by The HDF Group.
+# Copyright by the Board of Trustees of the University of Illinois.
+# All rights reserved.
+#
+# This file is part of HDF5.  The full HDF5 copyright notice, including
+# terms governing use, modification, and redistribution, is contained in
+# the files COPYING and Copyright.html.  COPYING can be found at the root
+# of the source code distribution tree; Copyright.html can be found at the
+# root level of an installed copy of the electronic HDF5 document set and
+# is linked from the top-level documents page.  It can also be found at
+# http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have
+# access to either file, you may request a copy from help@hdfgroup.org.
+##
+## HDF5 Library Performance Makefile(.in)
+##
+top_srcdir=@top_srcdir@
+top_builddir=..
+srcdir=@srcdir@
+@COMMENCE@
+
+## Add include directory to the C preprocessor flags and the hdf5 library
+## to the library list.
+CPPFLAGS=-I. -I$(srcdir) -I../src -I$(top_srcdir)/src -I$(top_srcdir)/test \
+    -I$(top_srcdir)/tools/lib @CPPFLAGS@
+LIBHDF5=../src/libhdf5.la
+LIBH5TEST=../test/libh5test.la
+LIBTOOLS=../tools/lib/libh5tools.la
+
+## These are the programs that `make all' or `make tests' will build and which
+## `make check' will run. List them in the order they should be run.
+TEST_PROGS_PARA=h5perf
+TEST_PROGS=iopipe chunk overhead zip_perf perf_meta
+
+## These are the files that `make clean' (and derivatives) will remove from
+## this directory.
+CLEAN=*.h5 *.raw *.dat x-gnuplot
+
+## List all source files here.  The list of object files will be
+## created by replacing the `.c' with a `.o'.  This list is necessary
+## for building automatic dependencies.
+PIO_PERF_SRC=pio_perf.c pio_engine.c pio_timer.c
+PIO_PERF_OBJ=$(PIO_PERF_SRC:.c=.lo)
+
+TEST_SRC_PARA=$(PIO_PERF_SRC)
+
+TEST_SRC=iopipe.c chunk.c overhead.c zip_perf.c perf_meta.c $(TEST_SRC_PARA)
+TEST_OBJ=$(TEST_SRC:.c=.lo)
+
+## List the programs to be installed on 'make install'.
+PUB_PROGS=h5perf
+
+## How to build the programs... they all depend on the hdf5 library,
+## and most depend on the testhdf5 library as well.
+$(TEST_PROGS) $(TEST_PROGS_PARA): $(LIBHDF5) $(LIBH5TEST)
+
+h5perf: $(PIO_PERF_OBJ)
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ $(PIO_PERF_OBJ) $(LIBH5TEST) \
+	$(LIBTOOLS) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+perf: perf.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ perf.lo $(LIBH5TEST) $(LIBHDF5) \
+	$(LDFLAGS) $(LIBS)
+
+mpi-perf: mpi-perf.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ mpi-perf.lo $(LIBH5TEST) $(LIBHDF5) \
+	$(LDFLAGS) $(LIBS)
+
+iopipe: iopipe.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ iopipe.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+chunk: chunk.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ chunk.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+overhead: overhead.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ overhead.lo $(LIB) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+zip_perf: zip_perf.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ zip_perf.lo $(LIBH5TEST) \
+	$(LIBTOOLS) $(LIBHDF5) $(LDFLAGS) $(LIBS)
+
+perf_meta: perf_meta.lo
+	@$(LT_LINK_EXE) $(CFLAGS) -o $@ perf_meta.lo $(LIBH5TEST) $(LIBHDF5) \
+	$(LDFLAGS) $(LIBS)
+
+@CONCLUDE@

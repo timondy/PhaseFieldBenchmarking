@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 25
+/svn/paramesh/!svn/ver/13
+END
+Makefile.gnu
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/paramesh/!svn/ver/1/Makefile.gnu
+END
+amr_runtime_parameters
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/paramesh/!svn/ver/8/amr_runtime_parameters
+END
+setup_tutorials
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/paramesh/!svn/ver/1/setup_tutorials
+END
+Makefile.Intel
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/paramesh/!svn/ver/11/Makefile.Intel
+END
+PARAMESH_USERS_AGREEMENT
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/paramesh/!svn/ver/1/PARAMESH_USERS_AGREEMENT
+END
+Makefile.Cray
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/paramesh/!svn/ver/4/Makefile.Cray
+END
+Makefile.PGI
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/paramesh/!svn/ver/4/Makefile.PGI
+END
+Makefile.Intel_debug
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/paramesh/!svn/ver/8/Makefile.Intel_debug
+END

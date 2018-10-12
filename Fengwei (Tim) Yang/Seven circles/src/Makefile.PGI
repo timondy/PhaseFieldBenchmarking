@@ -1,0 +1,54 @@
+#LDFLAGS += -L$(hdf5_dir)/lib -L../libs -lhdf5 -lhdf5_hl -lz -lgfortran -lmpi_paramesh-pgi -lparamesh-pgi -lmodules-pgi
+LDFLAGS += -L$(hdf5_dir)/lib -L../libs -lhdf5 -lhdf5_hl -lz -lmpi_paramesh-pgi -lparamesh-pgi -lmodules-pgi
+
+FC=ftn
+
+# normal LDFLAGS
+#LDFLAGS += -lparamesh -lmodules -lgfortran -lhdf5 -lhdf5_hl
+#LDFLAGS += -lparamesh -lmodules
+# T3E LDFLAGS
+#LDFLAGS += -lparamesh
+
+#FFLAGS+=-g
+
+LDFLAGS += $(ADD_LIB)
+
+# List all application source files
+sources := amr_multigrid_user_modules.f90 \
+amr_multigrid_user_edits_03.f90 amr_1blk_bcset.f90 amr_initial_soln.f90 \
+amr_multigrid_general_03.f90 amr_multigrid_stat_03.f90 \
+amr_multigrid_control_03.f90 amr_multigrid_test_refinement.f90 \
+non_linear_mg.f90 ceg_mesh_partitioning.f90 ceg_shampine_conv.f90 \
+ceg_local_timestep.f90
+csources := profilingLinker.c
+#amr_test_refinement.f90 amr_advance_soln.f90 amr_timestep.f90 
+%-pgi.o:%.f90 amr_multigrid_user_modules.f90 Makefile.gnu
+	$(FC) -c -o $*-pgi.o $(FFLAGS) $<
+%-pgi.o:%.c Makefile.gnu
+	$(CC) -c -o $*-pgi.o $(CFLAGS) $<
+objects := $(sources:.f90=-pgi.o)
+exobjects := $(csources:.c=-pgi.o)
+
+
+# Identify the main program
+main := non_linear_mg.f90
+mainobject := $(.f90=-pgi.o)
+exobject := $(.c=-pgi.o)
+
+# Set the executable name
+CMD := ../pf.pgi
+
+
+
+
+# compiles the program.
+$(CMD): $(mainobject) $(objects) $(exobjects)
+	$(FC) $(FFLAGS) -o $@ $^ $(LDFLAGS)
+
+#$(CMD): $(mainobject) $(objects) 
+#	$(FC) $(FFLAGS) -o $@ $^ $(LDFLAGS)
+
+
+.PHONY: clean
+clean: 
+	$(RM) $(CMD) *.o *.i *.mod *~

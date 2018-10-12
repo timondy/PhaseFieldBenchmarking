@@ -1,0 +1,37 @@
+s/  \"physicaldata.fh\"/ \"physicaldata.fh\"/g
+s/  \"physicaldata.fh\"/ \"physicaldata.fh\"/g
+s/  \"physicaldata.fh\"/ \"physicaldata.fh\"/g
+s/  \"physicaldata.fh\"/ \"physicaldata.fh\"/g
+s/  \"physicaldata.fh\"/ \"physicaldata.fh\"/g
+s/  \"physicaldata.fh\"/ \"physicaldata.fh\"/g
+s/  \"physicaldata.fh\"/ \"physicaldata.fh\"/g
+s/  \"physicaldata.fh\"/ \"physicaldata.fh\"/g
+s/  \"physicaldata.fh\"/ \"physicaldata.fh\"/g
+s/  \"physicaldata.fh\"/ \"physicaldata.fh\"/g
+s/#include \"physicaldata.fh\"/      use physicaldata/g
+s/include  \'tree.fh\'/include \'tree.fh\'/g
+s/include  \'tree.fh\'/include \'tree.fh\'/g
+s/include  \'tree.fh\'/include \'tree.fh\'/g
+s/include  \'tree.fh\'/include \'tree.fh\'/g
+s/include  \'tree.fh\'/include \'tree.fh\'/g
+s/include  \'tree.fh\'/include \'tree.fh\'/g
+s/include  \'tree.fh\'/include \'tree.fh\'/g
+s/include  \'tree.fh\'/include \'tree.fh\'/g
+s/include  \'tree.fh\'/include \'tree.fh\'/g
+s/include  \'tree.fh\'/include \'tree.fh\'/g
+s/include \'tree.fh\'/      use tree/g
+s/include  \'workspace.fh\'/include \'workspace.fh\'/g
+s/include  \'workspace.fh\'/include \'workspace.fh\'/g
+s/include  \'workspace.fh\'/include \'workspace.fh\'/g
+s/include  \'workspace.fh\'/include \'workspace.fh\'/g
+s/include  \'workspace.fh\'/include \'workspace.fh\'/g
+s/include  \'workspace.fh\'/include \'workspace.fh\'/g
+s/include  \'workspace.fh\'/include \'workspace.fh\'/g
+s/include  \'workspace.fh\'/include \'workspace.fh\'/g
+s/include  \'workspace.fh\'/include \'workspace.fh\'/g
+s/include  \'workspace.fh\'/include \'workspace.fh\'/g
+s/include \'workspace.fh\'/use workspace/g
+s/bit_size(/bit_sizeX(/g
+s/type_size(/type_sizeX(/g
+s/size(/bsize(/g
+s/sizeX(/size(/g

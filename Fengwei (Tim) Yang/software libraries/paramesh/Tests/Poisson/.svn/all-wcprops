@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/paramesh/!svn/ver/1/Tests/Poisson
+END
+conjugate_grad.F
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/paramesh/!svn/ver/1/Tests/Poisson/conjugate_grad.F
+END
+header_file_settings_poisson
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/paramesh/!svn/ver/1/Tests/Poisson/header_file_settings_poisson
+END
+msource.F
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/paramesh/!svn/ver/1/Tests/Poisson/msource.F
+END
+makefile_t3e_poisson
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/paramesh/!svn/ver/1/Tests/Poisson/makefile_t3e_poisson
+END
+poisson_solver.F
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/paramesh/!svn/ver/1/Tests/Poisson/poisson_solver.F
+END
+makefile_sgi_poisson
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/paramesh/!svn/ver/1/Tests/Poisson/makefile_sgi_poisson
+END
+test_gc_1overr.F
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/paramesh/!svn/ver/1/Tests/Poisson/test_gc_1overr.F
+END
+amr_1blk_bcset.F
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/paramesh/!svn/ver/1/Tests/Poisson/amr_1blk_bcset.F
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/paramesh/!svn/ver/1/Tests/Poisson/README
+END

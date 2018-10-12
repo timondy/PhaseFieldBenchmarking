@@ -1,0 +1,53 @@
+#
+# This file is machine generated on GNU systems.
+# Only temporary changes may be made here.
+#
+# Copyright by The HDF Group.
+# Copyright by the Board of Trustees of the University of Illinois.
+# All rights reserved.
+#
+# This file is part of HDF5.  The full HDF5 copyright notice, including
+# terms governing use, modification, and redistribution, is contained in
+# the files COPYING and Copyright.html.  COPYING can be found at the root
+# of the source code distribution tree; Copyright.html can be found at the
+# root level of an installed copy of the electronic HDF5 document set and
+# is linked from the top-level documents page.  It can also be found at
+# http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have
+# access to either file, you may request a copy from help@hdfgroup.org.
+
+h5_chunk_read.lo: \
+   $(srcdir)/h5_chunk_read.c \
+   hdf5.h
+h5_compound.lo: \
+   $(srcdir)/h5_compound.c \
+   hdf5.h
+h5_extend_write.lo: \
+   $(srcdir)/h5_extend_write.c \
+   hdf5.h
+h5_group.lo: \
+   $(srcdir)/h5_group.c \
+   hdf5.h
+h5_read.lo: \
+   $(srcdir)/h5_read.c \
+   hdf5.h
+h5_write.lo: \
+   $(srcdir)/h5_write.c \
+   hdf5.h
+h5_select.lo: \
+   $(srcdir)/h5_select.c \
+   hdf5.h
+h5_attribute.lo: \
+   $(srcdir)/h5_attribute.c \
+   hdf5.h
+h5_mount.lo: \
+   $(srcdir)/h5_mount.c \
+   hdf5.h
+h5_reference.lo: \
+   $(srcdir)/h5_reference.c \
+   hdf5.h
+h5_drivers.lo: \
+   $(srcdir)/h5_drivers.c \
+   hdf5.h
+ph5example.lo: \
+   $(srcdir)/ph5example.c \
+   hdf5.h

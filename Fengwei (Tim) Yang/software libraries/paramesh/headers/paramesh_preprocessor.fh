@@ -1,0 +1,42 @@
+!----------------------------------------------------------------------
+! PARAMESH - an adaptive mesh library.
+! Copyright (C) 2002
+! By: Peter J. MacNeice, Drexel University.
+!     Kevin M. Olson,    Drexel University.
+! 
+! This library is free software; you can redistribute it and/or
+! modify it under the terms of the GNU Lesser General Public
+! License as published by the Free Software Foundation; either
+! version 2.1 of the License, or (at your option) any later version.
+! 
+! This library is distributed in the hope that it will be useful,
+! but WITHOUT ANY WARRANTY; without even the implied warranty of
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+! Lesser General Public License for more details.
+! 
+! You should have received a copy of the GNU Lesser General Public
+! License along with this library; if not, write to the Free Software
+! Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307
+! USA
+!
+!------------------------------------------------------------------------------
+! paramesh_preprocessor.fh
+!------------------------------------------------------------------------------
+
+!--------------
+! If you use -r8 then make sure REAL8 is defined.
+! Note, if your compiler allows preprocessor variables to be
+! specified on the command line then you can define REAL8 on
+! the command line instead of doing it here. 
+! eg. the sgi f90 compiler
+! FFLAGS =  ... -cpp -r8 -DREAL8 ........
+!
+
+! ---< USER EDIT >---
+#define REAL8
+!#define REAL4
+
+! NOTE: Using Paramesh as a LIBRARY is now the default.  The only varaible
+!       you now need to define in this file is REAL8 or REAL4 depending
+!       on the precision you wish to use for real variables. 
+

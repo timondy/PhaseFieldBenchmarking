@@ -1,0 +1,527 @@
+<html>
+<head><title>
+HDF5/H5T API Specification
+</title>
+
+<!-- #BeginLibraryItem "/ed_libs/styles_RM.lbi" -->
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<link href="ed_styles/RMelect.css" rel="stylesheet" type="text/css">
+<!-- #EndLibraryItem --></head>
+
+<body bgcolor="#FFFFFF">
+<!-- HEADER RIGHT " " -->
+
+
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><center>
+<h1>H5T: Datatype Interface</h1>
+</center>
+
+<h2>Datatype Object API Functions</h2>
+
+These functions create and manipulate the datatype which describes elements
+of a dataset.
+
+
+<p>
+<strong>The C Interfaces:</strong>
+
+<table border=0>
+<tr><td valign=top>
+<i>General Datatype Operations</i>
+    <li><a href="#Datatype-Create">H5Tcreate</a>
+    <li><a href="#Datatype-Open">H5Topen</a>
+    <li><a href="#Datatype-Commit">H5Tcommit</a>
+    <li><a href="#Datatype-Committed">H5Tcommitted</a>
+    <li><a href="#Datatype-Copy">H5Tcopy</a>
+    <li><a href="#Datatype-Equal">H5Tequal</a>
+    <li><a href="#Datatype-Lock">H5Tlock</a>
+    <li><a href="#Datatype-GetClass">H5Tget_class</a>
+    <li><a href="#Datatype-GetSize">H5Tget_size</a>
+    <li><a href="#Datatype-GetSuper">H5Tget_super</a>
+    <li><a href="#Datatype-GetNativeType">H5Tget_native_type</a>
+    <li><a href="#Datatype-DetectClass">H5Tdetect_class</a>
+    <li><a href="#Datatype-Close">H5Tclose</a>
+<br><br>
+<i>Conversion Functions</i>
+    <li><a href="#Datatype-Convert">H5Tconvert</a>
+    <li><a href="#Datatype-Find">H5Tfind</a>
+    <li><a href="#Datatype-SetOverflow">H5Tset_overflow</a>
+    <li><a href="#Datatype-GetOverflow">H5Tget_overflow</a>
+    <li><a href="#Datatype-Register">H5Tregister</a>
+    <li><a href="#Datatype-Unregister">H5Tunregister</a>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<i>Atomic Datatype Properties</i>
+<!-- FOR USE WITH ELECTRONIC VERSION ---------------------------------------->
+  <table><tr><td valign=top>
+<!-- FOR USE WITH ELECTRONIC VERSION ---------------------------------------->
+    <li><a href="#Datatype-SetSize">H5Tset_size</a>
+    <li><a href="#Datatype-GetOrder">H5Tget_order</a>
+    <li><a href="#Datatype-SetOrder">H5Tset_order</a>
+    <li><a href="#Datatype-GetPrecision">H5Tget_precision</a>
+    <li><a href="#Datatype-SetPrecision">H5Tset_precision</a>
+    <li><a href="#Datatype-GetOffset">H5Tget_offset</a>
+    <li><a href="#Datatype-SetOffset">H5Tset_offset</a>
+    <li><a href="#Datatype-GetPad">H5Tget_pad</a>
+    <li><a href="#Datatype-SetPad">H5Tset_pad</a>
+    <li><a href="#Datatype-GetSign">H5Tget_sign</a>
+    <li><a href="#Datatype-SetSign">H5Tset_sign</a>
+<!-- FOR USE WITH ELECTRONIC VERSION ---------------------------------------->
+  </td><td valign=top>
+<!-- FOR USE WITH ELECTRONIC VERSION ---------------------------------------->
+    <li><a href="#Datatype-GetFields">H5Tget_fields</a>
+    <li><a href="#Datatype-SetFields">H5Tset_fields</a>
+    <li><a href="#Datatype-GetEbias">H5Tget_ebias</a>
+    <li><a href="#Datatype-SetEbias">H5Tset_ebias</a>
+    <li><a href="#Datatype-GetNorm">H5Tget_norm</a>
+    <li><a href="#Datatype-SetNorm">H5Tset_norm</a>
+    <li><a href="#Datatype-GetInpad">H5Tget_inpad</a>
+    <li><a href="#Datatype-SetInpad">H5Tset_inpad</a>
+    <li><a href="#Datatype-GetCset">H5Tget_cset</a>
+    <li><a href="#Datatype-SetCset">H5Tset_cset</a>
+    <li><a href="#Datatype-GetStrpad">H5Tget_strpad</a>
+    <li><a href="#Datatype-SetStrpad">H5Tset_strpad</a>
+<!-- FOR USE WITH ELECTRONIC VERSION ---------------------------------------->
+  </td></tr></table>
+<!-- FOR USE WITH ELECTRONIC VERSION ---------------------------------------->
+<br><br>
+<i>Enumeration Datatypes</i>
+    <li><a href="#Datatype-EnumCreate">H5Tenum_create</a>
+    <li><a href="#Datatype-EnumInsert">H5Tenum_insert</a>
+    <li><a href="#Datatype-EnumNameOf">H5Tenum_nameof</a>
+    <li><a href="#Datatype-EnumValueOf">H5Tenum_valueof</a>
+    <li><a href="#Datatype-GetMemberValue">H5Tget_member_value</a>
+    <li><a href="#Datatype-GetNmembers">H5Tget_nmembers</a>
+    <li><a href="#Datatype-GetMemberName">H5Tget_member_name</a>
+    <li><a href="#Datatype-GetMemberIndex">H5Tget_member_index</a>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top>
+<i>Compound Datatype Properties</i>
+    <li><a href="#Datatype-GetNmembers">H5Tget_nmembers</a>
+    <li><a href="#Datatype-GetMemberClass">H5Tget_member_class</a>
+    <li><a href="#Datatype-GetMemberName">H5Tget_member_name</a>
+    <li><a href="#Datatype-GetMemberIndex">H5Tget_member_index</a>
+    <li><a href="#Datatype-GetMemberOffset">H5Tget_member_offset</a>
+    <li><a href="#Datatype-GetMemberType">H5Tget_member_type</a>
+    <li><a href="#Datatype-Insert">H5Tinsert</a>
+    <li><a href="#Datatype-Pack">H5Tpack</a>
+<br><br>
+<i>Array Datatypes</i>
+    <li><a href="#Datatype-ArrayCreate">H5Tarray_create</a>
+    <li><a href="#Datatype-GetArrayNdims">H5Tget_array_ndims</a>
+    <li><a href="#Datatype-GetArrayDims">H5Tget_array_dims</a>
+<br><br>
+<i>Variable-length Datatypes</i>
+    <li><a href="#Datatype-VLCreate">H5Tvlen_create</a>
+    <li><a href="#Datatype-IsVariableString">H5Tis_variable_str</a>
+<br><br>
+<i>Opaque Datatypes</i>
+    <li><a href="#Datatype-SetTag">H5Tset_tag</a>
+    <li><a href="#Datatype-GetTag">H5Tget_tag</a>
+</td></tr>
+</table>
+
+<br>
+
+<!-- NEW PAGE -->
+<i>Alphabetical Listing</i>
+<table border="0" width=100%>
+  <tr>
+    <td valign="top" width=30%>
+      <li><a href="#Datatype-ArrayCreate">H5Tarray_create</a>
+      <li><a href="#Datatype-Close">H5Tclose</a>
+      <li><a href="#Datatype-Commit">H5Tcommit</a>
+      <li><a href="#Datatype-Committed">H5Tcommitted</a>
+      <li><a href="#Datatype-Convert">H5Tconvert</a>
+      <li><a href="#Datatype-Copy">H5Tcopy</a>
+      <li><a href="#Datatype-Create">H5Tcreate</a>
+      <li><a href="#Datatype-DetectClass">H5Tdetect_class</a>
+      <li><a href="#Datatype-EnumCreate">H5Tenum_create</a>
+      <li><a href="#Datatype-EnumInsert">H5Tenum_insert</a>
+      <li><a href="#Datatype-EnumNameOf">H5Tenum_nameof</a>
+      <li><a href="#Datatype-EnumValueOf">H5Tenum_valueof</a>
+      <li><a href="#Datatype-Equal">H5Tequal</a>
+      <li><a href="#Datatype-Find">H5Tfind</a>
+      <li><a href="#Datatype-GetArrayDims">H5Tget_array_dims</a>
+      <li><a href="#Datatype-GetArrayNdims">H5Tget_array_ndims</a>
+      <li><a href="#Datatype-GetClass">H5Tget_class</a>
+      <li><a href="#Datatype-GetCset">H5Tget_cset</a>
+      <li><a href="#Datatype-GetEbias">H5Tget_ebias</a>
+      <li><a href="#Datatype-GetFields">H5Tget_fields</a>
+      <li><a href="#Datatype-GetInpad">H5Tget_inpad</a>    
+    </td>
+    
+    <td width=3%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    
+    <td valign="top" width=30%>      
+      <li><a href="#Datatype-GetMemberClass">H5Tget_member_class</a>
+      <li><a href="#Datatype-GetMemberIndex">H5Tget_member_index</a>
+      <li><a href="#Datatype-GetMemberName">H5Tget_member_name</a>
+      <li><a href="#Datatype-GetMemberOffset">H5Tget_member_offset</a>
+      <li><a href="#Datatype-GetMemberType">H5Tget_member_type</a>
+      <li><a href="#Datatype-GetMemberValue">H5Tget_member_value</a>
+      <li><a href="#Datatype-GetNativeType">H5Tget_native_type</a>
+      <li><a href="#Datatype-GetNmembers">H5Tget_nmembers</a>
+      <li><a href="#Datatype-GetNorm">H5Tget_norm</a>
+      <li><a href="#Datatype-GetOffset">H5Tget_offset</a>
+      <li><a href="#Datatype-GetOrder">H5Tget_order</a>
+      <li><a href="#Datatype-GetOverflow">H5Tget_overflow</a>
+      <li><a href="#Datatype-GetPad">H5Tget_pad</a>
+      <li><a href="#Datatype-GetPrecision">H5Tget_precision</a>
+      <li><a href="#Datatype-GetSign">H5Tget_sign</a>
+      <li><a href="#Datatype-GetSize">H5Tget_size</a>
+      <li><a href="#Datatype-GetStrpad">H5Tget_strpad</a>
+      <li><a href="#Datatype-GetSuper">H5Tget_super</a>
+      <li><a href="#Datatype-GetTag">H5Tget_tag</a>
+      <li><a href="#Datatype-Insert">H5Tinsert</a>
+      <li><a href="#Datatype-IsVariableString">H5Tis_variable_str</a>
+    </td>
+    
+    <td width=3%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    
+    <td valign="top">      
+      <li><a href="#Datatype-Lock">H5Tlock</a>
+      <li><a href="#Datatype-Open">H5Topen</a>
+      <li><a href="#Datatype-Pack">H5Tpack</a>
+      <li><a href="#Datatype-Register">H5Tregister</a>
+      <li><a href="#Datatype-SetCset">H5Tset_cset</a>
+      <li><a href="#Datatype-SetEbias">H5Tset_ebias</a>
+      <li><a href="#Datatype-SetFields">H5Tset_fields</a>
+      <li><a href="#Datatype-SetInpad">H5Tset_inpad</a>
+      <li><a href="#Datatype-SetNorm">H5Tset_norm</a>
+      <li><a href="#Datatype-SetOffset">H5Tset_offset</a>
+      <li><a href="#Datatype-SetOrder">H5Tset_order</a>
+      <li><a href="#Datatype-SetOverflow">H5Tset_overflow</a>
+      <li><a href="#Datatype-SetPad">H5Tset_pad</a>
+      <li><a href="#Datatype-SetPrecision">H5Tset_precision</a>
+      <li><a href="#Datatype-SetSign">H5Tset_sign</a>
+      <li><a href="#Datatype-SetSize">H5Tset_size</a>
+      <li><a href="#Datatype-SetStrpad">H5Tset_strpad</a>
+      <li><a href="#Datatype-SetTag">H5Tset_tag</a>
+      <li><a href="#Datatype-Unregister">H5Tunregister</a>
+      <li><a href="#Datatype-VLCreate">H5Tvlen_create</a>
+    </td>
+  </tr>
+</table>
+
+<br>
+<strong>The FORTRAN90 Interfaces:</strong>
+<br>
+In general, each FORTRAN90 subroutine performs exactly the same task 
+as the corresponding C function.  
+<br>
+
+<table border=0>
+<tr><td valign=top width=32%>
+<i>General Datatype Operations</i>
+    <li><a href="#Datatype-Create">h5tcreate_f</a>
+    <li><a href="#Datatype-Open">h5topen_f</a>
+    <li><a href="#Datatype-Commit">h5tcommit_f</a>
+    <li><a href="#Datatype-Committed">h5tcommitted_f</a>
+    <li><a href="#Datatype-Copy">h5tcopy_f</a>
+    <li><a href="#Datatype-Equal">h5tequal_f</a>
+<!--<li><a href="#Datatype-Lock">h5tlock_f</a>                          -->
+    <li><a href="#Datatype-GetClass">h5tget_class_f</a>
+    <li><a href="#Datatype-GetSize">h5tget_size_f</a>
+    <li><a href="#Datatype-GetSuper">h5tget_super_f</a>
+<!--<li><a href="#Datatype-GetNativeType">h5tget_native_type_f</a>      -->
+<!--<li><a href="#Datatype-DetectClass">h5tdetect_class_f</a>             -->
+    <li><a href="#Datatype-Close">h5tclose_f</a>
+<!--<p>                                                                     -->
+<!--<i>Conversion Functions</i>                                             -->
+<!--<li><a href="#Datatype-Convert">h5tconvert_f</a>                    -->
+<!--<li><a href="#Datatype-Find">h5tfind_f</a>                          -->
+<!--<li><a href="#Datatype-SetOverflow">h5tset_overflow_f</a>           -->
+<!--<li><a href="#Datatype-GetOverflow">h5tget_overflow_f</a>           -->
+<!--<li><a href="#Datatype-Register">h5tregister_f</a>                  -->
+<!--<li><a href="#Datatype-Unregister">h5tunregister_f</a>              -->
+    <br><br>
+    <i>Enumeration Datatypes</i>
+    <li><a href="#Datatype-EnumCreate">h5tenum_create_f</a>
+    <li><a href="#Datatype-EnumInsert">h5tenum_insert_f</a>
+    <li><a href="#Datatype-EnumNameOf">h5tenum_nameof_f</a>
+    <li><a href="#Datatype-EnumValueOf">h5tenum_valueof_f</a>
+    <li><a href="#Datatype-GetMemberValue">h5tget_member_value_f</a>
+    <li><a href="#Datatype-GetNmembers">h5tget_nmembers_f</a>
+    <li><a href="#Datatype-GetMemberName">h5tget_member_name_f</a>
+    <li><a href="#Datatype-GetMemberIndex">h5tget_member_index_f</a>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top width=32%>
+<i>Atomic Datatype Properties</i>
+    <li><a href="#Datatype-SetSize">h5tset_size_f</a>
+    <li><a href="#Datatype-GetOrder">h5tget_order_f</a>
+    <li><a href="#Datatype-SetOrder">h5tset_order_f</a>
+    <li><a href="#Datatype-GetPrecision">h5tget_precision_f</a>
+    <li><a href="#Datatype-SetPrecision">h5tset_precision_f</a>
+    <li><a href="#Datatype-GetOffset">h5tget_offset_f</a>
+    <li><a href="#Datatype-SetOffset">h5tset_offset_f</a>
+<!--  <table><tr><td valign=top>                                            -->
+    <li><a href="#Datatype-GetPad">h5tget_pad_f</a>
+    <li><a href="#Datatype-SetPad">h5tset_pad_f</a>
+    <li><a href="#Datatype-GetSign">h5tget_sign_f</a>
+    <li><a href="#Datatype-SetSign">h5tset_sign_f</a>
+    <li><a href="#Datatype-GetFields">h5tget_fields_f</a>
+    <li><a href="#Datatype-SetFields">h5tset_fields_f</a>
+    <li><a href="#Datatype-GetEbias">h5tget_ebiass_f</a>
+    <li><a href="#Datatype-SetEbias">h5tset_ebiass_f</a>
+<!--  </td><td valign=top>                                                  -->
+    <li><a href="#Datatype-GetNorm">h5tget_norm_f</a>
+    <li><a href="#Datatype-SetNorm">h5tset_norm_f</a>
+    <li><a href="#Datatype-GetInpad">h5tget_inpad_f</a>
+    <li><a href="#Datatype-SetInpad">h5tset_inpad_f</a>
+    <li><a href="#Datatype-GetCset">h5tget_cset_f</a>
+    <li><a href="#Datatype-SetCset">h5tset_cset_f</a>
+    <li><a href="#Datatype-GetStrpad">h5tget_strpad_f</a>
+    <li><a href="#Datatype-SetStrpad">h5tset_strpad_f</a>
+<!--  </td></tr></table>                                                    -->
+<!--<p>                                                                     -->
+<!--<i>Variable-length Datatypes</i>                                        -->
+<!--<li><a href="#Datatype-VLCreate">h5tvlen_create_f</a>               -->
+    </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top width=32%>
+    <i>Array Datatypes</i>
+    <li><a href="#Datatype-ArrayCreate">h5tarray_create_f</a>   
+    <li><a href="#Datatype-GetArrayNdims">h5tget_array_ndims_f</a>  
+    <li><a href="#Datatype-GetArrayDims">h5tget_array_dims_f</a>  
+    <br><br>     
+    <i>Compound Datatype Properties</i>
+    <li><a href="#Datatype-GetNmembers">h5tget_nmembers_f</a>
+    <li><a href="#Datatype-GetMemberClass">h5tget_member_class_f</a>
+    <li><a href="#Datatype-GetMemberName">h5tget_member_name_f</a>
+    <li><a href="#Datatype-GetMemberIndex">h5tget_member_index_f</a>
+    <li><a href="#Datatype-GetMemberOffset">h5tget_member_offset_f</a>
+<!--<li><a href="#Datatype-GetMemberDims">h5tget_member_dims_f</a>          -->
+    <li><a href="#Datatype-GetMemberType">h5tget_member_type_f</a>
+    <li><a href="#Datatype-Insert">h5tinsert_f</a>
+    <li><a href="#Datatype-Pack">h5tpack_f</a>
+<!--<li><a href="#Datatype-InsertArray">h5tinsert_array_f</a>               -->
+    <br><br>
+    <i>Variable-length Datatypes</i>
+    <li><a href="#Datatype-VLCreate">h5tvlen_create_f</a>
+    <li><a href="#Datatype-IsVariableString">h5tis_variable_str_f</a>
+    <br><br>
+    <i>Opaque Datatypes</i>
+    <li><a href="#Datatype-SetTag">h5tset_tag_f</a>
+    <li><a href="#Datatype-GetTag">h5tget_tag_f</a>
+</td></tr>
+</table>
+
+
+<!-- NEW PAGE -->
+<p>
+The Datatype interface, H5T, provides a mechanism to describe the
+      storage format of individual data points of a data set and is
+      hopefully designed in such a way as to allow new features to be
+      easily added without disrupting applications that use the data
+      type interface.  A dataset (the H5D interface) is composed of a
+      collection or raw data points of homogeneous type organized
+      according to the data space (the H5S interface).
+
+<p>
+A datatype is a collection of datatype properties, all of
+      which can be stored on disk, and which when taken as a whole,
+      provide complete information for data conversion to or from that
+      datatype.  The interface provides functions to set and query
+      properties of a datatype.
+      
+<p>
+A <em>data point</em> is an instance of a <em>datatype</em>,
+      which is an instance of a <em>type class</em>.  We have defined
+      a set of type classes and properties which can be extended at a
+      later time.  The atomic type classes are those which describe
+      types which cannot be decomposed at the datatype interface
+      level; all other classes are compound.
+
+<p>
+See <a href="Datatypes.html"><cite>The Datatype Interface (H5T)</cite></a>
+in the <cite>HDF5 User's Guide</cite> for further information, including a complete list of all supported datatypes.
+
+<!-- NEW PAGE -->
+<!-- HEADER RIGHT " " -->
+
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+<!--       Include special topic files                       -->
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+
+
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+<!--       Include function files                            -->
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+
+<?php include("H5T/H5Tarray_create.htm"); ?>
+<?php include("H5T/H5Tclose.htm"); ?>
+<?php include("H5T/H5Tcommit.htm"); ?>
+<?php include("H5T/H5Tcommitted.htm"); ?>
+<?php include("H5T/H5Tconvert.htm"); ?>
+<?php include("H5T/H5Tcopy.htm"); ?>
+<?php include("H5T/H5Tcreate.htm"); ?>
+<?php include("H5T/H5Tdetect_class.htm"); ?>
+<?php include("H5T/H5Tenum_create.htm"); ?>
+<?php include("H5T/H5Tenum_insert.htm"); ?>
+<?php include("H5T/H5Tenum_nameof.htm"); ?>
+<?php include("H5T/H5Tenum_valueof.htm"); ?>
+<?php include("H5T/H5Tequal.htm"); ?>
+<?php include("H5T/H5Tfind.htm"); ?>
+<?php include("H5T/H5Tget_array_dims.htm"); ?>
+<?php include("H5T/H5Tget_array_ndims.htm"); ?>
+<?php include("H5T/H5Tget_class.htm"); ?>
+<?php include("H5T/H5Tget_cset.htm"); ?>
+<?php include("H5T/H5Tget_ebias.htm"); ?>
+<?php include("H5T/H5Tget_fields.htm"); ?>
+<?php include("H5T/H5Tget_inpad.htm"); ?>
+<?php include("H5T/H5Tget_member_class.htm"); ?>
+<?php include("H5T/H5Tget_member_index.htm"); ?>
+<?php include("H5T/H5Tget_member_name.htm"); ?>
+<?php include("H5T/H5Tget_member_offset.htm"); ?>
+<?php include("H5T/H5Tget_member_type.htm"); ?>
+<?php include("H5T/H5Tget_member_value.htm"); ?>
+<?php include("H5T/H5Tget_native_type.htm"); ?>
+<?php include("H5T/H5Tget_nmembers.htm"); ?>
+<?php include("H5T/H5Tget_norm.htm"); ?>
+<?php include("H5T/H5Tget_offset.htm"); ?>
+<?php include("H5T/H5Tget_order.htm"); ?>
+<?php include("H5T/H5Tget_overflow.htm"); ?>
+<?php include("H5T/H5Tget_pad.htm"); ?>
+<?php include("H5T/H5Tget_precision.htm"); ?>
+<?php include("H5T/H5Tget_sign.htm"); ?>
+<?php include("H5T/H5Tget_size.htm"); ?>
+<?php include("H5T/H5Tget_strpad.htm"); ?>
+<?php include("H5T/H5Tget_super.htm"); ?>
+<?php include("H5T/H5Tget_tag.htm"); ?>
+<?php include("H5T/H5Tinsert.htm"); ?>
+<?php include("H5T/H5Tis_variable_str.htm"); ?>
+<?php include("H5T/H5Tlock.htm"); ?>
+<?php include("H5T/H5Topen.htm"); ?>
+<?php include("H5T/H5Tpack.htm"); ?>
+<?php include("H5T/H5Tregister.htm"); ?>
+<?php include("H5T/H5Tset_cset.htm"); ?>
+<?php include("H5T/H5Tset_ebias.htm"); ?>
+<?php include("H5T/H5Tset_fields.htm"); ?>
+<?php include("H5T/H5Tset_inpad.htm"); ?>
+<?php include("H5T/H5Tset_norm.htm"); ?>
+<?php include("H5T/H5Tset_offset.htm"); ?>
+<?php include("H5T/H5Tset_order.htm"); ?>
+<?php include("H5T/H5Tset_overflow.htm"); ?>
+<?php include("H5T/H5Tset_pad.htm"); ?>
+<?php include("H5T/H5Tset_precision.htm"); ?>
+<?php include("H5T/H5Tset_sign.htm"); ?>
+<?php include("H5T/H5Tset_size.htm"); ?>
+<?php include("H5T/H5Tset_strpad.htm"); ?>
+<?php include("H5T/H5Tset_tag.htm"); ?>
+<?php include("H5T/H5Tunregister.htm"); ?>
+<?php include("H5T/H5Tvlen_create.htm"); ?>
+
+
+<!-- HEADER RIGHT " " -->
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/ed_libs/Footer.lbi" -->
+
+<address>
+The HDF Group Help Desk: <img src="Graphics/help.png" align=top height=16>
+<br>
+Describes HDF5 Release 1.6.10, November 2009 
+</address>
+
+
+<!-- #EndLibraryItem --><SCRIPT LANGUAGE="JAVASCRIPT">
+<!--
+document.writeln("Last modified: 25 April 2009");
+-->
+</SCRIPT>
+ 
+
+</body>
+</html>
+

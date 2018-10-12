@@ -1,0 +1,280 @@
+<html>
+<head><title>
+HDF5/Tools API Specification
+</title>
+
+<!-- #BeginLibraryItem "/ed_libs/styles_RM.lbi" -->
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<link href="ed_styles/RMelect.css" rel="stylesheet" type="text/css">
+<!-- #EndLibraryItem --></head>
+
+<body bgcolor="#FFFFFF">
+<!-- HEADER RIGHT " " -->
+
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><center>
+<h1>HDF5 Tools</h1>
+</center>
+
+
+
+
+<h2>HDF5 Tool Interfaces</h2>
+<p>
+
+HDF5-related tools are available to assist the user in a variety of 
+activities, including 
+   examining or managing HDF5 files, 
+   converting raw data between HDF5 and other special-purpose formats,
+   moving data and files between the HDF4 and  HDF5 formats, 
+   measuring HDF5 library performance, and
+   managing HDF5 library and application compilation, 
+      installation and configuration.
+Unless otherwise specified below, these tools are distributed and 
+installed with HDF5.
+
+<!--
+<table border=0>
+<tr><td valign=top>
+-->
+<ul>
+    <li>User utilities: 
+    <ul>
+        <li><a href="#Tools-Dump">h5dump</a> -- 
+            Enables a user to examine the contents of an HDF5 file 
+	    and dump those contents to an ASCII file 
+        <li><a href="#Tools-Ls">h5ls</a> -- 
+            Lists specified features of HDF5 file contents
+        <li><a href="#Tools-Diff">h5diff</a> -- 
+            Compares two HDF5 files and reports the differences.
+        <li><a href="#Tools-Repack">h5repack</a> -- Copies an HDF5 file to a new
+          file with or without compression/chunking.
+        <li><a href="#Tools-Perf">h5perf</a> -- 
+            Measures HDF5 performance
+        <li><a href="#Tools-Repart">h5repart</a> -- 
+            Repartitions a file, creating a family of files
+        <li><a href="#Tools-Jam">h5jam</a> -- 
+            Adds a user block to the front of an HDF5 file 
+        <li><a href="#Tools-Jam">h5unjam</a> -- 
+            Splits an existing user block from an HDF5 file,
+            placing it in a separate file
+    <br><br>
+    </ul>
+
+    <li>Configuration and  library management utilities: 
+    <ul>
+        <li><a href="#Tools-Redeploy">h5redeploy</a> -- 
+            Updates HDF5 compiler tools after an HDF5 software installation 
+            in a new location  
+         <li><a href="#Tools-H5CC">h5cc</a> and
+            <a href="#Tools-H5CC">h5pcc</a> --
+            Simplify the compilation of HDF5 programs written in C
+         <li><a href="#Tools-H5FC">h5fc</a> and
+            <a href="#Tools-H5FC">h5pfc</a> --
+            Simplify the compilation of HDF5 programs written in Fortran90
+        <li><a href="#Tools-H5C++">h5c++</a> --
+            Simplifies the compilation of HDF5 programs written in C++
+    <br><br>
+    </ul>
+ 
+    <li><a href="http://www.hdfgroup.org/hdf-java-html/" 
+        target="ToolsExt">Java-based tools for HDF5</a>
+        for viewing, manipulating, and generating HDF4 and HDF5 files:
+        <br>
+        <em>(Distributed separately; external link is 
+        <code>http://www.hdfgroup.org/hdf-java-html/</code>)</em>
+    <ul>
+	<li><code>HDFview</code> -- a browser that 
+	    works with both HDF4 and HDF5 files and 
+            can be used to transfer data between the two formats
+        <li>Java interfaces for both the HDF4 and HDF5 libraries
+        <li>Other HDF4- and HDF5-related products
+    <br><br>
+    </ul>
+
+    <li>Data conversion utilities: 
+    <ul>
+        <li><a href="#Tools-Import">h5import</a> -- 
+            Imports data into an existing or new HDF5 file
+        <li><a href="#Tools-GIF2H5">gif2h5</a> -- 
+            Converts a GIF file to an HDF5 file
+        <li><a href="#Tools-H52GIF">h52gif</a> -- 
+            Converts images in an HDF5 file to a GIF file
+    <br><br>
+    </ul>
+
+    <li><a href="http://www.hdfgroup.org/h4toh5/" target="ToolsExt">
+        HDF5/HDF4 conversion tools</a>:
+        <br>
+        <em>(Distributed separately; external link is 
+	<code>http://www.hdfgroup.org/h4toh5/</code>)</em>
+    <ul>
+        <li><a href="http://www.hdfgroup.org/h4toh5/" 
+	    target="ToolsExt">H4toH5 Conversion Library</a> -- 
+            Provides APIs for use in tools that perform customized 
+	    conversions of HDF4 files to HDF5 files
+        <li><a href="#Tools-H5toh4">h5toh4</a> -- 
+            Converts an HDF5 file to an HDF4 file
+        <li><a href="#Tools-H4toh5">h4toh5</a> -- 
+            Converts an HDF4 file to an HDF5 file
+    <br><br>
+    </ul>
+
+    <li><a href="http://www.hdfgroup.org/tools5.html" 
+        target="ToolsExt">Other tools</a>, 
+	including third-party and commercial utilities and applications
+        <br>
+        <em>(Distributed separately; external link is 
+	<code>http://www.hdfgroup.org/tools5.html</code>)</em>
+
+</ul>
+<!--
+</td></tr>
+</table>
+-->
+
+<!-- NEW PAGE -->
+
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+<!--       Include special topic files                       -->
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+
+
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+<!--       Include function files                            -->
+<!--  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  -->
+
+<?php include("Tools/h5dump.htm"); ?>
+<?php include("Tools/h5ls.htm"); ?>
+<?php include("Tools/h5diff.htm"); ?>
+<?php include("Tools/h5repack.htm"); ?>
+<?php include("Tools/h5repart.htm"); ?>
+<?php include("Tools/h5import.htm"); ?>
+<?php include("Tools/gif2h5.htm"); ?>
+<?php include("Tools/h52gif.htm"); ?>
+<?php include("Tools/h5toh4.htm"); ?>
+<?php include("Tools/h4toh5.htm"); ?>
+<?php include("Tools/h5perf.htm"); ?>
+<?php include("Tools/h5jam_and_h5unjam.htm"); ?>
+<?php include("Tools/h5redeploy.htm"); ?>
+<?php include("Tools/h5cc_and_h5pcc.htm"); ?>
+<?php include("Tools/h5fc_and_h5pfc.htm"); ?>
+<?php include("Tools/h5c++.htm"); ?>
+
+
+<!-- HEADER RIGHT " " -->
+<!-- #BeginLibraryItem "/ed_libs/NavBar_RM.lbi" -->
+
+<hr>
+<center>
+<table border=0 width=98%>
+<tr><td valign=top align=left>
+<a href="index.html">HDF5 documents and links</a>&nbsp;<br>
+<a href="H5.intro.html">Introduction to HDF5</a>&nbsp;<br>
+<a href="http://www.hdfgroup.org/HDF5/doc1.6/UG/UG_frame.html">HDF5 User Guide</a>&nbsp;<br>
+<!--
+<a href="Glossary.html">Glossary</a><br>
+-->
+</td>
+<td valign=top align=right>
+And in this document, the 
+<a href="RM_H5Front.html">HDF5 Reference Manual</a>&nbsp;&nbsp;<br>
+<a href="RM_H5.html">H5</a>&nbsp;&nbsp;
+<a href="RM_H5A.html">H5A</a>&nbsp;&nbsp;
+<a href="RM_H5D.html">H5D</a>&nbsp;&nbsp;
+<a href="RM_H5E.html">H5E</a>&nbsp;&nbsp;
+<a href="RM_H5F.html">H5F</a>&nbsp;&nbsp;
+<a href="RM_H5G.html">H5G</a>&nbsp;&nbsp;
+<a href="RM_H5I.html">H5I</a>&nbsp;&nbsp;
+<a href="RM_H5P.html">H5P</a>&nbsp;&nbsp;<br>
+<a href="RM_H5R.html">H5R</a>&nbsp;&nbsp;
+<a href="RM_H5S.html">H5S</a>&nbsp;&nbsp;
+<a href="RM_H5T.html">H5T</a>&nbsp;&nbsp;
+<a href="RM_H5Z.html">H5Z</a>&nbsp;&nbsp;
+<a href="Tools.html">Tools</a>&nbsp;&nbsp;
+<a href="PredefDTypes.html">Datatypes</a>&nbsp;&nbsp;
+</td></tr>
+<tr><td colspan="2" align="right">
+<i><small>(<a href="http://www.hdfgroup.org/HDF5/doc1.6/PSandPDF/">PDF</a>
+of complete manual formatted as print volume)&nbsp;&nbsp;&nbsp;</small></i>
+</td></tr>
+</table>
+</center>
+<hr>
+
+
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/ed_libs/Footer.lbi" -->
+
+<address>
+The HDF Group Help Desk: <img src="Graphics/help.png" align=top height=16>
+<br>
+Describes HDF5 Release 1.6.10, November 2009 
+</address>
+
+
+<!-- #EndLibraryItem -->&nbsp;<br>
+<SCRIPT LANGUAGE="JAVASCRIPT">
+<!--
+document.writeln("Last modified: 30 October 2009");
+-->
+</SCRIPT>
+
+</body>
+</html>
+

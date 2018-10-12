@@ -1,0 +1,19 @@
+To install these files type ./INSTALL from this directory.
+The necessary files will be copied to paramesh/mpi_source.
+You can then compile as you normally would.
+
+This files provide checkpointing functions for PARAMESH using the hdf5
+library.  You will need to have some version of hdf5 installed on your
+system.  The routines here have been tested using hdf5 version 1.6.2.
+
+The install script calles the INSTALL.py script so you will also need
+python on your system.  
+
+The install script tests your system using 'uname' to determine what kind
+of system you have.  It then write a file 'underscore.h' which defines
+a C preprocessor flag which will insert (or not) underscores to the
+C functions called by the Fortran code.  The only systems we have
+tested Paramesh on which don't require underscores are IBM and the 
+Mac OSX running Absoft's Fortran compiler.  If your system has different
+requirements, then you will need to edit the C code yourself and add 
+underscores in the proper way.

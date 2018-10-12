@@ -1,0 +1,61 @@
+#! /bin/csh -f
+
+echo 'run'; pwd
+#
+# Run a single test program and return the exit status.
+#
+set mpirun_prog = mpirun
+
+if ($#argv != 3) then
+   echo "Usage: $0 p1 p2 executable"
+   echo ""
+   echo "Where the test will incrimentally try p1 processors up"
+   echo "to p2 processors.  Typically p1==1 and p2==4 which will"
+   echo "run the executable on 1 processor, then 2, then 3, then 4."
+   echo ""
+         
+   exit -1
+endif
+
+set machine_opt = ""
+if ("`hostname`" == "hilo") then
+   set machine_opt = "-machinefile machines"
+endif
+if ("`hostname`" == "namche") then
+  if ("$mpirun_prog" == "mpirun") then
+   echo "------------------------------------------------------"
+   echo "SPECIAL CASE: namche needs mpirun option: $machine_opt"
+   echo "              Until, namche becomes part of the bees."
+   echo "------------------------------------------------------"
+   set machine_opt = "-machinefile /home/macneice/Runs/machinefile-medusa"
+   set mpirun_prog = mpirun
+  endif
+endif
+
+@ nerror = 0
+echo "run a test pwd" ; pwd
+set p1 = $argv[1]
+set p2 = $argv[2]
+set exe = $argv[3]
+
+set n = $p1
+while ($n <= $p2)
+   echo "-------------------------------------------------------"
+   echo "RUNNING: $mpirun_prog -np $n $machine_opt $exe"
+   echo "-------------------------------------------------------"
+   if ("$mpirun_prog" == "mpirun.gm") then
+#     Pcp $exe `pwd`
+      $mpirun_prog -np $n $exe
+   endif
+   if ("$mpirun_prog" == "mpirun") then
+     $mpirun_prog -np $n $machine_opt $exe
+   endif
+   if ($status != 0) then
+     @ nerror++
+     echo "run failed - Test of $exe : nprocs $n " >> test.log
+     echo "run failed - Test of $exe : nprocs $n " >> testn.log
+   endif
+   @ n++
+end
+
+exit $nerror

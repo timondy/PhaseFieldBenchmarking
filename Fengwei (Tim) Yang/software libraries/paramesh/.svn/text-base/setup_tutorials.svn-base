@@ -1,0 +1,268 @@
+#! /bin/sh
+
+# NOTES: On drexel Dell machine put a ./ in front of executables
+#        e.g. mpirun -np 1 ./tutor
+######## On MAC use make, not gmake
+#
+######## These Test need REAL8 to be set in paramesh_preprocessor.fh since the original
+#        results were generated on the Cray T3E (i.e. default double precision).
+
+TESTCASE=perm_guard
+TESTCASE2=noperm_guard
+PARAMESH_ROOTDIR=$PWD
+#
+# USER EDIT
+#
+test_log_file=/home/macneice/Runs/test.log
+
+#
+# start first tutorial testing
+#
+
+cd $PARAMESH_ROOTDIR/headers
+cp $PARAMESH_ROOTDIR/tutorial_steps/$TESTCASE/paramesh_preprocessor.fh.tutorial_$TESTCASE paramesh_preprocessor.fh
+cd $PARAMESH_ROOTDIR
+rm -rf your_tutorial
+echo ' '
+echo ' '
+echo 'old your_tutorial deleted! '
+pwd
+ls
+echo ' '
+echo ' '
+
+
+mkdir your_tutorial
+echo ' '
+echo ' '
+echo 'new your_tutorial created! '
+echo ' '
+echo ' '
+
+cd your_tutorial
+# insert logic which reports error if these 3 files cannot be found
+cp ../templates/Makefile.gnu_template Makefile.gnu
+cp ../templates/amr_main_prog_template.F90 tutorial.F90
+cp ../templates/amr_1blk_bcset_template.F90 amr_1blk_bcset.F90
+pwd
+ls
+
+cd ..
+#
+# USER EDIT
+#
+cp ../Makefile.gnu.g95 make_tutor
+gmake -f make_tutor clean
+
+echo ' '
+echo ' '
+echo 'initial cleanup complete! '
+echo ' '
+echo ' '
+
+cd your_tutorial
+cp ../tutorial_steps/$TESTCASE/Makefile.gnu.step4 Makefile.gnu
+cp ../tutorial_steps/$TESTCASE/tutorial.F90.step5 tutorial.F90
+cp ../tutorial_steps/$TESTCASE/amr_1blk_bcset.F90.step6 amr_1blk_bcset.F90
+echo ' '
+echo ' '
+echo 'source files for step 7 in place! '
+pwd
+ls
+echo ' '
+echo ' '
+
+cd ..
+gmake -f make_tutor your_tutorial
+
+echo ' '
+echo ' '
+echo 'make of tutor complete! '
+echo ' '
+echo ' '
+
+cd your_tutorial
+pwd
+ls
+mpirun -np 1 tutor > tutorial_output_step8
+
+
+echo ' '
+echo ' '
+echo 'first test run (step8) complete! '
+echo ' '
+echo ' '
+
+cp ../tutorial_steps/$TESTCASE/Makefile.gnu.step9 Makefile.gnu
+cp ../tutorial_steps/$TESTCASE/amr_initial_soln.F90.step10 amr_initial_soln.F90
+cp ../tutorial_steps/$TESTCASE/tutorial.F90.step11 tutorial.F90
+rm tutorial.o tutor
+
+cd ..
+gmake -f make_tutor your_tutorial
+
+cd your_tutorial
+mpirun -np 1 tutor > tutorial_output_step12
+
+
+echo ' '
+echo ' '
+echo 'test run (step12) complete! '
+echo ' '
+echo ' '
+
+cp ../tutorial_steps/$TESTCASE/tutorial.F90.step13 tutorial.F90
+rm tutorial.o tutor
+
+cd ..
+gmake -f make_tutor your_tutorial
+
+cd your_tutorial
+mpirun -np 1 tutor > tutorial_output_step14
+
+
+echo ' '
+echo ' '
+echo 'test run (step14) complete! '
+echo ' '
+echo ' '
+
+cp ../tutorial_steps/$TESTCASE/amr_test_refinement.F90.step15 amr_test_refinement.F90
+cp ../tutorial_steps/$TESTCASE/tutorial.F90.step16 tutorial.F90
+cp ../tutorial_steps/$TESTCASE/Makefile.gnu.step18 Makefile.gnu
+rm tutorial.o tutor
+
+cd ..
+gmake -f make_tutor your_tutorial
+
+cd your_tutorial
+mpirun -np 1 tutor > tutorial_output_step18
+
+
+echo ' '
+echo ' '
+echo 'test run (step18) complete! '
+echo ' '
+echo ' '
+
+cp ../tutorial_steps/$TESTCASE/advance_soln.F90.step19 advance_soln.F90
+cp ../tutorial_steps/$TESTCASE/amr_timestep.F90.step20 amr_timestep.F90
+cp ../tutorial_steps/$TESTCASE/tutorial.F90.step21 tutorial.F90
+cp ../tutorial_steps/$TESTCASE/Makefile.gnu.step22 Makefile.gnu
+rm tutorial.o tutor
+
+cd ..
+gmake -f make_tutor your_tutorial
+
+cd your_tutorial
+mpirun -np 1 tutor > tutorial_output_step23
+
+
+echo ' '
+echo ' '
+echo 'test run (step23) complete! '
+echo ' '
+echo ' '
+
+cp ../tutorial_steps/$TESTCASE/tutorial.F90.step24 tutorial.F90
+rm tutorial.o tutor
+
+cd ..
+gmake -f make_tutor your_tutorial
+
+cd your_tutorial
+mpirun -np 1 tutor > tutorial_output_step24
+
+cp ../tutorial_steps/$TESTCASE/tutorial.F90.step24a tutorial.F90
+rm tutorial.o tutor
+
+cd ..
+gmake -f make_tutor your_tutorial
+
+cd your_tutorial
+mpirun -np 1 tutor > tutorial_output_step24a
+
+echo ' '
+echo ' '
+echo 'test run (step24) complete! '
+echo ' '
+echo ' '
+
+mpirun -np 2 tutor > tutorial_output_step25
+echo ' '
+echo ' '
+echo 'test run on 2 procs (step25) complete! '
+echo ' '
+echo ' '
+
+#
+# start second tutorial testing
+#
+
+cd $PARAMESH_ROOTDIR/headers
+cp $PARAMESH_ROOTDIR/tutorial_steps/$TESTCASE2/paramesh_preprocessor.fh.tutorial_$TESTCASE2 paramesh_preprocessor.fh
+cd $PARAMESH_ROOTDIR/your_tutorial
+rm tutor *.o *.i
+
+
+cp ../tutorial_steps/$TESTCASE2/advance_soln_npgc.F90.step2 advance_soln_npgc.F90
+cp ../tutorial_steps/$TESTCASE2/tutorial_npgc.F90.step3 tutorial_npgc.F90
+cp ../tutorial_steps/$TESTCASE2/amr_test_refinement_npgc.F90.step4 amr_test_refinement_npgc.F90
+cp ../tutorial_steps/$TESTCASE2/Makefile.gnu.step5 Makefile.gnu
+
+cd ..
+gmake -f make_tutor clean
+
+gmake -f make_tutor your_tutorial
+
+
+echo ' '
+echo ' '
+echo 'second test code make complete! '
+echo ' '
+echo ' '
+
+cd your_tutorial
+mpirun -np 1 tutor_npgc > tutorial_npgc_output_step6
+
+
+echo ' '
+echo ' '
+echo 'second test run (step6) complete! '
+echo ' '
+echo ' '
+
+mpirun -np 2 tutor_npgc > tutorial_npgc_output_step7
+
+echo ' '
+echo ' '
+echo 'second test run on 2 procs (step7) complete! '
+echo ' '
+echo ' '
+
+cd $PARAMESH_ROOTDIR
+echo ' '
+echo ' '
+echo ' '
+echo ' '
+echo ' '
+echo ' '
+echo ' '
+echo ' '
+echo ' '
+echo ' '
+echo 'Regression Test Report'
+echo '----------------------'
+echo ' ' >> $test_log_file
+echo 'Tutorial Regression Testing' >> $test_log_file
+echo ' ' >> $test_log_file
+echo ' '
+echo ' '
+echo 'diff tutorial_output_step24 '
+echo ' '
+diff -s your_tutorial/tutorial_output_step24 tutorial_steps/perm_guard/tutorial_output_step24_correct >> $test_log_file
+echo ' '
+echo ' '
+echo 'diff tutorial_npgc_output_step6 '
+echo ' '
+diff -s your_tutorial/tutorial_npgc_output_step6 tutorial_steps/noperm_guard/tutorial_npgc_output_step6_correct >> $test_log_file

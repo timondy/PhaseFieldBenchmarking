@@ -1,0 +1,2563 @@
+dnl Process this file with autoconf to produce configure.
+dnl
+dnl Copyright by The HDF Group.
+dnl Copyright by the Board of Trustees of the University of Illinois.
+dnl All rights reserved.
+dnl
+dnl This file is part of HDF5.  The full HDF5 copyright notice, including
+dnl terms governing use, modification, and redistribution, is contained in
+dnl the files COPYING and Copyright.html.  COPYING can be found at the root
+dnl of the source code distribution tree; Copyright.html can be found at the
+dnl root level of an installed copy of the electronic HDF5 document set and
+dnl is linked from the top-level documents page.  It can also be found at
+dnl http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have
+dnl access to either file, you may request a copy from help@hdfgroup.org.
+
+dnl ----------------------------------------------------------------------
+dnl Initialize configure.
+dnl
+AC_REVISION($Id: configure.in 17844 2009-11-05 22:39:48Z acheng $)
+
+dnl AC_INIT takes the name of the package, the version number, and an
+dnl email address to report bugs. AC_CONFIG_SRCDIR takes a unique file
+dnl as its argument.
+dnl
+dnl NOTE: Don't forget to change the version number here when we do a
+dnl release!!!
+dnl
+AC_INIT([HDF5], [1.6.10], [help@hdfgroup.org])
+AC_CONFIG_SRCDIR([src/H5.c])
+AC_CONFIG_HEADER([src/H5config.h])
+
+AC_CONFIG_AUX_DIR([bin])
+
+AC_OUTPUT_COMMANDS([
+  echo "creating src/H5pubconf.h"
+  sed 's/#define /#define H5_/' <src/H5config.h |\
+    sed 's/#undef /#undef H5_/' >pubconf
+  if test ! -f src/H5pubconf.h; then
+    /bin/mv -f pubconf src/H5pubconf.h
+  elif (diff pubconf src/H5pubconf.h >/dev/null); then
+    /bin/rm -f pubconf
+    echo "src/H5pubconf.h is unchanged"
+  else
+    /bin/mv -f pubconf src/H5pubconf.h
+  fi
+])
+
+dnl It's possible to configure for a host other than the one on which
+dnl configure is currently running by using the --host=foo flag.
+dnl For machines on which HDF5 is often configured, it can be convenient
+dnl to specify the name of the machine rather than its canonical type.
+case $host_alias in
+  tflops)
+    host_alias=i386-intel-osf1
+    ;;
+esac
+
+AC_CANONICAL_HOST
+AC_SUBST([CPPFLAGS])
+dnl H5_CPPFLAGS holds flags that we want to use on HDF5, but that the
+dnl user doesn't need to use in h5cc.
+AC_SUBST([H5_CPPFLAGS])
+AC_SUBST([H5_CFLAGS])
+
+dnl Different compilers may need default libraries. They are specified in
+dnl the config/* files, so we put this statement here so that it'll be
+dnl set by the code which follows...
+dnl
+AC_SUBST(DEFAULT_LIBS) DEFAULT_LIBS=""
+
+dnl ----------------------------------------------------------------------
+dnl Set prefix default (install directory) to a directory in the build area.
+dnl This allows multiple src-dir builds within one host.
+AC_PREFIX_DEFAULT([`pwd`/hdf5])
+
+dnl ----------------------------------------------------------------------
+dnl Dump all shell variables values.
+dnl
+AC_MSG_CHECKING([shell variables initial values])
+set >&AS_MESSAGE_LOG_FD
+AC_MSG_RESULT([done])
+
+dnl ----------------------------------------------------------------------
+dnl Some platforms have broken basename, and/or xargs programs. Check
+dnl that it actually does what it's supposed to do. Catch this early
+dnl since configure relies upon them heavily and there's no use continuing
+dnl if it's broken.
+dnl
+
+dnl Avoid depending upon Character Ranges.
+dnl These are defined by autoconf.
+dnl as_cr_letters='abcdefghijklmnopqrstuvwxyz'
+dnl as_cr_LETTERS='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+AC_MSG_CHECKING([if basename works])
+BASENAME_TEST="`basename /foo/bar/baz/qux/basename_works`"
+if test $BASENAME_TEST != "basename_works"; then
+  AC_MSG_ERROR([basename program doesn't work])
+else
+  AC_MSG_RESULT([yes])
+fi
+
+AC_MSG_CHECKING([if xargs works])
+XARGS_TEST="`echo /foo/bar/baz/qux/xargs_works | xargs basename`"
+if test $XARGS_TEST != "xargs_works"; then
+  AC_MSG_ERROR([xargs program doesn't work])
+else
+  AC_MSG_RESULT([yes])
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Check that the cache file was build on the same host as what we're
+dnl running on now.
+dnl
+AC_CACHE_CHECK([for cached host], [hdf5_cv_host], [hdf5_cv_host="none"]);
+if test $hdf5_cv_host = "none"; then
+  hdf5_cv_host=$host
+elif test $hdf5_cv_host != $host; then
+  echo "The config.cache file was generated on $hdf5_cv_host but"
+  echo "this is $host.  Please remove that file and try again."
+  AC_MSG_ERROR(config.cache file is invalid)
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Source any special files that we need.  These files normally aren't
+dnl present but can be used by the maintainers to fine tune things like
+dnl turning on debug or profiling flags for the compiler.  The search order
+dnl is:
+dnl
+dnl	CPU-VENDOR-OS
+dnl	VENDOR-OS
+dnl	CPU-OS
+dnl	CPU-VENDOR
+dnl	OS
+dnl	VENDOR
+dnl	CPU
+dnl
+dnl If the `OS' ends with a version number then remove it. For instance,
+dnl `freebsd3.1' would become `freebsd'
+case $host_os in
+  aix4.*)
+    host_os_novers=aix4.x
+    ;;
+  aix5.*)
+    host_os_novers=aix5.x
+    ;;
+  freebsd*)
+    host_os_novers=freebsd
+    ;;
+  irix5.*)
+    host_os_novers=irix5.x
+    ;;
+  irix6.*)
+    host_os_novers=irix6.x
+    ;;
+  osf4.*)
+    host_os_novers=osf4.x
+    ;;
+  osf5.*)
+    host_os_novers=osf5.x
+    ;;
+  solaris2.*)
+    host_os_novers=solaris2.x
+    ;;
+  *)
+    host_os_novers=$host_os
+    ;;
+esac
+
+host_config="none"
+for f in $host_cpu-$host_vendor-$host_os \
+         $host_cpu-$host_vendor-$host_os_novers \
+         $host_vendor-$host_os \
+         $host_vendor-$host_os_novers \
+         $host_cpu-$host_os \
+         $host_cpu-$host_os_novers \
+         $host_cpu-$host_vendor \
+         $host_os \
+         $host_os_novers \
+         $host_vendor \
+         $host_cpu ; do
+  AC_MSG_CHECKING([for config $f])
+  if test -f "$srcdir/config/$f"; then
+    host_config=$srcdir/config/$f
+    AC_MSG_RESULT([found])
+    break
+  fi
+  AC_MSG_RESULT([no])
+done
+if test "X$host_config" != "Xnone"; then
+  CC_BASENAME="`echo $CC | cut -f1 -d' ' | xargs basename 2>/dev/null`"
+  . $host_config
+fi
+
+dnl Source any special site-specific file
+hname="`hostname`"
+while test -n "$hname"; do
+  file=$srcdir/config/site-specific/host-$hname
+  AC_MSG_CHECKING([for config $file])
+  if test -f "$file"; then
+    . $file
+    AC_MSG_RESULT([found])
+    break
+  fi
+  AC_MSG_RESULT([no])
+  hname_tmp=$hname
+  hname="`echo $hname | cut -d. -f2-99`"
+  test "$hname_tmp" = "$hname" && break
+done
+
+dnl ----------------------------------------------------------------------
+dnl Check for programs.
+dnl
+AC_PROG_CC
+CC_BASENAME="`echo $CC | cut -f1 -d' ' | xargs basename 2>/dev/null`"
+
+AC_SUBST([config_dirs]) config_dirs=""
+
+dnl ----------------------------------------------------------------------
+dnl Check if they would like the Fortran interface compiled
+dnl
+AC_MSG_CHECKING([if fortran interface enabled])
+AC_ARG_ENABLE([fortran],
+              [AC_HELP_STRING([--enable-fortran],
+                              [Compile the Fortran interface [default=no]])],
+              [HDF_FORTRAN=$enableval])
+
+if test "X$HDF_FORTRAN" = "Xyes"; then
+  echo "yes"
+  if test -z "$config_dirs"; then
+    config_dirs="fortran"
+  else
+    config_dirs="${config_dirs} fortran"
+  fi
+else
+  echo "no"
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Check if they would like the C++ interface compiled
+dnl
+AC_MSG_CHECKING([if c++ interface enabled])
+AC_ARG_ENABLE([cxx],
+              [AC_HELP_STRING([--enable-cxx],
+                              [Compile the C++ interface [default=no]])],
+              [HDF_CXX=$enableval])
+
+if test "X$HDF_CXX" = "Xyes"; then
+  echo "yes"
+  if test -z "$config_dirs"; then
+    config_dirs="c++"
+  else
+    config_dirs="${config_dirs} c++"
+  fi
+else
+  echo "no"
+fi
+
+dnl Run configure in the subdirectories if specified
+AC_CONFIG_SUBDIRS([${config_dirs}])
+
+dnl ----------------------------------------------------------------------
+dnl If we should build only static executables
+dnl
+AC_SUBST(STATIC_EXEC) STATIC_EXEC=no
+AC_MSG_CHECKING([if should build only statically linked executables])
+AC_ARG_ENABLE([static_exec],
+              [AC_HELP_STRING([--enable-static-exec],
+                              [Build only statically linked executables
+                               [default=no]])],
+              [STATIC_EXEC=$enableval])
+
+if test "X$STATIC_EXEC" = "Xyes"; then
+  echo "yes"
+  LT_STATIC_EXEC="-all-static"
+else
+  echo "no"
+  LT_STATIC_EXEC=""
+fi
+AC_SUBST([LT_STATIC_EXEC])
+
+dnl ----------------------------------------------------------------------
+dnl Check if they have Perl installed on their system. We only need Perl
+dnl if they're using a GNU compiler.
+dnl
+AC_SUBST([PERL]) PERL=""
+if test "X$GCC" = "Xyes"; then
+  AC_CHECK_PROGS([PERL], [perl],, [$PATH])
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Check which archiving tool to use. This needs to be done before
+dnl the AC_PROG_LIBTOOL macro.
+dnl
+if test -z "$AR"; then
+  AC_CHECK_PROGS([AR], [ar xar], [:], [$PATH])
+fi
+AC_SUBST([AR])
+
+dnl Export the AR macro so that it will be placed in the libtool file
+dnl correctly.
+export AR
+
+AC_PROG_MAKE_SET
+AC_PROG_INSTALL
+dnl ----------------------------------------------------------------------
+dnl The following variables are used to distinguish between building a
+dnl serial and parallel library.
+dnl
+dnl    HAVE_PARALLEL	-- defined in H5config.h if we are building
+dnl			   a parallel library even if configure wasn't
+dnl			   able to find some header file or library that
+dnl			   might be required. This is defined if the
+dnl			   compiler looks like a parallel compiler (e.g.,
+dnl			   mpicc or mpcc) or if the user explicitly states
+dnl			   that a parallel library is being built by supplying
+dnl			   the `--enable-parallel' configure switch.
+dnl
+dnl    PARALLEL		-- This variable is set to a non-null value if
+dnl			   configure thinks we're compiling a parallel
+dnl			   version of the library.
+dnl
+dnl    RUNSERIAL	-- This is a command which will be prepended to
+dnl			   the executable name to run the executable using
+dnl			   a single process. For serial versions of the
+dnl			   library this will normally be empty. For parallel
+dnl			   versions it might be something like `mpirun -np 1'.
+dnl			   The value of this variable is substituted in *.in
+dnl			   files.
+dnl
+dnl    RUNPARALLEL	-- This is a command which will be prepended to
+dnl			   the executable name to run the executable on
+dnl			   multiple processors. For the serial library the
+dnl			   value will normally be the empty string. For
+dnl			   parallel library it should be something like
+dnl			   `mpi -np $$NPROCS' where NPROCS will eventually
+dnl			   contain the number of processors on which to run
+dnl			   the executable (the double dollarsigns are to
+dnl			   protect the expansion until make executes the
+dnl			   command).  The value of this variable is
+dnl			   substituted in *.in files.
+dnl
+AC_SUBST([PARALLEL])
+AC_SUBST([RUNSERIAL])
+AC_SUBST([RUNPARALLEL])
+AC_SUBST([TESTPARALLEL])
+AC_SUBST([BUILD_PARALLEL_CONDITIONAL_TRUE])
+AC_SUBST([BUILD_PARALLEL_CONDITIONAL_FALSE])
+
+dnl ----------------------------------------------------------------------
+dnl If the compiler is obviously a parallel compiler then we're building
+dnl a parallel version of hdf5 and should define HAVE_PARALLEL. Furthermore,
+dnl the name of the compiler might tell us how to run the resulting
+dnl executable. For `mpicc' the executable should be run with `mpirun' from
+dnl the same directory as mpicc if it exists.
+dnl
+case "$CC_BASENAME" in
+  mpicc)
+    dnl The mpich compiler. Use mpirun from the same directory if it
+    dnl exists.
+    PARALLEL=mpicc
+    AC_MSG_CHECKING([for mpirun])
+
+    dnl Find the path where mpicc is located.
+    cmd="`echo $CC | cut -f1 -d' '`"
+    if (echo $cmd | grep / >/dev/null); then
+      path="`echo $cmd | sed 's/\(.*\)\/.*$/\1/'`"
+    else
+      for path in `echo $PATH | tr : ' '`; do
+        if test -x $path/$cmd; then
+          break
+        fi
+      done
+    fi
+
+    dnl Is there an mpirun at that path?
+    if test -x $path/mpirun; then
+      AC_MSG_RESULT([$path/mpirun])
+      RUNSERIAL="${RUNSERIAL:-none}"
+
+      if test -z "$RUNPARALLEL"; then
+        RUNPARALLEL="$path/mpirun -np \$\${NPROCS:=3}"
+      fi
+    else
+      AC_MSG_RESULT([none])
+    fi
+    ;;
+
+  hcc)
+    dnl The LAM compiler. Use mpirun_lam or mpirun from the same directory
+    dnl if it exists.
+    PARALLEL=hcc
+    AC_MSG_CHECKING([for mpirun_lam or mpirun])
+
+    dnl Find the path where hcc is located
+    cmd="`echo $CC | cut -f1 -d' '`"
+    if (echo $cmd | grep / >/dev/null); then
+      path="`echo $cmd | sed 's/\(.*\)\/.*$/\1/'`"
+    else
+      for path in `echo $PATH | tr : ' '`; do
+        if test -x $path/$cmd; then
+          break
+        fi
+      done
+    fi
+
+    dnl Is there an mpirun_lam or mpirun at that path?
+    if test -x $path/mpirun_lam -o -x $path/mpirun; then
+      if test -x $path/mpirun_lam; then
+        cmd=mpirun_lam
+      else
+        cmd=mpirun
+      fi
+      AC_MSG_RESULT([$path/$cmd])
+      RUNSERIAL="${RUNSERIAL:-none}"
+      if test -z "$RUNPARALLEL"; then
+        RUNPARALLEL="$path/$cmd -np \$\${NPROCS:=3}"
+      fi
+    else
+      AC_MSG_RESULT([none])
+    fi
+    ;;
+
+  mpcc|mpcc_r)
+    dnl The IBM compiler
+    PARALLEL="$CC_BASENAME"
+    ;;
+
+  *)
+    dnl Probably not a parallel compiler, but if `--enable-parallel'
+    dnl is defined below then we're still building a parallel hdf5.
+    ;;
+esac
+
+dnl ----------------------------------------------------------------------------
+dnl If shared libraries are being used with parallel, disable them, unless the 
+dnl user explicity enables them via the '--enable-shared' option.
+if test "X${enable_shared}" = "X" -a "X${enable_parallel}" = "Xyes"; then
+    echo '    shared libraries disabled in parallel'
+    enable_shared="no"
+elif test "X${enable_shared}" = "Xyes" -a "X${enable_parallel}" = "Xyes"; then
+    echo '    shared libraries explicitly enabled by user'
+elif test "X${enable_shared}" = "X" -a "X${PARALLEL}" != "X"; then
+    echo '    shared libraries disabled when a parallel compiler is being used'
+    enable_shared="no"
+elif test "X${enable_shared}" = "Xyes" -a "X${PARALLEL}" != "X"; then
+    echo '    shared libraries explicitly enabled by user'
+fi
+
+AC_LIBTOOL_DLOPEN
+AC_PROG_LIBTOOL
+
+dnl Post processing to patch up some deficiencies in libtool
+case $host_os in
+  linux*)
+    # If gcc is not used, need to set $wl to use "-Wl,"
+    if $CC -v 2>&1 | grep '^gcc' > /dev/null ; then
+      : using gcc
+    else
+      echo 'fixing $wl in' $ofile
+ed - $ofile <<EOF 2> /dev/null
+/^wl=""/s//wl="-Wl,"/
+w
+q
+EOF
+    fi
+    ;;
+esac
+
+dnl ----------------------------------------------------------------------
+dnl pgcc version 6.0x have optimization (-O, -O2 or -O3) problem.  Detect
+dnl these versions and add option "-Mx,28,0x8" to the compiler to avoid
+dnl the problem if optimization is enable.
+dnl
+dnl if test "X$enable_production" = "Xyes"; then
+dnl    CC="${CC-cc} -Mx,28,0x8"
+dnl fi
+
+dnl Fix up the INSTALL macro if it's a relative path. We want the
+dnl full-path to the binary instead.
+case "$INSTALL" in
+  *install-sh*)
+    INSTALL='\${top_srcdir}/bin/install-sh -c'
+    ;;
+esac
+
+AC_MSG_CHECKING([make])
+AC_SUBST_FILE([DEPEND])
+
+if test "`${MAKE-make} --version -f /dev/null 2>/dev/null |\
+          sed -n 1p|cut -c1-8`" = "GNU Make"; then
+  AC_MSG_RESULT([GNU make])
+  GMAKE=yes
+  if test "X$GCC" = "Xyes"; then
+    DEPEND=config/depend1
+  else
+    DEPEND=config/depend2
+  fi
+else
+  AC_MSG_RESULT([generic])
+fi
+
+dnl How do we include another file into a Makefile?
+if test -z "$DEPEND"; then
+  AC_MSG_CHECKING([how to include a makefile])
+
+  dnl The include file contains the target for `foo'
+  cat >makeinc <<EOF
+foo:
+	@:
+EOF
+
+  while true; do #for break
+    dnl pmake. We have to be careful because some pmake think that the
+    dnl contents of the MAKE environment variable is a target.
+    echo '.include <makeinc>' >maketest
+    if (MAKE= ${MAKE-make} -f maketest foo) >/dev/null 2>&1; then
+      AC_MSG_RESULT([.include <FILE>])
+      DEPEND=config/depend3
+      break
+    fi
+
+    dnl Most make's use `include FILE'
+    echo 'include makeinc' >maketest
+    if (${MAKE-make} -f maketest foo) >/dev/null 2>&1; then
+      AC_MSG_RESULT([include FILE])
+      DEPEND=config/depend4
+      break;
+    fi
+
+    dnl default
+    AC_MSG_RESULT([you have a deficient make command])
+    DEPEND=config/dependN
+    break
+  done
+
+  rm makeinc maketest
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Sometimes makes think the `.PATH:' appearing before the first rule
+dnl with an action should override the `all' default target. So we have
+dnl to decide what the proper syntax is.
+dnl
+AC_MSG_CHECKING([how make searches directories])
+while true; do #for break
+  # The most common method is `VPATH=DIR1 DIR2 ...'
+  cat >maketest <<EOF
+VPATH=$srcdir/config $srcdir/src $srcdir/bin
+.c.o:
+	cp $< H5.o
+
+foo: H5.o
+	/bin/rm -f H5.o
+	@echo works
+EOF
+
+  if (${MAKE-make} -f maketest foo) >/dev/null 2>&1; then
+    SEARCH_RULE='VPATH='
+    SEARCH_SEP=' '
+    AC_MSG_RESULT([VPATH=DIR1 DIR2 ...])
+    break
+  fi
+
+  dnl The second most common method is like above except with the
+  dnl directories separated by colons.
+  cat >maketest <<EOF
+VPATH=$srcdir/config:$srcdir/src:$srcdir/bin
+.c.o:
+	cp $< H5.o
+
+foo: H5.o
+	/bin/rm -f H5.o
+	@echo works
+EOF
+
+  if (${MAKE-make} -f maketest foo) >/dev/null 2>&1; then
+    SEARCH_RULE='VPATH='
+    SEARCH_SEP=':'
+    AC_MSG_RESULT([VPATH=DIR1:DIR2:...])
+    break
+  fi
+
+  dnl pmake uses the construct `.PATH: DIR1 DIR2
+  cat >maketest <<EOF
+.PATH: $srcdir/config $srcdir/src $srcdir/bin
+.c.o:
+	cp $< H5.o
+
+foo: H5.o
+	/bin/rm -f H5.o
+	@echo works
+EOF
+
+  if (MAKE= ${MAKE-make} -f maketest foo) >/dev/null 2>&1; then
+    SEARCH_RULE='.PATH: '
+    SEARCH_SEP=' '
+    AC_MSG_RESULT([.PATH: DIR1 DIR2 ...])
+    break
+  fi
+
+  dnl No way for make to search directories
+  SEARCH_RULE='## SEARCH DISABLED: '
+  SEARCH_SEP=' '
+  AC_MSG_RESULT([it doesn't])
+  if test ! -f configure; then
+    AC_MSG_ERROR([${MAKE-make} requires the build and source directories to be the same])
+  fi
+  break
+done
+rm maketest
+
+dnl ----------------------------------------------------------------------
+dnl Production flags?  Save the value in $CONFIG_MODE so we have it for
+dnl the record.
+dnl
+AC_MSG_CHECKING(for production mode)
+AC_ARG_ENABLE(production,
+              [AC_HELP_STRING([--enable-production],
+                              [Determines how to run the compiler.])])
+
+case "X-$enable_production" in
+  X-|X-yes)
+    enable_production="yes"
+    AC_MSG_RESULT([production])
+
+    dnl Remove the "-g" flag from CFLAGS if it's in there.
+    dnl
+    CFLAGS_temp=""
+    if test -n "$CFLAGS"; then
+      for d in $CFLAGS ; do
+        if test "X$d" != "X-g"; then
+          CFLAGS_temp="$CFLAGS_temp $d"
+        fi
+      done
+      CFLAGS=$CFLAGS_temp
+    fi
+
+    CONFIG_MODE=production
+    CFLAGS="$CFLAGS $PROD_CFLAGS"
+    CPPFLAGS="$CPPFLAGS $PROD_CPPFLAGS"
+    ;;
+  X-no)
+    enable_production="no"
+    AC_MSG_RESULT([development])
+    CONFIG_MODE=development
+    CFLAGS="$CFLAGS $DEBUG_CFLAGS"
+    CPPFLAGS="$CPPFLAGS $DEBUG_CPPFLAGS"
+    ;;
+  X-pg|X-profile)
+    enable_production="profile"
+    AC_MSG_RESULT([profile])
+    CONFIG_MODE=profile
+    CFLAGS="$CFLAGS $PROFILE_CFLAGS"
+    CPPFLAGS="$CPPFLAGS $PROFILE_CPPFLAGS"
+    ;;
+  *)
+    enable_production="user-defined"
+    AC_MSG_RESULT([user-defined])
+    CONFIG_MODE="$X-enableval"
+    ;;
+esac
+
+dnl ----------------------------------------------------------------------
+dnl Check for system libraries.
+dnl
+AC_CHECK_LIB([m], [ceil])
+
+if test "`uname`" = "SunOS" -o "`uname -sr`" = "HP-UX B.11.00"; then
+  dnl ...for Solaris
+  AC_CHECK_LIB([nsl], [xdr_int])
+fi
+
+dnl AC_CHECK_LIB([coug], [main])		dnl ...for ASCI/Red
+
+dnl ----------------------------------------------------------------------
+dnl Check for system header files.
+dnl
+AC_HEADER_STDC
+AC_HEADER_TIME
+
+dnl ----------------------------------------------------------------------
+dnl Check for these two functions before <sys/time.h> is checked for, otherwise
+dnl they are not detected correctly on Solaris [2.6].
+dnl
+AC_CHECK_FUNCS(difftime)
+AC_CHECK_FUNCS(gettimeofday, [have_gettime="yes"], [have_gettime="no"])
+
+dnl Unix
+AC_CHECK_HEADERS([sys/resource.h sys/time.h unistd.h sys/ioctl.h sys/stat.h])
+AC_CHECK_HEADERS([sys/socket.h sys/types.h])
+AC_CHECK_HEADERS([stddef.h setjmp.h features.h])
+AC_CHECK_HEADERS([stdint.h], [C9x=yes])
+
+dnl Windows
+AC_CHECK_HEADERS([io.h winsock.h sys/timeb.h])
+
+case "$host" in
+  alpha*-dec*-osf*)
+    dnl The <sys/sysinfo.h> and <sys/proc.h> are needed on the DEC
+    dnl Alpha to turn off UAC fixing. We do *not* attempt to
+    dnl locate these files on other systems because there are too
+    dnl many problems with including them.
+    AC_CHECK_HEADERS([sys/sysinfo.h sys/proc.h])
+    ;;
+  mips*-sgi*-irix*)
+    dnl The <sys/fpu.h> is needed on the SGI machines to turn off
+    dnl denormalized floating-point values going to zero.  We do *not*
+    dnl attempt to dnl locate these files on other systems because there
+    dnl may be problems with including them.
+    AC_CHECK_HEADERS([sys/fpu.h])
+    AC_CHECK_FUNCS([get_fpc_csr])
+    ;;
+esac
+
+dnl ----------------------------------------------------------------------
+dnl Test for 64bit stuff before the data types and their sizes. The
+dnl result could effect the outcome of the sizeof macros below.
+dnl
+case "$host_cpu-$host_vendor-$host_os" in
+  *linux*)
+    dnl ----------------------------------------------------------------------
+    dnl Enable large file support on linux? Store the result in the LINUX_LFS
+    dnl variable for posterity
+    AC_ARG_ENABLE([linux-lfs],
+                  [AC_HELP_STRING([--enable-linux-lfs],
+                                  [Enable support for large (64-bit)
+                                   files on Linux. [default=check]])])
+
+    LINUX_LFS="no"
+    case "X-$enable_linux_lfs" in
+      X-yes)
+        LINUX_LFS=yes
+        ;;
+      X-no)
+        ;;
+      X-|*)
+        MAJOR_VER="`uname -r | cut -d '.' -f1`"
+        MINOR_VER="`uname -r | cut -d '.' -f2`"
+
+        if test ${MAJOR_VER} -gt 2 -o ${MAJOR_VER} -eq 2 -a ${MINOR_VER} -ge 4; then
+          LINUX_LFS="yes"
+        fi
+        ;;
+    esac
+
+    AC_MSG_CHECKING([for large file support mode on Linux])
+    if test "X$LINUX_LFS" = "Xyes"; then
+      AC_MSG_RESULT([enabled])
+      CPPFLAGS="-D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE $CPPFLAGS"
+    else
+      AC_MSG_RESULT([disabled])
+    fi
+
+    dnl Add POSIX support on Linux systems, so <features.h> defines
+    dnl __USE_POSIX, which is required to get the prototype for fdopen
+    dnl defined correctly in <stdio.h>
+    CPPFLAGS="-D_POSIX_SOURCE $CPPFLAGS"
+
+    dnl Also add BSD support on Linux systems, so <features.h> defines
+    dnl __USE_BSD, which is required to get the prototype for strdup
+    dnl defined correctly in <string.h> and snprintf & vsnprintf defined
+    dnl correctly in <stdio.h>
+    CPPFLAGS="-D_BSD_SOURCE $CPPFLAGS"
+    ;;
+esac
+
+AC_TRY_COMPILE([#include <sys/types.h>],
+               [off64_t n = 0;],
+               [AC_CHECK_FUNCS([lseek64 fseek64 fseeko ftello])],
+               [AC_MSG_RESULT([skipping test for lseek64(), fseek64(), fseeko(), and ftello])])
+
+dnl ----------------------------------------------------------------------
+dnl Data types and their sizes.
+dnl
+AC_TYPE_OFF_T
+AC_CHECK_TYPE([size_t], [unsigned long])
+AC_CHECK_TYPE([ssize_t], [long])
+AC_C_BIGENDIAN
+AC_CHECK_SIZEOF([char], [1])
+AC_CHECK_SIZEOF([short], [2])
+AC_CHECK_SIZEOF([int], [4])
+AC_CHECK_SIZEOF([long], [4])
+AC_CHECK_SIZEOF([long long], [8])
+AC_CHECK_SIZEOF([__int64], [8])
+AC_CHECK_SIZEOF([float], [4])
+AC_CHECK_SIZEOF([double], [8])
+AC_CHECK_SIZEOF([long double], [8])
+
+dnl Checkpoint the cache
+AC_CACHE_SAVE
+
+dnl Posix.1g types (C9x)
+cat >>confdefs.h <<\EOF
+#include <sys/types.h>
+EOF
+
+if test "X$C9x" = "Xyes"; then
+  cat >>confdefs.h <<\EOF
+#include <stdint.h>
+EOF
+fi
+
+AC_CHECK_SIZEOF(        int8_t, [1])
+AC_CHECK_SIZEOF(       uint8_t, [1])
+AC_CHECK_SIZEOF(  int_least8_t, [1])
+AC_CHECK_SIZEOF( uint_least8_t, [1])
+AC_CHECK_SIZEOF(   int_fast8_t, [1])
+AC_CHECK_SIZEOF(  uint_fast8_t, [1])
+
+AC_CHECK_SIZEOF(       int16_t, [2])
+AC_CHECK_SIZEOF(      uint16_t, [2])
+AC_CHECK_SIZEOF( int_least16_t, [2])
+AC_CHECK_SIZEOF(uint_least16_t, [2])
+AC_CHECK_SIZEOF(  int_fast16_t, [2])
+AC_CHECK_SIZEOF( uint_fast16_t, [2])
+
+AC_CHECK_SIZEOF(       int32_t, [4])
+AC_CHECK_SIZEOF(      uint32_t, [4])
+AC_CHECK_SIZEOF( int_least32_t, [4])
+AC_CHECK_SIZEOF(uint_least32_t, [4])
+AC_CHECK_SIZEOF(  int_fast32_t, [4])
+AC_CHECK_SIZEOF( uint_fast32_t, [4])
+
+AC_CHECK_SIZEOF(       int64_t, [8])
+AC_CHECK_SIZEOF(      uint64_t, [8])
+AC_CHECK_SIZEOF( int_least64_t, [8])
+AC_CHECK_SIZEOF(uint_least64_t, [8])
+AC_CHECK_SIZEOF(  int_fast64_t, [8])
+AC_CHECK_SIZEOF( uint_fast64_t, [8])
+
+AC_CHECK_SIZEOF([size_t], [4])
+AC_CHECK_SIZEOF([ssize_t], [4])
+
+cat >>confdefs.h <<\EOF
+#include <sys/types.h> /*for off_t definition*/
+EOF
+AC_CHECK_SIZEOF([off_t], [4])
+
+dnl Checkpoint the cache
+AC_CACHE_SAVE
+
+dnl ----------------------------------------------------------------------
+dnl Check if the dev_t type is a scalar type (must come after the check for
+dnl sys/types.h)
+AC_MSG_CHECKING([if dev_t is scalar])
+AC_TRY_COMPILE([
+#ifdef HAVE_SYS_TYPES_H
+#include <sys/types.h>
+#endif
+  ],
+  [dev_t d1, d2; if(d1==d2) return 0;],
+  AC_DEFINE([DEV_T_IS_SCALAR], [1],
+            [Define if `dev_t' is a scalar])
+  AC_MSG_RESULT(yes),
+  AC_MSG_RESULT(no)
+)
+
+dnl ----------------------------------------------------------------------
+dnl Fake --with-xxx option to allow us to create a help message for the
+dnl following --with-xxx options which can take either a =DIR or =INC,LIB
+dnl specifier.
+dnl
+AC_ARG_WITH([fnord],
+  [
+ For the following --with-xxx options, you can specify where the header
+ files and libraries are in two different ways:
+
+    --with-xxx=INC,LIB - Specify individually the include directory and
+                         library directory separated by a comma
+    --with-xxx=DIR     - Specify only the directory which contains the
+                         include/ and lib/ subdirectories
+  ])
+
+dnl ----------------------------------------------------------------------
+dnl Is the dmalloc present? It has a header file `dmalloc.h' and a library
+dnl `-ldmalloc' and their locations might be specified with the `--with-dmalloc'
+dnl command-line switch. The value is an include path and/or a library path.
+dnl If the library path is specified then it must be preceded by a comma.
+dnl
+AC_ARG_WITH([dmalloc],
+            [AC_HELP_STRING([--with-dmalloc=DIR],
+                            [Use dmalloc memory debugging aid [default=no]])],,
+            withval=no)
+
+case $withval in
+  yes)
+    HAVE_DMALLOC="yes"
+    AC_CHECK_HEADERS(dmalloc.h)
+    AC_CHECK_LIB(dmalloc, dmalloc_shutdown,, unset HAVE_DMALLOC)
+
+    if test -z "$HAVE_DMALLOC" -a -n "$HDF5_CONFIG_ABORT"; then
+      AC_MSG_ERROR(couldn't find dmalloc library)
+    fi
+    ;;
+  no)
+    HAVE_DMALLOC="no"
+    AC_MSG_CHECKING(for dmalloc library)
+    AC_MSG_RESULT(suppressed)
+    ;;
+  *)
+    HAVE_DMALLOC="yes"
+    case "$withval" in
+      *,*)
+        dmalloc_inc="`echo $withval |cut -f1 -d,`"
+        dmalloc_lib="`echo $withval |cut -f2 -d, -s`"
+        ;;
+      *)
+        if test -n "$withval"; then
+          dmalloc_inc="$withval/include"
+          dmalloc_lib="$withval/lib"
+        fi
+        ;;
+    esac
+
+    dnl Trying to include -I/usr/include and -L/usr/lib is redundant and
+    dnl can mess some compilers up.
+    if test "X$dmalloc_inc" = "X/usr/include"; then
+      dmalloc_inc=""
+    fi
+    if test "X$dmalloc_lib" = "X/usr/lib"; then
+      dmalloc_lib=""
+    fi
+
+    saved_CPPFLAGS="$CPPFLAGS"
+    saved_LDFLAGS="$LDFLAGS"
+
+    if test -n "$dmalloc_inc"; then
+      CPPFLAGS="$CPPFLAGS -I$dmalloc_inc"
+    fi
+
+    AC_CHECK_HEADERS(dmalloc.h,, CPPFLAGS="$saved_CPPFLAGS")
+
+    if test -n "$dmalloc_lib"; then
+      LDFLAGS="$LDFLAGS -L$dmalloc_lib"
+    fi
+
+    AC_CHECK_LIB(dmalloc, dmalloc_shutdown,, LDFLAGS="$saved_LDFLAGS"; unset HAVE_DMALLOC)
+
+    if test -z "$HAVE_DMALLOC" -a -n "$HDF5_CONFIG_ABORT"; then
+      AC_MSG_ERROR(couldn't find dmalloc library)
+    fi
+    ;;
+esac
+
+dnl ----------------------------------------------------------------------
+dnl Is the GNU zlib present? It has a header file `zlib.h' and a library
+dnl `-lz' and their locations might be specified with the `--with-zlib'
+dnl command-line switch. The value is an include path and/or a library path.
+dnl If the library path is specified then it must be preceded by a comma.
+dnl
+AC_SUBST(USE_FILTER_DEFLATE) USE_FILTER_DEFLATE="no"
+AC_ARG_WITH([zlib],
+            [AC_HELP_STRING([--with-zlib=DIR],
+                            [Use zlib library for external deflate I/O
+                             filter [default=yes]])],,
+            withval=yes)
+
+case $withval in
+  yes)
+    HAVE_ZLIB="yes"
+    AC_CHECK_HEADERS([zlib.h], [HAVE_ZLIB_H="yes"])
+    AC_CHECK_LIB([z], [compress2],, [unset HAVE_ZLIB])
+    AC_CHECK_FUNC([compress2], [HAVE_COMPRESS2="yes"])
+
+    if test -z "$HAVE_ZLIB" -a -n "$HDF5_CONFIG_ABORT"; then
+      AC_MSG_ERROR([couldn't find zlib library])
+    fi
+    ;;
+  no)
+    HAVE_ZLIB="no"
+    AC_MSG_CHECKING([for GNU zlib])
+    AC_MSG_RESULT([suppressed])
+    ;;
+  *)
+    HAVE_ZLIB="yes"
+    case "$withval" in
+      *,*)
+        zlib_inc="`echo $withval |cut -f1 -d,`"
+        zlib_lib="`echo $withval |cut -f2 -d, -s`"
+        ;;
+      *)
+        if test -n "$withval"; then
+          zlib_inc="$withval/include"
+          zlib_lib="$withval/lib"
+        fi
+        ;;
+    esac
+
+    dnl Trying to include -I/usr/include and -L/usr/lib is redundant and
+    dnl can mess some compilers up.
+    if test "X$zlib_inc" = "X/usr/include"; then
+      zlib_inc=""
+    fi
+    if test "X$zlib_lib" = "X/usr/lib"; then
+      zlib_lib=""
+    fi
+
+    saved_CPPFLAGS="$CPPFLAGS"
+    saved_LDFLAGS="$LDFLAGS"
+
+    if test -n "$zlib_inc"; then
+      CPPFLAGS="$CPPFLAGS -I$zlib_inc"
+    fi
+
+    AC_CHECK_HEADERS([zlib.h],
+                     [HAVE_ZLIB_H="yes"],
+                     [CPPFLAGS="$saved_CPPFLAGS"])
+
+    if test -n "$zlib_lib"; then
+      LDFLAGS="$LDFLAGS -L$zlib_lib"
+    fi
+
+    AC_CHECK_LIB([z], [compress2],,
+                 [LDFLAGS="$saved_LDFLAGS"; unset HAVE_ZLIB])
+    AC_CHECK_FUNC([compress2], [HAVE_COMPRESS2="yes"])
+
+    if test -z "$HAVE_ZLIB" -a -n "$HDF5_CONFIG_ABORT"; then
+      AC_MSG_ERROR([couldn't find zlib library])
+    fi
+    ;;
+esac
+
+if test "x$HAVE_ZLIB" = "xyes" -a "x$HAVE_ZLIB_H" = "xyes" -a "x$HAVE_COMPRESS2" = "xyes"; then
+    AC_DEFINE([HAVE_FILTER_DEFLATE], [1], [Define if support for deflate filter is enabled])
+    USE_FILTER_DEFLATE="yes"
+
+    dnl Add "deflate" to external filter list
+    if test "X$EXTERNAL_FILTERS" != "X"; then
+        EXTERNAL_FILTERS="${EXTERNAL_FILTERS},"
+    fi
+    EXTERNAL_FILTERS="${EXTERNAL_FILTERS}deflate"
+fi
+
+
+dnl ----------------------------------------------------------------------
+dnl Is the szlib present? It has a header file `szlib.h' and a library
+dnl `-lsz' and their locations might be specified with the `--with-szlib'
+dnl command-line switch. The value is an include path and/or a library path.
+dnl If the library path is specified then it must be preceded by a comma.
+dnl
+AC_SUBST(USE_FILTER_SZIP) USE_FILTER_SZIP="no"
+AC_ARG_WITH([szlib],
+            [AC_HELP_STRING([--with-szlib=DIR],
+                            [Use szlib library for external szlib I/O
+                             filter [default=no]])],,
+            withval=no)
+
+case $withval in
+  yes)
+    HAVE_SZLIB="yes"
+    AC_CHECK_HEADERS([szlib.h], [HAVE_SZLIB_H="yes"])
+    AC_CHECK_LIB([sz], [SZ_BufftoBuffCompress],, [unset HAVE_SZLIB])
+
+    if test -z "$HAVE_SZLIB" -a -n "$HDF5_CONFIG_ABORT"; then
+      AC_MSG_ERROR([couldn't find szlib library])
+    fi
+    ;;
+  no)
+    HAVE_SZLIB="no"
+    AC_MSG_CHECKING([for szlib])
+    AC_MSG_RESULT([suppressed])
+    ;;
+  *)
+    HAVE_SZLIB="yes"
+    case "$withval" in
+      *,*)
+        szlib_inc="`echo $withval |cut -f1 -d,`"
+        szlib_lib="`echo $withval |cut -f2 -d, -s`"
+        ;;
+      *)
+        if test -n "$withval"; then
+          szlib_inc="$withval/include"
+          szlib_lib="$withval/lib"
+        fi
+        ;;
+    esac
+
+    dnl Trying to include -I/usr/include and -L/usr/lib is redundant and
+    dnl can mess some compilers up.
+    if test "X$szlib_inc" = "X/usr/include"; then
+      szlib_inc=""
+    fi
+    if test "X$szlib_lib" = "X/usr/lib"; then
+      szlib_lib=""
+    fi
+
+    saved_CPPFLAGS="$CPPFLAGS"
+    saved_LDFLAGS="$LDFLAGS"
+
+    if test -n "$szlib_inc"; then
+      CPPFLAGS="$CPPFLAGS -I$szlib_inc"
+    fi
+
+    AC_CHECK_HEADERS([szlib.h],
+                     [HAVE_SZLIB_H="yes"],
+                     [CPPFLAGS="$saved_CPPFLAGS"])
+
+    if test -n "$szlib_lib"; then
+      LDFLAGS="$LDFLAGS -L$szlib_lib"
+    fi
+
+    AC_CHECK_LIB([sz], [SZ_BufftoBuffCompress],,
+                 [LDFLAGS="$saved_LDFLAGS"; unset HAVE_SZLIB])
+
+    if test -z "$HAVE_SZLIB" -a -n "$HDF5_CONFIG_ABORT"; then
+      AC_MSG_ERROR([couldn't find szlib library])
+    fi
+    ;;
+esac
+
+if test "x$HAVE_SZLIB" = "xyes" -a "x$HAVE_SZLIB_H" = "xyes"; then
+    dnl SZLIB library is available.  Check if it can encode
+    AC_MSG_CHECKING([for szlib encoder])
+
+    AC_CACHE_VAL([hdf5_cv_szlib_functional],
+        [AC_TRY_RUN([
+        #include <szlib.h>
+
+        int main(void)
+        {
+            SZ_encoder_enabled();
+            exit(0);
+        }
+        ], [hdf5_cv_szlib_functional=yes], [hdf5_cv_szlib_functional=no],)])
+
+    AC_CACHE_VAL([hdf5_cv_szlib_can_encode],
+        [AC_TRY_RUN([
+        #include <szlib.h>
+
+        int main(void)
+        {
+                /* SZ_encoder_enabled returns 1 if encoder is present */
+            if(SZ_encoder_enabled() == 1)
+                exit(0);
+            else
+                exit(1);
+        }
+        ], [hdf5_cv_szlib_can_encode=yes], [hdf5_cv_szlib_can_encode=no],)])
+
+    if test ${hdf5_cv_szlib_functional} = "no"; then
+        hdf5_cv_szlib_can_encode=broken
+    else
+        AC_DEFINE(HAVE_FILTER_SZIP, 1,
+                [Define if support for szip filter is enabled])
+        USE_FILTER_SZIP="yes"
+    fi
+
+    if test ${hdf5_cv_szlib_can_encode} = "yes"; then
+        AC_MSG_RESULT([yes])
+    fi
+    if test ${hdf5_cv_szlib_can_encode} = "no"; then
+        AC_MSG_RESULT([no])
+    fi
+    if test ${hdf5_cv_szlib_can_encode} = "broken"; then
+        AC_MSG_RESULT([shared szlib library cannot be linked. disabling szip. use static szip library instead.])
+    fi
+
+    dnl Add "szip" to external filter list
+    if test ${hdf5_cv_szlib_can_encode} = "yes"; then
+        if test "X$EXTERNAL_FILTERS" != "X"; then
+            EXTERNAL_FILTERS="${EXTERNAL_FILTERS},"
+        fi
+        EXTERNAL_FILTERS="${EXTERNAL_FILTERS}szip(encoder)"
+    fi
+    if test ${hdf5_cv_szlib_can_encode} = "no"; then
+        if test "X$EXTERNAL_FILTERS" != "X"; then
+            EXTERNAL_FILTERS="${EXTERNAL_FILTERS},"
+        fi
+        EXTERNAL_FILTERS="${EXTERNAL_FILTERS}szip(no encoder)"
+    fi
+
+fi
+
+dnl Checkpoint the cache
+AC_CACHE_SAVE
+
+dnl ----------------------------------------------------------------------
+dnl Is the Pthreads library present?  It has a header file `pthread.h' and
+dnl a library `-lpthread' and their locations might be specified with the
+dnl `--with-pthread' command-line switch.  The value is an include path
+dnl and/or a library path.  If the library path is specified then it must
+dnl be preceded by a comma.
+dnl
+AC_SUBST([PTHREAD]) PTHREAD=yes
+AC_ARG_WITH([pthread],
+            [AC_HELP_STRING([--with-pthread=DIR],
+                            [Use the Pthreads library [default=no]])],,
+            withval=no)
+
+case "$withval" in
+  yes)
+    AC_CHECK_HEADERS([pthread.h])
+    AC_CHECK_LIB([pthread], [pthread_create],, [unset PTHREAD])
+    ;;
+  no)
+    AC_MSG_CHECKING([for pthread])
+    AC_MSG_RESULT([suppressed])
+    unset PTHREAD
+    ;;
+  *)
+    case "$withval" in
+      *,*)
+        pthread_inc="`echo $withval | cut -f1 -d,`"
+        pthread_lib="`echo $withval | cut -f2 -d, -s`"
+        ;;
+      *)
+        if test -n "$withval"; then
+          pthread_inc="$withval/include"
+          pthread_lib="$withval/lib"
+        fi
+        ;;
+    esac
+
+    dnl Trying to include -I/usr/include and -L/usr/lib is redundant and
+    dnl can mess some compilers up.
+    if test "X$pthread_inc" = "X/usr/include"; then
+      pthread_inc=""
+    fi
+    if test "X$pthread_lib" = "X/usr/lib"; then
+      pthread_lib=""
+    fi
+
+    if test -n "$pthread_inc"; then
+      saved_CPPFLAGS="$CPPFLAGS"
+      CPPFLAGS="$CPPFLAGS -I$pthread_inc"
+      AC_CHECK_HEADERS([pthread.h],, [CPPFLAGS="$saved_CPPFLAGS"; unset PTHREAD])
+    else
+      AC_CHECK_HEADERS([pthread.h],, [unset PTHREAD])
+    fi
+
+    if test -n "$pthread_lib"; then
+      saved_LDFLAGS="$LDFLAGS"
+      LDFLAGS="$LDFLAGS -L$pthread_lib"
+      AC_CHECK_LIB([pthread], [pthread_create],,
+                   [LDFLAGS="$saved_LDFLAGS"; unset PTHREAD])
+    else
+      AC_CHECK_LIB([pthread], [pthread_create],, [unset PTHREAD])
+    fi
+    ;;
+esac
+
+dnl ----------------------------------------------------------------------
+dnl Enable thread-safe version of library.  It requires Pthreads support.
+dnl
+AC_MSG_CHECKING([for thread safe support])
+AC_ARG_ENABLE([threadsafe],
+              [AC_HELP_STRING([--enable-threadsafe],
+                              [Enable thread safe capability])],
+              THREADSAFE=$enableval)
+
+case "X-$THREADSAFE" in
+  X-|X-no)
+    AC_MSG_RESULT([no])
+    ;;
+  X-yes)
+    dnl Check that we can link a simple Pthread program.
+    AC_TRY_LINK(, [pthread_create()],
+                [AC_MSG_RESULT([yes]); THREADSAFE=yes],
+                [AC_MSG_ERROR([needed pthread library not available])])
+    ;;
+  *)
+    AC_MSG_RESULT([error])
+    AC_MSG_ERROR([\'$enableval\' is not a valid threadsafe type])
+    ;;
+esac
+
+if test "X$THREADSAFE" = "Xyes"; then
+  AC_DEFINE([HAVE_THREADSAFE], [1], [Define if we have thread safe support])
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Check if they would like the HDF5 v1.4 compatibility functions
+dnl compiled in
+dnl
+AC_MSG_CHECKING([whether HDF5 v1.4 compatibility functions enabled])
+AC_ARG_ENABLE([hdf5v1_4],
+              [AC_HELP_STRING([--enable-hdf5v1_4],
+                              [Compile the HDF5 v1.4 compatibility
+                               interface [default=no]])],
+              [HDF5_V1_4_COMPAT=$enableval])
+
+if test "$HDF5_V1_4_COMPAT" = "yes"; then
+  AC_MSG_RESULT([yes])
+  AC_DEFINE([WANT_H5_V1_4_COMPAT], [1],
+            [Define if the HDF5 v1.4 compatibility functions are to be compiled in])
+else
+  AC_MSG_RESULT([no])
+fi
+
+dnl ----------------------------------------------------------------------
+dnl How does one figure out the local time zone?  Anyone know of a
+dnl Posix way to do this?
+dnl
+
+dnl First check if `struct tm' has a `tm_gmtoff' member.
+AC_MSG_CHECKING([for tm_gmtoff in struct tm])
+AC_TRY_COMPILE([
+#include <sys/time.h>
+#include <time.h>], [struct tm tm; tm.tm_gmtoff=0;],
+AC_DEFINE([HAVE_TM_GMTOFF], [1],
+          [Define if `tm_gmtoff' is a member of `struct tm'])
+AC_MSG_RESULT([yes]),
+AC_MSG_RESULT([no]))
+
+dnl check if `struct tm' has a `__tm_gmtoff' member.
+AC_MSG_CHECKING([for __tm_gmtoff in struct tm])
+AC_TRY_COMPILE([
+#include <sys/time.h>
+#include <time.h>], [struct tm tm; tm.__tm_gmtoff=0;],
+AC_DEFINE([HAVE___TM_GMTOFF], [1],
+          [Define if `__tm_gmtoff' is a member of `struct tm'])
+AC_MSG_RESULT([yes]),
+AC_MSG_RESULT([no]))
+
+dnl Check whether the global variable `timezone' is defined.
+AC_MSG_CHECKING([for global timezone variable])
+AC_TRY_LINK([
+#include <sys/time.h>
+#include <time.h>], [timezone=0;],
+AC_DEFINE([HAVE_TIMEZONE], [1],
+          [Define if `timezone' is a global variable])
+AC_MSG_RESULT([yes]),
+AC_MSG_RESULT([no]))
+
+dnl Check whether `struct timezone' is defined.
+AC_STRUCT_TIMEZONE
+AC_MSG_CHECKING([for struct timezone])
+AC_TRY_COMPILE([
+#include <sys/types.h>
+#include <sys/time.h>
+#include <time.h>], [struct timezone tz; tz.tz_minuteswest=0;],
+AC_DEFINE([HAVE_STRUCT_TIMEZONE], [1],
+          [Define if `struct timezone' is defined])
+have_struct_tz="yes"
+AC_MSG_RESULT([yes]),
+AC_MSG_RESULT([no]))
+
+dnl If gettimeofday() is going to be used, make sure it uses the timezone struct
+
+if test "$have_gettime" = "yes" -a "$have_struct_tz" = "yes"; then
+   AC_MSG_CHECKING(whether gettimeofday() gives timezone)
+   AC_CACHE_VAL([hdf5_cv_gettimeofday_tz],
+       [AC_TRY_RUN([
+          #include <time.h>
+          #include <sys/time.h>
+          int main(void)
+          {
+             struct timeval tv;
+             struct timezone tz;
+             tz.tz_minuteswest = 7777;  /* Initialize to an unreasonable number */
+             tz.tz_dsttime = 7;
+             gettimeofday(&tv, &tz);
+                /* Check whether the function returned any value at all */
+             if(tz.tz_minuteswest == 7777 && tz.tz_dsttime == 7)
+                exit(1);
+             else exit (0);
+          }], [hdf5_cv_gettimeofday_tz=yes], [hdf5_cv_gettimeofday_tz=no],)])
+
+   if test ${hdf5_cv_gettimeofday_tz} = "yes"; then
+      AC_MSG_RESULT([yes])
+      AC_DEFINE([GETTIMEOFDAY_GIVES_TZ], [1],
+                [Define if gettimeofday() populates the tz pointer passed in])
+   else
+      AC_MSG_RESULT([no])
+   fi
+fi 
+
+dnl ----------------------------------------------------------------------
+dnl Does the struct stat have the st_blocks field?  This field is not Posix.
+dnl
+AC_MSG_CHECKING([for st_blocks in struct stat])
+AC_TRY_COMPILE([
+#include <sys/stat.h>],[struct stat sb; sb.st_blocks=0;],
+AC_DEFINE([HAVE_STAT_ST_BLOCKS], [1],
+          [Define if `struct stat' has the `st_blocks' field])
+AC_MSG_RESULT([yes]),
+AC_MSG_RESULT([no]))
+
+dnl ----------------------------------------------------------------------
+dnl How do we figure out the width of a tty in characters?
+dnl
+AC_CHECK_FUNCS(_getvideoconfig gettextinfo GetConsoleScreenBufferInfo)
+AC_CHECK_FUNCS(_scrsize ioctl)
+
+AC_MSG_CHECKING([for struct videoconfig])
+AC_TRY_COMPILE(,[struct videoconfig w; w.numtextcols=0;],
+AC_DEFINE([HAVE_STRUCT_VIDEOCONFIG], [1],
+          [Define if `struct videoconfig' is defined])
+AC_MSG_RESULT([yes]),
+AC_MSG_RESULT([no]))
+
+AC_MSG_CHECKING([for struct text_info])
+AC_TRY_COMPILE(, [struct text_info w; w.screenwidth=0;],
+AC_DEFINE([HAVE_STRUCT_TEXT_INFO], [1],
+          [Define if `struct text_info' is defined])
+AC_MSG_RESULT([yes]),
+AC_MSG_RESULT([no]))
+
+AC_MSG_CHECKING([for TIOCGWINSZ])
+AC_TRY_COMPILE([#include <sys/ioctl.h>],[int w=TIOCGWINSZ;],
+AC_DEFINE([HAVE_TIOCGWINSZ], [1],
+          [Define if the ioctl TIOGWINSZ is defined])
+AC_MSG_RESULT([yes]),
+AC_MSG_RESULT([no]))
+
+AC_MSG_CHECKING([for TIOCGETD])
+AC_TRY_COMPILE([#include <sys/ioctl.h>],[int w=TIOCGETD;],
+AC_DEFINE([HAVE_TIOCGETD], [1],
+          [Define if the ioctl TIOCGETD is defined])
+AC_MSG_RESULT([yes]),
+AC_MSG_RESULT([no]))
+
+
+dnl ----------------------------------------------------------------------
+dnl Check for functions.
+dnl
+AC_CHECK_FUNCS(alarm fork frexpf frexpl gethostname getpwuid getrusage)
+AC_CHECK_FUNCS(BSDgettimeofday longjmp setsysinfo sigaction)
+AC_CHECK_FUNCS(signal snprintf vsnprintf strdup system waitpid)
+
+dnl ----------------------------------------------------------------------
+dnl Check compiler characteristics
+dnl
+AC_C_CONST
+AC_C_INLINE
+
+AC_MSG_CHECKING([for __attribute__ extension])
+AC_TRY_COMPILE(,[int __attribute__((unused)) x],
+               AC_DEFINE([HAVE_ATTRIBUTE], [1],
+                         [Define if the __attribute__(()) extension is present])
+               AC_MSG_RESULT([yes]),
+               AC_MSG_RESULT([no]))
+
+AC_MSG_CHECKING([for __FUNCTION__ extension])
+AC_TRY_COMPILE(,[(void)__FUNCTION__],
+               AC_DEFINE([HAVE_FUNCTION], [1],
+                         [Define if the compiler understand the __FUNCTION__ keyword])
+               AC_MSG_RESULT([yes]),
+               AC_MSG_RESULT([no]))
+
+dnl ----------------------------------------------------------------------
+dnl Try to figure out how to print `long long'.  Some machines use `%lld'
+dnl and others use `%qd'.  There may be more!  The final `l' is a
+dnl default in case none of the others work.
+dnl Need to patch up LD_LIBRARY_PATH so that the execution can find all
+dnl the dynamic library.  The correct way to do it should be updating
+dnl LD_LIBRARY_PATH along with LDFLAGS or do it with the AC_TRY_RUN macro.
+dnl
+AC_MSG_CHECKING([how to print long long])
+AC_CACHE_VAL([hdf5_cv_printf_ll],
+LD_LIBRARY_PATH="$LD_LIBRARY_PATH`echo $LDFLAGS | sed -e 's/-L/:/g' -e 's/ //g'`"
+export LD_LIBRARY_PATH
+
+for hdf5_cv_printf_ll in l ll L q unknown; do
+   AC_TRY_RUN([
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void)
+{
+	char *s = malloc(128);
+	long long x = (long long)1048576 * (long long)1048576;
+	sprintf(s,"%${hdf5_cv_printf_ll}d",x);
+	exit(strcmp(s,"1099511627776"));
+}
+   ], break,,continue)
+done)dnl
+
+AC_MSG_RESULT([%${hdf5_cv_printf_ll}d and %${hdf5_cv_printf_ll}u])
+AC_DEFINE_UNQUOTED([PRINTF_LL_WIDTH], ["$hdf5_cv_printf_ll"], 
+                   [Width for printf() for type `long long' or `__int64', use `ll'])
+
+dnl ----------------------------------------------------------------------
+dnl Check if pthread_attr_setscope(&attribute, PTHREAD_SCOPE_SYSTEM)
+dnl is supported on this system
+dnl
+AC_MSG_CHECKING([Threads support system scope])
+AC_CACHE_VAL([hdf5_cv_system_scope_threads],
+[AC_TRY_RUN([
+#if STDC_HEADERS
+#include <stdlib.h>
+#include <pthread.h>
+#endif
+
+int main(void)
+{
+    pthread_attr_t attribute;
+    int ret;
+
+    pthread_attr_init(&attribute);
+    ret=pthread_attr_setscope(&attribute, PTHREAD_SCOPE_SYSTEM);
+    exit(ret==0 ? 0 : 1);
+}
+], [hdf5_cv_system_scope_threads=yes], [hdf5_cv_system_scope_threads=no],)])
+
+if test ${hdf5_cv_system_scope_threads} = "yes"; then
+  AC_DEFINE([SYSTEM_SCOPE_THREADS], [1],
+            [Define if your system supports pthread_attr_setscope(&attribute, PTHREAD_SCOPE_SYSTEM) call.])
+  AC_MSG_RESULT([yes])
+else
+  AC_MSG_RESULT([no])
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Checking to see if GPFS is available on this filesystem
+dnl
+AC_ARG_ENABLE([gpfs],
+              [AC_HELP_STRING([--enable-gpfs],
+                              [Enable GPFS hints for the MPI/POSIX file
+                               driver. [default=no]])],,
+              [enableval=no])
+
+case "X-$enableval" in
+  X-yes)
+    AC_CHECK_HEADERS([gpfs.h],
+                     AC_MSG_CHECKING([for GPFS support])
+                     AC_TRY_COMPILE([#include <gpfs.h>],
+                                    [int fd = 0; gpfs_fcntl(fd, (void *)0);],
+                                    AC_DEFINE(HAVE_GPFS, 1,
+                                              [Define if we have GPFS support])
+                                    AC_MSG_RESULT([yes])
+                                    LIBS="$LIBS -lgpfs"
+                                    GPFS="yes",
+                                    AC_MSG_RESULT([no])
+                                    GPFS="no"))
+    ;;
+  X-no|*)
+    AC_MSG_CHECKING([for gpfs])
+    AC_MSG_RESULT([suppressed])
+    ;;
+esac
+ 
+dnl ----------------------------------------------------------------------
+dnl Turn on debugging by setting compiler flags
+dnl This must come after the enable-production since it depends on production.
+dnl
+AC_MSG_CHECKING(for debug flags)
+AC_ARG_ENABLE([debug],
+              [AC_HELP_STRING([--enable-debug=all],
+                              [Turn on debugging in all packages. One may
+                               also specify a comma-separated list of
+                               package names without the leading H5 or
+                               the word no. The default is most packages
+                               if production is disabled; no if it is enabled.
+                               ])],
+              [DEBUG_PKG=$enableval])
+
+dnl Default to no if producton is enabled
+if test "X-$DEBUG_PKG" = X- ; then
+    if test "$enable_production" = yes ; then
+        DEBUG_PKG=no
+    else
+        DEBUG_PKG=yes
+    fi
+fi
+
+AC_SUBST([DEBUG_PKG])
+all_packages="ac,b,d,e,f,g,hg,hl,i,mf,mm,o,p,s,t,v,z"
+case "X-$DEBUG_PKG" in
+  X-yes)
+    DEBUG_PKG="d,e,f,g,hg,i,mm,o,p,s,t,v,z"
+    CPPFLAGS="$CPPFLAGS -UNDEBUG"
+    AC_MSG_RESULT([default ($DEBUG_PKG)])
+    ;;
+  X-all)
+    DEBUG_PKG=$all_packages
+    CPPFLAGS="$CPPFLAGS -UNDEBUG"
+    AC_MSG_RESULT([all ($DEBUG_PKG)])
+    ;;
+  X-no|X-none)
+    AC_MSG_RESULT([none])
+    DEBUG_PKG=
+    CPPFLAGS="$CPPFLAGS -DNDEBUG"
+    ;;
+  *)
+    AC_MSG_RESULT([$DEBUG_PKG])
+    ;;
+esac
+
+if test -n "$DEBUG_PKG"; then
+  for pkg in `echo $DEBUG_PKG | tr ${as_cr_letters}',' ${as_cr_LETTERS}' '`; do
+    CPPFLAGS="$CPPFLAGS -DH5${pkg}_DEBUG"
+  done
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Check if they would like the function stack support compiled in
+dnl
+AC_MSG_CHECKING([whether function stack tracking is enabled])
+AC_ARG_ENABLE([funcstack],
+              [AC_HELP_STRING([--enable-funcstack],
+                              [Enable the function stack tracing.
+                               Default=no if debug is disabled.])],
+              [FUNCSTACK=$enableval])
+
+dnl Default to no if debug is disabled
+if test "X-$FUNCSTACK" = X- ; then
+  if test -z "$DEBUG_PKG" ; then
+    FUNCSTACK=no
+  else
+    FUNCSTACK=yes
+  fi
+fi
+case "X-$FUNCSTACK" in
+  X-|X-yes)
+      FUNCSTACK="yes"
+      AC_MSG_RESULT([yes])
+      AC_DEFINE([HAVE_FUNCSTACK], [1],
+                [Define if the function stack tracing code is to be compiled in])
+    ;;
+  *)
+      AC_MSG_RESULT([no])
+    ;;
+esac
+
+dnl ----------------------------------------------------------------------
+dnl Enable tracing of the API
+dnl This must come after the enable-debug since it depends on debug.
+dnl
+AC_SUBST([TRACE_API])
+AC_MSG_CHECKING([for API tracing]);
+AC_ARG_ENABLE([trace],
+              [AC_HELP_STRING([--enable-trace],
+                              [Enable API tracing capability. Default=no
+                               if debug is disabled.])],
+              TRACE=$enableval)
+
+dnl Default to no if debug is disabled
+if test "X-$TRACE" = X- ; then
+  if test -z "$DEBUG_PKG" ; then
+    TRACE=no
+  else
+    TRACE=yes
+  fi
+fi
+
+case "X-$TRACE" in
+  X-yes)
+    AC_MSG_RESULT([yes])
+    TRACE_API=yes
+    CPPFLAGS="$CPPFLAGS -DH5_DEBUG_API"
+    ;;
+  X-no|*)
+    AC_MSG_RESULT([no])
+    TRACE_API=no
+    CPPFLAGS="$CPPFLAGS -UH5_DEBUG_API"
+    ;;
+esac
+
+dnl ----------------------------------------------------------------------
+dnl Enable instrumenting of the library's internal operations
+dnl This must come after the enable-debug since it depends on debug.
+dnl
+AC_SUBST([INSTRUMENT_LIBRARY])
+AC_MSG_CHECKING([for instrumented library]);
+AC_ARG_ENABLE([instrument],
+              [AC_HELP_STRING([--enable-instrument],
+                              [Enable library instrumentation of optimization
+                                tracing.  Default=no if debug is disabled.])],
+              INSTRUMENT=$enableval)
+
+dnl Default to no if debug is disabled
+if test "X-$INSTRUMENT" = X- ; then
+  if test -z "$DEBUG_PKG" ; then
+    INSTRUMENT=no
+  else
+    INSTRUMENT=yes
+  fi
+fi
+
+case "X-$INSTRUMENT" in
+  X-yes)
+    AC_MSG_RESULT([yes])
+    INSTRUMENT_LIBRARY=yes
+    AC_DEFINE([HAVE_INSTRUMENTED_LIBRARY], [1],
+              [Define if library will contain instrumentation to detect correct optimization operation])
+    ;;
+  X-no|*)
+    AC_MSG_RESULT([no])
+    INSTRUMENT_LIBRARY=no
+    ;;
+esac
+
+dnl ----------------------------------------------------------------------
+dnl Check if they would like to securely clear file buffers before they are
+dnl     written.
+dnl
+AC_SUBST([CLEARFILEBUF])
+AC_MSG_CHECKING([whether to clear file buffers])
+AC_ARG_ENABLE([clear-file-buffers],
+              [AC_HELP_STRING([--enable-clear-file-buffers],
+                              [Securely clear file buffers before writing
+                              to file.  Default=yes.])],
+              [CLEARFILEBUF=$enableval])
+
+case "X-$CLEARFILEBUF" in
+  *)
+      CLEARFILEBUF=yes
+      AC_MSG_RESULT([yes])
+      AC_DEFINE([CLEAR_MEMORY], [1],
+                [Define if the memory buffers being written to disk should be
+                cleared before writing.])
+    ;;
+  X-no)
+      CLEARFILEBUF=no
+      AC_MSG_RESULT([no])
+    ;;
+esac
+
+dnl Checkpoint the cache
+AC_CACHE_SAVE
+
+dnl ----------------------------------------------------------------------
+dnl What header files and libraries do we have to look for for parallel
+dnl support?  For the most part, search paths are already specified with
+dnl CPPFLAGS and LDFLAGS or are known to the compiler.  If the user says
+dnl `--disable-parallel' but specifies a known parallel compiler (like mpicc
+dnl or mpcc) then parallel support is enabled but configure doesn't search
+dnl for any parallel header files or libraries.
+dnl
+AC_ARG_ENABLE([parallel],
+              [AC_HELP_STRING([--enable-parallel],
+                              [Search for MPI-IO and MPI support files])])
+
+AC_MSG_CHECKING([for parallel support files])
+case "X-$enable_parallel" in
+  X-|X-no|X-none)
+    dnl Either we are not compiling for parallel or the header and
+    dnl library files and locations are known to the compiler (this is
+    dnl the case for a correct installation of mpicc for instance).
+    AC_MSG_RESULT([skipped])
+    ;;
+
+  X-yes)
+    dnl We want to compile a parallel library with a compiler that
+    dnl may already know how to link with MPI and MPI-IO.
+    AC_MSG_RESULT([provided by compiler])
+    PARALLEL=yes
+
+    dnl Try link a simple MPI program.  If fail, try again with -lmpi and
+    dnl -lmpich.
+    AC_TRY_LINK(, MPI_Init(),, \
+	AC_CHECK_LIB(mpi, MPI_Init,, \
+	    AC_CHECK_LIB(mpich, MPI_Init,, PARALLEL=no)))
+
+    dnl Then try link a simple MPI-IO program. If fail, try again with
+    dnl -lmpio.
+    if test "X$PARALLEL" = "Xyes"; then
+      AC_TRY_LINK(, [MPI_File_open()],,
+                  [AC_CHECK_LIB([mpio], [MPI_File_open],, [PARALLEL=no])])
+    fi
+
+    dnl Set RUNPARALLEL to mpirun if not set yet.
+    if test "X$PARALLEL" = "Xyes" -a -z "$RUNPARALLEL"; then
+      RUNPARALLEL="mpirun -np \$\${NPROCS:=3}"
+    fi
+    ;;
+
+  *)
+    AC_MSG_RESULT([error])
+    AC_MSG_ERROR([\'$enable_parallel\' is not a valid parallel search type])
+    ;;
+esac
+
+dnl ----------------------------------------------------------------------
+dnl Print some other parallel information and do some sanity checks.
+dnl
+if test -n "$PARALLEL"; then
+  dnl Ensure that user isn't trying to build both C++ and parallel;
+  dnl this isn't supported.
+  if test "X$HDF_CXX" = "Xyes"; then
+    AC_MSG_ERROR([enable-cxx is incompatible with parallel library])
+  fi
+
+  dnl The 'testpar' directory should participate in the build
+  TESTPARALLEL=testpar
+
+  dnl We are building a parallel library
+  AC_DEFINE([HAVE_PARALLEL], [1], [Define if we have parallel support])
+
+  dnl Display what we found about running programs
+  AC_MSG_CHECKING([prefix for running on one processor])
+  AC_MSG_RESULT([$RUNSERIAL])
+  AC_MSG_CHECKING([prefix for running in parallel])
+  AC_MSG_RESULT([$RUNPARALLEL])
+
+  dnl Check that we can link a simple MPI and MPI-IO application
+  AC_MSG_CHECKING([whether a simple MPI-IO program can be linked])
+  AC_TRY_LINK(, [MPI_Init(); MPI_File_open();],
+              AC_MSG_RESULT([yes]),
+              AC_MSG_RESULT([no])
+              AC_MSG_ERROR([unable to link a simple MPI-IO application]))
+
+  dnl There *must* be some way to run in parallel even if it's just the
+  dnl word `none'.
+  if test -z "$RUNPARALLEL"; then
+    AC_MSG_ERROR([no way to run a parallel program])
+  fi
+
+  dnl If RUNSERIAL or RUNPARALLEL is the word `none' then replace it with
+  dnl the empty string.
+  if test "X$RUNSERIAL" = "Xnone"; then
+    RUNSERIAL=""
+  fi
+  if test "X$RUNPARALLEL" = "Xnone"; then
+    RUNPARALLEL=""
+  fi
+
+  dnl --------------------------------------------------------------------
+  dnl Do we want MPE instrumentation feature on?
+  dnl
+  dnl This must be done after enable-parallel is checked since it depends
+  dnl on a mpich compiler.
+  dnl
+  AC_SUBST([MPE]) MPE=yes
+  AC_ARG_WITH([mpe],
+              [AC_HELP_STRING([--with-mpe=DIR],
+                              [Use MPE instrumentation [default=no]])],,
+              [withval=no])
+
+  case "X-$withval" in
+    X-|X-no|X-none)
+      AC_MSG_CHECKING([for MPE])
+      AC_MSG_RESULT([suppressed])
+      unset MPE
+      ;;
+    X-yes)
+      AC_CHECK_HEADERS([mpe.h],, [unset MPE])
+      AC_CHECK_LIB([mpe], [MPE_Init_log],, [unset MPE])
+      ;;
+    *)
+      case "$withval" in
+        *,*)
+          mpe_inc="`echo $withval | cut -f1 -d,`"
+          mpe_lib="`echo $withval | cut -f2 -d, -s`"
+          ;;
+        *)
+          if test -n "$withval"; then
+            mpe_inc="$withval/include"
+            mpe_lib="$withval/lib"
+          fi
+          ;;
+      esac
+  
+      dnl Trying to include -I/usr/include and -L/usr/lib is redundant and
+      dnl can mess some compilers up.
+      if test "X$mpe_inc" = "X/usr/include"; then
+        mpe_inc=""
+      fi
+      if test "X$mpe_lib" = "X/usr/lib"; then
+        mpe_lib=""
+      fi
+  
+      if test -n "$mpe_inc"; then
+        saved_CPPFLAGS="$CPPFLAGS"
+        CPPFLAGS="$CPPFLAGS -I$mpe_inc"
+        AC_CHECK_HEADERS([mpe.h],, [CPPFLAGS="$saved_CPPFLAGS"; unset MPE])
+      else
+        AC_CHECK_HEADERS([mpe.h],, [unset MPE])
+      fi
+  
+      if test -n "$mpe_lib"; then
+        saved_LDFLAGS="$LDFLAGS"
+        LDFLAGS="$LDFLAGS -L$mpe_lib"
+        AC_CHECK_LIB([mpe], [MPE_Init_log],,
+                     [LDFLAGS="$saved_LDFLAGS"; unset MPE])
+      else
+        AC_CHECK_LIB([mpe], [MPE_Init_log],, [unset MPE])
+      fi
+      ;;
+  esac
+
+  if test "X-$MPE" = "X-yes"; then
+    AC_DEFINE([HAVE_MPE], [1], [Define if we have MPE support])
+  fi
+
+  dnl ----------------------------------------------------------------------
+  dnl Set the flag to indicate that the MPI_File_set_size() function
+  dnl works with files over 2GB, unless it's already set in the cache.
+  dnl (This flag should be set for all machines, except for ASCI Red, where
+  dnl the cache value is set in it's config file)
+  dnl
+  AC_MSG_CHECKING([if MPI_File_set_size works for files over 2GB])
+  AC_CACHE_VAL([hdf5_cv_mpi_file_set_size_big], [hdf5_cv_mpi_file_set_size_big=yes])
+  
+  if test ${hdf5_cv_mpi_file_set_size_big} = "yes"; then
+    AC_DEFINE([MPI_FILE_SET_SIZE_BIG], [1],
+              [Define if your system's `MPI_File_set_size' function works for files over 2GB.])
+    AC_MSG_RESULT([yes])
+  else
+    AC_MSG_RESULT([no])
+  fi
+
+dnl ----------------------------------------------------------------------
+dnl Set the flag to indicate that the MPI_File_get_size() function
+dnl works.  The default is enabled unless the user knows the function
+dnl doesn't work on the system and disables it.  (This flag should be set
+dnl for all machines except for SGI Altix Propack 4 where the function 
+dnl doesn't return correct file size.)
+dnl
+AC_ARG_ENABLE([mpi-size],
+              [AC_HELP_STRING([--enable-mpi-size],
+                              [Some systems (only SGI Altix Propack 4 so far) return wrong value
+                               from MPI_File_get_size.  By disabling this function, the library
+                               will replace it with stat to get the correct file size.
+                               [default=yes]])],
+              [MPI_GET_SIZE=$enableval])
+
+AC_MSG_CHECKING([if MPI_File_get_size is enabled])
+
+AC_SUBST(MPI_GET_SIZE)
+case "X-$MPI_GET_SIZE" in
+  X-no)
+    AC_MSG_RESULT([no])
+    MPI_GET_SIZE=no
+    ;;
+  X-yes|*)
+    AC_MSG_RESULT([yes])
+    MPI_GET_SIZE=yes
+    AC_DEFINE([HAVE_MPI_GET_SIZE], [1],
+              [Define if MPI_File_get_size works correctly])
+    ;;
+esac
+
+dnl ----------------------------------------------------------------------
+dnl Check to see whether the complicate MPI derived datatype works. 
+dnl Up to now(Dec. 20th, 2004), we find that IBM's MPIO implemention doesn't
+dnl handle with the displacement of the complicate MPI type derived datatype 
+dnl correctly. So we add the check here.
+AC_MSG_CHECKING([if irregular hyperslab optimization code works inside MPI-IO])
+
+AC_CACHE_VAL([hdf5_mpi_complex_derived_datatype_works],[hdf5_mpi_complex_derived_datatype_works=yes])
+
+if test ${hdf5_mpi_complex_derived_datatype_works} = "yes"; then
+  AC_DEFINE([MPI_COMPLEX_DERIVED_DATATYPE_WORKS], [1],
+            [Define if your system can handle complicated MPI derived datatype correctly.])
+  AC_MSG_RESULT([yes])
+else
+  AC_MSG_RESULT([no])
+fi
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Turn on internal I/O filters by setting macros in header files
+dnl Internal I/O filters are contained entirely within the library and do
+dnl not depend on external headers or libraries.  The shuffle filter is
+dnl an example of an internal filter, while the gzip filter is an example of
+dnl an external filter.  Each external filter is controlled with an
+dnl "--with-foo=" configure flag.
+dnl
+AC_SUBST([FILTERS])
+AC_SUBST(USE_FILTER_SHUFFLE) USE_FILTER_SHUFFLE="no"
+AC_SUBST(USE_FILTER_FLETCHER32) USE_FILTER_FLETCHER32="no"
+AC_MSG_CHECKING([for I/O filters])
+AC_ARG_ENABLE([filters],
+              [AC_HELP_STRING([--enable-filters=all],
+                              [Turn on all internal I/O filters. One may
+                               also specify a comma-separated list of filters
+                               or the word no.  The default is all internal
+                               I/O filters.])],
+              [FILTERS=$enableval])
+
+dnl Eventually: all_filters="shuffle,foo,bar,baz"
+all_filters="shuffle,fletcher32"
+case "X-$FILTERS" in
+  X-|X-all)
+    FILTERS=$all_filters
+    AC_MSG_RESULT([all ($FILTERS)])
+    ;;
+  X-no|X-none)
+    AC_MSG_RESULT([none])
+    FILTERS="none"
+    ;;
+  *)
+    AC_MSG_RESULT([$FILTERS])
+    ;;
+esac
+
+if test -n "$FILTERS"; then
+  for filter in `echo $FILTERS | tr ${as_cr_letters}',' ${as_cr_LETTERS}' '`; do
+    dnl ------------------------------------------------------------------
+    dnl Have to use separate 'if' construct for each filter, so that
+    dnl autoheader can detect the AC_DEFINE for each one...
+    dnl
+    if test $filter = "SHUFFLE"; then
+      AC_DEFINE([HAVE_FILTER_SHUFFLE], [1],
+                [Define if support for shuffle filter is enabled])
+      USE_FILTER_SHUFFLE="yes"
+    fi
+    if test $filter = "FLETCHER32"; then
+      AC_DEFINE([HAVE_FILTER_FLETCHER32], [1],
+                [Define if support for Fletcher32 checksum is enabled])
+      USE_FILTER_FLETCHER32="yes"
+    fi
+  done
+fi
+
+dnl ----------------------------------------------------------------------
+dnl This is defined only when we're using CodeWarrior, since it has a
+dnl broken "open()" call.
+dnl
+if test 1 = 2; then
+  AC_DEFINE([NO_SHARED_WRITING], [1],
+            [Define if shared writing must be disabled (CodeWarrior only)])
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Set the flag to indicate that the machine can handle converting
+dnl denormalized floating-point values.
+dnl (This flag should be set for all machines, except for the Crays, where
+dnl the cache value is set in it's config file)
+dnl
+AC_MSG_CHECKING([if converting denormalized floating-point values is possible])
+AC_CACHE_VAL([hdf5_cv_convert_denormal_float], [hdf5_cv_convert_denormal_float=yes])
+
+if test ${hdf5_cv_convert_denormal_float} = "yes"; then
+  AC_DEFINE([CONVERT_DENORMAL_FLOAT], [1],
+            [Define if your system can handle converting denormalized floating-point values.])
+  AC_MSG_RESULT([yes])
+else
+  AC_MSG_RESULT([no])
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Set some variables for general configuration information to be saved
+dnl and installed with the libraries.
+dnl
+
+dnl HDF5 version from the first line of the README.txt file.
+H5_VERSION="`cut -d' ' -f3 $srcdir/README.txt | head -1`"
+AC_SUBST([H5_VERSION])
+
+dnl Configuration date
+AC_SUBST([CONFIG_DATE]) CONFIG_DATE="`date`"
+
+dnl User doing the configuration
+AC_SUBST([CONFIG_USER]) CONFIG_USER="`whoami`@`hostname`"
+if test -n "$ORGANIZATION"; then
+  CONFIG_USER="$CONFIG_USER at $ORGANIZATION"
+fi
+
+dnl Configuration mode (production, development, profile, etc) saved above.
+AC_SUBST([CONFIG_MODE])
+
+dnl Byte sex from the AC_C_BIGENDIAN macro.
+AC_SUBST([BYTESEX])
+if test "X$ac_cv_c_bigendian" = "Xyes"; then
+  BYTESEX="big-endian"
+else
+  BYTESEX="little-endian"
+fi
+
+if test "X$ac_cv_c_bigendian" = "Xyes"; then
+  WORDS_BIGENDIAN="yes"
+else
+  WORDS_BIGENDIAN="no"
+fi
+AC_SUBST([WORDS_BIGENDIAN])
+
+
+
+dnl Are we compiling static libraries, shared libraries, or both?  This
+dnl is only used for the libhdf5.settings file. We can't just look at
+dnl $enable_static and $enable_shared because if they're yes the ltconfig
+dnl might have decided that one or the other is simply not possible.
+dnl Therefore we have to look in the generated `libtool' shell script for
+dnl lines that set the value of `build_libtool_libs' (shared) and
+dnl `build_old_libs' (static).
+AC_SUBST([STATIC_SHARED])
+AC_SUBST([enable_shared])
+AC_SUBST([enable_static])
+if (grep '^build_libtool_libs=yes' libtool >/dev/null); then
+  enable_shared=yes
+else
+  enable_shared=no
+fi
+
+if (grep '^build_old_libs=yes' libtool >/dev/null); then
+  enable_static=yes
+else
+  enable_static=no
+fi
+
+if test "X$enable_static" = "Xyes" && test "X$enable_shared" = "Xyes"; then
+  STATIC_SHARED="static, shared"
+elif test "X$enable_static" = "Xyes"; then
+  STATIC_SHARED="static"
+elif test "X$enable_shared" = "Xyes"; then
+  STATIC_SHARED="shared"
+else
+  STATIC_SHARED="none"
+fi
+
+dnl Parallel support? (set above except empty if none)
+PARALLEL=${PARALLEL:-no}
+
+dnl Compiler with version information. This consists of the full path
+dnl name of the compiler and the reported version number.
+AC_SUBST([CC_VERSION])
+if `echo $CC | grep / 2>&1 /dev/null`; then
+  CC_VERSION="$CC"	
+else
+  CC_VERSION="$CC";
+  for x in `echo $PATH | sed -e 's/:/ /g'`; do
+    if test -x $x/$CC; then
+      CC_VERSION="$x/$CC"
+      break
+    fi
+  done
+fi
+if test -n "$cc_vendor" && test -n "$cc_version"; then
+  CC_VERSION="$CC_VERSION ($cc_vendor-$cc_version)"
+fi
+
+dnl ----------------------------------------------------------------------
+dnl pgcc version 6.0x have optimization (-O, -O2 or -O3) problem.  Detect
+dnl these versions and add option "-Mx,28,0x8" to the compiler to avoid
+dnl the problem if optimization is enable.
+dnl
+if (${CC-cc} -V 2>&1 | grep '^pgcc 6.0') > /dev/null && test "X$enable_production" = "Xyes"; then
+    CC="${CC-cc} -Mx,28,0x8"
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Where is the root of the source tree. Give an absolute address so
+dnl we can find it no matter which directory of the distribution is our
+dnl current directory. The built-in pwd fails on some systems, but the
+dnl /bin/pwd version works OK.
+dnl
+if test -x /bin/pwd; then
+  pwd=/bin/pwd
+else
+  pwd=pwd
+fi
+AC_SUBST([ROOT]) ROOT="`$pwd`"
+
+dnl ----------------------------------------------------------------------
+dnl Determine the runtime libraries we may need to include in the
+dnl libtools command so that executables will find the correct dynamic
+dnl libraries.
+dnl 
+AC_SUBST([DYNAMIC_DIRS]) DYNAMIC_DIRS=""
+
+if test -n "$LDFLAGS"; then
+  for d in $LDFLAGS ; do
+    case "$d" in
+      -L*)
+        d="`echo $d | sed -e 's/-L//g'`"
+        case "$d" in
+          .*)
+            dnl If the path isn't absolute, make it so by
+            dnl prepending the ROOT directory to it.
+            d=${ROOT}/$d
+            ;;
+        esac
+        DYNAMIC_DIRS="-R${d} $DYNAMIC_DIRS"
+        ;;
+    esac
+  done
+fi
+
+if test -n "$CPPFLAGS"; then
+  TEMP_CPPFLAGS=""
+  for d in $CPPFLAGS ; do
+    case "$d" in
+      -I.*)
+        dnl If the path isn't absolute, make it so by prepending
+        dnl the ROOT directory to it.
+        d="`echo $d | sed -e 's/-I//g'`"
+        d="-I${ROOT}/${d}"
+        ;;
+    esac
+    TEMP_CPPFLAGS="$d $TEMP_CPPFLAGS"
+  done
+  CPPFLAGS=$TEMP_CPPFLAGS
+fi
+
+dnl ----------------------------------------------------------------------
+dnl Check if they would like the High Level library  compiled
+dnl
+
+AC_SUBST(HL) HL=""
+AC_MSG_CHECKING([if high level library is enabled])
+AC_ARG_ENABLE([hl],
+     [AC_HELP_STRING([--enable-hl],
+                     [Enable the high level library [default=yes]])],
+     [HDF5_HL=$enableval],
+     [HDF5_HL=yes])
+
+if test "X$HDF5_HL" = "Xyes"; then
+ echo "yes"
+ HL="hl"
+else
+ echo "no"
+fi
+
+
+dnl ----------------------------------------------------------------------
+dnl Enable strict file format checks
+dnl
+AC_SUBST([STRICT_FORMAT_CHECKS])
+AC_MSG_CHECKING([Whether to perform strict file format checks]);
+AC_ARG_ENABLE([strict-format-checks],
+              [AC_HELP_STRING([--enable-strict-format-checks],
+                     [Enable strict file format checks, default=yes if
+                        debug flag is enabled, no otherwise])],
+             [STRICT_CHECKS=$enableval])
+
+dnl Default to yes if debug is enabled
+if test "X-$STRICT_CHECKS" = X- ; then
+  if test -z "$DEBUG_PKG" ; then
+    STRICT_CHECKS=no
+  else
+    STRICT_CHECKS=yes
+  fi
+fi
+
+case "X-$STRICT_CHECKS" in
+  X-yes)
+    AC_MSG_RESULT([yes])
+    STRICT_FORMAT_CHECKS=yes
+    AC_DEFINE([STRICT_FORMAT_CHECKS], [1],
+              [Define if strict file format checks are enabled])
+    ;;
+  X-no|*)
+    AC_MSG_RESULT([no])
+    STRICT_FORMAT_CHECKS=no
+    ;;
+esac
+
+
+dnl ----------------------------------------------------------------------
+dnl Enable embedded library information
+dnl
+AC_MSG_CHECKING([Whether to have library information embedded in the executables])
+AC_ARG_ENABLE([embedded-libinfo],
+    [AC_HELP_STRING([--enable-embedded-libinfo],
+	[Enable embedded library information [default=yes]])],
+	[enable_embedded_libinfo=$enableval],
+	[enable_embedded_libinfo=yes])
+
+   if test "${enable_embedded_libinfo}" = "yes"; then
+      AC_MSG_RESULT([yes])
+      AC_DEFINE([HAVE_EMBEDDED_LIBINFO], [1],
+                [Define if library information should be embedded in the executables])
+   else
+      AC_MSG_RESULT([no])
+    fi
+
+
+dnl ----------------------------------------------------------------------
+dnl Build the Makefiles.  Almost every Makefile.in will begin with the line
+dnl `@COMMENCE@' and end with the line `@CONCLUDE@'.  These lines insert
+dnl various files from the config directory into the Makefile.
+dnl
+AC_SUBST_FILE([COMMENCE]) COMMENCE=config/commence
+AC_SUBST_FILE([CONCLUDE]) CONCLUDE=config/conclude
+
+dnl The directory search list
+AC_SUBST([SEARCH]) SEARCH='$(srcdir) $(top_builddir)/src $(top_srcdir)/src'
+cmd='echo $SEARCH |sed "s/ /'$SEARCH_SEP'/g"'
+SEARCH="$SEARCH_RULE`eval $cmd`"
+export SEARCH
+
+dnl We don't need to say when we're entering directories if we're using
+dnl GNU make because make does it for us.
+if test "X$GMAKE" = "Xyes"; then
+  AC_SUBST([SETX]) SETX=":"
+else
+  AC_SUBST([SETX]) SETX="set -x"
+fi
+
+dnl Some cleanup stuff
+rm -f conftest conftest.o conftest.c dummy.o
+
+dnl Build config.status, touch the stamp files, and build all the Makefiles.
+dnl The order is such that the first `make' does not need to update any
+dnl configuration information. See config/commence.in for the order in which
+dnl things need to be done.
+
+# First the stamp1 file for H5config.h.in
+mkdir ./config >/dev/null 2>&1
+touch ./config/stamp1
+
+# Then the config.status file (but not makefiles)
+saved_no_create=$no_create
+no_create=yes
+
+dnl Set parallel build conditions depending on if TESTPARALLEL is defined.
+if test -n "$TESTPARALLEL"; then
+  PARALLEL_MAKE="$TESTPARALLEL/Makefile $TESTPARALLEL/testph5.sh"
+  BUILD_PARALLEL_CONDITIONAL_TRUE=
+  BUILD_PARALLEL_CONDITIONAL_FALSE='#'
+else
+  PARALLEL_MAKE=""
+  BUILD_PARALLEL_CONDITIONAL_TRUE='#'
+  BUILD_PARALLEL_CONDITIONAL_FALSE=
+fi
+
+
+# conditionally generate the high level makefiles
+# to do : fortran with hl
+if test "X$HDF5_HL" = "Xyes"; then
+ HL_FILES="hl/Makefile
+	   hl/examples/Makefile
+	   hl/src/Makefile
+           hl/test/Makefile
+           hl/tools/Makefile
+           hl/tools/gif2h5/Makefile"
+fi
+
+AC_CONFIG_FILES([src/libhdf5.settings
+                 config/depend1
+                 config/depend2
+                 config/depend3
+                 config/depend4
+                 config/dependN
+                 config/commence
+                 config/conclude
+                 Makefile
+                 src/Makefile
+                 test/Makefile
+                 test/testcheck_version.sh
+                 test/testlibinfo.sh
+                 $PARALLEL_MAKE
+                 perform/Makefile
+                 tools/Makefile
+                 tools/h5dump/Makefile
+                 tools/h5dump/testh5dump.sh
+                 tools/h5ls/testh5ls.sh
+                 tools/h5import/Makefile
+                 tools/h5diff/Makefile
+                 tools/h5jam/Makefile
+                 tools/h5jam/testh5jam.sh
+                 tools/h5repack/Makefile
+                 tools/h5repack/h5repack.sh
+                 tools/h5ls/Makefile
+                 tools/lib/Makefile
+                 tools/misc/Makefile
+                 tools/misc/h5cc
+                 examples/Makefile
+                 examples/testh5cc.sh
+                 doc/Makefile
+                 doc/html/Makefile
+                 doc/html/ed_libs/Makefile
+                 doc/html/ed_styles/Makefile
+                 doc/html/ADGuide/Makefile
+                 doc/html/Graphics/Makefile
+                 doc/html/Intro/Makefile
+                 doc/html/PSandPDF/Makefile
+                 doc/html/TechNotes/Makefile
+                 doc/html/cpplus/Makefile
+                 doc/html/cpplus_RM/Makefile
+                 doc/html/cpplus_RM/header_files/Makefile
+                 doc/html/fortran/Makefile
+		 $HL_FILES])
+
+AC_OUTPUT
+no_create=$saved_no_create
+
+# Then the stamp2 file for H5config.h
+touch ./config/stamp2
+
+# Finally the makefiles
+test "$no_create" = yes || ${CONFIG_SHELL-/bin/sh} $CONFIG_STATUS || exit 1
+
+chmod 755 tools/misc/h5cc
+
+dnl We don't want inline defined for C++ compilers
+dnl Don't worry about the C++ ifdef wrappers in the H5pubconf file, since
+dnl 'H5_inline' isn't a C++ keyword.
+cat >> src/H5config.h <<EOF
+
+#if defined(__cplusplus) && defined(inline)
+#undef inline
+#endif
+EOF
+
+dnl ----------------------------------------------------------------------
+dnl Print out a summary of what we are going to build.
+dnl
+if test -z "$ECHO_N" -o -z "$ECHO_C"; then
+  if (echo "testing\c"; echo 1,2,3) | grep c >/dev/null; then
+    if (echo -n testing; echo 1,2,3) | sed s/-n/xn/ | grep xn >/dev/null; then
+      ECHO_N=''
+      ECHO_C='
+'
+    else
+      ECHO_N=-n
+      ECHO_C=''
+    fi
+  else
+    ECHO_N=''
+    ECHO_C='\c'
+  fi
+fi
+
+PRINT_PLAIN() {
+  echo $ECHO_N "$1$ECHO_C"
+  echo $ECHO_N "$1$ECHO_C" 1>>src/libhdf5.settings
+}
+
+PRINT_N() {
+  echo $ECHO_N "$1:  $ECHO_C"
+  echo $ECHO_N "$1:  $ECHO_C" 1>>src/libhdf5.settings
+}
+
+PRINT_F() {
+  cat "$1"
+  cat "$1" 1>>src/libhdf5.settings
+}
+
+PRINT() {
+  echo "$1"
+  echo "$1" 1>>src/libhdf5.settings
+}
+
+dnl ----------------------------------------------------------------------
+dnl Print "Yes" if all arguments are "yes", otherwise "No"
+dnl
+IF_YES_NO() {
+  if test $# -lt 1; then
+    PRINT "No"
+    return
+  else
+    while test $# -gt 0; do
+      if test "$1" != "yes"; then
+        PRINT "No"
+        return
+      fi
+      shift
+    done
+  fi
+  PRINT "Yes"
+}
+
+IF_ENABLED_DISABLED() {
+  if test "$1" = "yes"; then
+    PRINT "Enabled"
+  else
+    PRINT "Disabled"
+  fi
+}
+
+PRINT ""
+PRINT "Configure Summary"
+PRINT "Compiling Options:"
+
+PRINT_N "               Compilation Mode"
+case "X-$enable_production" in
+  X-yes)        PRINT "Production" ;;
+  X-no)         PRINT "Development" ;;
+  X-profile)    PRINT "Profile" ;;
+  *)            PRINT "$enable_production" ;;
+esac
+
+PRINT_N "                     C Compiler"
+PRINT "$CC"
+
+PRINT_N "                         CFLAGS"
+PRINT "$CFLAGS"
+
+PRINT_N "                       CPPFLAGS"
+PRINT "$CPPFLAGS"
+
+PRINT_N "                        LDFLAGS"
+PRINT "$LDFLAGS"
+
+PRINT_N "                     Debug Mode"
+
+if test "X$DEBUG_PKG" = "X$all_packages"; then
+  PRINT "All"
+elif test "X$DEBUG_PKG" = "X"; then
+  PRINT "None"
+else
+  PRINT $DEBUG_PKG
+fi
+
+PRINT_N "               Shared Libraries"
+IF_YES_NO "$enable_shared"
+
+PRINT_N "               Static Libraries"
+IF_YES_NO "$enable_static"
+
+PRINT_N "  Statically Linked Executables"
+IF_YES_NO "$STATIC_EXEC"
+
+PRINT_N "                        Tracing"
+IF_YES_NO "$TRACE_API"
+
+PRINT_N "   Optimization Instrumentation"
+IF_YES_NO "$INSTRUMENT"
+
+PRINT ""
+PRINT "Languages:"
+PRINT "----------"
+
+PRINT_N "                            C++"
+IF_YES_NO "$HDF_CXX"
+summary_file="#c++_configure_summary"
+if test X$HDF_CXX = Xyes -a -f $summary_file ; then
+
+    PRINT_F $summary_file
+    rm -f $summary_file
+    PRINT ""
+fi
+
+PRINT_N "                        Fortran"
+IF_YES_NO "$HDF_FORTRAN"
+summary_file="#fortran_configure_summary"
+if test X$HDF_FORTRAN = Xyes -a -f $summary_file ; then
+    PRINT_F $summary_file
+    rm -f $summary_file
+    PRINT ""
+fi
+
+PRINT ""
+PRINT "Features:"
+PRINT "---------"
+
+PRINT_N "                        dmalloc"
+IF_YES_NO "$HAVE_DMALLOC"
+
+PRINT_N "         Function Stack Tracing"
+IF_ENABLED_DISABLED "$FUNCSTACK"
+
+PRINT_N "                           GPFS"
+IF_YES_NO "$GPFS"
+
+PRINT_N "      Strict File Format Checks"
+IF_ENABLED_DISABLED "$STRICT_FORMAT_CHECKS"
+
+PRINT_N "        HDF5 v1.4 Compatibility"
+IF_YES_NO "$HDF5_V1_4_COMPAT"
+
+PRINT_N "         I/O filters (external)"
+PRINT "$EXTERNAL_FILTERS"
+
+PRINT_N "         I/O filters (internal)"
+PRINT "$FILTERS"
+
+PRINT_N " Linux Large File Support (LFS)"
+IF_ENABLED_DISABLED "$LINUX_LFS"
+
+PRINT_N "                            MPE"
+IF_YES_NO "$MPE"
+
+
+PRINT_N "                  Parallel HDF5"
+if test "$PARALLEL" != "no"; then
+  PRINT "Yes"
+else
+  PRINT "No"
+fi
+
+PRINT_N "                   Threadsafety"
+IF_ENABLED_DISABLED "$THREADSAFE"
+
+PRINT_N "             High Level library"
+IF_ENABLED_DISABLED "$HDF5_HL"
+

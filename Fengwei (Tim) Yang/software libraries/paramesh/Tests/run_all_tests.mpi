@@ -1,0 +1,57 @@
+#! /bin/sh
+
+# You specify the range of processors to run the test.
+# Typically, you will try 1 processor, then 2, then 3, then 4.
+n=0
+
+run_an_mpi_test 1 2 test_guardcell_1blk
+((n+=$?))
+
+run_an_mpi_test 1 2 test_prolong_1blk
+((n+=$?))
+
+run_an_mpi_test 1 2 test_c_to_f_1blk
+((n+=$?))
+
+run_an_mpi_test 1 2 test_1blk_guardcell_icoord
+((n+=$?))
+
+run_an_mpi_test 1 2 test_prolong_multilevel_1blk
+((n+=$?))
+
+run_an_mpi_test 1 2 test_checkpoint
+((n+=$?))
+
+run_an_mpi_test 1 2 test_restrict_1blk
+((n+=$?))
+
+run_an_mpi_test 1 2 test_flux_conserve_1blk
+((n+=$?))
+
+run_an_mpi_test 1 2 test_edges_1blk
+((n+=$?))
+
+run_an_mpi_test 1 2 test_multi_level_1
+((n+=$?))
+
+run_an_mpi_test 1 2 test_multi_level_2
+((n+=$?))
+
+run_an_mpi_test 1 2 test_multi_level_3
+((n+=$?))
+
+run_an_mpi_test 1 2 test_c_to_f_1blk_quad
+((n+=$?))
+
+run_an_mpi_test 1 2 test_force_consist
+((n+=$?))
+
+run_an_mpi_test 1 2 test_gcell_on
+((n+=$?))
+
+echo "---------------------------------"
+echo "TOTAL number of failures is $n"
+echo "---------------------------------"
+
+exit $n
+

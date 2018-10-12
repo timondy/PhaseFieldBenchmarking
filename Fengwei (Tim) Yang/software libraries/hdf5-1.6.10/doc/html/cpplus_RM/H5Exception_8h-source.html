@@ -1,0 +1,528 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="header_files/filelist.xml">
+<link rel=Edit-Time-Data href="header_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Main Page</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Randy Ribler</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Randy Ribler</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>16</o:TotalTime>
+  <o:Created>2004-07-23T05:34:00Z</o:Created>
+  <o:LastSaved>2004-07-23T06:03:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>5</o:Words>
+  <o:Characters>32</o:Characters>
+  <o:Company>LC</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>36</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=RM_stylesheet.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-believe-normal-left:yes;}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#252E78;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#3D2185;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+address
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.formuladsp, li.formuladsp, div.formuladsp
+	{mso-style-name:formuladsp;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdtable, li.mdtable, div.mdtable
+	{mso-style-name:mdtable;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#F4F4FB;
+	border:none;
+	mso-border-alt:solid #868686 .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdrow, li.mdrow, div.mdrow
+	{mso-style-name:mdrow;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdescleft, li.mdescleft, div.mdescleft
+	{mso-style-name:mdescleft;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.mdescright, li.mdescright, div.mdescright
+	{mso-style-name:mdescright;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.memitemleft, li.memitemleft, div.memitemleft
+	{mso-style-name:memitemleft;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.memitemright, li.memitemright, div.memitemright
+	{mso-style-name:memitemright;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.search, li.search, div.search
+	{mso-style-name:search;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><![if mso 9]>
+<style>
+p.MsoNormal
+	{margin-left:15.0pt;}
+</style>
+<![endif]><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098">
+  <o:colormru v:ext="edit" colors="#060"/>
+  <o:colormenu v:ext="edit" strokecolor="#060"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link="#252E78" vlink="#3D2185" style='tab-interval:
+.5in;margin-left:15.0pt;margin-right:15.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:15.0pt;margin-bottom:
+0in;margin-left:15.0pt;margin-bottom:.0001pt'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:30pt;margin-top:9pt;width:72.75pt;height:57.75pt;
+ z-index:1'>
+ <v:imagedata src="header_files/image001.jpg" o:title="NCSAlogo"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:40px;margin-top:12px;width:97px;
+height:77px'><img width=97 height=77 src="header_files/image002.jpg" v:shapes="_x0000_s1026"></span><![endif]><span
+style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><span
+style='font-size:22.0pt'><o:p></o:p></span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:103.45pt;border-collapse:collapse;border:none;mso-border-bottom-alt:
+ solid #006600 2.25pt;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes;height:29.25pt'>
+  <td width=443 valign=top style='width:332.6pt;border:none;border-bottom:solid #006600 2.25pt;
+  padding:0in 5.4pt 0in 5.4pt;height:29.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-size:22.0pt'>HDF5 C++ API Reference Manual</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
+<!-- Generated by Doxygen 1.4.7 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li><a href="annotated.html"><span>Classes</span></a></li>
+    <li id="current"><a href="files.html"><span>Files</span></a></li>
+    <li><a href="examples.html"><span>Examples</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+    <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+  </ul></div>
+<h1>H5Exception.h</h1><a href="H5Exception_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// C++ informative line for the emacs editor: -*- C++ -*-</span>
+<a name="l00002"></a>00002 <span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</span>
+<a name="l00003"></a>00003 <span class="comment"> * Copyright by The HDF Group.                                               *</span>
+<a name="l00004"></a>00004 <span class="comment"> * Copyright by the Board of Trustees of the University of Illinois.         *</span>
+<a name="l00005"></a>00005 <span class="comment"> * All rights reserved.                                                      *</span>
+<a name="l00006"></a>00006 <span class="comment"> *                                                                           *</span>
+<a name="l00007"></a>00007 <span class="comment"> * This file is part of HDF5.  The full HDF5 copyright notice, including     *</span>
+<a name="l00008"></a>00008 <span class="comment"> * terms governing use, modification, and redistribution, is contained in    *</span>
+<a name="l00009"></a>00009 <span class="comment"> * the files COPYING and Copyright.html.  COPYING can be found at the root   *</span>
+<a name="l00010"></a>00010 <span class="comment"> * of the source code distribution tree; Copyright.html can be found at the  *</span>
+<a name="l00011"></a>00011 <span class="comment"> * root level of an installed copy of the electronic HDF5 document set and   *</span>
+<a name="l00012"></a>00012 <span class="comment"> * is linked from the top-level documents page.  It can also be found at     *</span>
+<a name="l00013"></a>00013 <span class="comment"> * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *</span>
+<a name="l00014"></a>00014 <span class="comment"> * access to either file, you may request a copy from help@hdfgroup.org.     *</span>
+<a name="l00015"></a>00015 <span class="comment"> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span>
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 <span class="preprocessor">#ifndef _H5Exception_H</span>
+<a name="l00018"></a>00018 <span class="preprocessor"></span><span class="preprocessor">#define _H5Exception_H</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span>
+<a name="l00020"></a>00020 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="preprocessor">#ifndef H5_NO_NAMESPACE</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="keyword">namespace </span>H5 {
+<a name="l00024"></a>00024 <span class="preprocessor">#ifdef H5_NO_STD</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">    #define H5std_string ::string</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00027"></a><a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">00027</a> <span class="preprocessor"></span><span class="preprocessor">    #define H5std_string std::string</span>
+<a name="l00028"></a>00028 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00029"></a>00029 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span>
+<a name="l00031"></a><a class="code" href="classH5_1_1Exception.html">00031</a> <span class="keyword">class </span>H5_DLLCPP Exception {
+<a name="l00032"></a>00032    <span class="keyword">public</span>:
+<a name="l00033"></a>00033         <span class="comment">// Creates an exception with a function name where the failure occurs</span>
+<a name="l00034"></a>00034         <span class="comment">// and an optional detailed message</span>
+<a name="l00035"></a>00035         Exception(<span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; func_name, <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; message = DEFAULT_MSG);
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037         <span class="comment">// Returns a character string that describes the error specified by</span>
+<a name="l00038"></a>00038         <span class="comment">// a major error number.</span>
+<a name="l00039"></a>00039         <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a> getMajorString( H5E_major_t major_num ) <span class="keyword">const</span>;
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041         <span class="comment">// Returns a character string that describes the error specified by</span>
+<a name="l00042"></a>00042         <span class="comment">// a minor error number.</span>
+<a name="l00043"></a>00043         <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a> getMinorString( H5E_minor_t minor_num ) <span class="keyword">const</span>;
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045         <span class="comment">// Returns the detailed message set at the time the exception is thrown</span>
+<a name="l00046"></a>00046         <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a> getDetailMsg() <span class="keyword">const</span>;
+<a name="l00047"></a>00047         <span class="keyword">const</span> <span class="keywordtype">char</span>* getCDetailMsg() <span class="keyword">const</span>;      <span class="comment">// C string of detailed message</span>
+<a name="l00048"></a>00048         <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a> getFuncName() <span class="keyword">const</span>;       <span class="comment">// function name as a string object</span>
+<a name="l00049"></a>00049         <span class="keyword">const</span> <span class="keywordtype">char</span>* getCFuncName() <span class="keyword">const</span>;       <span class="comment">// function name as a char string</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051         <span class="comment">// Turns on the automatic error printing.</span>
+<a name="l00052"></a>00052         <span class="keyword">static</span> <span class="keywordtype">void</span> setAutoPrint( H5E_auto_t&amp; func, <span class="keywordtype">void</span>* client_data);
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054         <span class="comment">// Turns off the automatic error printing.</span>
+<a name="l00055"></a>00055         <span class="keyword">static</span> <span class="keywordtype">void</span> dontPrint();
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057         <span class="comment">// Retrieves the current settings for the automatic error stack</span>
+<a name="l00058"></a>00058         <span class="comment">// traversal function and its data.</span>
+<a name="l00059"></a>00059         <span class="keyword">static</span> <span class="keywordtype">void</span> getAutoPrint( H5E_auto_t&amp; func, <span class="keywordtype">void</span>** client_data);
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061         <span class="comment">// Clears the error stack for the current thread.</span>
+<a name="l00062"></a>00062         <span class="keyword">static</span> <span class="keywordtype">void</span> clearErrorStack();
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064         <span class="comment">// Walks the error stack for the current thread, calling the</span>
+<a name="l00065"></a>00065         <span class="comment">// specified function.</span>
+<a name="l00066"></a>00066         <span class="keyword">static</span> <span class="keywordtype">void</span> walkErrorStack( H5E_direction_t direction,
+<a name="l00067"></a>00067                                 H5E_walk_t func, <span class="keywordtype">void</span>* client_data);
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069         <span class="comment">// Prints the error stack in a default manner.</span>
+<a name="l00070"></a>00070         <span class="keyword">virtual</span> <span class="keywordtype">void</span> printError( FILE* stream = NULL ) <span class="keyword">const</span>;
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072         <span class="comment">// Default constructor</span>
+<a name="l00073"></a>00073         Exception();
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075         <span class="comment">// copy constructor</span>
+<a name="l00076"></a>00076         Exception( <span class="keyword">const</span> Exception&amp; orig);
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078         <span class="comment">// virtual Destructor</span>
+<a name="l00079"></a>00079         <span class="keyword">virtual</span> ~Exception();
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081    <span class="keyword">private</span>:
+<a name="l00082"></a>00082 <span class="comment">// Because 'string' is not instantiated at compilation time, this</span>
+<a name="l00083"></a>00083 <span class="comment">// warning is displayed when building DLL; but the class is exported</span>
+<a name="l00084"></a>00084 <span class="comment">// so the warning is harmless</span>
+<a name="l00085"></a>00085 <span class="preprocessor">#if defined(WIN32)</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span><span class="preprocessor">#pragma warning(disable: 4251)</span>
+<a name="l00087"></a>00087 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span>        <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a> detail_message;
+<a name="l00089"></a>00089         <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a> func_name;
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091    <span class="keyword">protected</span>:
+<a name="l00092"></a>00092         <span class="comment">// Default value for detail_message</span>
+<a name="l00093"></a><a class="code" href="classH5_1_1Exception.html#d206da67711dfab1745311b47b6782ac">00093</a>         <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a> DEFAULT_MSG;
+<a name="l00094"></a>00094 };
+<a name="l00095"></a>00095 
+<a name="l00096"></a><a class="code" href="classH5_1_1FileIException.html">00096</a> <span class="keyword">class </span>H5_DLLCPP FileIException : <span class="keyword">public</span> Exception {
+<a name="l00097"></a>00097    <span class="keyword">public</span>:
+<a name="l00098"></a>00098         FileIException( <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; func_name, <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; message = DEFAULT_MSG);
+<a name="l00099"></a>00099         FileIException();
+<a name="l00100"></a>00100         <span class="keyword">virtual</span> ~FileIException();
+<a name="l00101"></a>00101 };
+<a name="l00102"></a>00102 
+<a name="l00103"></a><a class="code" href="classH5_1_1GroupIException.html">00103</a> <span class="keyword">class </span>H5_DLLCPP GroupIException : <span class="keyword">public</span> Exception {
+<a name="l00104"></a>00104    <span class="keyword">public</span>:
+<a name="l00105"></a>00105         GroupIException( <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; func_name, <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; message = DEFAULT_MSG);
+<a name="l00106"></a>00106         GroupIException();
+<a name="l00107"></a>00107         <span class="keyword">virtual</span> ~GroupIException();
+<a name="l00108"></a>00108 };
+<a name="l00109"></a>00109 
+<a name="l00110"></a><a class="code" href="classH5_1_1DataSpaceIException.html">00110</a> <span class="keyword">class </span>H5_DLLCPP DataSpaceIException : <span class="keyword">public</span> Exception {
+<a name="l00111"></a>00111    <span class="keyword">public</span>:
+<a name="l00112"></a>00112         DataSpaceIException(<span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; func_name, <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; message = DEFAULT_MSG);
+<a name="l00113"></a>00113         DataSpaceIException();
+<a name="l00114"></a>00114         <span class="keyword">virtual</span> ~DataSpaceIException();
+<a name="l00115"></a>00115 };
+<a name="l00116"></a>00116 
+<a name="l00117"></a><a class="code" href="classH5_1_1DataTypeIException.html">00117</a> <span class="keyword">class </span>H5_DLLCPP DataTypeIException : <span class="keyword">public</span> Exception {
+<a name="l00118"></a>00118    <span class="keyword">public</span>:
+<a name="l00119"></a>00119         DataTypeIException(<span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; func_name, <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; message = DEFAULT_MSG);
+<a name="l00120"></a>00120         DataTypeIException();
+<a name="l00121"></a>00121         <span class="keyword">virtual</span> ~DataTypeIException();
+<a name="l00122"></a>00122 };
+<a name="l00123"></a>00123 
+<a name="l00124"></a><a class="code" href="classH5_1_1PropListIException.html">00124</a> <span class="keyword">class </span>H5_DLLCPP PropListIException : <span class="keyword">public</span> Exception {
+<a name="l00125"></a>00125    <span class="keyword">public</span>:
+<a name="l00126"></a>00126         PropListIException(<span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; func_name, <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; message = DEFAULT_MSG);
+<a name="l00127"></a>00127         PropListIException();
+<a name="l00128"></a>00128         <span class="keyword">virtual</span> ~PropListIException();
+<a name="l00129"></a>00129 };
+<a name="l00130"></a>00130 
+<a name="l00131"></a><a class="code" href="classH5_1_1DataSetIException.html">00131</a> <span class="keyword">class </span>H5_DLLCPP DataSetIException : <span class="keyword">public</span> Exception {
+<a name="l00132"></a>00132    <span class="keyword">public</span>:
+<a name="l00133"></a>00133         DataSetIException(<span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; func_name, <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; message = DEFAULT_MSG);
+<a name="l00134"></a>00134         DataSetIException();
+<a name="l00135"></a>00135         <span class="keyword">virtual</span> ~DataSetIException();
+<a name="l00136"></a>00136 };
+<a name="l00137"></a>00137 
+<a name="l00138"></a><a class="code" href="classH5_1_1AttributeIException.html">00138</a> <span class="keyword">class </span>H5_DLLCPP AttributeIException : <span class="keyword">public</span> Exception {
+<a name="l00139"></a>00139    <span class="keyword">public</span>:
+<a name="l00140"></a>00140         AttributeIException(<span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; func_name, <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; message = DEFAULT_MSG);
+<a name="l00141"></a>00141         AttributeIException();
+<a name="l00142"></a>00142         <span class="keyword">virtual</span> ~AttributeIException();
+<a name="l00143"></a>00143 };
+<a name="l00144"></a>00144 
+<a name="l00145"></a><a class="code" href="classH5_1_1ReferenceException.html">00145</a> <span class="keyword">class </span>H5_DLLCPP ReferenceException : <span class="keyword">public</span> Exception {
+<a name="l00146"></a>00146    <span class="keyword">public</span>:
+<a name="l00147"></a>00147         ReferenceException(<span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; func_name, <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; message = DEFAULT_MSG);
+<a name="l00148"></a>00148         ReferenceException();
+<a name="l00149"></a>00149         <span class="keyword">virtual</span> ~ReferenceException();
+<a name="l00150"></a>00150 };
+<a name="l00151"></a>00151 
+<a name="l00152"></a><a class="code" href="classH5_1_1LibraryIException.html">00152</a> <span class="keyword">class </span>H5_DLLCPP LibraryIException : <span class="keyword">public</span> Exception {
+<a name="l00153"></a>00153    <span class="keyword">public</span>:
+<a name="l00154"></a>00154         LibraryIException(<span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; func_name, <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; message = DEFAULT_MSG);
+<a name="l00155"></a>00155         LibraryIException();
+<a name="l00156"></a>00156         <span class="keyword">virtual</span> ~LibraryIException();
+<a name="l00157"></a>00157 };
+<a name="l00158"></a>00158 
+<a name="l00159"></a><a class="code" href="classH5_1_1IdComponentException.html">00159</a> <span class="keyword">class </span>H5_DLLCPP IdComponentException : <span class="keyword">public</span> Exception {
+<a name="l00160"></a>00160    <span class="keyword">public</span>:
+<a name="l00161"></a>00161         IdComponentException(<span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; func_name, <span class="keyword">const</span> <a class="code" href="H5Exception_8h.html#5c3fdf56d98d169f63f1b114803db592">H5std_string</a>&amp; message = DEFAULT_MSG);
+<a name="l00162"></a>00162         IdComponentException();
+<a name="l00163"></a>00163         <span class="keyword">virtual</span> ~IdComponentException();
+<a name="l00164"></a>00164 };
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166 <span class="preprocessor">#ifndef H5_NO_NAMESPACE</span>
+<a name="l00167"></a>00167 <span class="preprocessor"></span>}
+<a name="l00168"></a>00168 <span class="preprocessor">#endif</span>
+<a name="l00169"></a>00169 <span class="preprocessor"></span>
+<a name="l00170"></a>00170 <span class="preprocessor">#endif // _H5Exception_H</span>
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Wed Nov 4 14:13:07 2009 by&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
+</body>
+</html>

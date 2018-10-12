@@ -1,0 +1,79 @@
+##                                                             -*- makefile -*-
+
+# Copyright by The HDF Group.
+# Copyright by the Board of Trustees of the University of Illinois.
+# All rights reserved.
+#
+# This file is part of HDF5.  The full HDF5 copyright notice, including
+# terms governing use, modification, and redistribution, is contained in
+# the files COPYING and Copyright.html.  COPYING can be found at the root
+# of the source code distribution tree; Copyright.html can be found at the
+# root level of an installed copy of the electronic HDF5 document set and
+# is linked from the top-level documents page.  It can also be found at
+# http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have
+# access to either file, you may request a copy from help@hdfgroup.org.
+
+## We keep a list of dependencies in `.depend' for each of the source
+## files on which it depends.  When one of the source files is modified
+## we remove its record from .depend and regenerate its dependencies,
+## tacking them onto the end of .depend.  By including the .depend file
+## into the makefile, we're telling make that the makefile depends on
+## the dependency list in the .depend file.
+##
+## This is as fast as the `.d' method described in the GNU make manual
+## for automatic dependencies, but has the added advantage that all
+## dependencies are stored in one place.  The advantage over the
+## `makedepend' program is that only those files that are out of date
+## have dependency information rebuilt, and the Makefile is not
+## modified.
+##
+## This is also where tracing information is updated.  The $(TRACE)
+## program is run on each source file to make sure that the H5TRACE()
+## macros are up to date.  If they are then the file is not modified,
+## otherwise the file is changed and a backup is saved by appending a
+## tilde to the file name.
+##
+$(srcdir)/Dependencies: .depend
+	@if test "$(srcdir)" != "."; then					\
+	  (									\
+	    echo '##'; 								\
+	    echo '## This file is machine generated on GNU systems.';		\
+	    echo '## Only temporary changes may be made here.';			\
+	    echo '##'; 								\
+	    echo '## Copyright by the Board of Trustees of the University of Illinois.'; \
+	    echo '## All rights reserved.'; 					\
+	    echo '##'; 								\
+	    echo '## This file is part of HDF5.  The full HDF5 copyright notice, including'; \
+	    echo '## terms governing use, modification, and redistribution, is contained in'; \
+	    echo '## the files COPYING and Copyright.html.  COPYING can be found at the root'; \
+	    echo '## of the source code distribution tree; Copyright.html can be found at the'; \
+	    echo '## root level of an installed copy of the electronic HDF5 document set and'; \
+	    echo '## is linked from the top-level documents page.  It can also be found at'; \
+	    echo '## http://hdf.ncsa.uiuc.edu/HDF5/doc/Copyright.html.  If you do not have'; \
+	    echo '## access to either file, you may request a copy from hdfhelp@ncsa.uiuc.edu.'; \
+	    echo;								\
+	  ) >$@;								\
+	  $(PERL) -p $(top_srcdir)/bin/distdep .depend >>$@;			\
+	else									\
+	  echo 'Dependencies cannot be built when $$srcdir == $$builddir';	\
+	fi
+
+.depend: $(LIB_SRC) $(TEST_SRC) $(PROG_SRC)
+	@touch .depend
+	@for dep in $? dummy; do                                              \
+      if test $$dep != "dummy" -a -n "$(PERL)"; then                      \
+        case "$$dep" in                                                   \
+          *.c)                                                            \
+            echo Building dependencies for $$dep;                         \
+            obj=`basename $$dep .c`.lo;                                   \
+            sed '\%^'"$$obj"':%,\%[^\\]$$%d' <$@ >$@- && mv $@- $@;       \
+            $(TRACE) $$dep;                                               \
+            $(CC) -MM -MG $(CPPFLAGS) $$dep 2>/dev/null >>$@;             \
+            $(PERL) -w $(top_srcdir)/bin/dependencies --srcdir=$(srcdir) --top_srcdir=$(top_srcdir) --top_builddir=$(top_builddir) $@; \
+            ;;                                                            \
+        esac;                                                             \
+      fi;                                                                 \
+    done
+
+-include .depend
+

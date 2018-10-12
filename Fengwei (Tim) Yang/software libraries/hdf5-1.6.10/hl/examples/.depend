@@ -1,0 +1,17 @@
+ex_lite1.lo: ex_lite1.c H5LT.h
+ex_lite2.lo: ex_lite2.c H5LT.h
+ex_lite3.lo: ex_lite3.c H5LT.h
+ex_image1.lo: ex_image1.c H5IM.h
+ex_image2.lo: ex_image2.c H5IM.h
+ex_table_01.lo: ex_table_01.c H5TA.h
+ex_table_02.lo: ex_table_02.c H5TA.h
+ex_table_03.lo: ex_table_03.c H5TA.h
+ex_table_04.lo: ex_table_04.c H5TA.h
+ex_table_05.lo: ex_table_05.c H5TA.h
+ex_table_06.lo: ex_table_06.c H5TA.h
+ex_table_07.lo: ex_table_07.c H5TA.h
+ex_table_08.lo: ex_table_08.c H5TA.h
+ex_table_09.lo: ex_table_09.c H5TA.h
+ex_table_10.lo: ex_table_10.c H5TA.h
+ex_table_11.lo: ex_table_11.c H5TA.h
+ex_table_12.lo: ex_table_12.c H5TA.h

@@ -1,0 +1,94 @@
+To install these files type ./INSTALL from this directory.  The
+necessary files will be copied to paramesh/mpi_source,
+paramesh/source, or paramesh/Tests, as necessary.  The Makefile.gnu's
+in these directories may also be modified.  You should then recompile
+the package as you normally would.
+
+The install script calles the INSTALL.py script so you will also need
+python on your system.  
+
+These files provide a support for multigrid is also described in the
+user documentation.
+
+USAGE NOTES:
+
+There 3 routines which you will need to use to construct a multigrid
+algorithm.  To use these routines you should, of course, be thougoughly
+familiar with multigrid algorithms and also with PARAMESH.
+
+The 3 routines you will need are:
+
+	amr_mg_init()
+	
+	This routine initializes the multigrid and sets up data
+	arrays for data exchange operations for the different levels
+	in the PARAMESH tree hierarchy.
+
+
+
+	amr_mg_restrict(nprocs, mype, level)
+
+	This routine performs a restriction step by restricting 
+	the data in the 'work' array from level to level-1.  Upon
+	return the PARAMESH tree structure has been modfied such that
+	tree nodes at level are no longer active and nodes at tree
+	level level-1 are turned 'on' and have their nodetypes 
+	changed to be equal 1 (i.e. these tree nodes become leaf
+	nodes).
+
+	amr_mg_restrict takes 3 arguments. 
+	  nprocs -> the number of processors used.
+	  mype   -> the calling processors
+	  level  -> the tree level currently being 'visited' during 
+                    a leg your multigrid algorithm
+
+
+	  
+	amr_mg_prolong(nprocs, mype, level)
+
+	This routine performs a prolongation step by prolonging
+	the data in the 'work' array from level-1 to level.  Upon
+	return the PARAMESH tree structure has been modfied such that
+	tree nodes at level become active. Nodes at tree
+	level level-1 are turned have their nodetypes 
+	changed to be equal 2  (i.e. these tree nodes become parents 
+        of leaf nodes).
+
+	amr_mg_prolong takes 3 arguments. 
+	  nprocs -> the number of processors used.
+	  mype   -> the calling processors
+	  level  -> the tree level currently being 'visited' during 
+                    a leg your multigrid algorithm
+	  
+All processors MUST CALL THESE ROUTINES synchronously (just like all
+other PARAMESH routines).
+
+A simple V-cycle can be constructed as:
+
+	call amr_mg_init()
+
+ 	! upward leg of V cycle
+	do level = lmax,2,-1 ! NOTE: lmax is the max no. of 
+                             ! current levels and is not necessarily 
+                             ! equal to lrefine_mas
+	  call amr_mg_restrict(nprocs,mype,level)
+	  ! insert your relaxation routine here
+	end do
+
+	! Solve at level = 1, the root of the tree structure
+
+	! downward level of V cycle
+	do level = 2,lmax
+	  call amr_mg_prolong(nprocs,mype,level)
+	  ! insert your relaxation routine here
+	end do
+
+If you have trouble using these routines and since they are being
+released as an 'alpha' feature, contact Kevin Olson
+(Kevin.Olson@gsfc.nasa.gov) for help in constructing your own
+multigrid code.
+
+
+
+
+

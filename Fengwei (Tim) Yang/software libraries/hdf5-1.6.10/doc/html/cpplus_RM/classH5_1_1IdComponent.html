@@ -1,0 +1,756 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<!--
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * Copyright by The HDF Group.                                               *
+  * Copyright by the Board of Trustees of the University of Illinois.         *
+  * All rights reserved.                                                      *
+  *                                                                           *
+  * This file is part of HDF5.  The full HDF5 copyright notice, including     *
+  * terms governing use, modification, and redistribution, is contained in    *
+  * the files COPYING and Copyright.html.  COPYING can be found at the root   *
+  * of the source code distribution tree; Copyright.html can be found at the  *
+  * root level of an installed copy of the electronic HDF5 document set and   *
+  * is linked from the top-level documents page.  It can also be found at     *
+  * http://hdfgroup.org/HDF5/doc/Copyright.html.  If you do not have          *
+  * access to either file, you may request a copy from help@hdfgroup.org.     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="header_files/filelist.xml">
+<link rel=Edit-Time-Data href="header_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Main Page</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Randy Ribler</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Randy Ribler</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>16</o:TotalTime>
+  <o:Created>2004-07-23T05:34:00Z</o:Created>
+  <o:LastSaved>2004-07-23T06:03:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>5</o:Words>
+  <o:Characters>32</o:Characters>
+  <o:Company>LC</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>36</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=RM_stylesheet.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-believe-normal-left:yes;}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#252E78;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#3D2185;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+address
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.formuladsp, li.formuladsp, div.formuladsp
+	{mso-style-name:formuladsp;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdtable, li.mdtable, div.mdtable
+	{mso-style-name:mdtable;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#F4F4FB;
+	border:none;
+	mso-border-alt:solid #868686 .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdrow, li.mdrow, div.mdrow
+	{mso-style-name:mdrow;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mdescleft, li.mdescleft, div.mdescleft
+	{mso-style-name:mdescleft;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.mdescright, li.mdescright, div.mdescright
+	{mso-style-name:mdescright;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.memitemleft, li.memitemleft, div.memitemleft
+	{mso-style-name:memitemleft;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.memitemright, li.memitemright, div.memitemright
+	{mso-style-name:memitemright;
+	margin:3.0pt;
+	mso-pagination:widow-orphan;
+	background:#FAFAFA;
+	border:none;
+	mso-border-top-alt:solid #E0E0E0 .75pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.search, li.search, div.search
+	{mso-style-name:search;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><![if mso 9]>
+<style>
+p.MsoNormal
+	{margin-left:15.0pt;}
+</style>
+<![endif]><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098">
+  <o:colormru v:ext="edit" colors="#060"/>
+  <o:colormenu v:ext="edit" strokecolor="#060"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link="#252E78" vlink="#3D2185" style='tab-interval:
+.5in;margin-left:15.0pt;margin-right:15.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:15.0pt;margin-bottom:
+0in;margin-left:15.0pt;margin-bottom:.0001pt'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:30pt;margin-top:9pt;width:72.75pt;height:57.75pt;
+ z-index:1'>
+ <v:imagedata src="header_files/image001.jpg" o:title="NCSAlogo"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:40px;margin-top:12px;width:97px;
+height:77px'><img width=97 height=77 src="header_files/image002.jpg" v:shapes="_x0000_s1026"></span><![endif]><span
+style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><span
+style='font-size:22.0pt'><o:p></o:p></span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:103.45pt;border-collapse:collapse;border:none;mso-border-bottom-alt:
+ solid #006600 2.25pt;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes;height:29.25pt'>
+  <td width=443 valign=top style='width:332.6pt;border:none;border-bottom:solid #006600 2.25pt;
+  padding:0in 5.4pt 0in 5.4pt;height:29.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-size:22.0pt'>HDF5 C++ API Reference Manual</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
+<!-- Generated by Doxygen 1.4.7 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
+    <li><a href="files.html"><span>Files</span></a></li>
+    <li><a href="examples.html"><span>Examples</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+  </ul></div>
+<div class="nav">
+<a class="el" href="namespaceH5.html">H5</a>::<a class="el" href="classH5_1_1IdComponent.html">IdComponent</a></div>
+<h1>H5::IdComponent Class Reference</h1><!-- doxytag: class="H5::IdComponent" --><code>#include &lt;<a class="el" href="H5IdComponent_8h-source.html">H5IdComponent.h</a>&gt;</code>
+<p>
+<p>Inheritance diagram for H5::IdComponent:
+<p><center><img src="classH5_1_1IdComponent.png" usemap="#H5::IdComponent_map" border="0" alt=""></center>
+<map name="H5::IdComponent_map">
+<area href="classH5_1_1Attribute.html" alt="H5::Attribute" shape="rect" coords="0,56,159,80">
+<area href="classH5_1_1DataSpace.html" alt="H5::DataSpace" shape="rect" coords="169,56,328,80">
+<area href="classH5_1_1H5File.html" alt="H5::H5File" shape="rect" coords="338,56,497,80">
+<area href="classH5_1_1H5Object.html" alt="H5::H5Object" shape="rect" coords="507,56,666,80">
+<area href="classH5_1_1PropList.html" alt="H5::PropList" shape="rect" coords="1098,56,1257,80">
+<area href="classH5_1_1DataSet.html" alt="H5::DataSet" shape="rect" coords="338,112,497,136">
+<area href="classH5_1_1DataType.html" alt="H5::DataType" shape="rect" coords="507,112,666,136">
+<area href="classH5_1_1Group.html" alt="H5::Group" shape="rect" coords="676,112,835,136">
+<area href="classH5_1_1DSetCreatPropList.html" alt="H5::DSetCreatPropList" shape="rect" coords="845,112,1004,136">
+<area href="classH5_1_1DSetMemXferPropList.html" alt="H5::DSetMemXferPropList" shape="rect" coords="1014,112,1173,136">
+<area href="classH5_1_1FileAccPropList.html" alt="H5::FileAccPropList" shape="rect" coords="1183,112,1342,136">
+<area href="classH5_1_1FileCreatPropList.html" alt="H5::FileCreatPropList" shape="rect" coords="1352,112,1511,136">
+<area href="classH5_1_1ArrayType.html" alt="H5::ArrayType" shape="rect" coords="169,168,328,192">
+<area href="classH5_1_1AtomType.html" alt="H5::AtomType" shape="rect" coords="338,168,497,192">
+<area href="classH5_1_1CompType.html" alt="H5::CompType" shape="rect" coords="507,168,666,192">
+<area href="classH5_1_1EnumType.html" alt="H5::EnumType" shape="rect" coords="676,168,835,192">
+<area href="classH5_1_1VarLenType.html" alt="H5::VarLenType" shape="rect" coords="845,168,1004,192">
+<area href="classH5_1_1FloatType.html" alt="H5::FloatType" shape="rect" coords="84,224,243,248">
+<area href="classH5_1_1IntType.html" alt="H5::IntType" shape="rect" coords="253,224,412,248">
+<area href="classH5_1_1PredType.html" alt="H5::PredType" shape="rect" coords="422,224,581,248">
+<area href="classH5_1_1StrType.html" alt="H5::StrType" shape="rect" coords="591,224,750,248">
+</map>
+<a href="classH5_1_1IdComponent-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#0e75b2e591d2fccd9e4c291a485d4754">incRefCount</a> (const hid_t obj_id) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Increment reference counter for a given id.  <a href="#0e75b2e591d2fccd9e4c291a485d4754"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#1b34f54d2fd41d885e8ced7613d6abd1">incRefCount</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Increment reference counter for the id of this object.  <a href="#1b34f54d2fd41d885e8ced7613d6abd1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#9dc2815e9887d0adb5d5bba72adbd0d6">decRefCount</a> (const hid_t obj_id) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Decrement reference counter for a given id.  <a href="#9dc2815e9887d0adb5d5bba72adbd0d6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#c15a341319624c9199a309fad56858e0">decRefCount</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Decrement reference counter for the id of this object.  <a href="#c15a341319624c9199a309fad56858e0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#b2ba7509cb5beb8c80e242d7afe10a3c">getCounter</a> (const hid_t obj_id) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the reference counter for a given id.  <a href="#b2ba7509cb5beb8c80e242d7afe10a3c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#dde1c48166476e089635bb40a2113653">getCounter</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the reference counter for the id of this object.  <a href="#dde1c48166476e089635bb40a2113653"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classH5_1_1IdComponent.html">IdComponent</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#34ac09a54825253293a0d8990e120506">operator=</a> (const <a class="el" href="classH5_1_1IdComponent.html">IdComponent</a> &amp;rhs)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Assignment operator.  <a href="#34ac09a54825253293a0d8990e120506"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual hid_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#4b5dc282b178ac71704772ae575351cc">getId</a> () const =0</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#1e46d85ec29cd77bb1767cd01b8f0c8d">setId</a> (const hid_t new_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the identifier of this object to a new value.  <a href="#1e46d85ec29cd77bb1767cd01b8f0c8d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#013a42f5fd29d35d9428c1be8638acfe">IdComponent</a> (const hid_t h5_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates an <a class="el" href="classH5_1_1IdComponent.html">IdComponent</a> object using the id of an existing object.  <a href="#013a42f5fd29d35d9428c1be8638acfe"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#1c1e2479afec6ce26734225b434752fb">IdComponent</a> (const <a class="el" href="classH5_1_1IdComponent.html">IdComponent</a> &amp;original)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1IdComponent.html">IdComponent</a> object.  <a href="#1c1e2479afec6ce26734225b434752fb"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#780d19c3d86037de38511f3e6cec3ca6">~IdComponent</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Noop destructor.  <a href="#780d19c3d86037de38511f3e6cec3ca6"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static H5I_type_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classH5_1_1IdComponent.html#25e4d590aa5cc0fc87ced46718d5b0d7">getHDFObjType</a> (const hid_t obj_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Given an id, returns the type of the object. return a valid HDF object type, which may be one of the following:.  <a href="#25e4d590aa5cc0fc87ced46718d5b0d7"></a><br></td></tr>
+</table>
+<hr><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" name="013a42f5fd29d35d9428c1be8638acfe"></a><!-- doxytag: member="H5::IdComponent::IdComponent" ref="013a42f5fd29d35d9428c1be8638acfe" args="(const hid_t h5_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::IdComponent::IdComponent           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>h5_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Creates an <a class="el" href="classH5_1_1IdComponent.html">IdComponent</a> object using the id of an existing object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>h5_id</em>&nbsp;</td><td>- IN: Id of an existing object </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1DataTypeIException.html">H5::DataTypeIException</a></em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="1c1e2479afec6ce26734225b434752fb"></a><!-- doxytag: member="H5::IdComponent::IdComponent" ref="1c1e2479afec6ce26734225b434752fb" args="(const IdComponent &amp;original)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::IdComponent::IdComponent           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1IdComponent.html">IdComponent</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>original</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Copy constructor: makes a copy of the original <a class="el" href="classH5_1_1IdComponent.html">IdComponent</a> object. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>original</em>&nbsp;</td><td>- IN: <a class="el" href="classH5_1_1IdComponent.html">IdComponent</a> instance to copy </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="780d19c3d86037de38511f3e6cec3ca6"></a><!-- doxytag: member="H5::IdComponent::~IdComponent" ref="780d19c3d86037de38511f3e6cec3ca6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::IdComponent::~IdComponent           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Noop destructor. 
+<p>
+
+</div>
+</div><p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="0e75b2e591d2fccd9e4c291a485d4754"></a><!-- doxytag: member="H5::IdComponent::incRefCount" ref="0e75b2e591d2fccd9e4c291a485d4754" args="(const hid_t obj_id) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::IdComponent::incRefCount           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>obj_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Increment reference counter for a given id. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="1b34f54d2fd41d885e8ced7613d6abd1"></a><!-- doxytag: member="H5::IdComponent::incRefCount" ref="1b34f54d2fd41d885e8ced7613d6abd1" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::IdComponent::incRefCount           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Increment reference counter for the id of this object. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="9dc2815e9887d0adb5d5bba72adbd0d6"></a><!-- doxytag: member="H5::IdComponent::decRefCount" ref="9dc2815e9887d0adb5d5bba72adbd0d6" args="(const hid_t obj_id) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::IdComponent::decRefCount           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>obj_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Decrement reference counter for a given id. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="c15a341319624c9199a309fad56858e0"></a><!-- doxytag: member="H5::IdComponent::decRefCount" ref="c15a341319624c9199a309fad56858e0" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::IdComponent::decRefCount           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Decrement reference counter for the id of this object. 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="b2ba7509cb5beb8c80e242d7afe10a3c"></a><!-- doxytag: member="H5::IdComponent::getCounter" ref="b2ba7509cb5beb8c80e242d7afe10a3c" args="(const hid_t obj_id) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int H5::IdComponent::getCounter           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>obj_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the reference counter for a given id. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Reference count </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="dde1c48166476e089635bb40a2113653"></a><!-- doxytag: member="H5::IdComponent::getCounter" ref="dde1c48166476e089635bb40a2113653" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int H5::IdComponent::getCounter           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Returns the reference counter for the id of this object. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Reference count </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="25e4d590aa5cc0fc87ced46718d5b0d7"></a><!-- doxytag: member="H5::IdComponent::getHDFObjType" ref="25e4d590aa5cc0fc87ced46718d5b0d7" args="(const hid_t obj_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5I_type_t H5::IdComponent::getHDFObjType           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>obj_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Given an id, returns the type of the object. return a valid HDF object type, which may be one of the following:. 
+<p>
+<ul>
+<li><code>H5I_FILE</code> </li>
+<li><code>H5I_GROUP</code> </li>
+<li><code>H5I_DATATYPE</code> </li>
+<li><code>H5I_DATASPACE</code> </li>
+<li><code>H5I_DATASET</code> </li>
+<li><code>H5I_ATTR</code> </li>
+<li>or <code>H5I_BADID</code>, if no valid type can be determined or the input object id is invalid. </li>
+</ul>
+
+</div>
+</div><p>
+<a class="anchor" name="34ac09a54825253293a0d8990e120506"></a><!-- doxytag: member="H5::IdComponent::operator=" ref="34ac09a54825253293a0d8990e120506" args="(const IdComponent &amp;rhs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classH5_1_1IdComponent.html">IdComponent</a> &amp; H5::IdComponent::operator=           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classH5_1_1IdComponent.html">IdComponent</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>rhs</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Assignment operator. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>rhs</em>&nbsp;</td><td>- IN: Reference to the existing object </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Reference to <a class="el" href="classH5_1_1IdComponent.html">IdComponent</a> instance </dd></dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1IdComponentException.html">H5::IdComponentException</a></em>&nbsp;</td><td>when attempt to close the HDF5 object fails </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="4b5dc282b178ac71704772ae575351cc"></a><!-- doxytag: member="H5::IdComponent::getId" ref="4b5dc282b178ac71704772ae575351cc" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual hid_t H5::IdComponent::getId           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+Implemented in <a class="el" href="classH5_1_1Attribute.html#69b8eaa38ebdb44f375e670fc01b9a34">H5::Attribute</a>, <a class="el" href="classH5_1_1DataSet.html#a0b5b0136755eecf6ec4aa498d1da3ec">H5::DataSet</a>, <a class="el" href="classH5_1_1DataSpace.html#aefbf468ec1d8e46b9116552f0524ef9">H5::DataSpace</a>, <a class="el" href="classH5_1_1DataType.html#38f4c8c9dda4b35cb667949280bf5340">H5::DataType</a>, <a class="el" href="classH5_1_1H5File.html#678d947a4efe731e497d33d1c23922ff">H5::H5File</a>, <a class="el" href="classH5_1_1Group.html#3d1f05df87a72511633dce6d556f8936">H5::Group</a>, and <a class="el" href="classH5_1_1PropList.html#72b0944d2235eb3ec85933070d92433b">H5::PropList</a>.
+</div>
+</div><p>
+<a class="anchor" name="1e46d85ec29cd77bb1767cd01b8f0c8d"></a><!-- doxytag: member="H5::IdComponent::setId" ref="1e46d85ec29cd77bb1767cd01b8f0c8d" args="(const hid_t new_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void H5::IdComponent::setId           </td>
+          <td>(</td>
+          <td class="paramtype">const hid_t&nbsp;</td>
+          <td class="paramname"> <em>new_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sets the identifier of this object to a new value. 
+<p>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classH5_1_1IdComponentException.html">H5::IdComponentException</a></em>&nbsp;</td><td>when the attempt to close the HDF5 object fails </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<hr size="1"><address style="align: right;"><small>Generated on Wed Nov 4 14:13:07 2009 by&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
+</body>
+</html>

@@ -1,0 +1,6 @@
+for i in *.F *.f *.fh
+do
+sed -f sed_cmd_v2_to_v3 $i > aaaaaaa
+find . -name aaaaaaa -size +1 -exec mv {} $i \;
+done
+rm aaaaaaa

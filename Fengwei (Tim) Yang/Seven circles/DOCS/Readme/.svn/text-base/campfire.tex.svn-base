@@ -1,0 +1,381 @@
+% ------------------------------------------------------------------------------
+% LaTeX Template: Titlepage
+% This is a title page template which be used for both articles and reports.
+%
+% Copyright: http://www.howtotex.com/
+% Date: April 2011
+% ------------------------------------------------------------------------------
+
+% -------------------------------------------------------------------------------
+% Preamble
+% -------------------------------------------------------------------------------
+\documentclass[paper=a4, fontsize=11pt,twoside,bibtotoc]{scrartcl}		% KOMA article
+\usepackage[a4paper,pdftex]{geometry}					% A4paper margins
+\setlength{\oddsidemargin}{5mm}						% Remove 'twosided' indentation
+\setlength{\evensidemargin}{5mm}
+
+\newcommand{\exclude}[1]{}
+
+\usepackage[english]{babel}
+%\usepackage[protrusion=true,expansion=true]{microtype}	
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{graphicx}
+
+%% Custom sectioning (sectsty package)
+\usepackage{sectsty}                                    % Custom sectioning (see below)
+\allsectionsfont{\centering \normalfont\scshape}        % Change font of al section commands
+
+% ------------------------------------------------------------------------------
+% Definitions (do not change this)
+% ------------------------------------------------------------------------------
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+
+\makeatletter							% Title
+\def\printtitle{%						
+    {\centering \@title\par}}
+\makeatother									
+
+\makeatletter							% Author
+\def\printauthor{%					
+    {\centering \large \@author}}				
+\makeatother							
+
+% ------------------------------------------------------------------------------
+% Metadata (Change this)
+% ------------------------------------------------------------------------------
+\title{	\normalsize \textsc{Campfire : Users and Developers Guide} 	% Subtitle of the document
+		 	\\[1.0cm]									% 2cm spacing
+			\HRule{2pt} \\										% Upper rule
+			\Huge \textbf{\uppercase{CAMPFIRE}}\\	% Title
+			\Large \textbf{\uppercase{Campfire: Adaptive, Multilevel, Parallel\\ Fully Implicit Research Engine }}	% Title
+			\HRule{2pt} \\ [0.5cm]								% Lower rule + 0.5cm spacing
+			\normalsize %\today									% Todays date
+		}
+
+\author{
+		Christopher Goodyer\\	
+		School of Computing\\	
+		University of Leeds\\
+        \texttt{C.E.Goodyer@leeds.ac.uk} \\
+}
+
+%\usepackage{scrpage}
+\usepackage[automark]{scrpage2} % This should be set AFTER setting up the page geometry
+\pagestyle{scrheadings}
+% \ohead{\pagemark} 
+ \cehead{CAMPFIRE} 
+ \cohead{Users and Developers Guide} 
+ \ofoot[]{} 
+ \cofoot[]{\pagemark} 
+ \cefoot[]{\pagemark} 
+%\makeatletter
+%  \markboth{Left}{Right}
+%\makeatother
+
+\lehead{\rightmark}
+
+\newcommand{\CiteParamesh}{\cite{paramesh1,paramesh2, paramesh3}}
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% Maketitle
+% ------------------------------------------------------------------------------
+\thispagestyle{empty}				% Remove page numbering on this page
+
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor								% Print the author data as defined above
+  	\vfill
+
+\tableofcontents
+
+\clearpage
+% ------------------------------------------------------------------------------
+% Begin document
+% ------------------------------------------------------------------------------
+
+\section{Introduction}
+
+Campfire is a tool to facilitate coupling non-linear multigrid, parallel execution on a properly load balanced adaptively refined grid, using the open source 
+library PARAMESH~\CiteParamesh.  
+The intention is to provide a user-friendly interface layer where only the application-specific routines are exposed to the user by default.
+Obviously the source to the library is also provided and it is envisaged that there may be future scenarios where applications may need to extend the functionality 
+of algorithm.
+
+PARAMESH, as used here, is an adaptive mesh refinement code which works on individual square/cubic blocks of data.  These data blocks therefore can be spread 
+across processors allowing parallelism.  This is accomplished using MPI.  Since each block is independent in memory from its neighbours they all have a layer of 
+\textsl{guard cells} around the outside which can be filled with the appropriate neighbouring values.  PARAMESH includes its adaptivity through quad-tree/oct-tree
+uniform refinement of blocks.
+
+By default PARAMESH includes a linear multigrid solver in its code-base, although this not used by default.
+Campfire extends this idea to be an FAS multigrid in order to solve non-linear equations.
+The mesh refinement functionality in PARAMESH allows the multigrid implementation to therefore be an adaptive mesh multigrid, sometimes coined MLAT.
+
+The use of multigrid in Campfire inherently needs a smoother to be applied at each level.  A Jacobi pointwise finite difference smoother is used, with an 
+approximate solve performed on the coarsest grid level.
+
+This document is structured as follows.  In Section~\ref{SEC_History} more details of the genesis of this software are given, along with information on how it 
+operates.  The changes from the default PARAMESH behaviour are also summarised.
+
+Instructions on how to obtain, and compile the code is given in~\ref{SEC_Compiling} with the additional information for running cases given in 
+Section~\ref{SEC_Running}. 
+
+Information for developers follows.  In Section~\ref{SEC_Existing} guidelines on extending existing models is given, and Section~\ref{SEC_New} explains how to 
+write a new application.
+
+Contained in Campfire are a collection  of tools intended to aid visualization of outputs.  These are described in Section~\ref{SEC_Viz}.  There are also a 
+growing number of documents included with the software in the \texttt{DOCS} directory and the suggestions for how to add what to these are given 
+in Section~\ref{SEC_Documentation}.
+
+Finally the document concludes with a full description of the API (Section~\ref{SEC_API}) and kknown bugs and features needed to be added (Section~\ref{SEC_Bugs}).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{History and Implementation}	
+								\label{SEC_History}
+
+Following the development of a 2-d fully implicit adaptive multigrid code for phase field problems~\cite{janref1,janref2,janref3}, now released as open source 
+software from~\cite{jancode} attention turned to the more interesting, but considerably more computationally challenging 3-d problems.  The need for multigrid, 
+adaptive meshing and implicit timestepping had been clearly demonstrated, but in order to get to mesh resolutions that were sufficiently fine to be realistic, but 
+sufficiently large domains to be useful then a move to a parallel implementation was imperative.  As such, PARAMESH was chsen as a suitable software library 
+providing a necessary framework in which to build these applications.
+
+The PARAMESH software used in this work was developed at the NASA Goddard Space Flight Center and Drexel University under NASA's HPCC and ESTO/CT projects and 
+under grant NNG04GP79G from the NASA/AISR project.
+
+The original development of what is today the Campfire software was done by Jan Rosam and James Green.  This resulted in a software basis that forms much of the 
+core code present today in Campfire.  In particular many of the components of both the MG-SRC and PF-SRC directories come from their work.  Chris Goodyer took 
+their software, corrected many issues and has repackaged it as given here.  The major extensions are as described in the following paragraphs.
+
+This idea of adaptive meshes for multigrid is one of the most important areas where the original PARAMESH library has had to be modified.  
+For efficient parallelism there needs to be equal work distribution per processors on every grid.  Unfortunately the default PARAMESH implementation has a load 
+balancing of all the blocks in the simulation, irregardless of which grid is being worked on.  A new algorithm was devised, throwing away the Morton ordering that 
+PARAMESH has at its heart, and ordering the blocks per processor based on which grid they are on.  In order to load balance the first and last blocks on that 
+processor are shuffled left or right if a processor has too many blocks.
+
+Whilst apative meshing is included in the default mesh it requires that the domain remains fixed throughout the computation.  For most simulations this is entirely 
+sensible.  However for the phase field applictions that this software suite was designed for this is not quite so useful.  The simulation is about growing a 
+dendrite from a small seed.  Fixing the domain means that the total mesh requirements of the final solution need to be known before starting the simulation.  In 
+order to combat this requirement a mesh growing strategy has been introduced.  The basic idea is that as the solution grows towards a far-field boundary condition 
+extra blocks are added on the coarsest level to allow the solution to keep growing.  Advantages of this approach are that the simulation can be started on a very 
+small domain and be allowed to adapt as necessary, and that this adaptation need no longer be constrained to square domains.  The introduction of non-convex 
+corners meant that further changes were necessary in the PARAMESH library, as did the loading of checkpoint files with different domain sizes than the initial 
+domain specified in the setup procedures.
+
+Scalability and the pf\_ routines
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Installation and Compilation}
+								\label{SEC_Compiling}
+
+For the sake of simplicity here I am assuming that all code is going to be installed in /usr/not-backed-up/.  You should obviously pick somewhere appropriate, and 
+never leave important work on an unbacked up filesystem.
+
+svn checkouts of paramesh and Campfire
+
+\texttt{        svn checkout https://repo.engineering.leeds.ac.uk/svn/paramesh}
+
+\texttt{        svn checkout https://repo.engineering.leeds.ac.uk/svn/Campfire}
+
+
+download of appropriate hdf5
+
+\texttt{        make distclean}
+
+\texttt{        ./configure --enable-parallel --prefix=/usr/not-backed-up/hdf5-1.6.10 CC=mpicc F90=mpif90}
+
+\texttt{        make}
+
+\texttt{        make install}
+
+\texttt{        }
+
+Compiling
+
+environment variables
+
+\texttt{       	setenv HDF5\_DIR /usr/not-backed-up/hdf5-1.6.10}
+
+\texttt{        setenv PARAMESH\_DIR /usr/not-backed-up/paramesh}
+
+\texttt{        export HDF5\_DIR=/usr/not-backed-up/hdf5-1.6.10}
+
+\texttt{        export PARAMESH\_DIR=/usr/not-backed-up/paramesh}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Running cases}
+								\label{SEC_Running}
+
+modifications  -- application case and generic parameters
+
+make
+
+amr\_runtime\_parameters:
+
+block counts
+
+ndim
+
+nxb
+
+nvar
+
+nguard
+
+output\_dir
+
+
+mpirun
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Development of existing applications}
+								\label{SEC_Existing}
+
+Hopefully all changes should be incremental
+
+Adding new variables will mean increasing nvar\_work as well as nvar
+
+Uploading tested changes back to svn.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Producing a new application}
+								\label{SEC_New}
+
+Assumptions made for PARAMESH in Campfire, e.g. not spherical, only cell centred
+
+Assumptions made in Campfire, e.g. BCs
+
+Copy SKELETON-SRC directory
+
+Rename source files appropriately and modify Makefile
+
+Expand all the needed stub functions
+
+Use a user module to pass parameters
+
+Uploading changes back to svn.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Visualization tools}
+								\label{SEC_Viz}
+
+Output provided at two frequencies by Campfire: every timestep and every output\_frequency timesteps
+
+Text output controlled using \texttt{verbosity} variable in \texttt{generic\_parameters}.  Use it.
+
+\subsection{Using ViSIT with Chombo output}
+
+HDF5 output.
+
+\subsection{Extractor}
+
+Generates isosurfaces, axial-plane profiles, 
+
+\subsection{Tip velocity and averaging using RealStripper}
+\subsection{GraphViz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Documentation}
+								\label{SEC_Documentation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{API}
+								\label{SEC_API}
+
+The following functions are all called from within Campfire and need to be provided in the user code.  Many can just be stubs if not 
+needed.  Obviously a domain needs initialisation and the user needs to provide an appropriate smoother and defect calculation (which 
+will be very similar).
+
+Initialisation:
+
+\texttt{app\_initial\_soln\_blk}
+: (\texttt{lb})
+
+\texttt{app\_parameter\_set}
+: ( )
+
+\texttt{app\_domain\_setup}
+: (\texttt{pid}, \texttt{noprocs})
+
+Multigrid smoother and defect calculation:
+
+\texttt{app\_mg\_smooth}
+: (\texttt{pid}, \texttt{level})
+
+\texttt{app\_mg\_get\_defect\_var}
+: (\texttt{lb}, \texttt{max\_defect}, \texttt{rms}, \texttt{npts})
+
+Input/output:
+
+\texttt{app\_read\_checkpoint}
+: (\texttt{pid}, \texttt{noprocs})
+
+\texttt{app\_pretimeloop\_output}
+: (\texttt{pid}, \texttt{noprocs})
+
+\texttt{app\_close\_files}
+: (\texttt{pid}, \texttt{noprocs})
+
+\texttt{app\_test\_refinement}
+: ( )
+
+\texttt{app\_output\_perstep}
+: (\texttt{pid}, \texttt{noprocs}, \texttt{stepno})
+
+\texttt{app\_output\_occasional}
+: (\texttt{pid}, \texttt{noprocs}, \texttt{stepno})
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Known Bugs and To Do list}
+								\label{SEC_Bugs}
+
+\begin{itemize}
+	\item{If mesh growing code is used then in parallel it seems to struggle finding coarsest neighbour initially if only a single block is used on the 
+		coarsest level.}
+	\item{Calls to \texttt{pf\_prolong} and \texttt{pf\_restrict} do not work correctly, so stick with  \texttt{amr\_prolong} and \texttt{amr\_restrict} for now.}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% References need making style consistent
+
+\bibliographystyle{chris}
+\begin{thebibliography}{10}
+\bibitem{paramesh1}{ Peter MacNeice, Kevin M. Olson, Clark Mobarry, Rosalinda deFainchtein and Charles Packer, "PARAMESH : A parallel adaptive mesh refinement 
+community toolkit.", Computer Physics Communications, vol. 126, p.330-354, (2000).}
+\bibitem{paramesh2}{ Kevin Olson and Peter MacNeice, 2005, "An Over of the PARAMESH AMR Software and Some of Its Applications",in Adaptive Mesh Refinement-Theory 
+and Applications, Proceedings of the Chicago Workshop on Adaptive Mesh Refinement Methods, Series: Lecture Notes in Computational Science and Engineering, vol. 41, 
+eds. T. Plewa, T. Linde, and G. Weirs (Berlin: Springer).}
+\bibitem{paramesh3}{ Kevin Olson, 2006, "PARAMESH: A Parallel Adaptive Grid Tool", in Parallel Computational Fluid Dynamics 2005: Theory and Applications: 
+Proceedings of the Parallel CFD Conference, College Park, MD, U.S.A., eds. A. Deane, A. Ecer, G. Brenner, D. Emerson, J. McDonough, J. Periaux, N. Satofuka, and D. 
+Tromeur-Dervout (Elsevier).}
+\bibitem{parameshCode}{PARAMESH source code : \texttt{http://sourceforge.net/projects/paramesh/}}
+\bibitem{janref1}{Mullis A M, Rosam, J and Jimack, P K, Solute Trapping and the effects of Anti-Trapping Currents on Phase-Field Models of Coupled Thermo-Solutal 
+Solidification J. Cryst. Growth, vol.312, pp.1891--1897, 2010.}
+\bibitem{janref2}{Rosam, J, Jimack, P K and Mullis, A M, Quantitative Phase-Field Modelling of Solidification at High Lewis Number . Physical Review E, vol.79, 
+article 030601(R), 2009.}
+\bibitem{janref3}{Rosam, J, Jimack, P K and Mullis, A M, An Adaptive, Fully Implicit, Multigrid Phase-Field Model for the Quantitative Simulation of Non-isothermal 
+Binary Alloy Solidification. Acta Materialia, vol.56, pp.4559-4569, 2008. }
+\bibitem{jancode}{PhAIM-2d : \texttt{http://www.digital.leeds.ac.uk/software}}
+\bibitem{jamesref1}{Green, J, Jimack, P K, Mullis A M and Rosam, J, An Adaptive, Multilevel Scheme for the Implicit Solution of Three-Dimensional Phase-Field 
+Equations Numerical Methods for PDEs, vol.27, pp.106--120, 2011. }
+\bibitem{jamesref2}{Green, J R, Jimack, P K, Mullis, A M and Rosam, J, Towards a Three-Dimensional Parallel, Adaptive, Multilevel Solver for the Solution of 
+Nonlinear, Time-Dependent, Phase-Change Problems. In Parallel, Distributed and Grid Computing for Engineering, eds. B.H.V. Topping and P. Ivanyi (Saxe-Coburg 
+Publications, UK), pp.251--274, 2009.}
+\end{thebibliography}
+% ------------------------------------------------------------------------------ % End document 
+%------------------------------------------------------------------------------ 
+\end{document}

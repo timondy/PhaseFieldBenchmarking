@@ -1,0 +1,49 @@
+block_boundary_data.fh
+----------------------
+
+nfluxvar=2
+nedgevar=1
+
+
+compiler.fh
+-----------
+
+#define SGI_SHMEM
+/*#define real8 */
+
+
+physicaldata.fh
+---------------
+
+!#define VAR_DT
+!#define PRED_CORR 
+!#define EMPTY_CELLS
+#define DIAGONALS
+!!!#define N_DIM 2
+!#define NO_PERMANENT_GUARDCELLS
+#define ADVANCE_ALL_LEVELS
+!#define CONSERVE
+nxb=4
+nyb=4
+nzb=4
+maxblocks=100
+nguard=2
+nvar=2
+nfacevar=1
+iface_off=0
+red_f = 0.25
+
+
+tree.fh
+-------
+
+mflags=1
+
+
+
+workspace.fh
+------------
+
+nguard_work=2
+nvar_work=2
+
