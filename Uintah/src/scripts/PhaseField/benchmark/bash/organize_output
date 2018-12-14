@@ -1,0 +1,38 @@
+#!/bin/bash
+
+if [ -z "$OUTDIR" ]; then
+    OUTDIR=dat
+fi
+
+mkdir $OUTDIR
+
+find . -maxdepth 2 -name '*.dat' -exec cp --parents {} $OUTDIR \;
+find . -maxdepth 2 -name 'input.xml' -exec cp --parents {} $OUTDIR \;
+
+cd $OUTDIR
+
+for f in $(ls); do
+  f=${f%%.*}
+  mkdir -p ${f//_//}
+done
+
+for f in $(find . -maxdepth 2 -name '*.dat' -print0 | sort -z | xargs -r0); do
+  name=${f##*/}
+  dir=${f%/*}
+  num=${dir##*.}
+  dir=${dir%.*.*}
+  bname=${name%*.dat}
+  mv $f ${dir//_//}/${bname}_${num}.dat
+done
+
+for f in $(find . -maxdepth 2 -name 'input.xml'); do
+  name=${f##*/}
+  dir=${f%/*}
+  num=${dir##*.}
+  dir=${dir%.*.*}
+  bname=${name%*.xml}
+  mv $f ${dir//_//}/${bname}_${num}.xml
+done
+
+rmdir *
+

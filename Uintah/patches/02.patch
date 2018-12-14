@@ -1,0 +1,13 @@
+diff --git a/src/Core/Grid/Level.cc b/src/Core/Grid/Level.cc
+index 12c5d04b..ec4504b7 100644
+--- a/src/Core/Grid/Level.cc
++++ b/src/Core/Grid/Level.cc
+@@ -631,7 +631,7 @@ Level::setIsNonCubicLevel()
+   double levelVol = levelSides.x() * levelSides.y() * levelSides.z();
+   
+   m_isNonCubicDomain = false;
+-  double fuzz = 100 * DBL_EPSILON;
++  double fuzz = 0.5 * cellVolume(); // 100 * DBL_EPSILON;
+   if ( std::fabs( patchesVol - levelVol ) > fuzz ) {
+     m_isNonCubicDomain = true;
+   }

@@ -1,0 +1,76 @@
+To obtain the code available here from the official trunk branch of Uintah 
+the patches available in this directory must be applied
+
+1.  Retrieve original revision
+    $ git svn clone -r 58893 https://gforge.sci.utah.edu/svn/uintah/trunk <path>
+    $ cd <path>
+
+2.  Apply all patches in order
+    $ git apply patches/##.patch
+
+Patch:  01.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Changed how level is computed in SchedulerCommon::scheduleAndDoDataCopy for 
+    OncePerProc task since they can work on multiple levels we pick the level of 
+    the first patch in task's PatchSet
+
+Patch:  02.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Changed the fuzz value in Level::setIsNonCubicLevel used to chech wheter the 
+    domain is cubic It was too strict, made it dependent on mesh refinement
+
+Patch:  03.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Commented out some unused vars in OnDemandDataWarehouse::getGridVar
+
+  - Modified doesCoverRegion check in OnDemandDataWarehouse::getRegionModifiable 
+    to not fail on virtual patches (i.e periodic boundaries)
+    virtual offset is used to check var/patch region intersection
+
+Patch:  04.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Modified Level::getTotalCellsInRegion to include also virtual patches to 
+    take into account periodic boundaries on non cubic levels such as refined 
+    amr levels
+  
+  - Modified Patch::computeVariableExtentsWithBoundaryCheck adding ghost offsets
+    to level extents as well in order to handle periodic boundaries on non cubic
+    levels (such as amr fine levels)
+
+Patch:  05.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Modified SchedulerCommon::scheduleAndDoDataCopy to make get scheduleRefine 
+    called after copying data on untouched patches after regrid occurs (some 
+    refinement computation may need to get data from neighbors on preexisting 
+    patches)
+
+Patch:  06.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Generalized implemenentation of PhaseField component which now provides a 
+    framework for phase field applications
+
+  - PhaseField application reimplemented as PureMetal
+
+  - Updated PhaseField inputs for PureMetal application
+
+Patch:  07.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Heat component reimplemented as Heat application within PhaseField component
+    (implicit solver implementation removed temporarly)
+
+Patch:  08.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Benchmark applications implemented within PhaseField component
+
+Patch:  09.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Added additional files for benchmark repository

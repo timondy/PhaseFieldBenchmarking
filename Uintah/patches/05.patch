@@ -1,0 +1,32 @@
+diff --git a/src/CCA/Components/Schedulers/SchedulerCommon.cc b/src/CCA/Components/Schedulers/SchedulerCommon.cc
+index 9e025d6a..dd543aff 100644
+--- a/src/CCA/Components/Schedulers/SchedulerCommon.cc
++++ b/src/CCA/Components/Schedulers/SchedulerCommon.cc
+@@ -1694,11 +1694,6 @@ SchedulerCommon::scheduleAndDoDataCopy( const GridP & grid )
+         }  // using MPI
+       }
+ 
+-      if (refinePatchSets[L]->size() > 0) {
+-        DOUT(g_schedulercommon_dbg, "Rank-" << d_myworld->myRank() << "  Calling scheduleRefine for patches " << *refinePatchSets[L].get_rep());
+-        m_application->scheduleRefine(refinePatchSets[L].get_rep(), sched);
+-      }
+-
+     } else {
+       refinePatchSets[L] = scinew PatchSet;
+       copyPatchSets[L] = const_cast<PatchSet*>(newLevel->eachPatch());
+@@ -1724,6 +1719,15 @@ SchedulerCommon::scheduleAndDoDataCopy( const GridP & grid )
+     }
+ 
+     //__________________________________
++    //  Scheduling for refine
++    // scjmc: moved after copy tasks since some refinement may need value from
++    // neighbours which need so to be copied beforehand
++    if (refinePatchSets[L]->size() > 0) {
++      DOUT(g_schedulercommon_dbg, "Rank-" << d_myworld->myRank() << "  Calling scheduleRefine for patches " << *refinePatchSets[L].get_rep());
++      m_application->scheduleRefine(refinePatchSets[L].get_rep(), sched);
++    }
++
++    //__________________________________
+     //  Scheduling for modifyDataOnNewGrid
+     if (refinePatchSets[L]->size() > 0) {
+       dataTasks.push_back(scinew Task("SchedulerCommon::modifyDataOnNewGrid", this, &SchedulerCommon::copyDataToNewGrid));

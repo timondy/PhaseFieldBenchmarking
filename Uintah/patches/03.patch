@@ -1,0 +1,49 @@
+diff --git a/src/CCA/Components/Schedulers/OnDemandDataWarehouse.cc b/src/CCA/Components/Schedulers/OnDemandDataWarehouse.cc
+index 5fa34ea4..62d846ec 100644
+--- a/src/CCA/Components/Schedulers/OnDemandDataWarehouse.cc
++++ b/src/CCA/Components/Schedulers/OnDemandDataWarehouse.cc
+@@ -2410,7 +2410,13 @@ OnDemandDataWarehouse::getRegionModifiable(       GridVariableBase& var,
+ 
+       IntVector varLo = v->getLow();
+       IntVector varHi = v->getHigh();
+-      bool doesCoverRegion = ( Min(l, varLo) == varLo && Max(h, varHi) == varHi );
++
++      IntVector offset ( 0, 0, 0 );
++      if (patch->isVirtual()) {
++        offset = patch->getVirtualOffset();
++      }
++
++      bool doesCoverRegion = ( Min(l-offset, varLo) == varLo && Max(h-offset, varHi) == varHi ); // scjmc - this is not taking into account virtual patches
+ 
+       if ( (v != nullptr) && v->isValid() && doesCoverRegion) {
+         varFound  = true;
+@@ -3073,20 +3079,26 @@ OnDemandDataWarehouse::getGridVar(       GridVariableBase& var,
+     ASSERT(no_realloc);
+   }
+   else {
+-    IntVector dn = high - low;
++    // dn is not used - scjmc
++    // IntVector dn = high - low;
+ 
+-    Patch::selectType neighbors;
++    // neighbors is not used - scjmc
++    /* Patch::selectType neighbors; */
+     IntVector lowIndex, highIndex;
+     patch->computeVariableExtents(basis, label->getBoundaryLayer(), gtype, numGhostCells, lowIndex, highIndex);
+ 
++    // neighbors is not used - scjmc
++    /*
+     if (numGhostCells > 0) {
+       patch->getLevel()->selectPatches(lowIndex, highIndex, neighbors);
+     }
+     else {
+       neighbors.push_back( patch );
+     }
++    */
+ 
+-    IntVector oldLow = var.getLow(), oldHigh = var.getHigh();
++    // oldLo and oldHigh are not used - scjmc
++    // IntVector oldLow = var.getLow(), oldHigh = var.getHigh();
+     if ( !var.rewindow( lowIndex, highIndex ) ) {
+       // reallocation needed
+       // Ignore this if this is the initialization dw in its old state.

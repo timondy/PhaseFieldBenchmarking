@@ -1,0 +1,13 @@
+diff --git a/src/CCA/Components/Schedulers/SchedulerCommon.cc b/src/CCA/Components/Schedulers/SchedulerCommon.cc
+index 6950a9c9..9e025d6a 100644
+--- a/src/CCA/Components/Schedulers/SchedulerCommon.cc
++++ b/src/CCA/Components/Schedulers/SchedulerCommon.cc
+@@ -1531,6 +1531,8 @@ SchedulerCommon::scheduleAndDoDataCopy( const GridP & grid )
+           int level = -1;
+           if (dep->m_patches) {        // just in case the task is over multiple levels...
+             level = getLevel(dep->m_patches)->getIndex();
++          } else if (task->getType() == Task::OncePerProc) {
++            level = ps->getUnion()->get(0)->getLevel()->getIndex();
+           } else if (ps) {
+             level = getLevel(ps)->getIndex();
+           }
