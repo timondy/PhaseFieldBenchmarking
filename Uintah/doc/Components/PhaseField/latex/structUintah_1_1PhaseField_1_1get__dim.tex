@@ -1,0 +1,110 @@
+\hypertarget{structUintah_1_1PhaseField_1_1get__dim}{}\section{Uintah\+:\+:Phase\+Field\+:\+:get\+\_\+dim$<$ D\+IM $>$ Struct Template Reference}
+\label{structUintah_1_1PhaseField_1_1get__dim}\index{Uintah\+::\+Phase\+Field\+::get\+\_\+dim$<$ D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::get\+\_\+dim$<$ D\+I\+M $>$}}
+
+
+Dim\+Type Helper.  
+
+
+
+
+{\ttfamily \#include $<$Definitions.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Int\+Vector \hyperlink{structUintah_1_1PhaseField_1_1get__dim_adf79b3a3a658519c8516b6899fb9d588}{unit\+\_\+vector} ()
+\item 
+{\footnotesize template$<$int V$>$ }\\static Int\+Vector \hyperlink{structUintah_1_1PhaseField_1_1get__dim_a23acb158beb7f5bc2092b0162ffdcf2a}{scalar\+\_\+vector} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr Patch\+::\+Face\+Type \hyperlink{structUintah_1_1PhaseField_1_1get__dim_afd8fb64919d3c885e76d9f5f4484dfcf}{face\+\_\+start} = Patch\+::xminus
+\begin{DoxyCompactList}\small\item\em Face\+Type to be used as first value when forward-\/iterating over faces. \end{DoxyCompactList}\item 
+static constexpr Patch\+::\+Face\+Type \hyperlink{structUintah_1_1PhaseField_1_1get__dim_a7efaa82a02b8d74fe1c84bc41938bc6c}{face\+\_\+end} = Patch\+::\+Face\+Type ( 2 $\ast$ D\+IM )
+\begin{DoxyCompactList}\small\item\em Face\+Type to be used as lest value when forward-\/iterating over faces. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} \hyperlink{structUintah_1_1PhaseField_1_1get__dim_a5cccf47293a967c562447e0aa5fdbb43}{highest\+\_\+dir} = ( \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} ) ( D\+IM -\/ 1 )
+\begin{DoxyCompactList}\small\item\em Highest valid direction for the given D\+IM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Dim\+Type D\+IM$>$\newline
+struct Uintah\+::\+Phase\+Field\+::get\+\_\+dim$<$ D\+I\+M $>$}
+
+Dim\+Type Helper. 
+
+Helper struct to get expressions dependent on the given problem dimension 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em D\+IM} & problem dimension \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__dim_a23acb158beb7f5bc2092b0162ffdcf2a}\label{structUintah_1_1PhaseField_1_1get__dim_a23acb158beb7f5bc2092b0162ffdcf2a}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+dim@{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}!scalar\+\_\+vector@{scalar\+\_\+vector}}
+\index{scalar\+\_\+vector@{scalar\+\_\+vector}!Uintah\+::\+Phase\+Field\+::get\+\_\+dim@{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}}
+\subsubsection{\texorpdfstring{scalar\+\_\+vector()}{scalar\_vector()}}
+{\footnotesize\ttfamily template$<$Dim\+Type D\+IM$>$ \\
+template$<$int V$>$ \\
+static Int\+Vector \hyperlink{structUintah_1_1PhaseField_1_1get__dim}{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}$<$ D\+IM $>$\+::scalar\+\_\+vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Scalar vector in the given D\+IM 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em V} & scalar value \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Int\+Vector with relevant entries set to V (entries with index greater than D\+IM are set to 0) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__dim_adf79b3a3a658519c8516b6899fb9d588}\label{structUintah_1_1PhaseField_1_1get__dim_adf79b3a3a658519c8516b6899fb9d588}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+dim@{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}!unit\+\_\+vector@{unit\+\_\+vector}}
+\index{unit\+\_\+vector@{unit\+\_\+vector}!Uintah\+::\+Phase\+Field\+::get\+\_\+dim@{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}}
+\subsubsection{\texorpdfstring{unit\+\_\+vector()}{unit\_vector()}}
+{\footnotesize\ttfamily template$<$Dim\+Type D\+IM$>$ \\
+static Int\+Vector \hyperlink{structUintah_1_1PhaseField_1_1get__dim}{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}$<$ D\+IM $>$\+::unit\+\_\+vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Unit vector for the given D\+IM \begin{DoxyReturn}{Returns}
+Int\+Vector with relevant entries set to 1 (entries with index greater than D\+IM are set to 0) 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__dim_a7efaa82a02b8d74fe1c84bc41938bc6c}\label{structUintah_1_1PhaseField_1_1get__dim_a7efaa82a02b8d74fe1c84bc41938bc6c}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+dim@{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}!face\+\_\+end@{face\+\_\+end}}
+\index{face\+\_\+end@{face\+\_\+end}!Uintah\+::\+Phase\+Field\+::get\+\_\+dim@{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}}
+\subsubsection{\texorpdfstring{face\+\_\+end}{face\_end}}
+{\footnotesize\ttfamily template$<$Dim\+Type D\+IM$>$ \\
+constexpr Patch\+::\+Face\+Type \hyperlink{structUintah_1_1PhaseField_1_1get__dim}{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}$<$ D\+IM $>$\+::face\+\_\+end = Patch\+::\+Face\+Type ( 2 $\ast$ D\+IM )\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Face\+Type to be used as lest value when forward-\/iterating over faces. 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__dim_afd8fb64919d3c885e76d9f5f4484dfcf}\label{structUintah_1_1PhaseField_1_1get__dim_afd8fb64919d3c885e76d9f5f4484dfcf}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+dim@{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}!face\+\_\+start@{face\+\_\+start}}
+\index{face\+\_\+start@{face\+\_\+start}!Uintah\+::\+Phase\+Field\+::get\+\_\+dim@{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}}
+\subsubsection{\texorpdfstring{face\+\_\+start}{face\_start}}
+{\footnotesize\ttfamily template$<$Dim\+Type D\+IM$>$ \\
+constexpr Patch\+::\+Face\+Type \hyperlink{structUintah_1_1PhaseField_1_1get__dim}{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}$<$ D\+IM $>$\+::face\+\_\+start = Patch\+::xminus\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Face\+Type to be used as first value when forward-\/iterating over faces. 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__dim_a5cccf47293a967c562447e0aa5fdbb43}\label{structUintah_1_1PhaseField_1_1get__dim_a5cccf47293a967c562447e0aa5fdbb43}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+dim@{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}!highest\+\_\+dir@{highest\+\_\+dir}}
+\index{highest\+\_\+dir@{highest\+\_\+dir}!Uintah\+::\+Phase\+Field\+::get\+\_\+dim@{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}}
+\subsubsection{\texorpdfstring{highest\+\_\+dir}{highest\_dir}}
+{\footnotesize\ttfamily template$<$Dim\+Type D\+IM$>$ \\
+constexpr \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} \hyperlink{structUintah_1_1PhaseField_1_1get__dim}{Uintah\+::\+Phase\+Field\+::get\+\_\+dim}$<$ D\+IM $>$\+::highest\+\_\+dir = ( \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} ) ( D\+IM -\/ 1 )\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Highest valid direction for the given D\+IM. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Definitions_8h}{Definitions.\+h}\end{DoxyCompactItemize}

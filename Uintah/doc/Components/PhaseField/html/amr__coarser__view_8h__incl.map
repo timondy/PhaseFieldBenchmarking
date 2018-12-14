@@ -1,0 +1,34 @@
+<map id="amr_coarser_view.h" name="amr_coarser_view.h">
+<area shape="rect" id="node2" href="$piecewise__view_8h.html" title="CCA/Components/PhaseField\l/Views/detail/piecewise_view.h" alt="" coords="347,80,551,121"/>
+<area shape="rect" id="node20" href="$SubProblems_8h.html" title="CCA/Components/PhaseField\l/DataTypes/SubProblems.h" alt="" coords="743,80,942,121"/>
+<area shape="rect" id="node3" href="$view_8h.html" title="CCA/Components/PhaseField\l/Views/detail/view.h" alt="" coords="709,913,907,955"/>
+<area shape="rect" id="node17" href="$IntVectorOutOfBounds_8h.html" title="CCA/Components/PhaseField\l/Exceptions/IntVectorOutOfBounds.h" alt="" coords="173,169,411,211"/>
+<area shape="rect" id="node4" href="$Definitions_8h.html" title="CCA/Components/PhaseField\l/Util/Definitions.h" alt="" coords="962,1003,1161,1044"/>
+<area shape="rect" id="node8" href="$Support_8h.html" title="CCA/Components/PhaseField\l/DataTypes/Support.h" alt="" coords="715,1003,914,1044"/>
+<area shape="rect" id="node11" href="$ScalarField_8h.html" title="CCA/Components/PhaseField\l/DataTypes/ScalarField.h" alt="" coords="1983,1003,2182,1044"/>
+<area shape="rect" id="node13" href="$VectorField_8h.html" title="CCA/Components/PhaseField\l/DataTypes/VectorField.h" alt="" coords="2206,1003,2405,1044"/>
+<area shape="rect" id="node14" href="$view__array_8h.html" title="CCA/Components/PhaseField\l/Views/detail/view_array.h" alt="" coords="493,1003,691,1044"/>
+<area shape="rect" id="node16" href="$view__array__view_8h.html" title="CCA/Components/PhaseField\l/Views/detail/view_array_view.h" alt="" coords="487,1092,697,1133"/>
+<area shape="rect" id="node21" href="$Problem_8h.html" title="CCA/Components/PhaseField\l/DataTypes/Problem.h" alt="" coords="941,169,1139,211"/>
+<area shape="rect" id="node22" href="$BCInfo_8h.html" title="CCA/Components/PhaseField\l/DataTypes/BCInfo.h" alt="" coords="2163,913,2362,955"/>
+<area shape="rect" id="node23" href="$View_8h.html" title="CCA/Components/PhaseField\l/Views/View.h" alt="" coords="709,638,907,679"/>
+<area shape="rect" id="node24" href="$FDView_8h.html" title="CCA/Components/PhaseField\l/Views/FDView.h" alt="" coords="982,445,1181,486"/>
+<area shape="rect" id="node27" href="$DWFDView_8h.html" title="CCA/Components/PhaseField\l/DataWarehouse/DWFDView.h" alt="" coords="868,259,1073,300"/>
+<area shape="rect" id="node48" href="$BCFDViewFactory_8h.html" title="CCA/Components/PhaseField\l/BoundaryConditions/BCFDViewFactory.h" alt="" coords="1871,348,2139,389"/>
+<area shape="rect" id="node25" href="$fd__view_8h.html" title="CCA/Components/PhaseField\l/Views/detail/fd_view.h" alt="" coords="1007,541,1206,583"/>
+<area shape="rect" id="node26" href="$basic__fd__view_8h.html" title="CCA/Components/PhaseField\l/Views/detail/basic_fd_view.h" alt="" coords="981,735,1179,776"/>
+<area shape="rect" id="node28" href="$Implementation_8h.html" title="CCA/Components/PhaseField\l/Factory/Implementation.h" alt="" coords="1286,348,1485,389"/>
+<area shape="rect" id="node35" href="$dwfd__view_8h.html" title="CCA/Components/PhaseField\l/DataWarehouse/detail/dwfd_view.h" alt="" coords="743,348,975,389"/>
+<area shape="rect" id="node30" href="$Base_8h.html" title="CCA/Components/PhaseField\l/Factory/Base.h" alt="" coords="1387,445,1586,486"/>
+<area shape="rect" id="node32" href="$Factory_8h.html" title="CCA/Components/PhaseField\l/Factory/Factory.h" alt="" coords="1610,445,1809,486"/>
+<area shape="rect" id="node36" href="$dw__basic__fd__view_8h.html" title="CCA/Components/PhaseField\l/DataWarehouse/detail/dw\l_basic_fd_view.h" alt="" coords="537,437,735,493"/>
+<area shape="rect" id="node47" href="$dw__fd__view_8h.html" title="CCA/Components/PhaseField\l/DataWarehouse/detail/dw\l_fd_view.h" alt="" coords="759,437,958,493"/>
+<area shape="rect" id="node37" href="$dw__fd_8h.html" title="CCA/Components/PhaseField\l/DataWarehouse/detail/dw_fd.h" alt="" coords="537,541,743,583"/>
+<area shape="rect" id="node38" href="$dw__fd__G1_8h.html" title="CCA/Components/PhaseField\l/DataWarehouse/detail/dw\l_fd_G1.h" alt="" coords="486,631,685,687"/>
+<area shape="rect" id="node39" href="$dw__view_8h.html" title="CCA/Components/PhaseField\l/DataWarehouse/detail/dw_view.h" alt="" coords="309,735,531,776"/>
+<area shape="rect" id="node40" href="$virtual__view_8h.html" title="CCA/Components/PhaseField\l/Views/detail/virtual_view.h" alt="" coords="298,824,497,865"/>
+<area shape="rect" id="node41" href="$SubProblemsP_8h.html" title="CCA/Components/PhaseField\l/DataTypes/SubProblemsP.h" alt="" coords="30,913,229,955"/>
+<area shape="rect" id="node43" href="$Variable_8h.html" title="CCA/Components/PhaseField\l/DataTypes/Variable.h" alt="" coords="253,913,451,955"/>
+<area shape="rect" id="node46" href="$DWInterface_8h.html" title="CCA/Components/PhaseField\l/DataWarehouse/DWInterface.h" alt="" coords="475,913,685,955"/>
+<area shape="rect" id="node49" href="$Expressions_8h.html" title="CCA/Components/PhaseField\l/Util/Expressions.h" alt="" coords="2163,445,2362,486"/>
+</map>

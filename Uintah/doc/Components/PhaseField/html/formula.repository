@@ -1,0 +1,44 @@
+\form#0:\[ \dot u = \epsilon^2 \nabla^2 u - W^\prime(u) \]
+\form#1:\[ W (u) = \frac{1}{4} (u^2 − 1)^2 \]
+\form#2:$[0, 2\pi]^2$
+\form#3:\[ u_{|t=0} = \tanh \frac{\sqrt{(x-\pi)^2+(y-\pi)^2}-2}{epsilon\sqrt{2}} \]
+\form#4:$ \epsilon $
+\form#5:\[ \dot u = \epsilon^2 \nabla^2 v + \nabla^2 W^\prime(u) \]
+\form#6:\[ v = \nabla^2 u \]
+\form#7:\[ \dot u = \epsilon^2 v^{\prime\prime} + \nabla^2 W^\prime(u) \]
+\form#8:\[ v = u^{\prime\prime} \]
+\form#9:\[ u_{|t=0} = \cos(2x) + \exp[ \cos(x+1/10) ]/100 \]
+\form#10:$ \epsilon = \pi/100 \sqrt{2/5} $
+\form#11:\[ \dot u = \alpha \nabla^2 u \]
+\form#12:\[ u_{|t=0} = \prod_{d} \cos ( \alpha x_d ); \]
+\form#13:$d$
+\form#14:$ \alpha $
+\form#15:$\psi : \Omega \to [-1. 1]$
+\form#16:\[ \tau_0 A^2 \dot \psi = \psi (1-\psi^2) - \lambda u (\psi^2 - 1)^2 + W_0^2 A^2 \nabla^2 \psi + W_0^2 (A^2_x - \partial_y B_{xy} - \partial_y B_{xz} \psi_x + W_0^2 (A^2_y + \partial_y B_{xy} - \partial_y B_{yz} \psi_y + W_0^2 (A^2_y + \partial_y B_{xz} + \partial_y B_{yz} \psi_z \]
+\form#17:$z$
+\form#18:$u:\Omega \to \mathbb R$
+\form#19:\[ \dot u = \alpha \nabla^2 u + 1/2 \dot \psi \]
+\form#20:\[ A = 1 - 3 \epsilon + 4\epsilon \sum n_i^4 \]
+\form#21:\[ B_ij = 16 \epsilon A \psi_i \psi_j (\psi_i^2-\psi_j^2) / |\nabla\psi|^4 \]
+\form#22:$ n=\nabla\psi/|\nabla\psi $
+\form#23:$ \lambda $
+\form#24:$ W_0 $
+\form#25:$ W = W_0 A $
+\form#26:$ \tau_0 $
+\form#27:$ \tau = \tau_0 A^2 $
+\form#28:$ x \mapsto x/W_0 $
+\form#29:$ t \mapsto t/\tau_0 $
+\form#30:$ \alpha \mapsto \alpha\tau_0/W_0^2 $
+\form#31:$ u:\Omega\to\mathbb K^N $
+\form#32:$ \partial\Omega $
+\form#33:$ a\in\mathbb R $
+\form#34:$ u = a, u\in\partial\Omega $
+\form#35:$ \nabla u \cdot \mathbb n = a, u\in\partial\Omega $
+\form#36:$ u $
+\form#37:$ \Omega $
+\form#38:$\Omega_k$
+\form#39:$ N! $
+\form#40:$ N $
+\form#41:$ N=0 $
+\form#42:$ N\choose R $
+\form#43:$ 0! $

@@ -1,0 +1,508 @@
+\hypertarget{classUintah_1_1PhaseField_1_1Problem}{}\section{Uintah\+:\+:Phase\+Field\+:\+:Problem$<$ V\+AR, S\+TN, Field $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1Problem}\index{Uintah\+::\+Phase\+Field\+::\+Problem$<$ V\+A\+R, S\+T\+N, Field $>$@{Uintah\+::\+Phase\+Field\+::\+Problem$<$ V\+A\+R, S\+T\+N, Field $>$}}
+
+
+\hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}.  
+
+
+
+
+{\ttfamily \#include $<$Problem.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1Problem_1_1get__field}{get\+\_\+field}
+\begin{DoxyCompactList}\small\item\em Field Type Helper. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1Problem_1_1get__field_3_01I_01_4}{get\+\_\+field$<$ I $>$}
+\begin{DoxyCompactList}\small\item\em Field Type Helper (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t I, size\+\_\+t... J$>$ }\\using \hyperlink{classUintah_1_1PhaseField_1_1Problem_a53d941e785f501dddb8c369644eae4fa}{get\+\_\+view\+\_\+type} = \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ typename \hyperlink{structUintah_1_1PhaseField_1_1Problem_1_1get__field}{get\+\_\+field}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J... $>$\+::type $>$
+\begin{DoxyCompactList}\small\item\em View type for the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable (J-\/th component) \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t I, size\+\_\+t... J$>$ }\\using \hyperlink{classUintah_1_1PhaseField_1_1Problem_a89c10e32620acbe3cae959667a1cdd3e}{get\+\_\+fd\+\_\+view\+\_\+type} = \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ typename \hyperlink{structUintah_1_1PhaseField_1_1Problem_1_1get__field}{get\+\_\+field}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J... $>$\+::type, S\+TN $>$
+\begin{DoxyCompactList}\small\item\em F\+D\+View type for the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable (J-\/th component) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1Problem_af12ef510fb87d6c905f7a29d173f88ba}{Problem} (const typename Field\+::label\+\_\+type \&... labels, int material, const Level $\ast$level, Int\+Vector low, Int\+Vector high)
+\begin{DoxyCompactList}\small\item\em Inner \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1Problem_aa629dc3614e0da03bf75b5df4ddba69c}{Problem} (const typename Field\+::label\+\_\+type \&... labels, const Var\+Label $\ast$subproblems\+\_\+label, int material, const Level $\ast$level, Int\+Vector low, Int\+Vector high, const std\+::list$<$ Patch\+::\+Face\+Type $>$ \&faces, std\+::vector$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ Field $>$ $>$ ... bcs)
+\begin{DoxyCompactList}\small\item\em Boundary constructor. \end{DoxyCompactList}\item 
+int \hyperlink{classUintah_1_1PhaseField_1_1Problem_ad1d8374a86011fd613e95249d74cf73f}{get\+\_\+codim} () const
+\begin{DoxyCompactList}\small\item\em Get Codimension. \end{DoxyCompactList}\item 
+Block\+Range \hyperlink{classUintah_1_1PhaseField_1_1Problem_a33f052fe4dd33891633a479b82e0bea0}{get\+\_\+range} () const
+\begin{DoxyCompactList}\small\item\em Get \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} range. \end{DoxyCompactList}\item 
+const Int\+Vector \& \hyperlink{classUintah_1_1PhaseField_1_1Problem_a2e415a1743c4eba4f4dc9c09c9c87422}{get\+\_\+low} () const
+\begin{DoxyCompactList}\small\item\em Get \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} lower bound. \end{DoxyCompactList}\item 
+const Int\+Vector \& \hyperlink{classUintah_1_1PhaseField_1_1Problem_aa69624e71f479931c650be25eff2e12d}{get\+\_\+high} () const
+\begin{DoxyCompactList}\small\item\em Get \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} higher bound. \end{DoxyCompactList}\item 
+const std\+::list$<$ Patch\+::\+Face\+Type $>$ \& \hyperlink{classUintah_1_1PhaseField_1_1Problem_a80d11dd3a973d867f46c5f663b4c6091}{get\+\_\+faces} () const
+\begin{DoxyCompactList}\small\item\em Get problem faces. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t I$>$ }\\\hyperlink{classUintah_1_1PhaseField_1_1Problem_a53d941e785f501dddb8c369644eae4fa}{get\+\_\+view\+\_\+type}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I} $>$ \& \hyperlink{classUintah_1_1PhaseField_1_1Problem_ae68b96eca7d1f30b9cac99498a110de1}{get\+\_\+view} () const
+\begin{DoxyCompactList}\small\item\em Get a View. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t I$>$ }\\\hyperlink{classUintah_1_1PhaseField_1_1Problem_a53d941e785f501dddb8c369644eae4fa}{get\+\_\+view\+\_\+type}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I} $>$ \& \hyperlink{classUintah_1_1PhaseField_1_1Problem_a8dcb90397ce9ca79e94d65ea54096288}{get\+\_\+view} (Data\+Warehouse $\ast$dw) const
+\begin{DoxyCompactList}\small\item\em Get a View. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t I, size\+\_\+t J$>$ }\\\hyperlink{classUintah_1_1PhaseField_1_1Problem_a53d941e785f501dddb8c369644eae4fa}{get\+\_\+view\+\_\+type}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J $>$ \& \hyperlink{classUintah_1_1PhaseField_1_1Problem_aaca1687245d8afb5c1a86e076cf332fb}{get\+\_\+view} () const
+\begin{DoxyCompactList}\small\item\em Get a View. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t I, size\+\_\+t J$>$ }\\\hyperlink{classUintah_1_1PhaseField_1_1Problem_a53d941e785f501dddb8c369644eae4fa}{get\+\_\+view\+\_\+type}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J $>$ \& \hyperlink{classUintah_1_1PhaseField_1_1Problem_aeff947e34ce8b615a988f77af9eac55c}{get\+\_\+view} (Data\+Warehouse $\ast$dw) const
+\begin{DoxyCompactList}\small\item\em Get a View. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t I$>$ }\\\hyperlink{classUintah_1_1PhaseField_1_1Problem_a89c10e32620acbe3cae959667a1cdd3e}{get\+\_\+fd\+\_\+view\+\_\+type}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I} $>$ \& \hyperlink{classUintah_1_1PhaseField_1_1Problem_a6e1beb1a9b10e0019116af1eb3aeea8b}{get\+\_\+fd\+\_\+view} () const
+\begin{DoxyCompactList}\small\item\em Get a F\+D\+View. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t I$>$ }\\\hyperlink{classUintah_1_1PhaseField_1_1Problem_a89c10e32620acbe3cae959667a1cdd3e}{get\+\_\+fd\+\_\+view\+\_\+type}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I} $>$ \& \hyperlink{classUintah_1_1PhaseField_1_1Problem_a619b0a0b56f6ef1f6d4e6d601c9a3521}{get\+\_\+fd\+\_\+view} (Data\+Warehouse $\ast$dw) const
+\begin{DoxyCompactList}\small\item\em Get a F\+D\+View. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t I, size\+\_\+t J$>$ }\\\hyperlink{classUintah_1_1PhaseField_1_1Problem_a89c10e32620acbe3cae959667a1cdd3e}{get\+\_\+fd\+\_\+view\+\_\+type}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J $>$ \& \hyperlink{classUintah_1_1PhaseField_1_1Problem_adb7a0bc3da6d502b45e8addb33772699}{get\+\_\+fd\+\_\+view} () const
+\begin{DoxyCompactList}\small\item\em Get a F\+D\+View. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t I, size\+\_\+t J$>$ }\\\hyperlink{classUintah_1_1PhaseField_1_1Problem_a89c10e32620acbe3cae959667a1cdd3e}{get\+\_\+fd\+\_\+view\+\_\+type}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J $>$ \& \hyperlink{classUintah_1_1PhaseField_1_1Problem_a43e532eaf9aff9d7cfdec7190ab2b0f8}{get\+\_\+fd\+\_\+view} (Data\+Warehouse $\ast$dw) const
+\begin{DoxyCompactList}\small\item\em Get a F\+D\+View. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedd}{Var\+Type} \hyperlink{classUintah_1_1PhaseField_1_1Problem_a74de1351a682f8523456962f0fc49a18}{Var} = V\+AR
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} data representation. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76a}{Dim\+Type} \hyperlink{classUintah_1_1PhaseField_1_1Problem_a23dbecf657023dd405fc40939661c550}{Dim} = \hyperlink{structUintah_1_1PhaseField_1_1get__stn}{get\+\_\+stn}$<$S\+TN$>$\+::dim
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} dimension. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702}{Stn\+Type} \hyperlink{classUintah_1_1PhaseField_1_1Problem_a7f14e7e468084243304784fb9bba0202}{Stn} = S\+TN
+\begin{DoxyCompactList}\small\item\em Finite difference stencil. \end{DoxyCompactList}\item 
+static const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Problem_a4573d4e59795aa206d47735ff1a57c85}{Name}
+\begin{DoxyCompactList}\small\item\em class name as used by \hyperlink{classUintah_1_1PhaseField_1_1ApplicationFactory}{Application\+Factory} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$\newline
+class Uintah\+::\+Phase\+Field\+::\+Problem$<$ V\+A\+R, S\+T\+N, Field $>$}
+
+\hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}. 
+
+It represent one portion of the global problem on which all implementations required to solve a timestep are fixed (i.\+e\+: there is no need to check boundary conditions/variables extents/neighbors...) 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em V\+AR} & type of variable representation \\
+\hline
+{\em S\+TN} & finite-\/difference stencil \\
+\hline
+{\em Field} & list of type of fields (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} $<$ T $>$ or Vectorial\+Field $<$ T, N $>$) \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a89c10e32620acbe3cae959667a1cdd3e}\label{classUintah_1_1PhaseField_1_1Problem_a89c10e32620acbe3cae959667a1cdd3e}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+fd\+\_\+view\+\_\+type@{get\+\_\+fd\+\_\+view\+\_\+type}}
+\index{get\+\_\+fd\+\_\+view\+\_\+type@{get\+\_\+fd\+\_\+view\+\_\+type}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+fd\+\_\+view\+\_\+type}{get\_fd\_view\_type}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+template$<$size\+\_\+t I, size\+\_\+t... J$>$ \\
+using \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Problem_a89c10e32620acbe3cae959667a1cdd3e}{get\+\_\+fd\+\_\+view\+\_\+type} =  \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View} $<$ typename \hyperlink{structUintah_1_1PhaseField_1_1Problem_1_1get__field}{get\+\_\+field}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J...$>$\+::type, S\+TN $>$}
+
+
+
+F\+D\+View type for the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable (J-\/th component) 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a53d941e785f501dddb8c369644eae4fa}\label{classUintah_1_1PhaseField_1_1Problem_a53d941e785f501dddb8c369644eae4fa}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+view\+\_\+type@{get\+\_\+view\+\_\+type}}
+\index{get\+\_\+view\+\_\+type@{get\+\_\+view\+\_\+type}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+view\+\_\+type}{get\_view\_type}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+template$<$size\+\_\+t I, size\+\_\+t... J$>$ \\
+using \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Problem_a53d941e785f501dddb8c369644eae4fa}{get\+\_\+view\+\_\+type} =  \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View} $<$ typename \hyperlink{structUintah_1_1PhaseField_1_1Problem_1_1get__field}{get\+\_\+field}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J...$>$\+::type $>$}
+
+
+
+View type for the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable (J-\/th component) 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_af12ef510fb87d6c905f7a29d173f88ba}\label{classUintah_1_1PhaseField_1_1Problem_af12ef510fb87d6c905f7a29d173f88ba}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!Problem@{Problem}}
+\index{Problem@{Problem}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{Problem()}{Problem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} (\begin{DoxyParamCaption}\item[{const typename Field\+::label\+\_\+type \&...}]{labels,  }\item[{int}]{material,  }\item[{const Level $\ast$}]{level,  }\item[{Int\+Vector}]{low,  }\item[{Int\+Vector}]{high }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inner \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} constructor. 
+
+Instantiate all the views required to handle all given variables in the given region without retrieving data.
+
+\begin{DoxyRemark}{Remarks}
+There is no need to recreate the views until the geometry is unchanged
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em labels} & list of the labels for the variables to handle \\
+\hline
+{\em material} & index in the Data\+Warehouse \\
+\hline
+{\em level} & grid level \\
+\hline
+{\em low} & lower bound of the region to handle \\
+\hline
+{\em high} & higher bound of the region to handle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_aa629dc3614e0da03bf75b5df4ddba69c}\label{classUintah_1_1PhaseField_1_1Problem_aa629dc3614e0da03bf75b5df4ddba69c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!Problem@{Problem}}
+\index{Problem@{Problem}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{Problem()}{Problem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} (\begin{DoxyParamCaption}\item[{const typename Field\+::label\+\_\+type \&...}]{labels,  }\item[{const Var\+Label $\ast$}]{subproblems\+\_\+label,  }\item[{int}]{material,  }\item[{const Level $\ast$}]{level,  }\item[{Int\+Vector}]{low,  }\item[{Int\+Vector}]{high,  }\item[{const std\+::list$<$ Patch\+::\+Face\+Type $>$ \&}]{faces,  }\item[{std\+::vector$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ Field $>$ $>$ ...}]{bcs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Boundary constructor. 
+
+Instantiate all subviews required to handle all given variables in the given region without retrieving data. There is no need to recreate the views until the geometry is unchanged
+
+
+\begin{DoxyParams}{Parameters}
+{\em labels} & list of the labels for the variables to handle \\
+\hline
+{\em subproblems\+\_\+label} & label for subproblems in the Data\+Warehouse \\
+\hline
+{\em material} & index in the Data\+Warehouse \\
+\hline
+{\em level} & grid level \\
+\hline
+{\em low} & lower bound of the region to handle \\
+\hline
+{\em high} & higher bound of the region to handle \\
+\hline
+{\em faces} & list of faces the new (sub)problem have to handle \\
+\hline
+{\em bcs} & boundary info for each variable and face \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_ad1d8374a86011fd613e95249d74cf73f}\label{classUintah_1_1PhaseField_1_1Problem_ad1d8374a86011fd613e95249d74cf73f}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+codim@{get\+\_\+codim}}
+\index{get\+\_\+codim@{get\+\_\+codim}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+codim()}{get\_codim()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+int \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+codim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get Codimension. 
+
+Return the codimension of the variety on which the problem is defined
+
+\begin{DoxyReturn}{Returns}
+the number of faces that define the variety 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a80d11dd3a973d867f46c5f663b4c6091}\label{classUintah_1_1PhaseField_1_1Problem_a80d11dd3a973d867f46c5f663b4c6091}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+faces@{get\+\_\+faces}}
+\index{get\+\_\+faces@{get\+\_\+faces}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+faces()}{get\_faces()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+const std\+::list$<$Patch\+::\+Face\+Type$>$\& \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get problem faces. 
+
+\begin{DoxyReturn}{Returns}
+list of faces which the problem region belongs to 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a6e1beb1a9b10e0019116af1eb3aeea8b}\label{classUintah_1_1PhaseField_1_1Problem_a6e1beb1a9b10e0019116af1eb3aeea8b}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+fd\+\_\+view@{get\+\_\+fd\+\_\+view}}
+\index{get\+\_\+fd\+\_\+view@{get\+\_\+fd\+\_\+view}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+fd\+\_\+view()}{get\_fd\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+template$<$size\+\_\+t I$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Problem_a89c10e32620acbe3cae959667a1cdd3e}{get\+\_\+fd\+\_\+view\+\_\+type}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}$>$\& \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+fd\+\_\+view (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a F\+D\+View. 
+
+Get the F\+D\+View of the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable without retrieving data
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of the variable within the \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+a view to the variable that implements finite-\/differences 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a619b0a0b56f6ef1f6d4e6d601c9a3521}\label{classUintah_1_1PhaseField_1_1Problem_a619b0a0b56f6ef1f6d4e6d601c9a3521}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+fd\+\_\+view@{get\+\_\+fd\+\_\+view}}
+\index{get\+\_\+fd\+\_\+view@{get\+\_\+fd\+\_\+view}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+fd\+\_\+view()}{get\_fd\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+template$<$size\+\_\+t I$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Problem_a89c10e32620acbe3cae959667a1cdd3e}{get\+\_\+fd\+\_\+view\+\_\+type}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}$>$\& \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+fd\+\_\+view (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a F\+D\+View. 
+
+Get the F\+D\+View of the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable and retrieves the data from dw
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of the variable within the \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse to use for retrieving data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a view to the variable that implements finite-\/differences 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_adb7a0bc3da6d502b45e8addb33772699}\label{classUintah_1_1PhaseField_1_1Problem_adb7a0bc3da6d502b45e8addb33772699}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+fd\+\_\+view@{get\+\_\+fd\+\_\+view}}
+\index{get\+\_\+fd\+\_\+view@{get\+\_\+fd\+\_\+view}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+fd\+\_\+view()}{get\_fd\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+template$<$size\+\_\+t I, size\+\_\+t J$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Problem_a89c10e32620acbe3cae959667a1cdd3e}{get\+\_\+fd\+\_\+view\+\_\+type}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J$>$\& \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+fd\+\_\+view (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a F\+D\+View. 
+
+Get the F\+D\+View of the J-\/th component of the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable without retrieving data
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of the variable within the \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+{\em J} & index of the component within the variable \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+a view to the variable that implements finite-\/differences 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a43e532eaf9aff9d7cfdec7190ab2b0f8}\label{classUintah_1_1PhaseField_1_1Problem_a43e532eaf9aff9d7cfdec7190ab2b0f8}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+fd\+\_\+view@{get\+\_\+fd\+\_\+view}}
+\index{get\+\_\+fd\+\_\+view@{get\+\_\+fd\+\_\+view}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+fd\+\_\+view()}{get\_fd\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+template$<$size\+\_\+t I, size\+\_\+t J$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Problem_a89c10e32620acbe3cae959667a1cdd3e}{get\+\_\+fd\+\_\+view\+\_\+type}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J$>$\& \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+fd\+\_\+view (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a F\+D\+View. 
+
+Get the F\+D\+View of the J-\/th component of the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable and retrieves the data from dw
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of the variable within the \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+{\em J} & index of the component within the variable \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse to use for retrieving data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a view to the variable that implements finite-\/differences 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_aa69624e71f479931c650be25eff2e12d}\label{classUintah_1_1PhaseField_1_1Problem_aa69624e71f479931c650be25eff2e12d}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+high@{get\+\_\+high}}
+\index{get\+\_\+high@{get\+\_\+high}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+high()}{get\_high()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+const Int\+Vector\& \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+high (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} higher bound. 
+
+\begin{DoxyReturn}{Returns}
+high index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a2e415a1743c4eba4f4dc9c09c9c87422}\label{classUintah_1_1PhaseField_1_1Problem_a2e415a1743c4eba4f4dc9c09c9c87422}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+low@{get\+\_\+low}}
+\index{get\+\_\+low@{get\+\_\+low}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+low()}{get\_low()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+const Int\+Vector\& \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+low (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} lower bound. 
+
+\begin{DoxyReturn}{Returns}
+low index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a33f052fe4dd33891633a479b82e0bea0}\label{classUintah_1_1PhaseField_1_1Problem_a33f052fe4dd33891633a479b82e0bea0}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+range@{get\+\_\+range}}
+\index{get\+\_\+range@{get\+\_\+range}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+range()}{get\_range()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+Block\+Range \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} range. 
+
+\begin{DoxyReturn}{Returns}
+Range on which the \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} is defined 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_ae68b96eca7d1f30b9cac99498a110de1}\label{classUintah_1_1PhaseField_1_1Problem_ae68b96eca7d1f30b9cac99498a110de1}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+view@{get\+\_\+view}}
+\index{get\+\_\+view@{get\+\_\+view}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+view()}{get\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+template$<$size\+\_\+t I$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Problem_a53d941e785f501dddb8c369644eae4fa}{get\+\_\+view\+\_\+type}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}$>$\& \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+view (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a View. 
+
+Get the View of the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable without retrieving data
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of the variable within the \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+a view to the variable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a8dcb90397ce9ca79e94d65ea54096288}\label{classUintah_1_1PhaseField_1_1Problem_a8dcb90397ce9ca79e94d65ea54096288}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+view@{get\+\_\+view}}
+\index{get\+\_\+view@{get\+\_\+view}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+view()}{get\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+template$<$size\+\_\+t I$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Problem_a53d941e785f501dddb8c369644eae4fa}{get\+\_\+view\+\_\+type}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}$>$\& \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+view (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a View. 
+
+Get the View of the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable and retrieve the data from dw
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of the variable within the \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse to use for retrieving data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a view to the variable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_aaca1687245d8afb5c1a86e076cf332fb}\label{classUintah_1_1PhaseField_1_1Problem_aaca1687245d8afb5c1a86e076cf332fb}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+view@{get\+\_\+view}}
+\index{get\+\_\+view@{get\+\_\+view}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+view()}{get\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+template$<$size\+\_\+t I, size\+\_\+t J$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Problem_a53d941e785f501dddb8c369644eae4fa}{get\+\_\+view\+\_\+type}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J$>$\& \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+view (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a View. 
+
+Get the View of the J-\/th component of the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable without retrieving data
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of the variable within the \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+{\em J} & index of the component within the variable \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+a view to the variable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_aeff947e34ce8b615a988f77af9eac55c}\label{classUintah_1_1PhaseField_1_1Problem_aeff947e34ce8b615a988f77af9eac55c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!get\+\_\+view@{get\+\_\+view}}
+\index{get\+\_\+view@{get\+\_\+view}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{get\+\_\+view()}{get\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+template$<$size\+\_\+t I, size\+\_\+t J$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Problem_a53d941e785f501dddb8c369644eae4fa}{get\+\_\+view\+\_\+type}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J$>$\& \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::get\+\_\+view (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a View. 
+
+Get the View of the J-\/th component of the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable and retrieve the data from dw
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of the variable within the \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+{\em J} & index of the component within the variable \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse to use for retrieving data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a view to the variable 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a23dbecf657023dd405fc40939661c550}\label{classUintah_1_1PhaseField_1_1Problem_a23dbecf657023dd405fc40939661c550}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!Dim@{Dim}}
+\index{Dim@{Dim}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{Dim}{Dim}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+constexpr \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76a}{Dim\+Type} \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::Dim = \hyperlink{structUintah_1_1PhaseField_1_1get__stn}{get\+\_\+stn}$<$S\+TN$>$\+::dim\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} dimension. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a4573d4e59795aa206d47735ff1a57c85}\label{classUintah_1_1PhaseField_1_1Problem_a4573d4e59795aa206d47735ff1a57c85}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::Name\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+class name as used by \hyperlink{classUintah_1_1PhaseField_1_1ApplicationFactory}{Application\+Factory} 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a7f14e7e468084243304784fb9bba0202}\label{classUintah_1_1PhaseField_1_1Problem_a7f14e7e468084243304784fb9bba0202}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!Stn@{Stn}}
+\index{Stn@{Stn}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{Stn}{Stn}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+constexpr \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702}{Stn\+Type} \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::Stn = S\+TN\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Finite difference stencil. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Problem_a74de1351a682f8523456962f0fc49a18}\label{classUintah_1_1PhaseField_1_1Problem_a74de1351a682f8523456962f0fc49a18}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}!Var@{Var}}
+\index{Var@{Var}!Uintah\+::\+Phase\+Field\+::\+Problem@{Uintah\+::\+Phase\+Field\+::\+Problem}}
+\subsubsection{\texorpdfstring{Var}{Var}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+constexpr \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedd}{Var\+Type} \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::Var = V\+AR\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} data representation. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Problem_8h}{Problem.\+h}\end{DoxyCompactItemize}

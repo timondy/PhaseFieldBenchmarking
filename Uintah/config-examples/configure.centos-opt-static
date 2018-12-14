@@ -1,0 +1,10 @@
+#!/bin/bash
+
+F77=gfortran \
+../src/configure \
+  --enable-optimize="-O3 -mfpmath=sse -fPIC" \
+  --enable-phasefield \
+  --enable-static \
+  --with-mpi=/usr/lib/x86_64-linux-gnu/openmpi \
+  --with-hypre=no \
+  --with-petsc=no

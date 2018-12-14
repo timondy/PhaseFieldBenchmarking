@@ -1,0 +1,136 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:amr\+\_\+interface0$<$ CC $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4}\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$}}
+
+
+Interface for amr (CC implementation)  
+
+
+
+
+{\ttfamily \#include $<$amr\+\_\+interface0\+\_\+\+C\+C.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:amr\+\_\+interface0$<$ CC $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:amr\+\_\+interface0$<$ CC $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Int\+Vector \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a54ea40a0a051b55ff5c7a07895e1bba1}{get\+\_\+coarser} (const Level $\ast$l, const Int\+Vector \&i)
+\begin{DoxyCompactList}\small\item\em Get coarser grid index. \end{DoxyCompactList}\item 
+static Int\+Vector \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a04ebe7c5eb56f351c20353fe93a09e3a}{get\+\_\+finer} (const Level $\ast$l, const Int\+Vector \&i)
+\begin{DoxyCompactList}\small\item\em Get finer grid index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a54940842b4b34735b6181a3e66efd7c4}{amr\+\_\+interface0} ()=delete
+\begin{DoxyCompactList}\small\item\em prevent coonstruction \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a64f385463bfd52462ed9babaf56aea35}{amr\+\_\+interface0} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{amr\+\_\+interface0} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{amr\+\_\+interface0} \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a31ce6d17e902abe712165f395a8d1ffb}{operator=} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{amr\+\_\+interface0} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) assignment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$}
+
+Interface for amr (CC implementation) 
+
+groups together various methods to get info about amr patches and levels which depend on the different types of variable representation allowing to choose the relevant implementation at compile time
+
+$<$ V\+AR $>$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a54940842b4b34735b6181a3e66efd7c4}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a54940842b4b34735b6181a3e66efd7c4}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$}!amr\+\_\+interface0@{amr\+\_\+interface0}}
+\index{amr\+\_\+interface0@{amr\+\_\+interface0}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{amr\+\_\+interface0()}{amr\_interface0()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{amr\+\_\+interface0} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+
+
+prevent coonstruction 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a64f385463bfd52462ed9babaf56aea35}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a64f385463bfd52462ed9babaf56aea35}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$}!amr\+\_\+interface0@{amr\+\_\+interface0}}
+\index{amr\+\_\+interface0@{amr\+\_\+interface0}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{amr\+\_\+interface0()}{amr\_interface0()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{amr\+\_\+interface0} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{amr\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a54ea40a0a051b55ff5c7a07895e1bba1}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a54ea40a0a051b55ff5c7a07895e1bba1}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$}!get\+\_\+coarser@{get\+\_\+coarser}}
+\index{get\+\_\+coarser@{get\+\_\+coarser}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+coarser()}{get\_coarser()}}
+{\footnotesize\ttfamily static Int\+Vector \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::get\+\_\+coarser (\begin{DoxyParamCaption}\item[{const Level $\ast$}]{l,  }\item[{const Int\+Vector \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get coarser grid index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & fine grid level \\
+\hline
+{\em i} & fine grid index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nearest coarser grid index to the given position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a04ebe7c5eb56f351c20353fe93a09e3a}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a04ebe7c5eb56f351c20353fe93a09e3a}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$}!get\+\_\+finer@{get\+\_\+finer}}
+\index{get\+\_\+finer@{get\+\_\+finer}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+finer()}{get\_finer()}}
+{\footnotesize\ttfamily static Int\+Vector \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::get\+\_\+finer (\begin{DoxyParamCaption}\item[{const Level $\ast$}]{l,  }\item[{const Int\+Vector \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get finer grid index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & coarse grid level \\
+\hline
+{\em i} & coarse grid index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nearest finer grid index to the given position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a31ce6d17e902abe712165f395a8d1ffb}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0_3_01CC_01_4_a31ce6d17e902abe712165f395a8d1ffb}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{amr\+\_\+interface0}\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interface0}{amr\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) assignment. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{amr__interface0__CC_8h}{amr\+\_\+interface0\+\_\+\+C\+C.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,102 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Problem_00_01Index_00_01P_8_8_8_01_4}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+TN, Problem, Index, P... $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Problem_00_01Index_00_01P_8_8_8_01_4}\index{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}}
+
+
+Wrapper of Data\+Warehouse variables for both basic and complex differential operations over both physical and amr boundaries (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation)  
+
+
+
+
+{\ttfamily \#include $<$bcfd\+\_\+view.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+TN, Problem, Index, P... $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Proble6ebcea295b52797f0a4d54c72847e6a}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+TN, Problem, Index, P... $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Probl4701bf69703a0fc8d343205b0320a4dc}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Problem_00_01Index_00_01P_8_8_8_01_4_abaa29ff6c02f48531b6119eb8e25c2ae}{$\sim$bcfd\+\_\+view} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Problem_00_01Index_00_01P_8_8_8_01_4_a65dafd15a10a6047cc64abecb4a9a9aa}{bcfd\+\_\+view} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}{bcfd\+\_\+view} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}{bcfd\+\_\+view} \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Problem_00_01Index_00_01P_8_8_8_01_4_a063e364cea3b9c346082797cc244392d}{operator=} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}{bcfd\+\_\+view} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) assignment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, Stn\+Type S\+TN, typename Problem, typename Index, B\+C\+F ... P$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}
+
+Wrapper of Data\+Warehouse variables for both basic and complex differential operations over both physical and amr boundaries (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation) 
+
+Adds to \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{dw\+\_\+view} the possibility to compute finite-\/difference approximation of of differential operations at boundary cells/points
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}} & type of \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} problem \\
+\hline
+{\em Index} & index\+\_\+sequence of Field within \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} (first element is variable index, following ones, if present, are the component index within the variable) \\
+\hline
+{\em P} & list of BC, FC, and Patch\+::\+Face packs \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Problem_00_01Index_00_01P_8_8_8_01_4_abaa29ff6c02f48531b6119eb8e25c2ae}\label{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Problem_00_01Index_00_01P_8_8_8_01_4_abaa29ff6c02f48531b6119eb8e25c2ae}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}!````~bcfd\+\_\+view@{$\sim$bcfd\+\_\+view}}
+\index{````~bcfd\+\_\+view@{$\sim$bcfd\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}}
+\subsubsection{\texorpdfstring{$\sim$bcfd\+\_\+view()}{~bcfd\_view()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, typename Problem , typename Index , B\+C\+F ... P$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, Index, P... $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}{bcfd\+\_\+view} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Problem_00_01Index_00_01P_8_8_8_01_4_a65dafd15a10a6047cc64abecb4a9a9aa}\label{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Problem_00_01Index_00_01P_8_8_8_01_4_a65dafd15a10a6047cc64abecb4a9a9aa}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}!bcfd\+\_\+view@{bcfd\+\_\+view}}
+\index{bcfd\+\_\+view@{bcfd\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}}
+\subsubsection{\texorpdfstring{bcfd\+\_\+view()}{bcfd\_view()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, typename Problem , typename Index , B\+C\+F ... P$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, Index, P... $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}{bcfd\+\_\+view} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}{bcfd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, Index, P... $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Problem_00_01Index_00_01P_8_8_8_01_4_a063e364cea3b9c346082797cc244392d}\label{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01Problem_00_01Index_00_01P_8_8_8_01_4_a063e364cea3b9c346082797cc244392d}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, typename Problem , typename Index , B\+C\+F ... P$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}{bcfd\+\_\+view}\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, Index, P... $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}{bcfd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, Index, P... $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) assignment. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{bcfd__view_8h}{bcfd\+\_\+view.\+h}\end{DoxyCompactItemize}

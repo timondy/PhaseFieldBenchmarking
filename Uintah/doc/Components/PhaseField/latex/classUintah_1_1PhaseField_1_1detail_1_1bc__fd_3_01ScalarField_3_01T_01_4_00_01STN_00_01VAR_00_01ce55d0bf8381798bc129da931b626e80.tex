@@ -1,0 +1,479 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+TN, V\+AR, F, BC\+:\+:Fine\+Coarse\+Interface, 1, FC\+:\+:F\+C\+Simple $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80}\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+
+
+Finite-\/differences scheme at fine/coarse interfaces (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation)  
+
+
+
+
+{\ttfamily \#include $<$bc\+\_\+fd\+\_\+\+Fine\+Coarse\+Interface\+\_\+\+G1\+\_\+\+F\+C\+Simple.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+TN, V\+AR, F, BC\+:\+:Fine\+Coarse\+Interface, 1, FC\+:\+:F\+C\+Simple $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_015343226ac19827c6dd09eeb3dfb0ef1f}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+TN, V\+AR, F, BC\+:\+:Fine\+Coarse\+Interface, 1, FC\+:\+:F\+C\+Simple $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01b47c705a7b90eff5d5f481f5d9dbc972}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a4188396ef5d9794ba158d0fe1b1ccefa}{$\sim$bc\+\_\+fd} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a697161ed958dc972a88658e957c2db28}{bc\+\_\+fd} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd} \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a62d7c0a3b6774bf5b54674a8b3d71781}{operator=} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) assignment. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ac70a40f99b59aafe8dc8166ccd48347f}{set} (Data\+Warehouse $\ast$dw, const Patch $\ast$patch, bool use\+\_\+ghosts) override
+\begin{DoxyCompactList}\small\item\em Retrieve value from the Data\+Warehouse for a given patch. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a69189cb1ecb842a77f9b17e4c2c2ba4e}{set} (Data\+Warehouse $\ast$dw, const Level $\ast$level, const Int\+Vector \&low, const Int\+Vector \&high, bool use\+\_\+ghosts) override
+\begin{DoxyCompactList}\small\item\em Retrieve value from the Data\+Warehouse for a given region. \end{DoxyCompactList}\item 
+virtual T \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_aebe3f76e4cf84f5325bfc431e6aaaad8}{operator\mbox{[}$\,$\mbox{]}} (const Int\+Vector \&id) override
+\begin{DoxyCompactList}\small\item\em Get/\+Modify value at position with index id (virtual implementation) \end{DoxyCompactList}\item 
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a115ae39eefa8454c9f88383e80f90269}{operator\mbox{[}$\,$\mbox{]}} (const Int\+Vector \&id) const override
+\begin{DoxyCompactList}\small\item\em Get value at position with index id. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1Support}{Support} \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a5538ce862e91e70376369ad7f4b17ba1}{get\+\_\+support} () const override
+\begin{DoxyCompactList}\small\item\em Get the region on which the view is defined. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ae7959101e272906f6a4b624fa05582d2}{is\+\_\+defined\+\_\+at} (const Int\+Vector \&id) const override
+\begin{DoxyCompactList}\small\item\em Check if the view has access to the fine position with index id. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a579bb0bf5063314ac57aace2d8ff2c31}{get\+\_\+view} () override
+\begin{DoxyCompactList}\small\item\em Get base view (virtual implementation) \end{DoxyCompactList}\item 
+virtual const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a68249997b8422670b8831c9b6db4d879}{get\+\_\+view} () const override
+\begin{DoxyCompactList}\small\item\em Get base view. \end{DoxyCompactList}\item 
+{\footnotesize template$<$Dir\+Type D\+IR$>$ }\\std\+::enable\+\_\+if$<$ D !=D\+IR, T $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ac9c8b756ab58e30981e7aeb5c985c825}{d} (const Int\+Vector \&id) const
+\begin{DoxyCompactList}\small\item\em First order derivative (parallel direction implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$Dir\+Type D\+IR$>$ }\\std\+::enable\+\_\+if$<$ D==D\+IR, T $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_af55ab4dfc36a5f8f14c9cab7fc211771}{d} (const Int\+Vector \&id) const
+\begin{DoxyCompactList}\small\item\em First order derivative. \end{DoxyCompactList}\item 
+{\footnotesize template$<$Dir\+Type D\+IR$>$ }\\std\+::enable\+\_\+if$<$ D !=D\+IR, T $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a0ff4e57d47399e1a0085b00730375b48}{d2} (const Int\+Vector \&id) const
+\begin{DoxyCompactList}\small\item\em Second order derivative (parallel direction implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$Dir\+Type D\+IR$>$ }\\std\+::enable\+\_\+if$<$ D==D\+IR, T $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a884390e9ecd0c377a1074e8b48507f72}{d2} (const Int\+Vector \&id) const
+\begin{DoxyCompactList}\small\item\em Second order derivative (normal direction implementation) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a4ff2e7573d5e22d6e6d044016f22937e}{bc\+\_\+fd} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd} $\ast$copy, bool deep)
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ad85c6eec21f8abe2b7d97cc5eab97cb3}{bc\+\_\+fd} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$fine\+\_\+view, const Var\+Label $\ast$label, int material, const Level $\ast$level, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$coarse\+\_\+view)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}
+
+Finite-\/differences scheme at fine/coarse interfaces (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation) 
+
+Implement F\+C\+Simple approximation of ghost value across the amr interface
+
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{fcsimple}
+\doxyfigcaption{F\+C\+Simple}
+\end{DoxyImage}
+ \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000009}{Todo}]generilize to D\+IM != D2\end{DoxyRefDesc}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the field value at each point \\
+\hline
+{\em S\+TN} & finite-\/difference stencil \\
+\hline
+{\em V\+AR} & type of variable representation \\
+\hline
+{\em F} & patch face on which bc is to be applied \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a4ff2e7573d5e22d6e6d044016f22937e}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a4ff2e7573d5e22d6e6d044016f22937e}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!bc\+\_\+fd@{bc\+\_\+fd}}
+\index{bc\+\_\+fd@{bc\+\_\+fd}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{bc\+\_\+fd()}{bc\_fd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$ $\ast$}]{copy,  }\item[{bool}]{deep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ad85c6eec21f8abe2b7d97cc5eab97cb3}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ad85c6eec21f8abe2b7d97cc5eab97cb3}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!bc\+\_\+fd@{bc\+\_\+fd}}
+\index{bc\+\_\+fd@{bc\+\_\+fd}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{bc\+\_\+fd()}{bc\_fd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$}]{fine\+\_\+view,  }\item[{const Var\+Label $\ast$}]{label,  }\item[{int}]{material,  }\item[{const Level $\ast$}]{level,  }\item[{\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$}]{coarse\+\_\+view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Constructor. 
+
+Instantiate a view without gathering info from the Data\+Warehouse
+
+
+\begin{DoxyParams}{Parameters}
+{\em fine\+\_\+view} & view to access fine grid values \\
+\hline
+{\em label} & unused since value is already in fine/coarse\+\_\+view \\
+\hline
+{\em material} & unused since value is already in fine/coarse\+\_\+view \\
+\hline
+{\em level} & fine grid level \\
+\hline
+{\em coarse\+\_\+view} & view to access coarse grid values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a4188396ef5d9794ba158d0fe1b1ccefa}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a4188396ef5d9794ba158d0fe1b1ccefa}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!````~bc\+\_\+fd@{$\sim$bc\+\_\+fd}}
+\index{````~bc\+\_\+fd@{$\sim$bc\+\_\+fd}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{$\sim$bc\+\_\+fd()}{~bc\_fd()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a697161ed958dc972a88658e957c2db28}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a697161ed958dc972a88658e957c2db28}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!bc\+\_\+fd@{bc\+\_\+fd}}
+\index{bc\+\_\+fd@{bc\+\_\+fd}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{bc\+\_\+fd()}{bc\_fd()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ac9c8b756ab58e30981e7aeb5c985c825}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ac9c8b756ab58e30981e7aeb5c985c825}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!d@{d}}
+\index{d@{d}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{d()}{d()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+template$<$Dir\+Type D\+IR$>$ \\
+std\+::enable\+\_\+if$<$ D != D\+IR, T $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::d (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+First order derivative (parallel direction implementation) 
+
+First order derivative along D\+IR at index id at amr interface
+
+\begin{DoxyRemark}{Remarks}
+derivative parallel to the face should not be computed by this \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd}
+\end{DoxyRemark}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em D\+IR} & Direction along with derivative is approximated \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em id} & unused \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_af55ab4dfc36a5f8f14c9cab7fc211771}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_af55ab4dfc36a5f8f14c9cab7fc211771}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!d@{d}}
+\index{d@{d}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{d()}{d()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+template$<$Dir\+Type D\+IR$>$ \\
+std\+::enable\+\_\+if$<$ D == D\+IR, T $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::d (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+First order derivative. 
+
+First order derivative along D\+IR at index id at amr interface
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em D\+IR} & Direction along with derivative is approximated \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em id} & index where to evaluate the finite-\/difference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximated value at id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a0ff4e57d47399e1a0085b00730375b48}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a0ff4e57d47399e1a0085b00730375b48}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!d2@{d2}}
+\index{d2@{d2}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{d2()}{d2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+template$<$Dir\+Type D\+IR$>$ \\
+std\+::enable\+\_\+if$<$ D != D\+IR, T $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::d2 (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Second order derivative (parallel direction implementation) 
+
+Second order derivative along D\+IR at index id at amr interface
+
+\begin{DoxyRemark}{Remarks}
+derivative parallel to the face should not be computed by this \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd}
+\end{DoxyRemark}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em D\+IR} & Direction along with derivative is approximated \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em id} & unused \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a884390e9ecd0c377a1074e8b48507f72}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a884390e9ecd0c377a1074e8b48507f72}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!d2@{d2}}
+\index{d2@{d2}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{d2()}{d2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+template$<$Dir\+Type D\+IR$>$ \\
+std\+::enable\+\_\+if$<$ D == D\+IR, T $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::d2 (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Second order derivative (normal direction implementation) 
+
+Second order derivative along D\+IR at index id at amr interface
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em D\+IR} & Direction along with derivative is approximated \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em id} & index where to evaluate the finite-\/difference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximated value at id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a5538ce862e91e70376369ad7f4b17ba1}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a5538ce862e91e70376369ad7f4b17ba1}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!get\+\_\+support@{get\+\_\+support}}
+\index{get\+\_\+support@{get\+\_\+support}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+support()}{get\_support()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1Support}{Support} \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::get\+\_\+support (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the region on which the view is defined. 
+
+It is the ghost fine region across an amr interface
+
+\begin{DoxyReturn}{Returns}
+support of the view 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a3e14b0c7a57a57707bb33954861ab1c1}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a579bb0bf5063314ac57aace2d8ff2c31}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a579bb0bf5063314ac57aace2d8ff2c31}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!get\+\_\+view@{get\+\_\+view}}
+\index{get\+\_\+view@{get\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+view()}{get\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field}$>$$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::get\+\_\+view (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get base view (virtual implementation) 
+
+\begin{DoxyRemark}{Remarks}
+bc values are computed at runtime thus cannot create non const view, there\textquotesingle{}s nothing to modify in the Data\+Warehouse
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a2bbf870b332cfd997ec5297428019bc8}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a68249997b8422670b8831c9b6db4d879}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a68249997b8422670b8831c9b6db4d879}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!get\+\_\+view@{get\+\_\+view}}
+\index{get\+\_\+view@{get\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+view()}{get\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+virtual const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field}$>$$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::get\+\_\+view (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get base view. 
+
+\begin{DoxyReturn}{Returns}
+const pointer to base view implementation 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a006d6f7c6fd81ff2c8d53f59656a23dc}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ae7959101e272906f6a4b624fa05582d2}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ae7959101e272906f6a4b624fa05582d2}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!is\+\_\+defined\+\_\+at@{is\+\_\+defined\+\_\+at}}
+\index{is\+\_\+defined\+\_\+at@{is\+\_\+defined\+\_\+at}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{is\+\_\+defined\+\_\+at()}{is\_defined\_at()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+virtual bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::is\+\_\+defined\+\_\+at (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the view has access to the fine position with index id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & fine position index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+check result 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a9a950513dacd6468658436b737c3314f}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a62d7c0a3b6774bf5b54674a8b3d71781}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a62d7c0a3b6774bf5b54674a8b3d71781}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd}\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) assignment. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_aebe3f76e4cf84f5325bfc431e6aaaad8}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_aebe3f76e4cf84f5325bfc431e6aaaad8}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+virtual T\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get/\+Modify value at position with index id (virtual implementation) 
+
+\begin{DoxyRemark}{Remarks}
+value at boundary is computed at runtime thus doesn\textquotesingle{}t exist in the Data\+Warehouse
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em id} & unused \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a96b3035d435ae901516b6bc5e138f3b5}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a115ae39eefa8454c9f88383e80f90269}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a115ae39eefa8454c9f88383e80f90269}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get value at position with index id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & position index (on fine level) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+interpolated value from coarser level 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_aea43cfedfe3b6f3c038ff795caec49b8}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ac70a40f99b59aafe8dc8166ccd48347f}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ac70a40f99b59aafe8dc8166ccd48347f}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!set@{set}}
+\index{set@{set}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::set (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const Patch $\ast$}]{patch,  }\item[{bool}]{use\+\_\+ghosts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve value from the Data\+Warehouse for a given patch. 
+
+\begin{DoxyRemark}{Remarks}
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{bc\+\_\+fd} should not be set to range over a patch
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & unused \\
+\hline
+{\em patch} & unused \\
+\hline
+{\em use\+\_\+ghosts} & unused \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a26d507d016ee4c943903214e7547594a}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a69189cb1ecb842a77f9b17e4c2c2ba4e}\label{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a69189cb1ecb842a77f9b17e4c2c2ba4e}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}!set@{set}}
+\index{set@{set}!Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN, Var\+Type V\+AR, Patch\+::\+Face\+Type F$>$ \\
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN, V\+AR, F, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface}, 1, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} $>$\+::set (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const Level $\ast$}]{level,  }\item[{const Int\+Vector \&}]{low,  }\item[{const Int\+Vector \&}]{high,  }\item[{bool}]{use\+\_\+ghosts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve value from the Data\+Warehouse for a given region. 
+
+retrieve also info from coarser level region by setting the coarser view
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse from which data is retrieved \\
+\hline
+{\em level} & grid level from which retrieve data \\
+\hline
+{\em low} & lower bound of the region to retrieve \\
+\hline
+{\em high} & higher bound of the region to retrieve \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_aa5cbbb3b73ea2933659cb082c6d6d863}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{bc__fd__FineCoarseInterface__G1__FCSimple_8h}{bc\+\_\+fd\+\_\+\+Fine\+Coarse\+Interface\+\_\+\+G1\+\_\+\+F\+C\+Simple.\+h}\end{DoxyCompactItemize}

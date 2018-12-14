@@ -1,0 +1,158 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+CI, D\+IM $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80}\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$}}
+
+
+Abstract wrapper of grid variables for interpolation from coarser to finer levels. (\hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} implementation)  
+
+
+
+
+{\ttfamily \#include $<$amr\+\_\+interpolator.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+CI, D\+IM $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab5f6a8bab1985b8dc10c54b9c0965b3}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+CI, D\+IM $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_013a4e3ec9316ef55d5c97281d51aeaa69}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_affa96f42d4c838acc9a94dd0c5fc4d33}{amr\+\_\+interpolator} (const typename \hyperlink{structUintah_1_1PhaseField_1_1VectorField_a59698346336d8cdfdf767367839f2be9}{Field\+::label\+\_\+type} \&label, const Var\+Label $\ast$subproblems\+\_\+label, int material)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_ab5cb32ce1a86a80d7b16ba06b42a2e1d}{amr\+\_\+interpolator} (Data\+Warehouse $\ast$dw, const typename \hyperlink{structUintah_1_1PhaseField_1_1VectorField_a59698346336d8cdfdf767367839f2be9}{Field\+::label\+\_\+type} \&label, const Var\+Label $\ast$subproblems\+\_\+label, int material, const Patch $\ast$patch, bool use\+\_\+ghosts=View\+::use\+\_\+ghosts\+\_\+dflt)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_afbe7bb3efbb058c4396e8e549b3cbcef}{$\sim$amr\+\_\+interpolator} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_a1f75287ee5fc8828e84fa530fb779e47}{amr\+\_\+interpolator} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{amr\+\_\+interpolator} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{amr\+\_\+interpolator} \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_aadd32c026392c0a152d1704b0ae69bd1}{operator=} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{amr\+\_\+interpolator} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) assignment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, size\+\_\+t N, typename Problem, typename Index, F\+C\+I\+Type F\+CI, Dim\+Type D\+IM$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$}
+
+Abstract wrapper of grid variables for interpolation from coarser to finer levels. (\hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} implementation) 
+
+Adds to view the possibility to compute multi-\/grid interpolation
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of each component of the field at each point \\
+\hline
+{\em N} & number of components \\
+\hline
+{\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}} & type of \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} problem \\
+\hline
+{\em Index} & index\+\_\+sequence of Field within \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} (first element is variable index, following ones, if present, are the component index within the variable) \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_affa96f42d4c838acc9a94dd0c5fc4d33}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_affa96f42d4c838acc9a94dd0c5fc4d33}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$}!amr\+\_\+interpolator@{amr\+\_\+interpolator}}
+\index{amr\+\_\+interpolator@{amr\+\_\+interpolator}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$}}
+\subsubsection{\texorpdfstring{amr\+\_\+interpolator()}{amr\_interpolator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, typename Problem , typename Index , F\+C\+I\+Type F\+CI, Dim\+Type D\+IM$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ T, N $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, Index, F\+CI, D\+IM $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{amr\+\_\+interpolator} (\begin{DoxyParamCaption}\item[{const typename \hyperlink{structUintah_1_1PhaseField_1_1VectorField_a59698346336d8cdfdf767367839f2be9}{Field\+::label\+\_\+type} \&}]{label,  }\item[{const Var\+Label $\ast$}]{subproblems\+\_\+label,  }\item[{int}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Instantiate \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{amr\+\_\+interpolator} components without gathering info from the Data\+Warehouse
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & list of variable labels for each component \\
+\hline
+{\em subproblems\+\_\+label} & label of subproblems in the Data\+Warehouse \\
+\hline
+{\em material} & material index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_ab5cb32ce1a86a80d7b16ba06b42a2e1d}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_ab5cb32ce1a86a80d7b16ba06b42a2e1d}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$}!amr\+\_\+interpolator@{amr\+\_\+interpolator}}
+\index{amr\+\_\+interpolator@{amr\+\_\+interpolator}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$}}
+\subsubsection{\texorpdfstring{amr\+\_\+interpolator()}{amr\_interpolator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, typename Problem , typename Index , F\+C\+I\+Type F\+CI, Dim\+Type D\+IM$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ T, N $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, Index, F\+CI, D\+IM $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{amr\+\_\+interpolator} (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const typename \hyperlink{structUintah_1_1PhaseField_1_1VectorField_a59698346336d8cdfdf767367839f2be9}{Field\+::label\+\_\+type} \&}]{label,  }\item[{const Var\+Label $\ast$}]{subproblems\+\_\+label,  }\item[{int}]{material,  }\item[{const Patch $\ast$}]{patch,  }\item[{bool}]{use\+\_\+ghosts = {\ttfamily View\+:\+:use\+\_\+ghosts\+\_\+dflt} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Instantiate \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{amr\+\_\+interpolator} components and gather info from dw
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse from which data is retrieved \\
+\hline
+{\em label} & list of variable labels for each component \\
+\hline
+{\em subproblems\+\_\+label} & label of subproblems in the Data\+Warehouse \\
+\hline
+{\em material} & material index \\
+\hline
+{\em patch} & grid patch \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_afbe7bb3efbb058c4396e8e549b3cbcef}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_afbe7bb3efbb058c4396e8e549b3cbcef}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$}!````~amr\+\_\+interpolator@{$\sim$amr\+\_\+interpolator}}
+\index{````~amr\+\_\+interpolator@{$\sim$amr\+\_\+interpolator}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$}}
+\subsubsection{\texorpdfstring{$\sim$amr\+\_\+interpolator()}{~amr\_interpolator()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, typename Problem , typename Index , F\+C\+I\+Type F\+CI, Dim\+Type D\+IM$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ T, N $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, Index, F\+CI, D\+IM $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{amr\+\_\+interpolator} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_a1f75287ee5fc8828e84fa530fb779e47}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_a1f75287ee5fc8828e84fa530fb779e47}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$}!amr\+\_\+interpolator@{amr\+\_\+interpolator}}
+\index{amr\+\_\+interpolator@{amr\+\_\+interpolator}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$}}
+\subsubsection{\texorpdfstring{amr\+\_\+interpolator()}{amr\_interpolator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, typename Problem , typename Index , F\+C\+I\+Type F\+CI, Dim\+Type D\+IM$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ T, N $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, Index, F\+CI, D\+IM $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{amr\+\_\+interpolator} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{amr\+\_\+interpolator}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ T, N $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, Index, F\+CI, D\+IM $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_aadd32c026392c0a152d1704b0ae69bd1}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator_3_01VectorField_3_01T_00_01N_01_4_00_01ab3739ebd28e1ffb5bc0b138cfaddd80_aadd32c026392c0a152d1704b0ae69bd1}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator$<$ Vector\+Field$<$ T, N $>$, Problem, Index, F\+C\+I, D\+I\+M $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, typename Problem , typename Index , F\+C\+I\+Type F\+CI, Dim\+Type D\+IM$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{amr\+\_\+interpolator}\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+interpolator}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ T, N $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, Index, F\+CI, D\+IM $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{amr\+\_\+interpolator}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ T, N $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, Index, F\+CI, D\+IM $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) assignment. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{amr__interpolator_8h}{amr\+\_\+interpolator.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,8 @@
+<map id="get_bcs.h" name="get_bcs.h">
+<area shape="rect" id="node2" href="$Definitions_8h.html" title="CCA/Components/PhaseField\l/Util/Definitions.h" alt="" coords="154,273,353,315"/>
+<area shape="rect" id="node6" href="$Expressions_8h.html" title="CCA/Components/PhaseField\l/Util/Expressions.h" alt="" coords="1367,184,1566,225"/>
+<area shape="rect" id="node7" href="$get__bc_8h.html" title="CCA/Components/PhaseField\l/BoundaryConditions/detail\l/get_bc.h" alt="" coords="691,80,890,136"/>
+<area shape="rect" id="node8" href="$BCInfo_8h.html" title="CCA/Components/PhaseField\l/DataTypes/BCInfo.h" alt="" coords="419,184,618,225"/>
+<area shape="rect" id="node9" href="$ScalarField_8h.html" title="CCA/Components/PhaseField\l/DataTypes/ScalarField.h" alt="" coords="599,273,798,315"/>
+<area shape="rect" id="node11" href="$VectorField_8h.html" title="CCA/Components/PhaseField\l/DataTypes/VectorField.h" alt="" coords="377,273,575,315"/>
+</map>

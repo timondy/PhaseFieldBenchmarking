@@ -1,0 +1,72 @@
+\hypertarget{structUintah_1_1PhaseField_1_1integer__sequence}{}\section{Uintah\+:\+:Phase\+Field\+:\+:integer\+\_\+sequence$<$ T, I $>$ Struct Template Reference}
+\label{structUintah_1_1PhaseField_1_1integer__sequence}\index{Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence$<$ T, I $>$@{Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence$<$ T, I $>$}}
+
+
+C++11 implementation of C++14 integer sequence.  
+
+
+
+
+{\ttfamily \#include $<$Expressions.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \hyperlink{structUintah_1_1PhaseField_1_1integer__sequence_a3bd68d516fd31a6433124da9181cf5d7}{value\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr size\+\_\+t \hyperlink{structUintah_1_1PhaseField_1_1integer__sequence_af392cbbe56b45f3e350d9d3e46f9fcdc}{size} () noexcept
+\begin{DoxyCompactList}\small\item\em Returns the number of elements in \hyperlink{structUintah_1_1PhaseField_1_1I}{I}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, T... I$>$\newline
+struct Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence$<$ T, I $>$}
+
+C++11 implementation of C++14 integer sequence. 
+
+The class template \hyperlink{structUintah_1_1PhaseField_1_1integer__sequence}{integer\+\_\+sequence} represents a compile-\/time sequence of integers. When used as an argument to a function template, the parameter pack \hyperlink{structUintah_1_1PhaseField_1_1I}{I} can be deduced and used in pack expansion.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & an integer type to use for the elements of the sequence \\
+\hline
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & a non-\/type parameter pack representing the sequence \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1integer__sequence_a3bd68d516fd31a6433124da9181cf5d7}\label{structUintah_1_1PhaseField_1_1integer__sequence_a3bd68d516fd31a6433124da9181cf5d7}} 
+\index{Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence@{Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence@{Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence}}
+\subsubsection{\texorpdfstring{value\+\_\+type}{value\_type}}
+{\footnotesize\ttfamily template$<$typename T, T... I$>$ \\
+typedef T \hyperlink{structUintah_1_1PhaseField_1_1integer__sequence}{Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence}$<$ T, \hyperlink{structUintah_1_1PhaseField_1_1I}{I} $>$\+::\hyperlink{structUintah_1_1PhaseField_1_1integer__sequence_a3bd68d516fd31a6433124da9181cf5d7}{value\+\_\+type}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1integer__sequence_af392cbbe56b45f3e350d9d3e46f9fcdc}\label{structUintah_1_1PhaseField_1_1integer__sequence_af392cbbe56b45f3e350d9d3e46f9fcdc}} 
+\index{Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence@{Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence}!size@{size}}
+\index{size@{size}!Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence@{Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T, T... I$>$ \\
+static constexpr size\+\_\+t \hyperlink{structUintah_1_1PhaseField_1_1integer__sequence}{Uintah\+::\+Phase\+Field\+::integer\+\_\+sequence}$<$ T, \hyperlink{structUintah_1_1PhaseField_1_1I}{I} $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the number of elements in \hyperlink{structUintah_1_1PhaseField_1_1I}{I}. 
+
+Returns the number of elements in Ints. Equivalent to sizeof...(\hyperlink{structUintah_1_1PhaseField_1_1I}{I})
+
+\begin{DoxyReturn}{Returns}
+The number of elements in \hyperlink{structUintah_1_1PhaseField_1_1I}{I} 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Expressions_8h}{Expressions.\+h}\end{DoxyCompactItemize}

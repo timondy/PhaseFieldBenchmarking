@@ -1,0 +1,47 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:amr\+\_\+restrictor$<$ Field, Problem, Index, F\+CI, V\+AR $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Field, Problem, Index, F\+C\+I, V\+A\+R $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Field, Problem, Index, F\+C\+I, V\+A\+R $>$}}
+
+
+Abstract wrapper of grid variables for restriction from finer to coarser levels.  
+
+
+
+
+{\ttfamily \#include $<$amr\+\_\+restrictor.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:amr\+\_\+restrictor$<$ Field, Problem, Index, F\+CI, V\+AR $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Field, typename Problem, typename Index, F\+C\+I\+Type F\+CI, Var\+Type V\+AR$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Field, Problem, Index, F\+C\+I, V\+A\+R $>$}
+
+Abstract wrapper of grid variables for restriction from finer to coarser levels. 
+
+Adds to view the possibility to compute multi-\/grid restriction
+
+\begin{DoxyRemark}{Remarks}
+All different restriction strategies must specialize this class and implement the view$<$ T $>$ class
+\end{DoxyRemark}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Field} & type of Field (should be only \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}) \\
+\hline
+{\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}} & type of \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} problem \\
+\hline
+{\em Index} & index\+\_\+sequence of Field within \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} (first element is variable index, following ones, if present, are the component index within the variable) \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{amr__restrictor_8h}{amr\+\_\+restrictor.\+h}\end{DoxyCompactItemize}

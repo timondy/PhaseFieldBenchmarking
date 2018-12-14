@@ -1,0 +1,194 @@
+\hypertarget{classUintah_1_1PhaseField_1_1BCFDView}{}\section{Uintah\+:\+:Phase\+Field\+:\+:B\+C\+F\+D\+View$<$ Problem, I, P $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1BCFDView}\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View$<$ Problem, I, P $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View$<$ Problem, I, P $>$}}
+
+
+Wrapper of Data\+Warehouse variables for both basic and complex differential operations at both physical and amr boundaries.  
+
+
+
+
+{\ttfamily \#include $<$B\+C\+F\+D\+View.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:B\+C\+F\+D\+View$<$ Problem, I, P $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1BCFDView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:B\+C\+F\+D\+View$<$ Problem, I, P $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1BCFDView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1BCFDView_ad4373326efd0b7c9cbe0c6dc3ad47c20}{B\+C\+F\+D\+View} (const typename Field\+::label\+\_\+type \&label, const Var\+Label $\ast$subproblems\+\_\+label, int material, const Level $\ast$level, const std\+::vector$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ Field $>$ $>$ \&bcs)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1BCFDView_a6d8ec6f7ffa8f5fd672d73c4688124ee}{B\+C\+F\+D\+View} (Data\+Warehouse $\ast$dw, const typename Field\+::label\+\_\+type \&label, const Var\+Label $\ast$subproblems\+\_\+label, int material, const Patch $\ast$patch, const std\+::vector$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ Field $>$ $>$ \&bcs, bool use\+\_\+ghosts=\hyperlink{classUintah_1_1PhaseField_1_1BCFDView_a7746f0ab792c1d5201e8917409fab236}{use\+\_\+ghosts\+\_\+dflt})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1BCFDView_aea8c208f40a8962423afa58cea2b8d6c}{$\sim$\+B\+C\+F\+D\+View} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1BCFDView_ad31cc98a6bd0db4f3df038bae6c62415}{B\+C\+F\+D\+View} (const \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View} \& \hyperlink{classUintah_1_1PhaseField_1_1BCFDView_aaa28c532b707463797e7a498a3830a81}{operator=} (const \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) assignment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr bool \hyperlink{classUintah_1_1PhaseField_1_1BCFDView_a7746f0ab792c1d5201e8917409fab236}{use\+\_\+ghosts\+\_\+dflt} = true
+\begin{DoxyCompactList}\small\item\em Default value for use\+\_\+ghost when retrieving data. \end{DoxyCompactList}\item 
+static const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1BCFDView_accb8305fbad15fe1920987ce17148773}{Name}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation} identifier within \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Problem, size\+\_\+t I, B\+C\+F... P$>$\newline
+class Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View$<$ Problem, I, P $>$}
+
+Wrapper of Data\+Warehouse variables for both basic and complex differential operations at both physical and amr boundaries. 
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation} for dynamic instantiation
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}} & type of \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} problem \\
+\hline
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of Field within \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+{\em P} & list of BC, FC, and Patch\+::\+Face packs \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1BCFDView_ad4373326efd0b7c9cbe0c6dc3ad47c20}\label{classUintah_1_1PhaseField_1_1BCFDView_ad4373326efd0b7c9cbe0c6dc3ad47c20}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}!B\+C\+F\+D\+View@{B\+C\+F\+D\+View}}
+\index{B\+C\+F\+D\+View@{B\+C\+F\+D\+View}!Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}}
+\subsubsection{\texorpdfstring{B\+C\+F\+D\+View()}{BCFDView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Problem , size\+\_\+t I, B\+C\+F... P$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, P $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View} (\begin{DoxyParamCaption}\item[{const typename Field\+::label\+\_\+type \&}]{label,  }\item[{const Var\+Label $\ast$}]{subproblems\+\_\+label,  }\item[{int}]{material,  }\item[{const Level $\ast$}]{level,  }\item[{const std\+::vector$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ Field $>$ $>$ \&}]{bcs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Instantiate view components without gathering info from the Data\+Warehouse
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & list of variable labels for each component \\
+\hline
+{\em subproblems\+\_\+label} & label of subproblems in the Data\+Warehouse \\
+\hline
+{\em material} & material index \\
+\hline
+{\em level} & grid level \\
+\hline
+{\em bcs} & vector with info on the boundary conditions \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1BCFDView_a6d8ec6f7ffa8f5fd672d73c4688124ee}\label{classUintah_1_1PhaseField_1_1BCFDView_a6d8ec6f7ffa8f5fd672d73c4688124ee}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}!B\+C\+F\+D\+View@{B\+C\+F\+D\+View}}
+\index{B\+C\+F\+D\+View@{B\+C\+F\+D\+View}!Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}}
+\subsubsection{\texorpdfstring{B\+C\+F\+D\+View()}{BCFDView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Problem , size\+\_\+t I, B\+C\+F... P$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, P $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View} (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const typename Field\+::label\+\_\+type \&}]{label,  }\item[{const Var\+Label $\ast$}]{subproblems\+\_\+label,  }\item[{int}]{material,  }\item[{const Patch $\ast$}]{patch,  }\item[{const std\+::vector$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ Field $>$ $>$ \&}]{bcs,  }\item[{bool}]{use\+\_\+ghosts = {\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1BCFDView_a7746f0ab792c1d5201e8917409fab236}{use\+\_\+ghosts\+\_\+dflt}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Instantiate a view and gather info from dw
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse from which data is retrieved \\
+\hline
+{\em label} & label of variable in the Data\+Warehouse \\
+\hline
+{\em subproblems\+\_\+label} & label of subproblems in the Data\+Warehouse \\
+\hline
+{\em material} & index of material in the Data\+Warehouse \\
+\hline
+{\em patch} & grid patch \\
+\hline
+{\em bcs} & vector with info on the boundary conditions \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1BCFDView_aea8c208f40a8962423afa58cea2b8d6c}\label{classUintah_1_1PhaseField_1_1BCFDView_aea8c208f40a8962423afa58cea2b8d6c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}!````~B\+C\+F\+D\+View@{$\sim$\+B\+C\+F\+D\+View}}
+\index{````~B\+C\+F\+D\+View@{$\sim$\+B\+C\+F\+D\+View}!Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+B\+C\+F\+D\+View()}{~BCFDView()}}
+{\footnotesize\ttfamily template$<$typename Problem , size\+\_\+t I, B\+C\+F... P$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, P $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1BCFDView_ad31cc98a6bd0db4f3df038bae6c62415}\label{classUintah_1_1PhaseField_1_1BCFDView_ad31cc98a6bd0db4f3df038bae6c62415}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}!B\+C\+F\+D\+View@{B\+C\+F\+D\+View}}
+\index{B\+C\+F\+D\+View@{B\+C\+F\+D\+View}!Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}}
+\subsubsection{\texorpdfstring{B\+C\+F\+D\+View()}{BCFDView()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Problem , size\+\_\+t I, B\+C\+F... P$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, P $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View}$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, P $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1BCFDView_aaa28c532b707463797e7a498a3830a81}\label{classUintah_1_1PhaseField_1_1BCFDView_aaa28c532b707463797e7a498a3830a81}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}!operator=@{operator=}}
+\index{operator=@{operator=}!Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Problem , size\+\_\+t I, B\+C\+F... P$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View}\& \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, P $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View}$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, P $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) assignment. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1BCFDView_accb8305fbad15fe1920987ce17148773}\label{classUintah_1_1PhaseField_1_1BCFDView_accb8305fbad15fe1920987ce17148773}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}}
+\subsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily template$<$typename Problem , size\+\_\+t I, B\+C\+F... P$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, P $>$\+::Name\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation} identifier within \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory}. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1BCFDView_a7746f0ab792c1d5201e8917409fab236}\label{classUintah_1_1PhaseField_1_1BCFDView_a7746f0ab792c1d5201e8917409fab236}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}!use\+\_\+ghosts\+\_\+dflt@{use\+\_\+ghosts\+\_\+dflt}}
+\index{use\+\_\+ghosts\+\_\+dflt@{use\+\_\+ghosts\+\_\+dflt}!Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}}
+\subsubsection{\texorpdfstring{use\+\_\+ghosts\+\_\+dflt}{use\_ghosts\_dflt}}
+{\footnotesize\ttfamily template$<$typename Problem , size\+\_\+t I, B\+C\+F... P$>$ \\
+constexpr bool \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View}$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, P $>$\+::use\+\_\+ghosts\+\_\+dflt = true\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Default value for use\+\_\+ghost when retrieving data. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{BCFDView_8h}{B\+C\+F\+D\+View.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,75 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1get__bcs}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:get\+\_\+bcs$<$ D\+IM, Field $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1get__bcs}\index{Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bcs$<$ D\+I\+M, Field $>$@{Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bcs$<$ D\+I\+M, Field $>$}}
+
+
+Get boundary conditions on multiple faces static functor.  
+
+
+
+
+{\ttfamily \#include $<$get\+\_\+bcs.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::array$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ Field $>$, \hyperlink{structUintah_1_1PhaseField_1_1get__dim}{get\+\_\+dim}$<$ D\+IM $>$\+::face\+\_\+end $>$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1get__bcs_aec2c358b09b48c57f06cc8ea48bd3205}{exec} (const Patch $\ast$patch, const int \&child, const int \&material, const typename Field\+::label\+\_\+type \&label, const std\+::map$<$ std\+::string, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} $>$ $\ast$c2f, std\+::array$<$ bool, \hyperlink{structUintah_1_1PhaseField_1_1get__dim}{get\+\_\+dim}$<$ D\+IM $>$\+::face\+\_\+end $>$ \&flags)
+\begin{DoxyCompactList}\small\item\em Execute the functor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Dim\+Type D\+IM, typename Field$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bcs$<$ D\+I\+M, Field $>$}
+
+Get boundary conditions on multiple faces static functor. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em D\+IM} & problem dimension \\
+\hline
+{\em Field} & type of field (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} $<$ T $>$ or \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} $<$ T, N $>$) \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1get__bcs_aec2c358b09b48c57f06cc8ea48bd3205}\label{classUintah_1_1PhaseField_1_1detail_1_1get__bcs_aec2c358b09b48c57f06cc8ea48bd3205}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bcs@{Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bcs}!exec@{exec}}
+\index{exec@{exec}!Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bcs@{Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bcs}}
+\subsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily template$<$Dim\+Type D\+IM, typename Field $>$ \\
+static std\+::array$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$Field$>$, \hyperlink{structUintah_1_1PhaseField_1_1get__dim}{get\+\_\+dim}$<$D\+IM$>$\+::face\+\_\+end $>$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1get__bcs}{Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bcs}$<$ D\+IM, Field $>$\+::exec (\begin{DoxyParamCaption}\item[{const Patch $\ast$}]{patch,  }\item[{const int \&}]{child,  }\item[{const int \&}]{material,  }\item[{const typename Field\+::label\+\_\+type \&}]{label,  }\item[{const std\+::map$<$ std\+::string, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} $>$ $\ast$}]{c2f,  }\item[{std\+::array$<$ bool, \hyperlink{structUintah_1_1PhaseField_1_1get__dim}{get\+\_\+dim}$<$ D\+IM $>$\+::face\+\_\+end $>$ \&}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Execute the functor. 
+
+For each face constuct the list of faces for the patch and call the internal indexed implementation
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em F} & list of faces to check \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em patch} & grid patch to be checked \\
+\hline
+ & {\em child} & child index of face boundary condition (as per input file) \\
+\hline
+ & {\em material} & problem material index \\
+\hline
+ & {\em label} & variable label to check \\
+\hline
+ & {\em c2f} & which fine/coarse interface conditions to use on each variable \\
+\hline
+\mbox{\tt in,out}  & {\em flags} & array of flags to check if any bc is applied to each one of faces \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array of \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{get__bcs_8h}{get\+\_\+bcs.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,232 @@
+Uintah is distributed under the MIT License at
+* http://uintah-build.sci.utah.edu/trac/wiki/License
+
+More information about Uintah are available at 
+* http://uintah.utah.edu/
+
+This repository is not updated as it is meant to provide a snapshot of the 
+software used for computing benchmark results. 
+
+The PhaseField component implementing these benchmark simulations is implemented
+upon revision 58893 from the official SVN repository at
+* https://gforge.sci.utah.edu/svn/uintah/trunk
+
+
+----------------------------------- PATCHES ------------------------------------
+
+To obtain the code available here from the official trunk branch of Uintah 
+the patches available in ./patches must be applied
+
+1.  Retrieve original revision
+    $ git svn clone -r 58893 https://gforge.sci.utah.edu/svn/uintah/trunk <path>
+    $ cd <path>
+
+2.  Apply all patches in order
+    $ git apply patches/##.patch
+
+Patch:  01.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Changed how level is computed in SchedulerCommon::scheduleAndDoDataCopy for 
+    OncePerProc task since they can work on multiple levels we pick the level of 
+    the first patch in task's PatchSet
+
+Patch:  02.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Changed the fuzz value in Level::setIsNonCubicLevel used to chech wheter the 
+    domain is cubic It was too strict, made it dependent on mesh refinement
+
+Patch:  03.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Commented out some unused vars in OnDemandDataWarehouse::getGridVar
+
+  - Modified doesCoverRegion check in OnDemandDataWarehouse::getRegionModifiable 
+    to not fail on virtual patches (i.e periodic boundaries)
+    virtual offset is used to check var/patch region intersection
+
+Patch:  04.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Modified Level::getTotalCellsInRegion to include also virtual patches to 
+    take into account periodic boundaries on non cubic levels such as refined 
+    amr levels
+  
+  - Modified Patch::computeVariableExtentsWithBoundaryCheck adding ghost offsets
+    to level extents as well in order to handle periodic boundaries on non cubic
+    levels (such as amr fine levels)
+
+Patch:  05.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Modified SchedulerCommon::scheduleAndDoDataCopy to make get scheduleRefine 
+    called after copying data on untouched patches after regrid occurs (some 
+    refinement computation may need to get data from neighbors on preexisting 
+    patches)
+
+Patch:  06.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Generalized implemenentation of PhaseField component which now provides a 
+    framework for phase field applications
+
+  - PhaseField application reimplemented as PureMetal
+
+  - Updated PhaseField inputs for PureMetal application
+
+Patch:  07.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Heat component reimplemented as Heat application within PhaseField component
+    (implicit solver implementation removed temporarly)
+
+Patch:  08.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+Date:   Tue Dec 11 17:26:20 2018 +0000
+
+  - Benchmark applications implemented within PhaseField component
+
+Patch:  09.patch
+Author: Jon Matteo Church <j.m.church@leeds.ac.uk>
+
+  - Added additional files for benchmark repository
+
+
+--------------------------------- REQUIREMENTS ---------------------------------
+
+- make
+  tested with gnu (3.82, 4.1)
+  
+- F77 and C++11 compilers:
+  tested with gnu (4.8.5, 6.3.0) and intel (18.0.2) compilers
+  
+- MPI
+  tested with openmpi (1.10.7, 2.0.2) and intelmpi (2018.2.199) 
+  
+- libxml2
+  tested (2.9.1, 2.9.4)
+  
+- zlib 
+  tested (1.2.7, 1.2.8)
+
+- blas/lapack
+  tested with netlib blas/lapack (3.4.2, 3.7.0) and intel mkl (2018.2)
+  
+* no solver is required, neither hypre nor petsc are required.
+
+  
+----------------------------- UINTAH CONFIGURATION -----------------------------
+
+Minimal configuration scripts for building Uintah with the PhaseField component 
+are available in config-examples/ for the following systems:
+
+* debian: Debian stretch (stable) x86_64 GNU/Linux
+* centos: CentOS 7 x86_64 GNU/Linux
+* arc3:   Advanced Research Computing Node 3 (http://www.arc.leeds.ac.uk)
+
+
+------------------------------ BUILD INSTRUCTIONS ------------------------------
+
+Only the sus target needs to be compiled:
+
+1.  Create build directory
+    $ mkdir build
+
+2.  Copy (and edit) best-suited configuration script to build directory
+    $ cp config-examples/configure.#####-###-##### build/configure.sh
+    $ <edit> build/configure.sh
+    
+3.  Change directory and configure
+    $ cd build
+    $ ./configure.sh
+
+4.  Compile
+    $ make [-j#] sus
+    
+* no install method is provided with Uintah
+
+
+-------------------------- HOW TO RUN BENCHMARK TESTS --------------------------
+
+Input files for the PhaseField Benchmark applications are located in
+src/StandAlone/inputs/PhaseField/benchmark##
+
+1.  Create output directory and change directory
+    $ mkdir out
+    $ cd out
+
+2.  Run sus with mpi
+    $ mpirun -np <num_proc> <build_path>/sus <path_to_input_file>
+    
+A new folder with extension .uda will be crated in the currend working directory
+Output can be visualized with Hypre 
+(https://computation.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods)
+
+Interrupted simulations may be restarted with 
+
+3.  $ mpirun -np <num_proc> <build_path>/sus -restart <path_to_output_file>
+
+
+------------------------- HOW SCHEDULE BENCHMARK TESTS -------------------------
+
+Examples of sge job scripts are located in src/scripts/PhaseField/benchmark/sge/
+
+1.  Jobs can be submitted from the output directory with
+    $ qsub <path_to_sge_file>
+
+
+---------------------- HOW TO POSTPROCESS BENCHMARK TESTS ----------------------
+
+Bash scripts are located in src/scripts/PhaseField/benchmark/bash and Matlab 
+scripts are in src/scripts/PhaseField/benchmark/matlab
+
+1.  Reorganize output file.
+    From the output directory run to create a tree of directories at ./dat and 
+    copy relevant files from origina uda outputs.
+    $ <bash_script_path>/organize_output
+
+2.  Join together output files.
+    Deepest directories within ./dat will now contain one or more files ending
+    with progressive numbers corresponding to the original uda suffixes 
+    identifying output from the first run and the eventual following restarts
+    For example the content of one of these could be:
+    
+    - energy_000.dat : contains the energy profile from the initial run
+    - energy_001.dat : contains the energy profile from the first restart
+    - energy_002.dat : contains the energy profile from the second restart
+    - u0_000.dat :     contains the value of the solution at the center from the initial run
+    - u0_001.dat :     contains the value of the solution at the center from the first restart
+    - u0_002.dat :     contains the value of the solution at the center from the second restart  
+    
+    a.  For every restart file check the first timestep
+        $ head energy_001.dat energy_002.dat u0_001.dat u0_002.dat
+        
+    b.  Delete all lines after that timestep in the previous file 
+        $ <edit> energy_000.dat energy_001.dat u0_000.dat u0_001.dat
+        
+    c.  Join all output together
+        $ cat energy_000.dat energy_001.dat energy_002.dat > energy.dat
+        $ cat u0_000.dat u0_001.dat u0_002.dat > energy.dat
+        
+3.  Run Matlab scripts
+    This will generate a csv file with computed benchmark values for each
+    simulation found in the path
+    
+    a.  Start Matlab and add scripts path and cd into output directory
+        $ addpath <matlab_scripts_path>
+        $ cd <output_path>
+    
+    b.  Call the appropriate postprocess function 
+        $ postprocess##(<path>)
+
+
+---------------------- PHASE FIELD COMPONENT DOCUMENTATION ---------------------
+
+The documentation of the PhaseField component is available in html format at
+doc/Components/PhaseField/html.
+
+A pdf version of the documentation can be alse generated with doxygen
+
+$ cd doc/Components/PhaseField/
+$ doxygen

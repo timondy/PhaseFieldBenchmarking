@@ -1,0 +1,151 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1view__array}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:view\+\_\+array$<$ View, Field, N $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1view__array}\index{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array$<$ View, Field, N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array$<$ View, Field, N $>$}}
+
+
+Container for collecting multiple generic views as an array.  
+
+
+
+
+{\ttfamily \#include $<$view\+\_\+array.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:view\+\_\+array$<$ View, Field, N $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classUintah_1_1PhaseField_1_1detail_1_1view__array__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:view\+\_\+array$<$ View, Field, N $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classUintah_1_1PhaseField_1_1detail_1_1view__array__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array_ac02634a707d1a4d12223a3af38a4cdbc}{set} (Data\+Warehouse $\ast$dw, const Patch $\ast$patch, bool use\+\_\+ghosts=View\+::use\+\_\+ghosts\+\_\+dflt)
+\begin{DoxyCompactList}\small\item\em Retrieve value from the Data\+Warehouse for a given patch. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array_a64949b6b13b385c9eb2b2e12f10294a0}{set} (Data\+Warehouse $\ast$dw, const Level $\ast$level, const Int\+Vector \&low, const Int\+Vector \&high, bool use\+\_\+ghosts=View\+::use\+\_\+ghosts\+\_\+dflt)
+\begin{DoxyCompactList}\small\item\em Retrieve value from the Data\+Warehouse for a given region. \end{DoxyCompactList}\item 
+\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View} \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array_a5f4495be42ef2dbe399b717c09766f0d}{operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t pos)
+\begin{DoxyCompactList}\small\item\em Get reference to field component. \end{DoxyCompactList}\item 
+const \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View} \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array_a3f995548be07fb11a5db1cdd8cc7b6f4}{operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t pos) const
+\begin{DoxyCompactList}\small\item\em Get reference to field component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename View, typename Field, size\+\_\+t N$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array$<$ View, Field, N $>$}
+
+Container for collecting multiple generic views as an array. 
+
+\begin{DoxyRemark}{Remarks}
+no instantiation must be performed here
+\end{DoxyRemark}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em View} & type of Views in the array \\
+\hline
+{\em Field} & type of Fields in the array \\
+\hline
+{\em N} & size of the array \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1view__array_a5f4495be42ef2dbe399b717c09766f0d}\label{classUintah_1_1PhaseField_1_1detail_1_1view__array_a5f4495be42ef2dbe399b717c09766f0d}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename View, typename Field, size\+\_\+t N$>$ \\
+\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array}{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}, Field, N $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get reference to field component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & component index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to the view of the component 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1view__array_a3f995548be07fb11a5db1cdd8cc7b6f4}\label{classUintah_1_1PhaseField_1_1detail_1_1view__array_a3f995548be07fb11a5db1cdd8cc7b6f4}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename View, typename Field, size\+\_\+t N$>$ \\
+const \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array}{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}, Field, N $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get reference to field component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & component index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to the view of the component 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1view__array_ac02634a707d1a4d12223a3af38a4cdbc}\label{classUintah_1_1PhaseField_1_1detail_1_1view__array_ac02634a707d1a4d12223a3af38a4cdbc}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array}!set@{set}}
+\index{set@{set}!Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename View, typename Field, size\+\_\+t N$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array}{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}, Field, N $>$\+::set (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const Patch $\ast$}]{patch,  }\item[{bool}]{use\+\_\+ghosts = {\ttfamily View\+:\+:use\+\_\+ghosts\+\_\+dflt} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve value from the Data\+Warehouse for a given patch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse from which data is retrieved \\
+\hline
+{\em patch} & grid patch to retrieve data for \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1view__array_a64949b6b13b385c9eb2b2e12f10294a0}\label{classUintah_1_1PhaseField_1_1detail_1_1view__array_a64949b6b13b385c9eb2b2e12f10294a0}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array}!set@{set}}
+\index{set@{set}!Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename View, typename Field, size\+\_\+t N$>$ \\
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array}{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}, Field, N $>$\+::set (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const Level $\ast$}]{level,  }\item[{const Int\+Vector \&}]{low,  }\item[{const Int\+Vector \&}]{high,  }\item[{bool}]{use\+\_\+ghosts = {\ttfamily View\+:\+:use\+\_\+ghosts\+\_\+dflt} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve value from the Data\+Warehouse for a given region. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse from which data is retrieved \\
+\hline
+{\em level} & grid level from which retrieve data \\
+\hline
+{\em low} & lower bound of the region to retrieve \\
+\hline
+{\em high} & higher bound of the region to retrieve \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{view__array_8h}{view\+\_\+array.\+h}\end{DoxyCompactItemize}

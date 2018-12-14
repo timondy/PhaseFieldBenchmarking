@@ -1,0 +1,13 @@
+#!/bin/bash
+
+CC=gcc \
+CXX=g++ \
+F77=gfortran \
+CXXFLAGS=-pthread \
+../src/configure \
+  --enable-debug="-fPIC -g" \
+  --enable-phasefield \
+  --enable-static \
+  --with-mpi=/usr/lib/x86_64-linux-gnu/openmpi \
+  --with-hypre=no \
+  --with-petsc=no

@@ -1,0 +1,108 @@
+\hypertarget{structUintah_1_1PhaseField_1_1DWInterface}{}\section{Uintah\+:\+:Phase\+Field\+:\+:D\+W\+Interface$<$ V\+AR, D\+IM $>$ Struct Template Reference}
+\label{structUintah_1_1PhaseField_1_1DWInterface}\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface$<$ V\+A\+R, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface$<$ V\+A\+R, D\+I\+M $>$}}
+
+
+Interface for data-\/warehouse.  
+
+
+
+
+{\ttfamily \#include $<$D\+W\+Interface.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:D\+W\+Interface$<$ V\+AR, D\+IM $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structUintah_1_1PhaseField_1_1DWInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$Var\+Type V = V\+AR$>$ }\\static Point \hyperlink{structUintah_1_1PhaseField_1_1DWInterface_aa1c394ba8e632d416d9a3da757055408}{get\+\_\+position} (const Patch $\ast$p, const Int\+Vector \&i)
+\item 
+{\footnotesize template$<$Var\+Type V = V\+AR$>$ }\\static Point \hyperlink{structUintah_1_1PhaseField_1_1DWInterface_a0e58176333dc74f9a936248a7a7194a2}{get\+\_\+position} (const Level $\ast$l, const Int\+Vector \&i)
+\item 
+{\footnotesize template$<$Var\+Type V = V\+AR$>$ }\\static Int\+Vector \hyperlink{structUintah_1_1PhaseField_1_1DWInterface_aa7342c67207852dee747a79aaef18d0e}{get\+\_\+low} (const Patch $\ast$p)
+\item 
+{\footnotesize template$<$Var\+Type V = V\+AR$>$ }\\static Int\+Vector \hyperlink{structUintah_1_1PhaseField_1_1DWInterface_a963134e752d1511f7600c4cfb00350a6}{get\+\_\+high} (const Patch $\ast$p)
+\item 
+{\footnotesize template$<$Var\+Type V = V\+AR$>$ }\\static Block\+Range \hyperlink{structUintah_1_1PhaseField_1_1DWInterface_aaf163a6173f0ed2d092bb7d2d6b18a21}{get\+\_\+range} (const Patch $\ast$p)
+\item 
+{\footnotesize template$<$Var\+Type V = V\+AR$>$ }\\static bool \hyperlink{structUintah_1_1PhaseField_1_1DWInterface_a0914b9ebb7d4aba921e212d5a47f55c9}{find\+\_\+point} (const Patch $\ast$p, const Point \&pt, Int\+Vector \&id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Var\+Type V\+AR, Dim\+Type D\+IM$>$\newline
+struct Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface$<$ V\+A\+R, D\+I\+M $>$}
+
+Interface for data-\/warehouse. 
+
+groups together various methods to get info about patches and levels which depend on the different types of variable representation and problem dimensions allowing to choose the relevant implementation at compile time
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em V\+AR} & type of variable representation \\
+\hline
+{\em D\+IM} & problem dimension \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1DWInterface_a0914b9ebb7d4aba921e212d5a47f55c9}\label{structUintah_1_1PhaseField_1_1DWInterface_a0914b9ebb7d4aba921e212d5a47f55c9}} 
+\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}!find\+\_\+point@{find\+\_\+point}}
+\index{find\+\_\+point@{find\+\_\+point}!Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}}
+\subsubsection{\texorpdfstring{find\+\_\+point()}{find\_point()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+template$<$Var\+Type V = V\+AR$>$ \\
+static bool \hyperlink{structUintah_1_1PhaseField_1_1DWInterface}{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}$<$ V\+AR, D\+IM $>$\+::find\+\_\+point (\begin{DoxyParamCaption}\item[{const Patch $\ast$}]{p,  }\item[{const Point \&}]{pt,  }\item[{Int\+Vector \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1DWInterface_a963134e752d1511f7600c4cfb00350a6}\label{structUintah_1_1PhaseField_1_1DWInterface_a963134e752d1511f7600c4cfb00350a6}} 
+\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}!get\+\_\+high@{get\+\_\+high}}
+\index{get\+\_\+high@{get\+\_\+high}!Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}}
+\subsubsection{\texorpdfstring{get\+\_\+high()}{get\_high()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+template$<$Var\+Type V = V\+AR$>$ \\
+static Int\+Vector \hyperlink{structUintah_1_1PhaseField_1_1DWInterface}{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}$<$ V\+AR, D\+IM $>$\+::get\+\_\+high (\begin{DoxyParamCaption}\item[{const Patch $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1DWInterface_aa7342c67207852dee747a79aaef18d0e}\label{structUintah_1_1PhaseField_1_1DWInterface_aa7342c67207852dee747a79aaef18d0e}} 
+\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}!get\+\_\+low@{get\+\_\+low}}
+\index{get\+\_\+low@{get\+\_\+low}!Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}}
+\subsubsection{\texorpdfstring{get\+\_\+low()}{get\_low()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+template$<$Var\+Type V = V\+AR$>$ \\
+static Int\+Vector \hyperlink{structUintah_1_1PhaseField_1_1DWInterface}{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}$<$ V\+AR, D\+IM $>$\+::get\+\_\+low (\begin{DoxyParamCaption}\item[{const Patch $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1DWInterface_aa1c394ba8e632d416d9a3da757055408}\label{structUintah_1_1PhaseField_1_1DWInterface_aa1c394ba8e632d416d9a3da757055408}} 
+\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}!get\+\_\+position@{get\+\_\+position}}
+\index{get\+\_\+position@{get\+\_\+position}!Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}}
+\subsubsection{\texorpdfstring{get\+\_\+position()}{get\_position()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+template$<$Var\+Type V = V\+AR$>$ \\
+static Point \hyperlink{structUintah_1_1PhaseField_1_1DWInterface}{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}$<$ V\+AR, D\+IM $>$\+::get\+\_\+position (\begin{DoxyParamCaption}\item[{const Patch $\ast$}]{p,  }\item[{const Int\+Vector \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1DWInterface_a0e58176333dc74f9a936248a7a7194a2}\label{structUintah_1_1PhaseField_1_1DWInterface_a0e58176333dc74f9a936248a7a7194a2}} 
+\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}!get\+\_\+position@{get\+\_\+position}}
+\index{get\+\_\+position@{get\+\_\+position}!Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}}
+\subsubsection{\texorpdfstring{get\+\_\+position()}{get\_position()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+template$<$Var\+Type V = V\+AR$>$ \\
+static Point \hyperlink{structUintah_1_1PhaseField_1_1DWInterface}{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}$<$ V\+AR, D\+IM $>$\+::get\+\_\+position (\begin{DoxyParamCaption}\item[{const Level $\ast$}]{l,  }\item[{const Int\+Vector \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1DWInterface_aaf163a6173f0ed2d092bb7d2d6b18a21}\label{structUintah_1_1PhaseField_1_1DWInterface_aaf163a6173f0ed2d092bb7d2d6b18a21}} 
+\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}!get\+\_\+range@{get\+\_\+range}}
+\index{get\+\_\+range@{get\+\_\+range}!Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface@{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}}
+\subsubsection{\texorpdfstring{get\+\_\+range()}{get\_range()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+template$<$Var\+Type V = V\+AR$>$ \\
+static Block\+Range \hyperlink{structUintah_1_1PhaseField_1_1DWInterface}{Uintah\+::\+Phase\+Field\+::\+D\+W\+Interface}$<$ V\+AR, D\+IM $>$\+::get\+\_\+range (\begin{DoxyParamCaption}\item[{const Patch $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{DWInterface_8h}{D\+W\+Interface.\+h}\end{DoxyCompactItemize}

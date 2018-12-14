@@ -1,0 +1,85 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1partition__range_3_01X_00_01GN_00_01DONE_00_01Field_8_8_8_01_4}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:partition\+\_\+range$<$ X, GN, D\+O\+NE, Field... $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1partition__range_3_01X_00_01GN_00_01DONE_00_01Field_8_8_8_01_4}\index{Uintah\+::\+Phase\+Field\+::detail\+::partition\+\_\+range$<$ X, G\+N, D\+O\+N\+E, Field... $>$@{Uintah\+::\+Phase\+Field\+::detail\+::partition\+\_\+range$<$ X, G\+N, D\+O\+N\+E, Field... $>$}}
+
+
+Partition range static functor (X direction implementation)  
+
+
+
+
+{\ttfamily \#include $<$partition\+\_\+range\+\_\+\+X.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ }\\static void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1partition__range_3_01X_00_01GN_00_01DONE_00_01Field_8_8_8_01_4_aa1e61750c34c2eb589915e421320130b}{exec} (const typename Field\+::label\+\_\+type \&... labels, const Var\+Label $\ast$subproblems\+\_\+label, int material, const Level $\ast$level, Int\+Vector low, Int\+Vector high, std\+::list$<$ Patch\+::\+Face\+Type $>$ faces, const std\+::array$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ Field $>$, 2 $\ast$\hyperlink{structUintah_1_1PhaseField_1_1get__stn}{get\+\_\+stn}$<$ S\+TN $>$\+::dim $>$ \&... bcs, std\+::array$<$ bool, 2 $\ast$\hyperlink{structUintah_1_1PhaseField_1_1get__stn}{get\+\_\+stn}$<$ S\+TN $>$\+::dim $>$ \&flags, std\+::list$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}$<$ V\+AR, S\+TN, Field... $>$ $>$ \&problems)
+\begin{DoxyCompactList}\small\item\em Execute the functor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$int GN, int D\+O\+NE, typename... Field$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::partition\+\_\+range$<$ X, G\+N, D\+O\+N\+E, Field... $>$}
+
+Partition range static functor (X direction implementation) 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em GN} & Number of ghosts required \\
+\hline
+{\em D\+O\+NE} & Number of directions already partitioned (for internal checks) \\
+\hline
+{\em Field} & list of type of fields (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} $<$ T $>$ or \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} $<$ T, N $>$) \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1partition__range_3_01X_00_01GN_00_01DONE_00_01Field_8_8_8_01_4_aa1e61750c34c2eb589915e421320130b}\label{classUintah_1_1PhaseField_1_1detail_1_1partition__range_3_01X_00_01GN_00_01DONE_00_01Field_8_8_8_01_4_aa1e61750c34c2eb589915e421320130b}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::partition\+\_\+range$<$ X, G\+N, D\+O\+N\+E, Field... $>$@{Uintah\+::\+Phase\+Field\+::detail\+::partition\+\_\+range$<$ X, G\+N, D\+O\+N\+E, Field... $>$}!exec@{exec}}
+\index{exec@{exec}!Uintah\+::\+Phase\+Field\+::detail\+::partition\+\_\+range$<$ X, G\+N, D\+O\+N\+E, Field... $>$@{Uintah\+::\+Phase\+Field\+::detail\+::partition\+\_\+range$<$ X, G\+N, D\+O\+N\+E, Field... $>$}}
+\subsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily template$<$int GN, int D\+O\+NE, typename... Field$>$ \\
+template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+static void \hyperlink{structUintah_1_1PhaseField_1_1detail_1_1partition__range}{Uintah\+::\+Phase\+Field\+::detail\+::partition\+\_\+range}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dcabccb3e56e2d911af492cf381d06809b6}{X}, GN, D\+O\+NE, Field... $>$\+::exec (\begin{DoxyParamCaption}\item[{const typename Field\+::label\+\_\+type \&...}]{labels,  }\item[{const Var\+Label $\ast$}]{subproblems\+\_\+label,  }\item[{int}]{material,  }\item[{const Level $\ast$}]{level,  }\item[{Int\+Vector}]{low,  }\item[{Int\+Vector}]{high,  }\item[{std\+::list$<$ Patch\+::\+Face\+Type $>$}]{faces,  }\item[{const std\+::array$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ Field $>$, 2 $\ast$\hyperlink{structUintah_1_1PhaseField_1_1get__stn}{get\+\_\+stn}$<$ S\+TN $>$\+::dim $>$ \&...}]{bcs,  }\item[{std\+::array$<$ bool, 2 $\ast$\hyperlink{structUintah_1_1PhaseField_1_1get__stn}{get\+\_\+stn}$<$ S\+TN $>$\+::dim $>$ \&}]{flags,  }\item[{std\+::list$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}$<$ V\+AR, S\+TN, Field... $>$ $>$ \&}]{problems }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Execute the functor. 
+
+Check if boundary conditions are applied to xplus and xminus faces and partition the range accordingly, then instantiate all problems
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em V\+AR} & type of variable representation \\
+\hline
+{\em S\+TN} & finite-\/difference stencil \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em labels} & list of labels for each variable of the problem \\
+\hline
+ & {\em subproblems\+\_\+label} & label for subproblems in the DW (required by A\+MR boundary Problems) \\
+\hline
+ & {\em material} & index of material in the Data\+Warehouse \\
+\hline
+ & {\em level} & grid level to be partitions \\
+\hline
+ & {\em low} & lower bound of the region to partition \\
+\hline
+ & {\em high} & higher bound of the region to partition \\
+\hline
+ & {\em faces} & list of faces on which boundary conditions are applied \\
+\hline
+ & {\em bcs} & list of arrays of BC info for each one of face of the patch for each one of the problem labels \\
+\hline
+ & {\em flags} & array of flags to check if any bc is applied to each one of faces \\
+\hline
+\mbox{\tt out}  & {\em problems} & list of subproblems to populate \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{partition__range__X_8h}{partition\+\_\+range\+\_\+\+X.\+h}\end{DoxyCompactItemize}

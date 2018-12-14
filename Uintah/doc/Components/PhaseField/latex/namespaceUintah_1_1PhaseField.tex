@@ -1,0 +1,916 @@
+\hypertarget{namespaceUintah_1_1PhaseField}{}\section{Uintah\+:\+:Phase\+Field Namespace Reference}
+\label{namespaceUintah_1_1PhaseField}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceUintah_1_1PhaseField_1_1detail}{detail}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1AMRInterface}{A\+M\+R\+Interface}
+\begin{DoxyCompactList}\small\item\em Interface for A\+MR. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Application}{Application}
+\begin{DoxyCompactList}\small\item\em Virtual base for \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} applications. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Application_3_01VAR_00_01DIM_00_01STN_00_01false_01_4}{Application$<$ V\+A\+R, D\+I\+M, S\+T\+N, false $>$}
+\begin{DoxyCompactList}\small\item\em Virtual base for \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} applications (non-\/\+A\+MR implementation) \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Application_3_01VAR_00_01DIM_00_01STN_00_01true_01_4}{Application$<$ V\+A\+R, D\+I\+M, S\+T\+N, true $>$}
+\begin{DoxyCompactList}\small\item\em Virtual base for \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} applications (A\+MR implementation) \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1ApplicationFactory}{Application\+Factory}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} class for different \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} applications. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}
+\begin{DoxyCompactList}\small\item\em Generic factory base class. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View}
+\begin{DoxyCompactList}\small\item\em Wrapper of Data\+Warehouse variables for both basic and complex differential operations at both physical and amr boundaries. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1BCFDViewFactory}{B\+C\+F\+D\+View\+Factory}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator implementation for \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View}. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}
+\begin{DoxyCompactList}\small\item\em Boundary Condition Information. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1BCInfo_3_01ScalarField_3_01T_01_4_01_4}{B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$}
+\begin{DoxyCompactList}\small\item\em Boundary Condition Information (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation) \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4}{B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$}
+\begin{DoxyCompactList}\small\item\em Boundary Condition Information (\hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} implementation) \end{DoxyCompactList}\item 
+class \hyperlink{structUintah_1_1PhaseField_1_1BCInterface}{B\+C\+Interface}
+\begin{DoxyCompactList}\small\item\em Interface for boundary conditions. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Benchmark01}{Benchmark01}
+\begin{DoxyCompactList}\small\item\em Benchmark \hyperlink{structUintah_1_1PhaseField_1_1I}{I} application\+: 2D Allen Cahn. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Benchmark02}{Benchmark02}
+\begin{DoxyCompactList}\small\item\em Benchmark II application\+: 2D Cahn Hilliard seven circles. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Benchmark03}
+\begin{DoxyCompactList}\small\item\em Benchmark I\+II application\+: 1D Cahn Hilliard. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Benchmark04}{Benchmark04}
+\begin{DoxyCompactList}\small\item\em Benchmark IV application\+: 2D Cahn Hilliard energy decay. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1combinations}{combinations}
+\begin{DoxyCompactList}\small\item\em Compile time combinations. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1DWFDView}{D\+W\+F\+D\+View}
+\begin{DoxyCompactList}\small\item\em Wrapper of Data\+Warehouse variables for both basic and complex differential operations. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1DWFDViewFactory}{D\+W\+F\+D\+View\+Factory}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator implementation for \hyperlink{classUintah_1_1PhaseField_1_1DWFDView}{D\+W\+F\+D\+View} Not implemented as there is no need yet. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1DWInterface}{D\+W\+Interface}
+\begin{DoxyCompactList}\small\item\em Interface for data-\/warehouse. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View}
+\begin{DoxyCompactList}\small\item\em Wrapper of Data\+Warehouse variables. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1DWViewFactory}{D\+W\+View\+Factory}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator implementation for \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View} Not implemented as there is no need yet. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1factorial}{factorial}
+\begin{DoxyCompactList}\small\item\em Compile time factorial. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1factorial_3_010_01_4}{factorial$<$ 0 $>$}
+\begin{DoxyCompactList}\small\item\em Compile time factorial (O case) \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory}
+\begin{DoxyCompactList}\small\item\em Generic factory creator class. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__bc}{get\+\_\+bc}
+\begin{DoxyCompactList}\small\item\em BC Helper. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__bc_3_01BC_1_1Dirichlet_01_4}{get\+\_\+bc$<$ B\+C\+::\+Dirichlet $>$}
+\begin{DoxyCompactList}\small\item\em BC Helper (Dirichlet implementation) \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__bc_3_01BC_1_1FineCoarseInterface_01_4}{get\+\_\+bc$<$ B\+C\+::\+Fine\+Coarse\+Interface $>$}
+\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__bc_3_01BC_1_1Neumann_01_4}{get\+\_\+bc$<$ B\+C\+::\+Neumann $>$}
+\begin{DoxyCompactList}\small\item\em BC Helper (Neumann implementation) \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__bcf}{get\+\_\+bcf}
+\begin{DoxyCompactList}\small\item\em B\+CF Helper. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__dim}{get\+\_\+dim}
+\begin{DoxyCompactList}\small\item\em Dim\+Type Helper. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__dir}{get\+\_\+dir}
+\begin{DoxyCompactList}\small\item\em Dir\+Type Helper. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__face}{get\+\_\+face}
+\begin{DoxyCompactList}\small\item\em Patch\+::\+Face\+Type Helper. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__fc}{get\+\_\+fc}
+\begin{DoxyCompactList}\small\item\em FC Helper. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__fci}{get\+\_\+fci}
+\begin{DoxyCompactList}\small\item\em F\+C\+I\+Type Helper. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__fci_3_01I0_01_4}{get\+\_\+fci$<$ I0 $>$}
+\begin{DoxyCompactList}\small\item\em F\+C\+I\+Type Helper (I0 \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation}) \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__fci_3_01I1_01_4}{get\+\_\+fci$<$ I1 $>$}
+\begin{DoxyCompactList}\small\item\em F\+C\+I\+Type Helper (I1 \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation}) \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__stn}{get\+\_\+stn}
+\begin{DoxyCompactList}\small\item\em Stn\+Type Helper. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__stn_3_01EU_01_4}{get\+\_\+stn$<$ E\+U $>$}
+\begin{DoxyCompactList}\small\item\em Stn\+Type Helper (EU implementation) \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__stn_3_01P3_01_4}{get\+\_\+stn$<$ P3 $>$}
+\begin{DoxyCompactList}\small\item\em Stn\+Type Helper (P3 implementation) \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__stn_3_01P5_01_4}{get\+\_\+stn$<$ P5 $>$}
+\begin{DoxyCompactList}\small\item\em Stn\+Type Helper (P5 implementation) \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__stn_3_01P7_01_4}{get\+\_\+stn$<$ P7 $>$}
+\begin{DoxyCompactList}\small\item\em Stn\+Type Helper (P7 implementation) \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__var}{get\+\_\+var}
+\begin{DoxyCompactList}\small\item\em Var\+Type Helper. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__var_3_01CC_01_4}{get\+\_\+var$<$ C\+C $>$}
+\begin{DoxyCompactList}\small\item\em Var\+Type Helper (CC \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation}) \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1get__var_3_01NC_01_4}{get\+\_\+var$<$ N\+C $>$}
+\begin{DoxyCompactList}\small\item\em Var\+Type Helper (NC \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation}) \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat} \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} applications. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1I}{I}
+\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation}
+\begin{DoxyCompactList}\small\item\em Generic factory implementation class. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1integer__sequence}{integer\+\_\+sequence}
+\begin{DoxyCompactList}\small\item\em C++11 implementation of C++14 integer sequence. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1IntVectorOutOfBounds}{Int\+Vector\+Out\+Of\+Bounds}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1IntVectorOutOfBounds}{Int\+Vector\+Out\+Of\+Bounds} Exception. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1make__integer__sequence_3_01T_00_010_00_01I_8_8_8_01_4}{make\+\_\+integer\+\_\+sequence$<$ T, 0, I... $>$}
+\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}. \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1PureMetal}{Pure\+Metal}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1PureMetal}{Pure\+Metal} \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} applications. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}
+\begin{DoxyCompactList}\small\item\em Type for scalar spatial variables to be used as template parameter. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1SubProblems}{Sub\+Problems}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} Container. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1SubProblems_3_01Problem_3_01VAR_00_01STN_00_01Field_8_8_8_01_4_01_4}{Sub\+Problems$<$ Problem$<$ V\+A\+R, S\+T\+N, Field... $>$ $>$}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} Container (\hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} implementation) \end{DoxyCompactList}\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1Support}{Support}
+\begin{DoxyCompactList}\small\item\em View Domain. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1Variable}{Variable}
+\begin{DoxyCompactList}\small\item\em Grid variable wrapper. \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1Variable_3_01PP_00_01T_01_4}{Variable$<$ P\+P, T $>$}
+\begin{DoxyCompactList}\small\item\em Grid variable wrapper (Per\+Patch implementation) \end{DoxyCompactList}\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}
+\begin{DoxyCompactList}\small\item\em Type for vector spatial variables to be used as template. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Problem , size\+\_\+t I, F\+C\+I\+Type F\+CI$>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a2188fd3571014276c1445391573d263d}{A\+M\+R\+Interpolator} = \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{detail\+::amr\+\_\+interpolator}$<$ typename Problem\+::template get\+\_\+field$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I} $>$\+::type, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I} $>$, F\+CI, \hyperlink{classUintah_1_1PhaseField_1_1Problem_a23dbecf657023dd405fc40939661c550}{Problem\+::\+Dim} $>$
+\begin{DoxyCompactList}\small\item\em Wrapper of grid variables for interpolation from coarser to finer levels. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Problem , size\+\_\+t I, F\+C\+I\+Type F\+CI$>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a75763c981a43e822af372ed79bbc54b6}{A\+M\+R\+Restrictor} = \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{detail\+::amr\+\_\+restrictor}$<$ typename Problem\+::template get\+\_\+field$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I} $>$\+::type, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I} $>$, F\+CI, \hyperlink{classUintah_1_1PhaseField_1_1Problem_a74de1351a682f8523456962f0fc49a18}{Problem\+::\+Var} $>$
+\begin{DoxyCompactList}\small\item\em Wrapper of grid variables for interpolation from finer to coarser levels. \end{DoxyCompactList}\item 
+using \hyperlink{namespaceUintah_1_1PhaseField_a769cb9d270a04e03ff788b4d16ff6c2b}{Uintah\+Parallel\+Component\+Base} = \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$ Uintah\+Parallel\+Component $>$
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base} class for Uintah\+Parallel\+Component. \end{DoxyCompactList}\item 
+using \hyperlink{namespaceUintah_1_1PhaseField_aa9f0d6f6090c6c28bf051220734d61d6}{Uintah\+Parallel\+Component\+Factory} = \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory}$<$ Uintah\+Parallel\+Component, const Processor\+Group $\ast$, const Material\+ManagerP, int $>$
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} class for Uintah\+Parallel\+Component. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Field , Stn\+Type S\+TN$>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a27955353517b49f532c48918bdaa6e12}{B\+C\+Factory\+F\+D\+View} = \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ Field, S\+TN $>$, const typename Field\+::label\+\_\+type \&, const Var\+Label $\ast$, int, const Level $\ast$, const std\+::vector$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ Field $>$ $>$ \&$>$
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator for \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Field , Stn\+Type S\+TN$>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a0a0456c1a6ca9d0f48b97e8f4e13e6cc}{B\+C\+Base\+F\+D\+View} = \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ Field, S\+TN $>$ $>$
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} base for \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_af786d8e2489272b1c6903a1377df1f1b}{Heat\+Problem} = \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}$<$ V\+AR, S\+TN, \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$ $>$
+\begin{DoxyCompactList}\small\item\em Type of \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} used by \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat} application. \end{DoxyCompactList}\item 
+{\footnotesize template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a8b672bdd087de9e7387512bfe7c7d3a4}{Pure\+Metal\+Problem} = \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}$<$ V\+AR, S\+TN, \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ const double, \hyperlink{structUintah_1_1PhaseField_1_1combinations}{combinations}$<$ \hyperlink{structUintah_1_1PhaseField_1_1get__stn}{get\+\_\+stn}$<$ S\+TN $>$\+::dim, 2 $>$\+::value $>$ $>$
+\begin{DoxyCompactList}\small\item\em Type of \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} used by \hyperlink{classUintah_1_1PhaseField_1_1PureMetal}{Pure\+Metal} application. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Problem $>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_acb95bc634a12aa4120b33fbe933f24bd}{Sub\+ProblemsP} = Handle$<$ \hyperlink{structUintah_1_1PhaseField_1_1SubProblems}{Sub\+Problems}$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} $>$ $>$
+\begin{DoxyCompactList}\small\item\em Handle for \hyperlink{structUintah_1_1PhaseField_1_1SubProblems}{Sub\+Problems}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Field , Stn\+Type S\+TN$>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a142a97025a09cbbe9f5a53455a9f32a9}{D\+W\+Factory\+F\+D\+View} = \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ Field, S\+TN $>$, const typename Field\+::label\+\_\+type \&, int, const Level $\ast$$>$
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator for \hyperlink{classUintah_1_1PhaseField_1_1DWFDView}{D\+W\+F\+D\+View}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Field , Stn\+Type S\+TN$>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_ae10b3702644c8c9c7a73a30b017a974c}{D\+W\+Base\+F\+D\+View} = \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ Field, S\+TN $>$ $>$
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} base for \hyperlink{classUintah_1_1PhaseField_1_1DWFDView}{D\+W\+F\+D\+View}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Field $>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a04193a30328f38b29159b738067c8552}{D\+W\+Factory\+View} = \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ Field $>$, const typename Field\+::label\+\_\+type \&, int $>$
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator for \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Field $>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a84debf843dd25a2f827840a59d1bf021}{D\+W\+Base\+View} = \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ Field $>$ $>$
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} base for \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View}. \end{DoxyCompactList}\item 
+using \hyperlink{namespaceUintah_1_1PhaseField_ab9b5949afaa59b9b862e606410431331}{B\+CF} = size\+\_\+t
+\begin{DoxyCompactList}\small\item\em Type for packing BC, FC, and Patch\+::\+Face together. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t... I$>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence} = \hyperlink{structUintah_1_1PhaseField_1_1integer__sequence}{integer\+\_\+sequence}$<$ size\+\_\+t, I... $>$
+\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_ade9c143d53e56548b5b227e5b58415a5}{make\+\_\+index\+\_\+sequence} = make\+\_\+integer\+\_\+sequence$<$ size\+\_\+t, N $>$
+\item 
+{\footnotesize template$<$typename... T$>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_aa968ce550e38b580ce27a9f84cdf4145}{index\+\_\+sequence\+\_\+for} = \hyperlink{namespaceUintah_1_1PhaseField_ade9c143d53e56548b5b227e5b58415a5}{make\+\_\+index\+\_\+sequence}$<$ sizeof...(T) $>$
+\item 
+{\footnotesize template$<$typename Field , Stn\+Type S\+TN$>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View} = \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1fd__view}{detail\+::fd\+\_\+view}$<$ Field, S\+TN $>$
+\begin{DoxyCompactList}\small\item\em Public wrapper of grid variables that implement finite-\/differences. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Field $>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View} = \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{detail\+::view}$<$ Field $>$
+\begin{DoxyCompactList}\small\item\em Public wrapper for accessing grid variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedd}{Var\+Type} \+: size\+\_\+t \{ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC}, 
+\hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC}, 
+\hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388ceddada289ff9f2ba3ad8077f45c9070afa2e}{PP}
+ \}\begin{DoxyCompactList}\small\item\em Variable Type. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76a}{Dim\+Type} \+: size\+\_\+t \{ \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa24dcc0ba6bcb45bc6f503b1b538c6809}{D1} = 1, 
+\hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa1a451dae278b0103a94105c8776e9a67}{D2} = 2, 
+\hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa72fd61934c7ca788c49ad90629f76e78}{D3} = 3
+ \}\begin{DoxyCompactList}\small\item\em Dimension Type. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702}{Stn\+Type} \+: size\+\_\+t \{ \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a4f237510ae9624ab7568055802b586c6}{P3}, 
+\hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a218e7fca21085b602c79158a04bc83a0}{P5}, 
+\hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a099a5b9a00f5644bb917fdec6afd8768}{P7}, 
+\hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a97463475a8bd68261d440a40349a814a}{EU}
+ \}\begin{DoxyCompactList}\small\item\em Stencil Type. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} \+: size\+\_\+t \{ \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dcabccb3e56e2d911af492cf381d06809b6}{X} = 0, 
+\hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dcad3de9a09f09605c05790d9f24f329fe5}{Y} = 1, 
+\hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dca4865717a7e9eaa5586c1ef9570380d15}{Z} = 2
+ \}\begin{DoxyCompactList}\small\item\em Direction Type. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406}{F\+C\+I\+Type} \+: size\+\_\+t \{ \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0} = 1, 
+\hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406a66f19efe774b0d2b6e5844eb2d83d305}{I1} = 2
+ \}\begin{DoxyCompactList}\small\item\em Interpolation Type. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} \+: size\+\_\+t \{ \newline
+\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5a88183b946cc5f0e8c96b2e66e1c74a7e}{B\+C\+::\+Unknown} = 0x00000000, 
+\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5a6adf97f83acf6453d4a6a4b1070f3754}{B\+C\+::\+None} = 0x00000100, 
+\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5abac152b762896edff34ed668ae1a546f}{B\+C\+::\+Dirichlet} = 0x00000200, 
+\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ab8537a769dbc90cb1762215441212152}{B\+C\+::\+Neumann} = 0x00000300, 
+\newline
+\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5a020050234b60687bc7753f45e671a0b3}{B\+C\+::\+Symmetry} = 0x00000400, 
+\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}{B\+C\+::\+Fine\+Coarse\+Interface} = 0x00000500
+ \}\begin{DoxyCompactList}\small\item\em Boundary Conditions. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} \+: size\+\_\+t \{ \newline
+\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6adf97f83acf6453d4a6a4b1070f3754}{F\+C\+::\+None} = 0x00000000, 
+\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27cae950aa1aad6fdf2c9b8012a0e1f8c1fa}{F\+C\+::\+F\+C0} = I0 $\ast$ 0x00100000, 
+\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27cad752b12b0fc874dddc6f67101b900706}{F\+C\+::\+F\+C1} = I1 $\ast$ 0x00100000, 
+\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}{F\+C\+::\+F\+C\+Simple} = F\+C0 + 0x00020000, 
+\newline
+\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca7460527a4d3065117218d8822530ed6a}{F\+C\+::\+F\+C\+Linear} = F\+C0 + 0x00030000, 
+\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca529374bd8795ca8cdf1e8257ecce2f3a}{F\+C\+::\+F\+C\+Bilinear} = F\+C0 + 0x00040000
+ \}\begin{DoxyCompactList}\small\item\em Fine/\+Coarse Interface Conditions. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$Phase\+Field\+::\+Var\+Type V\+AR, Phase\+Field\+::\+Stn\+Type S\+TN, typename... T$>$ }\\std\+::ostream \& \hyperlink{namespaceUintah_1_1PhaseField_a2db17c3638c3df36c1050d6a89d0dbd5}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, T... $>$ \&p)
+\begin{DoxyCompactList}\small\item\em Insertion operator between \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} and std\+::ostream. \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{namespaceUintah_1_1PhaseField_af380c33ff438112a2ddff1a51432d4ce}{operator$<$$<$} (std\+::ostream \&stream, const Block\+Range \&range)
+\begin{DoxyCompactList}\small\item\em Insertion operator between Block\+Range and std\+::ostream. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{namespaceUintah_1_1PhaseField_a85973f31ba84b1b5e1b9efa32baef615}{var\+\_\+to\+\_\+str} (\hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedd}{Var\+Type} var)
+\begin{DoxyCompactList}\small\item\em Var\+Type to std\+::string. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{namespaceUintah_1_1PhaseField_a89a79191f10636fd81e9900120c16bf3}{dim\+\_\+to\+\_\+str} (\hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76a}{Dim\+Type} dim)
+\begin{DoxyCompactList}\small\item\em Dim\+Type to std\+::string. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{namespaceUintah_1_1PhaseField_ae83ff43dad3972682130259154aa13ef}{stn\+\_\+to\+\_\+str} (\hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702}{Stn\+Type} stn)
+\begin{DoxyCompactList}\small\item\em Stn\+Type to std\+::string. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{namespaceUintah_1_1PhaseField_a210a65278fe4cc9c19a428de018272ec}{dir\+\_\+to\+\_\+str} (\hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} dir)
+\begin{DoxyCompactList}\small\item\em Dir\+Type to std\+::string. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{namespaceUintah_1_1PhaseField_ad205f402e20ed9209f12265147bd4e5c}{bc\+\_\+to\+\_\+str} (\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} value)
+\begin{DoxyCompactList}\small\item\em BC to std\+::string. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{namespaceUintah_1_1PhaseField_a3efdada0de283a3b4482293537e59452}{fc\+\_\+to\+\_\+str} (\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} value)
+\begin{DoxyCompactList}\small\item\em FC to std\+::string. \end{DoxyCompactList}\item 
+\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} \hyperlink{namespaceUintah_1_1PhaseField_ae111bd8827ecc139cc3c88e52ceb141d}{str\+\_\+to\+\_\+bc} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em std\+::string to BC \end{DoxyCompactList}\item 
+\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} \hyperlink{namespaceUintah_1_1PhaseField_a1b73af9bf55d015e399d292360fd700b}{str\+\_\+to\+\_\+fc} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em std\+::string to FC \end{DoxyCompactList}\item 
+constexpr bool \hyperlink{namespaceUintah_1_1PhaseField_a98ea8b8abff26138762ce1898ce6c424}{operator\&} (\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} a, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} b)
+\begin{DoxyCompactList}\small\item\em Check FC masks. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename A $>$ }\\constexpr \hyperlink{namespaceUintah_1_1PhaseField_ab9b5949afaa59b9b862e606410431331}{B\+CF} \hyperlink{namespaceUintah_1_1PhaseField_acafefaa50f1ec411fdb981feac59c488}{operator$\vert$} (A a, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} b)
+\item 
+{\footnotesize template$<$typename A $>$ }\\constexpr \hyperlink{namespaceUintah_1_1PhaseField_ab9b5949afaa59b9b862e606410431331}{B\+CF} \hyperlink{namespaceUintah_1_1PhaseField_aa2de98442fe079b97ff71c974452edf2}{operator$\vert$} (A a, \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} b)
+\item 
+{\footnotesize template$<$typename A $>$ }\\constexpr \hyperlink{namespaceUintah_1_1PhaseField_ab9b5949afaa59b9b862e606410431331}{B\+CF} \hyperlink{namespaceUintah_1_1PhaseField_aef70a549ef150398587c759d5676b128}{operator$\vert$} (A a, Patch\+::\+Face\+Type b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a2188fd3571014276c1445391573d263d}\label{namespaceUintah_1_1PhaseField_a2188fd3571014276c1445391573d263d}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!A\+M\+R\+Interpolator@{A\+M\+R\+Interpolator}}
+\index{A\+M\+R\+Interpolator@{A\+M\+R\+Interpolator}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{A\+M\+R\+Interpolator}{AMRInterpolator}}
+{\footnotesize\ttfamily template$<$typename Problem , size\+\_\+t I, F\+C\+I\+Type F\+CI$>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_a2188fd3571014276c1445391573d263d}{Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interpolator} = typedef \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator}{detail\+::amr\+\_\+interpolator} $<$ typename Problem\+::template get\+\_\+field$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}$>$\+::type, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}$>$, F\+CI, \hyperlink{classUintah_1_1PhaseField_1_1Problem_a23dbecf657023dd405fc40939661c550}{Problem\+::\+Dim} $>$}
+
+
+
+Wrapper of grid variables for interpolation from coarser to finer levels. 
+
+Adds to view the possibility to compute multi-\/grid interpolation
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}} & type of \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} problem \\
+\hline
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of the variable within the \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+{\em F\+CI} & problem dimension \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a75763c981a43e822af372ed79bbc54b6}\label{namespaceUintah_1_1PhaseField_a75763c981a43e822af372ed79bbc54b6}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!A\+M\+R\+Restrictor@{A\+M\+R\+Restrictor}}
+\index{A\+M\+R\+Restrictor@{A\+M\+R\+Restrictor}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{A\+M\+R\+Restrictor}{AMRRestrictor}}
+{\footnotesize\ttfamily template$<$typename Problem , size\+\_\+t I, F\+C\+I\+Type F\+CI$>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_a75763c981a43e822af372ed79bbc54b6}{Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Restrictor} = typedef \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{detail\+::amr\+\_\+restrictor} $<$ typename Problem\+::template get\+\_\+field$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}$>$\+::type, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}$>$, F\+CI, \hyperlink{classUintah_1_1PhaseField_1_1Problem_a74de1351a682f8523456962f0fc49a18}{Problem\+::\+Var} $>$}
+
+
+
+Wrapper of grid variables for interpolation from finer to coarser levels. 
+
+Adds to view the possibility to compute multi-\/grid interpolation
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}} & type of \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} problem \\
+\hline
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of the variable within the \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+{\em F\+CI} & problem dimension \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a0a0456c1a6ca9d0f48b97e8f4e13e6cc}\label{namespaceUintah_1_1PhaseField_a0a0456c1a6ca9d0f48b97e8f4e13e6cc}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!B\+C\+Base\+F\+D\+View@{B\+C\+Base\+F\+D\+View}}
+\index{B\+C\+Base\+F\+D\+View@{B\+C\+Base\+F\+D\+View}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{B\+C\+Base\+F\+D\+View}{BCBaseFDView}}
+{\footnotesize\ttfamily template$<$typename Field , Stn\+Type S\+TN$>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_a0a0456c1a6ca9d0f48b97e8f4e13e6cc}{Uintah\+::\+Phase\+Field\+::\+B\+C\+Base\+F\+D\+View} = typedef \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$Field, S\+TN$>$ $>$}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} base for \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View}. 
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_ab9b5949afaa59b9b862e606410431331}\label{namespaceUintah_1_1PhaseField_ab9b5949afaa59b9b862e606410431331}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!B\+CF@{B\+CF}}
+\index{B\+CF@{B\+CF}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{B\+CF}{BCF}}
+{\footnotesize\ttfamily using \hyperlink{namespaceUintah_1_1PhaseField_ab9b5949afaa59b9b862e606410431331}{Uintah\+::\+Phase\+Field\+::\+B\+CF} = typedef size\+\_\+t}
+
+
+
+Type for packing BC, FC, and Patch\+::\+Face together. 
+
+B\+CF are used to identify different implementations over patches boundaries which may depend on the type of boundary conditions BC, the type of fine/coarse interface conditions FC and on the actual face on which the implementation is meant to work \mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a27955353517b49f532c48918bdaa6e12}\label{namespaceUintah_1_1PhaseField_a27955353517b49f532c48918bdaa6e12}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!B\+C\+Factory\+F\+D\+View@{B\+C\+Factory\+F\+D\+View}}
+\index{B\+C\+Factory\+F\+D\+View@{B\+C\+Factory\+F\+D\+View}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{B\+C\+Factory\+F\+D\+View}{BCFactoryFDView}}
+{\footnotesize\ttfamily template$<$typename Field , Stn\+Type S\+TN$>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_a27955353517b49f532c48918bdaa6e12}{Uintah\+::\+Phase\+Field\+::\+B\+C\+Factory\+F\+D\+View} = typedef \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} $<$ \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$Field, S\+TN$>$, const typename Field\+::label\+\_\+type \&, const Var\+Label $\ast$, int, const Level $\ast$, const std\+::vector$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$Field$>$ $>$ \& $>$}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator for \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View}. 
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_ae10b3702644c8c9c7a73a30b017a974c}\label{namespaceUintah_1_1PhaseField_ae10b3702644c8c9c7a73a30b017a974c}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!D\+W\+Base\+F\+D\+View@{D\+W\+Base\+F\+D\+View}}
+\index{D\+W\+Base\+F\+D\+View@{D\+W\+Base\+F\+D\+View}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{D\+W\+Base\+F\+D\+View}{DWBaseFDView}}
+{\footnotesize\ttfamily template$<$typename Field , Stn\+Type S\+TN$>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_ae10b3702644c8c9c7a73a30b017a974c}{Uintah\+::\+Phase\+Field\+::\+D\+W\+Base\+F\+D\+View} = typedef \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$Field, S\+TN$>$ $>$}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} base for \hyperlink{classUintah_1_1PhaseField_1_1DWFDView}{D\+W\+F\+D\+View}. 
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a84debf843dd25a2f827840a59d1bf021}\label{namespaceUintah_1_1PhaseField_a84debf843dd25a2f827840a59d1bf021}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!D\+W\+Base\+View@{D\+W\+Base\+View}}
+\index{D\+W\+Base\+View@{D\+W\+Base\+View}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{D\+W\+Base\+View}{DWBaseView}}
+{\footnotesize\ttfamily template$<$typename Field $>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_a84debf843dd25a2f827840a59d1bf021}{Uintah\+::\+Phase\+Field\+::\+D\+W\+Base\+View} = typedef \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$Field$>$ $>$}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} base for \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View}. 
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a142a97025a09cbbe9f5a53455a9f32a9}\label{namespaceUintah_1_1PhaseField_a142a97025a09cbbe9f5a53455a9f32a9}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!D\+W\+Factory\+F\+D\+View@{D\+W\+Factory\+F\+D\+View}}
+\index{D\+W\+Factory\+F\+D\+View@{D\+W\+Factory\+F\+D\+View}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{D\+W\+Factory\+F\+D\+View}{DWFactoryFDView}}
+{\footnotesize\ttfamily template$<$typename Field , Stn\+Type S\+TN$>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_a142a97025a09cbbe9f5a53455a9f32a9}{Uintah\+::\+Phase\+Field\+::\+D\+W\+Factory\+F\+D\+View} = typedef \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} $<$ \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$Field, S\+TN$>$, const typename Field\+::label\+\_\+type \&, int, const Level $\ast$ $>$}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator for \hyperlink{classUintah_1_1PhaseField_1_1DWFDView}{D\+W\+F\+D\+View}. 
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a04193a30328f38b29159b738067c8552}\label{namespaceUintah_1_1PhaseField_a04193a30328f38b29159b738067c8552}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!D\+W\+Factory\+View@{D\+W\+Factory\+View}}
+\index{D\+W\+Factory\+View@{D\+W\+Factory\+View}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{D\+W\+Factory\+View}{DWFactoryView}}
+{\footnotesize\ttfamily template$<$typename Field $>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_a04193a30328f38b29159b738067c8552}{Uintah\+::\+Phase\+Field\+::\+D\+W\+Factory\+View} = typedef \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} $<$ \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$Field$>$, const typename Field\+::label\+\_\+type \&, int$>$}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator for \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View}. 
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}\label{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!F\+D\+View@{F\+D\+View}}
+\index{F\+D\+View@{F\+D\+View}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{F\+D\+View}{FDView}}
+{\footnotesize\ttfamily template$<$typename Field , Stn\+Type S\+TN$>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{Uintah\+::\+Phase\+Field\+::\+F\+D\+View} = typedef \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1fd__view}{detail\+::fd\+\_\+view}$<$Field, S\+TN$>$}
+
+
+
+Public wrapper of grid variables that implement finite-\/differences. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Field} & type of field (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} $<$ T $>$ or \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} $<$ T, N $>$) \\
+\hline
+{\em S\+TN} & finite-\/difference stencil \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_af786d8e2489272b1c6903a1377df1f1b}\label{namespaceUintah_1_1PhaseField_af786d8e2489272b1c6903a1377df1f1b}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Heat\+Problem@{Heat\+Problem}}
+\index{Heat\+Problem@{Heat\+Problem}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{Heat\+Problem}{HeatProblem}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_af786d8e2489272b1c6903a1377df1f1b}{Uintah\+::\+Phase\+Field\+::\+Heat\+Problem} = typedef \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} $<$ V\+AR, S\+TN, \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$const double$>$ $>$}
+
+
+
+Type of \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} used by \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat} application. 
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}\label{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!index\+\_\+sequence@{index\+\_\+sequence}}
+\index{index\+\_\+sequence@{index\+\_\+sequence}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{index\+\_\+sequence}{index\_sequence}}
+{\footnotesize\ttfamily template$<$size\+\_\+t... I$>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{Uintah\+::\+Phase\+Field\+::index\+\_\+sequence} = typedef \hyperlink{structUintah_1_1PhaseField_1_1integer__sequence}{integer\+\_\+sequence}$<$size\+\_\+t, I...$>$}
+
+A helper alias template index\+\_\+sequence is defined for the common case where T is std\+::size\+\_\+t.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & a non-\/type parameter pack representing the sequence \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_aa968ce550e38b580ce27a9f84cdf4145}\label{namespaceUintah_1_1PhaseField_aa968ce550e38b580ce27a9f84cdf4145}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!index\+\_\+sequence\+\_\+for@{index\+\_\+sequence\+\_\+for}}
+\index{index\+\_\+sequence\+\_\+for@{index\+\_\+sequence\+\_\+for}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{index\+\_\+sequence\+\_\+for}{index\_sequence\_for}}
+{\footnotesize\ttfamily template$<$typename... T$>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_aa968ce550e38b580ce27a9f84cdf4145}{Uintah\+::\+Phase\+Field\+::index\+\_\+sequence\+\_\+for} = typedef \hyperlink{namespaceUintah_1_1PhaseField_ade9c143d53e56548b5b227e5b58415a5}{make\+\_\+index\+\_\+sequence}$<$sizeof... ( T ) $>$}
+
+A helper alias template index\+\_\+sequence\+\_\+for is defined to convert any type parameter pack into an index sequence of the same length
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & a type parameter pack for witch to create the sequence \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_ade9c143d53e56548b5b227e5b58415a5}\label{namespaceUintah_1_1PhaseField_ade9c143d53e56548b5b227e5b58415a5}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!make\+\_\+index\+\_\+sequence@{make\+\_\+index\+\_\+sequence}}
+\index{make\+\_\+index\+\_\+sequence@{make\+\_\+index\+\_\+sequence}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{make\+\_\+index\+\_\+sequence}{make\_index\_sequence}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_ade9c143d53e56548b5b227e5b58415a5}{Uintah\+::\+Phase\+Field\+::make\+\_\+index\+\_\+sequence} = typedef make\+\_\+integer\+\_\+sequence$<$size\+\_\+t, N$>$}
+
+A helper alias template make\+\_\+index\+\_\+sequence is defined to simplify creation of index\+\_\+sequence types with 0, 1, 2, ..., N-\/1 as \hyperlink{structUintah_1_1PhaseField_1_1I}{I}. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em N} & size of the sequence to create \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a8b672bdd087de9e7387512bfe7c7d3a4}\label{namespaceUintah_1_1PhaseField_a8b672bdd087de9e7387512bfe7c7d3a4}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Pure\+Metal\+Problem@{Pure\+Metal\+Problem}}
+\index{Pure\+Metal\+Problem@{Pure\+Metal\+Problem}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{Pure\+Metal\+Problem}{PureMetalProblem}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_a8b672bdd087de9e7387512bfe7c7d3a4}{Uintah\+::\+Phase\+Field\+::\+Pure\+Metal\+Problem} = typedef \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}$<$V\+AR, S\+TN, \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$const double$>$, \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$const double$>$, \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$const double$>$, \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} $<$ const double, \hyperlink{structUintah_1_1PhaseField_1_1combinations}{combinations}$<$ \hyperlink{structUintah_1_1PhaseField_1_1get__stn}{get\+\_\+stn}$<$S\+TN$>$\+::dim, 2$>$\+::value $>$ $>$}
+
+
+
+Type of \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} used by \hyperlink{classUintah_1_1PhaseField_1_1PureMetal}{Pure\+Metal} application. 
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_acb95bc634a12aa4120b33fbe933f24bd}\label{namespaceUintah_1_1PhaseField_acb95bc634a12aa4120b33fbe933f24bd}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Sub\+ProblemsP@{Sub\+ProblemsP}}
+\index{Sub\+ProblemsP@{Sub\+ProblemsP}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{Sub\+ProblemsP}{SubProblemsP}}
+{\footnotesize\ttfamily template$<$typename Problem $>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_acb95bc634a12aa4120b33fbe933f24bd}{Uintah\+::\+Phase\+Field\+::\+Sub\+ProblemsP} = typedef Handle $<$ \hyperlink{structUintah_1_1PhaseField_1_1SubProblems}{Sub\+Problems}$<$\hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}$>$ $>$}
+
+
+
+Handle for \hyperlink{structUintah_1_1PhaseField_1_1SubProblems}{Sub\+Problems}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}} & type of \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} problem \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a769cb9d270a04e03ff788b4d16ff6c2b}\label{namespaceUintah_1_1PhaseField_a769cb9d270a04e03ff788b4d16ff6c2b}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Uintah\+Parallel\+Component\+Base@{Uintah\+Parallel\+Component\+Base}}
+\index{Uintah\+Parallel\+Component\+Base@{Uintah\+Parallel\+Component\+Base}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{Uintah\+Parallel\+Component\+Base}{UintahParallelComponentBase}}
+{\footnotesize\ttfamily using \hyperlink{namespaceUintah_1_1PhaseField_a769cb9d270a04e03ff788b4d16ff6c2b}{Uintah\+::\+Phase\+Field\+::\+Uintah\+Parallel\+Component\+Base} = typedef \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$Uintah\+Parallel\+Component$>$}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Base}{Base} class for Uintah\+Parallel\+Component. 
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_aa9f0d6f6090c6c28bf051220734d61d6}\label{namespaceUintah_1_1PhaseField_aa9f0d6f6090c6c28bf051220734d61d6}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Uintah\+Parallel\+Component\+Factory@{Uintah\+Parallel\+Component\+Factory}}
+\index{Uintah\+Parallel\+Component\+Factory@{Uintah\+Parallel\+Component\+Factory}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{Uintah\+Parallel\+Component\+Factory}{UintahParallelComponentFactory}}
+{\footnotesize\ttfamily using \hyperlink{namespaceUintah_1_1PhaseField_aa9f0d6f6090c6c28bf051220734d61d6}{Uintah\+::\+Phase\+Field\+::\+Uintah\+Parallel\+Component\+Factory} = typedef \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory}$<$Uintah\+Parallel\+Component, const Processor\+Group $\ast$, const Material\+ManagerP, int$>$}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} class for Uintah\+Parallel\+Component. 
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}\label{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!View@{View}}
+\index{View@{View}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{View}{View}}
+{\footnotesize\ttfamily template$<$typename Field $>$ \\
+using \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{Uintah\+::\+Phase\+Field\+::\+View} = typedef \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{detail\+::view}$<$Field$>$}
+
+
+
+Public wrapper for accessing grid variables. 
+
+\begin{DoxyRemark}{Remarks}
+constant views must use fields with const value type
+\end{DoxyRemark}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Field} & type of field (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} $<$ T $>$ or \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} $<$ T, N $>$) \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}\label{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!BC@{BC}}
+\index{BC@{BC}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{BC}{BC}}
+{\footnotesize\ttfamily enum \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{Uintah\+::\+Phase\+Field\+::\+BC} \+: size\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Boundary Conditions. 
+
+Enumeration for different types of boundary conditions. \begin{DoxyRemark}{Remarks}
+They are intended to be used as masks together with FC 
+\end{DoxyRemark}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Unknown@{Unknown}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5a88183b946cc5f0e8c96b2e66e1c74a7e}\label{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5a88183b946cc5f0e8c96b2e66e1c74a7e}} 
+Unknown&Unknown condition. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!None@{None}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5a6adf97f83acf6453d4a6a4b1070f3754}\label{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5a6adf97f83acf6453d4a6a4b1070f3754}} 
+None&No condition imposed to the solution $ u:\Omega\to\mathbb K^N $ over the boundary $ \partial\Omega $. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dirichlet@{Dirichlet}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Dirichlet@{Dirichlet}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5abac152b762896edff34ed668ae1a546f}\label{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5abac152b762896edff34ed668ae1a546f}} 
+Dirichlet&Given $ a\in\mathbb R $ we impose $ u = a, u\in\partial\Omega $. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Neumann@{Neumann}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Neumann@{Neumann}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ab8537a769dbc90cb1762215441212152}\label{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ab8537a769dbc90cb1762215441212152}} 
+Neumann&Given $ a\in\mathbb R $ we impose $ \nabla u \cdot \mathbb n = a, u\in\partial\Omega $. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Symmetry@{Symmetry}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Symmetry@{Symmetry}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5a020050234b60687bc7753f45e671a0b3}\label{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5a020050234b60687bc7753f45e671a0b3}} 
+Symmetry&Ghost values for $ u $ are taken to be equal to the corresponding value within the domain $ \Omega $. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fine\+Coarse\+Interface@{Fine\+Coarse\+Interface}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Fine\+Coarse\+Interface@{Fine\+Coarse\+Interface}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}\label{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5ad2d89be9637ff8b537fa4b6026c0e574}} 
+Fine\+Coarse\+Interface&The boundary is an artificial one over a fine level $\Omega_k$ and continuity has to be imposed across it. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76a}\label{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76a}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Dim\+Type@{Dim\+Type}}
+\index{Dim\+Type@{Dim\+Type}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{Dim\+Type}{DimType}}
+{\footnotesize\ttfamily enum \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76a}{Uintah\+::\+Phase\+Field\+::\+Dim\+Type} \+: size\+\_\+t}
+
+
+
+Dimension Type. 
+
+Enumeration for different problem dimensions \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D1@{D1}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!D1@{D1}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa24dcc0ba6bcb45bc6f503b1b538c6809}\label{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa24dcc0ba6bcb45bc6f503b1b538c6809}} 
+D1&1D \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D2@{D2}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!D2@{D2}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa1a451dae278b0103a94105c8776e9a67}\label{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa1a451dae278b0103a94105c8776e9a67}} 
+D2&2D \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D3@{D3}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!D3@{D3}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa72fd61934c7ca788c49ad90629f76e78}\label{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa72fd61934c7ca788c49ad90629f76e78}} 
+D3&3D \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}\label{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Dir\+Type@{Dir\+Type}}
+\index{Dir\+Type@{Dir\+Type}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{Dir\+Type}{DirType}}
+{\footnotesize\ttfamily enum \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Uintah\+::\+Phase\+Field\+::\+Dir\+Type} \+: size\+\_\+t}
+
+
+
+Direction Type. 
+
+Enumeration for coordinate directions \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X@{X}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!X@{X}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dcabccb3e56e2d911af492cf381d06809b6}\label{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dcabccb3e56e2d911af492cf381d06809b6}} 
+X&x Direction \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Y@{Y}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Y@{Y}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dcad3de9a09f09605c05790d9f24f329fe5}\label{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dcad3de9a09f09605c05790d9f24f329fe5}} 
+Y&y Direction \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Z@{Z}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Z@{Z}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dca4865717a7e9eaa5586c1ef9570380d15}\label{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dca4865717a7e9eaa5586c1ef9570380d15}} 
+Z&z Direction \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}\label{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!FC@{FC}}
+\index{FC@{FC}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{FC}{FC}}
+{\footnotesize\ttfamily enum \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{Uintah\+::\+Phase\+Field\+::\+FC} \+: size\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Fine/\+Coarse Interface Conditions. 
+
+Enumeration for different types of fine/coarse interface conditions. \begin{DoxyRemark}{Remarks}
+They are intended to be used as masks together with BC
+\end{DoxyRemark}
+Multiple interpolation methods are provided; the following figures show the differences between them in terms of cell used (solid blue) on the fine (diamonds) and coarse (square) levels when computing the value on a ghost cell (red) required by the approximation of the laplacian in 2D with a 5-\/points stencil across different geometries of fine-\/coarse interfaces
+
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{fc0}
+\doxyfigcaption{F\+C0}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{fc1}
+\doxyfigcaption{F\+C1}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{fcsimple}
+\doxyfigcaption{F\+C\+Simple}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{fclinear}
+\doxyfigcaption{F\+C\+Linear}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{fcbilinear}
+\doxyfigcaption{F\+C\+Bilinear}
+\end{DoxyImage}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!None@{None}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6adf97f83acf6453d4a6a4b1070f3754}\label{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6adf97f83acf6453d4a6a4b1070f3754}} 
+None&Continuity across interfaces is not enforced. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+C0@{F\+C0}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!F\+C0@{F\+C0}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27cae950aa1aad6fdf2c9b8012a0e1f8c1fa}\label{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27cae950aa1aad6fdf2c9b8012a0e1f8c1fa}} 
+F\+C0&Piece-\/wise interpolation is used to compute the value on fine levels ghosts from the old solution at coarser levels. \begin{DoxyRemark}{Remarks}
+to be used with Hypre\+F\+A\+C\+Solver 
+
+should be used with NC variables since no interpolation is required 
+\end{DoxyRemark}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+C1@{F\+C1}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!F\+C1@{F\+C1}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27cad752b12b0fc874dddc6f67101b900706}\label{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27cad752b12b0fc874dddc6f67101b900706}} 
+F\+C1&Linear interpolation in each direction is used to compute the value on fine levels ghosts from the old solution at coarser levels. \begin{DoxyRemark}{Remarks}
+to be used with Hypre\+F\+A\+C\+Solver 
+
+should be used with CC variables since interpolation reduces the approximation error of solution derivatives 
+\end{DoxyRemark}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+C\+Simple@{F\+C\+Simple}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!F\+C\+Simple@{F\+C\+Simple}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}\label{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca6a316dd1139b99e2a8af86106b3cf045}} 
+F\+C\+Simple&2 elements interpolation for 2D problems and CC variables \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+C\+Linear@{F\+C\+Linear}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!F\+C\+Linear@{F\+C\+Linear}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca7460527a4d3065117218d8822530ed6a}\label{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca7460527a4d3065117218d8822530ed6a}} 
+F\+C\+Linear&3 elements extrapolation for 2D problems and CC variables \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+C\+Bilinear@{F\+C\+Bilinear}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!F\+C\+Bilinear@{F\+C\+Bilinear}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca529374bd8795ca8cdf1e8257ecce2f3a}\label{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27ca529374bd8795ca8cdf1e8257ecce2f3a}} 
+F\+C\+Bilinear&4 elements interpolation for 2D problems and CC variables \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406}\label{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!F\+C\+I\+Type@{F\+C\+I\+Type}}
+\index{F\+C\+I\+Type@{F\+C\+I\+Type}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{F\+C\+I\+Type}{FCIType}}
+{\footnotesize\ttfamily enum \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406}{Uintah\+::\+Phase\+Field\+::\+F\+C\+I\+Type} \+: size\+\_\+t}
+
+
+
+Interpolation Type. 
+
+Enumeration for different order of interpolations \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I0@{I0}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!I0@{I0}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}\label{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}} 
+I0&Piece-\/wise Interpolation (0th order\+: 1 point stencil. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I1@{I1}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!I1@{I1}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406a66f19efe774b0d2b6e5844eb2d83d305}\label{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406a66f19efe774b0d2b6e5844eb2d83d305}} 
+I1&Linear Interpolation in each direction (1st order\+: 2 D\+IM points stencil) \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702}\label{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Stn\+Type@{Stn\+Type}}
+\index{Stn\+Type@{Stn\+Type}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{Stn\+Type}{StnType}}
+{\footnotesize\ttfamily enum \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702}{Uintah\+::\+Phase\+Field\+::\+Stn\+Type} \+: size\+\_\+t}
+
+
+
+Stencil Type. 
+
+Enumeration for different finite-\/difference stencils \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P3@{P3}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!P3@{P3}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a4f237510ae9624ab7568055802b586c6}\label{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a4f237510ae9624ab7568055802b586c6}} 
+P3&3 Point stencil for 1D finite-\/differences \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P5@{P5}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!P5@{P5}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a218e7fca21085b602c79158a04bc83a0}\label{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a218e7fca21085b602c79158a04bc83a0}} 
+P5&5 Point stencil for 2D finite-\/differences \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P7@{P7}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!P7@{P7}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a099a5b9a00f5644bb917fdec6afd8768}\label{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a099a5b9a00f5644bb917fdec6afd8768}} 
+P7&7 Point stencil for 3D finite-\/differences \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EU@{EU}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!EU@{EU}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a97463475a8bd68261d440a40349a814a}\label{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a97463475a8bd68261d440a40349a814a}} 
+EU&5 Point stencil for 2D finite-\/differences as used in campfire \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedd}\label{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedd}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!Var\+Type@{Var\+Type}}
+\index{Var\+Type@{Var\+Type}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{Var\+Type}{VarType}}
+{\footnotesize\ttfamily enum \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedd}{Uintah\+::\+Phase\+Field\+::\+Var\+Type} \+: size\+\_\+t}
+
+
+
+\hyperlink{structUintah_1_1PhaseField_1_1Variable}{Variable} Type. 
+
+Enumeration for different types of variable representation \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CC@{CC}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!CC@{CC}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}\label{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}} 
+CC&Cell Centered \hyperlink{structUintah_1_1PhaseField_1_1Variable}{Variable}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NC@{NC}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!NC@{NC}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}\label{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}} 
+NC&Node Centered \hyperlink{structUintah_1_1PhaseField_1_1Variable}{Variable}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PP@{PP}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!PP@{PP}}}\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388ceddada289ff9f2ba3ad8077f45c9070afa2e}\label{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388ceddada289ff9f2ba3ad8077f45c9070afa2e}} 
+PP&Per\+Patch \hyperlink{structUintah_1_1PhaseField_1_1Variable}{Variable} ( used for Problems ) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_ad205f402e20ed9209f12265147bd4e5c}\label{namespaceUintah_1_1PhaseField_ad205f402e20ed9209f12265147bd4e5c}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!bc\+\_\+to\+\_\+str@{bc\+\_\+to\+\_\+str}}
+\index{bc\+\_\+to\+\_\+str@{bc\+\_\+to\+\_\+str}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{bc\+\_\+to\+\_\+str()}{bc\_to\_str()}}
+{\footnotesize\ttfamily std\+::string Uintah\+::\+Phase\+Field\+::bc\+\_\+to\+\_\+str (\begin{DoxyParamCaption}\item[{\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+BC to std\+::string. 
+
+Converts the type of boundary conditions to the corresponding string as used by factory constructors \mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a89a79191f10636fd81e9900120c16bf3}\label{namespaceUintah_1_1PhaseField_a89a79191f10636fd81e9900120c16bf3}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!dim\+\_\+to\+\_\+str@{dim\+\_\+to\+\_\+str}}
+\index{dim\+\_\+to\+\_\+str@{dim\+\_\+to\+\_\+str}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{dim\+\_\+to\+\_\+str()}{dim\_to\_str()}}
+{\footnotesize\ttfamily std\+::string Uintah\+::\+Phase\+Field\+::dim\+\_\+to\+\_\+str (\begin{DoxyParamCaption}\item[{\hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76a}{Dim\+Type}}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dim\+Type to std\+::string. 
+
+Converts the problem dimension to the corresponding string as used by factory constructors \mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a210a65278fe4cc9c19a428de018272ec}\label{namespaceUintah_1_1PhaseField_a210a65278fe4cc9c19a428de018272ec}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!dir\+\_\+to\+\_\+str@{dir\+\_\+to\+\_\+str}}
+\index{dir\+\_\+to\+\_\+str@{dir\+\_\+to\+\_\+str}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{dir\+\_\+to\+\_\+str()}{dir\_to\_str()}}
+{\footnotesize\ttfamily std\+::string Uintah\+::\+Phase\+Field\+::dir\+\_\+to\+\_\+str (\begin{DoxyParamCaption}\item[{\hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type}}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dir\+Type to std\+::string. 
+
+Converts the type of variable representation to the corresponding string as used by factory constructors \mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a3efdada0de283a3b4482293537e59452}\label{namespaceUintah_1_1PhaseField_a3efdada0de283a3b4482293537e59452}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!fc\+\_\+to\+\_\+str@{fc\+\_\+to\+\_\+str}}
+\index{fc\+\_\+to\+\_\+str@{fc\+\_\+to\+\_\+str}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{fc\+\_\+to\+\_\+str()}{fc\_to\_str()}}
+{\footnotesize\ttfamily std\+::string Uintah\+::\+Phase\+Field\+::fc\+\_\+to\+\_\+str (\begin{DoxyParamCaption}\item[{\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+FC to std\+::string. 
+
+Converts the type of fine/coarse interface conditions to the corresponding string as used by factory constructors \mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a98ea8b8abff26138762ce1898ce6c424}\label{namespaceUintah_1_1PhaseField_a98ea8b8abff26138762ce1898ce6c424}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{operator\&()}{operator\&()}}
+{\footnotesize\ttfamily constexpr bool Uintah\+::\+Phase\+Field\+::operator \& (\begin{DoxyParamCaption}\item[{\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC}}]{a,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC}}]{b }\end{DoxyParamCaption})}
+
+
+
+Check FC masks. 
+
+Evaluate if a given FC matches a required type (or category) of fine/coarse interface conditions 
+\begin{DoxyParams}{Parameters}
+{\em a} & TS to check \\
+\hline
+{\em b} & TS required type or category of fine/coarse interface conditions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+check result 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_af380c33ff438112a2ddff1a51432d4ce}\label{namespaceUintah_1_1PhaseField_af380c33ff438112a2ddff1a51432d4ce}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::ostream\& Uintah\+::\+Phase\+Field\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const Block\+Range \&}]{range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insertion operator between Block\+Range and std\+::ostream. 
+
+Used for debug purposes
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & output stream reference \\
+\hline
+{\em range} & range to output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output stream reference for concatenation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a2db17c3638c3df36c1050d6a89d0dbd5}\label{namespaceUintah_1_1PhaseField_a2db17c3638c3df36c1050d6a89d0dbd5}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Phase\+Field\+::\+Var\+Type V\+AR, Phase\+Field\+::\+Stn\+Type S\+TN, typename... T$>$ \\
+std\+::ostream\& Uintah\+::\+Phase\+Field\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, T... $>$ \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Insertion operator between \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} and std\+::ostream. 
+
+Used for debug purposes
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & output stream reference \\
+\hline
+{\em p} & problem to output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output stream reference for concatenation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_acafefaa50f1ec411fdb981feac59c488}\label{namespaceUintah_1_1PhaseField_acafefaa50f1ec411fdb981feac59c488}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename A $>$ \\
+constexpr \hyperlink{namespaceUintah_1_1PhaseField_ab9b5949afaa59b9b862e606410431331}{B\+CF} Uintah\+::\+Phase\+Field\+::operator$\vert$ (\begin{DoxyParamCaption}\item[{A}]{a,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC}}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_aa2de98442fe079b97ff71c974452edf2}\label{namespaceUintah_1_1PhaseField_aa2de98442fe079b97ff71c974452edf2}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename A $>$ \\
+constexpr \hyperlink{namespaceUintah_1_1PhaseField_ab9b5949afaa59b9b862e606410431331}{B\+CF} Uintah\+::\+Phase\+Field\+::operator$\vert$ (\begin{DoxyParamCaption}\item[{A}]{a,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC}}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_aef70a549ef150398587c759d5676b128}\label{namespaceUintah_1_1PhaseField_aef70a549ef150398587c759d5676b128}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename A $>$ \\
+constexpr \hyperlink{namespaceUintah_1_1PhaseField_ab9b5949afaa59b9b862e606410431331}{B\+CF} Uintah\+::\+Phase\+Field\+::operator$\vert$ (\begin{DoxyParamCaption}\item[{A}]{a,  }\item[{Patch\+::\+Face\+Type}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceUintah_1_1PhaseField_ae83ff43dad3972682130259154aa13ef}\label{namespaceUintah_1_1PhaseField_ae83ff43dad3972682130259154aa13ef}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!stn\+\_\+to\+\_\+str@{stn\+\_\+to\+\_\+str}}
+\index{stn\+\_\+to\+\_\+str@{stn\+\_\+to\+\_\+str}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{stn\+\_\+to\+\_\+str()}{stn\_to\_str()}}
+{\footnotesize\ttfamily std\+::string Uintah\+::\+Phase\+Field\+::stn\+\_\+to\+\_\+str (\begin{DoxyParamCaption}\item[{\hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702}{Stn\+Type}}]{stn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stn\+Type to std\+::string. 
+
+Converts the finite-\/difference stencil to the corresponding string as used by factory constructors \mbox{\Hypertarget{namespaceUintah_1_1PhaseField_ae111bd8827ecc139cc3c88e52ceb141d}\label{namespaceUintah_1_1PhaseField_ae111bd8827ecc139cc3c88e52ceb141d}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!str\+\_\+to\+\_\+bc@{str\+\_\+to\+\_\+bc}}
+\index{str\+\_\+to\+\_\+bc@{str\+\_\+to\+\_\+bc}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{str\+\_\+to\+\_\+bc()}{str\_to\_bc()}}
+{\footnotesize\ttfamily \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} Uintah\+::\+Phase\+Field\+::str\+\_\+to\+\_\+bc (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+std\+::string to BC 
+
+Converts the string as used in input files to the corresponding type of boundary conditions \mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a1b73af9bf55d015e399d292360fd700b}\label{namespaceUintah_1_1PhaseField_a1b73af9bf55d015e399d292360fd700b}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!str\+\_\+to\+\_\+fc@{str\+\_\+to\+\_\+fc}}
+\index{str\+\_\+to\+\_\+fc@{str\+\_\+to\+\_\+fc}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{str\+\_\+to\+\_\+fc()}{str\_to\_fc()}}
+{\footnotesize\ttfamily \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} Uintah\+::\+Phase\+Field\+::str\+\_\+to\+\_\+fc (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+std\+::string to FC 
+
+Converts the string as used in input files to the corresponding type of fine/coarse interface condition \mbox{\Hypertarget{namespaceUintah_1_1PhaseField_a85973f31ba84b1b5e1b9efa32baef615}\label{namespaceUintah_1_1PhaseField_a85973f31ba84b1b5e1b9efa32baef615}} 
+\index{Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}!var\+\_\+to\+\_\+str@{var\+\_\+to\+\_\+str}}
+\index{var\+\_\+to\+\_\+str@{var\+\_\+to\+\_\+str}!Uintah\+::\+Phase\+Field@{Uintah\+::\+Phase\+Field}}
+\subsubsection{\texorpdfstring{var\+\_\+to\+\_\+str()}{var\_to\_str()}}
+{\footnotesize\ttfamily std\+::string Uintah\+::\+Phase\+Field\+::var\+\_\+to\+\_\+str (\begin{DoxyParamCaption}\item[{\hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedd}{Var\+Type}}]{var }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Var\+Type to std\+::string. 
+
+Converts the type of variable representation to the corresponding string as used by factory constructors 

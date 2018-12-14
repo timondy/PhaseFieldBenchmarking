@@ -1,0 +1,142 @@
+\hypertarget{classUintah_1_1PhaseField_1_1Implementation}{}\section{Uintah\+:\+:Phase\+Field\+:\+:Implementation$<$ I, B, Args $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1Implementation}\index{Uintah\+::\+Phase\+Field\+::\+Implementation$<$ I, B, Args $>$@{Uintah\+::\+Phase\+Field\+::\+Implementation$<$ I, B, Args $>$}}
+
+
+Generic factory implementation class.  
+
+
+
+
+{\ttfamily \#include $<$Implementation.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:Implementation$<$ I, B, Args $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classUintah_1_1PhaseField_1_1Implementation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:Implementation$<$ I, B, Args $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classUintah_1_1PhaseField_1_1Implementation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Implementation_a115940ce50afb4e7a2a0a831a2a6577c}{get\+Name} () override
+\begin{DoxyCompactList}\small\item\em Get \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation} name. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1Implementation_a93c3a3fe8276accce230cfbdf623b1d0}{Implementation} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$ B $>$ $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Implementation_a411e1f5a60175c99fee000c0486e956c}{Create} (Args ... args)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} create. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const bool \hyperlink{classUintah_1_1PhaseField_1_1Implementation_a8415e7c1b2e8aeebec083cf199f5a9c1}{m\+\_\+is\+Registered} = \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory}$<$B, Args ...$>$\+::Register ( I\+::\+Name, \&\hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}, B, Args ... $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Implementation_a411e1f5a60175c99fee000c0486e956c}{Create} )
+\begin{DoxyCompactList}\small\item\em Determine if the class definition is registered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename I, typename B, typename ... Args$>$\newline
+class Uintah\+::\+Phase\+Field\+::\+Implementation$<$ I, B, Args $>$}
+
+Generic factory implementation class. 
+
+Make possible to create a new instance of a virtual class choosing which derived class implementation to create according to a string
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & derived class type \\
+\hline
+{\em B} & virtual base class type \\
+\hline
+{\em Args} & types of the arguments for the derived classes constructors \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Implementation_a93c3a3fe8276accce230cfbdf623b1d0}\label{classUintah_1_1PhaseField_1_1Implementation_a93c3a3fe8276accce230cfbdf623b1d0}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Implementation@{Uintah\+::\+Phase\+Field\+::\+Implementation}!Implementation@{Implementation}}
+\index{Implementation@{Implementation}!Uintah\+::\+Phase\+Field\+::\+Implementation@{Uintah\+::\+Phase\+Field\+::\+Implementation}}
+\subsubsection{\texorpdfstring{Implementation()}{Implementation()}}
+{\footnotesize\ttfamily template$<$typename I, typename B, typename ... Args$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Uintah\+::\+Phase\+Field\+::\+Implementation}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, B, Args $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+Initialize derived class and register it to the factory 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Implementation_a411e1f5a60175c99fee000c0486e956c}\label{classUintah_1_1PhaseField_1_1Implementation_a411e1f5a60175c99fee000c0486e956c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Implementation@{Uintah\+::\+Phase\+Field\+::\+Implementation}!Create@{Create}}
+\index{Create@{Create}!Uintah\+::\+Phase\+Field\+::\+Implementation@{Uintah\+::\+Phase\+Field\+::\+Implementation}}
+\subsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily template$<$typename I, typename B, typename ... Args$>$ \\
+static \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$B$>$$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Uintah\+::\+Phase\+Field\+::\+Implementation}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, B, Args $>$\+::Create (\begin{DoxyParamCaption}\item[{Args ...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} create. 
+
+Give derived classes the ability to create themselves
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & parameters forwarded to the constructor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new instance of derived class 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Implementation_a115940ce50afb4e7a2a0a831a2a6577c}\label{classUintah_1_1PhaseField_1_1Implementation_a115940ce50afb4e7a2a0a831a2a6577c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Implementation@{Uintah\+::\+Phase\+Field\+::\+Implementation}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Uintah\+::\+Phase\+Field\+::\+Implementation@{Uintah\+::\+Phase\+Field\+::\+Implementation}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily template$<$typename I, typename B, typename ... Args$>$ \\
+virtual std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Uintah\+::\+Phase\+Field\+::\+Implementation}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, B, Args $>$\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Get \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation} name. 
+
+Get the identifier of the derived class
+
+\begin{DoxyReturn}{Returns}
+string identifying a derived class 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1Base_acd19fa2507f239588926b04069ad1b73}{Uintah\+::\+Phase\+Field\+::\+Base$<$ B $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Implementation_a8415e7c1b2e8aeebec083cf199f5a9c1}\label{classUintah_1_1PhaseField_1_1Implementation_a8415e7c1b2e8aeebec083cf199f5a9c1}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Implementation@{Uintah\+::\+Phase\+Field\+::\+Implementation}!m\+\_\+is\+Registered@{m\+\_\+is\+Registered}}
+\index{m\+\_\+is\+Registered@{m\+\_\+is\+Registered}!Uintah\+::\+Phase\+Field\+::\+Implementation@{Uintah\+::\+Phase\+Field\+::\+Implementation}}
+\subsubsection{\texorpdfstring{m\+\_\+is\+Registered}{m\_isRegistered}}
+{\footnotesize\ttfamily template$<$typename I, typename B, typename ... Args$>$ \\
+const bool \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Uintah\+::\+Phase\+Field\+::\+Implementation}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, B, Args $>$\+::m\+\_\+is\+Registered = \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory}$<$B, Args ...$>$\+::Register ( I\+::\+Name, \&\hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation}$<$\hyperlink{structUintah_1_1PhaseField_1_1I}{I}, B, Args ... $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Implementation_a411e1f5a60175c99fee000c0486e956c}{Create} )\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Determine if the class definition is registered. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Implementation_8h}{Implementation.\+h}\end{DoxyCompactItemize}

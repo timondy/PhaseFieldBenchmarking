@@ -1,0 +1,4 @@
+<map id="Uintah::PhaseField::detail::amr_restrictor&lt; Field, Problem, Index, FCI, VAR &gt;" name="Uintah::PhaseField::detail::amr_restrictor&lt; Field, Problem, Index, FCI, VAR &gt;">
+<area shape="rect" id="node2" href="$classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb.html" title="Wrapper of grid variables for restriction from finer to coarser levels (node&#45;centered piecewise const..." alt="" coords="216,5,435,76"/>
+<area shape="rect" id="node3" href="$classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_0778720acc9a55f696b8537356a4dbcae.html" title="Wrapper of grid variables for restriction from finer to coarser levels (cell&#45;centered linear implemen..." alt="" coords="216,100,435,171"/>
+</map>

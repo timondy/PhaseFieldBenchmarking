@@ -1,0 +1,12 @@
+<map id="amr_coarser_view.h" name="amr_coarser_view.h">
+<area shape="rect" id="node2" href="$amr__interpolator__I0_8h.html" title="amr_interpolator_I0.h" alt="" coords="135,80,279,107"/>
+<area shape="rect" id="node3" href="$amr__interpolator_8h.html" title="amr_interpolator.h" alt="" coords="144,155,271,181"/>
+<area shape="rect" id="node4" href="$AMRInterpolator_8h.html" title="AMRInterpolator.h" alt="" coords="63,229,191,256"/>
+<area shape="rect" id="node9" href="$bcs__basic__fd__view_8h.html" title="bcs_basic_fd_view.h" alt="" coords="215,229,359,256"/>
+<area shape="rect" id="node5" href="$Heat_8h.html" title="Heat.h" alt="" coords="10,304,71,331"/>
+<area shape="rect" id="node7" href="$PureMetal_8h.html" title="PureMetal.h" alt="" coords="99,304,191,331"/>
+<area shape="rect" id="node6" href="$Heat_8cc.html" title="Heat.cc" alt="" coords="5,379,73,405"/>
+<area shape="rect" id="node8" href="$PureMetal_8cc.html" title="PureMetal.cc" alt="" coords="98,379,197,405"/>
+<area shape="rect" id="node10" href="$bcfd__view_8h.html" title="bcfd_view.h" alt="" coords="241,304,333,331"/>
+<area shape="rect" id="node11" href="$BCFDView_8h.html" title="BCFDView.h" alt="" coords="238,379,337,405"/>
+</map>

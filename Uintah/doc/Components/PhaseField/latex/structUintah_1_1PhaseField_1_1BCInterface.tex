@@ -1,0 +1,83 @@
+\hypertarget{structUintah_1_1PhaseField_1_1BCInterface}{}\section{Uintah\+:\+:Phase\+Field\+:\+:B\+C\+Interface$<$ V\+AR, S\+TN $>$ Class Template Reference}
+\label{structUintah_1_1PhaseField_1_1BCInterface}\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+Interface$<$ V\+A\+R, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Interface$<$ V\+A\+R, S\+T\+N $>$}}
+
+
+Interface for boundary conditions.  
+
+
+
+
+{\ttfamily \#include $<$B\+C\+Interface.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:B\+C\+Interface$<$ V\+AR, S\+TN $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structUintah_1_1PhaseField_1_1BCInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Field$>$ }\\static std\+::list$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}$<$ V\+AR, S\+TN, Field... $>$ $>$ \hyperlink{structUintah_1_1PhaseField_1_1BCInterface_a50bf60e11fabf331dd0f21c28f46c7fc}{partition\+\_\+patch} (const typename Field\+::label\+\_\+type \&... labels, const Var\+Label $\ast$subproblems\+\_\+label, int material, const Patch $\ast$patch, const std\+::map$<$ std\+::string, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} $>$ $\ast$c2f=nullptr)
+\begin{DoxyCompactList}\small\item\em Partition a patch into a list of Problems. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$\newline
+class Uintah\+::\+Phase\+Field\+::\+B\+C\+Interface$<$ V\+A\+R, S\+T\+N $>$}
+
+Interface for boundary conditions. 
+
+groups together various methods to get info about boundary conditions which depend on the different types of variable representation and fine-\/differences stencils allowing to choose the relevant implementation at compile time 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em V\+AR} & type of variable representation \\
+\hline
+{\em S\+TN} & finite-\/difference stencil \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1BCInterface_a50bf60e11fabf331dd0f21c28f46c7fc}\label{structUintah_1_1PhaseField_1_1BCInterface_a50bf60e11fabf331dd0f21c28f46c7fc}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+Interface@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Interface}!partition\+\_\+patch@{partition\+\_\+patch}}
+\index{partition\+\_\+patch@{partition\+\_\+patch}!Uintah\+::\+Phase\+Field\+::\+B\+C\+Interface@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Interface}}
+\subsubsection{\texorpdfstring{partition\+\_\+patch()}{partition\_patch()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+template$<$typename... Field$>$ \\
+static std\+::list$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}$<$V\+AR, S\+TN, Field...$>$ $>$ \hyperlink{structUintah_1_1PhaseField_1_1BCInterface}{Uintah\+::\+Phase\+Field\+::\+B\+C\+Interface}$<$ V\+AR, S\+TN $>$\+::partition\+\_\+patch (\begin{DoxyParamCaption}\item[{const typename Field\+::label\+\_\+type \&...}]{labels,  }\item[{const Var\+Label $\ast$}]{subproblems\+\_\+label,  }\item[{int}]{material,  }\item[{const Patch $\ast$}]{patch,  }\item[{const std\+::map$<$ std\+::string, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} $>$ $\ast$}]{c2f = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Partition a patch into a list of Problems. 
+
+Retrieves boundary conditions and partirion a patch accordingly
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Field} & list of type of fields (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} $<$ T$>$ or \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} $<$ T, N $>$) of the Problems \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em labels} & list of lables for each variable of the problem \\
+\hline
+{\em subproblems\+\_\+label} & label of subproblems in the Data\+Warehouse \\
+\hline
+{\em material} & problem material index \\
+\hline
+{\em patch} & grid patch to be partitioned \\
+\hline
+{\em c2f} & which fine/coarse interface conditions to use on each variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of partitioned Problems 
+\end{DoxyReturn}
+\hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} Dimension 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{BCInterface_8h}{B\+C\+Interface.\+h}\end{DoxyCompactItemize}

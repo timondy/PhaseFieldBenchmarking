@@ -1,0 +1,68 @@
+\hypertarget{structUintah_1_1PhaseField_1_1AMRInterface}{}\section{Uintah\+:\+:Phase\+Field\+:\+:A\+M\+R\+Interface$<$ V\+AR, D\+IM $>$ Struct Template Reference}
+\label{structUintah_1_1PhaseField_1_1AMRInterface}\index{Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface$<$ V\+A\+R, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface$<$ V\+A\+R, D\+I\+M $>$}}
+
+
+Interface for A\+MR.  
+
+
+
+
+{\ttfamily \#include $<$A\+M\+R\+Interface.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:A\+M\+R\+Interface$<$ V\+AR, D\+IM $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structUintah_1_1PhaseField_1_1AMRInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$Var\+Type V = V\+AR$>$ }\\static Int\+Vector \hyperlink{structUintah_1_1PhaseField_1_1AMRInterface_a567b8c307a636ab6addd2fa4272581a4}{get\+\_\+coarser} (const Level $\ast$l, const Int\+Vector \&i)
+\item 
+{\footnotesize template$<$Var\+Type V = V\+AR$>$ }\\static Int\+Vector \hyperlink{structUintah_1_1PhaseField_1_1AMRInterface_a5b3ace8289c6b187d6d42c2e19dec9f4}{get\+\_\+finer} (const Level $\ast$l, const Int\+Vector \&i)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Var\+Type V\+AR, Dim\+Type D\+IM$>$\newline
+struct Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface$<$ V\+A\+R, D\+I\+M $>$}
+
+Interface for A\+MR. 
+
+groups together various methods to get info about amr patches and levels which depend on the different types of variable representation and problem dimensions allowing to choose the relevant implementation at compile time
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em V\+AR} & type of variable representation \\
+\hline
+{\em D\+IM} & problem dimension \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1AMRInterface_a567b8c307a636ab6addd2fa4272581a4}\label{structUintah_1_1PhaseField_1_1AMRInterface_a567b8c307a636ab6addd2fa4272581a4}} 
+\index{Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface@{Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface}!get\+\_\+coarser@{get\+\_\+coarser}}
+\index{get\+\_\+coarser@{get\+\_\+coarser}!Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface@{Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface}}
+\subsubsection{\texorpdfstring{get\+\_\+coarser()}{get\_coarser()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+template$<$Var\+Type V = V\+AR$>$ \\
+static Int\+Vector \hyperlink{structUintah_1_1PhaseField_1_1AMRInterface}{Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface}$<$ V\+AR, D\+IM $>$\+::get\+\_\+coarser (\begin{DoxyParamCaption}\item[{const Level $\ast$}]{l,  }\item[{const Int\+Vector \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1AMRInterface_a5b3ace8289c6b187d6d42c2e19dec9f4}\label{structUintah_1_1PhaseField_1_1AMRInterface_a5b3ace8289c6b187d6d42c2e19dec9f4}} 
+\index{Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface@{Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface}!get\+\_\+finer@{get\+\_\+finer}}
+\index{get\+\_\+finer@{get\+\_\+finer}!Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface@{Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface}}
+\subsubsection{\texorpdfstring{get\+\_\+finer()}{get\_finer()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+template$<$Var\+Type V = V\+AR$>$ \\
+static Int\+Vector \hyperlink{structUintah_1_1PhaseField_1_1AMRInterface}{Uintah\+::\+Phase\+Field\+::\+A\+M\+R\+Interface}$<$ V\+AR, D\+IM $>$\+::get\+\_\+finer (\begin{DoxyParamCaption}\item[{const Level $\ast$}]{l,  }\item[{const Int\+Vector \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{AMRInterface_8h}{A\+M\+R\+Interface.\+h}\end{DoxyCompactItemize}

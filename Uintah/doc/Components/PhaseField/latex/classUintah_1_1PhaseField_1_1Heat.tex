@@ -1,0 +1,1708 @@
+\hypertarget{classUintah_1_1PhaseField_1_1Heat}{}\section{Uintah\+:\+:Phase\+Field\+:\+:Heat$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1Heat}\index{Uintah\+::\+Phase\+Field\+::\+Heat$<$ V\+A\+R, D\+I\+M, S\+T\+N, A\+M\+R $>$@{Uintah\+::\+Phase\+Field\+::\+Heat$<$ V\+A\+R, D\+I\+M, S\+T\+N, A\+M\+R $>$}}
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat} \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} applications.  
+
+
+
+
+{\ttfamily \#include $<$Heat.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:Heat$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1Heat__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:Heat$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1Heat__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1Heat_a034a847cbfa1066a8d3b31227916f659}{Heat} (const Processor\+Group $\ast$my\+World, const Material\+ManagerP material\+Manager, int verbosity=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1Heat_a8b89b4df8ce06c26379b8463efea4652}{$\sim$\+Heat} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1Heat_a28cfb869ac32900e8f683abac43aa353}{Heat} (\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat} const \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat} \& \hyperlink{classUintah_1_1PhaseField_1_1Heat_ad93a7ce5e5ad3a18808f63846dd309cd}{operator=} (\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat} const \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) assignment. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat_a6afff0c96eebbecf6ff2dd24d343833f}{Name}
+\item 
+{\footnotesize template$<$$>$ }\\const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat_a214c05a905e1fca240598408207c7bf5}{Name}
+\item 
+{\footnotesize template$<$$>$ }\\const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat_ae1663b72cb7781cb2ed3822403303665}{Name}
+\item 
+{\footnotesize template$<$$>$ }\\const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat_ae3f72af7abe8777489750b4cca9d0386}{Name}
+\item 
+{\footnotesize template$<$$>$ }\\const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat_aaadfc711b6e8dbf57965173385ff8de8}{Name}
+\item 
+{\footnotesize template$<$$>$ }\\const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat_a8f6c6b9bf9e87ad27b76232b415635ff}{Name}
+\item 
+{\footnotesize template$<$$>$ }\\const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat_a0d9863c94a0326eec3640b49cdb1fbf8}{Name}
+\item 
+{\footnotesize template$<$$>$ }\\const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat_a273e338193aa6830f8d5fe48a8772bf4}{Name}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat_a98f261632a91a2cac5800b938c1b9518}{Name}
+\begin{DoxyCompactList}\small\item\em Class name as used by \hyperlink{classUintah_1_1PhaseField_1_1ApplicationFactory}{Application\+Factory}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a0df5d43c738640bcbbd7781ca45b6274}{problem\+Setup} (const Problem\+SpecP \&params, const Problem\+SpecP \&restart\+\_\+prob\+\_\+spec, GridP \&grid) override
+\begin{DoxyCompactList}\small\item\em Setup. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Heat_aa6b857a08f51311bba30771145176601}{schedule\+Initialize} (const LevelP \&level, SchedulerP \&sched) override
+\begin{DoxyCompactList}\small\item\em Schedule the initialization tasks. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ !MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a0e727154c6a78ee48cec37740cfe2889}{schedule\+Initialize\+\_\+subproblems} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+initialize\+\_\+subproblems (non A\+MR implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a0e727154c6a78ee48cec37740cfe2889}{schedule\+Initialize\+\_\+subproblems} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+initialize\+\_\+subproblems (A\+MR implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ !MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a0ee0e3cbb32c28fd0cb4b567cb0dbd9b}{schedule\+Initialize\+\_\+solution} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+initialize\+\_\+solution (non A\+MR implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a0ee0e3cbb32c28fd0cb4b567cb0dbd9b}{schedule\+Initialize\+\_\+solution} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+initialize\+\_\+solution (A\+MR implementation) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Heat_aa0d1d051f38540745482f7f3b0888d33}{schedule\+Restart\+Initialize} (const LevelP \&level, SchedulerP \&sched) override
+\begin{DoxyCompactList}\small\item\em Schedule the initialization tasks for restarting a simulation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a849225b20f1e31b74339046b9ba2d937}{schedule\+Compute\+Stable\+Time\+Step} (const LevelP \&level, SchedulerP \&sched) override
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+compute\+\_\+stable\+\_\+timestep. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a700f9df2ccf60f560f776dc95ef4883e}{schedule\+Time\+Advance} (const LevelP \&level, SchedulerP \&sched) override
+\begin{DoxyCompactList}\small\item\em Schedule the time advance tasks. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ !MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a7daf1da9106d539e50121297c5ecf0b3}{schedule\+Time\+Advance\+\_\+subproblems} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+solution (non A\+MR implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a7daf1da9106d539e50121297c5ecf0b3}{schedule\+Time\+Advance\+\_\+subproblems} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+solution (A\+MR implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ !MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a4050259130c6c4b8fa97ec69cd646067}{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives (non A\+MR implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a4050259130c6c4b8fa97ec69cd646067}{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives (A\+MR implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ !MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_acc85b548081a60269deee446d0fb0f4b}{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error (non A\+MR implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_acc85b548081a60269deee446d0fb0f4b}{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error (A\+MR implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ !MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a241faeed94f8958987941d69e1ed2d54}{schedule\+Time\+Advance\+\_\+solution} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+solution (non A\+MR implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a241faeed94f8958987941d69e1ed2d54}{schedule\+Time\+Advance\+\_\+solution} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+solution (A\+MR implementation) \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a30a952df198959dae461297e5fd05a4e}{schedule\+Time\+Advance\+\_\+solution\+\_\+error} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+solution\+\_\+error. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Heat_af9bbe0180bc623d58e87a4bf7a5b6852}{schedule\+Refine} (const Patch\+Set $\ast$new\+\_\+patches, SchedulerP \&sched) override
+\begin{DoxyCompactList}\small\item\em Schedule the refinement tasks. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_ae42ceecf972057940227ee62d22fe2bf}{schedule\+Refine\+\_\+subproblems} (const Patch\+Set $\ast$new\+\_\+patches, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+initialize\+\_\+subproblems after regridding. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a49c2b810f24594c25735da508deea0f7}{schedule\+Refine\+\_\+solution} (const Patch\+Set $\ast$new\+\_\+patches, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+refine\+\_\+solution. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a0897d2ac6114e763ec9d832100824faf}{schedule\+Refine\+Interface} (const LevelP \&level\+\_\+fine, SchedulerP \&sched, bool need\+\_\+old\+\_\+coarse, bool need\+\_\+new\+\_\+coarse) override
+\begin{DoxyCompactList}\small\item\em Schedule the refinement tasks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a32444a0c898306328d5f2f28f7acb59c}{schedule\+Coarsen} (const LevelP \&level\+\_\+coarse, SchedulerP \&sched) override
+\begin{DoxyCompactList}\small\item\em Schedule the time coarsen tasks. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_affbdc737418eacaee32fdf7adba3a856}{schedule\+Coarsen\+\_\+solution} (const LevelP \&level\+\_\+coarse, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+coarsen\+\_\+solution. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Heat_af7b0ce1990eeca4e11e3c65ce57dac8f}{schedule\+Error\+Estimate} (const LevelP \&level, SchedulerP \&sched) override
+\begin{DoxyCompactList}\small\item\em Schedule the error estimate tasks. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ !MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a409db9828b044c7f8aec3b9833239678}{schedule\+Error\+Estimate\+\_\+solution} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+error\+\_\+estimate\+\_\+solution (coarsest level implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool MG$>$ }\\std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a409db9828b044c7f8aec3b9833239678}{schedule\+Error\+Estimate\+\_\+solution} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+error\+\_\+estimate\+\_\+grad\+\_\+psi (refinement level implementation) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a2c1ab4a698b92a06cd840786df5acc0a}{schedule\+Initial\+Error\+Estimate} (const LevelP \&level, SchedulerP \&sched) override
+\begin{DoxyCompactList}\small\item\em Schedule the initial error estimate tasks. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_abc95b8a4d937f440b074b64993d38fdf}{task\+\_\+initialize\+\_\+subproblems} (const Processor\+Group $\ast$myworld, const Patch\+Subset $\ast$patches, const Material\+Subset $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Initialize subproblems task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a12321dbb2295d63fe3c1befb63a64051}{task\+\_\+initialize\+\_\+solution} (const Processor\+Group $\ast$myworld, const Patch\+Subset $\ast$patches, const Material\+Subset $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Initialize solution task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a64acf05f60b90be0b1554dfeda495156}{task\+\_\+compute\+\_\+stable\+\_\+timestep} (const Processor\+Group $\ast$myworld, const Patch\+Subset $\ast$patches, const Material\+Subset $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Compute timestep task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a3ee8ce1eca59c2eda6b3c8d74f01b175}{task\+\_\+time\+\_\+advance\+\_\+subproblems} (const Processor\+Group $\ast$myworld, const Patch\+Subset $\ast$patches, const Material\+Subset $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Advance subproblems task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_ac90620287403d8c9c61e40a0da3dde8f}{task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives} (const Processor\+Group $\ast$myworld, const Patch\+Subset $\ast$patches, const Material\+Subset $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Advance derivatives task (debug) \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a7ebff904626dc1a31931f649b22f9ec6}{task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error} (const Processor\+Group $\ast$myworld, const Patch\+Subset $\ast$patches, const Material\+Subset $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Advance derivatives error task (debug) \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_af8b474103f410ac92f2f4395c9699628}{task\+\_\+time\+\_\+advance\+\_\+solution} (const Processor\+Group $\ast$myworld, const Patch\+Subset $\ast$patches, const Material\+Subset $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Advance solution task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a871801188ed73dca7be728514c5711f8}{task\+\_\+time\+\_\+advance\+\_\+solution\+\_\+error} (const Processor\+Group $\ast$myworld, const Patch\+Subset $\ast$patches, const Material\+Subset $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Advance solution error task (test) \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a453059c9ee7e3920bd24ecc2882f42d7}{task\+\_\+refine\+\_\+solution} (const Processor\+Group $\ast$myworld, const Patch\+Subset $\ast$patches\+\_\+fine, const Material\+Subset $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Refine solution task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a73770e2d2271bbab30b3b67462c32a1c}{task\+\_\+coarsen\+\_\+solution} (const Processor\+Group $\ast$myworld, const Patch\+Subset $\ast$patches\+\_\+coarse, const Material\+Subset $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Coarsen solution task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_aa0622afb02c0f71f50e9206c342f379b}{task\+\_\+error\+\_\+estimate\+\_\+solution} (const Processor\+Group $\ast$myworld, const Patch\+Subset $\ast$patches, const Material\+Subset $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Error\+Estimate solution task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a835efcc2e173c6b1ab0f38cfbd3745f9}{initialize\+\_\+solution} (const Int\+Vector \&id, const Patch $\ast$patch, const double \&L, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&u)
+\begin{DoxyCompactList}\small\item\em Initialize solution implementation. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_ae44ac96e2901f80ecd11207ad4c51ee0}{time\+\_\+advance\+\_\+dbg\+\_\+derivatives} (const Int\+Vector \&id, const \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&u\+\_\+old, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ double, D\+IM $>$ $>$ \&du, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ double, D\+IM $>$ $>$ \&ddu)
+\begin{DoxyCompactList}\small\item\em Advance derivatives implementation. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a0ac23c69e2e55fd9413f259469a347e4}{time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error} (const Int\+Vector \&id, const Patch $\ast$patch, const double \&L, const double \&t, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ const double, D\+IM $>$ $>$ \&du, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ const double, D\+IM $>$ $>$ \&ddu, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ double, D\+IM $>$ $>$ \&error\+\_\+du, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ double, D\+IM $>$ $>$ \&error\+\_\+ddu, double \&u\+\_\+norm\+H10, double \&u\+\_\+norm\+H20, double \&error\+\_\+norm\+H10, double \&error\+\_\+norm\+H20)
+\begin{DoxyCompactList}\small\item\em Advance derivatives error implementation. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_aa3871d06b39cf5b7e2b8a0db0aaf61fb}{time\+\_\+advance\+\_\+solution} (const Int\+Vector \&id, const \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&u\+\_\+old, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&u\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Advance solution implementation. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_ad355ac710c7d6e1d646699b4a7ab1270}{time\+\_\+advance\+\_\+solution\+\_\+error} (const Int\+Vector \&id, const Patch $\ast$patch, const double \&L, const double \&t, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$ $>$ \&u, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&delta\+\_\+u, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&error\+\_\+u, double \&u\+\_\+norm\+L2, double \&error\+\_\+norm\+L2)
+\begin{DoxyCompactList}\small\item\em Advance solution error task (test) \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_a54b3c4c823e1f91c69df249ba1771089}{refine\+\_\+solution} (const Int\+Vector id\+\_\+fine, const \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$ $>$ \&u\+\_\+coarse\+\_\+interp, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&u\+\_\+fine)
+\begin{DoxyCompactList}\small\item\em Refine solution implementation. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat_aeb00a7f9aec85898020c405a40c9dcb8}{coarsen\+\_\+solution} (const Int\+Vector id\+\_\+coarse, const \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$ $>$ \&u\+\_\+fine\+\_\+restr, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&u\+\_\+coarse)
+\begin{DoxyCompactList}\small\item\em Coarsen solution implementation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$Var\+Type V$>$ }\\std\+::enable\+\_\+if$<$ V==\hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC}, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a598fb08265f2f7ddb687b2a663e5e203}{error\+\_\+estimate\+\_\+solution} (const Int\+Vector id, \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&u, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ int $>$ $>$ \&refine\+\_\+flag, bool \&refine\+\_\+patch)
+\begin{DoxyCompactList}\small\item\em Error\+Estimate solution implementation (cell centered implementation) \end{DoxyCompactList}\item 
+{\footnotesize template$<$Var\+Type V$>$ }\\std\+::enable\+\_\+if$<$ V==\hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC}, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat_a31c25ff9983ce8a001c44c68f78c139c}{error\+\_\+estimate\+\_\+solution} (const Int\+Vector id, \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&u, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ int $>$ $>$ \&refine\+\_\+flag, bool \&refine\+\_\+patch)
+\begin{DoxyCompactList}\small\item\em Error\+Estimate solution implementation (vertex based implementation) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Heat_a0e7faf909e7e82c7c0aff03d261a6fa9}{dbg\+\_\+out1}
+\begin{DoxyCompactList}\small\item\em Output streams for debugging. \end{DoxyCompactList}\item 
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Heat_af10b94a5699065313918cf8291b355f8}{dbg\+\_\+out2}
+\item 
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Heat_a8e385e1c1be12146007488186869059c}{dbg\+\_\+out3}
+\item 
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Heat_a541791b40ca8a1dec4964f5e44462da7}{dbg\+\_\+out4}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_a8318c248305ac851f69f313697ee3b04}{u\+\_\+label}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_a7b051c5513975a78a9049ff5bfd3308f}{delta\+\_\+u\+\_\+label}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_ab206aed0bd72c3395ff1d41c3764ddaa}{error\+\_\+u\+\_\+label}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_a03406a63938c13923f72306097a3aef2}{u\+\_\+norm\+L2\+\_\+label}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_a664b5e6adac2b2d4a5a56596d81ee9c2}{error\+\_\+norm\+L2\+\_\+label}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_a1305118ea9f1abeff12771589bca3ef9}{subproblems\+\_\+label}
+\item 
+std\+::array$<$ const Var\+Label $\ast$, D\+IM $>$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_af869883fdc795a1cc272c01c15a6713e}{du\+\_\+label}
+\item 
+std\+::array$<$ const Var\+Label $\ast$, D\+IM $>$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_a2998333c458933bc675526b073b7510d}{error\+\_\+du\+\_\+label}
+\item 
+std\+::array$<$ const Var\+Label $\ast$, D\+IM $>$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_a561356648be34dbc45f66ce6ae8f3d3c}{ddu\+\_\+label}
+\item 
+std\+::array$<$ const Var\+Label $\ast$, D\+IM $>$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_aa06848deb21efd5d0f8b086cd9b563ec}{error\+\_\+ddu\+\_\+label}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_acddad73b120372c5929039787359c9fe}{u\+\_\+norm\+H10\+\_\+label}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_a809e43b5076b5778af2f6c2a10ce97a6}{error\+\_\+norm\+H10\+\_\+label}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_a47032b7137df200ce4990faf6f65188d}{u\+\_\+norm\+H20\+\_\+label}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_ae5fd87bfc6b64d1e72339b4ad860b126}{error\+\_\+norm\+H20\+\_\+label}
+\item 
+bool \hyperlink{classUintah_1_1PhaseField_1_1Heat_a46a2d7d28834fab61dd63c8c3a2d46a9}{test}
+\begin{DoxyCompactList}\small\item\em Wether to perform comparisons with analytical solution. \end{DoxyCompactList}\item 
+double \hyperlink{classUintah_1_1PhaseField_1_1Heat_a5aa8d04b6e7177e1a3511ac2fac00a96}{delt}
+\begin{DoxyCompactList}\small\item\em Time step size. \end{DoxyCompactList}\item 
+double \hyperlink{classUintah_1_1PhaseField_1_1Heat_ab3cee68f7769a98af80877daa13e038b}{alpha}
+\begin{DoxyCompactList}\small\item\em Non-\/dimensional thermal diffusivity. \end{DoxyCompactList}\item 
+double \hyperlink{classUintah_1_1PhaseField_1_1Heat_aff3739ebcad41c592dcdb5a92b6abb52}{refine\+\_\+threshold}
+\begin{DoxyCompactList}\small\item\em Threshold for A\+MR. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} $>$ \hyperlink{classUintah_1_1PhaseField_1_1Heat_a4bd64df2d939420f13553008da93cfb5}{c2f}
+\begin{DoxyCompactList}\small\item\em Store which fine/coarse interface conditions to use on each variable. \end{DoxyCompactList}\item 
+bool \hyperlink{classUintah_1_1PhaseField_1_1Heat_a87604ddeef664dc858efd1603513fb18}{is\+\_\+first\+\_\+schedule\+\_\+refine}
+\begin{DoxyCompactList}\small\item\em Flag for avoiding multiple reinitialization of subproblems after regridding. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$\newline
+class Uintah\+::\+Phase\+Field\+::\+Heat$<$ V\+A\+R, D\+I\+M, S\+T\+N, A\+M\+R $>$}
+
+\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat} \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} applications. 
+
+Implements a Finite Difference solver for the simulation of the heat diffusion model \[ \dot u = \alpha \nabla^2 u \] with initial data \[ u_{|t=0} = \prod_{d} \cos ( \alpha x_d ); \] where $d$ ranges over the problem dimension.
+
+The model parameters are\+:
+\begin{DoxyItemize}
+\item $ \alpha $ thermal diffusivity
+\end{DoxyItemize}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]templetize F\+A\+C/non\+F\+AC 
+
+check for more than 2 amr levels\end{DoxyRefDesc}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em V\+AR} & type of variable representation \\
+\hline
+{\em D\+IM} & problem dimensions \\
+\hline
+{\em S\+TN} & finite-\/difference stencil \\
+\hline
+{\em A\+MR} & whether to use adaptive mesh refinement \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a034a847cbfa1066a8d3b31227916f659}\label{classUintah_1_1PhaseField_1_1Heat_a034a847cbfa1066a8d3b31227916f659}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!Heat@{Heat}}
+\index{Heat@{Heat}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{Heat()}{Heat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat} (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{my\+World,  }\item[{const Material\+ManagerP}]{material\+Manager,  }\item[{int}]{verbosity = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Intantiate an \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat} application
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+World} & data structure to manage mpi processes \\
+\hline
+{\em material\+Manager} & data structure to manage materials \\
+\hline
+{\em verbosity} & constrols amount of debugging output \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a8b89b4df8ce06c26379b8463efea4652}\label{classUintah_1_1PhaseField_1_1Heat_a8b89b4df8ce06c26379b8463efea4652}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!````~Heat@{$\sim$\+Heat}}
+\index{````~Heat@{$\sim$\+Heat}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{$\sim$\+Heat()}{~Heat()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a28cfb869ac32900e8f683abac43aa353}\label{classUintah_1_1PhaseField_1_1Heat_a28cfb869ac32900e8f683abac43aa353}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!Heat@{Heat}}
+\index{Heat@{Heat}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{Heat()}{Heat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat} (\begin{DoxyParamCaption}\item[{\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$ const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_aeb00a7f9aec85898020c405a40c9dcb8}\label{classUintah_1_1PhaseField_1_1Heat_aeb00a7f9aec85898020c405a40c9dcb8}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!coarsen\+\_\+solution@{coarsen\+\_\+solution}}
+\index{coarsen\+\_\+solution@{coarsen\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{coarsen\+\_\+solution()}{coarsen\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::coarsen\+\_\+solution (\begin{DoxyParamCaption}\item[{const Int\+Vector}]{id\+\_\+coarse,  }\item[{const \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$ $>$ \&}]{u\+\_\+fine\+\_\+restr,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&}]{u\+\_\+coarse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Coarsen solution implementation. 
+
+Computes restricted value of u at a given grid position
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id\+\_\+coarse} & coarse grid index \\
+\hline
+ & {\em u\+\_\+fine\+\_\+restr} & restrictor of the aolution field on the fine level \\
+\hline
+\mbox{\tt out}  & {\em u\+\_\+coarse} & view of the aolution field on the coarse level \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a598fb08265f2f7ddb687b2a663e5e203}\label{classUintah_1_1PhaseField_1_1Heat_a598fb08265f2f7ddb687b2a663e5e203}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!error\+\_\+estimate\+\_\+solution@{error\+\_\+estimate\+\_\+solution}}
+\index{error\+\_\+estimate\+\_\+solution@{error\+\_\+estimate\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{error\+\_\+estimate\+\_\+solution()}{error\_estimate\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+template$<$Var\+Type V$>$ \\
+std\+::enable\+\_\+if$<$ V==\hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC}, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::error\+\_\+estimate\+\_\+solution (\begin{DoxyParamCaption}\item[{const Int\+Vector}]{id,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&}]{u,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ int $>$ $>$ \&}]{refine\+\_\+flag,  }\item[{bool \&}]{refine\+\_\+patch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Error\+Estimate solution implementation (cell centered implementation) 
+
+Computes the gradient of the phase field using its value at the previous timestep and set refinement flag where it is above the threshold given in input
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id} & grid index \\
+\hline
+ & {\em u} & view of the solution the old dw \\
+\hline
+\mbox{\tt out}  & {\em refine\+\_\+flag} & view of refine flag (grid field) in the new dw \\
+\hline
+\mbox{\tt out}  & {\em refine\+\_\+patch} & flag for patch refinement \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a31c25ff9983ce8a001c44c68f78c139c}\label{classUintah_1_1PhaseField_1_1Heat_a31c25ff9983ce8a001c44c68f78c139c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!error\+\_\+estimate\+\_\+solution@{error\+\_\+estimate\+\_\+solution}}
+\index{error\+\_\+estimate\+\_\+solution@{error\+\_\+estimate\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{error\+\_\+estimate\+\_\+solution()}{error\_estimate\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+template$<$Var\+Type V$>$ \\
+std\+::enable\+\_\+if$<$ V == \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC}, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::error\+\_\+estimate\+\_\+solution (\begin{DoxyParamCaption}\item[{const Int\+Vector}]{id,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&}]{u,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ int $>$ $>$ \&}]{refine\+\_\+flag,  }\item[{bool \&}]{refine\+\_\+patch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Error\+Estimate solution implementation (vertex based implementation) 
+
+Computes the gradient of the phase field using its value at the previous timestep and set refinement flag where it is above the threshold given in input
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id} & grid index \\
+\hline
+ & {\em u} & view of the solution in the old dw \\
+\hline
+\mbox{\tt out}  & {\em refine\+\_\+flag} & view of refine flag (grid field) in the new dw \\
+\hline
+\mbox{\tt out}  & {\em refine\+\_\+patch} & flag for patch refinement \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a835efcc2e173c6b1ab0f38cfbd3745f9}\label{classUintah_1_1PhaseField_1_1Heat_a835efcc2e173c6b1ab0f38cfbd3745f9}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!initialize\+\_\+solution@{initialize\+\_\+solution}}
+\index{initialize\+\_\+solution@{initialize\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{initialize\+\_\+solution()}{initialize\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::initialize\+\_\+solution (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id,  }\item[{const Patch $\ast$}]{patch,  }\item[{const double \&}]{L,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialize solution implementation. 
+
+compute initial condition for u at a given grid position
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id} & grid index \\
+\hline
+ & {\em patch} & grid patch \\
+\hline
+ & {\em L} & domain width \\
+\hline
+\mbox{\tt out}  & {\em u} & view of the solution field in the new dw \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a6afff0c96eebbecf6ff2dd24d343833f}\label{classUintah_1_1PhaseField_1_1Heat_a6afff0c96eebbecf6ff2dd24d343833f}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{Name()}{Name()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC}, \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa1a451dae278b0103a94105c8776e9a67}{D2}, \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a218e7fca21085b602c79158a04bc83a0}{P5} $>$\+::Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a214c05a905e1fca240598408207c7bf5}\label{classUintah_1_1PhaseField_1_1Heat_a214c05a905e1fca240598408207c7bf5}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{Name()}{Name()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC}, \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa1a451dae278b0103a94105c8776e9a67}{D2}, \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a218e7fca21085b602c79158a04bc83a0}{P5} $>$\+::Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_ae1663b72cb7781cb2ed3822403303665}\label{classUintah_1_1PhaseField_1_1Heat_ae1663b72cb7781cb2ed3822403303665}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{Name()}{Name()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC}, \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa72fd61934c7ca788c49ad90629f76e78}{D3}, \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a099a5b9a00f5644bb917fdec6afd8768}{P7} $>$\+::Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_ae3f72af7abe8777489750b4cca9d0386}\label{classUintah_1_1PhaseField_1_1Heat_ae3f72af7abe8777489750b4cca9d0386}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{Name()}{Name()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC}, \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa72fd61934c7ca788c49ad90629f76e78}{D3}, \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a099a5b9a00f5644bb917fdec6afd8768}{P7} $>$\+::Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_aaadfc711b6e8dbf57965173385ff8de8}\label{classUintah_1_1PhaseField_1_1Heat_aaadfc711b6e8dbf57965173385ff8de8}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{Name()}{Name()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC}, \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa1a451dae278b0103a94105c8776e9a67}{D2}, \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a218e7fca21085b602c79158a04bc83a0}{P5}, A\+MR $>$\+::Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a8f6c6b9bf9e87ad27b76232b415635ff}\label{classUintah_1_1PhaseField_1_1Heat_a8f6c6b9bf9e87ad27b76232b415635ff}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{Name()}{Name()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC}, \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa1a451dae278b0103a94105c8776e9a67}{D2}, \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a218e7fca21085b602c79158a04bc83a0}{P5}, A\+MR $>$\+::Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a0d9863c94a0326eec3640b49cdb1fbf8}\label{classUintah_1_1PhaseField_1_1Heat_a0d9863c94a0326eec3640b49cdb1fbf8}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{Name()}{Name()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC}, \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa72fd61934c7ca788c49ad90629f76e78}{D3}, \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a099a5b9a00f5644bb917fdec6afd8768}{P7}, A\+MR $>$\+::Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a273e338193aa6830f8d5fe48a8772bf4}\label{classUintah_1_1PhaseField_1_1Heat_a273e338193aa6830f8d5fe48a8772bf4}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{Name()}{Name()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC}, \hyperlink{namespaceUintah_1_1PhaseField_a12bfc68444894dffdf0cb8d9cf0cc76aa72fd61934c7ca788c49ad90629f76e78}{D3}, \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a099a5b9a00f5644bb917fdec6afd8768}{P7}, A\+MR $>$\+::Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_ad93a7ce5e5ad3a18808f63846dd309cd}\label{classUintah_1_1PhaseField_1_1Heat_ad93a7ce5e5ad3a18808f63846dd309cd}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!operator=@{operator=}}
+\index{operator=@{operator=}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat}\& \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classUintah_1_1PhaseField_1_1Heat}{Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$ const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) assignment. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a0df5d43c738640bcbbd7781ca45b6274}\label{classUintah_1_1PhaseField_1_1Heat_a0df5d43c738640bcbbd7781ca45b6274}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!problem\+Setup@{problem\+Setup}}
+\index{problem\+Setup@{problem\+Setup}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{problem\+Setup()}{problemSetup()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::problem\+Setup (\begin{DoxyParamCaption}\item[{const Problem\+SpecP \&}]{params,  }\item[{const Problem\+SpecP \&}]{restart\+\_\+prob\+\_\+spec,  }\item[{GridP \&}]{grid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Setup. 
+
+Initialize problem parameters with values from problem specifications
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & problem specifications parsed from input file \\
+\hline
+{\em restart\+\_\+prob\+\_\+spec} & unused \\
+\hline
+{\em grid} & unused \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a54b3c4c823e1f91c69df249ba1771089}\label{classUintah_1_1PhaseField_1_1Heat_a54b3c4c823e1f91c69df249ba1771089}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!refine\+\_\+solution@{refine\+\_\+solution}}
+\index{refine\+\_\+solution@{refine\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{refine\+\_\+solution()}{refine\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::refine\+\_\+solution (\begin{DoxyParamCaption}\item[{const Int\+Vector}]{id\+\_\+fine,  }\item[{const \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$ $>$ \&}]{u\+\_\+coarse\+\_\+interp,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&}]{u\+\_\+fine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Refine solution implementation. 
+
+Computes interpolated value of u at a given grid position
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id\+\_\+fine} & fine grid index \\
+\hline
+ & {\em u\+\_\+coarse\+\_\+interp} & interpolator of the aolution field on the coarse level \\
+\hline
+\mbox{\tt out}  & {\em u\+\_\+fine} & view of the aolution field on the fine level \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a32444a0c898306328d5f2f28f7acb59c}\label{classUintah_1_1PhaseField_1_1Heat_a32444a0c898306328d5f2f28f7acb59c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Coarsen@{schedule\+Coarsen}}
+\index{schedule\+Coarsen@{schedule\+Coarsen}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Coarsen()}{scheduleCoarsen()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Coarsen (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level\+\_\+coarse,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule the time coarsen tasks. 
+
+Specify all tasks to be performed after each timestep to restrict the computed variables from finer to coarser levels
+
+
+\begin{DoxyParams}{Parameters}
+{\em level\+\_\+coarse} & level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_affbdc737418eacaee32fdf7adba3a856}\label{classUintah_1_1PhaseField_1_1Heat_affbdc737418eacaee32fdf7adba3a856}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Coarsen\+\_\+solution@{schedule\+Coarsen\+\_\+solution}}
+\index{schedule\+Coarsen\+\_\+solution@{schedule\+Coarsen\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Coarsen\+\_\+solution()}{scheduleCoarsen\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Coarsen\+\_\+solution (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level\+\_\+coarse,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+coarsen\+\_\+solution. 
+
+Defines the dependencies and output of the task which restrict the solution to level\+\_\+coarse from its finer level allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level\+\_\+coarse} & level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a849225b20f1e31b74339046b9ba2d937}\label{classUintah_1_1PhaseField_1_1Heat_a849225b20f1e31b74339046b9ba2d937}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Compute\+Stable\+Time\+Step@{schedule\+Compute\+Stable\+Time\+Step}}
+\index{schedule\+Compute\+Stable\+Time\+Step@{schedule\+Compute\+Stable\+Time\+Step}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Compute\+Stable\+Time\+Step()}{scheduleComputeStableTimeStep()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Compute\+Stable\+Time\+Step (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule task\+\_\+compute\+\_\+stable\+\_\+timestep. 
+
+Specify all tasks to be performed before each time advance to compute a timestep size which ensures numerical stability
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be initialized \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_af7b0ce1990eeca4e11e3c65ce57dac8f}\label{classUintah_1_1PhaseField_1_1Heat_af7b0ce1990eeca4e11e3c65ce57dac8f}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Error\+Estimate@{schedule\+Error\+Estimate}}
+\index{schedule\+Error\+Estimate@{schedule\+Error\+Estimate}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Error\+Estimate()}{scheduleErrorEstimate()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Error\+Estimate (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule the error estimate tasks. 
+
+Specify all tasks to be performed before each timestep to estimate the spatial discretization error on the solution update in order to decide where to refine the grid
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & level to check \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a409db9828b044c7f8aec3b9833239678}\label{classUintah_1_1PhaseField_1_1Heat_a409db9828b044c7f8aec3b9833239678}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Error\+Estimate\+\_\+solution@{schedule\+Error\+Estimate\+\_\+solution}}
+\index{schedule\+Error\+Estimate\+\_\+solution@{schedule\+Error\+Estimate\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Error\+Estimate\+\_\+solution()}{scheduleErrorEstimate\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Error\+Estimate\+\_\+solution (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+error\+\_\+estimate\+\_\+solution (coarsest level implementation) 
+
+Defines the dependencies and output of the task which estimates the spatial discretization error allowing sched to controvaluel its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & level to check \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a409db9828b044c7f8aec3b9833239678}\label{classUintah_1_1PhaseField_1_1Heat_a409db9828b044c7f8aec3b9833239678}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Error\+Estimate\+\_\+solution@{schedule\+Error\+Estimate\+\_\+solution}}
+\index{schedule\+Error\+Estimate\+\_\+solution@{schedule\+Error\+Estimate\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Error\+Estimate\+\_\+solution()}{scheduleErrorEstimate\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Error\+Estimate\+\_\+solution (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+error\+\_\+estimate\+\_\+grad\+\_\+psi (refinement level implementation) 
+
+Defines the dependencies and output of the task which estimates the spatial discretization error allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & level to check \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a2c1ab4a698b92a06cd840786df5acc0a}\label{classUintah_1_1PhaseField_1_1Heat_a2c1ab4a698b92a06cd840786df5acc0a}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Initial\+Error\+Estimate@{schedule\+Initial\+Error\+Estimate}}
+\index{schedule\+Initial\+Error\+Estimate@{schedule\+Initial\+Error\+Estimate}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Initial\+Error\+Estimate()}{scheduleInitialErrorEstimate()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Initial\+Error\+Estimate (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule the initial error estimate tasks. 
+
+Specify all tasks to be performed before the first timestep to estimate the spatial discretization error on the solution update in order to decide where to refine the grid
+
+\begin{DoxyRemark}{Remarks}
+forward to schedule\+Error\+Estimate
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em level} & level to check \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_aa6b857a08f51311bba30771145176601}\label{classUintah_1_1PhaseField_1_1Heat_aa6b857a08f51311bba30771145176601}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Initialize@{schedule\+Initialize}}
+\index{schedule\+Initialize@{schedule\+Initialize}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Initialize()}{scheduleInitialize()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Initialize (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule the initialization tasks. 
+
+Specify all tasks to be performed at initial timestep to initialize variables in the Data\+Warehouse
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be initialized \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a0ee0e3cbb32c28fd0cb4b567cb0dbd9b}\label{classUintah_1_1PhaseField_1_1Heat_a0ee0e3cbb32c28fd0cb4b567cb0dbd9b}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Initialize\+\_\+solution@{schedule\+Initialize\+\_\+solution}}
+\index{schedule\+Initialize\+\_\+solution@{schedule\+Initialize\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Initialize\+\_\+solution()}{scheduleInitialize\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Initialize\+\_\+solution (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+initialize\+\_\+solution (non A\+MR implementation) 
+
+Defines the dependencies and output of the task which initializes the subproblems allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be initialized \\
+\hline
+{\em sched} & scheduler to manage the tasks\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+we need to schedule all levels before task\+\_\+error\+\_\+estimate\+\_\+solution to avoid the error \char`\"{}\+Failure finding \mbox{[}u , coarse\+Level, M\+I\+: none, New\+D\+W
+(mapped to dw index 1), \#\#\#\#\mbox{]} for Heat\+::task\+\_\+error\+\_\+estimate\+\_\+solution\char`\"{}, on patch \#, Level \#, on material \#, resource (rank)\+: \#" while compiling the Task\+Graph 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a0ee0e3cbb32c28fd0cb4b567cb0dbd9b}\label{classUintah_1_1PhaseField_1_1Heat_a0ee0e3cbb32c28fd0cb4b567cb0dbd9b}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Initialize\+\_\+solution@{schedule\+Initialize\+\_\+solution}}
+\index{schedule\+Initialize\+\_\+solution@{schedule\+Initialize\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Initialize\+\_\+solution()}{scheduleInitialize\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Initialize\+\_\+solution (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+initialize\+\_\+solution (A\+MR implementation) 
+
+Defines the dependencies and output of the task which initializes the subproblems allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be initialized \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a0e727154c6a78ee48cec37740cfe2889}\label{classUintah_1_1PhaseField_1_1Heat_a0e727154c6a78ee48cec37740cfe2889}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Initialize\+\_\+subproblems@{schedule\+Initialize\+\_\+subproblems}}
+\index{schedule\+Initialize\+\_\+subproblems@{schedule\+Initialize\+\_\+subproblems}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Initialize\+\_\+subproblems()}{scheduleInitialize\_subproblems()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Initialize\+\_\+subproblems (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+initialize\+\_\+subproblems (non A\+MR implementation) 
+
+Defines the dependencies and output of the task which initializes the subproblems allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be initialized \\
+\hline
+{\em sched} & scheduler to manage the tasks\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+we need to schedule all levels before task\+\_\+error\+\_\+estimate\+\_\+solution to avoid the error \char`\"{}\+Failure finding \mbox{[}subproblems , coarse\+Level, M\+I\+: none, New\+D\+W
+(mapped to dw index 1), \#\#\#\#\mbox{]} for Heat\+::task\+\_\+error\+\_\+estimate\+\_\+solution\char`\"{}, on patch \#, Level \#, on material \#, resource (rank)\+: \#" while compiling the Task\+Graph 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a0e727154c6a78ee48cec37740cfe2889}\label{classUintah_1_1PhaseField_1_1Heat_a0e727154c6a78ee48cec37740cfe2889}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Initialize\+\_\+subproblems@{schedule\+Initialize\+\_\+subproblems}}
+\index{schedule\+Initialize\+\_\+subproblems@{schedule\+Initialize\+\_\+subproblems}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Initialize\+\_\+subproblems()}{scheduleInitialize\_subproblems()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Initialize\+\_\+subproblems (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+initialize\+\_\+subproblems (A\+MR implementation) 
+
+Defines the dependencies and output of the task which initializes the subproblems allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be initialized \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_af9bbe0180bc623d58e87a4bf7a5b6852}\label{classUintah_1_1PhaseField_1_1Heat_af9bbe0180bc623d58e87a4bf7a5b6852}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Refine@{schedule\+Refine}}
+\index{schedule\+Refine@{schedule\+Refine}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Refine()}{scheduleRefine()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Refine (\begin{DoxyParamCaption}\item[{const Patch\+Set $\ast$}]{new\+\_\+patches,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule the refinement tasks. 
+
+Specify all tasks to be performed after an A\+MR regrid in order to populate variables in the Data\+Warehouse at newly created patches
+
+\begin{DoxyRemark}{Remarks}
+If regridding happens at initial time step schedule\+Initialize is called instead
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+patches} & patches to be populated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a49c2b810f24594c25735da508deea0f7}\label{classUintah_1_1PhaseField_1_1Heat_a49c2b810f24594c25735da508deea0f7}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Refine\+\_\+solution@{schedule\+Refine\+\_\+solution}}
+\index{schedule\+Refine\+\_\+solution@{schedule\+Refine\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Refine\+\_\+solution()}{scheduleRefine\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Refine\+\_\+solution (\begin{DoxyParamCaption}\item[{const Patch\+Set $\ast$}]{new\+\_\+patches,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+refine\+\_\+solution. 
+
+Defines the dependencies and output of the task which interpolates the solution from the coarser level to each one of the new\+\_\+patches allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+patches} & patches to be populated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_ae42ceecf972057940227ee62d22fe2bf}\label{classUintah_1_1PhaseField_1_1Heat_ae42ceecf972057940227ee62d22fe2bf}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Refine\+\_\+subproblems@{schedule\+Refine\+\_\+subproblems}}
+\index{schedule\+Refine\+\_\+subproblems@{schedule\+Refine\+\_\+subproblems}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Refine\+\_\+subproblems()}{scheduleRefine\_subproblems()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Refine\+\_\+subproblems (\begin{DoxyParamCaption}\item[{const Patch\+Set $\ast$}]{new\+\_\+patches,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+initialize\+\_\+subproblems after regridding. 
+
+Defines the dependencies and output of the task which initializes the subproblems allowing sched to control its execution order
+
+\begin{DoxyRemark}{Remarks}
+subproblems need to be reinitialized on all patches because even preexisting patches may have different neighbors
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+patches} & patches to be populated \\
+\hline
+{\em sched} & scheduler to manage the tasks\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+we need to schedule all levels before task\+\_\+error\+\_\+estimate\+\_\+solution to avoid the error \char`\"{}\+Failure finding \mbox{[}subproblems , coarse\+Level, M\+I\+: none, New\+D\+W
+(mapped to dw index 1), \#\#\#\#\mbox{]} for Heat\+::task\+\_\+error\+\_\+estimate\+\_\+solution\char`\"{}, on patch \#, Level \#, on material \#, resource (rank)\+: \#" while compiling the Task\+Graph 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a0897d2ac6114e763ec9d832100824faf}\label{classUintah_1_1PhaseField_1_1Heat_a0897d2ac6114e763ec9d832100824faf}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Refine\+Interface@{schedule\+Refine\+Interface}}
+\index{schedule\+Refine\+Interface@{schedule\+Refine\+Interface}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Refine\+Interface()}{scheduleRefineInterface()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Refine\+Interface (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level\+\_\+fine,  }\item[{SchedulerP \&}]{sched,  }\item[{bool}]{need\+\_\+old\+\_\+coarse,  }\item[{bool}]{need\+\_\+new\+\_\+coarse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule the refinement tasks. 
+
+Do nothing
+
+
+\begin{DoxyParams}{Parameters}
+{\em level\+\_\+fine} & unused \\
+\hline
+{\em sched} & unused \\
+\hline
+{\em need\+\_\+old\+\_\+coarse} & unused \\
+\hline
+{\em need\+\_\+new\+\_\+coarse} & unused \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_aa0d1d051f38540745482f7f3b0888d33}\label{classUintah_1_1PhaseField_1_1Heat_aa0d1d051f38540745482f7f3b0888d33}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Restart\+Initialize@{schedule\+Restart\+Initialize}}
+\index{schedule\+Restart\+Initialize@{schedule\+Restart\+Initialize}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Restart\+Initialize()}{scheduleRestartInitialize()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Restart\+Initialize (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule the initialization tasks for restarting a simulation. 
+
+Specify all tasks to be performed at fist timestep after a stop to initialize not saved variables to the Data\+Warehouse
+
+\begin{DoxyRemark}{Remarks}
+only subproblems need to be reinitialized all other variables should be retrieved from saved checkpoints
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be initialized \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a700f9df2ccf60f560f776dc95ef4883e}\label{classUintah_1_1PhaseField_1_1Heat_a700f9df2ccf60f560f776dc95ef4883e}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Time\+Advance@{schedule\+Time\+Advance}}
+\index{schedule\+Time\+Advance@{schedule\+Time\+Advance}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance()}{scheduleTimeAdvance()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Time\+Advance (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule the time advance tasks. 
+
+Specify all tasks to be performed at each timestep to update the simulation variables in the Data\+Warehouse
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be initialized \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a4050259130c6c4b8fa97ec69cd646067}\label{classUintah_1_1PhaseField_1_1Heat_a4050259130c6c4b8fa97ec69cd646067}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives@{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives}}
+\index{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives@{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives()}{scheduleTimeAdvance\_dbg\_derivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives (non A\+MR implementation) 
+
+Defines the dependencies and output of the task which updates the subproblems allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a4050259130c6c4b8fa97ec69cd646067}\label{classUintah_1_1PhaseField_1_1Heat_a4050259130c6c4b8fa97ec69cd646067}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives@{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives}}
+\index{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives@{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives()}{scheduleTimeAdvance\_dbg\_derivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives (A\+MR implementation) 
+
+Defines the dependencies and output of the task which updates the subproblems allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_acc85b548081a60269deee446d0fb0f4b}\label{classUintah_1_1PhaseField_1_1Heat_acc85b548081a60269deee446d0fb0f4b}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error@{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error}}
+\index{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error@{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error()}{scheduleTimeAdvance\_dbg\_derivatives\_error()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error (non A\+MR implementation) 
+
+Defines the dependencies and output of the task which updates the subproblems allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_acc85b548081a60269deee446d0fb0f4b}\label{classUintah_1_1PhaseField_1_1Heat_acc85b548081a60269deee446d0fb0f4b}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error@{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error}}
+\index{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error@{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error()}{scheduleTimeAdvance\_dbg\_derivatives\_error()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Time\+Advance\+\_\+dbg\+\_\+derivatives\+\_\+error (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error (A\+MR implementation) 
+
+Defines the dependencies and output of the task which updates the subproblems allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a241faeed94f8958987941d69e1ed2d54}\label{classUintah_1_1PhaseField_1_1Heat_a241faeed94f8958987941d69e1ed2d54}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Time\+Advance\+\_\+solution@{schedule\+Time\+Advance\+\_\+solution}}
+\index{schedule\+Time\+Advance\+\_\+solution@{schedule\+Time\+Advance\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+solution()}{scheduleTimeAdvance\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Time\+Advance\+\_\+solution (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+solution (non A\+MR implementation) 
+
+Defines the dependencies and output of the task which updates psi and u allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a241faeed94f8958987941d69e1ed2d54}\label{classUintah_1_1PhaseField_1_1Heat_a241faeed94f8958987941d69e1ed2d54}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Time\+Advance\+\_\+solution@{schedule\+Time\+Advance\+\_\+solution}}
+\index{schedule\+Time\+Advance\+\_\+solution@{schedule\+Time\+Advance\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+solution()}{scheduleTimeAdvance\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Time\+Advance\+\_\+solution (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+solution (A\+MR implementation) 
+
+Defines the dependencies and output of the task which updates psi and u allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a30a952df198959dae461297e5fd05a4e}\label{classUintah_1_1PhaseField_1_1Heat_a30a952df198959dae461297e5fd05a4e}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Time\+Advance\+\_\+solution\+\_\+error@{schedule\+Time\+Advance\+\_\+solution\+\_\+error}}
+\index{schedule\+Time\+Advance\+\_\+solution\+\_\+error@{schedule\+Time\+Advance\+\_\+solution\+\_\+error}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+solution\+\_\+error()}{scheduleTimeAdvance\_solution\_error()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Time\+Advance\+\_\+solution\+\_\+error (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+solution\+\_\+error. 
+
+Defines the dependencies and output of the task which updates the subproblems allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a7daf1da9106d539e50121297c5ecf0b3}\label{classUintah_1_1PhaseField_1_1Heat_a7daf1da9106d539e50121297c5ecf0b3}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Time\+Advance\+\_\+subproblems@{schedule\+Time\+Advance\+\_\+subproblems}}
+\index{schedule\+Time\+Advance\+\_\+subproblems@{schedule\+Time\+Advance\+\_\+subproblems}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+subproblems()}{scheduleTimeAdvance\_subproblems()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Time\+Advance\+\_\+subproblems (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+solution (non A\+MR implementation) 
+
+Defines the dependencies and output of the task which updates the subproblems allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a7daf1da9106d539e50121297c5ecf0b3}\label{classUintah_1_1PhaseField_1_1Heat_a7daf1da9106d539e50121297c5ecf0b3}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!schedule\+Time\+Advance\+\_\+subproblems@{schedule\+Time\+Advance\+\_\+subproblems}}
+\index{schedule\+Time\+Advance\+\_\+subproblems@{schedule\+Time\+Advance\+\_\+subproblems}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+subproblems()}{scheduleTimeAdvance\_subproblems()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+template$<$bool MG$>$ \\
+std\+::enable\+\_\+if$<$ MG, void $>$\+::type \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::schedule\+Time\+Advance\+\_\+subproblems (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+solution (A\+MR implementation) 
+
+Defines the dependencies and output of the task which updates the subproblems allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a73770e2d2271bbab30b3b67462c32a1c}\label{classUintah_1_1PhaseField_1_1Heat_a73770e2d2271bbab30b3b67462c32a1c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!task\+\_\+coarsen\+\_\+solution@{task\+\_\+coarsen\+\_\+solution}}
+\index{task\+\_\+coarsen\+\_\+solution@{task\+\_\+coarsen\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{task\+\_\+coarsen\+\_\+solution()}{task\_coarsen\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::task\+\_\+coarsen\+\_\+solution (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{myworld,  }\item[{const Patch\+Subset $\ast$}]{patches\+\_\+coarse,  }\item[{const Material\+Subset $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Coarsen solution task. 
+
+Restricted value of u from refined regions to coarse patches underneath
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches\+\_\+coarse} & list of patches to be updated \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & unused \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a64acf05f60b90be0b1554dfeda495156}\label{classUintah_1_1PhaseField_1_1Heat_a64acf05f60b90be0b1554dfeda495156}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!task\+\_\+compute\+\_\+stable\+\_\+timestep@{task\+\_\+compute\+\_\+stable\+\_\+timestep}}
+\index{task\+\_\+compute\+\_\+stable\+\_\+timestep@{task\+\_\+compute\+\_\+stable\+\_\+timestep}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{task\+\_\+compute\+\_\+stable\+\_\+timestep()}{task\_compute\_stable\_timestep()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::task\+\_\+compute\+\_\+stable\+\_\+timestep (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{myworld,  }\item[{const Patch\+Subset $\ast$}]{patches,  }\item[{const Material\+Subset $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Compute timestep task. 
+
+Puts into the new Data\+Warehouse the constant value specified in input (delt) of the timestep
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & unused \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_aa0622afb02c0f71f50e9206c342f379b}\label{classUintah_1_1PhaseField_1_1Heat_aa0622afb02c0f71f50e9206c342f379b}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!task\+\_\+error\+\_\+estimate\+\_\+solution@{task\+\_\+error\+\_\+estimate\+\_\+solution}}
+\index{task\+\_\+error\+\_\+estimate\+\_\+solution@{task\+\_\+error\+\_\+estimate\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{task\+\_\+error\+\_\+estimate\+\_\+solution()}{task\_error\_estimate\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::task\+\_\+error\+\_\+estimate\+\_\+solution (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{myworld,  }\item[{const Patch\+Subset $\ast$}]{patches,  }\item[{const Material\+Subset $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Error\+Estimate solution task. 
+
+Computes the gradient of the solution using its value at the previous timestep and set refinement flag where it is above the threshold given in input
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & Data\+Warehouse for previous timestep \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a12321dbb2295d63fe3c1befb63a64051}\label{classUintah_1_1PhaseField_1_1Heat_a12321dbb2295d63fe3c1befb63a64051}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!task\+\_\+initialize\+\_\+solution@{task\+\_\+initialize\+\_\+solution}}
+\index{task\+\_\+initialize\+\_\+solution@{task\+\_\+initialize\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{task\+\_\+initialize\+\_\+solution()}{task\_initialize\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::task\+\_\+initialize\+\_\+solution (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{myworld,  }\item[{const Patch\+Subset $\ast$}]{patches,  }\item[{const Material\+Subset $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialize solution task. 
+
+Allocate and save variables for psi and u for each one of the patches and save them to dw\+\_\+new \begin{DoxyRemark}{Remarks}
+initialize also anisotropy terms to 0
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & unused \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_abc95b8a4d937f440b074b64993d38fdf}\label{classUintah_1_1PhaseField_1_1Heat_abc95b8a4d937f440b074b64993d38fdf}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!task\+\_\+initialize\+\_\+subproblems@{task\+\_\+initialize\+\_\+subproblems}}
+\index{task\+\_\+initialize\+\_\+subproblems@{task\+\_\+initialize\+\_\+subproblems}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{task\+\_\+initialize\+\_\+subproblems()}{task\_initialize\_subproblems()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::task\+\_\+initialize\+\_\+subproblems (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{myworld,  }\item[{const Patch\+Subset $\ast$}]{patches,  }\item[{const Material\+Subset $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialize subproblems task. 
+
+Create the \hyperlink{structUintah_1_1PhaseField_1_1SubProblems}{Sub\+Problems} for each one of the patches and save it to dw\+\_\+new
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & unused \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a453059c9ee7e3920bd24ecc2882f42d7}\label{classUintah_1_1PhaseField_1_1Heat_a453059c9ee7e3920bd24ecc2882f42d7}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!task\+\_\+refine\+\_\+solution@{task\+\_\+refine\+\_\+solution}}
+\index{task\+\_\+refine\+\_\+solution@{task\+\_\+refine\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{task\+\_\+refine\+\_\+solution()}{task\_refine\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::task\+\_\+refine\+\_\+solution (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{myworld,  }\item[{const Patch\+Subset $\ast$}]{patches\+\_\+fine,  }\item[{const Material\+Subset $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Refine solution task. 
+
+Computes interpolated value of u on new refined patched
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches\+\_\+fine} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & unused \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_ac90620287403d8c9c61e40a0da3dde8f}\label{classUintah_1_1PhaseField_1_1Heat_ac90620287403d8c9c61e40a0da3dde8f}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives@{task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives}}
+\index{task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives@{task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives()}{task\_time\_advance\_dbg\_derivatives()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{myworld,  }\item[{const Patch\+Subset $\ast$}]{patches,  }\item[{const Material\+Subset $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Advance derivatives task (debug) 
+
+Computes value of u derivatives using the solution at the previous timestep (for debugging purpose)
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & Data\+Warehouse for previous timestep \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a7ebff904626dc1a31931f649b22f9ec6}\label{classUintah_1_1PhaseField_1_1Heat_a7ebff904626dc1a31931f649b22f9ec6}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error@{task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error}}
+\index{task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error@{task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error()}{task\_time\_advance\_dbg\_derivatives\_error()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::task\+\_\+time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{myworld,  }\item[{const Patch\+Subset $\ast$}]{patches,  }\item[{const Material\+Subset $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Advance derivatives error task (debug) 
+
+Computes the error in the approximation of u derivatives comparing them with their analytical expressions (for debugging purpose)
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & Data\+Warehouse for previous timestep \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_af8b474103f410ac92f2f4395c9699628}\label{classUintah_1_1PhaseField_1_1Heat_af8b474103f410ac92f2f4395c9699628}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!task\+\_\+time\+\_\+advance\+\_\+solution@{task\+\_\+time\+\_\+advance\+\_\+solution}}
+\index{task\+\_\+time\+\_\+advance\+\_\+solution@{task\+\_\+time\+\_\+advance\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{task\+\_\+time\+\_\+advance\+\_\+solution()}{task\_time\_advance\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::task\+\_\+time\+\_\+advance\+\_\+solution (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{myworld,  }\item[{const Patch\+Subset $\ast$}]{patches,  }\item[{const Material\+Subset $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Advance solution task. 
+
+Computes new value of u using the value of the solution and at previous timestep
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & Data\+Warehouse for previous timestep \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a871801188ed73dca7be728514c5711f8}\label{classUintah_1_1PhaseField_1_1Heat_a871801188ed73dca7be728514c5711f8}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!task\+\_\+time\+\_\+advance\+\_\+solution\+\_\+error@{task\+\_\+time\+\_\+advance\+\_\+solution\+\_\+error}}
+\index{task\+\_\+time\+\_\+advance\+\_\+solution\+\_\+error@{task\+\_\+time\+\_\+advance\+\_\+solution\+\_\+error}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{task\+\_\+time\+\_\+advance\+\_\+solution\+\_\+error()}{task\_time\_advance\_solution\_error()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::task\+\_\+time\+\_\+advance\+\_\+solution\+\_\+error (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{myworld,  }\item[{const Patch\+Subset $\ast$}]{patches,  }\item[{const Material\+Subset $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Advance solution error task (test) 
+
+Computes error in u approximation using the analytical solution
+
+\begin{DoxyRemark}{Remarks}
+test must be set to true in input
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & Data\+Warehouse for previous timestep \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a3ee8ce1eca59c2eda6b3c8d74f01b175}\label{classUintah_1_1PhaseField_1_1Heat_a3ee8ce1eca59c2eda6b3c8d74f01b175}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!task\+\_\+time\+\_\+advance\+\_\+subproblems@{task\+\_\+time\+\_\+advance\+\_\+subproblems}}
+\index{task\+\_\+time\+\_\+advance\+\_\+subproblems@{task\+\_\+time\+\_\+advance\+\_\+subproblems}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{task\+\_\+time\+\_\+advance\+\_\+subproblems()}{task\_time\_advance\_subproblems()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::task\+\_\+time\+\_\+advance\+\_\+subproblems (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{myworld,  }\item[{const Patch\+Subset $\ast$}]{patches,  }\item[{const Material\+Subset $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Advance subproblems task. 
+
+Move \hyperlink{structUintah_1_1PhaseField_1_1SubProblems}{Sub\+Problems} for each one of the patches and from dw\+\_\+old to dw\+\_\+new or, if not found in dw\+\_\+old (after regrid), create new subproblems in dw\+\_\+new
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & Data\+Warehouse for previous timestep \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_ae44ac96e2901f80ecd11207ad4c51ee0}\label{classUintah_1_1PhaseField_1_1Heat_ae44ac96e2901f80ecd11207ad4c51ee0}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!time\+\_\+advance\+\_\+dbg\+\_\+derivatives@{time\+\_\+advance\+\_\+dbg\+\_\+derivatives}}
+\index{time\+\_\+advance\+\_\+dbg\+\_\+derivatives@{time\+\_\+advance\+\_\+dbg\+\_\+derivatives}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{time\+\_\+advance\+\_\+dbg\+\_\+derivatives()}{time\_advance\_dbg\_derivatives()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::time\+\_\+advance\+\_\+dbg\+\_\+derivatives (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id,  }\item[{const \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&}]{u\+\_\+old,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ double, D\+IM $>$ $>$ \&}]{du,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ double, D\+IM $>$ $>$ \&}]{ddu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Advance derivatives implementation. 
+
+Computes value of u derivatives using the solution at the previous timestep at a given grid position (for debugging purpose)
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id} & grid index \\
+\hline
+ & {\em u\+\_\+old} & view of the solution field in the old dw \\
+\hline
+\mbox{\tt out}  & {\em du} & view of the solution derivatives vector field in the new dw \\
+\hline
+\mbox{\tt out}  & {\em ddu} & view of the solution derivatives vector field in the new dw \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a0ac23c69e2e55fd9413f259469a347e4}\label{classUintah_1_1PhaseField_1_1Heat_a0ac23c69e2e55fd9413f259469a347e4}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error@{time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error}}
+\index{time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error@{time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error()}{time\_advance\_dbg\_derivatives\_error()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::time\+\_\+advance\+\_\+dbg\+\_\+derivatives\+\_\+error (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id,  }\item[{const Patch $\ast$}]{patch,  }\item[{const double \&}]{L,  }\item[{const double \&}]{t,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ const double, D\+IM $>$ $>$ \&}]{du,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ const double, D\+IM $>$ $>$ \&}]{ddu,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ double, D\+IM $>$ $>$ \&}]{error\+\_\+du,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ double, D\+IM $>$ $>$ \&}]{error\+\_\+ddu,  }\item[{double \&}]{u\+\_\+norm\+H10,  }\item[{double \&}]{u\+\_\+norm\+H20,  }\item[{double \&}]{error\+\_\+norm\+H10,  }\item[{double \&}]{error\+\_\+norm\+H20 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Advance derivatives error implementation. 
+
+Computes error in the approximation of u derivatives comparing them with their analytical expressions at a given grid position (for debugging purpose)
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id} & grid index \\
+\hline
+ & {\em patch} & grid patch \\
+\hline
+ & {\em L} & domain width \\
+\hline
+ & {\em t} & simulation time \\
+\hline
+ & {\em du} & view of the solution derivatives vector field in the new dw \\
+\hline
+ & {\em ddu} & view of the solution derivatives vector field in the new dw \\
+\hline
+\mbox{\tt out}  & {\em error\+\_\+du} & view of the solution derivatives error vector field in the new dw \\
+\hline
+\mbox{\tt out}  & {\em error\+\_\+ddu} & view of the solution derivatives error vector field in the new dw \\
+\hline
+\mbox{\tt out}  & {\em u\+\_\+norm\+H10} & L2-\/norm of the solution 1st order derivatives vector \\
+\hline
+\mbox{\tt out}  & {\em u\+\_\+norm\+H20} & L2-\/norm of the solution 2nd order derivatives vector \\
+\hline
+\mbox{\tt out}  & {\em error\+\_\+norm\+H10} & L2-\/norm of the solution 1st order derivatives error vector \\
+\hline
+\mbox{\tt out}  & {\em error\+\_\+norm\+H20} & L2-\/norm of the solution 2nd order derivatives error vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_aa3871d06b39cf5b7e2b8a0db0aaf61fb}\label{classUintah_1_1PhaseField_1_1Heat_aa3871d06b39cf5b7e2b8a0db0aaf61fb}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!time\+\_\+advance\+\_\+solution@{time\+\_\+advance\+\_\+solution}}
+\index{time\+\_\+advance\+\_\+solution@{time\+\_\+advance\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{time\+\_\+advance\+\_\+solution()}{time\_advance\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::time\+\_\+advance\+\_\+solution (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id,  }\item[{const \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&}]{u\+\_\+old,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&}]{u\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Advance solution implementation. 
+
+compute new value for u at a given grid position using the value of the solution and at previous timestep
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id} & grid index \\
+\hline
+ & {\em u\+\_\+old} & view of the solution field in the old dw \\
+\hline
+\mbox{\tt out}  & {\em u\+\_\+new} & view of the solution field in the new dw \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_ad355ac710c7d6e1d646699b4a7ab1270}\label{classUintah_1_1PhaseField_1_1Heat_ad355ac710c7d6e1d646699b4a7ab1270}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!time\+\_\+advance\+\_\+solution\+\_\+error@{time\+\_\+advance\+\_\+solution\+\_\+error}}
+\index{time\+\_\+advance\+\_\+solution\+\_\+error@{time\+\_\+advance\+\_\+solution\+\_\+error}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{time\+\_\+advance\+\_\+solution\+\_\+error()}{time\_advance\_solution\_error()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::time\+\_\+advance\+\_\+solution\+\_\+error (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id,  }\item[{const Patch $\ast$}]{patch,  }\item[{const double \&}]{L,  }\item[{const double \&}]{t,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$ $>$ \&}]{u,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&}]{delta\+\_\+u,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&}]{error\+\_\+u,  }\item[{double \&}]{u\+\_\+norm\+L2,  }\item[{double \&}]{error\+\_\+norm\+L2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Advance solution error task (test) 
+
+compute error in u approximation at a given grid position using the analytical solution
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id} & grid index \\
+\hline
+ & {\em patch} & grid patch \\
+\hline
+ & {\em L} & domain width \\
+\hline
+ & {\em t} & simulation time \\
+\hline
+ & {\em u} & view of the newly computed solution field in the new dw \\
+\hline
+\mbox{\tt out}  & {\em delta\+\_\+u} & view of the local error (difference between computed and analytical solution at each grid position) \\
+\hline
+\mbox{\tt out}  & {\em error\+\_\+u} & interpolation error (L2 norm over the range of each grid position of the difference between computed and analytical solution at each grid position) \\
+\hline
+\mbox{\tt out}  & {\em u\+\_\+norm\+L2} & L2-\/norm (global) of the solution vector \\
+\hline
+\mbox{\tt out}  & {\em error\+\_\+norm\+L2} & L2-\/norm (global) of the solution error vector \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_ab3cee68f7769a98af80877daa13e038b}\label{classUintah_1_1PhaseField_1_1Heat_ab3cee68f7769a98af80877daa13e038b}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!alpha@{alpha}}
+\index{alpha@{alpha}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+double \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::alpha\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Non-\/dimensional thermal diffusivity. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a4bd64df2d939420f13553008da93cfb5}\label{classUintah_1_1PhaseField_1_1Heat_a4bd64df2d939420f13553008da93cfb5}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!c2f@{c2f}}
+\index{c2f@{c2f}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{c2f}{c2f}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+std\+::map$<$std\+::string, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC}$>$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::c2f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Store which fine/coarse interface conditions to use on each variable. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a0e7faf909e7e82c7c0aff03d261a6fa9}\label{classUintah_1_1PhaseField_1_1Heat_a0e7faf909e7e82c7c0aff03d261a6fa9}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!dbg\+\_\+out1@{dbg\+\_\+out1}}
+\index{dbg\+\_\+out1@{dbg\+\_\+out1}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{dbg\+\_\+out1}{dbg\_out1}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::dbg\+\_\+out1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Output streams for debugging. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_af10b94a5699065313918cf8291b355f8}\label{classUintah_1_1PhaseField_1_1Heat_af10b94a5699065313918cf8291b355f8}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!dbg\+\_\+out2@{dbg\+\_\+out2}}
+\index{dbg\+\_\+out2@{dbg\+\_\+out2}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{dbg\+\_\+out2}{dbg\_out2}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::dbg\+\_\+out2\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a8e385e1c1be12146007488186869059c}\label{classUintah_1_1PhaseField_1_1Heat_a8e385e1c1be12146007488186869059c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!dbg\+\_\+out3@{dbg\+\_\+out3}}
+\index{dbg\+\_\+out3@{dbg\+\_\+out3}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{dbg\+\_\+out3}{dbg\_out3}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::dbg\+\_\+out3\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a541791b40ca8a1dec4964f5e44462da7}\label{classUintah_1_1PhaseField_1_1Heat_a541791b40ca8a1dec4964f5e44462da7}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!dbg\+\_\+out4@{dbg\+\_\+out4}}
+\index{dbg\+\_\+out4@{dbg\+\_\+out4}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{dbg\+\_\+out4}{dbg\_out4}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::dbg\+\_\+out4\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a561356648be34dbc45f66ce6ae8f3d3c}\label{classUintah_1_1PhaseField_1_1Heat_a561356648be34dbc45f66ce6ae8f3d3c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!ddu\+\_\+label@{ddu\+\_\+label}}
+\index{ddu\+\_\+label@{ddu\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{ddu\+\_\+label}{ddu\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+std\+::array$<$const Var\+Label $\ast$, D\+IM$>$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::ddu\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a5aa8d04b6e7177e1a3511ac2fac00a96}\label{classUintah_1_1PhaseField_1_1Heat_a5aa8d04b6e7177e1a3511ac2fac00a96}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!delt@{delt}}
+\index{delt@{delt}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{delt}{delt}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+double \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::delt\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Time step size. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a7b051c5513975a78a9049ff5bfd3308f}\label{classUintah_1_1PhaseField_1_1Heat_a7b051c5513975a78a9049ff5bfd3308f}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!delta\+\_\+u\+\_\+label@{delta\+\_\+u\+\_\+label}}
+\index{delta\+\_\+u\+\_\+label@{delta\+\_\+u\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{delta\+\_\+u\+\_\+label}{delta\_u\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::delta\+\_\+u\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_af869883fdc795a1cc272c01c15a6713e}\label{classUintah_1_1PhaseField_1_1Heat_af869883fdc795a1cc272c01c15a6713e}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!du\+\_\+label@{du\+\_\+label}}
+\index{du\+\_\+label@{du\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{du\+\_\+label}{du\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+std\+::array$<$const Var\+Label $\ast$, D\+IM$>$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::du\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_aa06848deb21efd5d0f8b086cd9b563ec}\label{classUintah_1_1PhaseField_1_1Heat_aa06848deb21efd5d0f8b086cd9b563ec}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!error\+\_\+ddu\+\_\+label@{error\+\_\+ddu\+\_\+label}}
+\index{error\+\_\+ddu\+\_\+label@{error\+\_\+ddu\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{error\+\_\+ddu\+\_\+label}{error\_ddu\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+std\+::array$<$const Var\+Label $\ast$, D\+IM$>$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::error\+\_\+ddu\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a2998333c458933bc675526b073b7510d}\label{classUintah_1_1PhaseField_1_1Heat_a2998333c458933bc675526b073b7510d}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!error\+\_\+du\+\_\+label@{error\+\_\+du\+\_\+label}}
+\index{error\+\_\+du\+\_\+label@{error\+\_\+du\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{error\+\_\+du\+\_\+label}{error\_du\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+std\+::array$<$const Var\+Label $\ast$, D\+IM$>$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::error\+\_\+du\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a809e43b5076b5778af2f6c2a10ce97a6}\label{classUintah_1_1PhaseField_1_1Heat_a809e43b5076b5778af2f6c2a10ce97a6}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!error\+\_\+norm\+H10\+\_\+label@{error\+\_\+norm\+H10\+\_\+label}}
+\index{error\+\_\+norm\+H10\+\_\+label@{error\+\_\+norm\+H10\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{error\+\_\+norm\+H10\+\_\+label}{error\_normH10\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::error\+\_\+norm\+H10\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_ae5fd87bfc6b64d1e72339b4ad860b126}\label{classUintah_1_1PhaseField_1_1Heat_ae5fd87bfc6b64d1e72339b4ad860b126}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!error\+\_\+norm\+H20\+\_\+label@{error\+\_\+norm\+H20\+\_\+label}}
+\index{error\+\_\+norm\+H20\+\_\+label@{error\+\_\+norm\+H20\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{error\+\_\+norm\+H20\+\_\+label}{error\_normH20\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::error\+\_\+norm\+H20\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a664b5e6adac2b2d4a5a56596d81ee9c2}\label{classUintah_1_1PhaseField_1_1Heat_a664b5e6adac2b2d4a5a56596d81ee9c2}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!error\+\_\+norm\+L2\+\_\+label@{error\+\_\+norm\+L2\+\_\+label}}
+\index{error\+\_\+norm\+L2\+\_\+label@{error\+\_\+norm\+L2\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{error\+\_\+norm\+L2\+\_\+label}{error\_normL2\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::error\+\_\+norm\+L2\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_ab206aed0bd72c3395ff1d41c3764ddaa}\label{classUintah_1_1PhaseField_1_1Heat_ab206aed0bd72c3395ff1d41c3764ddaa}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!error\+\_\+u\+\_\+label@{error\+\_\+u\+\_\+label}}
+\index{error\+\_\+u\+\_\+label@{error\+\_\+u\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{error\+\_\+u\+\_\+label}{error\_u\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::error\+\_\+u\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a87604ddeef664dc858efd1603513fb18}\label{classUintah_1_1PhaseField_1_1Heat_a87604ddeef664dc858efd1603513fb18}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!is\+\_\+first\+\_\+schedule\+\_\+refine@{is\+\_\+first\+\_\+schedule\+\_\+refine}}
+\index{is\+\_\+first\+\_\+schedule\+\_\+refine@{is\+\_\+first\+\_\+schedule\+\_\+refine}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{is\+\_\+first\+\_\+schedule\+\_\+refine}{is\_first\_schedule\_refine}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+bool \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::is\+\_\+first\+\_\+schedule\+\_\+refine\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flag for avoiding multiple reinitialization of subproblems after regridding. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a98f261632a91a2cac5800b938c1b9518}\label{classUintah_1_1PhaseField_1_1Heat_a98f261632a91a2cac5800b938c1b9518}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::Name\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Class name as used by \hyperlink{classUintah_1_1PhaseField_1_1ApplicationFactory}{Application\+Factory}. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_aff3739ebcad41c592dcdb5a92b6abb52}\label{classUintah_1_1PhaseField_1_1Heat_aff3739ebcad41c592dcdb5a92b6abb52}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!refine\+\_\+threshold@{refine\+\_\+threshold}}
+\index{refine\+\_\+threshold@{refine\+\_\+threshold}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{refine\+\_\+threshold}{refine\_threshold}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+double \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::refine\+\_\+threshold\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Threshold for A\+MR. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a1305118ea9f1abeff12771589bca3ef9}\label{classUintah_1_1PhaseField_1_1Heat_a1305118ea9f1abeff12771589bca3ef9}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!subproblems\+\_\+label@{subproblems\+\_\+label}}
+\index{subproblems\+\_\+label@{subproblems\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{subproblems\+\_\+label}{subproblems\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+const Var\+Label$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::subproblems\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a46a2d7d28834fab61dd63c8c3a2d46a9}\label{classUintah_1_1PhaseField_1_1Heat_a46a2d7d28834fab61dd63c8c3a2d46a9}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!test@{test}}
+\index{test@{test}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{test}{test}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+bool \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::test\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Wether to perform comparisons with analytical solution. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a8318c248305ac851f69f313697ee3b04}\label{classUintah_1_1PhaseField_1_1Heat_a8318c248305ac851f69f313697ee3b04}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!u\+\_\+label@{u\+\_\+label}}
+\index{u\+\_\+label@{u\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{u\+\_\+label}{u\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+const Var\+Label$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::u\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_acddad73b120372c5929039787359c9fe}\label{classUintah_1_1PhaseField_1_1Heat_acddad73b120372c5929039787359c9fe}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!u\+\_\+norm\+H10\+\_\+label@{u\+\_\+norm\+H10\+\_\+label}}
+\index{u\+\_\+norm\+H10\+\_\+label@{u\+\_\+norm\+H10\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{u\+\_\+norm\+H10\+\_\+label}{u\_normH10\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+const Var\+Label$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::u\+\_\+norm\+H10\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a47032b7137df200ce4990faf6f65188d}\label{classUintah_1_1PhaseField_1_1Heat_a47032b7137df200ce4990faf6f65188d}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!u\+\_\+norm\+H20\+\_\+label@{u\+\_\+norm\+H20\+\_\+label}}
+\index{u\+\_\+norm\+H20\+\_\+label@{u\+\_\+norm\+H20\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{u\+\_\+norm\+H20\+\_\+label}{u\_normH20\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+const Var\+Label$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::u\+\_\+norm\+H20\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Heat_a03406a63938c13923f72306097a3aef2}\label{classUintah_1_1PhaseField_1_1Heat_a03406a63938c13923f72306097a3aef2}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}!u\+\_\+norm\+L2\+\_\+label@{u\+\_\+norm\+L2\+\_\+label}}
+\index{u\+\_\+norm\+L2\+\_\+label@{u\+\_\+norm\+L2\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Heat@{Uintah\+::\+Phase\+Field\+::\+Heat}}
+\subsubsection{\texorpdfstring{u\+\_\+norm\+L2\+\_\+label}{u\_normL2\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Dim\+Type D\+IM, Stn\+Type S\+TN, bool A\+MR = false$>$ \\
+const Var\+Label$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Heat}{Uintah\+::\+Phase\+Field\+::\+Heat}$<$ V\+AR, D\+IM, S\+TN, A\+MR $>$\+::u\+\_\+norm\+L2\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Heat_8h}{Heat.\+h}\end{DoxyCompactItemize}

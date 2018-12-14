@@ -1,0 +1,4 @@
+<map id="Uintah::PhaseField::detail::amr_interpolator&lt; ScalarField&lt; T &gt;, Problem, index_sequence&lt; I... &gt;, I1, D1 &gt;" name="Uintah::PhaseField::detail::amr_interpolator&lt; ScalarField&lt; T &gt;, Problem, index_sequence&lt; I... &gt;, I1, D1 &gt;">
+<area shape="rect" id="node2" href="$classUintah_1_1PhaseField_1_1detail_1_1amr__interpolator.html" title="Abstract wrapper of grid variables for interpolation from coarser to finer levels. " alt="" coords="11,5,173,76"/>
+<area shape="rect" id="node3" href="$classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4.html" title="Abstract class for accessing variables (ScalarField implementation) " alt="" coords="5,101,179,157"/>
+</map>

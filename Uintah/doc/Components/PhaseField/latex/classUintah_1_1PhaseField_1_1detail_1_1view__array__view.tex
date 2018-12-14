@@ -1,0 +1,79 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1view__array__view}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:view\+\_\+array\+\_\+view$<$ Field, N $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1view__array__view}\index{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view$<$ Field, N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view$<$ Field, N $>$}}
+
+
+Container for collecting multiple views as an array.  
+
+
+
+
+{\ttfamily \#include $<$view\+\_\+array\+\_\+view.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:view\+\_\+array\+\_\+view$<$ Field, N $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classUintah_1_1PhaseField_1_1detail_1_1view__array__view__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array__view_a589b669c4891443b68b5fd0424f46c3d}{view\+\_\+array\+\_\+view} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ Field $>$ $\ast$, N $>$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array__view_a30d94983e4937efeb95483d926946d2e}{m\+\_\+view\+\_\+ptr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Field, size\+\_\+t N$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view$<$ Field, N $>$}
+
+Container for collecting multiple views as an array. 
+
+It is used as base class for \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array}{view\+\_\+array} in order to provide a unique container across all \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array}{view\+\_\+array} derived classes implementations
+
+\begin{DoxyRemark}{Remarks}
+no instantiation must be performed here
+\end{DoxyRemark}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Field} & type of Field \\
+\hline
+{\em N} & size of the array \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1view__array__view_a589b669c4891443b68b5fd0424f46c3d}\label{classUintah_1_1PhaseField_1_1detail_1_1view__array__view_a589b669c4891443b68b5fd0424f46c3d}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view}!view\+\_\+array\+\_\+view@{view\+\_\+array\+\_\+view}}
+\index{view\+\_\+array\+\_\+view@{view\+\_\+array\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view}}
+\subsubsection{\texorpdfstring{view\+\_\+array\+\_\+view()}{view\_array\_view()}}
+{\footnotesize\ttfamily template$<$typename Field, size\+\_\+t N$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array__view}{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view}$<$ Field, N $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array__view}{view\+\_\+array\+\_\+view} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Constructor. 
+
+Initialize the array without instantiating component views 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1view__array__view_a30d94983e4937efeb95483d926946d2e}\label{classUintah_1_1PhaseField_1_1detail_1_1view__array__view_a30d94983e4937efeb95483d926946d2e}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view}!m\+\_\+view\+\_\+ptr@{m\+\_\+view\+\_\+ptr}}
+\index{m\+\_\+view\+\_\+ptr@{m\+\_\+view\+\_\+ptr}!Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view@{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view}}
+\subsubsection{\texorpdfstring{m\+\_\+view\+\_\+ptr}{m\_view\_ptr}}
+{\footnotesize\ttfamily template$<$typename Field, size\+\_\+t N$>$ \\
+std\+::array$<$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$Field$>$ $\ast$, N $>$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view__array__view}{Uintah\+::\+Phase\+Field\+::detail\+::view\+\_\+array\+\_\+view}$<$ Field, N $>$\+::m\+\_\+view\+\_\+ptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{view__array__view_8h}{view\+\_\+array\+\_\+view.\+h}\end{DoxyCompactItemize}

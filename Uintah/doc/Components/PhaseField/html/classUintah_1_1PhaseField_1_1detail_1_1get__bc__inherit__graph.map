@@ -1,0 +1,4 @@
+<map id="Uintah::PhaseField::detail::get_bc&lt; Field &gt;" name="Uintah::PhaseField::detail::get_bc&lt; Field &gt;">
+<area shape="rect" id="node2" href="$classUintah_1_1PhaseField_1_1detail_1_1get__bc_3_01ScalarField_3_01T_01_4_01_4.html" title="Get boundary conditions on one face static functor (ScalarField implementation) " alt="" coords="214,5,399,61"/>
+<area shape="rect" id="node3" href="$classUintah_1_1PhaseField_1_1detail_1_1get__bc_3_01VectorField_3_01T_00_01N_01_4_01_4.html" title="Get boundary conditions on one face static functor (VectorField implementation) " alt="" coords="213,85,400,141"/>
+</map>

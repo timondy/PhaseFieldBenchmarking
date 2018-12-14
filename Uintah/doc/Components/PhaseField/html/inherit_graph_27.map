@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classUintah_1_1PhaseField_1_1Base.html" title="Uintah::PhaseField\l::Base\&lt; View\&lt; Field \&gt; \&gt;" alt="" coords="5,27,171,69"/>
+<area shape="rect" id="node2" href="$classUintah_1_1PhaseField_1_1Implementation.html" title="Uintah::PhaseField\l::Implementation\&lt; DWView\l\&lt; Field, VAR, DIM \&gt;, View\l\&lt; Field \&gt;, const Field::label\l_type &amp;, int \&gt;" alt="" coords="219,5,401,91"/>
+<area shape="rect" id="node3" href="$classUintah_1_1PhaseField_1_1DWView.html" title="Wrapper of DataWarehouse variables. " alt="" coords="458,112,621,168"/>
+<area shape="rect" id="node4" href="$classUintah_1_1PhaseField_1_1detail_1_1dw__view.html" title="Uintah::PhaseField\l::detail::dw_view\&lt; Field,\l VAR, DIM, 0 \&gt;" alt="" coords="228,115,392,171"/>
+<area shape="rect" id="node5" href="$classUintah_1_1PhaseField_1_1detail_1_1view.html" title="Abstract wrapper for accessing grid variables. " alt="" coords="236,197,384,238"/>
+<area shape="rect" id="node6" href="$classUintah_1_1PhaseField_1_1detail_1_1virtual__view_3_01View_00_01ScalarField_3_01T_01_4_01_4.html" title="Abstract class for accessing variables on virtual patches (ScalarField implementation) ..." alt="" coords="449,192,629,248"/>
+</map>

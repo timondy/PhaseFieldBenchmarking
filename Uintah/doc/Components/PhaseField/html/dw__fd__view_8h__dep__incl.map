@@ -1,0 +1,33 @@
+<map id="dw_fd_view.h" name="dw_fd_view.h">
+<area shape="rect" id="node2" href="$dwfd__view_8h.html" title="dwfd_view.h" alt="" coords="843,80,937,107"/>
+<area shape="rect" id="node15" href="$bcfd__view_8h.html" title="bcfd_view.h" alt="" coords="1131,677,1223,704"/>
+<area shape="rect" id="node3" href="$DWFDView_8h.html" title="DWFDView.h" alt="" coords="695,155,797,181"/>
+<area shape="rect" id="node4" href="$Problem_8h.html" title="Problem.h" alt="" coords="633,229,715,256"/>
+<area shape="rect" id="node5" href="$SubProblems_8h.html" title="SubProblems.h" alt="" coords="691,304,801,331"/>
+<area shape="rect" id="node22" href="$partition__range_8h.html" title="partition_range.h" alt="" coords="269,379,388,405"/>
+<area shape="rect" id="node30" href="$partition__range__X_8h.html" title="partition_range_X.h" alt="" coords="375,304,509,331"/>
+<area shape="rect" id="node31" href="$HeatProblem_8h.html" title="HeatProblem.h" alt="" coords="549,304,658,331"/>
+<area shape="rect" id="node32" href="$PureMetalProblem_8h.html" title="PureMetalProblem.h" alt="" coords="1079,528,1219,555"/>
+<area shape="rect" id="node6" href="$amr__coarser__view_8h.html" title="amr_coarser_view.h" alt="" coords="933,379,1071,405"/>
+<area shape="rect" id="node10" href="$Heat_8h.html" title="Heat.h" alt="" coords="555,677,617,704"/>
+<area shape="rect" id="node12" href="$PureMetal_8h.html" title="PureMetal.h" alt="" coords="789,677,881,704"/>
+<area shape="rect" id="node17" href="$amr__finer__view_8h.html" title="amr_finer_view.h" alt="" coords="685,379,807,405"/>
+<area shape="rect" id="node7" href="$amr__interpolator__I0_8h.html" title="amr_interpolator_I0.h" alt="" coords="931,453,1075,480"/>
+<area shape="rect" id="node8" href="$amr__interpolator_8h.html" title="amr_interpolator.h" alt="" coords="928,528,1055,555"/>
+<area shape="rect" id="node9" href="$AMRInterpolator_8h.html" title="AMRInterpolator.h" alt="" coords="873,603,1001,629"/>
+<area shape="rect" id="node14" href="$bcs__basic__fd__view_8h.html" title="bcs_basic_fd_view.h" alt="" coords="1025,603,1169,629"/>
+<area shape="rect" id="node11" href="$Heat_8cc.html" title="Heat.cc" alt="" coords="552,752,620,779"/>
+<area shape="rect" id="node13" href="$PureMetal_8cc.html" title="PureMetal.cc" alt="" coords="786,752,885,779"/>
+<area shape="rect" id="node16" href="$BCFDView_8h.html" title="BCFDView.h" alt="" coords="1127,752,1226,779"/>
+<area shape="rect" id="node18" href="$amr__restrictor__I0__NC_8h.html" title="amr_restrictor_I0_NC.h" alt="" coords="515,453,673,480"/>
+<area shape="rect" id="node21" href="$amr__restrictor__I1__CC_8h.html" title="amr_restrictor_I1_CC.h" alt="" coords="697,453,856,480"/>
+<area shape="rect" id="node19" href="$amr__restrictor_8h.html" title="amr_restrictor.h" alt="" coords="609,528,723,555"/>
+<area shape="rect" id="node20" href="$AMRRestrictor_8h.html" title="AMRRestrictor.h" alt="" coords="606,603,726,629"/>
+<area shape="rect" id="node23" href="$BCInterface_8h.html" title="BCInterface.h" alt="" coords="281,453,384,480"/>
+<area shape="rect" id="node24" href="$Application_8h.html" title="Application.h" alt="" coords="288,603,385,629"/>
+<area shape="rect" id="node25" href="$Benchmark01_8h.html" title="Benchmark01.h" alt="" coords="143,677,256,704"/>
+<area shape="rect" id="node27" href="$Benchmark02_8h.html" title="Benchmark02.h" alt="" coords="280,677,393,704"/>
+<area shape="rect" id="node28" href="$Benchmark03_8h.html" title="Benchmark03.h" alt="" coords="417,677,531,704"/>
+<area shape="rect" id="node29" href="$Benchmark04_8h.html" title="Benchmark04.h" alt="" coords="5,677,119,704"/>
+<area shape="rect" id="node26" href="$Benchmark_8cc.html" title="Benchmark.cc" alt="" coords="146,752,253,779"/>
+</map>

@@ -1,0 +1,141 @@
+\hypertarget{classUintah_1_1PhaseField_1_1Factory}{}\section{Uintah\+:\+:Phase\+Field\+:\+:Factory$<$ B, Args $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1Factory}\index{Uintah\+::\+Phase\+Field\+::\+Factory$<$ B, Args $>$@{Uintah\+::\+Phase\+Field\+::\+Factory$<$ B, Args $>$}}
+
+
+Generic factory creator class.  
+
+
+
+
+{\ttfamily \#include $<$Factory.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classUintah_1_1PhaseField_1_1Factory_a52c2dbc3f693413bbd5d1338fa01e3bf}{Register} (std\+::string name, \hyperlink{classUintah_1_1PhaseField_1_1Factory_a896fba2efac0d82ed579b9b0772936f9}{Factory\+Method} constructor)
+\begin{DoxyCompactList}\small\item\em Register to the factory. \end{DoxyCompactList}\item 
+static \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$ B $>$ $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Factory_a286182b5e21838a37893f80613d4a449}{Create} (std\+::string name, Args ... args)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} create. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classUintah_1_1PhaseField_1_1Factory_a896fba2efac0d82ed579b9b0772936f9}{Factory\+Method} = std\+::function$<$ \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$ B $>$ $\ast$(Args...) $>$
+\begin{DoxyCompactList}\small\item\em Pointer type of the derived classes constructors. \end{DoxyCompactList}\item 
+using \hyperlink{classUintah_1_1PhaseField_1_1Factory_aedb6067c58282efa01a12ad72414e0ac}{Factory\+Map} = std\+::map$<$ std\+::string, \hyperlink{classUintah_1_1PhaseField_1_1Factory_a896fba2efac0d82ed579b9b0772936f9}{Factory\+Method} $>$
+\begin{DoxyCompactList}\small\item\em Type of the map between strings and derived classes constructors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classUintah_1_1PhaseField_1_1Factory_aedb6067c58282efa01a12ad72414e0ac}{Factory\+Map} \hyperlink{classUintah_1_1PhaseField_1_1Factory_a22f376fae678b41bc28047d7e517e622}{Registered\+Names} = \{\}
+\begin{DoxyCompactList}\small\item\em Mapping between strings and derived classes constructors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename B, typename ... Args$>$\newline
+class Uintah\+::\+Phase\+Field\+::\+Factory$<$ B, Args $>$}
+
+Generic factory creator class. 
+
+Make possible to create a new instance of a virtual class choosing which derived class implementation to create according to a string
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em B} & virtual base class type \\
+\hline
+{\em Args} & types of the arguments for the derived classes constructors \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Factory_aedb6067c58282efa01a12ad72414e0ac}\label{classUintah_1_1PhaseField_1_1Factory_aedb6067c58282efa01a12ad72414e0ac}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Factory@{Uintah\+::\+Phase\+Field\+::\+Factory}!Factory\+Map@{Factory\+Map}}
+\index{Factory\+Map@{Factory\+Map}!Uintah\+::\+Phase\+Field\+::\+Factory@{Uintah\+::\+Phase\+Field\+::\+Factory}}
+\subsubsection{\texorpdfstring{Factory\+Map}{FactoryMap}}
+{\footnotesize\ttfamily template$<$typename B, typename ... Args$>$ \\
+using \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Uintah\+::\+Phase\+Field\+::\+Factory}$<$ B, Args $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Factory_aedb6067c58282efa01a12ad72414e0ac}{Factory\+Map} =  std\+::map$<$std\+::string, \hyperlink{classUintah_1_1PhaseField_1_1Factory_a896fba2efac0d82ed579b9b0772936f9}{Factory\+Method}$>$\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Type of the map between strings and derived classes constructors. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Factory_a896fba2efac0d82ed579b9b0772936f9}\label{classUintah_1_1PhaseField_1_1Factory_a896fba2efac0d82ed579b9b0772936f9}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Factory@{Uintah\+::\+Phase\+Field\+::\+Factory}!Factory\+Method@{Factory\+Method}}
+\index{Factory\+Method@{Factory\+Method}!Uintah\+::\+Phase\+Field\+::\+Factory@{Uintah\+::\+Phase\+Field\+::\+Factory}}
+\subsubsection{\texorpdfstring{Factory\+Method}{FactoryMethod}}
+{\footnotesize\ttfamily template$<$typename B, typename ... Args$>$ \\
+using \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Uintah\+::\+Phase\+Field\+::\+Factory}$<$ B, Args $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Factory_a896fba2efac0d82ed579b9b0772936f9}{Factory\+Method} =  std\+::function$<$ \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$B$>$ $\ast$ ( Args... ) $>$\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer type of the derived classes constructors. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Factory_a286182b5e21838a37893f80613d4a449}\label{classUintah_1_1PhaseField_1_1Factory_a286182b5e21838a37893f80613d4a449}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Factory@{Uintah\+::\+Phase\+Field\+::\+Factory}!Create@{Create}}
+\index{Create@{Create}!Uintah\+::\+Phase\+Field\+::\+Factory@{Uintah\+::\+Phase\+Field\+::\+Factory}}
+\subsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily template$<$typename B, typename ... Args$>$ \\
+static \hyperlink{classUintah_1_1PhaseField_1_1Base}{Base}$<$B$>$$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Uintah\+::\+Phase\+Field\+::\+Factory}$<$ B, Args $>$\+::Create (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{Args ...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} create. 
+
+Create a derived class given a string
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & string identifying a registered derived class \\
+\hline
+{\em args} & parameters forwarded to the constructor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new instance of derived class 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Factory_a52c2dbc3f693413bbd5d1338fa01e3bf}\label{classUintah_1_1PhaseField_1_1Factory_a52c2dbc3f693413bbd5d1338fa01e3bf}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Factory@{Uintah\+::\+Phase\+Field\+::\+Factory}!Register@{Register}}
+\index{Register@{Register}!Uintah\+::\+Phase\+Field\+::\+Factory@{Uintah\+::\+Phase\+Field\+::\+Factory}}
+\subsubsection{\texorpdfstring{Register()}{Register()}}
+{\footnotesize\ttfamily template$<$typename B, typename ... Args$>$ \\
+static bool \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Uintah\+::\+Phase\+Field\+::\+Factory}$<$ B, Args $>$\+::Register (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\hyperlink{classUintah_1_1PhaseField_1_1Factory_a896fba2efac0d82ed579b9b0772936f9}{Factory\+Method}}]{constructor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Register to the factory. 
+
+Register a string with a particular derived class constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & string to be registered \\
+\hline
+{\em constructor} & pointer to the derived class constructor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether it was added or updated 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Factory_a22f376fae678b41bc28047d7e517e622}\label{classUintah_1_1PhaseField_1_1Factory_a22f376fae678b41bc28047d7e517e622}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Factory@{Uintah\+::\+Phase\+Field\+::\+Factory}!Registered\+Names@{Registered\+Names}}
+\index{Registered\+Names@{Registered\+Names}!Uintah\+::\+Phase\+Field\+::\+Factory@{Uintah\+::\+Phase\+Field\+::\+Factory}}
+\subsubsection{\texorpdfstring{Registered\+Names}{RegisteredNames}}
+{\footnotesize\ttfamily template$<$typename B, typename ... Args$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Factory_aedb6067c58282efa01a12ad72414e0ac}{Uintah\+Parallel\+Component\+Factory\+::\+Factory\+Map} Uintah\+Parallel\+Component\+Factory\+::\+Registered\+Names = \{\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Mapping between strings and derived classes constructors. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Factory_8h}{Factory.\+h}\item 
+\hyperlink{ApplicationFactory_8cc}{Application\+Factory.\+cc}\end{DoxyCompactItemize}

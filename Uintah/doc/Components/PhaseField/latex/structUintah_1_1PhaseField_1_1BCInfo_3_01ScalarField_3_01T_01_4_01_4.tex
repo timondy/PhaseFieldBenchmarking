@@ -1,0 +1,76 @@
+\hypertarget{structUintah_1_1PhaseField_1_1BCInfo_3_01ScalarField_3_01T_01_4_01_4}{}\section{Uintah\+:\+:Phase\+Field\+:\+:B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$ Struct Template Reference}
+\label{structUintah_1_1PhaseField_1_1BCInfo_3_01ScalarField_3_01T_01_4_01_4}\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$}}
+
+
+Boundary Condition Information (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation)  
+
+
+
+
+{\ttfamily \#include $<$B\+C\+Info.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::remove\+\_\+const$<$ T $>$\+::type \hyperlink{structUintah_1_1PhaseField_1_1BCInfo_3_01ScalarField_3_01T_01_4_01_4_a5966d1046d646fa0bf0a2abbff927ce6}{value}
+\begin{DoxyCompactList}\small\item\em value to impose on boundary \end{DoxyCompactList}\item 
+\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} \hyperlink{structUintah_1_1PhaseField_1_1BCInfo_3_01ScalarField_3_01T_01_4_01_4_ae9766432d25bb51969514416b541ba2c}{bc}
+\begin{DoxyCompactList}\small\item\em Type of boundary conditions. \end{DoxyCompactList}\item 
+\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} \hyperlink{structUintah_1_1PhaseField_1_1BCInfo_3_01ScalarField_3_01T_01_4_01_4_a6418f823c0e3c123aaacc573b04cb5ff}{c2f}
+\begin{DoxyCompactList}\small\item\em type of fine/coarse interface conditions \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$}
+
+Boundary Condition Information (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation) 
+
+Stores the type of boundary conditions, o fine coarse interpolation and the value to impose on a boundary face
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the field value at each point \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1BCInfo_3_01ScalarField_3_01T_01_4_01_4_ae9766432d25bb51969514416b541ba2c}\label{structUintah_1_1PhaseField_1_1BCInfo_3_01ScalarField_3_01T_01_4_01_4_ae9766432d25bb51969514416b541ba2c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$}!bc@{bc}}
+\index{bc@{bc}!Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{bc}{bc}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::bc}
+
+
+
+Type of boundary conditions. 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1BCInfo_3_01ScalarField_3_01T_01_4_01_4_a6418f823c0e3c123aaacc573b04cb5ff}\label{structUintah_1_1PhaseField_1_1BCInfo_3_01ScalarField_3_01T_01_4_01_4_a6418f823c0e3c123aaacc573b04cb5ff}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$}!c2f@{c2f}}
+\index{c2f@{c2f}!Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{c2f}{c2f}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::c2f}
+
+
+
+type of fine/coarse interface conditions 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1BCInfo_3_01ScalarField_3_01T_01_4_01_4_a5966d1046d646fa0bf0a2abbff927ce6}\label{structUintah_1_1PhaseField_1_1BCInfo_3_01ScalarField_3_01T_01_4_01_4_a5966d1046d646fa0bf0a2abbff927ce6}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$}!value@{value}}
+\index{value@{value}!Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::remove\+\_\+const$<$T$>$\+::type \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::value}
+
+
+
+value to impose on boundary 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{BCInfo_8h}{B\+C\+Info.\+h}\end{DoxyCompactItemize}

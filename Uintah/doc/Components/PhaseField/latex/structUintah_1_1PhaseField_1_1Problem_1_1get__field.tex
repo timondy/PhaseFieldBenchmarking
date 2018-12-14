@@ -1,0 +1,54 @@
+\hypertarget{structUintah_1_1PhaseField_1_1Problem_1_1get__field}{}\section{Uintah\+:\+:Phase\+Field\+:\+:Problem$<$ V\+AR, S\+TN, Field $>$\+:\+:get\+\_\+field$<$ I, J $>$ Struct Template Reference}
+\label{structUintah_1_1PhaseField_1_1Problem_1_1get__field}\index{Uintah\+::\+Phase\+Field\+::\+Problem$<$ V\+A\+R, S\+T\+N, Field $>$\+::get\+\_\+field$<$ I, J $>$@{Uintah\+::\+Phase\+Field\+::\+Problem$<$ V\+A\+R, S\+T\+N, Field $>$\+::get\+\_\+field$<$ I, J $>$}}
+
+
+Field Type Helper.  
+
+
+
+
+{\ttfamily \#include $<$Problem.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{structUintah_1_1PhaseField_1_1Problem_1_1get__field_a40f9a8ee2faf5e979fee6bc997991b85}{type} = typename std\+::tuple\+\_\+element$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, std\+::tuple$<$ Field... $>$ $>$\+::type\+::template elem\+\_\+type$<$ J... $>$
+\begin{DoxyCompactList}\small\item\em Type hekpof the Field represented by the \mbox{[}J..\mbox{]}-\/th component of the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$\newline
+template$<$size\+\_\+t I, size\+\_\+t... J$>$\newline
+struct Uintah\+::\+Phase\+Field\+::\+Problem$<$ V\+A\+R, S\+T\+N, Field $>$\+::get\+\_\+field$<$ I, J $>$}
+
+Field Type Helper. 
+
+Allow to get the type of the Field represented by the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of the variable within the \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+{\em J} & component indexes of the variable (used with higher dimensional fields) \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1Problem_1_1get__field_a40f9a8ee2faf5e979fee6bc997991b85}\label{structUintah_1_1PhaseField_1_1Problem_1_1get__field_a40f9a8ee2faf5e979fee6bc997991b85}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Problem\+::get\+\_\+field@{Uintah\+::\+Phase\+Field\+::\+Problem\+::get\+\_\+field}!type@{type}}
+\index{type@{type}!Uintah\+::\+Phase\+Field\+::\+Problem\+::get\+\_\+field@{Uintah\+::\+Phase\+Field\+::\+Problem\+::get\+\_\+field}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN, typename... Field$>$ \\
+template$<$size\+\_\+t I, size\+\_\+t... J$>$ \\
+using \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Uintah\+::\+Phase\+Field\+::\+Problem}$<$ V\+AR, S\+TN, Field $>$\+::\hyperlink{structUintah_1_1PhaseField_1_1Problem_1_1get__field}{get\+\_\+field}$<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, J $>$\+::\hyperlink{structUintah_1_1PhaseField_1_1Problem_1_1get__field_a40f9a8ee2faf5e979fee6bc997991b85}{type} =  typename std\+::tuple\+\_\+element $<$ \hyperlink{structUintah_1_1PhaseField_1_1I}{I}, std\+::tuple$<$Field...$>$ $>$\+::type\+::template elem\+\_\+type$<$J...$>$}
+
+
+
+Type hekpof the Field represented by the \mbox{[}J..\mbox{]}-\/th component of the I-\/th \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} variable. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Problem_8h}{Problem.\+h}\end{DoxyCompactItemize}
