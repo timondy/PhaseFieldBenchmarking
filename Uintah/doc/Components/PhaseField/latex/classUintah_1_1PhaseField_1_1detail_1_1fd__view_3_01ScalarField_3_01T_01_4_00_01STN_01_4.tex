@@ -1,0 +1,124 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+TN $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4}\index{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+
+
+Abstract wrapper of grid variables for complex differential operations (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation)  
+
+
+
+
+{\ttfamily \#include $<$fd\+\_\+view.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+TN $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+TN $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_ae0c8252279c942f0732dd858662f045f}{$\sim$fd\+\_\+view} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ V $>$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a5f8aa629d4cfae6641941946ff1d8aad}{gradient} (const Int\+Vector \&id) const =0
+\begin{DoxyCompactList}\small\item\em Get gradient value at position. \end{DoxyCompactList}\item 
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a553675ea0c01e201769674a30333d56a}{laplacian} (const Int\+Vector \&id) const =0
+\begin{DoxyCompactList}\small\item\em Get laplacian at position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, Stn\+Type S\+TN$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}
+
+Abstract wrapper of grid variables for complex differential operations (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation) 
+
+Adds to view the possibility to compute finite-\/difference approximation of of complex differential operations (gradient and laplacian) at internal internal cells/points
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the field value at each point \\
+\hline
+{\em S\+TN} & finite-\/difference stencil \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_ae0c8252279c942f0732dd858662f045f}\label{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_ae0c8252279c942f0732dd858662f045f}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!````~fd\+\_\+view@{$\sim$fd\+\_\+view}}
+\index{````~fd\+\_\+view@{$\sim$fd\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{$\sim$fd\+\_\+view()}{~fd\_view()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1fd__view}{fd\+\_\+view} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a5f8aa629d4cfae6641941946ff1d8aad}\label{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a5f8aa629d4cfae6641941946ff1d8aad}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!gradient@{gradient}}
+\index{gradient@{gradient}!Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{gradient()}{gradient()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual std\+::vector$<$V$>$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::gradient (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get gradient value at position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & position index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+gradient value at id 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_01_4_a53bba74114c4e41819e3c3e8128477be}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a553675ea0c01e201769674a30333d56a}\label{classUintah_1_1PhaseField_1_1detail_1_1fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a553675ea0c01e201769674a30333d56a}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!laplacian@{laplacian}}
+\index{laplacian@{laplacian}!Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{laplacian()}{laplacian()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::laplacian (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get laplacian at position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & position index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+laplacian value at id 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_01_4_a8a1d1b1618801478fc2af6b545245c7b}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{fd__view_8h}{fd\+\_\+view.\+h}\end{DoxyCompactItemize}

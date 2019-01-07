@@ -1,0 +1,68 @@
+\hypertarget{classUintah_1_1PhaseField_1_1BCFDViewFactory}{}\section{Uintah\+:\+:Phase\+Field\+:\+:B\+C\+F\+D\+View\+Factory$<$ Problem, I $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1BCFDViewFactory}\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View\+Factory$<$ Problem, I $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View\+Factory$<$ Problem, I $>$}}
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator implementation for \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View}.  
+
+
+
+
+{\ttfamily \#include $<$B\+C\+F\+D\+View\+Factory.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ Field, S\+TN $>$ $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1BCFDViewFactory_ae064d3d5c16b89c2afe44205cedc4ff8}{create} (const typename Field\+::label\+\_\+type \&label, const Var\+Label $\ast$subproblems\+\_\+label, int material, const Level $\ast$level, const std\+::list$<$ Patch\+::\+Face\+Type $>$ \&faces, const std\+::vector$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ Field $>$ $>$ \&bcs)
+\begin{DoxyCompactList}\small\item\em factory static method for intantiating a B\+C\+View$<$ T, S $>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Problem, size\+\_\+t I$>$\newline
+class Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View\+Factory$<$ Problem, I $>$}
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator implementation for \hyperlink{classUintah_1_1PhaseField_1_1BCFDView}{B\+C\+F\+D\+View}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}} & type of \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} problem \\
+\hline
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & index of Field within \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1BCFDViewFactory_ae064d3d5c16b89c2afe44205cedc4ff8}\label{classUintah_1_1PhaseField_1_1BCFDViewFactory_ae064d3d5c16b89c2afe44205cedc4ff8}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View\+Factory@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View\+Factory}!create@{create}}
+\index{create@{create}!Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View\+Factory@{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View\+Factory}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily template$<$typename Problem , size\+\_\+t I$>$ \\
+static \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$Field, S\+TN$>$$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1BCFDViewFactory}{Uintah\+::\+Phase\+Field\+::\+B\+C\+F\+D\+View\+Factory}$<$ \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{structUintah_1_1PhaseField_1_1I}{I} $>$\+::create (\begin{DoxyParamCaption}\item[{const typename Field\+::label\+\_\+type \&}]{label,  }\item[{const Var\+Label $\ast$}]{subproblems\+\_\+label,  }\item[{int}]{material,  }\item[{const Level $\ast$}]{level,  }\item[{const std\+::list$<$ Patch\+::\+Face\+Type $>$ \&}]{faces,  }\item[{const std\+::vector$<$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ Field $>$ $>$ \&}]{bcs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+factory static method for intantiating a B\+C\+View$<$ T, S $>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & label of variable in the Data\+Warehouse \\
+\hline
+{\em subproblems\+\_\+label} & label of subproblems in the Data\+Warehouse \\
+\hline
+{\em material} & index of material in the Data\+Warehouse \\
+\hline
+{\em level} & level on which data is retrieved \\
+\hline
+{\em faces} & list of the faces where to impose boundary conditions \\
+\hline
+{\em bcs} & vector with info on the boundary conditions (ordered as in faces) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+F\+D\+View$<$ T, S $>$$\ast$ newly instantiated view 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{BCFDViewFactory_8h}{B\+C\+F\+D\+View\+Factory.\+h}\end{DoxyCompactItemize}

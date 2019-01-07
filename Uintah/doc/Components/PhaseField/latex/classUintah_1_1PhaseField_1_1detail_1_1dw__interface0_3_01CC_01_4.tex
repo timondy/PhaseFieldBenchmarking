@@ -1,0 +1,194 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:dw\+\_\+interface0$<$ CC $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4}\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}}
+
+
+Interface for data-\/warehouse (cc implementations)  
+
+
+
+
+{\ttfamily \#include $<$dw\+\_\+interface0\+\_\+\+C\+C.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:dw\+\_\+interface0$<$ CC $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:dw\+\_\+interface0$<$ CC $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Point \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a2643a66e4e8bd62de7382177db262f6d}{get\+\_\+position} (const Patch $\ast$p, const Int\+Vector \&i)
+\begin{DoxyCompactList}\small\item\em get position within patch \end{DoxyCompactList}\item 
+static Point \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a0dd7b14ca510edbf480c3a54f92f978c}{get\+\_\+position} (const Level $\ast$l, const Int\+Vector \&i)
+\begin{DoxyCompactList}\small\item\em get position within level \end{DoxyCompactList}\item 
+static Int\+Vector \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_aa5eb357ac72806395c26237ed8f99d35}{get\+\_\+low} (const Patch $\ast$p)
+\begin{DoxyCompactList}\small\item\em get patch first index \end{DoxyCompactList}\item 
+static Int\+Vector \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_ac43d60210f4efd7ffa0ca62788161f8a}{get\+\_\+high} (const Patch $\ast$p)
+\begin{DoxyCompactList}\small\item\em get patch past the end index \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr Ghost\+::\+Ghost\+Type \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a95c8e4cca1a77793692a758d06dac8a5}{ghost\+\_\+type} = Ghost\+::\+Around\+Cells
+\begin{DoxyCompactList}\small\item\em type of ghost for variable in the datawarehouse \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_adb6d19a0028b35dce581e0d110ad99a0}{dw\+\_\+interface0} ()=delete
+\begin{DoxyCompactList}\small\item\em prevent coonstruction \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a07c134f8f27e061e5f4c4641f0ec9ad8}{dw\+\_\+interface0} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{dw\+\_\+interface0} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{dw\+\_\+interface0} \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a4e44be489fb9c660a8584c95b4e104b8}{operator=} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{dw\+\_\+interface0} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) assignment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}
+
+Interface for data-\/warehouse (cc implementations) 
+
+groups together various methods to get info about patches and levels which depend on the different types of variable representation and problem dimensions allowing to choose the relevant implementation at compile time
+
+$<$ V\+AR $>$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_adb6d19a0028b35dce581e0d110ad99a0}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_adb6d19a0028b35dce581e0d110ad99a0}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}!dw\+\_\+interface0@{dw\+\_\+interface0}}
+\index{dw\+\_\+interface0@{dw\+\_\+interface0}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{dw\+\_\+interface0()}{dw\_interface0()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{dw\+\_\+interface0} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+
+
+prevent coonstruction 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a07c134f8f27e061e5f4c4641f0ec9ad8}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a07c134f8f27e061e5f4c4641f0ec9ad8}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}!dw\+\_\+interface0@{dw\+\_\+interface0}}
+\index{dw\+\_\+interface0@{dw\+\_\+interface0}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{dw\+\_\+interface0()}{dw\_interface0()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{dw\+\_\+interface0} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{dw\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_ac43d60210f4efd7ffa0ca62788161f8a}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_ac43d60210f4efd7ffa0ca62788161f8a}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}!get\+\_\+high@{get\+\_\+high}}
+\index{get\+\_\+high@{get\+\_\+high}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+high()}{get\_high()}}
+{\footnotesize\ttfamily static Int\+Vector \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::get\+\_\+high (\begin{DoxyParamCaption}\item[{const Patch $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+get patch past the end index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & grid patch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+upper bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_aa5eb357ac72806395c26237ed8f99d35}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_aa5eb357ac72806395c26237ed8f99d35}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}!get\+\_\+low@{get\+\_\+low}}
+\index{get\+\_\+low@{get\+\_\+low}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+low()}{get\_low()}}
+{\footnotesize\ttfamily static Int\+Vector \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::get\+\_\+low (\begin{DoxyParamCaption}\item[{const Patch $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+get patch first index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & grid patch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+lower bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a2643a66e4e8bd62de7382177db262f6d}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a2643a66e4e8bd62de7382177db262f6d}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}!get\+\_\+position@{get\+\_\+position}}
+\index{get\+\_\+position@{get\+\_\+position}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+position()}{get\_position()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static Point \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::get\+\_\+position (\begin{DoxyParamCaption}\item[{const Patch $\ast$}]{p,  }\item[{const Int\+Vector \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+get position within patch 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & grid patch \\
+\hline
+{\em i} & grid index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+coordinates of the grid element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a0dd7b14ca510edbf480c3a54f92f978c}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a0dd7b14ca510edbf480c3a54f92f978c}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}!get\+\_\+position@{get\+\_\+position}}
+\index{get\+\_\+position@{get\+\_\+position}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+position()}{get\_position()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static Point \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::get\+\_\+position (\begin{DoxyParamCaption}\item[{const Level $\ast$}]{l,  }\item[{const Int\+Vector \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+get position within level 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & grid level \\
+\hline
+{\em i} & grid index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+coordinates of the grid element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a4e44be489fb9c660a8584c95b4e104b8}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a4e44be489fb9c660a8584c95b4e104b8}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{dw\+\_\+interface0}\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{dw\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) assignment. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a95c8e4cca1a77793692a758d06dac8a5}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0_3_01CC_01_4_a95c8e4cca1a77793692a758d06dac8a5}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}!ghost\+\_\+type@{ghost\+\_\+type}}
+\index{ghost\+\_\+type@{ghost\+\_\+type}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0$<$ C\+C $>$}}
+\subsubsection{\texorpdfstring{ghost\+\_\+type}{ghost\_type}}
+{\footnotesize\ttfamily constexpr Ghost\+::\+Ghost\+Type \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__interface0}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+interface0}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC} $>$\+::ghost\+\_\+type = Ghost\+::\+Around\+Cells\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+type of ghost for variable in the datawarehouse 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dw__interface0__CC_8h}{dw\+\_\+interface0\+\_\+\+C\+C.\+h}\end{DoxyCompactItemize}

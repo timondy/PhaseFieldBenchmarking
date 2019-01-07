@@ -1,0 +1,50 @@
+\hypertarget{structUintah_1_1PhaseField_1_1combinations}{}\section{Uintah\+:\+:Phase\+Field\+:\+:combinations$<$ N, R $>$ Struct Template Reference}
+\label{structUintah_1_1PhaseField_1_1combinations}\index{Uintah\+::\+Phase\+Field\+::combinations$<$ N, R $>$@{Uintah\+::\+Phase\+Field\+::combinations$<$ N, R $>$}}
+
+
+Compile time combinations.  
+
+
+
+
+{\ttfamily \#include $<$Expressions.\+h$>$}
+
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr size\+\_\+t \hyperlink{structUintah_1_1PhaseField_1_1combinations_af4ee057e220b323e71a7bfb2107af0a1}{value} = \hyperlink{structUintah_1_1PhaseField_1_1factorial}{factorial}$<$N$>$\+::value / ( \hyperlink{structUintah_1_1PhaseField_1_1factorial}{factorial}$<$R$>$\+::value $\ast$ \hyperlink{structUintah_1_1PhaseField_1_1factorial}{factorial} $<$ N -\/ R $>$\+::value )
+\begin{DoxyCompactList}\small\item\em value of $ N\choose R $ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t N, size\+\_\+t R$>$\newline
+struct Uintah\+::\+Phase\+Field\+::combinations$<$ N, R $>$}
+
+Compile time combinations. 
+
+Expression template for computing the binomial coefficient $ N\choose R $ at compile time 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em N} & set size \\
+\hline
+{\em R} & combinations size \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1combinations_af4ee057e220b323e71a7bfb2107af0a1}\label{structUintah_1_1PhaseField_1_1combinations_af4ee057e220b323e71a7bfb2107af0a1}} 
+\index{Uintah\+::\+Phase\+Field\+::combinations@{Uintah\+::\+Phase\+Field\+::combinations}!value@{value}}
+\index{value@{value}!Uintah\+::\+Phase\+Field\+::combinations@{Uintah\+::\+Phase\+Field\+::combinations}}
+\subsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t R$>$ \\
+constexpr size\+\_\+t \hyperlink{structUintah_1_1PhaseField_1_1combinations}{Uintah\+::\+Phase\+Field\+::combinations}$<$ N, R $>$\+::value = \hyperlink{structUintah_1_1PhaseField_1_1factorial}{factorial}$<$N$>$\+::value / ( \hyperlink{structUintah_1_1PhaseField_1_1factorial}{factorial}$<$R$>$\+::value $\ast$ \hyperlink{structUintah_1_1PhaseField_1_1factorial}{factorial} $<$ N -\/ R $>$\+::value )\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+value of $ N\choose R $ 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Expressions_8h}{Expressions.\+h}\end{DoxyCompactItemize}

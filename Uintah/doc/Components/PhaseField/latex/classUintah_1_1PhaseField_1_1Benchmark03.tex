@@ -1,0 +1,717 @@
+\hypertarget{classUintah_1_1PhaseField_1_1Benchmark03}{}\section{Uintah\+:\+:Phase\+Field\+:\+:Benchmark03$<$ V\+AR, S\+TN $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1Benchmark03}\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03$<$ V\+A\+R, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::\+Benchmark03$<$ V\+A\+R, S\+T\+N $>$}}
+
+
+Benchmark I\+II application\+: 1D Cahn Hilliard.  
+
+
+
+
+{\ttfamily \#include $<$Benchmark03.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:Benchmark03$<$ V\+AR, S\+TN $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1Benchmark03__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:Benchmark03$<$ V\+AR, S\+TN $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1Benchmark03__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_ad2f44d664d62ff81a6f7ec039d779c35}{Benchmark03} (const Processor\+Group $\ast$myworld, const Material\+ManagerP material\+Manager, int verbosity=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a9527212bded7f353e9376f278ab9baf4}{$\sim$\+Benchmark03} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a07e76b7ec2c47efb2cb28dc038720b1a}{Benchmark03} (\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Benchmark03} const \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Benchmark03} \& \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a737e2ac7671a49af4ea12c684d5c8e63}{operator=} (\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Benchmark03} const \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) assignment. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a5af4428f49db343bf95f911607fe7a52}{Name}
+\item 
+{\footnotesize template$<$$>$ }\\const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a5a0cc49838d8e6850bf47551196041c4}{Name}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_aab82b308863066536c21e027f2795cd3}{Name}
+\begin{DoxyCompactList}\small\item\em Class name as used by \hyperlink{classUintah_1_1PhaseField_1_1ApplicationFactory}{Application\+Factory}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_ac00a1530386dfec6ceac6fd596b137e1}{problem\+Setup} (Problem\+SpecP const \&params, Problem\+SpecP const \&restart\+\_\+prob\+\_\+spec, GridP \&grid) override
+\begin{DoxyCompactList}\small\item\em Setup. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a7d45ff9174a7b0c83890dad43730df3c}{schedule\+Initialize} (LevelP const \&level, SchedulerP \&sched) override
+\begin{DoxyCompactList}\small\item\em Schedule the initialization tasks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_abcaca760998f8456529825bd35470deb}{schedule\+Restart\+Initialize} (LevelP const \&level, SchedulerP \&sched) override
+\begin{DoxyCompactList}\small\item\em Schedule the initialization tasks for restarting a simulation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a6da7217df9dea578d4a9c35982a743b7}{schedule\+Compute\+Stable\+Time\+Step} (LevelP const \&level, SchedulerP \&sched) override
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+compute\+\_\+stable\+\_\+timestep. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_aa2b5eeaf8726e56e512095e15612783e}{schedule\+Time\+Advance} (LevelP const \&level, SchedulerP \&sched) override
+\begin{DoxyCompactList}\small\item\em Schedule the time advance tasks. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a7c0d12cc78ef53dfd16049b452a41b64}{schedule\+Time\+Advance\+\_\+solution} (const LevelP \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+solution. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a0c433430de13f1b4fbd2d671b13a192a}{schedule\+Time\+Advance\+\_\+v} (LevelP const \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+solution. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_acb3c3cdb91b958e3bb4bcfdcc809e72b}{schedule\+Time\+Advance\+\_\+u} (LevelP const \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+solution. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a6e782ef567230e917ad9afe2b5e677eb}{schedule\+Time\+Advance\+\_\+postprocess} (LevelP const \&level, SchedulerP \&sched)
+\begin{DoxyCompactList}\small\item\em Schedule task\+\_\+time\+\_\+advance\+\_\+postprocess. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_af80ddfd8cce9feab9427d9a1cea71f9b}{task\+\_\+initialize\+\_\+solution} (Processor\+Group const $\ast$myworld, Patch\+Subset const $\ast$patches, Material\+Subset const $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Initialize solution task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a7f43fa4a4319add16174dc4446e0efd0}{task\+\_\+compute\+\_\+stable\+\_\+timestep} (Processor\+Group const $\ast$myworld, Patch\+Subset const $\ast$patches, Material\+Subset const $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Compute timestep task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a9c26151e4a228e657451beda0d61c710}{task\+\_\+time\+\_\+advance\+\_\+v} (Processor\+Group const $\ast$myworld, Patch\+Subset const $\ast$patches, Material\+Subset const $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Advance solution task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a7c76a65417afb7e852e12416cf67a3aa}{task\+\_\+time\+\_\+advance\+\_\+u} (Processor\+Group const $\ast$myworld, Patch\+Subset const $\ast$patches, Material\+Subset const $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Advance solution task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a6636a94200d4aeaee5805d3ab93f6d9b}{task\+\_\+time\+\_\+advance\+\_\+postprocess} (Processor\+Group const $\ast$myworld, Patch\+Subset const $\ast$patches, Material\+Subset const $\ast$matls, Data\+Warehouse $\ast$dw\+\_\+old, Data\+Warehouse $\ast$dw\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Advance postprocess task. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_addcf86da2865373798dcb9138f4cc6c0}{initialize\+\_\+solution} (const Int\+Vector \&id, const Patch $\ast$patch, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&u)
+\begin{DoxyCompactList}\small\item\em Initialize solution implementation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a9843324dc26fc3eb005d66fc1bcf8925}{time\+\_\+advance\+\_\+v} (const Int\+Vector \&id, const \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&u\+\_\+old, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&v\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Advance solution implementation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a51ea928c378f24b331e11e162df4fbe2}{time\+\_\+advance\+\_\+u} (const Int\+Vector \&id, const \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$ $>$ \&u\+\_\+old, const \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&v\+\_\+new, \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&u\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Advance solution implementation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a680037eb4f53f69ffec819f6964f695d}{time\+\_\+advance\+\_\+postprocess\+\_\+energy} (const Int\+Vector \&id, const Patch $\ast$patch, const \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&u\+\_\+new, double \&energy)
+\begin{DoxyCompactList}\small\item\em Advance system energy implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a2ed09d87caef15cfaf3b91828b0733d6}{dbg\+\_\+out1}
+\begin{DoxyCompactList}\small\item\em Output streams for debugging. \end{DoxyCompactList}\item 
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_acbd79e4c8670dd870251a5d72fcac8d1}{dbg\+\_\+out2}
+\item 
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a8cc0f383b9728ff5e231141d0c27f932}{dbg\+\_\+out3}
+\item 
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a29cd210e788cbabd667218cad16139d6}{dbg\+\_\+out4}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_ab692d6e3cd312a0a07f0d02ce4819e22}{u\+\_\+label}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a339f3cb33651e391b9fda92ced34870b}{v\+\_\+label}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_af60ffd6c85ad808b303a8faac0c9dce8}{u0\+\_\+label}
+\item 
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a45df7033030bf7cf92dae0b901d30410}{energy\+\_\+label}
+\item 
+double \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_a2ed55bf5e285b705c3b3a895dc03bd57}{delt}
+\begin{DoxyCompactList}\small\item\em Time step size. \end{DoxyCompactList}\item 
+double \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03_ab486022710d8d32de2c7aa2dcf017e4a}{epsilon}
+\begin{DoxyCompactList}\small\item\em Interface width. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$\newline
+class Uintah\+::\+Phase\+Field\+::\+Benchmark03$<$ V\+A\+R, S\+T\+N $>$}
+
+Benchmark I\+II application\+: 1D Cahn Hilliard. 
+
+\[ \dot u = \epsilon^2 v^{\prime\prime} + \nabla^2 W^\prime(u) \] \[ v = u^{\prime\prime} \] where \[ W (u) = \frac{1}{4} (u^2 − 1)^2 \] on $[0, 2\pi]^2$ with initial data \[ u_{|t=0} = \cos(2x) + \exp[ \cos(x+1/10) ]/100 \] and with periodic boundary conditions.
+
+The model parameters are\+:
+\begin{DoxyItemize}
+\item $ \epsilon $ interface width
+\end{DoxyItemize}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em V\+AR} & type of variable representation \\
+\hline
+{\em S\+TN} & finite-\/difference stencil \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_ad2f44d664d62ff81a6f7ec039d779c35}\label{classUintah_1_1PhaseField_1_1Benchmark03_ad2f44d664d62ff81a6f7ec039d779c35}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!Benchmark03@{Benchmark03}}
+\index{Benchmark03@{Benchmark03}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{Benchmark03()}{Benchmark03()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Benchmark03} (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{myworld,  }\item[{const Material\+ManagerP}]{material\+Manager,  }\item[{int}]{verbosity = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Intantiate a Benchmark I\+II application
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em material\+Manager} & data structure to manage materials \\
+\hline
+{\em verbosity} & constrols amount of debugging output \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a9527212bded7f353e9376f278ab9baf4}\label{classUintah_1_1PhaseField_1_1Benchmark03_a9527212bded7f353e9376f278ab9baf4}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!````~Benchmark03@{$\sim$\+Benchmark03}}
+\index{````~Benchmark03@{$\sim$\+Benchmark03}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{$\sim$\+Benchmark03()}{~Benchmark03()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Benchmark03} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a07e76b7ec2c47efb2cb28dc038720b1a}\label{classUintah_1_1PhaseField_1_1Benchmark03_a07e76b7ec2c47efb2cb28dc038720b1a}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!Benchmark03@{Benchmark03}}
+\index{Benchmark03@{Benchmark03}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{Benchmark03()}{Benchmark03()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Benchmark03} (\begin{DoxyParamCaption}\item[{\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Benchmark03}$<$ V\+AR, S\+TN $>$ const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_addcf86da2865373798dcb9138f4cc6c0}\label{classUintah_1_1PhaseField_1_1Benchmark03_addcf86da2865373798dcb9138f4cc6c0}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!initialize\+\_\+solution@{initialize\+\_\+solution}}
+\index{initialize\+\_\+solution@{initialize\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{initialize\+\_\+solution()}{initialize\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::initialize\+\_\+solution (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id,  }\item[{const Patch $\ast$}]{patch,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialize solution implementation. 
+
+compute initial condition for u at a given grid position
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id} & grid index \\
+\hline
+ & {\em patch} & grid patch \\
+\hline
+\mbox{\tt out}  & {\em u} & view of the solution field in the new dw \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a5af4428f49db343bf95f911607fe7a52}\label{classUintah_1_1PhaseField_1_1Benchmark03_a5af4428f49db343bf95f911607fe7a52}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{Name()}{Name()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda22303704507d024d1d6508ed9859a85a}{CC}, \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a4f237510ae9624ab7568055802b586c6}{P3} $>$\+::Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a5a0cc49838d8e6850bf47551196041c4}\label{classUintah_1_1PhaseField_1_1Benchmark03_a5a0cc49838d8e6850bf47551196041c4}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{Name()}{Name()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC}, \hyperlink{namespaceUintah_1_1PhaseField_a24d833a720598df1020f5cc2e75f8702a4f237510ae9624ab7568055802b586c6}{P3} $>$\+::Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a737e2ac7671a49af4ea12c684d5c8e63}\label{classUintah_1_1PhaseField_1_1Benchmark03_a737e2ac7671a49af4ea12c684d5c8e63}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!operator=@{operator=}}
+\index{operator=@{operator=}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Benchmark03}\& \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Benchmark03}$<$ V\+AR, S\+TN $>$ const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) assignment. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_ac00a1530386dfec6ceac6fd596b137e1}\label{classUintah_1_1PhaseField_1_1Benchmark03_ac00a1530386dfec6ceac6fd596b137e1}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!problem\+Setup@{problem\+Setup}}
+\index{problem\+Setup@{problem\+Setup}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{problem\+Setup()}{problemSetup()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::problem\+Setup (\begin{DoxyParamCaption}\item[{Problem\+SpecP const \&}]{params,  }\item[{Problem\+SpecP const \&}]{restart\+\_\+prob\+\_\+spec,  }\item[{GridP \&}]{grid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Setup. 
+
+Initialize problem parameters with values from problem specifications
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & problem specifications parsed from input file \\
+\hline
+{\em restart\+\_\+prob\+\_\+spec} & unused \\
+\hline
+{\em grid} & unused \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a6da7217df9dea578d4a9c35982a743b7}\label{classUintah_1_1PhaseField_1_1Benchmark03_a6da7217df9dea578d4a9c35982a743b7}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!schedule\+Compute\+Stable\+Time\+Step@{schedule\+Compute\+Stable\+Time\+Step}}
+\index{schedule\+Compute\+Stable\+Time\+Step@{schedule\+Compute\+Stable\+Time\+Step}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{schedule\+Compute\+Stable\+Time\+Step()}{scheduleComputeStableTimeStep()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::schedule\+Compute\+Stable\+Time\+Step (\begin{DoxyParamCaption}\item[{LevelP const \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule task\+\_\+compute\+\_\+stable\+\_\+timestep. 
+
+Specify all tasks to be performed before each time advance to compute a timestep size which ensures numerical stability
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be initialized \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a7d45ff9174a7b0c83890dad43730df3c}\label{classUintah_1_1PhaseField_1_1Benchmark03_a7d45ff9174a7b0c83890dad43730df3c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!schedule\+Initialize@{schedule\+Initialize}}
+\index{schedule\+Initialize@{schedule\+Initialize}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{schedule\+Initialize()}{scheduleInitialize()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::schedule\+Initialize (\begin{DoxyParamCaption}\item[{LevelP const \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule the initialization tasks. 
+
+Specify all tasks to be performed at initial timestep to initialize variables in the Data\+Warehouse
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be initialized \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_abcaca760998f8456529825bd35470deb}\label{classUintah_1_1PhaseField_1_1Benchmark03_abcaca760998f8456529825bd35470deb}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!schedule\+Restart\+Initialize@{schedule\+Restart\+Initialize}}
+\index{schedule\+Restart\+Initialize@{schedule\+Restart\+Initialize}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{schedule\+Restart\+Initialize()}{scheduleRestartInitialize()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::schedule\+Restart\+Initialize (\begin{DoxyParamCaption}\item[{LevelP const \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule the initialization tasks for restarting a simulation. 
+
+Specify all tasks to be performed at fist timestep after a stop to initialize not saved variables to the Data\+Warehouse
+
+\begin{DoxyRemark}{Remarks}
+only subproblems need to be reinitialized all other variables should be retrieved from saved checkpoints
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be initialized \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_aa2b5eeaf8726e56e512095e15612783e}\label{classUintah_1_1PhaseField_1_1Benchmark03_aa2b5eeaf8726e56e512095e15612783e}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!schedule\+Time\+Advance@{schedule\+Time\+Advance}}
+\index{schedule\+Time\+Advance@{schedule\+Time\+Advance}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance()}{scheduleTimeAdvance()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::schedule\+Time\+Advance (\begin{DoxyParamCaption}\item[{LevelP const \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Schedule the time advance tasks. 
+
+Specify all tasks to be performed at each timestep to update the simulation variables in the Data\+Warehouse
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be initialized \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a6e782ef567230e917ad9afe2b5e677eb}\label{classUintah_1_1PhaseField_1_1Benchmark03_a6e782ef567230e917ad9afe2b5e677eb}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!schedule\+Time\+Advance\+\_\+postprocess@{schedule\+Time\+Advance\+\_\+postprocess}}
+\index{schedule\+Time\+Advance\+\_\+postprocess@{schedule\+Time\+Advance\+\_\+postprocess}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+postprocess()}{scheduleTimeAdvance\_postprocess()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::schedule\+Time\+Advance\+\_\+postprocess (\begin{DoxyParamCaption}\item[{LevelP const \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+postprocess. 
+
+Defines the dependencies and output of the task which updates energy and solution value at middle point allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a7c0d12cc78ef53dfd16049b452a41b64}\label{classUintah_1_1PhaseField_1_1Benchmark03_a7c0d12cc78ef53dfd16049b452a41b64}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!schedule\+Time\+Advance\+\_\+solution@{schedule\+Time\+Advance\+\_\+solution}}
+\index{schedule\+Time\+Advance\+\_\+solution@{schedule\+Time\+Advance\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+solution()}{scheduleTimeAdvance\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::schedule\+Time\+Advance\+\_\+solution (\begin{DoxyParamCaption}\item[{const LevelP \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+solution. 
+
+Defines the dependencies and output of the tasks which updates the solution allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_acb3c3cdb91b958e3bb4bcfdcc809e72b}\label{classUintah_1_1PhaseField_1_1Benchmark03_acb3c3cdb91b958e3bb4bcfdcc809e72b}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!schedule\+Time\+Advance\+\_\+u@{schedule\+Time\+Advance\+\_\+u}}
+\index{schedule\+Time\+Advance\+\_\+u@{schedule\+Time\+Advance\+\_\+u}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+u()}{scheduleTimeAdvance\_u()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::schedule\+Time\+Advance\+\_\+u (\begin{DoxyParamCaption}\item[{LevelP const \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+solution. 
+
+Defines the dependencies and output of the tasks which updates u allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a0c433430de13f1b4fbd2d671b13a192a}\label{classUintah_1_1PhaseField_1_1Benchmark03_a0c433430de13f1b4fbd2d671b13a192a}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!schedule\+Time\+Advance\+\_\+v@{schedule\+Time\+Advance\+\_\+v}}
+\index{schedule\+Time\+Advance\+\_\+v@{schedule\+Time\+Advance\+\_\+v}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{schedule\+Time\+Advance\+\_\+v()}{scheduleTimeAdvance\_v()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::schedule\+Time\+Advance\+\_\+v (\begin{DoxyParamCaption}\item[{LevelP const \&}]{level,  }\item[{SchedulerP \&}]{sched }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Schedule task\+\_\+time\+\_\+advance\+\_\+solution. 
+
+Defines the dependencies and output of the tasks which updates v allowing sched to control its execution order
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & grid level to be updated \\
+\hline
+{\em sched} & scheduler to manage the tasks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a7f43fa4a4319add16174dc4446e0efd0}\label{classUintah_1_1PhaseField_1_1Benchmark03_a7f43fa4a4319add16174dc4446e0efd0}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!task\+\_\+compute\+\_\+stable\+\_\+timestep@{task\+\_\+compute\+\_\+stable\+\_\+timestep}}
+\index{task\+\_\+compute\+\_\+stable\+\_\+timestep@{task\+\_\+compute\+\_\+stable\+\_\+timestep}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{task\+\_\+compute\+\_\+stable\+\_\+timestep()}{task\_compute\_stable\_timestep()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::task\+\_\+compute\+\_\+stable\+\_\+timestep (\begin{DoxyParamCaption}\item[{Processor\+Group const $\ast$}]{myworld,  }\item[{Patch\+Subset const $\ast$}]{patches,  }\item[{Material\+Subset const $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Compute timestep task. 
+
+Puts into the new Data\+Warehouse the constant value specified in input (delt) of the timestep
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & unused \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_af80ddfd8cce9feab9427d9a1cea71f9b}\label{classUintah_1_1PhaseField_1_1Benchmark03_af80ddfd8cce9feab9427d9a1cea71f9b}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!task\+\_\+initialize\+\_\+solution@{task\+\_\+initialize\+\_\+solution}}
+\index{task\+\_\+initialize\+\_\+solution@{task\+\_\+initialize\+\_\+solution}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{task\+\_\+initialize\+\_\+solution()}{task\_initialize\_solution()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::task\+\_\+initialize\+\_\+solution (\begin{DoxyParamCaption}\item[{Processor\+Group const $\ast$}]{myworld,  }\item[{Patch\+Subset const $\ast$}]{patches,  }\item[{Material\+Subset const $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialize solution task. 
+
+Allocate and save variables u and v for each one of the patches and save them to dw\+\_\+new
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & unused \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a6636a94200d4aeaee5805d3ab93f6d9b}\label{classUintah_1_1PhaseField_1_1Benchmark03_a6636a94200d4aeaee5805d3ab93f6d9b}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!task\+\_\+time\+\_\+advance\+\_\+postprocess@{task\+\_\+time\+\_\+advance\+\_\+postprocess}}
+\index{task\+\_\+time\+\_\+advance\+\_\+postprocess@{task\+\_\+time\+\_\+advance\+\_\+postprocess}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{task\+\_\+time\+\_\+advance\+\_\+postprocess()}{task\_time\_advance\_postprocess()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::task\+\_\+time\+\_\+advance\+\_\+postprocess (\begin{DoxyParamCaption}\item[{Processor\+Group const $\ast$}]{myworld,  }\item[{Patch\+Subset const $\ast$}]{patches,  }\item[{Material\+Subset const $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Advance postprocess task. 
+
+Computes new value of the system energy and of the solution at middle point
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & Data\+Warehouse for previous timestep \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a7c76a65417afb7e852e12416cf67a3aa}\label{classUintah_1_1PhaseField_1_1Benchmark03_a7c76a65417afb7e852e12416cf67a3aa}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!task\+\_\+time\+\_\+advance\+\_\+u@{task\+\_\+time\+\_\+advance\+\_\+u}}
+\index{task\+\_\+time\+\_\+advance\+\_\+u@{task\+\_\+time\+\_\+advance\+\_\+u}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{task\+\_\+time\+\_\+advance\+\_\+u()}{task\_time\_advance\_u()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::task\+\_\+time\+\_\+advance\+\_\+u (\begin{DoxyParamCaption}\item[{Processor\+Group const $\ast$}]{myworld,  }\item[{Patch\+Subset const $\ast$}]{patches,  }\item[{Material\+Subset const $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Advance solution task. 
+
+Computes new value of u using the value of the newly computed v and the solution and at previous timestep
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & Data\+Warehouse for previous timestep \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a9c26151e4a228e657451beda0d61c710}\label{classUintah_1_1PhaseField_1_1Benchmark03_a9c26151e4a228e657451beda0d61c710}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!task\+\_\+time\+\_\+advance\+\_\+v@{task\+\_\+time\+\_\+advance\+\_\+v}}
+\index{task\+\_\+time\+\_\+advance\+\_\+v@{task\+\_\+time\+\_\+advance\+\_\+v}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{task\+\_\+time\+\_\+advance\+\_\+v()}{task\_time\_advance\_v()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::task\+\_\+time\+\_\+advance\+\_\+v (\begin{DoxyParamCaption}\item[{Processor\+Group const $\ast$}]{myworld,  }\item[{Patch\+Subset const $\ast$}]{patches,  }\item[{Material\+Subset const $\ast$}]{matls,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+old,  }\item[{Data\+Warehouse $\ast$}]{dw\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Advance solution task. 
+
+Computes new value of v using the value of the solution and at previous timestep
+
+
+\begin{DoxyParams}{Parameters}
+{\em myworld} & data structure to manage mpi processes \\
+\hline
+{\em patches} & list of patches to be initialized \\
+\hline
+{\em matls} & unused \\
+\hline
+{\em dw\+\_\+old} & Data\+Warehouse for previous timestep \\
+\hline
+{\em dw\+\_\+new} & Data\+Warehouse to be initialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a680037eb4f53f69ffec819f6964f695d}\label{classUintah_1_1PhaseField_1_1Benchmark03_a680037eb4f53f69ffec819f6964f695d}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!time\+\_\+advance\+\_\+postprocess\+\_\+energy@{time\+\_\+advance\+\_\+postprocess\+\_\+energy}}
+\index{time\+\_\+advance\+\_\+postprocess\+\_\+energy@{time\+\_\+advance\+\_\+postprocess\+\_\+energy}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{time\+\_\+advance\+\_\+postprocess\+\_\+energy()}{time\_advance\_postprocess\_energy()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::time\+\_\+advance\+\_\+postprocess\+\_\+energy (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id,  }\item[{const Patch $\ast$}]{patch,  }\item[{const \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&}]{u\+\_\+new,  }\item[{double \&}]{energy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Advance system energy implementation. 
+
+compute new value for energy at a given grid position and accumulate it
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id} & grid index \\
+\hline
+ & {\em patch} & grid patch \\
+\hline
+ & {\em u\+\_\+new} & view of the solution field in the new dw \\
+\hline
+\mbox{\tt out}  & {\em energy} & system energy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a51ea928c378f24b331e11e162df4fbe2}\label{classUintah_1_1PhaseField_1_1Benchmark03_a51ea928c378f24b331e11e162df4fbe2}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!time\+\_\+advance\+\_\+u@{time\+\_\+advance\+\_\+u}}
+\index{time\+\_\+advance\+\_\+u@{time\+\_\+advance\+\_\+u}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{time\+\_\+advance\+\_\+u()}{time\_advance\_u()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::time\+\_\+advance\+\_\+u (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id,  }\item[{const \hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$ $>$ \&}]{u\+\_\+old,  }\item[{const \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&}]{v\+\_\+new,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&}]{u\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Advance solution implementation. 
+
+compute new value for u at a given grid position using the value of the solution and at previous timestep
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id} & grid index \\
+\hline
+ & {\em u\+\_\+old} & view of u field in the old dw \\
+\hline
+ & {\em v\+\_\+new} & view of v field in the old dw \\
+\hline
+\mbox{\tt out}  & {\em u\+\_\+new} & view of the solution field in the new dw \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a9843324dc26fc3eb005d66fc1bcf8925}\label{classUintah_1_1PhaseField_1_1Benchmark03_a9843324dc26fc3eb005d66fc1bcf8925}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!time\+\_\+advance\+\_\+v@{time\+\_\+advance\+\_\+v}}
+\index{time\+\_\+advance\+\_\+v@{time\+\_\+advance\+\_\+v}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{time\+\_\+advance\+\_\+v()}{time\_advance\_v()}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::time\+\_\+advance\+\_\+v (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id,  }\item[{const \hyperlink{namespaceUintah_1_1PhaseField_a63032464b1cd54eaa53c1c29109746ac}{F\+D\+View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ const double $>$, S\+TN $>$ \&}]{u\+\_\+old,  }\item[{\hyperlink{namespaceUintah_1_1PhaseField_a59210a1e28eba254d428762c92ddeabb}{View}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ double $>$ $>$ \&}]{v\+\_\+new }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Advance solution implementation. 
+
+compute new value for v at a given grid position using the value of the solution and at previous timestep
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em id} & grid index \\
+\hline
+ & {\em u\+\_\+old} & view of the solution field in the old dw \\
+\hline
+\mbox{\tt out}  & {\em v\+\_\+new} & view of v field in the new dw \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a2ed09d87caef15cfaf3b91828b0733d6}\label{classUintah_1_1PhaseField_1_1Benchmark03_a2ed09d87caef15cfaf3b91828b0733d6}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!dbg\+\_\+out1@{dbg\+\_\+out1}}
+\index{dbg\+\_\+out1@{dbg\+\_\+out1}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{dbg\+\_\+out1}{dbg\_out1}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::dbg\+\_\+out1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Output streams for debugging. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_acbd79e4c8670dd870251a5d72fcac8d1}\label{classUintah_1_1PhaseField_1_1Benchmark03_acbd79e4c8670dd870251a5d72fcac8d1}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!dbg\+\_\+out2@{dbg\+\_\+out2}}
+\index{dbg\+\_\+out2@{dbg\+\_\+out2}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{dbg\+\_\+out2}{dbg\_out2}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::dbg\+\_\+out2\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a8cc0f383b9728ff5e231141d0c27f932}\label{classUintah_1_1PhaseField_1_1Benchmark03_a8cc0f383b9728ff5e231141d0c27f932}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!dbg\+\_\+out3@{dbg\+\_\+out3}}
+\index{dbg\+\_\+out3@{dbg\+\_\+out3}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{dbg\+\_\+out3}{dbg\_out3}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::dbg\+\_\+out3\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a29cd210e788cbabd667218cad16139d6}\label{classUintah_1_1PhaseField_1_1Benchmark03_a29cd210e788cbabd667218cad16139d6}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!dbg\+\_\+out4@{dbg\+\_\+out4}}
+\index{dbg\+\_\+out4@{dbg\+\_\+out4}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{dbg\+\_\+out4}{dbg\_out4}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+Debug\+Stream \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::dbg\+\_\+out4\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a2ed55bf5e285b705c3b3a895dc03bd57}\label{classUintah_1_1PhaseField_1_1Benchmark03_a2ed55bf5e285b705c3b3a895dc03bd57}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!delt@{delt}}
+\index{delt@{delt}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{delt}{delt}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+double \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::delt\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Time step size. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a45df7033030bf7cf92dae0b901d30410}\label{classUintah_1_1PhaseField_1_1Benchmark03_a45df7033030bf7cf92dae0b901d30410}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!energy\+\_\+label@{energy\+\_\+label}}
+\index{energy\+\_\+label@{energy\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{energy\+\_\+label}{energy\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+const Var\+Label$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::energy\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_ab486022710d8d32de2c7aa2dcf017e4a}\label{classUintah_1_1PhaseField_1_1Benchmark03_ab486022710d8d32de2c7aa2dcf017e4a}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{epsilon}{epsilon}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+double \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::epsilon\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Interface width. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_aab82b308863066536c21e027f2795cd3}\label{classUintah_1_1PhaseField_1_1Benchmark03_aab82b308863066536c21e027f2795cd3}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::Name\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Class name as used by \hyperlink{classUintah_1_1PhaseField_1_1ApplicationFactory}{Application\+Factory}. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_af60ffd6c85ad808b303a8faac0c9dce8}\label{classUintah_1_1PhaseField_1_1Benchmark03_af60ffd6c85ad808b303a8faac0c9dce8}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!u0\+\_\+label@{u0\+\_\+label}}
+\index{u0\+\_\+label@{u0\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{u0\+\_\+label}{u0\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+const Var\+Label$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::u0\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_ab692d6e3cd312a0a07f0d02ce4819e22}\label{classUintah_1_1PhaseField_1_1Benchmark03_ab692d6e3cd312a0a07f0d02ce4819e22}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!u\+\_\+label@{u\+\_\+label}}
+\index{u\+\_\+label@{u\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{u\+\_\+label}{u\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+const Var\+Label$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::u\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1Benchmark03_a339f3cb33651e391b9fda92ced34870b}\label{classUintah_1_1PhaseField_1_1Benchmark03_a339f3cb33651e391b9fda92ced34870b}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}!v\+\_\+label@{v\+\_\+label}}
+\index{v\+\_\+label@{v\+\_\+label}!Uintah\+::\+Phase\+Field\+::\+Benchmark03@{Uintah\+::\+Phase\+Field\+::\+Benchmark03}}
+\subsubsection{\texorpdfstring{v\+\_\+label}{v\_label}}
+{\footnotesize\ttfamily template$<$Var\+Type V\+AR, Stn\+Type S\+TN$>$ \\
+const Var\+Label $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1Benchmark03}{Uintah\+::\+Phase\+Field\+::\+Benchmark03}$<$ V\+AR, S\+TN $>$\+::v\+\_\+label\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Benchmark03_8h}{Benchmark03.\+h}\end{DoxyCompactItemize}

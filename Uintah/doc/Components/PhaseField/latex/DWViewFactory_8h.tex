@@ -1,0 +1,40 @@
+\hypertarget{DWViewFactory_8h}{}\section{D\+W\+View\+Factory.\+h File Reference}
+\label{DWViewFactory_8h}\index{D\+W\+View\+Factory.\+h@{D\+W\+View\+Factory.\+h}}
+{\ttfamily \#include $<$C\+C\+A/\+Components/\+Phase\+Field/\+Util/\+Definitions.\+h$>$}\newline
+{\ttfamily \#include $<$C\+C\+A/\+Components/\+Phase\+Field/\+Factory/\+Factory.\+h$>$}\newline
+{\ttfamily \#include $<$C\+C\+A/\+Components/\+Phase\+Field/\+Views/\+View.\+h$>$}\newline
+Include dependency graph for D\+W\+View\+Factory.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DWViewFactory_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structUintah_1_1PhaseField_1_1DWViewFactory}{Uintah\+::\+Phase\+Field\+::\+D\+W\+View\+Factory$<$ Field, V\+A\+R, D\+I\+M $>$}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator implementation for \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View} Not implemented as there is no need yet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceUintah}{Uintah}
+\item 
+ \hyperlink{namespaceUintah_1_1PhaseField}{Uintah\+::\+Phase\+Field}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Field $>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a04193a30328f38b29159b738067c8552}{Uintah\+::\+Phase\+Field\+::\+D\+W\+Factory\+View} = Factory$<$ View$<$ Field $>$, const typename Field\+::label\+\_\+type \&, int $>$
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} creator for \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Field $>$ }\\using \hyperlink{namespaceUintah_1_1PhaseField_a84debf843dd25a2f827840a59d1bf021}{Uintah\+::\+Phase\+Field\+::\+D\+W\+Base\+View} = Base$<$ View$<$ Field $>$ $>$
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} base for \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Jon Matteo Church \mbox{[}\href{mailto:j.m.church@leeds.ac.uk}{\tt j.\+m.\+church@leeds.\+ac.\+uk}\mbox{]} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018/12 
+\end{DoxyDate}

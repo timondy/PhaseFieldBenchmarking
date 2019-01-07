@@ -1,0 +1,53 @@
+\hypertarget{classUintah_1_1PhaseField_1_1ApplicationFactory}{}\section{Uintah\+:\+:Phase\+Field\+:\+:Application\+Factory Class Reference}
+\label{classUintah_1_1PhaseField_1_1ApplicationFactory}\index{Uintah\+::\+Phase\+Field\+::\+Application\+Factory@{Uintah\+::\+Phase\+Field\+::\+Application\+Factory}}
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} class for different \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} applications.  
+
+
+
+
+{\ttfamily \#include $<$Application\+Factory.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Uintah\+Parallel\+Component $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1ApplicationFactory_ac5cb141180ec988bac718994efcce36f}{create} (const Processor\+Group $\ast$my\+World, const Material\+ManagerP material\+Manager, Problem\+SpecP prob\+Spec, bool do\+A\+MR)
+\begin{DoxyCompactList}\small\item\em factory create method \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} class for different \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} applications. 
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} class for creating new instances of Uintah\+Parallel\+Component within the \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} component 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1ApplicationFactory_ac5cb141180ec988bac718994efcce36f}\label{classUintah_1_1PhaseField_1_1ApplicationFactory_ac5cb141180ec988bac718994efcce36f}} 
+\index{Uintah\+::\+Phase\+Field\+::\+Application\+Factory@{Uintah\+::\+Phase\+Field\+::\+Application\+Factory}!create@{create}}
+\index{create@{create}!Uintah\+::\+Phase\+Field\+::\+Application\+Factory@{Uintah\+::\+Phase\+Field\+::\+Application\+Factory}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily Uintah\+Parallel\+Component $\ast$ Application\+Factory\+::create (\begin{DoxyParamCaption}\item[{const Processor\+Group $\ast$}]{my\+World,  }\item[{const Material\+ManagerP}]{material\+Manager,  }\item[{Problem\+SpecP}]{prob\+Spec,  }\item[{bool}]{do\+A\+MR }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+factory create method 
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} method for creating new instances of Uintah\+Parallel\+Component within the \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} component
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+World} & data structure to manage mpi processes \\
+\hline
+{\em material\+Manager} & data structure to manage materials \\
+\hline
+{\em prob\+Spec} & specifications parsed from ups input file \\
+\hline
+{\em do\+A\+MR} & if adaptive mesh refinement is requsted by the input \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ApplicationFactory_8h}{Application\+Factory.\+h}\item 
+\hyperlink{ApplicationFactory_8cc}{Application\+Factory.\+cc}\end{DoxyCompactItemize}

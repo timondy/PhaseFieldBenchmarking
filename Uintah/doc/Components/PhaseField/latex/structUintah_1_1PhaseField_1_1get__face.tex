@@ -1,0 +1,74 @@
+\hypertarget{structUintah_1_1PhaseField_1_1get__face}{}\section{Uintah\+:\+:Phase\+Field\+:\+:get\+\_\+face$<$ F $>$ Struct Template Reference}
+\label{structUintah_1_1PhaseField_1_1get__face}\index{Uintah\+::\+Phase\+Field\+::get\+\_\+face$<$ F $>$@{Uintah\+::\+Phase\+Field\+::get\+\_\+face$<$ F $>$}}
+
+
+Patch\+::\+Face\+Type Helper.  
+
+
+
+
+{\ttfamily \#include $<$Definitions.\+h$>$}
+
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} \hyperlink{structUintah_1_1PhaseField_1_1get__face_ad9ba7a557252042a35b38103270ab337}{dir} = ( \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} ) ( F / 2 )
+\begin{DoxyCompactList}\small\item\em face direction \end{DoxyCompactList}\item 
+static constexpr int \hyperlink{structUintah_1_1PhaseField_1_1get__face_a55e98edca4379a745b28aa34f1d530a2}{sgn} = 2 $\ast$ ( F \% 2 ) -\/ 1
+\begin{DoxyCompactList}\small\item\em face sign (int) \end{DoxyCompactList}\item 
+static constexpr double \hyperlink{structUintah_1_1PhaseField_1_1get__face_a8a9bcbabfa59c782a7c0ea0d55d85673}{dsgn} = static\+\_\+cast$<$double$>$ ( \hyperlink{structUintah_1_1PhaseField_1_1get__face_a55e98edca4379a745b28aa34f1d530a2}{sgn} )
+\begin{DoxyCompactList}\small\item\em face sign (double) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Patch\+::\+Face\+Type F$>$\newline
+struct Uintah\+::\+Phase\+Field\+::get\+\_\+face$<$ F $>$}
+
+Patch\+::\+Face\+Type Helper. 
+
+Helper struct to get expressions dependent on the given face 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Patch\+::\+Face\+Type} & face \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__face_ad9ba7a557252042a35b38103270ab337}\label{structUintah_1_1PhaseField_1_1get__face_ad9ba7a557252042a35b38103270ab337}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+face@{Uintah\+::\+Phase\+Field\+::get\+\_\+face}!dir@{dir}}
+\index{dir@{dir}!Uintah\+::\+Phase\+Field\+::get\+\_\+face@{Uintah\+::\+Phase\+Field\+::get\+\_\+face}}
+\subsubsection{\texorpdfstring{dir}{dir}}
+{\footnotesize\ttfamily template$<$Patch\+::\+Face\+Type F$>$ \\
+constexpr \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} \hyperlink{structUintah_1_1PhaseField_1_1get__face}{Uintah\+::\+Phase\+Field\+::get\+\_\+face}$<$ F $>$\+::dir = ( \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} ) ( F / 2 )\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+face direction 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__face_a8a9bcbabfa59c782a7c0ea0d55d85673}\label{structUintah_1_1PhaseField_1_1get__face_a8a9bcbabfa59c782a7c0ea0d55d85673}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+face@{Uintah\+::\+Phase\+Field\+::get\+\_\+face}!dsgn@{dsgn}}
+\index{dsgn@{dsgn}!Uintah\+::\+Phase\+Field\+::get\+\_\+face@{Uintah\+::\+Phase\+Field\+::get\+\_\+face}}
+\subsubsection{\texorpdfstring{dsgn}{dsgn}}
+{\footnotesize\ttfamily template$<$Patch\+::\+Face\+Type F$>$ \\
+constexpr double \hyperlink{structUintah_1_1PhaseField_1_1get__face}{Uintah\+::\+Phase\+Field\+::get\+\_\+face}$<$ F $>$\+::dsgn = static\+\_\+cast$<$double$>$ ( \hyperlink{structUintah_1_1PhaseField_1_1get__face_a55e98edca4379a745b28aa34f1d530a2}{sgn} )\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+face sign (double) 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__face_a55e98edca4379a745b28aa34f1d530a2}\label{structUintah_1_1PhaseField_1_1get__face_a55e98edca4379a745b28aa34f1d530a2}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+face@{Uintah\+::\+Phase\+Field\+::get\+\_\+face}!sgn@{sgn}}
+\index{sgn@{sgn}!Uintah\+::\+Phase\+Field\+::get\+\_\+face@{Uintah\+::\+Phase\+Field\+::get\+\_\+face}}
+\subsubsection{\texorpdfstring{sgn}{sgn}}
+{\footnotesize\ttfamily template$<$Patch\+::\+Face\+Type F$>$ \\
+constexpr int \hyperlink{structUintah_1_1PhaseField_1_1get__face}{Uintah\+::\+Phase\+Field\+::get\+\_\+face}$<$ F $>$\+::sgn = 2 $\ast$ ( F \% 2 ) -\/ 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+face sign (int) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Definitions_8h}{Definitions.\+h}\end{DoxyCompactItemize}

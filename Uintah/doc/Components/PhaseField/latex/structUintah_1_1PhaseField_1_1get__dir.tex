@@ -1,0 +1,82 @@
+\hypertarget{structUintah_1_1PhaseField_1_1get__dir}{}\section{Uintah\+:\+:Phase\+Field\+:\+:get\+\_\+dir$<$ D\+IR $>$ Struct Template Reference}
+\label{structUintah_1_1PhaseField_1_1get__dir}\index{Uintah\+::\+Phase\+Field\+::get\+\_\+dir$<$ D\+I\+R $>$@{Uintah\+::\+Phase\+Field\+::get\+\_\+dir$<$ D\+I\+R $>$}}
+
+
+Dir\+Type Helper.  
+
+
+
+
+{\ttfamily \#include $<$Definitions.\+h$>$}
+
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} \hyperlink{structUintah_1_1PhaseField_1_1get__dir_a210b10609a865b8f542e78e0d2ba38b0}{lower} = ( \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} ) ( D\+IR -\/ 1 )
+\begin{DoxyCompactList}\small\item\em Dir\+Type corresponding to the coordinate direction whose index precedes D\+IR. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} \hyperlink{structUintah_1_1PhaseField_1_1get__dir_a04063dff326643b6ca4262b753de1c8b}{higher} = ( \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} ) ( D\+IR + 1 )
+\begin{DoxyCompactList}\small\item\em Dir\+Type corresponding to the coordinate direction whose index follows D\+IR. \end{DoxyCompactList}\item 
+static constexpr Patch\+::\+Face\+Type \hyperlink{structUintah_1_1PhaseField_1_1get__dir_ac1dfe53d61e67038a7784e8d7d1f0b1a}{minus\+\_\+face} = ( Patch\+::\+Face\+Type ) ( 2 $\ast$ D\+IR )
+\begin{DoxyCompactList}\small\item\em Patch\+::\+Face\+Type orthogonal to D\+IR (lower face) \end{DoxyCompactList}\item 
+static constexpr Patch\+::\+Face\+Type \hyperlink{structUintah_1_1PhaseField_1_1get__dir_ac765716f79e2b699e4fb5a7434c8612f}{plus\+\_\+face} = ( Patch\+::\+Face\+Type ) ( 2 $\ast$ D\+IR + 1 )
+\begin{DoxyCompactList}\small\item\em Patch\+::\+Face\+Type orthogonal to D\+IR (upper face) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Dir\+Type D\+IR$>$\newline
+struct Uintah\+::\+Phase\+Field\+::get\+\_\+dir$<$ D\+I\+R $>$}
+
+Dir\+Type Helper. 
+
+Helper struct to get expressions dependent on the given coordinate direction 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__dir_a04063dff326643b6ca4262b753de1c8b}\label{structUintah_1_1PhaseField_1_1get__dir_a04063dff326643b6ca4262b753de1c8b}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+dir@{Uintah\+::\+Phase\+Field\+::get\+\_\+dir}!higher@{higher}}
+\index{higher@{higher}!Uintah\+::\+Phase\+Field\+::get\+\_\+dir@{Uintah\+::\+Phase\+Field\+::get\+\_\+dir}}
+\subsubsection{\texorpdfstring{higher}{higher}}
+{\footnotesize\ttfamily template$<$Dir\+Type D\+IR$>$ \\
+constexpr \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} \hyperlink{structUintah_1_1PhaseField_1_1get__dir}{Uintah\+::\+Phase\+Field\+::get\+\_\+dir}$<$ D\+IR $>$\+::higher = ( \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} ) ( D\+IR + 1 )\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Dir\+Type corresponding to the coordinate direction whose index follows D\+IR. 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__dir_a210b10609a865b8f542e78e0d2ba38b0}\label{structUintah_1_1PhaseField_1_1get__dir_a210b10609a865b8f542e78e0d2ba38b0}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+dir@{Uintah\+::\+Phase\+Field\+::get\+\_\+dir}!lower@{lower}}
+\index{lower@{lower}!Uintah\+::\+Phase\+Field\+::get\+\_\+dir@{Uintah\+::\+Phase\+Field\+::get\+\_\+dir}}
+\subsubsection{\texorpdfstring{lower}{lower}}
+{\footnotesize\ttfamily template$<$Dir\+Type D\+IR$>$ \\
+constexpr \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} \hyperlink{structUintah_1_1PhaseField_1_1get__dir}{Uintah\+::\+Phase\+Field\+::get\+\_\+dir}$<$ D\+IR $>$\+::lower = ( \hyperlink{namespaceUintah_1_1PhaseField_a94555da848596a419ae2c0e32649e1dc}{Dir\+Type} ) ( D\+IR -\/ 1 )\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Dir\+Type corresponding to the coordinate direction whose index precedes D\+IR. 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__dir_ac1dfe53d61e67038a7784e8d7d1f0b1a}\label{structUintah_1_1PhaseField_1_1get__dir_ac1dfe53d61e67038a7784e8d7d1f0b1a}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+dir@{Uintah\+::\+Phase\+Field\+::get\+\_\+dir}!minus\+\_\+face@{minus\+\_\+face}}
+\index{minus\+\_\+face@{minus\+\_\+face}!Uintah\+::\+Phase\+Field\+::get\+\_\+dir@{Uintah\+::\+Phase\+Field\+::get\+\_\+dir}}
+\subsubsection{\texorpdfstring{minus\+\_\+face}{minus\_face}}
+{\footnotesize\ttfamily template$<$Dir\+Type D\+IR$>$ \\
+constexpr Patch\+::\+Face\+Type \hyperlink{structUintah_1_1PhaseField_1_1get__dir}{Uintah\+::\+Phase\+Field\+::get\+\_\+dir}$<$ D\+IR $>$\+::minus\+\_\+face = ( Patch\+::\+Face\+Type ) ( 2 $\ast$ D\+IR )\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Patch\+::\+Face\+Type orthogonal to D\+IR (lower face) 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__dir_ac765716f79e2b699e4fb5a7434c8612f}\label{structUintah_1_1PhaseField_1_1get__dir_ac765716f79e2b699e4fb5a7434c8612f}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+dir@{Uintah\+::\+Phase\+Field\+::get\+\_\+dir}!plus\+\_\+face@{plus\+\_\+face}}
+\index{plus\+\_\+face@{plus\+\_\+face}!Uintah\+::\+Phase\+Field\+::get\+\_\+dir@{Uintah\+::\+Phase\+Field\+::get\+\_\+dir}}
+\subsubsection{\texorpdfstring{plus\+\_\+face}{plus\_face}}
+{\footnotesize\ttfamily template$<$Dir\+Type D\+IR$>$ \\
+constexpr Patch\+::\+Face\+Type \hyperlink{structUintah_1_1PhaseField_1_1get__dir}{Uintah\+::\+Phase\+Field\+::get\+\_\+dir}$<$ D\+IR $>$\+::plus\+\_\+face = ( Patch\+::\+Face\+Type ) ( 2 $\ast$ D\+IR + 1 )\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Patch\+::\+Face\+Type orthogonal to D\+IR (upper face) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Definitions_8h}{Definitions.\+h}\end{DoxyCompactItemize}

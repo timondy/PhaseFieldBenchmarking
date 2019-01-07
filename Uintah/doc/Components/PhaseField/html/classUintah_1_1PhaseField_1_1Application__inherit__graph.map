@@ -1,0 +1,6 @@
+<map id="Uintah::PhaseField::Application&lt; VAR, DIM, STN, AMR &gt;" name="Uintah::PhaseField::Application&lt; VAR, DIM, STN, AMR &gt;">
+<area shape="rect" id="node2" href="$classUintah_1_1PhaseField_1_1Application_3_01VAR_00_01DIM_00_01STN_00_01false_01_4.html" title="Virtual base for PhaseField applications (non&#45;AMR implementation) " alt="" coords="208,5,347,61"/>
+<area shape="rect" id="node3" href="$classUintah_1_1PhaseField_1_1Application_3_01VAR_00_01DIM_00_01STN_00_01true_01_4.html" title="Virtual base for PhaseField applications (AMR implementation) " alt="" coords="208,85,347,141"/>
+<area shape="rect" id="node4" href="$classUintah_1_1PhaseField_1_1Heat.html" title="Heat PhaseField applications. " alt="" coords="192,165,363,221"/>
+<area shape="rect" id="node5" href="$classUintah_1_1PhaseField_1_1PureMetal.html" title="PureMetal PhaseField applications. " alt="" coords="194,245,361,301"/>
+</map>

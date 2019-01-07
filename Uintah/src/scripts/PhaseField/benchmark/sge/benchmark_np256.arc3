@@ -1,0 +1,66 @@
+#$ -cwd -V
+#$ -m be -M scjmc@leeds.ac.uk
+#$ -l np=256
+
+if [ -z "$UPATH" ]; then
+    UPATH=$HOME/uintah/trunk
+fi
+
+SUS=$UPATH/opt/StandAlone/sus
+
+INP=$UPATH/src/StandAlone/inputs/PhaseField/benchmark/benchmark01
+
+FN=benchmark01_cc_eps005_n511_k3e-04
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps005_n511_k9e-04
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps005_n511_k9e-05
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps010_n511_k3e-04
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps010_n511_k9e-04
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps010_n511_k9e-05
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps020_n511_k3e-04
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps020_n511_k9e-04
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps020_n511_k9e-05
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps005_n512_k3e-04
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps005_n512_k9e-04
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps005_n512_k9e-05
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps010_n512_k3e-04
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps010_n512_k9e-04
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps010_n512_k9e-05
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps020_n512_k3e-04
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps020_n512_k9e-04
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps020_n512_k9e-05
+mpirun -np 256 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+

@@ -1,0 +1,88 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1get__bc_3_01ScalarField_3_01T_01_4_01_4}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:get\+\_\+bc$<$ Scalar\+Field$<$ T $>$ $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1get__bc_3_01ScalarField_3_01T_01_4_01_4}\index{Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bc$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bc$<$ Scalar\+Field$<$ T $>$ $>$}}
+
+
+Get boundary conditions on one face static functor (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation)  
+
+
+
+
+{\ttfamily \#include $<$get\+\_\+bc.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:get\+\_\+bc$<$ Scalar\+Field$<$ T $>$ $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classUintah_1_1PhaseField_1_1detail_1_1get__bc_3_01ScalarField_3_01T_01_4_01_4__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:get\+\_\+bc$<$ Scalar\+Field$<$ T $>$ $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classUintah_1_1PhaseField_1_1detail_1_1get__bc_3_01ScalarField_3_01T_01_4_01_4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1get__bc_3_01ScalarField_3_01T_01_4_01_4_ad8220caed33e768ba378750f4b7fa9fa}{exec} (Patch const $\ast$patch, const Patch\+::\+Face\+Type \&face, const int \&child, const int \&material, const Var\+Label $\ast$const \&label, const std\+::map$<$ std\+::string, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} $>$ $\ast$c2f, bool \&flag)
+\begin{DoxyCompactList}\small\item\em Execute the functor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bc$<$ Scalar\+Field$<$ T $>$ $>$}
+
+Get boundary conditions on one face static functor (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation) 
+
+Allows to get the boundary value for a given variable label on a given boundary face (face, child) of the given patch.
+
+\begin{DoxyRemark}{Remarks}
+Refactor of get\+B\+C\+Value function in Core/\+Grid/\+Boundary\+Conditions/\+B\+C\+Utils.\+h
+\end{DoxyRemark}
+$<$ Field $>$ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1get__bc_3_01ScalarField_3_01T_01_4_01_4_ad8220caed33e768ba378750f4b7fa9fa}\label{classUintah_1_1PhaseField_1_1detail_1_1get__bc_3_01ScalarField_3_01T_01_4_01_4_ad8220caed33e768ba378750f4b7fa9fa}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bc$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bc$<$ Scalar\+Field$<$ T $>$ $>$}!exec@{exec}}
+\index{exec@{exec}!Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bc$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bc$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}$<$\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field}$>$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1get__bc}{Uintah\+::\+Phase\+Field\+::detail\+::get\+\_\+bc}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::exec (\begin{DoxyParamCaption}\item[{Patch const $\ast$}]{patch,  }\item[{const Patch\+::\+Face\+Type \&}]{face,  }\item[{const int \&}]{child,  }\item[{const int \&}]{material,  }\item[{const Var\+Label $\ast$const \&}]{label,  }\item[{const std\+::map$<$ std\+::string, \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} $>$ $\ast$}]{c2f,  }\item[{bool \&}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Execute the functor. 
+
+If patch get\+B\+C\+Type is Patch\+::\+Coarse it also populate the output c2f field with the relevant value from the c2f map in input Otherwise, if get\+B\+C\+Type is specified but not \char`\"{}simmetry\char`\"{}, retrieves the values required to enforce the boundary conditions specified in input.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em patch} & grid patch to be checked \\
+\hline
+ & {\em face} & face to check \\
+\hline
+ & {\em child} & bc index (it is possible to specify multiple bc for the same variable) \\
+\hline
+ & {\em material} & problem material index \\
+\hline
+ & {\em label} & variable label to check \\
+\hline
+ & {\em c2f} & which fine/coarse interface conditions to use on each variable \\
+\hline
+\mbox{\tt in,out}  & {\em flag} & flag to check if any bc is applied to the given face \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retrieved boundary conditions information 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{get__bc_8h}{get\+\_\+bc.\+h}\end{DoxyCompactItemize}

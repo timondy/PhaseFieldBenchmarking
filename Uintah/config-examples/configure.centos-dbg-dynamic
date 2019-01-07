@@ -1,0 +1,9 @@
+#!/bin/bash
+
+../src/configure \
+  --enable-debug="-fPIC -g" \
+  --enable-phasefield \
+  --with-mpi-include=/usr/include/openmpi-x86_64 \
+  --with-mpi-lib=/usr/lib64/openmpi/lib \
+  --with-hypre=no \
+  --with-petsc=no

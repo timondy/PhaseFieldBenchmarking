@@ -1,0 +1,5 @@
+<map id="Uintah::PhaseField::Heat&lt; VAR, DIM, STN, AMR &gt;" name="Uintah::PhaseField::Heat&lt; VAR, DIM, STN, AMR &gt;">
+<area shape="rect" id="node2" href="$classUintah_1_1PhaseField_1_1Application.html" title="Virtual base for PhaseField applications. " alt="" coords="317,5,455,61"/>
+<area shape="rect" id="node3" href="$classUintah_1_1PhaseField_1_1Implementation.html" title="Uintah::PhaseField\l::Implementation\&lt; Heat\l\&lt; VAR, DIM, STN, AMR \&gt;\l, UintahParallelComponent,\l const ProcessorGroup *,\l const MaterialManagerP, int \&gt;" alt="" coords="285,85,487,185"/>
+<area shape="rect" id="node4" href="$classUintah_1_1PhaseField_1_1Base.html" title="Uintah::PhaseField\l::Base\&lt; UintahParallelComponent \&gt;" alt="" coords="5,114,237,155"/>
+</map>

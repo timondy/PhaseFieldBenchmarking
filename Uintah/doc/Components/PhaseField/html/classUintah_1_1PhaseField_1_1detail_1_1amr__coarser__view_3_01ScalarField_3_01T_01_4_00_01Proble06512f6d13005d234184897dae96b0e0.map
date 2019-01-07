@@ -1,0 +1,4 @@
+<map id="Uintah::PhaseField::detail::amr_coarser_view&lt; ScalarField&lt; T &gt;, Problem, index_sequence&lt; I... &gt; &gt;" name="Uintah::PhaseField::detail::amr_coarser_view&lt; ScalarField&lt; T &gt;, Problem, index_sequence&lt; I... &gt; &gt;">
+<area shape="rect" id="node2" href="$classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4.html" title="Abstract class for accessing variables (ScalarField implementation) " alt="" coords="5,20,179,76"/>
+<area shape="rect" id="node3" href="$classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4.html" title="Container for collecting multiple views as a unique composite view (ScalarField implementation) ..." alt="" coords="227,52,404,108"/>
+</map>

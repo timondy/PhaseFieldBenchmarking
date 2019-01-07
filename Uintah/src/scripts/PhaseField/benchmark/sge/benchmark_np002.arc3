@@ -1,0 +1,30 @@
+#$ -cwd -V
+#$ -l h_rt=48:00:00
+#$ -l np=2
+
+if [ -z "$UPATH" ]; then
+    UPATH=$HOME/uintah/trunk
+fi
+
+SUS=$UPATH/opt/StandAlone/sus
+
+INP=$UPATH/src/StandAlone/inputs/PhaseField/benchmark/benchmark03
+
+FN=benchmark03_cc_n063_k3e-04
+mpirun -np 2 $SUS $INP/$FN.ups 1> $FN.log 2> $FN.err
+
+FN=benchmark03_cc_n063_k9e-05
+mpirun -np 2 $SUS $INP/$FN.ups 1> $FN.log 2> $FN.err
+
+FN=benchmark03_cc_n063_k3e-05
+mpirun -np 2 $SUS $INP/$FN.ups 1> $FN.log 2> $FN.err
+
+FN=benchmark03_nc_n064_k3e-04
+mpirun -np 2 $SUS $INP/$FN.ups 1> $FN.log 2> $FN.err
+
+FN=benchmark03_nc_n064_k9e-05
+mpirun -np 2 $SUS $INP/$FN.ups 1> $FN.log 2> $FN.err
+
+FN=benchmark03_nc_n064_k3e-05
+mpirun -np 2 $SUS $INP/$FN.ups 1> $FN.log 2> $FN.err
+

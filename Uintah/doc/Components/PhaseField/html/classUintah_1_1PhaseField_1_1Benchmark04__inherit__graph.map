@@ -1,0 +1,5 @@
+<map id="Uintah::PhaseField::Benchmark04&lt; VAR, STN &gt;" name="Uintah::PhaseField::Benchmark04&lt; VAR, STN &gt;">
+<area shape="rect" id="node2" href="$classUintah_1_1PhaseField_1_1Application.html" title="Uintah::PhaseField\l::Application\&lt; VAR,\l D2, STN, false \&gt;" alt="" coords="369,5,507,61"/>
+<area shape="rect" id="node3" href="$classUintah_1_1PhaseField_1_1Implementation.html" title="Uintah::PhaseField\l::Implementation\&lt; Benchmark04\l\&lt; VAR, STN \&gt;, UintahParallelComponent,\l const ProcessorGroup *, const MaterialManager\lP, int \&gt;" alt="" coords="285,85,591,171"/>
+<area shape="rect" id="node4" href="$classUintah_1_1PhaseField_1_1Base.html" title="Uintah::PhaseField\l::Base\&lt; UintahParallelComponent \&gt;" alt="" coords="5,107,237,149"/>
+</map>

@@ -1,0 +1,76 @@
+\hypertarget{structUintah_1_1PhaseField_1_1get__bcf}{}\section{Uintah\+:\+:Phase\+Field\+:\+:get\+\_\+bcf$<$ P $>$ Struct Template Reference}
+\label{structUintah_1_1PhaseField_1_1get__bcf}\index{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf$<$ P $>$@{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf$<$ P $>$}}
+
+
+B\+CF Helper.  
+
+
+
+
+{\ttfamily \#include $<$Definitions.\+h$>$}
+
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} \hyperlink{structUintah_1_1PhaseField_1_1get__bcf_ab31404d547e11f080ff3a88cf1a8d58d}{bc} = ( \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} ) ( P \& 0x0000\+F\+F00 )
+\begin{DoxyCompactList}\small\item\em type of boundary conditions \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} \hyperlink{structUintah_1_1PhaseField_1_1get__bcf_a1e4dad009db8a43648ddfb7bec0accb9}{c2f} = ( \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} ) ( P \& 0x00\+F\+F0000 )
+\begin{DoxyCompactList}\small\item\em type of fine/coarse interface conditions \end{DoxyCompactList}\item 
+static constexpr Patch\+::\+Face\+Type \hyperlink{structUintah_1_1PhaseField_1_1get__bcf_a6d5a9f0b2a5c5f39dcdf3e8d7b61feba}{face} = ( Patch\+::\+Face\+Type ) ( P \& 0x000000\+F\+F )
+\begin{DoxyCompactList}\small\item\em patch face \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$B\+CF P$>$\newline
+struct Uintah\+::\+Phase\+Field\+::get\+\_\+bcf$<$ P $>$}
+
+B\+CF Helper. 
+
+Helper struct to get expressions dependent on the given BC, FC, and Patch\+::\+Face pack
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em P} & BC, FC, and Patch\+::\+Face pack \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__bcf_ab31404d547e11f080ff3a88cf1a8d58d}\label{structUintah_1_1PhaseField_1_1get__bcf_ab31404d547e11f080ff3a88cf1a8d58d}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf@{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf}!bc@{bc}}
+\index{bc@{bc}!Uintah\+::\+Phase\+Field\+::get\+\_\+bcf@{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf}}
+\subsubsection{\texorpdfstring{bc}{bc}}
+{\footnotesize\ttfamily template$<$B\+CF P$>$ \\
+constexpr \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} \hyperlink{structUintah_1_1PhaseField_1_1get__bcf}{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf}$<$ P $>$\+::bc = ( \hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} ) ( P \& 0x0000\+F\+F00 )\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+type of boundary conditions 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__bcf_a1e4dad009db8a43648ddfb7bec0accb9}\label{structUintah_1_1PhaseField_1_1get__bcf_a1e4dad009db8a43648ddfb7bec0accb9}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf@{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf}!c2f@{c2f}}
+\index{c2f@{c2f}!Uintah\+::\+Phase\+Field\+::get\+\_\+bcf@{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf}}
+\subsubsection{\texorpdfstring{c2f}{c2f}}
+{\footnotesize\ttfamily template$<$B\+CF P$>$ \\
+constexpr \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} \hyperlink{structUintah_1_1PhaseField_1_1get__bcf}{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf}$<$ P $>$\+::c2f = ( \hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} ) ( P \& 0x00\+F\+F0000 )\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+type of fine/coarse interface conditions 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1get__bcf_a6d5a9f0b2a5c5f39dcdf3e8d7b61feba}\label{structUintah_1_1PhaseField_1_1get__bcf_a6d5a9f0b2a5c5f39dcdf3e8d7b61feba}} 
+\index{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf@{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf}!face@{face}}
+\index{face@{face}!Uintah\+::\+Phase\+Field\+::get\+\_\+bcf@{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf}}
+\subsubsection{\texorpdfstring{face}{face}}
+{\footnotesize\ttfamily template$<$B\+CF P$>$ \\
+constexpr Patch\+::\+Face\+Type \hyperlink{structUintah_1_1PhaseField_1_1get__bcf}{Uintah\+::\+Phase\+Field\+::get\+\_\+bcf}$<$ P $>$\+::face = ( Patch\+::\+Face\+Type ) ( P \& 0x000000\+F\+F )\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+patch face 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Definitions_8h}{Definitions.\+h}\end{DoxyCompactItemize}

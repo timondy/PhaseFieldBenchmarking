@@ -1,0 +1,413 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, NC $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb}\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+
+
+Wrapper of grid variables for restriction from finer to coarser levels (node-\/centered piecewise constant implementation)  
+
+
+
+
+{\ttfamily \#include $<$amr\+\_\+restrictor\+\_\+\+I0\+\_\+\+N\+C.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, NC $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_0df32558d588a2dddebce5cf93a5b29cf}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, NC $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_01f60fd6bddea2818dfc4c8616cecbd87}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_adc68b10aa0ea3669167e75e848315f69}{amr\+\_\+restrictor} (const Var\+Label $\ast$label, const Var\+Label $\ast$subproblems\+\_\+label, int material)
+\begin{DoxyCompactList}\small\item\em construct restrictor without retrieving inner variable data from the Data\+Warehouse \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_aecb2d88122a1adaae4560445ee13eaed}{amr\+\_\+restrictor} (Data\+Warehouse $\ast$dw, const Var\+Label $\ast$label, const Var\+Label $\ast$subproblems\+\_\+label, int material, const Patch $\ast$patch, bool use\+\_\+ghosts=\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a1579c120a731bc2c5e5d53a3e3db51dc}{use\+\_\+ghosts\+\_\+dflt})
+\begin{DoxyCompactList}\small\item\em construct interpolator and retrieve inner variable data from the Data\+Warehouse whitin a given fine patch. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a2b82f57cc6e6034d4ce47be7d9df29f7}{$\sim$amr\+\_\+restrictor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a9dd4c58f76077456452653c0cf793955}{amr\+\_\+restrictor} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor} \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_ae1d3846e6970b38ddf48c6abc6327ea2}{operator=} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) assignment. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_aa937cac548dc6bb5ebda0907804d5434}{set} (Data\+Warehouse $\ast$dw, const Patch $\ast$patch, bool use\+\_\+ghosts=\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a1579c120a731bc2c5e5d53a3e3db51dc}{use\+\_\+ghosts\+\_\+dflt}) override
+\begin{DoxyCompactList}\small\item\em retrieve inner variable data from the Data\+Warehouse whitin a given patch. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a71f5fbbdd3e56e753d19c1d65f5c8467}{set} (Data\+Warehouse $\ast$dw, const Level $\ast$level, const Int\+Vector \&low, const Int\+Vector \&high, bool use\+\_\+ghosts=\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a1579c120a731bc2c5e5d53a3e3db51dc}{use\+\_\+ghosts\+\_\+dflt}) override
+\begin{DoxyCompactList}\small\item\em retrieve inner variable data from the Data\+Warehouse whitin a given region. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a7756f69a970700829f04886c454a4b18}{clone} (bool deep) const override
+\begin{DoxyCompactList}\small\item\em Get a copy of the view. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a81b7ca467a9a0f54f9bf37ca18038240}{clone} (bool deep, const Int\+Vector \&offset) const override
+\begin{DoxyCompactList}\small\item\em Get a copy of the view and apply translate the support. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1Support}{Support} \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a5b7788432aecb51049ec0fdeefd90519}{get\+\_\+support} () const override
+\begin{DoxyCompactList}\small\item\em get restrictor\textquotesingle{}s coarse range \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_acb67236a4a7ecac027655ad592fff4ae}{is\+\_\+defined\+\_\+at} (const Int\+Vector \&id\+\_\+coarse) const override
+\begin{DoxyCompactList}\small\item\em Check if the view has access to the coarse position with index id. \end{DoxyCompactList}\item 
+virtual T \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a900eab9c5c4f402881b207bb5270ebbc}{operator\mbox{[}$\,$\mbox{]}} (const Int\+Vector \&id) override
+\begin{DoxyCompactList}\small\item\em Get/\+Modify value at position with index id (virtual implementation) \end{DoxyCompactList}\item 
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_ab29b8c1e68dba955e6062c84adca2ef4}{operator\mbox{[}$\,$\mbox{]}} (const Int\+Vector \&id\+\_\+coarse) const override
+\begin{DoxyCompactList}\small\item\em get restricted value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a1579c120a731bc2c5e5d53a3e3db51dc}{use\+\_\+ghosts\+\_\+dflt} = false
+\begin{DoxyCompactList}\small\item\em Default value for use\+\_\+ghost when retrieving data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a9d8bbe1e77519c3e16e93d047a231da5}{amr\+\_\+restrictor} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor} $\ast$copy, bool deep)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename Problem, size\+\_\+t... I$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}
+
+Wrapper of grid variables for restriction from finer to coarser levels (node-\/centered piecewise constant implementation) 
+
+implements piecewise constant restriction of a variable from finer to coarser levels.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & variable data type (must be constant) \\
+\hline
+{\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}} & type of \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} problem \\
+\hline
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & list of indices corresponding to the variable within the subproblems\\
+\hline
+\end{DoxyTemplParams}
+$<$ F\+CI, V\+AR, D\+IM, T, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{structUintah_1_1PhaseField_1_1I}{I} $>$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a9d8bbe1e77519c3e16e93d047a231da5}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a9d8bbe1e77519c3e16e93d047a231da5}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!amr\+\_\+restrictor@{amr\+\_\+restrictor}}
+\index{amr\+\_\+restrictor@{amr\+\_\+restrictor}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{amr\+\_\+restrictor()}{amr\_restrictor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$ $\ast$}]{copy,  }\item[{bool}]{deep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Constructor. 
+
+Instantiate a copy of a given view
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & source view for copying \\
+\hline
+{\em deep} & if true inner grid variable is copied as well otherwise the same grid variable is referenced \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_adc68b10aa0ea3669167e75e848315f69}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_adc68b10aa0ea3669167e75e848315f69}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!amr\+\_\+restrictor@{amr\+\_\+restrictor}}
+\index{amr\+\_\+restrictor@{amr\+\_\+restrictor}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{amr\+\_\+restrictor()}{amr\_restrictor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor} (\begin{DoxyParamCaption}\item[{const Var\+Label $\ast$}]{label,  }\item[{const Var\+Label $\ast$}]{subproblems\+\_\+label,  }\item[{int}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+construct restrictor without retrieving inner variable data from the Data\+Warehouse 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & label of variable in the Data\+Warehouse \\
+\hline
+{\em subproblems\+\_\+label} & label of subproblems in the Data\+Warehouse \\
+\hline
+{\em material} & index of material in the Data\+Warehouse \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_aecb2d88122a1adaae4560445ee13eaed}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_aecb2d88122a1adaae4560445ee13eaed}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!amr\+\_\+restrictor@{amr\+\_\+restrictor}}
+\index{amr\+\_\+restrictor@{amr\+\_\+restrictor}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{amr\+\_\+restrictor()}{amr\_restrictor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor} (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const Var\+Label $\ast$}]{label,  }\item[{const Var\+Label $\ast$}]{subproblems\+\_\+label,  }\item[{int}]{material,  }\item[{const Patch $\ast$}]{patch,  }\item[{bool}]{use\+\_\+ghosts = {\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a1579c120a731bc2c5e5d53a3e3db51dc}{use\+\_\+ghosts\+\_\+dflt}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+construct interpolator and retrieve inner variable data from the Data\+Warehouse whitin a given fine patch. 
+
+the number of ghost cells/nodes and the corresponding region on the coarser level is automatically computed to match the interpolation type
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse which data is retrieved from \\
+\hline
+{\em label} & label of variable in the Data\+Warehouse \\
+\hline
+{\em subproblems\+\_\+label} & label of subproblems in the Data\+Warehouse \\
+\hline
+{\em material} & index of material in the Data\+Warehouse \\
+\hline
+{\em patch} & patch on which data is retrieved \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved (must be false) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a2b82f57cc6e6034d4ce47be7d9df29f7}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a2b82f57cc6e6034d4ce47be7d9df29f7}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!````~amr\+\_\+restrictor@{$\sim$amr\+\_\+restrictor}}
+\index{````~amr\+\_\+restrictor@{$\sim$amr\+\_\+restrictor}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{$\sim$amr\+\_\+restrictor()}{~amr\_restrictor()}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a9dd4c58f76077456452653c0cf793955}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a9dd4c58f76077456452653c0cf793955}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!amr\+\_\+restrictor@{amr\+\_\+restrictor}}
+\index{amr\+\_\+restrictor@{amr\+\_\+restrictor}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{amr\+\_\+restrictor()}{amr\_restrictor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a7756f69a970700829f04886c454a4b18}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a7756f69a970700829f04886c454a4b18}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!clone@{clone}}
+\index{clone@{clone}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field}$>$$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::clone (\begin{DoxyParamCaption}\item[{bool}]{deep }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a copy of the view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deep} & if true inner grid variable is copied as well otherwise the same grid variable is referenced\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new view instance 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a6e11243c9d776a7b703e524ea4151a16}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a81b7ca467a9a0f54f9bf37ca18038240}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a81b7ca467a9a0f54f9bf37ca18038240}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!clone@{clone}}
+\index{clone@{clone}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field}$>$$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::clone (\begin{DoxyParamCaption}\item[{bool}]{deep,  }\item[{const Int\+Vector \&}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a copy of the view and apply translate the support. 
+
+\begin{DoxyRemark}{Remarks}
+It is meant to be used for virtual patches (i.\+e. periodic boundaries)
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em deep} & if true inner grid variable is copied as well otherwise the same grid variable is referenced \\
+\hline
+{\em offset} & vector specifying the translation of the support \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new view instance 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_abd928104240e329f3bc4441ebab7c50c}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a5b7788432aecb51049ec0fdeefd90519}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a5b7788432aecb51049ec0fdeefd90519}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!get\+\_\+support@{get\+\_\+support}}
+\index{get\+\_\+support@{get\+\_\+support}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+support()}{get\_support()}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1Support}{Support} \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::get\+\_\+support (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+get restrictor\textquotesingle{}s coarse range 
+
+\begin{DoxyReturn}{Returns}
+coarse range 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a3e14b0c7a57a57707bb33954861ab1c1}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_acb67236a4a7ecac027655ad592fff4ae}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_acb67236a4a7ecac027655ad592fff4ae}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!is\+\_\+defined\+\_\+at@{is\+\_\+defined\+\_\+at}}
+\index{is\+\_\+defined\+\_\+at@{is\+\_\+defined\+\_\+at}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{is\+\_\+defined\+\_\+at()}{is\_defined\_at()}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+virtual bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::is\+\_\+defined\+\_\+at (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id\+\_\+coarse }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the view has access to the coarse position with index id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+\_\+coarse} & coarse position index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+check result 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a9a950513dacd6468658436b737c3314f}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_ae1d3846e6970b38ddf48c6abc6327ea2}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_ae1d3846e6970b38ddf48c6abc6327ea2}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor}\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) assignment. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a900eab9c5c4f402881b207bb5270ebbc}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a900eab9c5c4f402881b207bb5270ebbc}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+virtual T\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get/\+Modify value at position with index id (virtual implementation) 
+
+\begin{DoxyRemark}{Remarks}
+restricted value is computed at runtime thus doesn\textquotesingle{}t exist in the Data\+Warehouse
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em id} & unused \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a96b3035d435ae901516b6bc5e138f3b5}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_ab29b8c1e68dba955e6062c84adca2ef4}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_ab29b8c1e68dba955e6062c84adca2ef4}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id\+\_\+coarse }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+get restricted value 
+
+value at fine index is computed avareging over the corresponding cells the finer level
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+\_\+coarse} & coarse index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+restricted value at the given fine index 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_aea43cfedfe3b6f3c038ff795caec49b8}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_aa937cac548dc6bb5ebda0907804d5434}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_aa937cac548dc6bb5ebda0907804d5434}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!set@{set}}
+\index{set@{set}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::set (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const Patch $\ast$}]{patch,  }\item[{bool}]{use\+\_\+ghosts = {\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a1579c120a731bc2c5e5d53a3e3db51dc}{use\+\_\+ghosts\+\_\+dflt}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+retrieve inner variable data from the Data\+Warehouse whitin a given patch. 
+
+the number of ghost cells/nodes and the corresponding region on the finer level is automatically computed to match the interpolation type
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse which data is retrieved from \\
+\hline
+{\em patch} & patch on which data is retrieved \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved (must be false) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_ae90ea8b33fde8515a1f2e8f5c03c0166}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a71f5fbbdd3e56e753d19c1d65f5c8467}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a71f5fbbdd3e56e753d19c1d65f5c8467}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!set@{set}}
+\index{set@{set}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::set (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const Level $\ast$}]{level,  }\item[{const Int\+Vector \&}]{low,  }\item[{const Int\+Vector \&}]{high,  }\item[{bool}]{use\+\_\+ghosts = {\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a1579c120a731bc2c5e5d53a3e3db51dc}{use\+\_\+ghosts\+\_\+dflt}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+retrieve inner variable data from the Data\+Warehouse whitin a given region. 
+
+the number of ghost cells/nodes and the corresponding region on the finer level is automatically computed to match the interpolation type
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse which data is retrieved from \\
+\hline
+{\em level} & level of the coarse region \\
+\hline
+{\em low} & start index for the coarse region \\
+\hline
+{\em high} & past the end index for the coarse region \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved (must be false) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a5fc830b30b120922cfe8a2c008d96109}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a1579c120a731bc2c5e5d53a3e3db51dc}\label{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor_3_01ScalarField_3_01T_01_4_00_01Problem_05760ee5d1d3adcc969b3f56f71e72acb_a1579c120a731bc2c5e5d53a3e3db51dc}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}!use\+\_\+ghosts\+\_\+dflt@{use\+\_\+ghosts\+\_\+dflt}}
+\index{use\+\_\+ghosts\+\_\+dflt@{use\+\_\+ghosts\+\_\+dflt}!Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$@{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor$<$ Scalar\+Field$<$ T $>$, Problem, index\+\_\+sequence$<$ I... $>$, I0, N\+C $>$}}
+\subsubsection{\texorpdfstring{use\+\_\+ghosts\+\_\+dflt}{use\_ghosts\_dflt}}
+{\footnotesize\ttfamily template$<$typename T , typename Problem , size\+\_\+t... I$>$ \\
+constexpr bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1amr__restrictor}{Uintah\+::\+Phase\+Field\+::detail\+::amr\+\_\+restrictor}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}, \hyperlink{namespaceUintah_1_1PhaseField_a237de804d99512e50613aff7c94a9461}{index\+\_\+sequence}$<$ I... $>$, \hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0}, \hyperlink{namespaceUintah_1_1PhaseField_a33d355affda78a83f45755ba8388cedda77924170fe82bfd58b74ca3e44139718}{NC} $>$\+::use\+\_\+ghosts\+\_\+dflt = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Default value for use\+\_\+ghost when retrieving data. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{amr__restrictor__I0__NC_8h}{amr\+\_\+restrictor\+\_\+\+I0\+\_\+\+N\+C.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,95 @@
+#$ -cwd -V
+#$ -l h_rt=48:00:00
+#$ -l np=64
+
+if [ -z "$UPATH" ]; then
+    UPATH=$HOME/uintah/trunk
+fi
+
+SUS=$UPATH/opt/StandAlone/sus
+
+INP=$UPATH/src/StandAlone/inputs/PhaseField/benchmark/benchmark01
+
+FN=IV/benchmark04_cc_n192
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps005_n255_k3e-03
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps005_n255_k3e-04
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps005_n255_k9e-04
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps005_n255_k9e-05
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps010_n255_k3e-03
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps010_n255_k3e-04
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps010_n255_k9e-04
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps010_n255_k9e-05
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps020_n255_k3e-03
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps020_n255_k3e-04
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps020_n255_k9e-04
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_cc_eps020_n255_k9e-05
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps005_n256_k3e-03
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps005_n256_k3e-04
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps005_n256_k9e-04
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps005_n256_k9e-05
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps010_n256_k3e-03
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps010_n256_k3e-04
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps010_n256_k9e-04
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps010_n256_k9e-05
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps020_n256_k3e-03
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps020_n256_k3e-04
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps020_n256_k9e-04
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark01_nc_eps020_n256_k9e-05
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+INP=$UPATH/src/StandAlone/inputs/PhaseField/benchmark/benchmark02
+
+FN=benchmark02_cc_eps010_n254_k1e-06
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+
+FN=benchmark02_nc_eps010_n256_k1e-06
+mpirun -np 64 $SUS $INP/$FN.ups > $FN.log 2> $FN.err
+

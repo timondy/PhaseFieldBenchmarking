@@ -1,0 +1,4 @@
+<map id="Uintah::PhaseField::detail::view&lt; Field &gt;" name="Uintah::PhaseField::detail::view&lt; Field &gt;">
+<area shape="rect" id="node2" href="$classUintah_1_1PhaseField_1_1detail_1_1virtual__view_3_01View_00_01ScalarField_3_01T_01_4_01_4.html" title="Abstract class for accessing variables on virtual patches (ScalarField implementation) ..." alt="" coords="201,5,381,61"/>
+<area shape="rect" id="node3" href="$classUintah_1_1PhaseField_1_1DWView.html" title="Wrapper of DataWarehouse variables. " alt="" coords="224,86,359,127"/>
+</map>

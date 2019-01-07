@@ -1,0 +1,405 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+AR, D\+IM, GN $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4}\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+
+
+Class for accessing variables from the Data\+Warehouse (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation)  
+
+
+
+
+{\ttfamily \#include $<$dw\+\_\+view.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+AR, D\+IM, GN $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+AR, D\+IM, GN $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_aa305d01f0cabaad24c3114531b5b93a9}{dw\+\_\+view} (const typename \hyperlink{structUintah_1_1PhaseField_1_1ScalarField_a7a77875e030da64c47ce9f6c22a06959}{Field\+::label\+\_\+type} \&label, int material)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_ad680d20420eb348dd7084950fd3f52a5}{dw\+\_\+view} (Data\+Warehouse $\ast$dw, const typename \hyperlink{structUintah_1_1PhaseField_1_1ScalarField_a7a77875e030da64c47ce9f6c22a06959}{Field\+::label\+\_\+type} \&label, int material, const Patch $\ast$patch, bool use\+\_\+ghosts=\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a6d76ec22f8cb6a0aff18f14f846950b0}{use\+\_\+ghosts\+\_\+dflt})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a921ce3dea17d712cc07e590117e3c5b3}{$\sim$dw\+\_\+view} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a5f179cba166e0f680869c355669f87a9}{dw\+\_\+view} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{dw\+\_\+view} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{dw\+\_\+view} \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a5a6c4007981b58d024036706cc78cfb9}{operator=} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{dw\+\_\+view} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) assignment. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_ac2693bea259a1182f011d27198a69ac6}{set} (Data\+Warehouse $\ast$dw, const Patch $\ast$patch, bool use\+\_\+ghosts) override
+\begin{DoxyCompactList}\small\item\em Retrieve values from the Data\+Warehouse for a given patch. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a3f5275b8932cb8021465347a523282a1}{set} (Data\+Warehouse $\ast$dw, const Level $\ast$level, const Int\+Vector \&low, const Int\+Vector \&high, bool use\+\_\+ghosts) override
+\begin{DoxyCompactList}\small\item\em Retrieve values from the Data\+Warehouse for a given region. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_ae8805279b2994368f8a16bcfc4a5dad2}{clone} (bool deep) const override
+\begin{DoxyCompactList}\small\item\em Get a copy of the view. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a47a3e1a15a57b331281c3c374e49bdc8}{clone} (bool deep, const Int\+Vector \&offset) const override
+\begin{DoxyCompactList}\small\item\em Get a copy of the view and apply translate the support. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1Support}{Support} \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a318a539e7857de7ba1271e7bb0ac9437}{get\+\_\+support} () const override
+\begin{DoxyCompactList}\small\item\em Get the region for which the view has access to the Data\+Warehouse. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_abd0549624c5f50ed06b714957115743a}{is\+\_\+defined\+\_\+at} (const Int\+Vector \&id) const override
+\begin{DoxyCompactList}\small\item\em Check if the view has access to the position with index id. \end{DoxyCompactList}\item 
+virtual T \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a9d658a184e7bfbce1959c5c939fe3f2e}{operator\mbox{[}$\,$\mbox{]}} (const Int\+Vector \&id) override
+\begin{DoxyCompactList}\small\item\em Get/\+Modify value at position with index id (modifications are allowed if T is non const) \end{DoxyCompactList}\item 
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a3299f0b41a89170185f4ed27b6d52d67}{operator\mbox{[}$\,$\mbox{]}} (const Int\+Vector \&id) const override
+\begin{DoxyCompactList}\small\item\em Get value at position. \end{DoxyCompactList}\item 
+void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a29faf454e5cac7b48bece187d8e1b89c}{initialize} (const V \&value) const
+\begin{DoxyCompactList}\small\item\em initialize variable in the DW \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a6d76ec22f8cb6a0aff18f14f846950b0}{use\+\_\+ghosts\+\_\+dflt} = false
+\begin{DoxyCompactList}\small\item\em Default value for use\+\_\+ghosts when retrieving data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}
+
+Class for accessing variables from the Data\+Warehouse (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation) 
+
+detail implementation of Data\+Warehouse variable wrapping
+
+\begin{DoxyRemark}{Remarks}
+constant view must use fields with const value type
+\end{DoxyRemark}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the field value at each point \\
+\hline
+{\em V\+AR} & type of variable representation \\
+\hline
+{\em D\+IM} & problem dimension \\
+\hline
+{\em GN} & number of ghosts required \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_aa305d01f0cabaad24c3114531b5b93a9}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_aa305d01f0cabaad24c3114531b5b93a9}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!dw\+\_\+view@{dw\+\_\+view}}
+\index{dw\+\_\+view@{dw\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{dw\+\_\+view()}{dw\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{dw\+\_\+view} (\begin{DoxyParamCaption}\item[{const typename \hyperlink{structUintah_1_1PhaseField_1_1ScalarField_a7a77875e030da64c47ce9f6c22a06959}{Field\+::label\+\_\+type} \&}]{label,  }\item[{int}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Instantiate a view without gathering info from the Data\+Warehouse
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & variable label \\
+\hline
+{\em material} & material index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_ad680d20420eb348dd7084950fd3f52a5}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_ad680d20420eb348dd7084950fd3f52a5}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!dw\+\_\+view@{dw\+\_\+view}}
+\index{dw\+\_\+view@{dw\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{dw\+\_\+view()}{dw\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{dw\+\_\+view} (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const typename \hyperlink{structUintah_1_1PhaseField_1_1ScalarField_a7a77875e030da64c47ce9f6c22a06959}{Field\+::label\+\_\+type} \&}]{label,  }\item[{int}]{material,  }\item[{const Patch $\ast$}]{patch,  }\item[{bool}]{use\+\_\+ghosts = {\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a6d76ec22f8cb6a0aff18f14f846950b0}{use\+\_\+ghosts\+\_\+dflt}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Instantiate a view and gather info from dw
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse from which data is retrieved \\
+\hline
+{\em label} & variable label \\
+\hline
+{\em material} & material index \\
+\hline
+{\em patch} & grid patch \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a921ce3dea17d712cc07e590117e3c5b3}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a921ce3dea17d712cc07e590117e3c5b3}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!````~dw\+\_\+view@{$\sim$dw\+\_\+view}}
+\index{````~dw\+\_\+view@{$\sim$dw\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{$\sim$dw\+\_\+view()}{~dw\_view()}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{dw\+\_\+view} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a5f179cba166e0f680869c355669f87a9}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a5f179cba166e0f680869c355669f87a9}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!dw\+\_\+view@{dw\+\_\+view}}
+\index{dw\+\_\+view@{dw\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{dw\+\_\+view()}{dw\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{dw\+\_\+view} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_ae8805279b2994368f8a16bcfc4a5dad2}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_ae8805279b2994368f8a16bcfc4a5dad2}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!clone@{clone}}
+\index{clone@{clone}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field}$>$$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::clone (\begin{DoxyParamCaption}\item[{bool}]{deep }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a copy of the view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deep} & if true inner grid variable is copied as well otherwise the same grid variable is referenced\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new view instance 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a6e11243c9d776a7b703e524ea4151a16}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a47a3e1a15a57b331281c3c374e49bdc8}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a47a3e1a15a57b331281c3c374e49bdc8}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!clone@{clone}}
+\index{clone@{clone}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field}$>$$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::clone (\begin{DoxyParamCaption}\item[{bool}]{deep,  }\item[{const Int\+Vector \&}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a copy of the view and apply translate the support. 
+
+\begin{DoxyRemark}{Remarks}
+It is meant to be used for virtual patches (i.\+e. periodic boundaries)
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em deep} & if true inner grid variable is copied as well otherwise the same grid variable is referenced \\
+\hline
+{\em offset} & vector specifying the translation of the support \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new view instance 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_abd928104240e329f3bc4441ebab7c50c}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a318a539e7857de7ba1271e7bb0ac9437}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a318a539e7857de7ba1271e7bb0ac9437}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!get\+\_\+support@{get\+\_\+support}}
+\index{get\+\_\+support@{get\+\_\+support}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+support()}{get\_support()}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1Support}{Support} \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::get\+\_\+support (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the region for which the view has access to the Data\+Warehouse. 
+
+\begin{DoxyReturn}{Returns}
+support of the view 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a3e14b0c7a57a57707bb33954861ab1c1}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a29faf454e5cac7b48bece187d8e1b89c}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a29faf454e5cac7b48bece187d8e1b89c}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!initialize@{initialize}}
+\index{initialize@{initialize}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::initialize (\begin{DoxyParamCaption}\item[{const V \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+initialize variable in the DW 
+
+set the field equal to value at each point in the domain
+
+\begin{DoxyRemark}{Remarks}
+T must not be const
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & initialization value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_abd0549624c5f50ed06b714957115743a}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_abd0549624c5f50ed06b714957115743a}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!is\+\_\+defined\+\_\+at@{is\+\_\+defined\+\_\+at}}
+\index{is\+\_\+defined\+\_\+at@{is\+\_\+defined\+\_\+at}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{is\+\_\+defined\+\_\+at()}{is\_defined\_at()}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+virtual bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::is\+\_\+defined\+\_\+at (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the view has access to the position with index id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & position index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+check result 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a9a950513dacd6468658436b737c3314f}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a5a6c4007981b58d024036706cc78cfb9}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a5a6c4007981b58d024036706cc78cfb9}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{dw\+\_\+view}\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) assignment. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a9d658a184e7bfbce1959c5c939fe3f2e}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a9d658a184e7bfbce1959c5c939fe3f2e}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+virtual T\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get/\+Modify value at position with index id (modifications are allowed if T is non const) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & position index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to field value at id 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a96b3035d435ae901516b6bc5e138f3b5}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a3299f0b41a89170185f4ed27b6d52d67}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a3299f0b41a89170185f4ed27b6d52d67}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get value at position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & position index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+field value at id 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_aea43cfedfe3b6f3c038ff795caec49b8}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_ac2693bea259a1182f011d27198a69ac6}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_ac2693bea259a1182f011d27198a69ac6}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!set@{set}}
+\index{set@{set}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::set (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const Patch $\ast$}]{patch,  }\item[{bool}]{use\+\_\+ghosts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve values from the Data\+Warehouse for a given patch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse from which data is retrieved \\
+\hline
+{\em patch} & grid patch to retrieve data for \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_ae90ea8b33fde8515a1f2e8f5c03c0166}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a3f5275b8932cb8021465347a523282a1}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a3f5275b8932cb8021465347a523282a1}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!set@{set}}
+\index{set@{set}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::set (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const Level $\ast$}]{level,  }\item[{const Int\+Vector \&}]{low,  }\item[{const Int\+Vector \&}]{high,  }\item[{bool}]{use\+\_\+ghosts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve values from the Data\+Warehouse for a given region. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse from which data is retrieved \\
+\hline
+{\em level} & grid level from which retrieve data \\
+\hline
+{\em low} & lower bound of the region to retrieve \\
+\hline
+{\em high} & higher bound of the region to retrieve \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a5fc830b30b120922cfe8a2c008d96109}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a6d76ec22f8cb6a0aff18f14f846950b0}\label{classUintah_1_1PhaseField_1_1detail_1_1dw__view_3_01ScalarField_3_01T_01_4_00_01VAR_00_01DIM_00_01GN_01_4_a6d76ec22f8cb6a0aff18f14f846950b0}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}!use\+\_\+ghosts\+\_\+dflt@{use\+\_\+ghosts\+\_\+dflt}}
+\index{use\+\_\+ghosts\+\_\+dflt@{use\+\_\+ghosts\+\_\+dflt}!Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view$<$ Scalar\+Field$<$ T $>$, V\+A\+R, D\+I\+M, G\+N $>$}}
+\subsubsection{\texorpdfstring{use\+\_\+ghosts\+\_\+dflt}{use\_ghosts\_dflt}}
+{\footnotesize\ttfamily template$<$typename T , Var\+Type V\+AR, Dim\+Type D\+IM, size\+\_\+t GN$>$ \\
+constexpr bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, V\+AR, D\+IM, GN $>$\+::use\+\_\+ghosts\+\_\+dflt = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Default value for use\+\_\+ghosts when retrieving data. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dw__view_8h}{dw\+\_\+view.\+h}\end{DoxyCompactItemize}

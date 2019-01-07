@@ -1,0 +1,37 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:bcfd\+\_\+view$<$ Field, S\+TN, Problem, Index, P $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1bcfd__view}\index{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Field, S\+T\+N, Problem, Index, P $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Field, S\+T\+N, Problem, Index, P $>$}}
+
+
+Wrapper of Data\+Warehouse variables for both basic and complex differential operations over both physical and amr boundaries.  
+
+
+
+
+{\ttfamily \#include $<$bcfd\+\_\+view.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Field, Stn\+Type S\+TN, typename Problem, typename Index, B\+C\+F ... P$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::bcfd\+\_\+view$<$ Field, S\+T\+N, Problem, Index, P $>$}
+
+Wrapper of Data\+Warehouse variables for both basic and complex differential operations over both physical and amr boundaries. 
+
+Adds to \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__view}{dw\+\_\+view} the possibility to compute finite-\/difference approximation of of differential operations at boundary cells/points
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Field} & type of Field \\
+\hline
+{\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}} & type of \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} problem \\
+\hline
+{\em Index} & index\+\_\+sequence of Field within \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} (first element is variable index, following ones, if present, are the component index within the variable) \\
+\hline
+{\em P} & list of BC, FC, and Patch\+::\+Face packs \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{bcfd__view_8h}{bcfd\+\_\+view.\+h}\end{DoxyCompactItemize}

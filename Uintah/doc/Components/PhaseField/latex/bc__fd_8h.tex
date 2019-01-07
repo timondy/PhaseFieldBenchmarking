@@ -1,0 +1,55 @@
+\hypertarget{bc__fd_8h}{}\section{bc\+\_\+fd.\+h File Reference}
+\label{bc__fd_8h}\index{bc\+\_\+fd.\+h@{bc\+\_\+fd.\+h}}
+{\ttfamily \#include $<$C\+C\+A/\+Components/\+Phase\+Field/\+Util/\+Definitions.\+h$>$}\newline
+{\ttfamily \#include $<$C\+C\+A/\+Components/\+Phase\+Field/\+Boundary\+Conditions/detail/bc\+\_\+fd\+\_\+\+Dirichlet\+\_\+\+G1\+\_\+\+C\+C.\+h$>$}\newline
+{\ttfamily \#include $<$C\+C\+A/\+Components/\+Phase\+Field/\+Boundary\+Conditions/detail/bc\+\_\+fd\+\_\+\+Dirichlet\+\_\+\+G1\+\_\+\+N\+C.\+h$>$}\newline
+{\ttfamily \#include $<$C\+C\+A/\+Components/\+Phase\+Field/\+Boundary\+Conditions/detail/bc\+\_\+fd\+\_\+\+Neumann\+\_\+\+G1\+\_\+\+C\+C.\+h$>$}\newline
+{\ttfamily \#include $<$C\+C\+A/\+Components/\+Phase\+Field/\+Boundary\+Conditions/detail/bc\+\_\+fd\+\_\+\+Neumann\+\_\+\+G1\+\_\+\+N\+C.\+h$>$}\newline
+{\ttfamily \#include $<$C\+C\+A/\+Components/\+Phase\+Field/\+Boundary\+Conditions/detail/bc\+\_\+fd\+\_\+\+Fine\+Coarse\+Interface\+\_\+\+G1.\+h$>$}\newline
+{\ttfamily \#include $<$C\+C\+A/\+Components/\+Phase\+Field/\+Boundary\+Conditions/detail/bc\+\_\+fd\+\_\+\+Fine\+Coarse\+Interface\+\_\+\+G1\+\_\+\+F\+C\+Simple.\+h$>$}\newline
+{\ttfamily \#include $<$C\+C\+A/\+Components/\+Phase\+Field/\+Boundary\+Conditions/detail/bc\+\_\+fd\+\_\+\+Fine\+Coarse\+Interface\+\_\+\+G1\+\_\+\+F\+C\+Linear.\+h$>$}\newline
+{\ttfamily \#include $<$C\+C\+A/\+Components/\+Phase\+Field/\+Boundary\+Conditions/detail/bc\+\_\+fd\+\_\+\+Fine\+Coarse\+Interface\+\_\+\+G1\+\_\+\+F\+C\+Bilinear.\+h$>$}\newline
+Include dependency graph for bc\+\_\+fd.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bc__fd_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{bc__fd_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Field, S\+T\+N, V\+A\+R, F, B, G\+N, C2\+F, C\+N\+E\+W $>$}
+\begin{DoxyCompactList}\small\item\em Abstract finite-\/differences scheme for variables at grid boundary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceUintah}{Uintah}
+\item 
+ \hyperlink{namespaceUintah_1_1PhaseField}{Uintah\+::\+Phase\+Field}
+\item 
+ \hyperlink{namespaceUintah_1_1PhaseField_1_1detail}{Uintah\+::\+Phase\+Field\+::detail}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$Dir\+Type D\+IR$>$ }\\V \hyperlink{namespaceUintah_1_1PhaseField_1_1detail_a668f64c95b8c2526195f4318be283e11}{Uintah\+::\+Phase\+Field\+::detail\+::d} (const Int\+Vector \&id) const =0
+\begin{DoxyCompactList}\small\item\em Non const type of the field value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$Dir\+Type D\+IR$>$ }\\V \hyperlink{namespaceUintah_1_1PhaseField_1_1detail_aa16b629683ac039c2ea8bcc553216fb5}{Uintah\+::\+Phase\+Field\+::detail\+::d2} (const Int\+Vector \&id) const =0
+\begin{DoxyCompactList}\small\item\em Second order derivative $\ast$ $\ast$ Second order derivative along D\+IR at index id $\ast$ $\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Jon Matteo Church \mbox{[}\href{mailto:j.m.church@leeds.ac.uk}{\tt j.\+m.\+church@leeds.\+ac.\+uk}\mbox{]} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018/12 
+\end{DoxyDate}

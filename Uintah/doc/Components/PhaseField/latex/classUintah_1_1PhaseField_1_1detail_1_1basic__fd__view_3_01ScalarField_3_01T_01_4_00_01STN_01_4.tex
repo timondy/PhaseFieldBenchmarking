@@ -1,0 +1,359 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+TN $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4}\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+
+
+Abstract class for basic finite-\/difference operations on variables (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation)  
+
+
+
+
+{\ttfamily \#include $<$basic\+\_\+fd\+\_\+view.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+TN $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+TN $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_ac8440931815c622c28fd417f9a81fdb9}{$\sim$basic\+\_\+fd\+\_\+view} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a26d507d016ee4c943903214e7547594a}{set} (Data\+Warehouse $\ast$dw, const Patch $\ast$patch, bool use\+\_\+ghosts=\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a2faa49acca4f2f6983d318ae64e3ed39}{use\+\_\+ghosts\+\_\+dflt})=0
+\begin{DoxyCompactList}\small\item\em Retrieve value from the Data\+Warehouse for a given patch. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_aa5cbbb3b73ea2933659cb082c6d6d863}{set} (Data\+Warehouse $\ast$dw, const Level $\ast$level, const Int\+Vector \&low, const Int\+Vector \&high, bool use\+\_\+ghosts=\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a2faa49acca4f2f6983d318ae64e3ed39}{use\+\_\+ghosts\+\_\+dflt})=0
+\begin{DoxyCompactList}\small\item\em Retrieve value from the Data\+Warehouse for a given region. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a2bbf870b332cfd997ec5297428019bc8}{get\+\_\+view} ()=0
+\begin{DoxyCompactList}\small\item\em Get base view. \end{DoxyCompactList}\item 
+virtual const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a006d6f7c6fd81ff2c8d53f59656a23dc}{get\+\_\+view} () const =0
+\begin{DoxyCompactList}\small\item\em Get base view. \end{DoxyCompactList}\item 
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a55198fb0007fd73e5a20bd4746f59c6f}{dx} (const Int\+Vector \&id) const =0
+\begin{DoxyCompactList}\small\item\em Partial x derivative. \end{DoxyCompactList}\item 
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_ac30b34cfd91c6f4df4eec1a0a224c405}{dy} (const Int\+Vector \&id) const =0
+\begin{DoxyCompactList}\small\item\em Partial y derivative. \end{DoxyCompactList}\item 
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a0a37a79b114139b6b8cb2d238897d0b0}{dz} (const Int\+Vector \&id) const =0
+\begin{DoxyCompactList}\small\item\em Partial z derivative. \end{DoxyCompactList}\item 
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a3ea4026cb6251facdd6548bb4ce76408}{dxx} (const Int\+Vector \&id) const =0
+\begin{DoxyCompactList}\small\item\em Partial x second order derivative. \end{DoxyCompactList}\item 
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a387a991c42fe021f192dee7e0db5908a}{dyy} (const Int\+Vector \&id) const =0
+\begin{DoxyCompactList}\small\item\em Partial y second order derivative. \end{DoxyCompactList}\item 
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a6a9141dd1b9b547eba1bd7ff0440b6bf}{dzz} (const Int\+Vector \&id) const =0
+\begin{DoxyCompactList}\small\item\em Partial z second order derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a2faa49acca4f2f6983d318ae64e3ed39}{use\+\_\+ghosts\+\_\+dflt} = true
+\begin{DoxyCompactList}\small\item\em Default value for use\+\_\+ghost when retrieving data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, Stn\+Type S\+TN$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}
+
+Abstract class for basic finite-\/difference operations on variables (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation) 
+
+detail implementation of view (variable wrapping) which include also finite difference approximation on basic differential operations (first and second oreder derivatives)
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the field value at each point \\
+\hline
+{\em S\+TN} & finite-\/difference stencil \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_ac8440931815c622c28fd417f9a81fdb9}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_ac8440931815c622c28fd417f9a81fdb9}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!````~basic\+\_\+fd\+\_\+view@{$\sim$basic\+\_\+fd\+\_\+view}}
+\index{````~basic\+\_\+fd\+\_\+view@{$\sim$basic\+\_\+fd\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{$\sim$basic\+\_\+fd\+\_\+view()}{~basic\_fd\_view()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{basic\+\_\+fd\+\_\+view} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a55198fb0007fd73e5a20bd4746f59c6f}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a55198fb0007fd73e5a20bd4746f59c6f}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!dx@{dx}}
+\index{dx@{dx}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{dx()}{dx()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::dx (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Partial x derivative. 
+
+First order derivative along x at index id
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & index where to evaluate the finite-\/difference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximated value at id 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_07caa9955adf783da0505eac75e76f08_ad8f5b6be3ef5d9b502478f1978d8dd0e}{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01P_01_4_ae734fd388d7a680aa366db584bc54107}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, P $>$}, and \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_01_4_ad93583d4b60ddc8eccb5199ddff534c3}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a3ea4026cb6251facdd6548bb4ce76408}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a3ea4026cb6251facdd6548bb4ce76408}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!dxx@{dxx}}
+\index{dxx@{dxx}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{dxx()}{dxx()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::dxx (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Partial x second order derivative. 
+
+Second order derivative along x at index id
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & index where to evaluate the finite-\/difference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximated value at id 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_07caa9955adf783da0505eac75e76f08_ab5f1d6ae2f25c2d050775578499db79e}{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01P_01_4_a7146569da689f425b7eb963295905ee2}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, P $>$}, and \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_01_4_a3deb16fdbf624c192e273b7b856db9d2}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_ac30b34cfd91c6f4df4eec1a0a224c405}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_ac30b34cfd91c6f4df4eec1a0a224c405}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!dy@{dy}}
+\index{dy@{dy}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{dy()}{dy()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::dy (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Partial y derivative. 
+
+First order derivative along y at index id
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & index where to evaluate the finite-\/difference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximated value at id 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_07caa9955adf783da0505eac75e76f08_acb8d3d8217637aecdac144650632c57f}{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01P_01_4_ad81ac1a8cf3ddce875d270b6bb00a380}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, P $>$}, and \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_01_4_a99f11a208f062a1704d7ba83b0550591}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a387a991c42fe021f192dee7e0db5908a}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a387a991c42fe021f192dee7e0db5908a}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!dyy@{dyy}}
+\index{dyy@{dyy}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{dyy()}{dyy()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::dyy (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Partial y second order derivative. 
+
+Second order derivative along y at index id
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & index where to evaluate the finite-\/difference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximated value at id 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_07caa9955adf783da0505eac75e76f08_af8155387a989a9a9c007b49cb4420f8e}{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01P_01_4_a5549a4a413c2be230e484c8921524395}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, P $>$}, and \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_01_4_ababac9886dc3c97a1cd3348e9f09d477}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a0a37a79b114139b6b8cb2d238897d0b0}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a0a37a79b114139b6b8cb2d238897d0b0}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!dz@{dz}}
+\index{dz@{dz}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{dz()}{dz()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::dz (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Partial z derivative. 
+
+First order derivative along z at index id
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & index where to evaluate the finite-\/difference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximated value at id 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_07caa9955adf783da0505eac75e76f08_abbfa68e1cf8c0eb675f3934f2fcf8259}{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01P_01_4_a994e7388acdb4040da7cc438ecd2dc4b}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, P $>$}, and \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_01_4_ab95f7f4aed23245ff58a676e9df745fb}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a6a9141dd1b9b547eba1bd7ff0440b6bf}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a6a9141dd1b9b547eba1bd7ff0440b6bf}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!dzz@{dzz}}
+\index{dzz@{dzz}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{dzz()}{dzz()}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::dzz (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Partial z second order derivative. 
+
+Second order derivative along z at index id
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & index where to evaluate the finite-\/difference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximated value at id 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_07caa9955adf783da0505eac75e76f08_a8edd18a7f77bf23f10b87ad970da31c4}{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01P_01_4_ad2c322a2540d22bffda0332f436df825}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, P $>$}, and \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_01_4_ad7be1669f58aaecc7f5e7ac94d087bc5}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a2bbf870b332cfd997ec5297428019bc8}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a2bbf870b332cfd997ec5297428019bc8}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!get\+\_\+view@{get\+\_\+view}}
+\index{get\+\_\+view@{get\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+view()}{get\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field}$>$$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::get\+\_\+view (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get base view. 
+
+\begin{DoxyReturn}{Returns}
+non const pointer to base view implementation 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_07caa9955adf783da0505eac75e76f08_a1c51fe0d64605df5ce9c757681eb80a5}{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01bd5f5aa94f34afad5c8a785ee391ed2b_a1bd33bee3f10040e59c3571cd0e2ce57}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Bilinear $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a579bb0bf5063314ac57aace2d8ff2c31}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01f836207db876ecd28bf65f631f79030f_abc3b93271050f310bc7f6095ccb19d08}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Linear $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01efea904a4b4ba4f7ece7ded248f84d17_abe29015f77805b0afa450c56f22814cb}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, C2\+F $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01CC_00_01F_00_01BC_1_1Neumann_00_011_01_4_ae067158c4bde7162f906999a1eb7c4e8}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, C\+C, F, B\+C\+::\+Neumann, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01NC_00_01F_00_01BC_1_1Neumann_00_011_01_4_acd326fe71c0df45ad7fccd480a29da8e}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, N\+C, F, B\+C\+::\+Neumann, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01CC_00_01Fa77b2fd7fb77d0a4dc6c86c68d4ea0bc_ab7b39dfca20ca18356b1a72ae055e99f}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, C\+C, F, B\+C\+::\+Dirichlet, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01NC_00_01Fc8a6e28ffa258d282d0a921216b0ed9f_a27bd79a8b66a0a7a21a2473795f11911}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, N\+C, F, B\+C\+::\+Dirichlet, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_011_01_4_a6c8bfba52568211434dbb756fe44b6be}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01P_01_4_a46e6a2a932a522c1ed93c7c28d728e83}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, P $>$}, and \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_01_4_ada3c79dde199711c630431fad25fbc2e}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a006d6f7c6fd81ff2c8d53f59656a23dc}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a006d6f7c6fd81ff2c8d53f59656a23dc}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!get\+\_\+view@{get\+\_\+view}}
+\index{get\+\_\+view@{get\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{get\+\_\+view()}{get\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field}$>$$\ast$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::get\+\_\+view (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get base view. 
+
+\begin{DoxyReturn}{Returns}
+const pointer to base view implementation 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_07caa9955adf783da0505eac75e76f08_a0aae05fb5f6751eddd0c5d5713512669}{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01bd5f5aa94f34afad5c8a785ee391ed2b_aeaad8cf19d01e440be21295b7ae2627f}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Bilinear $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a68249997b8422670b8831c9b6db4d879}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01f836207db876ecd28bf65f631f79030f_a03ab09ea8008b24b6cbffe0ce8e14388}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Linear $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01efea904a4b4ba4f7ece7ded248f84d17_ad6ddff2b89c38e20df734b094bbfff9c}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, C2\+F $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01CC_00_01F_00_01BC_1_1Neumann_00_011_01_4_a158cefd68ffdfd59e5590b850c7ca78f}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, C\+C, F, B\+C\+::\+Neumann, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01NC_00_01F_00_01BC_1_1Neumann_00_011_01_4_a54dca99f90e96dabfffe594538bd5ca8}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, N\+C, F, B\+C\+::\+Neumann, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01CC_00_01Fa77b2fd7fb77d0a4dc6c86c68d4ea0bc_a2199408e573e0a6f2cd86bb7fbd002a7}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, C\+C, F, B\+C\+::\+Dirichlet, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01NC_00_01Fc8a6e28ffa258d282d0a921216b0ed9f_a01b987b37d15d552579788a353ecce2d}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, N\+C, F, B\+C\+::\+Dirichlet, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_011_01_4_a4f93fef2b9ee7daaff2707f59dc6ac17}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01P_01_4_aa82811e38cba5075406deb5e0f4adf62}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, P $>$}, and \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_01_4_af125295808e73f3d236f85f45d054b23}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a26d507d016ee4c943903214e7547594a}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a26d507d016ee4c943903214e7547594a}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!set@{set}}
+\index{set@{set}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::set (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const Patch $\ast$}]{patch,  }\item[{bool}]{use\+\_\+ghosts = {\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a2faa49acca4f2f6983d318ae64e3ed39}{use\+\_\+ghosts\+\_\+dflt}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve value from the Data\+Warehouse for a given patch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse from which data is retrieved \\
+\hline
+{\em patch} & grid patch to retrieve data for \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_ae90ea8b33fde8515a1f2e8f5c03c0166}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+
+
+Implemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_07caa9955adf783da0505eac75e76f08_afe8b66fd39607e8f5b5e79ae5d6e0df3}{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01bd5f5aa94f34afad5c8a785ee391ed2b_a43e765b95c9cbc27cc55ae316f3c9e57}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Bilinear $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01f836207db876ecd28bf65f631f79030f_a8e9206230f471f1e83e57b2d123fa9be}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Linear $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_ac70a40f99b59aafe8dc8166ccd48347f}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01efea904a4b4ba4f7ece7ded248f84d17_a725864a9a341495edfce651508026fe3}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, C2\+F $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01CC_00_01Fa77b2fd7fb77d0a4dc6c86c68d4ea0bc_a871bf41d80de5acd4151631818963802}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, C\+C, F, B\+C\+::\+Dirichlet, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01CC_00_01F_00_01BC_1_1Neumann_00_011_01_4_a94ada060ff3ae2ef6a8d3c52410d26ea}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, C\+C, F, B\+C\+::\+Neumann, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01NC_00_01F_00_01BC_1_1Neumann_00_011_01_4_a55e95036a5ed9c743cc19f644edf2d84}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, N\+C, F, B\+C\+::\+Neumann, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_011_01_4_ae718a5d7a2210592ec2b5dbd7eab1ace}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, 1 $>$}, and \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01NC_00_01Fc8a6e28ffa258d282d0a921216b0ed9f_a88a1002b012e8aefe6109f263cadf2d7}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, N\+C, F, B\+C\+::\+Dirichlet, 1 $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_aa5cbbb3b73ea2933659cb082c6d6d863}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_aa5cbbb3b73ea2933659cb082c6d6d863}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!set@{set}}
+\index{set@{set}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+virtual void \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::set (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const Level $\ast$}]{level,  }\item[{const Int\+Vector \&}]{low,  }\item[{const Int\+Vector \&}]{high,  }\item[{bool}]{use\+\_\+ghosts = {\ttfamily \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a2faa49acca4f2f6983d318ae64e3ed39}{use\+\_\+ghosts\+\_\+dflt}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve value from the Data\+Warehouse for a given region. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse from which data is retrieved \\
+\hline
+{\em level} & grid level from which retrieve data \\
+\hline
+{\em low} & lower bound of the region to retrieve \\
+\hline
+{\em high} & higher bound of the region to retrieve \\
+\hline
+{\em use\+\_\+ghosts} & if ghosts value are to be retrieved \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a5fc830b30b120922cfe8a2c008d96109}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+
+
+Implemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_07caa9955adf783da0505eac75e76f08_aef6c3677070fcceb4a3e3c4fe3531e09}{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01bd5f5aa94f34afad5c8a785ee391ed2b_acb19e148caf9dd4d85758d1ee9527b67}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Bilinear $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01f836207db876ecd28bf65f631f79030f_a016500469e881e3d9528e2055e499570}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Linear $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01ce55d0bf8381798bc129da931b626e80_a69189cb1ecb842a77f9b17e4c2c2ba4e}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, F\+C\+::\+F\+C\+Simple $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_01efea904a4b4ba4f7ece7ded248f84d17_a5c8ac10f38ae63f72ca3d7c13a19c98f}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, F, B\+C\+::\+Fine\+Coarse\+Interface, 1, C2\+F $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01CC_00_01Fa77b2fd7fb77d0a4dc6c86c68d4ea0bc_ae4afb706928d60f195b00315b9458a50}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, C\+C, F, B\+C\+::\+Dirichlet, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01CC_00_01F_00_01BC_1_1Neumann_00_011_01_4_aebc559bc6be63b5d66d55394663204a1}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, C\+C, F, B\+C\+::\+Neumann, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01NC_00_01F_00_01BC_1_1Neumann_00_011_01_4_acf2148e7d2ee01661b5df64c35e46eb4}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, N\+C, F, B\+C\+::\+Neumann, 1 $>$}, \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bc__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01NC_00_01Fc8a6e28ffa258d282d0a921216b0ed9f_af9bd1a08e740ff69bd66001c82290794}{Uintah\+::\+Phase\+Field\+::detail\+::bc\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, N\+C, F, B\+C\+::\+Dirichlet, 1 $>$}, and \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1dw__fd_3_01ScalarField_3_01T_01_4_00_01STN_00_01VAR_00_011_01_4_a403e762e621c14b27ecc024308b32b44}{Uintah\+::\+Phase\+Field\+::detail\+::dw\+\_\+fd$<$ Scalar\+Field$<$ T $>$, S\+T\+N, V\+A\+R, 1 $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a2faa49acca4f2f6983d318ae64e3ed39}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_01_4_a2faa49acca4f2f6983d318ae64e3ed39}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}!use\+\_\+ghosts\+\_\+dflt@{use\+\_\+ghosts\+\_\+dflt}}
+\index{use\+\_\+ghosts\+\_\+dflt@{use\+\_\+ghosts\+\_\+dflt}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{use\+\_\+ghosts\+\_\+dflt}{use\_ghosts\_dflt}}
+{\footnotesize\ttfamily template$<$typename T , Stn\+Type S\+TN$>$ \\
+constexpr bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$, S\+TN $>$\+::use\+\_\+ghosts\+\_\+dflt = true\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Default value for use\+\_\+ghost when retrieving data. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{basic__fd__view_8h}{basic\+\_\+fd\+\_\+view.\+h}\end{DoxyCompactItemize}

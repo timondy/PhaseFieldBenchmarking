@@ -1,0 +1,237 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4}\index{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}}
+
+
+Container for collecting multiple views as a unique composite view (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation)  
+
+
+
+
+{\ttfamily \#include $<$piecewise\+\_\+view.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a27dda4b757d27bc2071ba1c850386b9f}{$\sim$piecewise\+\_\+view} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_ae009d9a76c018a8056210f9ffa83582b}{piecewise\+\_\+view} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{piecewise\+\_\+view} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{piecewise\+\_\+view} \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a719400ade1a6a5dff7d16ac29c70e2f0}{operator=} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{piecewise\+\_\+view} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) assignment. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a6fd5f9ee9b2e91f114845fa2ada152e0}{is\+\_\+defined\+\_\+at} (const Int\+Vector \&id) const override
+\begin{DoxyCompactList}\small\item\em Check if the view has access to the position with index id. \end{DoxyCompactList}\item 
+virtual T \& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_afd5e93d57629abd12be24b48138f560b}{operator\mbox{[}$\,$\mbox{]}} (const Int\+Vector \&id) override
+\begin{DoxyCompactList}\small\item\em Get/\+Modify value at position with index id (modifications are allowed if T is non const) \end{DoxyCompactList}\item 
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_af7d5e07b63df16d901919eb639b1f177}{operator\mbox{[}$\,$\mbox{]}} (const Int\+Vector \&id) const override
+\begin{DoxyCompactList}\small\item\em Get value at position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a08150ac6e4892b7f07a5465ef5f4d0b6}{piecewise\+\_\+view} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a1e74897647aa4d6d076924a5e8d78e6b}{piecewise\+\_\+view} (const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{piecewise\+\_\+view} $\ast$copy, bool deep)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field} $>$ $\ast$$>$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_ae5ef4268fdc925bd57ea7abf8d1dc4a7}{m\+\_\+views}
+\begin{DoxyCompactList}\small\item\em Container for each sub views. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}
+
+Container for collecting multiple views as a unique composite view (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} implementation) 
+
+It is used as abase class for views that are defined across multiple sub-\/problems (i.\+e. bcs views and amr coarser and finer views)
+
+\begin{DoxyRemark}{Remarks}
+no instantiation must be performed here
+\end{DoxyRemark}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the field value at each point \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a08150ac6e4892b7f07a5465ef5f4d0b6}\label{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a08150ac6e4892b7f07a5465ef5f4d0b6}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}!piecewise\+\_\+view@{piecewise\+\_\+view}}
+\index{piecewise\+\_\+view@{piecewise\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{piecewise\+\_\+view()}{piecewise\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{piecewise\+\_\+view} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a1e74897647aa4d6d076924a5e8d78e6b}\label{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a1e74897647aa4d6d076924a5e8d78e6b}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}!piecewise\+\_\+view@{piecewise\+\_\+view}}
+\index{piecewise\+\_\+view@{piecewise\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{piecewise\+\_\+view()}{piecewise\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{piecewise\+\_\+view} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{piecewise\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$ $\ast$}]{copy,  }\item[{bool}]{deep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Constructor. 
+
+Instantiate a copy of a given view
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & source view for copying \\
+\hline
+{\em deep} & if true inner grid variable is copied as well otherwise the same grid variable is referenced \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a27dda4b757d27bc2071ba1c850386b9f}\label{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a27dda4b757d27bc2071ba1c850386b9f}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}!````~piecewise\+\_\+view@{$\sim$piecewise\+\_\+view}}
+\index{````~piecewise\+\_\+view@{$\sim$piecewise\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{$\sim$piecewise\+\_\+view()}{~piecewise\_view()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{piecewise\+\_\+view} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_ae009d9a76c018a8056210f9ffa83582b}\label{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_ae009d9a76c018a8056210f9ffa83582b}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}!piecewise\+\_\+view@{piecewise\+\_\+view}}
+\index{piecewise\+\_\+view@{piecewise\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{piecewise\+\_\+view()}{piecewise\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{piecewise\+\_\+view} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{piecewise\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a6fd5f9ee9b2e91f114845fa2ada152e0}\label{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a6fd5f9ee9b2e91f114845fa2ada152e0}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}!is\+\_\+defined\+\_\+at@{is\+\_\+defined\+\_\+at}}
+\index{is\+\_\+defined\+\_\+at@{is\+\_\+defined\+\_\+at}!Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{is\+\_\+defined\+\_\+at()}{is\_defined\_at()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual bool \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::is\+\_\+defined\+\_\+at (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the view has access to the position with index id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & position index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+check result 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a9a950513dacd6468658436b737c3314f}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+
+
+Reimplemented in \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view_3_01ScalarField_3_01T_01_4_00_01STN_07caa9955adf783da0505eac75e76f08_ad16a59586f836b9cb0d0110073418ad6}{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Scalar\+Field$<$ T $>$, S\+T\+N, Problem, Index, P... $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a719400ade1a6a5dff7d16ac29c70e2f0}\label{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_a719400ade1a6a5dff7d16ac29c70e2f0}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{piecewise\+\_\+view}\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{piecewise\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) assignment. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_afd5e93d57629abd12be24b48138f560b}\label{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_afd5e93d57629abd12be24b48138f560b}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual T\& \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get/\+Modify value at position with index id (modifications are allowed if T is non const) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & position index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to field value at id 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_a96b3035d435ae901516b6bc5e138f3b5}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_af7d5e07b63df16d901919eb639b1f177}\label{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_af7d5e07b63df16d901919eb639b1f177}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual V \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const Int\+Vector \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get value at position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & position index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+field value at id 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view_3_01ScalarField_3_01T_01_4_01_4_aea43cfedfe3b6f3c038ff795caec49b8}{Uintah\+::\+Phase\+Field\+::detail\+::view$<$ Scalar\+Field$<$ T $>$ $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_ae5ef4268fdc925bd57ea7abf8d1dc4a7}\label{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view_3_01ScalarField_3_01T_01_4_01_4_ae5ef4268fdc925bd57ea7abf8d1dc4a7}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}!m\+\_\+views@{m\+\_\+views}}
+\index{m\+\_\+views@{m\+\_\+views}!Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$@{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view$<$ Scalar\+Field$<$ T $>$ $>$}}
+\subsubsection{\texorpdfstring{m\+\_\+views}{m\_views}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::list$<$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1view}{view}$<$\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Field}$>$ $\ast$ $>$ \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1piecewise__view}{Uintah\+::\+Phase\+Field\+::detail\+::piecewise\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field}$<$ T $>$ $>$\+::m\+\_\+views\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Container for each sub views. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{piecewise__view_8h}{piecewise\+\_\+view.\+h}\end{DoxyCompactItemize}

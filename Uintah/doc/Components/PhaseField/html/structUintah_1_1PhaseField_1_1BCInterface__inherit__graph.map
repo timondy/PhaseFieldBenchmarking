@@ -1,0 +1,4 @@
+<map id="Uintah::PhaseField::BCInterface&lt; VAR, STN &gt;" name="Uintah::PhaseField::BCInterface&lt; VAR, STN &gt;">
+<area shape="rect" id="node2" href="$classUintah_1_1PhaseField_1_1Application_3_01VAR_00_01DIM_00_01STN_00_01false_01_4.html" title="Virtual base for PhaseField applications (non&#45;AMR implementation) " alt="" coords="240,5,379,61"/>
+<area shape="rect" id="node3" href="$classUintah_1_1PhaseField_1_1Application_3_01VAR_00_01DIM_00_01STN_00_01true_01_4.html" title="Virtual base for PhaseField applications (AMR implementation) " alt="" coords="240,85,379,141"/>
+</map>

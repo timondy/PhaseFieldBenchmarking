@@ -1,0 +1,169 @@
+\hypertarget{classUintah_1_1PhaseField_1_1DWView}{}\section{Uintah\+:\+:Phase\+Field\+:\+:D\+W\+View$<$ Field, V\+AR, D\+IM $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1DWView}\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+View$<$ Field, V\+A\+R, D\+I\+M $>$@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View$<$ Field, V\+A\+R, D\+I\+M $>$}}
+
+
+Wrapper of Data\+Warehouse variables.  
+
+
+
+
+{\ttfamily \#include $<$D\+W\+View.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:D\+W\+View$<$ Field, V\+AR, D\+IM $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1DWView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:D\+W\+View$<$ Field, V\+AR, D\+IM $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1DWView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUintah_1_1PhaseField_1_1DWView_af33d78220bb536a0402193528a1554ec}{D\+W\+View} (const typename Field\+::label\+\_\+type \&label, int material)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1DWView_a47a9d33336fa123747e3f8df85845be3}{D\+W\+View} (Data\+Warehouse $\ast$dw, const typename Field\+::label\+\_\+type \&label, int material, const Patch $\ast$patch)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1DWView_aed5d078b494642944456fa8fa792f22e}{$\sim$\+D\+W\+View} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1DWView_a41304332233ca34306f52560a8830207}{D\+W\+View} (const \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) constructor. \end{DoxyCompactList}\item 
+\hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View} \& \hyperlink{classUintah_1_1PhaseField_1_1DWView_a71239df8adf25f9af2d5f3dc4754722c}{operator=} (const \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevent copy (and move) assignment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1DWView_ac73a7615df07e872d793511a215dd599}{Name}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation} identifier within \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Field, Var\+Type V\+AR, Dim\+Type D\+IM$>$\newline
+class Uintah\+::\+Phase\+Field\+::\+D\+W\+View$<$ Field, V\+A\+R, D\+I\+M $>$}
+
+Wrapper of Data\+Warehouse variables. 
+
+\hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory} \hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation} for dynamic instantiation
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Field} & type of field (\hyperlink{structUintah_1_1PhaseField_1_1ScalarField}{Scalar\+Field} $<$ T $>$ or \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} $<$ T, N $>$) \\
+\hline
+{\em V\+AR} & type of variable representation \\
+\hline
+{\em D\+IM} & problem dimension \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1DWView_af33d78220bb536a0402193528a1554ec}\label{classUintah_1_1PhaseField_1_1DWView_af33d78220bb536a0402193528a1554ec}} 
+\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+View@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}!D\+W\+View@{D\+W\+View}}
+\index{D\+W\+View@{D\+W\+View}!Uintah\+::\+Phase\+Field\+::\+D\+W\+View@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}}
+\subsubsection{\texorpdfstring{D\+W\+View()}{DWView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Field, Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1DWView}{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}$<$ Field, V\+AR, D\+IM $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View} (\begin{DoxyParamCaption}\item[{const typename Field\+::label\+\_\+type \&}]{label,  }\item[{int}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Instantiate view components without gathering info from the Data\+Warehouse
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & list of variable labels for each component \\
+\hline
+{\em material} & material index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1DWView_a47a9d33336fa123747e3f8df85845be3}\label{classUintah_1_1PhaseField_1_1DWView_a47a9d33336fa123747e3f8df85845be3}} 
+\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+View@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}!D\+W\+View@{D\+W\+View}}
+\index{D\+W\+View@{D\+W\+View}!Uintah\+::\+Phase\+Field\+::\+D\+W\+View@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}}
+\subsubsection{\texorpdfstring{D\+W\+View()}{DWView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Field, Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1DWView}{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}$<$ Field, V\+AR, D\+IM $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View} (\begin{DoxyParamCaption}\item[{Data\+Warehouse $\ast$}]{dw,  }\item[{const typename Field\+::label\+\_\+type \&}]{label,  }\item[{int}]{material,  }\item[{const Patch $\ast$}]{patch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Instantiate view components and gather info from dw
+
+
+\begin{DoxyParams}{Parameters}
+{\em dw} & Data\+Warehouse from which data is retrieved \\
+\hline
+{\em label} & list of variable labels for each component \\
+\hline
+{\em material} & material index \\
+\hline
+{\em patch} & grid patch \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1DWView_aed5d078b494642944456fa8fa792f22e}\label{classUintah_1_1PhaseField_1_1DWView_aed5d078b494642944456fa8fa792f22e}} 
+\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+View@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}!````~D\+W\+View@{$\sim$\+D\+W\+View}}
+\index{````~D\+W\+View@{$\sim$\+D\+W\+View}!Uintah\+::\+Phase\+Field\+::\+D\+W\+View@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+D\+W\+View()}{~DWView()}}
+{\footnotesize\ttfamily template$<$typename Field, Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1DWView}{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}$<$ Field, V\+AR, D\+IM $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1DWView_a41304332233ca34306f52560a8830207}\label{classUintah_1_1PhaseField_1_1DWView_a41304332233ca34306f52560a8830207}} 
+\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+View@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}!D\+W\+View@{D\+W\+View}}
+\index{D\+W\+View@{D\+W\+View}!Uintah\+::\+Phase\+Field\+::\+D\+W\+View@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}}
+\subsubsection{\texorpdfstring{D\+W\+View()}{DWView()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Field, Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1DWView}{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}$<$ Field, V\+AR, D\+IM $>$\+::\hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View} (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View}$<$ Field, V\+AR, D\+IM $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1DWView_a71239df8adf25f9af2d5f3dc4754722c}\label{classUintah_1_1PhaseField_1_1DWView_a71239df8adf25f9af2d5f3dc4754722c}} 
+\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+View@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}!operator=@{operator=}}
+\index{operator=@{operator=}!Uintah\+::\+Phase\+Field\+::\+D\+W\+View@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Field, Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+\hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View}\& \hyperlink{classUintah_1_1PhaseField_1_1DWView}{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}$<$ Field, V\+AR, D\+IM $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classUintah_1_1PhaseField_1_1DWView}{D\+W\+View}$<$ Field, V\+AR, D\+IM $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevent copy (and move) assignment. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1DWView_ac73a7615df07e872d793511a215dd599}\label{classUintah_1_1PhaseField_1_1DWView_ac73a7615df07e872d793511a215dd599}} 
+\index{Uintah\+::\+Phase\+Field\+::\+D\+W\+View@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}!Name@{Name}}
+\index{Name@{Name}!Uintah\+::\+Phase\+Field\+::\+D\+W\+View@{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}}
+\subsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily template$<$typename Field, Var\+Type V\+AR, Dim\+Type D\+IM$>$ \\
+const std\+::string \hyperlink{classUintah_1_1PhaseField_1_1DWView}{Uintah\+::\+Phase\+Field\+::\+D\+W\+View}$<$ Field, V\+AR, D\+IM $>$\+::Name\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\hyperlink{classUintah_1_1PhaseField_1_1Implementation}{Implementation} identifier within \hyperlink{classUintah_1_1PhaseField_1_1Factory}{Factory}. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{DWView_8h}{D\+W\+View.\+h}\end{DoxyCompactItemize}

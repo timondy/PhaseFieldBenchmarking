@@ -1,0 +1,73 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01VectorField_3_01T_00_01N_01_4_00_01STN_01_4}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:basic\+\_\+fd\+\_\+view$<$ Vector\+Field$<$ T, N $>$, S\+TN $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01VectorField_3_01T_00_01N_01_4_00_01STN_01_4}\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Vector\+Field$<$ T, N $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Vector\+Field$<$ T, N $>$, S\+T\+N $>$}}
+
+
+Abstract class for basic finite-\/difference operations on variables (\hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} implementation)  
+
+
+
+
+{\ttfamily \#include $<$basic\+\_\+fd\+\_\+view.\+h$>$}
+
+
+
+Inheritance diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:basic\+\_\+fd\+\_\+view$<$ Vector\+Field$<$ T, N $>$, S\+TN $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01VectorField_3_01T_00_01N_01_4_00_01STN_01_4__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:basic\+\_\+fd\+\_\+view$<$ Vector\+Field$<$ T, N $>$, S\+TN $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01VectorField_3_01T_00_01N_01_4_00_01STN_01_4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01VectorField_3_01T_00_01N_01_4_00_01STN_01_4_ac602ec10bc7689756306f5a8a89ba8ee}{$\sim$basic\+\_\+fd\+\_\+view} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, size\+\_\+t N, Stn\+Type S\+TN$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Vector\+Field$<$ T, N $>$, S\+T\+N $>$}
+
+Abstract class for basic finite-\/difference operations on variables (\hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} implementation) 
+
+detail implementation of view (variable wrapping) which include also finite difference approximation on basic differential operations (first and second order derivatives)
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of each component of the field at each point \\
+\hline
+{\em N} & number of components \\
+\hline
+{\em S\+TN} & finite-\/difference stencil \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01VectorField_3_01T_00_01N_01_4_00_01STN_01_4_ac602ec10bc7689756306f5a8a89ba8ee}\label{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view_3_01VectorField_3_01T_00_01N_01_4_00_01STN_01_4_ac602ec10bc7689756306f5a8a89ba8ee}} 
+\index{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Vector\+Field$<$ T, N $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Vector\+Field$<$ T, N $>$, S\+T\+N $>$}!````~basic\+\_\+fd\+\_\+view@{$\sim$basic\+\_\+fd\+\_\+view}}
+\index{````~basic\+\_\+fd\+\_\+view@{$\sim$basic\+\_\+fd\+\_\+view}!Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Vector\+Field$<$ T, N $>$, S\+T\+N $>$@{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view$<$ Vector\+Field$<$ T, N $>$, S\+T\+N $>$}}
+\subsubsection{\texorpdfstring{$\sim$basic\+\_\+fd\+\_\+view()}{~basic\_fd\_view()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, Stn\+Type S\+TN$>$ \\
+virtual \hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{Uintah\+::\+Phase\+Field\+::detail\+::basic\+\_\+fd\+\_\+view}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ T, N $>$, S\+TN $>$\+::$\sim$\hyperlink{classUintah_1_1PhaseField_1_1detail_1_1basic__fd__view}{basic\+\_\+fd\+\_\+view} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{basic__fd__view_8h}{basic\+\_\+fd\+\_\+view.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,112 @@
+\hypertarget{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4}{}\section{Uintah\+:\+:Phase\+Field\+:\+:B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$ Struct Template Reference}
+\label{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4}\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$}}
+
+
+Boundary Condition Information (\hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} implementation)  
+
+
+
+
+{\ttfamily \#include $<$B\+C\+Info.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename I0 , typename... I$>$ }\\\hyperlink{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4_a90e4e750e4c44c0a04aeb5ea2f81b565}{B\+C\+Info} (\hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0} \&\&i0, \hyperlink{structUintah_1_1PhaseField_1_1I}{I} \&\&... i)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ typename std\+::remove\+\_\+const$<$ T $>$\+::type, N $>$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4_a7c5590e798cd64c8fadaa2dbbfdbc6c0}{value}
+\begin{DoxyCompactList}\small\item\em array of values to impose on boundary \end{DoxyCompactList}\item 
+\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} \hyperlink{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4_adc26b61112f16d2e2117d86dea179b34}{bc}
+\begin{DoxyCompactList}\small\item\em Type of boundary conditions. \end{DoxyCompactList}\item 
+\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} \hyperlink{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4_a9843129baa022ca05ed9cd91834398c0}{c2f}
+\begin{DoxyCompactList}\small\item\em type of fine/coarse interface conditions \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, size\+\_\+t N$>$\newline
+struct Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$}
+
+Boundary Condition Information (\hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field} implementation) 
+
+Stores the type of boundary conditions, o fine coarse interpolation and the value to impose on a boundary face
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of each component of the field at each point \\
+\hline
+{\em N} & number of components \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4_a90e4e750e4c44c0a04aeb5ea2f81b565}\label{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4_a90e4e750e4c44c0a04aeb5ea2f81b565}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$}!B\+C\+Info@{B\+C\+Info}}
+\index{B\+C\+Info@{B\+C\+Info}!Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$}}
+\subsubsection{\texorpdfstring{B\+C\+Info()}{BCInfo()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N$>$ \\
+template$<$typename I0 , typename... I$>$ \\
+\hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ T, N $>$ $>$\+::\hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info} (\begin{DoxyParamCaption}\item[{\hyperlink{namespaceUintah_1_1PhaseField_a547ce3002aa97fbd3ef3192a6eec8406abdd8ebcbdfd71d1125937e3012dc45fb}{I0} \&\&}]{i0,  }\item[{\hyperlink{structUintah_1_1PhaseField_1_1I}{I} \&\&...}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+From a list of \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info} 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em I0} & first \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info} type \\
+\hline
+{\em \hyperlink{structUintah_1_1PhaseField_1_1I}{I}} & following \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info} types \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em i0} & first \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info} \\
+\hline
+{\em i} & following \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{B\+C\+Info}\textquotesingle{}s \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4_adc26b61112f16d2e2117d86dea179b34}\label{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4_adc26b61112f16d2e2117d86dea179b34}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$}!bc@{bc}}
+\index{bc@{bc}!Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$}}
+\subsubsection{\texorpdfstring{bc}{bc}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N$>$ \\
+\hyperlink{namespaceUintah_1_1PhaseField_a148fba372aa3be96fd6eede7a2fa10b5}{BC} \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ T, N $>$ $>$\+::bc}
+
+
+
+Type of boundary conditions. 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4_a9843129baa022ca05ed9cd91834398c0}\label{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4_a9843129baa022ca05ed9cd91834398c0}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$}!c2f@{c2f}}
+\index{c2f@{c2f}!Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$}}
+\subsubsection{\texorpdfstring{c2f}{c2f}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N$>$ \\
+\hyperlink{namespaceUintah_1_1PhaseField_aeb51fe956fe07f1487f5878f4039f27c}{FC} \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ T, N $>$ $>$\+::c2f}
+
+
+
+type of fine/coarse interface conditions 
+
+\mbox{\Hypertarget{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4_a7c5590e798cd64c8fadaa2dbbfdbc6c0}\label{structUintah_1_1PhaseField_1_1BCInfo_3_01VectorField_3_01T_00_01N_01_4_01_4_a7c5590e798cd64c8fadaa2dbbfdbc6c0}} 
+\index{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$}!value@{value}}
+\index{value@{value}!Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$@{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info$<$ Vector\+Field$<$ T, N $>$ $>$}}
+\subsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N$>$ \\
+std\+::array$<$ typename std\+::remove\+\_\+const$<$T$>$\+::type, N $>$ \hyperlink{structUintah_1_1PhaseField_1_1BCInfo}{Uintah\+::\+Phase\+Field\+::\+B\+C\+Info}$<$ \hyperlink{structUintah_1_1PhaseField_1_1VectorField}{Vector\+Field}$<$ T, N $>$ $>$\+::value}
+
+
+
+array of values to impose on boundary 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{BCInfo_8h}{B\+C\+Info.\+h}\end{DoxyCompactItemize}

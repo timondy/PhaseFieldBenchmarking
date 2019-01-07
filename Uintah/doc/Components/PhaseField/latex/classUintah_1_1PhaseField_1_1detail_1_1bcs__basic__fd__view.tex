@@ -1,0 +1,37 @@
+\hypertarget{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view}{}\section{Uintah\+:\+:Phase\+Field\+:\+:detail\+:\+:bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Field, S\+TN, Problem, Index, P $>$ Class Template Reference}
+\label{classUintah_1_1PhaseField_1_1detail_1_1bcs__basic__fd__view}\index{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Field, S\+T\+N, Problem, Index, P $>$@{Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Field, S\+T\+N, Problem, Index, P $>$}}
+
+
+Detail implementation of variables wrapper for both basic differential operations over both physical and amr boundaries.  
+
+
+
+
+{\ttfamily \#include $<$bcs\+\_\+basic\+\_\+fd\+\_\+view.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Field, Stn\+Type S\+TN, typename Problem, typename Index, B\+C\+F ... P$>$\newline
+class Uintah\+::\+Phase\+Field\+::detail\+::bcs\+\_\+basic\+\_\+fd\+\_\+view$<$ Field, S\+T\+N, Problem, Index, P $>$}
+
+Detail implementation of variables wrapper for both basic differential operations over both physical and amr boundaries. 
+
+Group together multiple views (one for eatch edge the boundary belongs to, and one for accessing the Data\+Warehouse on internal indices) and expose the correct implementation of basic differential operations for each direction
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Field} & type of Field \\
+\hline
+{\em \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem}} & type of \hyperlink{namespaceUintah_1_1PhaseField}{Phase\+Field} problem \\
+\hline
+{\em Index} & index\+\_\+sequence of Field within \hyperlink{classUintah_1_1PhaseField_1_1Problem}{Problem} (first element is variable index, following ones, if present, are the component index within the variable) \\
+\hline
+{\em P} & list of BC, FC, and Patch\+::\+Face packs \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{bcs__basic__fd__view_8h}{bcs\+\_\+basic\+\_\+fd\+\_\+view.\+h}\end{DoxyCompactItemize}

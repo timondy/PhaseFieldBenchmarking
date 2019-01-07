@@ -1,0 +1,6 @@
+<map id="Uintah::PhaseField::Application&lt; VAR, DIM, STN, true &gt;" name="Uintah::PhaseField::Application&lt; VAR, DIM, STN, true &gt;">
+<area shape="rect" id="node2" href="$classUintah_1_1PhaseField_1_1Application.html" title="Virtual base for PhaseField applications. " alt="" coords="31,5,169,61"/>
+<area shape="rect" id="node4" href="$structUintah_1_1PhaseField_1_1DWInterface.html" title="Interface for data&#45;warehouse. " alt="" coords="5,137,195,178"/>
+<area shape="rect" id="node5" href="$structUintah_1_1PhaseField_1_1BCInterface.html" title="Interface for boundary conditions. " alt="" coords="7,202,193,243"/>
+<area shape="rect" id="node6" href="$structUintah_1_1PhaseField_1_1AMRInterface.html" title="Interface for AMR. " alt="" coords="23,268,177,324"/>
+</map>
